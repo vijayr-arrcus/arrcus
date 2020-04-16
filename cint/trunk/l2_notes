@@ -1,0 +1,494 @@
+deb rx verb
+deb tx verb
+log file=learning.log append=no
+ 
+      cint /home/user/sdk-all-6.5.15/src/examples/sand/utility/cint_sand_utils_global.c
+      cint /home/user/sdk-all-6.5.15/src/examples/sand/utility/cint_sand_utils_vlan_translate.c
+      cint /home/user/sdk-all-6.5.15/src/examples/sand/cint_bridge_application.c
+      cint
+//bridge_application_init(0, 1, 13);
+bridge_application_init(0, 1, 2);
+      bridge_application_run(0);
+exit;
+#can't parse, goes into port 200 in many copies
+tx 1 psrc=1 DATA=0x80010000000000020000000011228100000108004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#OK, VLAN 1 to ::2: goes to 13 as VLAN 3
+tx 2 psrc=1 DATA=0x0000000000020000000011228100000108004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+pp vis pkttm
+| Fwd_Action_Destination     | 0c000d  |  21    |
+|   type                     | PORT_ID |  6     |
+|   value                    | 13      |  15    |
+tx 2 psrc=2 DATA=0x0000000011220000000000028100000108004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 2 to ::2: goes out to 13 as VLAN 2
+tx 1 psrc=1 DATA=0x0000000000020000000011228100000208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 2 to ::3: goes to mcid:2 (==vsi) and to DSP -1(ff) dropped?
+tx 1 psrc=1 DATA=0x0000000000030000000011228100000208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#untagged to ::2: goes to port 200 in many copies
+tx 1 psrc=3 DATA=0x00000000000200000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 1 to ::3: goes to mcid:2 (==vsi) and to DSP -1(ff) dropped? 
+tx 1 psrc=1 DATA=0x0000000000030000000011228100000108004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+pp vis pkttm
+| Fwd_Action_Destination     | 180002 |  21    |
+|   type                     | MC_ID  |  2     |
+|   value                    | 2      |  19    |
+
+#simple bridge
+deb rx verb
+deb tx verb
+log file=learning.log append=no
+
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/globals.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/adv_vlan.c
+cint
+print simple_add_vlan(50,p14,0);
+print simple_add_vlan(51,p15,0);
+print simple_add_vlan(52,p16,0);
+print simple_add_vlan(53,p17,0);
+exit;
+
+#VLAN 50 to ::2 from port 1: unicats to port 13 as-is, OK 
+tx 1 psrc=1 DATA=0x0000000000020000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#MAC learn on HW works 
+#| Ingress_Learn_Enable | 1    | 01    |        | IRPP_0 | FWD1  | FWD2  |
+
+#VLAN 51 to ::2 from port 1: unicast to port 13 as-is, OK
+tx 1 psrc=1 DATA=0x0000000000020000000011228100003308004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 49 to ::2 from port 1: trapped as INGRESS_TRAP_ID_VTT_PORT_NOT_VLAN_MEMBER, OK
+tx 1 psrc=1 DATA=0x0000000000020000000011228100003108004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#untagged to ::2 from port 1: trapped as INGRESS_TRAP_ID_VTT_PORT_NOT_VLAN_MEMBER, OK
+#when bcm_port_untagged_vlan_set() is called on tagged to non-existing VLAN
+sig get name=learn to=fwd2
+tx 1 psrc=1 DATA=0x00000000000200000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 51 to ::3 from port 1: unicast to port 15 as untagged, OK
+tx 1 psrc=1 DATA=0x0000000000030000000011228100003308004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#untagged to ::2 from port 14: unicast to port 13 as VLAN 50, OK
+tx 1 psrc=14 DATA=0x00000000000200000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 50 to ::2 from untagged port 14: unicast to port 13 as VLAN 50, NOK
+#if untagged is not added to pbmp untagged packet is trapped as INGRESS_TRAP_ID_VTT_PORT_NOT_VLAN_MEMBER
+tx 1 psrc=14 DATA=0x0000000000020000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 51 to ::2 from untagged port 14: trapped as INGRESS_TRAP_ID_VTT_PORT_NOT_VLAN_MEMBER, OK
+tx 1 psrc=14 DATA=0x0000000000020000000011228100003308004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+
+sig get name=PP_DSP
+pp vis pkttm 
+sig get name=packet_header
+sig get name=FTMH_TM_Action_Type
+pp vis ppi
+pp vis fdt
+dbal table dump table=fwd_mact
+
+#const int EGRESS_EDIT_CLASS_UNTAGGED = 8;
+#const int EGRESS_EDIT_CLASS_TAGGED = 10;
+DBaL TaBLe dump TaBLe=ESEM_FORWARD_DOMAIN_MAPPING_DB
+dbal taBLe duMP taBLe=IN_AC_S_VLAN
+dbal taBLe duMP taBLe=EEDB_OUT_AC
+
+deb rx verb
+deb tx verb
+log file=learning.log append=no
+
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/globals.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/vlan_translations.c
+#cint /home/user/sdk-all-6.5.15/src/examples/sand/utility/cint_sand_utils_global.c
+#cint /home/user/sdk-all-6.5.15/src/examples/sand/utility/cint_sand_utils_vlan_translate.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/adv_vlan.c
+cint
+print bcm_dnx_sdk_l2_init(0);
+print bcm_dnx_sdk_ave_vlan_init(0);
+vsi_info_t vsi_info[30];
+print add_vlan(50,1050,500,p14,0,vsi_info);
+print add_vlanp(50,6050,600,p15,p16,p17,0,vsi_info+1);
+
+
+print add_vlan(51,5051,510,p15,0,vsi_info+1);
+print add_vlan(52,5052,520,p16,0,vsi_info+2);
+print add_vlan(53,5053,530,p17,0,vsi_info+3);
+
+print add_vlan(54,5054,540,17,0,vsi_info+4);
+print add_vlan(55,5055,550,17,0,vsi_info+5);
+print add_vlan(56,5056,560,17,0,vsi_info+6);
+print add_vlan(57,5057,570,17,0,vsi_info+7);
+print add_vlan(58,5058,580,17,0,vsi_info+8);
+
+exit;
+l2 show
+cint
+print del_vlan(50,1050,500,p14,0,vsi_info);
+print del_vlanp(50,6050,600,p15,p16,p17,0,vsi_info+1);
+exit;
+
+print bcm_vswitch_destroy(0, 5050);
+bcm_multicast_destroy(0, 5050);
+
+out_gp: 45820000
+print BCM_GPORT_SUB_TYPE_GET(0x45820000);
+#define _SHR_GPORT_SUB_TYPE_VIRTUAL_EGRESS_MATCH                (6)
+#define _SHR_GPORT_TYPE_VLAN_PORT          17
+
+woring out gp: 0x45820000
+0100 0101 1000 0010 0000 0000 0000 0000
+
+gpt:6  st:4
+010001 0110 00001 0 0000 0000 0000 0000
+17
+
+010001 0110 00000 0 0001 0000 0000 0001
+000000 0000 00001 0
+
+#define _SHR_COSQ_GPORT_VSQ_TYPE_SHIFT                  17
+
+#define _SHR_PHY_GPORT_PHYN_PORT_PHYN_SHIFT 17
+#define _SHR_PHY_GPORT_PHYN_PORT_PORT_MASK 0x3FF
+
+#VLAN 50 to ::2: mcid 5000(==vsi) flooded?
+#print str(Ether(dst="00:00:00:00:00:02", src="00:00:00:00:11:22")/Dot1Q(vlan=50)/IP(src="87.86.6.9", dst="21.21.21.1")/"abcdefghijklm").encode("HEX")
+tx 1 psrc=1 DATA=0x00000000000200000000112281000032080045000021000100004000f36757560609151515016162636465666768696a6b6c6
+
+pp vis pkttm
+tx 1 psrc=1 DATA=0x0000000000020000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+| Fwd_Action_Destination     | 181388 |  21    |
+|   type                     | MC_ID  |  2     |
+|   value                    | 5000   |  19 
+#with static mac installed OK, out on port 13
+| Fwd_Action_Destination     | 0c000d  |  21    |
+|   type                     | PORT_ID |  6     |
+|   value                    | 13      |  15 
+tx 1 psrc=15 DATA=0x0000000000020000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 50 to ::1122 from port 2 ::2
+tx 1 psrc=2 DATA=0x0000000011220000000000068100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 50 ::1->::2, port 1, known s/dMAC
+tx 1 psrc=1 DATA=0x0000000000220000000000118100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 50 ::3, as expected with unknown MAC, flood
+tx 1 psrc=1 DATA=0x0000000000030000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#after adding port 14 as untagged and static MAC ::3 there, show up untagged on port 14
+
+#real unknown VLAN 50 to ::33
+tx 1 psrc=1 DATA=0x0000000000330000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#real unknown untagged to ::33 port 14, flooded in VSI 5050, VLAN 50
+tx 1 psrc=14 DATA=0x00000000003300000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#same to UDP
+tx 1 psrc=14 DATA=0x00000000003300000000112208004500003500000000801126c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#DSCP marked
+tx 1 psrc=14 DATA=0x00000000003300000000112208004580003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+
+#untagged port uses port default, so...
+#unkown tagged to untagged port, flooded as-is
+tx 1 psrc=14 DATA=0x0000000000330000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#unkown tagged to untagged port, flooded as-is
+tx 1 psrc=14 DATA=0x0000000000330000000011228100000208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+# ::2 tagged to untagged port, sent to 13 based on MACT keeping tags as-is
+tx 1 psrc=3 DATA=0x0000000000020000000011228100000208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#real unknown untagged to ::33 port 15, flooded in VSI 5051, VLAN 51
+tx 1 psrc=15 DATA=0x00000000003300000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#known
+tx 1 psrc=4 DATA=0x00000000000200000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#real unknown untagged to ::33 tagged port 1, no match, goes to port 0?
+tx 1 psrc=1 DATA=0x00000000003300000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+tx 1 psrc=1 DATA=0x0000000000330000000011228100000108004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+tx 1 psrc=1 DATA=0x0000000000330000000011228100000208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#double tagged picked up based on outer tag
+tx 1 psrc=1 DATA=0x000000000002000000001122910000328100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+tx 1 psrc=1 DATA=0x0000000000020000000011229100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+tx 1 psrc=1 DATA=0x000000000002000000001122810000328100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+tx 1 psrc=1 DATA=0x000000000003000000001122810000328100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#works for port 13
+
+#untagged from port 14 to ::1: ends up on port 1 tag: 81004032, PRI bits why?
+tx 1 psrc=14 DATA=0x00000000000100000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+# comes from 4500 IVE data as below expands as '81000032'
+tx 1 psrc=14 DATA=0x00000000000100000000112208000500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VLAN 51 to ::2: Goes to portid 0?
+tx 1 psrc=1 DATA=0x0000000000020000000011228100003308004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+pp vis pkttm
+| Fwd_Action_Destination     | 0c0000  |  21    |
+|   type                     | PORT_ID |  6     |
+|   value                    | 0       |  15    |
+
+tx 1 psrc=1 DATA=0x0000000000030000000011228100003308004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+deb rx verb
+deb tx verb
+cint ../../../src/examples/sand/cint_l2_basic_bridge_with_vlan_editing.c
+cint ../../../src/examples/sand/utility/cint_sand_utils_vlan_translate.c
+cint ../../../src/examples/sand/utility/cint_sand_utils_global.c
+cint
+print l2_basic_bridge_main_run( 0, 1,13,2);
+exit;
+#2 seems to learn
+tx 1 psrc=1 DATA=0000000012340000000011228100006408004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#1 ingress LIF -> no learn?
+tx 1 psrc=1 DATA=00000000123400000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/cint/adv_bridging.c
+cint
+vlan_ab_create_all(0);
+
+
+tx 1 psrc=200 DATA=0x80c800000000123400000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+tx 1 psrc=200 DATA=0x00000000123400000000112208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+tx 1 psrc=200 DATA=80c80000000012340000000011228100006408004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+tx 1 psrc=200 DATA=80c80000000012340000000011228100006408004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+tx 1 psrc=1 DATA=0000000012340000000011228100006408004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+tx 1 psrc=1 DATA=80c80000000012340000000011228100006408004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+tx 1 psrc=13 DATA=80c80000000012340000000011228100006408004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#vlan 50
+tx 1 psrc=1 DATA=80010000000012340000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+
+
+tx 1 psrc=1 DATA=0000000012340000000011228100006408004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+deb rx verb
+deb tx verb
+log file=learning.log append=no
+
+cint /home/user/sdk-all-6.5.15/src/examples/sand/utility/cint_sand_utils_global.c
+cint /home/user/sdk-all-6.5.15/src/examples/sand/utility/cint_sand_utils_multicast.c
+cint /home/user/sdk-all-6.5.15/src/examples/sand/utility/cint_sand_utils_l2.c
+cint /home/user/sdk-all-6.5.15/src/examples/sand/utility/cint_sand_utils_vlan.c
+cint /home/user/sdk-all-6.5.15/src/examples/dpp/cint_port_tpid.c
+cint /home/user/sdk-all-6.5.15/src/examples/sand/cint_sand_l2_cpu_learning.c
+cint
+int verbose = 1;
+//print l2_cpu_learning_run(0, 1);
+print cpu_learning_set(0);
+
+#BCM_L2_CALLBACK_LEARN_EVENT handle is triggered
+tx 1 psrc=1 DATA=0x0000000000330000000011228100002108004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+
+l2_learning_run_with_defaults(79,-1,1);
+
+
+#double tagged picked up based on outer tag
+tx 1 psrc=1 DATA=0x000000000002000000001122910000328100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+bcm_port_tpid_class_create(unit, BCM_PORT_TPID_CLASS_WITH_ID,
+                                 bcmTagStructTypeCTag, &tag_format_class_id);
+BCM.0> pp vis ctx  
+============================================================================================
+| Context diagnostics                                                                      |
+|   Core 0                                                                                 |
+============================================================================================
+| Stage | Block | Context                                                          | Nasid |
+============================================================================================
+| VTT1  | IRPP  | VT1_CONTEXT_ID_BRIDGE___S_C_TAGS                                 | 0     |
+
+
+============================================================================
+| Layer 2 ETH2                                                             |
+|   Layer offset 0x02                                                      |
+|   Next Protocol IPv4                                                     |
+============================================================================
+| Name             | Value                                        | Size   |
+|                  |                                              | (bits) |
+============================================================================
+| Packet Header    | 00000000000200000000112291000032810000320800 | 176    |
+|   DA             | 000000000002                                 |  48    |
+|   SA             | 000000001122                                 |  48    |
+|   Outer_VLAN     | 91000032                                     |  32    |
+|     TPID         | 9100                                         |  16    |
+|     PCP          | 00                                           |  3     |
+|     DEI          | 00                                           |  1     |
+|     VID          | 0032                                         |  12    |
+|   Inner_VLAN     | 81000032                                     |  32    |
+|     TPID         | 8100                                         |  16    |
+|     PCP          | 00                                           |  3     |
+|     DEI          | 00                                           |  1     |
+|     VID          | 0032                                         |  12    |
+|   Type           | IPv4(0x800)                                  |  16    |
+----------------------------------------------------------------------------
+| ETH_Qualifier    |                                              |        |
+|   is_da_mc       | 00                                           |  1     |
+|   is_da_bc       | 00                                           |  1     |
+|   1st_tpid_exist | 01                                           |  1     |
+|   1st_tpid_index | 02                                           |  3     |
+|   2nd_tpid_exist | 01                                           |  1     |
+|   2nd_tpid_index | 01                                           |  3     |
+|   3rd_tpid_exist | 00                                           |  1     |
+|   3rd_tpid_index | 00                                           |  3     |
+|   reserved       | 00                                           |  2     |
+============================================================================
+
+
+tx 1 psrc=1 DATA=0x000000000003000000001122910000328100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+bcm_port_tpid_class_create(unit, BCM_PORT_TPID_CLASS_WITH_ID,
+                                 bcmTagStructTypeSTag, &tag_format_class_id);
+
+BCM.0> pp vis ctx
+============================================================================================
+| Context diagnostics                                                                      |
+|   Core 0                                                                                 |
+============================================================================================
+| Stage | Block | Context                                                          | Nasid |
+============================================================================================
+| VTT1  | IRPP  | VT1_CONTEXT_ID_BRIDGE___S_C_TAGS                                 | 0     |
+
+|   1st_tpid_exist | 01                                           |  1     |
+|   1st_tpid_index | 02                                           |  3     |
+|   2nd_tpid_exist | 01                                           |  1     |
+|   2nd_tpid_index | 01                                           |  3     |
+
+
+Learning
+========
+No vlan->VSI match via inLIF 
+sig get name=learn to=fwd2
+
+BCM.0> sig get name=vsi core=0
+=======================================================================
+| Signals                                                             |
+=======================================================================
+| Attribute          | Size | Value    | Status | Block | From | To   |
+=======================================================================
+| Learn_Key          | 32   | 00000032 |        | IRPP  | VTT1 | VTT2 |
+|   VSI              | 18   | 000032   |        |       |      |      |
+| VSI_Unknown_DA_Dst | 21   | 180032   |        | IRPP  | VTT1 | VTT2 |
+| Learn_Key          | 32   | 00000032 |        | IRPP  | VTT2 | VTT3 |
+|   VSI              | 18   | 000032   |        |       |      |      |
+| VSI_Unknown_DA_Dst | 21   | 180032   |        | IRPP  | VTT2 | VTT3 |
+| Learn_Key          | 32   | 00000032 |        | IRPP  | VTT3 | VTT4 |
+|   VSI              | 18   | 000032   |        |       |      |      |
+| VSI_Unknown_DA_Dst | 21   | 180032   |        | IRPP  | VTT3 | VTT4 |
+| Learn_Key          | 32   | 00000032 |        | IRPP  | VTT4 | VTT5 |
+|   VSI              | 18   | 000032   |        |       |      |      |
+| VSI_Unknown_DA_Dst | 21   | 180032   |        | IRPP  | VTT4 | VTT5 |
+| Learn_Key          | 32   | 00000032 |        | IRPP  | VTT5 | FWD1 |
+|   VSI              | 18   | 000032   |        |       |      |      |
+| VSI_Unknown_DA_Dst | 21   | 180032   |        | IRPP  | VTT5 | FWD1 |
+| VSI_Unknown_DA_Dst | 21   | 180032   |        | IRPP  | FWD1 | FWD2 |
+=======================================================================
+BCM.0> tx 1 psrc=1 DATA=0x0000000000020000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1bBCM.0>                                                                                                                                                        BCM.0> sig get name=learn_en core=0     
+========================================================================
+| Signals                                                              |
+========================================================================
+| Attribute            | Size | Value | Status | Block | From  | To    |
+========================================================================
+| Learn_Enable         | 1    | 01    |        | IRPP  | VTT1  | VTT2  |
+| Learn_Enable         | 1    | 01    |        | IRPP  | VTT2  | VTT3  |
+| Learn_Enable         | 1    | 01    |        | IRPP  | VTT3  | VTT4  |
+| Learn_Enable         | 1    | 01    |        | IRPP  | VTT4  | VTT5  |
+| Learn_Enable         | 1    | 01    |        | IRPP  | VTT5  | FWD1  |
+| Egress_Learn_Enable  | 1    | 00    |        | IRPP  | FWD1  | FWD2  |
+| Ingress_Learn_Enable | 1    | 01    |        | IRPP  | FWD1  | FWD2  |
+| Egress_Learn_Enable  | 1    | 00    |        | IRPP  | FWD2  | IPMF1 |
+| Ingress_Learn_Enable | 1    | 01    |        | IRPP  | FWD2  | IPMF1 |
+| Egress_Learn_Enable  | 1    | 00    |        | IRPP  | IPMF1 | FER   |
+| Ingress_Learn_Enable | 1    | 01    |        | IRPP  | IPMF1 | FER   |
+| Egress_Learn_Enable  | 1    | 00    |        | IRPP  | FER   | IPMF3 |
+| Ingress_Learn_Enable | 1    | 01    |        | IRPP  | FER   | IPMF3 |
+| Egress_Learn_Enable  | 1    | 00    |        | IRPP  | IPMF3 | LBP   |
+| Ingress_Learn_Enable | 1    | 01    |        | IRPP  | IPMF3 | LBP   |
+========================================================================
+
+
+| Learn_Data                    | 64   | 4180004000000000                                                 |        | IRPP_0 | VTT5  | FWD1 |
+|   Learn_Payload_Key_Gen_Var   | 6    | 10                                                               |        |        |       |      |
+|   Destination_Port            | 21   | 0c0002                                                           |        |        |       |      |
+|   Out_LIF                     | 22   | 000000                                                           |        |        |       |      |
+|   Flush_Entry_Group           | 4    | 00                                                               |        |        |       |      |
+|   Strength                    | 2    | 00                                                               |        |        |       |      |
+| Learn_Enable                  | 1    | 01                                                               |        | IRPP_0 | VTT5  | FWD1 |
+| Learn_Format                  | 4    | 00                                                               |        | IRPP_0 | VTT5  | FWD1 |
+| Learn_Key                     | 32   | 00000022                                                         |        | IRPP_0 | VTT5  | FWD1 |
+|   VSI                         | 18   | 000022                                                           |        |        |       |      |
+|   VID                         | 12   | 0000                                                             |        |        |       |      |
+| Learn_Layer_Index             | 3    | 00  
+
+| Learn_Data                    | 64   | c000000000000000                                                 |        | IRPP_0 | VTT5  | FWD1 |
+|   Learn_Payload_Key_Gen_Var   | 6    | 30                                                               |        |        |       |      |
+|   Destination_Port            | 21   | 000000                                                           |        |        |       |      |
+|   Out_LIF                     | 22   | 000000                                                           |        |        |       |      |
+|   Flush_Entry_Group           | 4    | 00                                                               |        |        |       |      |
+|   Strength                    | 2    | 00                                                               |        |        |       |      |
+| Learn_Enable                  | 1    | 00                                                               |        | IRPP_0 | VTT5  | FWD1 |
+| Learn_Format                  | 4    | 00                                                               |        | IRPP_0 | VTT5  | FWD1 |
+| Learn_Key                     | 32   | 000013ba                                                         |        | IRPP_0 | VTT5  | FWD1 |
+|   VSI                         | 18   | 0013ba                                                           |        |        |       |      |
+|   VID                         | 12   | 0000                                                             |        |        |       |      |
+| Learn_Layer_Index             | 3    | 00                                             
+
+#0  dnx_vlan_port_create_ingress_lif_info_set (unit=0, flags=2050, local_in_lif=8, ingress_ac_table_info=0xffa74720, large_entry=0)
+    at /home/user/sdk-all-6.5.15/src/bcm/dnx/vlan/vlan_port.c:2856
+#1  0x091d86e8 in bcm_dnx_vlan_port_create (unit=0, vlan_port=0x1642a370) at /home/user/sdk-all-6.5.15/src/bcm/dnx/vlan/vlan_port.c:4671
+#2  0x08e8f413 in bcm_vlan_port_create (unit=0, vlan_port=0x1642a370) at /home/user/sdk-all-6.5.15/src/bcm/dispatch.c:240122
+
+flags = 2050 = 0x802
+
+p *ingress_ac_table_info
+$5 = {dbal_table_id = DBAL_TABLE_IN_AC_INFO_DB, result_type = 3, global_lif = 0, vsi = 5050, fodo_assignment_mode = 0, in_lif_profile = 1, vlan_domain = 0, 
+  learn_enable = 0, learn_context = DBAL_ENUM_FVAL_LEARN_PAYLOAD_CONTEXT_SYMMETRIC_LIF_BASIC, learn_info = 0, protection_pointer = 0, protection_path = 0, 
+  flush_group = 0}
+
+ p /x DBAL_ENUM_FVAL_LEARN_PAYLOAD_CONTEXT_SYMMETRIC_LIF_BASIC
+$7 = 0x1
+
+ p ll_app_type
+$8 = VLAN_TRANSLATION_AC_APPLICATION_TYPE
+
+dnx_vlan_port_set_ll_app_type() sets it as vsi!=0
+
+/**
+ * \brief
+ *   Enumeration for the various AC applications:
+ *   SERVICE - Symmetrical LIF that enables learning
+ *   VLAN_TRANSLATION - Performs Egress/Ingress VLAN edit only
+ *   OPTIMIZATION - Aggregates VLANs on a port to one In-LIF
+ */
+typedef enum
+{
+    INVALID_AC_APPLICATION_TYPE = -1,
+    FIRST_AC_APPLICATION_TYPE = 0,
+    /**
+     *  Symmetrical LIF that enables learning
+     */
+    SERVICE_AC_APPLICATION_TYPE = FIRST_AC_APPLICATION_TYPE,
+    /**
+     *  Performs Egress/Ingress VLAN edit only
+     */
+    VLAN_TRANSLATION_AC_APPLICATION_TYPE,
+    /**
+     *  Aggregates VLANs on a port to one In-LIF
+     */
+    OPTIMIZATION_AC_APPLICATION_TYPE,
+    NUM_AC_APPLICATION_TYPE_E
+} ac_application_type_e;
+
+
+NH creation
+===========
+
+bcm_dnx_ingress_nh_construct() 
+fills in ds_bcm_ingress_nh_dst_port_set(nh, port_ifindex);
+
+
+
+
+
+
+
+
+

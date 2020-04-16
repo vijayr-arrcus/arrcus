@@ -1,0 +1,129 @@
+Use pp port of Trunk
+======================
+
+cint> print lag_hashing_routing_main(0,13,14,1,100);
+Trunk #100 create with 2 ports
+Trunk ID set #33554532 create with 2 ports
+AFter trunk_create ID set #33554532 create with 2 ports
+modid -2 is 0
+Allocated pp_port1 is 38.
+Allocated pp_port2 is 22.
+
+src/bcm/dnx/algo/port/algo_port_verify.c[184]dnx_algo_port_tm_port_valid_verify unit 0: Error 'Invalid port' indicated, TM port expected to be valid (core 0, tm port 38) .
+
+src/bcm/dnx/algo/port/algo_port_mgmt.c[1964]dnx_algo_port_tm_to_logical_get unit 0: Error 'Invalid port' indicated ;
+
+src/bcm/dnx/stk/stack.c[641]bcm_dnx_stk_sysport_gport_set unit 0: Error 'Invalid port' indicated ;
+
+src/bcm/dnx/trunk/trunk_verify.c[305]dnx_trunk_new_member_has_matching_header_type_verify unit 0: Error 'Invalid parameter' indicated, new member header type is different from trunk header type
+trunk header types      : IN 0x0, OUT 0x0
+new_member header types : IN 0x1, OUT 0x1
+change either the member or the trunk header type and try again
+
+src/bcm/dnx/trunk/trunk.c[1443]dnx_trunk_member_can_be_added_with_set_verify unit 0: Error 'Invalid parameter' indicated ;
+
+src/bcm/dnx/trunk/trunk.c[1616]bcm_dnx_trunk_set unit 0: Error 'Invalid parameter' indicated ;
+Error: bcm_trunk_set(), rv=-4
+Error, trunk_create(), rv=-4.
+int $$ = -4 (0xfffffffc)
+
+
+Local port system port set
+===============================
+BCM.0> cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint> print lag_hashing_routing_main(0,13,14,1,100);
+Trunk #100 create with 2 ports
+Trunk ID set #33554532 create with 2 ports
+AFter trunk_create ID set #33554532 create with 2 ports
+modid -2 is 0
+Allocated pp_port1 is 38. 
+Allocated pp_port2 is 22. 
+Have set sysport for front panel ports 
+
+src/bcm/dnx/trunk/trunk_verify.c[305]dnx_trunk_new_member_has_matching_header_type_verify unit 0: Error 'Invalid parameter' indicated, new member header type is different from trunk header type
+trunk header types      : IN 0x0, OUT 0x0
+new_member header types : IN 0x1, OUT 0x1
+change either the member or the trunk header type and try again
+
+src/bcm/dnx/trunk/trunk.c[1443]dnx_trunk_member_can_be_added_with_set_verify unit 0: Error 'Invalid parameter' indicated ; 
+
+src/bcm/dnx/trunk/trunk.c[1616]bcm_dnx_trunk_set unit 0: Error 'Invalid parameter' indicated ; 
+Error: bcm_trunk_set(), rv=-4
+Error, trunk_create(), rv=-4.
+int $$ = -4 (0xfffffffc)
+cint> 
+cint> 
+cint> 
+
+
+BCM.0> 
+BCM.0> 
+BCM.0> dump chg IPPE_PRT_PP_PORT_INFO
+IPPE_PRT_PP_PORT_INFO.IPPE0[0]: <PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[1]: <SRC_SYS_PORT=1,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[2]: <SRC_SYS_PORT=0xd,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[3]: <SRC_SYS_PORT=0xe,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[4]: <SRC_SYS_PORT=0xf,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[5]: <SRC_SYS_PORT=0x10,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[6]: <SRC_SYS_PORT=0x11,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[7]: <SRC_SYS_PORT=0x28,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[8]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[9]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[10]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[11]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[12]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[13]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[14]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[15]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[16]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[17]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[18]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[19]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[20]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[21]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[22]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[23]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[24]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[25]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[26]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[27]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[28]: <SRC_SYS_PORT=0xc8,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[29]: <SRC_SYS_PORT=0xc9,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[30]: <SRC_SYS_PORT=0xca,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[31]: <SRC_SYS_PORT=0xcb,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[32]: <SRC_SYS_PORT=0xda,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[33]: <SRC_SYS_PORT=0xdd,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[34]: <SRC_SYS_PORT=0xe6,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[35]: <SRC_SYS_PORT=0xe8,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[36]: <SRC_SYS_PORT=0xe9,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[37]: <SRC_SYS_PORT=0xf0,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[0]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[1]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[2]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[3]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[4]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[5]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[6]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[7]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[8]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[9]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[10]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[11]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[12]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[13]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[14]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[15]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[16]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[17]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[18]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[19]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[20]: <SRC_SYS_PORT=0xdb,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[21]: <SRC_SYS_PORT=0xde,>
+BCM.0> 
+
+dbal table dump table=SYSTEM_SYSPORT_MODPORT_MAP
+DBaL TaBLe dump TaBLe=ESEM_FORWARD_DOMAIN_MAPPING_DB
+dbal taBLe duMP taBLe=IN_AC_S_VLAN
+dbal taBLe duMP taBLe=EEDB_OUT_AC

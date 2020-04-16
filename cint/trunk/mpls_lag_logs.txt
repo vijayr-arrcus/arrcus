@@ -1,0 +1,94 @@
+CM.0>
+BCM.0> sig get name=context
+==========================================================================================================
+| Signals                                                                                                |
+==========================================================================================================
+| Attribute                     | Size | Value                                  | Block  | From  | To    |
+==========================================================================================================
+| Context                       | 6    | VT1_CONTEXT_ID_BRIDGE___C_TAG(0x2)     | IRPP_0 | LLR   | VTT1  |
+| next_context                  | 6    | 02                                     | IRPP_0 | LLR   | VTT1  |
+| Context                       | 6    | VT2_CONTEXT_ID_GENERAL___NOP_CTX(0x5)  | IRPP_0 | VTT1  | VTT2  |
+| Saved_Context_Profile         | 6    | 00                                     | IRPP_0 | VTT1  | VTT2  |
+| Context                       | 6    | VT3_CONTEXT_ID_GENERAL___NOP_CTX(0x2)  | IRPP_0 | VTT2  | VTT3  |
+| Saved_Context_Profile         | 6    | 00                                     | IRPP_0 | VTT2  | VTT3  |
+| Context                       | 6    | VT4_CONTEXT_ID_GENERAL___NOP_CTX(0x0)  | IRPP_0 | VTT3  | VTT4  |
+| Saved_Context_Profile         | 6    | 00                                     | IRPP_0 | VTT3  | VTT4  |
+| Context                       | 6    | VT5_CONTEXT_ID_GENERAL___NOP_CTX(0xc)  | IRPP_0 | VTT4  | VTT5  |
+| Saved_Context_Profile         | 6    | 00                                     | IRPP_0 | VTT4  | VTT5  |
+| Context                       | 6    | FWD1_CONTEXT_ID_GENERAL___NOP_CTX(0xc) | IRPP_0 | VTT5  | FWD1  |
+| Saved_Context_Profile         | 6    | 00                                     | IRPP_0 | VTT5  | FWD1  |
+| OAM_Context_Selection_Profile | 6    | 00                                     | IRPP_0 | FWD1  | FWD2  |
+| Context                       | 6    | FWD2_CONTEXT_ID_GENERAL___NOP_CTX(0x6) | IRPP_0 | FWD1  | FWD2  |
+| Saved_Context_Profile         | 6    | 00                                     | IRPP_0 | FWD1  | FWD2  |
+| Context                       | 6    | 06                                     | IRPP_0 | FWD2  | IPMF1 |
+| Saved_Context_Profile         | 6    | 00                                     | IRPP_0 | FWD2  | IPMF1 |
+| next_context                  | 6    | 06                                     | IRPP_0 | FWD2  | IPMF1 |
+| ACL_Context                   | 6    | 06                                     | IRPP_0 | FWD2  | IPMF1 |
+| Fwd_Context                   | 6    | 06                                     | IRPP_0 | IPMF1 | FER   |
+| Context                       | 6    | 00                                     | IRPP_0 | IPMF1 | FER   |
+| Context                       | 6    | 06                                     | IRPP_0 | FER   | IPMF3 |
+| ACL_Context                   | 6    | 00                                     | IRPP_0 | FER   | IPMF3 |
+| Context                       | 6    | 00                                     | IRPP_0 | IPMF3 | LBP   |
+| context                       | 6    | 00                                     | IRPP_0 | LBP   | ITMR  |
+==========================================================================================================
+
+
+BCM.0> sig get name=context
+=======================================================================================================================
+| Signals                                                                                                             |
+=======================================================================================================================
+| Attribute                     | Size | Value                                             | Block  | From   | To     |
+=======================================================================================================================
+| Context                       | 6    | VT1_CONTEXT_ID_BRIDGE___C_TAG(0x2)                | IRPP_0 | LLR    | VTT1   |
+| next_context                  | 6    | 02                                                | IRPP_0 | LLR    | VTT1   |
+| Context                       | 6    | VT2_CONTEXT_ID_MPLS___TT(0xa)                     | IRPP_0 | VTT1   | VTT2   |
+| Saved_Context_Profile         | 6    | 00                                                | IRPP_0 | VTT1   | VTT2   |
+| Context                       | 6    | VT3_CONTEXT_ID_GENERAL___NOP_CTX(0x2)             | IRPP_0 | VTT2   | VTT3   |
+| Saved_Context_Profile         | 6    | 00                                                | IRPP_0 | VTT2   | VTT3   |
+| Context                       | 6    | VT4_CONTEXT_ID_GENERAL___NOP_CTX(0x0)             | IRPP_0 | VTT3   | VTT4   |
+| Saved_Context_Profile         | 6    | 00                                                | IRPP_0 | VTT3   | VTT4   |
+| Context                       | 6    | VT5_CONTEXT_ID_GENERAL___NOP_CTX(0xc)             | IRPP_0 | VTT4   | VTT5   |
+| Saved_Context_Profile         | 6    | 00                                                | IRPP_0 | VTT4   | VTT5   |
+| Context                       | 6    | FWD1_CONTEXT_ID_MPLS___FWD(0x17)                  | IRPP_0 | VTT5   | FWD1   |
+| Saved_Context_Profile         | 6    | 00                                                | IRPP_0 | VTT5   | FWD1   |
+| OAM_Context_Selection_Profile | 6    | 00                                                | IRPP_0 | FWD1   | FWD2   |
+| Context                       | 6    | FWD2_CONTEXT_ID_MPLS___FWD(0x11)                  | IRPP_0 | FWD1   | FWD2   |
+| Saved_Context_Profile         | 6    | 00                                                | IRPP_0 | FWD1   | FWD2   |
+| Context                       | 6    | 11                                                | IRPP_0 | FWD2   | IPMF1  |
+| Saved_Context_Profile         | 6    | 00                                                | IRPP_0 | FWD2   | IPMF1  |
+| next_context                  | 6    | 11                                                | IRPP_0 | FWD2   | IPMF1  |
+| ACL_Context                   | 6    | 11                                                | IRPP_0 | FWD2   | IPMF1  |
+| Fwd_Context                   | 6    | 11                                                | IRPP_0 | IPMF1  | FER    |
+| Context                       | 6    | 00                                                | IRPP_0 | IPMF1  | FER    |
+| Context                       | 6    | 11                                                | IRPP_0 | FER    | IPMF3  |
+| ACL_Context                   | 6    | 00                                                | IRPP_0 | FER    | IPMF3  |
+| Context                       | 6    | 00                                                | IRPP_0 | IPMF3  | LBP    |
+| context                       | 6    | 00                                                | IRPP_0 | LBP    | ITMR   |
+| Fwd_Context                   | 6    | 1a                                                | ERPP_0 | PRP    | Filter |
+| fwd_context                   | 6    | 1a                                                | ERPP_0 | Filter | EPMF   |
+| fwd_context                   | 6    | 1a                                                | ERPP_0 | EPMF   | ETMR   |
+| Context                       | 6    | TERM_CONTEXT_ID_GENERAL___HEADER_TERMINATION(0x0) | ETPP_0 | PRP2   | Term   |
+| ACE_Context_Value             | 16   | 0000                                              | ETPP_0 | PRP2   | Term   |
+| per_Port_Attributes           | 76   | 00000000100000221900                              | ETPP_0 | PRP2   | Term   |
+|   PRP_Context_Port_Profile    | 2    | 00                                                |        |        |        |
+|   TERM_Context_Port_Profile   | 4    | 00                                                |        |        |        |
+|   FWD_Context_Port_Profile    | 4    | 00                                                |        |        |        |
+| Context                       | 6    | FWD_CONTEXT_ID_MPLS___SWAP(0x18)                  | ETPP_0 | Term   | FWD    |
+| ACE_Context_Value             | 16   | 0000                                              | ETPP_0 | Term   | FWD    |
+| Context                       | 6    | ENCAP_1_CONTEXT_ID_BRIDGE___ARP_AC_ETH(0x3)       | ETPP_0 | FWD    | Enc1   |
+| ace_context_value             | 16   | 0000                                              | ETPP_0 | FWD    | Enc1   |
+| Context                       | 6    | ENCAP_2_CONTEXT_ID_GENERAL___NOP_CTX(0x0)         | ETPP_0 | Enc1   | Enc2   |
+| ace_context_value             | 16   | 0000                                              | ETPP_0 | Enc1   | Enc2   |
+| Context                       | 6    | ENCAP_3_CONTEXT_ID_GENERAL___NOP_CTX(0x4)         | ETPP_0 | Enc2   | Enc3   |
+| ace_context_value             | 16   | 0000                                              | ETPP_0 | Enc2   | Enc3   |
+| Context                       | 6    | ENCAP_4_CONTEXT_ID_GENERAL___NOP_CTX(0x4)         | ETPP_0 | Enc3   | Enc4   |
+| ace_context_value             | 16   | 0000                                              | ETPP_0 | Enc3   | Enc4   |
+| Context                       | 6    | ENCAP_5_CONTEXT_ID_GENERAL___NOP_CTX(0x6)         | ETPP_0 | Enc4   | Enc5   |
+| ace_context_value             | 16   | 0000                                              | ETPP_0 | Enc4   | Enc5   |
+| Context                       | 6    | TRAP_CONTEXT_ID_GENERAL___NORMAL_FWD(0x6)         | ETPP_0 | Enc5   | Trap   |
+| ace_context_value             | 16   | 0000                                              | ETPP_0 | Enc5   | Trap   |
+| Context                       | 6    | 06                                                | ETPP_0 | Trap   | BTC    |
+| Mirror_Cmd                    | 16   | f001                                              | ETPP_0 | Trap   | BTC    |
+|   Context                     | 4    | 01                                                |        |        |        |
+=======================================================================================================================
+BCM.0>

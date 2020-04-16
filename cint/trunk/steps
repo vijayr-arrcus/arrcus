@@ -1,0 +1,34 @@
+cd
+cd cmodel
+cd sdk-all-6.5.16/
+sdk_pwd
+source ../cmodel/ports.sh 
+../scripts/set_sdk_links.sh 
+clear
+./scripts/pcid_bg_internal.sh cmodel 88690_a0
+
+
+cd /home/vijayr/cint
+
+cint cint_utils_global.c
+cint cint_utils_vlan.c
+cint cint_utils_l3.c
+cint cint_ip_route.c
+cint globals.c
+cint vlan_translations.c
+cint adv_vlan.c
+cint adv_lag_ingress.c
+
+
+cint adv_trunk.c
+cint mpls_j2_lag.c
+
+
+
+
+cint L3Lag_mem_SrcPort.c
+
+
+cint L3LagCint.c
+
+print lag_hashing_routing_main(0,13,14,1,100);

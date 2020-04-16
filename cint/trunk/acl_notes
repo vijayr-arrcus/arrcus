@@ -1,0 +1,678 @@
+scp build/lib/libdpal_plugin_jer_2.so root@10.9.119.72:/usr/lib/libdpal_plugin_jer_2.so
+
+scp build/lib/libdpal_plugin_* root@10.9.119.72:/usr/lib/
+
+#J+ example
+deb rx verb
+deb tx verb
+log file=learning.log append=no
+cint /home/user/sdk-all-6.5.15/src/examples/dpp/cint_field_egress_bridged_ip.c
+c
+field_setup(0,1,100,1,101);
+#practically everything returns -16 (not supported)
+
+
+#base example
+deb rx verb
+deb tx verb
+log file=learning.log append=no
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/globals.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/adv_vlan.c
+
+cint
+print simple_add_vlan(50,14,0);
+cint_field_action_drop_in_tcam_fg_main(0,0,10);
+exit;
+# orig packet
+tx 1 psrc=1 DATA=0x0000000000020000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+# matching src IP -> drop
+tx 1 psrc=1 DATA=0x0000000000020000000011228100003208004500003500000000800026c40000000a0a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+#VID example
+deb rx verb
+deb tx verb
+cint ../../../src/examples/dnx/field/cint_field_vid_qual.c
+c
+field_attach_main(0);
+
+grep "^| 9" `find ~/sdk-all-6.5.15/ -name learning.log`
+
+deb rx verb
+deb tx verb
+#log file=/home/user/j2/ACL-FGs.log append=no
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/globals.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/adv_vlan.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/vlan_translations.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/cint_acl.c
+cint
+print bcm_dnx_sdk_ave_vlan_init(0);
+vsi_info_t vsi_info[30];
+print add_vlan(50,5050,500,p14,0,vsi_info);
+print add_vlan(51,5051,510,p15,0,vsi_info+1);
+print add_vlan(52,5052,520,p16,0,vsi_info+2);
+print add_vlan(53,5053,530,p17,0,vsi_info+3);
+
+print cint_field_action_drop_main(0, bcmFieldStageIngressPMF1, &drop_aid);
+print cint_field_action_drop_main(0, bcmFieldStageIngressPMF2, &drop_aid_2);
+print cint_field_action_drop_main(0, bcmFieldStageIngressPMF3, &drop_aid_3);
+bcm_dnx_pmf_udh_action(0, &copp_aid);
+bcm_dnx_pmf_contexts_setup(0,0);
+bcm_dnx_sdk_pre_copp_fg(0,0);
+
+bcm_dnx_pmf_test_run(0);
+
+bcm_dnx_pmf_test_fgs(0,0,0,0,BCM_DNX_PMF_INGRESS);
+bcm_dnx_pmf_test_fgs(0,0,0,0,BCM_DNX_PMF_EGRESS);
+
+bcm_dnx_pmf_test_fgs_destroy(0);
+bcm_dnx_pmf_test_fgs(0,0,1,0,BCM_DNX_PMF_INGRESS);
+bcm_dnx_pmf_test_fgs(0,0,1,0,BCM_DNX_PMF_EGRESS);
+
+bcm_dnx_pmf_test_fgs_destroy(0);
+bcm_dnx_pmf_test_fgs(0,1,0,0,BCM_DNX_PMF_INGRESS);
+bcm_dnx_pmf_test_fgs(0,1,0,0,BCM_DNX_PMF_EGRESS);
+
+bcm_dnx_pmf_test_fgs_destroy(0);
+bcm_dnx_pmf_test_fgs(0,1,1,0,BCM_DNX_PMF_INGRESS);
+bcm_dnx_pmf_test_fgs(0,1,1,0,BCM_DNX_PMF_EGRESS);
+bcm_dnx_pmf_test_fgs_destroy(0);
+
+bcm_dnx_pmf_contexts_destroy(0);
+bcm_dnx_pmf_contexts_setup(0,1);
+
+bcm_dnx_pmf_test_fgs(0,0,0,1,BCM_DNX_PMF_INGRESS);
+bcm_dnx_pmf_test_fgs(0,0,0,1,BCM_DNX_PMF_EGRESS);
+
+bcm_dnx_pmf_test_fgs_destroy(0);
+bcm_dnx_pmf_test_fgs(0,0,1,1,BCM_DNX_PMF_INGRESS);
+bcm_dnx_pmf_test_fgs(0,0,1,1,BCM_DNX_PMF_EGRESS);
+
+bcm_dnx_pmf_test_fgs_destroy(0);
+bcm_dnx_pmf_test_fgs(0,1,0,1,BCM_DNX_PMF_INGRESS);
+bcm_dnx_pmf_test_fgs(0,1,0,1,BCM_DNX_PMF_EGRESS);
+
+bcm_dnx_pmf_test_fgs_destroy(0);
+bcm_dnx_pmf_test_fgs(0,1,1,1,BCM_DNX_PMF_INGRESS);
+bcm_dnx_pmf_test_fgs(0,1,1,1,BCM_DNX_PMF_EGRESS);
+
+
+
+bcm_dnx_group_tuple_t gtuple;
+//print bcm_dnx_sdk_fg_create (0, BCM_DNX_FG_L2, BCM_DNX_PMF_INGRESS, BCM_DNX_TARGET_VLAN, &gtuple);
+print bcm_dnx_sdk_fg_create (0, BCM_DNX_FG_L2, BCM_DNX_PMF_INGRESS, BCM_DNX_TARGET_PV, &gtuple);
+print bcm_dnx_sdk_fg_create (0, BCM_DNX_FG_TUPLE, BCM_DNX_PMF_INGRESS, BCM_DNX_TARGET_PV, &gtuple);
+//D ::2 S ::1122
+print bcm_dnx_sdk_fe_create (0, 0, bcmFieldActionDropPrecedence, 1, gtuple.group_id); 
+
+bcm_gport_t snoop_gport_id;
+bcm_dnx_sdk_snoop_dest_create(0, 0, &snoop_gport_id);
+print bcm_dnx_sdk_fe_create (0, 0, bcmFieldActionSnoop, snoop_gport_id, gtuple.group_id);
+
+//S ::1123 VLAN 50
+print bcm_dnx_sdk_fe_create (0, 1, drop_aid, 2, gtuple.group_id);
+//D ::2 S ::1124 VLAN 50
+print bcm_dnx_sdk_fe_create (0, 2, drop_aid, 3, gtuple.group_id);
+//Untagged Ethtype:0x801
+print bcm_dnx_sdk_fe_create (0, 3, drop_aid, 100, gtuple.group_id);
+
+print bcm_dnx_sdk_fe_destroy (0, 0x2090054, gtuple.group_id);
+print bcm_dnx_sdk_fe_destroy (0, 0x2090055, gtuple.group_id);
+print bcm_dnx_sdk_fe_destroy (0, 0x2090056, gtuple.group_id);
+print bcm_dnx_sdk_fe_destroy (0, 0x2090057, gtuple.group_id);
+print bcm_dnx_sdk_fe_destroy (0, 0x2090058, gtuple.group_id);
+print bcm_dnx_sdk_fg_destroy(0, &gtuple);
+
+bcm_dnx_group_tuple_t gtuple;
+print bcm_dnx_sdk_fg_create (0, BCM_DNX_FG_IPV4, BCM_DNX_PMF_INGRESS, BCM_DNX_TARGET_PV, &gtuple);
+//ICMP
+bcm_field_entry_t id, my_id;
+id=0xfffffff;
+bcm_sdk_test_with_etuple(0, drop_aid, 4, gtuple.group_id, &id);
+my_id=id;
+bcm_sdk_test_with_etuple(0, drop_aid, 40, gtuple.group_id, &id);
+id=0xfffffff;
+bcm_sdk_test_with_etuple(0, drop_aid, 5, gtuple.group_id, &id);
+bcm_sdk_test_with_etuple(0, drop_aid, 50, gtuple.group_id, &id);
+id=my_id;
+bcm_sdk_test_with_etuple(0, drop_aid, 41, gtuple.group_id, &id);
+
+print bcm_dnx_sdk_fg_destroy(0, &gtuple);
+bcm_dnx_pmf_contexts_destroy(0);
+exit;
+
+
+field group list
+field group info group=9
+field entry info group=9 entry=0x2090056
+sig get name=fwd_action_destination
+sig get name=ACL
+ 
+#pkt to drop due to srcMAC match
+tx 1 psrc=1 DATA=0x0000000000020000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#pass as no match
+tx 1 psrc=1 DATA=0x0000000000020000000011218100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#drop as only last 16 bits are specified
+tx 1 psrc=1 DATA=0x0000000000020000000111228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#S ::1123 VLAN 50
+tx 1 psrc=1 DATA=0x0000000000020000000011238100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+tx 1 psrc=1 DATA=0x0000000000030000000011238100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#S != ::1123
+tx 1 psrc=1 DATA=0x0000000000030000000011248100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#D ::2 S ::1124 VLAN 50
+tx 1 psrc=1 DATA=0x0000000000020000000011248100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#D ::2 S ::1124 VLAN 51 != 50
+tx 1 psrc=1 DATA=0x0000000000020000000011248100003308004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#untagged ethtype: 0x800
+tx 1 psrc=14 DATA=0x00000000000200000000112408004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#untagged ethtype: 0x801
+tx 1 psrc=14 DATA=0x00000000000200000000112408014500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#ICMP echo request untagged
+tx 1 psrc=14 DATA=0x00000000000200000000112408004500003500000000800126c40a0000050a000001080002030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#IP proto 2
+tx 1 psrc=14 DATA=0x00000000000200000000112408004500003500000000800226c40a0000050a000001080002030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#D ::2 S ::1124 VLAN 50 ICMP
+tx 1 psrc=1 DATA=0x0000000000020000000011248100003208004500003500000000800126c40a0000050a000001080002030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+#not ICMP
+tx 1 psrc=1 DATA=0x0000000000020000000011248100003208004500003500000000800026c40a0000050a000001080002030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+L3 tests
+========
+deb rx verb
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/cint/l3_j2.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/globals.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/cint_acl.c
+cint
+run_test();
+
+print cint_field_action_drop_main(0, bcmFieldStageIngressPMF1, &drop_aid);
+print cint_field_action_drop_main(0, bcmFieldStageIngressPMF2, &drop_aid_2);
+print cint_field_action_drop_main(0, bcmFieldStageIngressPMF3, &drop_aid_3);
+print bcm_dnx_pmf_udh_action(0, &copp_aid);
+bcm_dnx_pmf_contexts_setup(0,1);
+bcm_dnx_sdk_test_quals(0, &l2_i);
+
+exit;
+tx 1 psrc=15 data=00010203040f00000000000181000bc708004500002c000100004000b26b0101010163636301417272637573204e6574776f726b20446966666572656e74
+
+int create_ing_nh_cpu(int unit, bcm_if_t *id)
+{
+  bcm_if_t fec_id;
+  bcm_l3_egress_t l3eg;
+
+  bcm_l3_egress_t_init(&l3eg);
+  l3eg.port = 0;
+  print bcm_l3_egress_create(unit, BCM_L3_INGRESS_ONLY, &l3eg, &fec_id);
+  *id = fec_id;
+
+  printf("Created ing nh %d\n", fec_id);
+  return 0;
+}
+bcm_if_t id;
+create_ing_nh_cpu(0,&id);
+create_v4host(0, 0x01010101, id, 1);
+
+print str(Ether(dst="ff:ff:ff:ff:ff:ff", src="00:00:00:00:11:17")/Dot1Q(vlan=3015)/ARP(hwsrc="00:00:00:00:11:17", psrc="5.0.2.5", pdst="5.0.2.1")).encode("HEX")
+#bcast ARP req
+tx 1 psrc=15 data=0xffffffffffff00000000111781000bc7080600010800060400010000000011170500020500000000000005000201
+
+print str(Ether(dst="00:01:02:03:04:0f", src="00:00:00:00:11:17")/Dot1Q(vlan=3015)/IP(src="5.0.1.5", dst="1.1.1.1")/"abcdefghijklm").encode("HEX")
+tx 1 psrc=15 data=0x00010203040f00000000111781000bc708004500002100010000400072d605000105010101016162636465666768696a6b6c6d
+
+
+
+c
+bcm_dnx_pmf_test_fgs_destroy(0);
+bcm_dnx_pmf_contexts_destroy(0);
+exit;
+
+
+deb rx verb
+log file=learning.log append=no
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/globals.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/adv_vlan.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/vlan_translations.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/cint_acl.c
+cint
+print bcm_dnx_sdk_ave_vlan_init(0);
+vsi_info_t vsi_info[30];
+
+print add_vlan(50,5050,500,p14,0,vsi_info);
+print add_vlan(51,5051,510,p15,0,vsi_info+1);
+print add_vlan(52,5052,520,p16,0,vsi_info+2);
+print add_vlan(53,5053,530,p17,0,vsi_info+3);
+
+bcm_gport_t snoop_gport_id;
+bcm_dnx_sdk_snoop_dest_create(0, 0, &snoop_gport_id);
+bcm_dnx_pmf_setup_action_snoop(0, snoop_gport_id);
+print bcm_dnx_pmf_setup_actions(0);
+bcm_dnx_pmf_ud_quals(0);
+bcm_dnx_pmf_tcam_info_init(&g_bcm_dnx_tcam_info);
+
+bcm_dnx_pmf_contexts_setup(0,1);
+bcm_dnx_sdk_test_quals(0, &l2_i);
+bcm_dnx_sdk_test_quals(0, &l2_e);
+bcm_dnx_sdk_test_quals(0, &l2_copp);
+bcm_dnx_sdk_test_quals(0, &v4_i);
+bcm_dnx_sdk_test_quals(0, &v4_e);
+bcm_dnx_sdk_test_quals(0, &tuple_i);
+bcm_dnx_sdk_test_quals(0, &v4_i_v6pkt);
+bcm_dnx_pmf_test_fgs_destroy(0);
+bcm_dnx_pmf_contexts_destroy(0);
+
+
+bcm_field_entry_t e;
+g_gtuple_size=1;
+
+print bcm_dnx_sdk_fg_create (0, BCM_DNX_FG_TUPLE, BCM_DNX_PMF_INGRESS, BCM_DNX_TARGET_PV, g_gtuple);
+print bcm_dnx_sdk_test_add_fe(0, g_gtuple, tuple_i.quals[0].q, tuple_i.quals[0].action, &e);
+//S: ::1123 VLAN: 32
+print bcm_dnx_sdk_fe_create (0, 1, drop_aid, 2, g_gtuple[0].group_id);
+
+tx 1 psrc=13 DATA=0x0000000000030000000011228100003208004501003500000000810626c40a0000060a000002001202040405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+
+
+
+IPv4 with options is not parsed correctly...
+cint> BCM.0> tx 1 psrc=14 DATA=0x00000000000100000000112408004602003500000000820626c40a0000070a00000300000000001302050405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
+src/appl/diag/dnx/tx/diag_dnx_tx.c[799]diag_dnx_check_pkt_fields unit <nounit>:Warning:  Untagged packet read from file or string for tx.
+[bcmAdapterRX]
+[bcmAdapterRX]src/bcm/dnx/algo/algo_gpm.c[1535]dnx_algo_gpm_gport_from_lif unit 0:[bcmAdapterRX] Error 'Internal error' indicated, Unknown dbal_table_id for egress local lif (0x8000)
+[bcmAdapterRX]
+[bcmAdapterRX]src/bcm/dnx/rx/rx.c[1098]dnx_rx_system_header_parse unit 0:[bcmAdapterRX] Error 'Internal error' indicated ; 
+[bcmAdapterRX]
+[bcmAdapterRX]src/bcm/dnx/rx/rx.c[1435]dnx_rx_packet_parse unit 0:[bcmAdapterRX] Error 'Internal error' indicated ; 
+BCM.0> pp vis ppi
+======================================================================================
+| Packet_Parsing and Port Information, Core=0                                        |
+|   Packet Structure: TCPoIPv4oETH0oPTCH_2                                           |
+======================================================================================
+| Name   | Value                                                            | Size   |
+|        |                                                                  | (bits) |
+======================================================================================
+| Header | 0xd00e00000000000100000000112408004602003500000000820626c40a0000 | 1152b  |
+|        | 070a00000300000000001302050405060708090a0b0c0d0e0f10111213141516 |        |
+|        | 1718191a1b1c1d1e1f2000000000000000000000000000000000000000000000 |        |
+|        | 0000000000000000000000000000000000000000000000000000000000000000 |        |
+|        | 0000000000000000000000000000000000                               |        |
+======================================================================================
+===============================================================================
+| Layer 3 IPv4                                                                |
+|   Layer offset 0x10                                                         |
+|   Next Protocol TCP                                                         |
+===============================================================================
+| Name                    | Value                                    | Size   |
+|                         |                                          | (bits) |
+===============================================================================
+| Packet Header           | 4602003500000000820626c40a0000070a000003 | 160    |
+|   Version               | 04                                       |  4     |
+|   IHL                   | 06                                       |  4     |<<<<
+|   TOS                   | 02                                       |  8     |
+|     DSCP                | 00                                       |  6     |
+|     ECN                 | 02                                       |  2     |
+|   Total_Length          | 0035                                     |  16    |
+|   Identification        | 0000                                     |  16    |
+|   Flags                 | 00                                       |  3     |
+|   Fragment_Offset       | 0000                                     |  13    |
+|   TTL                   | 82                                       |  8     |
+|   Protocol              | 06                                       |  8     |
+|   Checksum              | 26c4                                     |  16    |
+|   SIP                   | 0a000007                                 |  32    |
+|   DIP                   | 0a000003                                 |  32    |
+-------------------------------------------------------------------------------
+| IPv4_Qualifier          |                                          |        |
+|   is_mc                 | 00                                       |  1     |
+|   has_option            | 01                                       |  1     |<<<<
+|   is_fragmented         | 00                                       |  1     |
+|   is_1st_fragment       | 00                                       |  1     |
+|   1st_add_header_exist  | 00                                       |  1     |
+|   1st_add_header        | IPV4_ADDITIONAL_HEADER_RAW(0x0)          |  4     |
+|   2nd_add_header_exists | 00                                       |  1     |
+|   tunnel_type           | IPV4_QUALIFIER_TUNNEL_TYPE_RAW(0x0)      |  4     |
+|   reserved              | 00                                       |  2     |
+===============================================================================
+=====================================================================
+| Layer 4 TCP                                                       |
+|   Layer offset 0x24                                               |
+=====================================================================
+| Name          | Value                                    | Size   |
+|               |                                          | (bits) |
+=====================================================================
+| Packet Header | 00000000001302050405060708090a0b0c0d0e0f | 160    |
+|   Src_Port    | 0000                                     |  16    |<<<<
+|   Dst_Port    | 0000                                     |  16    |<<<< these are the option bits
+|   SEQ         | 00130205                                 |  32    |
+|   ACK         | 04050607                                 |  32    |
+|   Data_Offset | 00                                       |  4     |
+|   Reserved    | 04                                       |  3     |
+|   Control     | 0009                                     |  9     |
+|     NS        | 00                                       |  1     |
+|     CWR       | 00                                       |  1     |
+|     ECE       | 00                                       |  1     |
+|     Base      | 09                                       |  6     |
+|   Win         | 0a0b                                     |  16    |
+|   Checksum    | 0c0d                                     |  16    |
+|   Urgent      | 0e0f                                     |  16    |
+nterface swp2
+enable
+ acl-service-policies ingress-acl-sets---------------------------------------------------------------------
+| Dynamic       |                                          |        |
+=====================================================================
+
+
+acl acl-set a1 ACL_IPV4
+ name a1
+ type ACL_IPV4
+ acl-entry 98
+  sequence-id 98
+  ipv4 hop-limit 64
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 99
+  sequence-id 99
+  ipv4 source-address 1.2.3.4/32
+  actions forwarding-action DROP
+ !
+ acl-entry 100
+  sequence-id 100
+  ipv4 destination-address 1.2.3.0/24
+  actions forwarding-action ACCEPT
+ !
+!
+interface swp2
+enable
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV4
+   set-name a1
+
+interface swp2
+enable
+ acl-service-policies egress-acl-sets
+  acl-set ACL_IPV4
+   set-name a1
+
+interface vlan50
+enable
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV4
+   set-name a1
+
+interface vlan50
+enable
+ acl-service-policies egress-acl-sets
+  acl-set ACL_IPV4
+   set-name a1
+
+
+0x7ffefff7
+0x7fffff9b
+0x7fffff9c
+0x7fffff9d
+
+
+print str(Ether(dst="00:00:00:00:00:02", src="00:00:00:00:11:22")/Dot1Q(vlan=50)/IP(src="87.86.6.9", dst="21.21.21.1")/"abcdefghijklm").encode("HEX")
+tx 1 psrc=2 data=0x00000000000200000000112281000032080045000021000100004000f36757560609151515016162636465666768696a6b6c6d
+seems to be OK, drop action
+
+print str(Ether(dst="00:00:00:00:00:02", src="00:00:00:00:11:22")/Dot1Q(vlan=50)/IP(src="87.86.6.9", dst="1.2.3.4")/"abcdefghijklm").encode("HEX")
+tx 1 psrc=2 data=0x00000000000200000000112281000032080045000021000100004000f36757560609151515016162636465666768696a6b6c6d
+
+bcm_dnx_xlate_counter_init() missing:
+[2000/01/05 03:37:40.652530]**ERR**[BCM PLUGIN] unit 0 app : Statsid Create Failed stats_id 268435455, direction 1 rc -5 
+[2000/01/05 03:37:40.652580]**ERR**[BCM PLUGIN] unit 0 app : set Stats failed, acl_id 1284584866200729876, ace_id 65544 , fp_id 268435455, stage, egress , counter_id 268435455, rc -5 
+
+[2000/01/05 03:37:40.652970]**ERR**[BCM PLUGIN] app : bcm_field_group_status_get failed, sdk : Feature unavailable
+[2000/01/05 03:37:40.652987]**ERR**[BCM PLUGIN] app : bcm_field_group_status_get failed, sdk : Feature unavailable
+[2000/01/05 03:37:40.653053]**ERR**[BCM PLUGIN] unit 0 app : Statsid Create Failed stats_id 268435455, direction 1 rc -5 
+[2000/01/05 03:37:40.653070]**ERR**[BCM PLUGIN] app : Failed to set action Trap : %s 
+, sdk : Feature unavailable
+[2000/01/05 03:37:40.653076]**ERR**[BCM PLUGIN] unit 0 app : set action failed, acl_id 1284584866200729876, ace_id 100 , fp_id 268435455, stage, egress , action 1, rc -1 
+[2000/01/05 03:37:40.653084]**ERR**[BCM PLUGIN] unit 0 app : set Stats failed, acl_id 1284584866200729876, ace_id 100 , fp_id 268435455, stage, egress , counter_id 268435455, rc -5 
+[2000/01/05 03:37:40.653238]**ERR**[BCM PLUGIN] app : bcm_field_group_status_get failed, sdk : Feature unavailable
+[2000/01/05 03:37:40.653250]**ERR**[BCM PLUGIN] app : bcm_field_group_status_get failed, sdk : Feature unavailable
+
+J+
+3..420
+2059..3639
+
+
+
+
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/globals.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/adv_vlan.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/vlan_translations.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/cint_acl.c
+cint
+
+bcm_field_range_t id;
+print bcm_dnx_sdk_fe_find_range(0,bcmFieldRangeTypeL4SrcPort,0,10,bcmFieldStageIngressPMF1,&id); 
+
+print bcm_dnx_sdk_fe_write_range(0,bcmFieldRangeTypeL4SrcPort,0,10,bcmFieldStageIngressPMF1,0);
+print bcm_dnx_sdk_fe_write_range(0,bcmFieldRangeTypeL4SrcPort,0,10,bcmFieldStageIngressPMF1,1);
+print bcm_dnx_sdk_fe_write_range(0,bcmFieldRangeTypeL4SrcPort,0,10,bcmFieldStageIngressPMF2,1);
+print bcm_dnx_sdk_fe_write_range(0,bcmFieldRangeTypeL4SrcPort,0,12,bcmFieldStageIngressPMF2,2);
+
+print bcm_dnx_sdk_fe_write_range(0,bcmFieldRangeTypeL4DstPort,0,13,bcmFieldStageIngressPMF2,2);
+print bcm_dnx_sdk_fe_write_range(0,bcmFieldRangeTypeL4DstPort,0,12,bcmFieldStageEgress,2);
+
+print bcm_dnx_sdk_set_ff_trap(0, 17, 201);
+
+bcm_gport_t snoop_gport_id;
+bcm_dnx_sdk_snoop_dest_create(0, 0, &snoop_gport_id);
+
+
+print cint_field_action_drop_main(0, bcmFieldStageIngressPMF1, &drop_aid);
+print cint_field_action_drop_main(0, bcmFieldStageIngressPMF2, &drop_aid_2);
+print cint_field_action_drop_main(0, bcmFieldStageIngressPMF3, &drop_aid_3);
+print bcm_dnx_pmf_udh_action(0, &copp_aid);
+print bcm_dnx_pmf_contexts_setup(0,1);
+print bcm_dnx_sdk_pre_copp_fg(0,0);
+
+deb rx verb
+deb tx verb
+#log file=/home/user/j2/ACL-FGs.log append=no
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/globals.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/adv_vlan.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/vlan_translations.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/cint_acl.c
+cint
+print bcm_dnx_sdk_ave_vlan_init(0);
+vsi_info_t vsi_info[30];
+print add_vlan(50,5050,500,p14,0,vsi_info);
+print add_vlan(51,5051,510,p15,0,vsi_info+1);
+print add_vlan(52,5052,520,p16,0,vsi_info+2);
+print add_vlan(53,5053,530,p17,0,vsi_info+3);
+
+bcm_gport_t snoop_gport_id;
+bcm_dnx_sdk_snoop_dest_create(0, 0, &snoop_gport_id);
+bcm_dnx_pmf_setup_action_snoop(0, snoop_gport_id);
+print bcm_dnx_pmf_setup_actions(0);
+//print BCM_GPORT_TRAP_GET_SNOOP_STRENGTH(snoop_gport_id);
+
+bcm_dnx_pmf_ud_quals(0);
+bcm_dnx_pmf_tcam_info_init(&g_bcm_dnx_tcam_info);
+//BCM_GPORT_LOCAL_SET();
+print bcm_port_class_set(0, 0x4000000, bcmPortClassFieldIngressPMF3TrafficManagementPortCs, 1);
+// Move COPP to egress, pick up COPP packets from ths class ID 
+// bcm_port_class_set
+//  (unit, olp_port, bcmPortClassFieldEgressPacketProcessingPortCs, olp_port_class_id));
+//bcm_dnx_sdk_pre_copp_fg(0,0);
+
+fgs_1(0);
+fgs_2(0);
+fgs_3(0);
+
+fgs_1_c(0);
+fgs_2_c(0);
+fgs_3_c(0);
+
+fg_wc_1(0);
+
+bcm_dnx_pmf_fgs_fe_scale_up(0, fgs_wc_port_vlan + 4, 4000);
+
+fg_wc_1_c(0);
+
+fg_wc_2(0);
+fg_wc_2_c(0);
+
+for(g_tuple_flag = 0; g_tuple_flag < 64; g_tuple_flag++) {
+print g_tuple_flag;
+if (fgs_2(0)) break;
+}
+g_tuple_flag = 0;
+
+int fe_a;
+print bcm_dnx_sdk_blank_fe_action_create (0, &fe_a, bcmFieldActionSnoop, snoop_gport_id, 1, 11);
+print bcm_dnx_sdk_blank_fe_action_create (0, &fe_a, snoop_aid, snoop_gport_id & 1, 1, 11);
+print bcm_dnx_sdk_fe_destroy(0, fe_a, 11);
+
+//snoop_gport_id = 369295407        (0x1603002f)
+//(((5 << 1) | 1) << (26-1))   |      \16000000
+//       (((trap_id) & 0xfff) << 0)  |    \ 02f trap_id
+//       (((0) & 0xf) << 12)  |  \         0000 trap_strength
+//       (((3) & 0xf) << 16) )            30000 snoop_strength
+// action val  guess:                   0x0062F
+//       (((trap_id) & 0x1ff) << 0)         02f
+//       (((3) & 0xf) << 9) )               600 snoop_strength
+
+print str(Ether(dst="00:00:00:00:00:02", src="00:00:00:00:11:22")/Dot1Q(vlan=50)/IP(src="87.86.6.9", dst="1.2.3.4")/"abcdefghijklm").encode("HEX")
+tx 1 psrc=1 data=0x00000000000200000000112281000032080045000021000100004000f36757560609151515016162636465666768696a6b6c6d
+tx 1 psrc=13 data=0x00000000000200000000112281000032080045000021000100004000f36757560609151515016162636465666768696a6b6c6d
+tx 1 psrc=13 data=0x00000000002200000000112281000032080045000021000100004000f36757560609161515016162636465666768696a6b6c6d
+tx 1 psrc=13 data=0x00000000000200000000112281000032080045000021000100004000f3675756060a151515016162636465666768696a6b6c6d
+tx 1 psrc=1 data=0x00000000000300000000112281000032080045000021000100004000f36757560609151515016162636465666768696a6b6c6d
+tx 1 psrc=1 data=0x00000000000400000000112281000032080045000021000100004000f36757560609151515016162636465666768696a6b6c6d
+
+tx 1 psrc=14 data=0x000000000001000000001122080045000021000100004000f36757560609151515016162636465666768696a6b6c6d
+
+int ids0[40000];
+int ids1[40000];
+print bcm_dnx_pmf_fgs_fe_scale_up(0, fgs_wc_pv + 2, 40000, ids0, 0);
+print bcm_dnx_pmf_fgs_fe_scale_up(0, fgs_wc_pv + 2, 40000, ids1, 1);
+
+print bcm_dnx_pmf_fgs_fe_scale_down(0, fgs_wc_pv + 3, 4000, ids);
+
+print bcm_dnx_pmf_fgs_fe_scale_up(0, fgs_wc_pv + 6, 4000, ids);
+print bcm_dnx_pmf_fgs_fe_scale_down(0, fgs_wc_pv + 3, 4000, ids);
+
+fg_wc_2_c(0);
+
+uint32 entries, guaranteed_free, max_free, total;
+print bcm_dnx_pmf_tcam_fg_info_get_max (&g_bcm_dnx_tcam_info, 10, &entries, &guaranteed_free, &max_free);
+print guaranteed_free;
+print max_free;
+print bcm_dnx_pmf_tcam_fg_info_get (&g_bcm_dnx_tcam_info, 10, &entries, &guaranteed_free, &total);
+print guaranteed_free;
+print total;
+i
+print bcm_dnx_pmf_tcam_fg_info_get_max (&g_bcm_dnx_tcam_info, 11, &entries, &guaranteed_free, &max_free);
+print guaranteed_free;
+print max_free;
+print bcm_dnx_pmf_tcam_fg_info_get (&g_bcm_dnx_tcam_info, 11, &entries, &guaranteed_free, &total);
+print guaranteed_free;
+print total;
+
+extern int dnx_field_tcam_bank_available_entries_get(
+    int unit,
+    int core,
+    int bank_id,
+    int entry_size,
+    uint32 *nof_free_entries);
+print dnx_field_tcam_bank_available_entries_get(0, 0, 0, 1, &max_free);
+vis res
+c
+bcm_dnx_sdk_test_copp(0, copp);
+
+bcm_dnx_sdk_test_copp_c(0);
+
+
+c /home/user/bcm_sdk/src/examples/dnx/field/cint_field_cascading.c
+c
+cint_field_cascading_main(0, 15, 15);
+
+Local port to PP port
+=====================
+bcm_port_get
+
+ACL with limited qualifiers
+===========================
+ingress
+-------
+port: 9
+VLAN: 12 (VRF 16..18)
+21(27)
+
+egress
+------
+VRF: 18
+port: 16
+34
+
+IPv4
+----
+TOS: 8
+opt: 1
+TTL: 8
+17
+
+IPv6
+----
+TC:  8
+ext: 1
+TTL: 8
+FL:  20
+37
+
+acl_dstore.h:
+#define  QUALIFIER_IP_SRC_ADDR      0x01 32 64(high only)
+#define  QUALIFIER_IP_DST_ADDR      0x02 32 128
+#define  QUALIFIER_IP_PROTO         0x04 8  
+#define  QUALIFIER_IP_L4_PORTS      0x08 32
+#define  QUALIFIER_IP_RANGE         0x10 24(not used)
+
+keysize:
+-------
+dnx_field_group_get(unit, fg_id, fg_info)
+ dnx_field_group_sw_state_get(unit, fg_id, &(fg_info_p->group_full_info)
+diag_dnx_field_group_info_set(unit, fg_id, fg_info_p, prt_ctr)
+diag_dnx_field_utils_key_size_conversion
+                    (unit, fg_info_p->group_full_info.key_length_type, &key_size_in_bits));
+
+
+deb rx verb
+deb tx verb
+#log file=/home/user/j2/ACL-FGs.log append=no
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/globals.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/adv_vlan.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/vlan_translations.c
+cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/cint_acl.c
+cint
+int u=1;
+print bcm_dnx_sdk_ave_vlan_init(u);
+vsi_info_t vsi_info[30];
+print add_vlan(50,5050,500,p14,u,vsi_info);
+print add_vlan(51,5051,510,p15,u,vsi_info+1);
+print add_vlan(52,5052,520,p16,u,vsi_info+2);
+print add_vlan(53,5053,530,p17,u,vsi_info+3);
+
+bcm_gport_t snoop_gport_id;
+bcm_dnx_sdk_snoop_dest_create(u, 0, &snoop_gport_id);
+bcm_dnx_pmf_setup_action_snoop(u, snoop_gport_id);
+print bcm_dnx_pmf_setup_actions(u);
+//print BCM_GPORT_TRAP_GET_SNOOP_STRENGTH(snoop_gport_id);
+
+bcm_dnx_pmf_ud_quals(u);
+bcm_dnx_pmf_tcam_info_init(&g_bcm_dnx_tcam_info);
+
+fgs_2(u);
+
+bcm_dnx_pmf_contexts_setup(u,1);
+bcm_dnx_sdk_test_quals(u, &l2_i);
+bcm_dnx_sdk_test_quals(u, &l2_e);
+bcm_dnx_sdk_test_quals(u, &l2_copp);
+bcm_dnx_sdk_test_quals(u, &v4_i);
+bcm_dnx_sdk_test_quals(u, &v4_e);
+bcm_dnx_sdk_test_quals(u, &tuple_i);
+bcm_dnx_sdk_test_quals(u, &v4_i_v6pkt);
+bcm_dnx_pmf_test_fgs_destroy(u);
+bcm_dnx_pmf_contexts_destroy(u);
+
