@@ -37,22 +37,13 @@ int trunk_create(bcm_trunk_t tid, int member_port_num, int *member_ports)
   /* Creates #tid trunk (no memory allocation and no members inside) */
   rv =  bcm_trunk_create(unit, BCM_TRUNK_FLAG_WITH_ID, &tid);
 
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
+
   BCM_GPORT_TRUNK_SET(tgport, tid);
   printf("trunk gport is  create: gport=%d\n", tgport);
-#if 0
-  key.index=0;
-  key.type=bcmSwitchPortHeaderType;
-  value.value=BCM_SWITCH_PORT_HEADER_TYPE_ETH;
-  rv = bcm_switch_control_indexed_port_set(0, tgport, key, value);
-  for (i=0; i < member_port_num; i++) {
-    rv = bcm_switch_control_indexed_port_set(0, member_ports[i], key, value);
-  }
-  /* Prepare local ports to gports */
-  for (i=0; i<member_port_num; i++)
-    {
-      BCM_GPORT_SYSTEM_PORT_ID_SET(member_array[i].gport, member_ports[i]);
-    }
-#endif
+
   key.index=1;
   key.type=bcmSwitchPortHeaderType;
   value.value=BCM_SWITCH_PORT_HEADER_TYPE_ETH;
@@ -64,8 +55,14 @@ int trunk_create(bcm_trunk_t tid, int member_port_num, int *member_ports)
   key.type=bcmSwitchPortHeaderType;
   value.value=BCM_SWITCH_PORT_HEADER_TYPE_ETH;
   rv = bcm_switch_control_indexed_port_set(0, tgport, key, value);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
   for (i=0; i < member_port_num; i++) {
     rv = bcm_switch_control_indexed_port_set(0, member_ports[i], key, value);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
   }
   /* Prepare local ports to gports */
   for (i=0; i<member_port_num; i++)
@@ -76,6 +73,9 @@ int trunk_create(bcm_trunk_t tid, int member_port_num, int *member_ports)
 
   /* Adds members (in member_array) to trunk and activates trunk mechanism */
   rv = bcm_trunk_set(unit, tid, &trunk_info, member_port_num, member_array);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
 
   // IN case you want to check the pp port values for the port
   /*
@@ -112,6 +112,9 @@ set_tpid( bcm_gport_t gport )
   tpid_class.tag_format_class_id = TAG_FORMAT_CLASS_ID_SINGLE_TAG;
   tpid_class.vlan_translation_action_id = 0;
   rv = bcm_port_tpid_class_set(unit, &tpid_class);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
 
   /*
    * define tag format class ID 0 for untagged packets
@@ -126,6 +129,9 @@ set_tpid( bcm_gport_t gport )
   tpid_class.tag_format_class_id = TAG_FORMAT_CLASS_ID_NO_TAG;
   tpid_class.vlan_translation_action_id = 0;
   rv = bcm_port_tpid_class_set(unit, &tpid_class);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
   return rv;
 }
 
@@ -147,6 +153,9 @@ main_trunk( int port_0, int port_1,  bcm_trunk_t tid, int vlan_domain)
 
   // Add the vlan domain for the trunk pp ports
   rv = bcm_port_class_set(unit, tgport, bcmPortClassId, vlan_domain);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
   return tgport;
 }
 
@@ -171,11 +180,17 @@ add_gport_to_vlan( bcm_gport_t gport, int vlan_id, int vsi_id,
   rv = bcm_vlan_gport_add(unit, vlan_id, gport,
 			  tagged ? 0 : BCM_VLAN_GPORT_ADD_UNTAGGED);
 
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
   // set the untagged property for trunk
   if (!tagged) {
     //Note: ingress VLAN miss is drop by default (PG 21.5.2)
     // This sets untagged packets default vlan for the incoming port
     rv = bcm_port_untagged_vlan_set(unit, gport, vlan_id);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
   }
 
 
@@ -212,6 +227,9 @@ add_gport_to_vlan( bcm_gport_t gport, int vlan_id, int vsi_id,
 
   // Adds the LIFs to VSI
   rv = bcm_vswitch_port_add(unit, vsi_id, vp.vlan_port_id);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
 
   /*
    * associate Egress VLAN edit class and VLAN edit
@@ -230,10 +248,16 @@ add_gport_to_vlan( bcm_gport_t gport, int vlan_id, int vsi_id,
   }
   vp_trans.flags = BCM_VLAN_ACTION_SET_EGRESS;
   rv = bcm_vlan_port_translation_set(unit, &vp_trans);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
 
   // Do for out gport as well
   vp_trans.gport = out_gp;
   rv = bcm_vlan_port_translation_set(unit, &vp_trans);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
 
   /* /\* learn enable on port*\/ */
   /* unsigned int f; */
@@ -264,6 +288,9 @@ add_mac_trunk( int tid,  uint32_t vsi, char endmac )
   BCM_GPORT_TRUNK_SET(tgport, tid);
   l2_addr.port = tgport;
   rv = bcm_l2_addr_add(unit, &l2_addr);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
   return rv;
 }
 
@@ -281,6 +308,9 @@ add_mac_port(int port, uint32_t vsi, char endmac)
   l2_addr.flags = BCM_L2_STATIC;      /* static entry */
   l2_addr.port = port;
   rv = bcm_l2_addr_add(unit, &l2_addr);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
   return RET_CODE_SUCCESS;
 }
 
@@ -439,6 +469,9 @@ add_trunk_member( int tid, int local_port )
   BCM_GPORT_SYSTEM_PORT_ID_SET(member.gport, local_port);
   BCM_TRUNK_ID_SET(tid, 0, tid);
   rv =  bcm_trunk_member_add(unit,tid,&member);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
   return rv;
 }
 
@@ -453,6 +486,9 @@ delete_trunk_member( int tid, int local_port )
   BCM_GPORT_SYSTEM_PORT_ID_SET(member.gport, local_port);
   BCM_TRUNK_ID_SET(tid, 0, tid);
   rv =  bcm_trunk_member_delete(unit,tid,&member);
+  if (rv = BCM_E_NONE) {
+    printf("\nfailed to create trunk %d", rv);
+  }
   return rv;
 }
 

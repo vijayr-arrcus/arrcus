@@ -17,11 +17,9 @@ cint cint_ip_route.c
 cint globals.c
 cint vlan_translations.c
 cint adv_vlan.c
-cint adv_lag_ingress.c
-
 
 cint adv_trunk.c
-cint mpls_j2_lag.c
+cint mpls_j2_lag_hw.c
 
 
 
