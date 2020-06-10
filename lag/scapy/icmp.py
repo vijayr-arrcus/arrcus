@@ -12,6 +12,7 @@ mac_lsb_list = ['6A','6B','6C','6D','6E','6F','70','71','72','73']
 while i < 500:
  src_mac = mac_lsb_list[(10-i)%10]+_src_mac + mac_lsb_list[i%10]
  print src_mac
- p = sendp(Ether(src=src_mac,dst=dst_mac)/IP(src=src_ip, dst=dst_ip)/ICMP(),iface="bond500")
+# p = sendp(Ether(src=src_mac,dst=dst_mac)/IP(src=src_ip, dst=dst_ip)/ICMP(),iface="bond500")
+ p = sendp(Ether(src=src_mac,dst=dst_mac)/IP(src=src_ip, dst=dst_ip)/ICMP(),iface="swp6")
 # p = sendpfast(Ether(src=src_mac,dst=dst_mac)/IP(src=src_ip, dst=dst_ip)/ICMP(),iface="bond500")
- i+=1
+# i+=1
