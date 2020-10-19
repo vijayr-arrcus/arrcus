@@ -1,0 +1,141 @@
+all member links will be programmed in all units. --- > trunk to physical member link association.
+
+
+
+TM --1 -- SP 1
+             222
+
+SP1 -- 1 TM.
+SP222 -- 1 TM.
+SPA0x8064 -- 1 TM.
+
+HDR -- 16 bit SP  15 bits is used for normal ports.
+16th bit tunk ports.
+
+memlink1 -- System port (ifindex) -- 222.
+
+Ingress pkt -- SPHdr -- 222 -- ifindex 222.
+
+Memlink1 -- trunk 100.
+SPA 0x8064.
+
+Ingress Pkt -- SPHhdr - 0x8064 -- ifindex 222.
+
+1. Create Trunk -- TID -- Global ID generator.
+2. Gport of trunk. -- ID encode in it.
+3. Gport -- associate memberlinks.
+
+LOCAL PORT = 10, LOCAL_GPORT(10)
+TID=100, TRUNK_GPORT(100) ---
+
+
+Create -- 0x8064 & trunk_set -- array of member links.
+
+add/remove -- per memberlink.
+
+implications of distributed datapath on LAGs -- Allocation of SPAs same instance of SDK.
+System port is allocated by the SDK instance and not assigned by DPAL code.
+
+Trunk SPA-- 0x8064 --
+
+let trunk ID - 100 -- 0x64
+memberlink 1 -- to trunk 100(0x64) -- System port.. -- SPA  -- 0x8064
+remove
+add
+memberlink1 -- 0x8164
+
+m2 -- 0x8 1 64..
+..
+..
+..
+
+
+SPA -- 16 bits.
+
+Local port -- gport -- LOCAL_GPORT(lp)
+Trunk ID -- trunk gport -- TRUNK_GPORT(tid)
+
+
+Create trunk -- 100 , GPORT -0xE000064.
+Add trunk gport to bcm_port_t for ifindex of bond.
+
+Normal Physical.
+===============
+To DPAL -- egress interface -- ifindex of the port.
+bcm_port_t table -- ifindex --> port.
+Port is used to program the NH.
+
+LAG
+===
+TO DPAL -- egress interface -- ifindex of LAG.
+bcm_port_t table -- ifindex --> gport of trunk.
+gport of trunk is used to program the NH.
+
+Ifindex -- > physical member link ?
+Subinterface --> ifindex -- > parentifindex -- > bcm_port_table.
+
+QOS, MPLS, ACL, SFLOW.
+
+NH -- egress interface.
+
+
+16th bit -- Trunk indicator.
+15th bit -- pool selector. -- 2 pools with the different scale.
+N+1 bits for LAG members
+13-N members for LAG ID.
+
+
+8K LAG groups of 2 members each.
+4K LAG groups of 4 members each.
+2K LAG groups of 8 members each.
+1K LAG groups of 16 members each.
+512 LAG groups of 32 members each.
+256 LAG groups of 64 members each.
+64 LAG groups of 256 member each.
+
+default N = 5
+
+Support for J2: 256 LAG groups with 64 member links each,
+
+
+
+asic identifiers allocated for LAG -- TID is generated and passed to asic.
+
+identifiers that are carried across the fabric -- SPA -- DSPA.
+port-channel link down handling (not specific to J2) -- All member links managed by LACP, if any link declared by LACP to be inactive peer,
+removed from the trunk group in the hardware.
+
+distributed LACP (not specific to J2) -- Are there multiple protocol state machines running for the same instance ?
+
+
+802.3ad mode
+		IEEE 802.3ad Dynamic link aggregation.  Creates
+		aggregation groups that share the same speed and
+		duplex settings.  Utilizes all slaves in the active
+		aggregator according to the 802.3ad specification.
+		Slave selection for outgoing traffic is done according
+		to the transmit hash policy, which may be changed from
+		the default simple XOR policy via the xmit_hash_policy
+		option, documented below.  Note that not all transmit
+		policies may be 802.3ad compliant, particularly in
+		regards to the packet mis-ordering requirements of
+		section 43.2.4 of the 802.3ad standard.  Differing
+		peer implementations will have varying tolerances for
+		noncompliance.
+		Prerequisites:
+		1. Ethtool support in the base drivers for retrieving
+		the speed and duplex of each slave.
+		2. A switch that supports IEEE 802.3ad Dynamic link
+		aggregation.
+		Most switches will require some type of configuration
+		to enable 802.3ad mode.
+
+
+    	balance-xor
+
+    		XOR policy: Transmit based on the selected transmit
+    		hash policy.  The default policy is a simple [(source
+    		MAC address XOR'd with destination MAC address XOR
+    		packet type ID) modulo slave count].  Alternate transmit
+    		policies may be	selected via the xmit_hash_policy option,
+    		described below.

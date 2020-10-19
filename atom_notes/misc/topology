@@ -1,0 +1,34 @@
+
+   ## SVI Interface
+   {"Name": "switch1:vlan110_intf", "type": constants.TYPE_VLAN, "name": "vlan110", "enabled": True},
+   {"Name": "switch3:vlan110_intf", "type": constants.TYPE_VLAN, "name": "vlan110", "enabled": True},
+   # {"Name": "switch3:vlan110", "type": constants.TYPE_VLAN, "name": "vlan110", "enabled": True},
+   {"Name": "switch1:LOOPBACK", "type": constants.TYPE_LOOPBACK, "name": "loopback0", "enabled": True},
+   {"Name": "switch2:LOOPBACK", "type": constants.TYPE_LOOPBACK, "name": "loopback0", "enabled": True},
+   {"Name": "switch3:LOOPBACK", "type": constants.TYPE_LOOPBACK, "name": "loopback0", "enabled": True},
+]
+   ## SVI Interface
+   {"Name": "switch1:vlan110_intf", "type": constants.TYPE_VLAN, "name": "vlan110", "enabled": True},
+   {"Name": "switch3:vlan110_intf", "type": constants.TYPE_VLAN, "name": "vlan110", "enabled": True},
+   # {"Name": "switch3:vlan110", "type": constants.TYPE_VLAN, "name": "vlan110", "enabled": True},
+   {"Name": "switch1:LOOPBACK", "type": constants.TYPE_LOOPBACK, "name": "loopback0", "enabled": True},
+   {"Name": "switch2:LOOPBACK", "type": constants.TYPE_LOOPBACK, "name": "loopback0", "enabled": True},
+   {"Name": "switch3:LOOPBACK", "type": constants.TYPE_LOOPBACK, "name": "loopback0", "enabled": True},
+
+]
+
+Switch1 intf1(swp1)  -- intf1(swp1) switch2
+        intf2(swp2) -- intf1(swp1) switch3
+
+switch2 intf2(swp2) -- intf4(swp2) switch3
+
+switch2 -- intf1(swp7)
+        -- intf2(swp1s1)
+
+switch3 -- intf1(swp49)
+        -- intf4(swp2)
+        -- intf2(swp37) -- Xena
+        -- intf3(swp39) -- Xena
+
+
+/Users/vijayr/dev/sflow_loopback/arrcus_dev_test/arctest/tests/robot/sflow/log.html

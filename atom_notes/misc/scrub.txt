@@ -1,0 +1,27 @@
+system ssh enable true
+system ssh permit true
+system aaa authentication admin-user admin-password arrcus
+system rest enable true
+
+sflow global network-instance management
+sflow global ipv4 source-address 10.27.102.2
+sflow global ipv4 collector 10.9.208.50
+sflow interface bond40 ingress
+packet-sampling 30
+
+
+867024041097751
+
+SJC_ARRCUS\lag
+password: Arrcus2018
+
+amol
+Arrcus2018
+
+chasis: 10.27.102.27
+App server:10.9.101.253
+
+
+
+Medusa user
+============

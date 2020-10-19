@@ -1,0 +1,51 @@
+BCM.0> sig stage
+sig stage
+============================
+| SIGNAL STAGES            |
+============================
+| Block | Stage    | PP ID |
+============================
+| IRPP  | NIF      | 1     |
+|       | PRT      | 0     |
+|       | IParser  | 2     |
+|       | LLR      | 3     |
+|       | VTT1     | 4     |
+|       | VTT2     | 5     |
+|       | VTT3     | 6     |
+|       | VTT4     | 7     |
+|       | VTT5     | 8     |
+|       | FWD1     | 9     |
+|       | FWD2     | 10    |
+|       | IPMF1    | 11    |
+|       | IPMF2    | 12    |
+|       | FER      | 13    |
+|       | IPMF3    | 14    |
+|       | LBP      | 15    |
+|       | ITMR     | 16    |
+|       | ITM      | 17    |
+| ITPP  | ITPP     | 18    |
+| ERPP  | Fabric   | 19    |
+|       | ERParser | 20    |
+|       | PRP      | 21    |
+|       | Filter   | 22    |
+|       | EPMF     | 23    |
+|       | ETMR     | 24    |
+|       | ETM      | 25    |
+| ETPP  | Applet   | 26    |
+|       | ETParser | 27    |
+|       | PRP1     | 28    |
+|       | PRP2     | 29    |
+|       | Term     | 30    |
+|       | FWD      | 31    |
+|       | Enc1     | 32    |
+|       | Enc2     | 33    |
+|       | Enc3     | 34    |
+|       | Enc4     | 35    |
+|       | Enc5     | 36    |
+|       | Trap     | 37    |
+|       | BTC      | 38    |
+|       | Aligner  | 39    |
+|       | EPNI     | 40    |
+|       | NIF      | 1     |
+============================
+BCM.0>

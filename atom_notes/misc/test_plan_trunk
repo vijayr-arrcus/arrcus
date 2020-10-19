@@ -1,0 +1,34 @@
+Mtu cases
+sflow counter sample testcases
+QOS service policy on BOND interface with all supported Actions(Priority, bandwidth ratio, rate_max)
+telemetry with Bond interface
+interface counters
+Routing protocol(OSPF/ISIS) session
+LLDP cases -- 
+reboot
+
+256 LAG groups with 64 member links each
+
+Subinterface scale
+1K subinterface per lag.
+
+
+GA -- Final release.. -- General Availability.
+
+EFT2 -- First Week June... Phase1
+
+BFD hardware some issues..
+
+
+    R1 -- R2 -- R3
+
+    LER
+     R1
+     Incoming -- Physical -- Routed
+     outgoing -- LAG  -- MPLS
+
+     Incoming -- LAG -- Routed
+     Outgoing -- Physical -- MPLS
+
+     Incoming -- LAG -- Routed
+     Outgoing -- LAG -- MPLS

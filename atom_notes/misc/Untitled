@@ -1,0 +1,24 @@
+AclSet = [
+    {
+        "Name": "switch1:acl_set_ipv4_1",
+        "name": "acl_set_ipv4_1",
+        "type": "ACL_IPV4",
+        "description": "ACL v4 policy for ingress",
+    },
+    {
+        "Name": "switch1:acl_set_ipv4_2",
+        "name": "acl_set_ipv4_2",
+        "type": "ACL_IPV4",
+        "description": "ACL v4 policy for ingress",
+    }
+]
+
+AclEntry = [
+    {"Name": "switch1:ingressv4_entry_ACCEPT_1", "sequence-id": 1, "description": "ACL switch1 ACCEPT entry 1",
+     "forwarding-action": "ACCEPT", "parent": "switch1:acl_set_ipv4_1", "ipv4": {"source-address": "70.70.0.2/32"}}
+]
+
+IntfAclSet = [
+    {"Name": "switch1:acl_intf2_ing_ipv4_ACCEPT_1", "parent": "switch1:bond20", "direction": constants.INGRESS_ACL,
+     "type": constants.ACL_IPV4, "set-name": "acl_set_ipv4_1"}
+]

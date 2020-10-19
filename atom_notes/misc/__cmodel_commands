@@ -1,0 +1,38 @@
+main_trunk( 13,14,100, 100 );
+
+create_vlan_vsi( 50,1050 );
+// create_vlan_vsi(vlan, vsi);
+
+add_trunk_to_vlan( 100, 50, 1050, 1, 600);
+//add_trunk_to_vlan( int tid, int vlan_id, int vsi_id, int tagged, int lif_id )
+
+
+BCM.0> cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint> main_trunk( 13,14,100, 100 );
+trunk gport is  create: gport=234881124
+bcm_dnx_trunk_set: adding member: local_port = 13, pp_port = 0, core_id = 1
+bcm_dnx_trunk_set: adding member: local_port = 14, pp_port = 2, core_id = 0
+trunk set
+Trunk #100 created with 2 ports
+cint> trunk_fec_id_subintf1 = create_trunk_subinterface_and_nh( 100, 50, 1050, 500, 2, 5 );
+** error: identifier 'trunk_fec_id_subintf1' undeclared
+** error: invalid operand(s) to '='
+cint> int trunk_fec_id_subintf1
+;
+cint> trunk_fec_id_subintf1 = create_trunk_subinterface_and_nh( 100, 50, 1050, 500, 2, 5 );
+ Adding gport to subinterface
+setting tpid
+setting tpid-2
+
+ TPID set complete
+setting egress vlan trans
+created ingress interface = 0x0000041a, on vlan = 50 in unit 0, vrf = 5
+int $$ = 0 (0x0)
+Created l3 egr nh 1074790401
+int $$ = 0 (0x0)
+Created ing nh 536923342
+cint> add_ip_route( 0x10101010, 0xffffffff, trunk_fec_id_subintf1 );
+int $$ = 0 (0x0)
+cint>

@@ -1,0 +1,238 @@
+Setting up fakeroot (1.21-3.1) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
+I: Copying back the cached apt archive contents
+I: Building the package
+I: Running cd /build/hsflowd-2.0.16.arcus1/ && env PATH="/usr/sbin:/usr/bin:/sbin:/bin" HOME="/nonexistent" dpkg-buildpackage -us -uc -b -rfakeroot
+dpkg-buildpackage: info: source package hsflowd
+dpkg-buildpackage: info: source version 2.0.16.arcus1
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Arrcus <support@arrcus.com>
+dpkg-buildpackage: info: host architecture amd64
+ dpkg-source --before-build hsflowd-2.0.16.arcus1
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+        make -j1 clean
+make[1]: Entering directory '/build/hsflowd-2.0.16.arcus1'
+cd src/sflow; make clean
+make[2]: Entering directory '/build/hsflowd-2.0.16.arcus1/src/sflow'
+rm -f sflow_agent.o sflow_sampler.o sflow_poller.o sflow_receiver.o libsflow.a
+make[2]: Leaving directory '/build/hsflowd-2.0.16.arcus1/src/sflow'
+cd src/json; make clean
+make[2]: Entering directory '/build/hsflowd-2.0.16.arcus1/src/json'
+rm -rf libcjson.so  libcjson.a test *.o
+make[2]: Leaving directory '/build/hsflowd-2.0.16.arcus1/src/json'
+PLATFORM=`uname`; \
+MYVER=`./getVersion`; \
+MYREL=`./getRelease`; \
+cd src/$PLATFORM; make VERSION=$MYVER RELEASE=$MYREL clean
+make[2]: Entering directory '/build/hsflowd-2.0.16.arcus1/src/Linux'
+$FEATURES is [ARRCUS] from file
+$XTGTS is [ARRCUS ARRCUS]
+rm -f hsflowd *.o *.so
+make[2]: Leaving directory '/build/hsflowd-2.0.16.arcus1/src/Linux'
+make[1]: Leaving directory '/build/hsflowd-2.0.16.arcus1'
+   dh_clean
+ debian/rules build
+dh build
+   dh_testdir
+   dh_update_autotools_config
+   dh_auto_configure
+   dh_auto_build
+        make -j1
+make[1]: Entering directory '/build/hsflowd-2.0.16.arcus1'
+cd src/sflow; make
+make[2]: Entering directory '/build/hsflowd-2.0.16.arcus1/src/sflow'
+gcc -D_GNU_SOURCE -DSTDC_HEADERS -O3 -DNDEBUG -Wall -Wcast-align -I. -c sflow_agent.c
+gcc -D_GNU_SOURCE -DSTDC_HEADERS -O3 -DNDEBUG -Wall -Wcast-align -I. -c sflow_sampler.c
+gcc -D_GNU_SOURCE -DSTDC_HEADERS -O3 -DNDEBUG -Wall -Wcast-align -I. -c sflow_poller.c
+gcc -D_GNU_SOURCE -DSTDC_HEADERS -O3 -DNDEBUG -Wall -Wcast-align -I. -c sflow_receiver.c
+ar cru libsflow.a sflow_agent.o sflow_sampler.o sflow_poller.o sflow_receiver.o
+ar: `u' modifier ignored since `D' is the default (see `U')                                                                                                                                                                                 ranlib libsflow.a
+make[2]: Leaving directory '/build/hsflowd-2.0.16.arcus1/src/sflow'
+cd src/json; make                                                                                                                                                                                                                           make[2]: Entering directory '/build/hsflowd-2.0.16.arcus1/src/json'
+cc -ansi -pedantic -c -fpic -g -O2 -fdebug-prefix-map=/build/hsflowd-2.0.16.arcus1=. -specs=/usr/share/dpkg/no-pie-compile.specs -fstack-protector-strong -Wformat -Werror=format-security -Wall -pedantic -fno-omit-frame-pointer -Wall -We
+rror -Wstrict-prototypes -Wwrite-strings -D_POSIX_C_SOURCE=200112L  cJSON.c                                                                                                                                                                 cc -shared -o libcjson.so  cJSON.o -specs=/usr/share/dpkg/no-pie-link.specs -Wl,-z,relro -Wl,-z,now -Wl,--as-needed
+ar rcs libcjson.a cJSON.o
+cc  cJSON.c test.c -o test -lm -I.                                                                                                                                                                                                          make[2]: Leaving directory '/build/hsflowd-2.0.16.arcus1/src/json'
+PLATFORM=`uname`; \                                                                                                                                                                                                                         MYVER=`./getVersion`; \
+MYREL=`./getRelease`; \
+cd src/$PLATFORM; make VERSION=$MYVER RELEASE=$MYREL
+make[2]: Entering directory '/build/hsflowd-2.0.16.arcus1/src/Linux'                                                                                                                                                                        $FEATURES is [ARRCUS] from file
+$XTGTS is [ARRCUS ARRCUS]                                                                                                                                                                                                                   gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c hsflowconfig.c                                                                                                                                                                                                                              gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+hsflowd.c                                                                                                                                                                                                                                   gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+evbus.c                                                                                                                                                                                                                                     gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c util.c                                                                                                                                                                                                                                      gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c readInterfaces.c                                                                                                                                                                                                                            gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+readCpuCounters.c
+gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+readMemoryCounters.c                                                                                                                                                                                                                        gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+readDiskCounters.c                                                                                                                                                                                                                          gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+readHidCounters.c                                                                                                                                                                                                                           gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+readNioCounters.c
+gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+readTcpipCounters.c
+gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+readPackets.c
+gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-o
+hsflowd hsflowconfig.o hsflowd.o evbus.o util.o readInterfaces.o readCpuCounters.o readMemoryCounters.o readDiskCounters.o readHidCounters.o readNioCounters.o readTcpipCounters.o readPackets.o  ../json/libcjson.a ../sflow/libsflow.a -lm
+ -pthread -ldl -lrt -rdynamic
+gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+mod_json.c
+ld -o mod_json.so mod_json.o -shared
+gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+mod_dnssd.c
+ld -o mod_dnssd.so mod_dnssd.o -shared -lresolv -lc
+gcc -std=gnu99 -I. -I../json -I../sflow  -DHSP_LOAD_ARRCUS -fPIC -g -O2 -D_GNU_SOURCE -DHSP_VERSION=2.0.16 -DUTHEAP -DHSP_OPTICAL_STATS -DHSP_MOD_DIR=/usr/lib/hsflowd/modules -Wall -Wstrict-prototypes -Wunused-value -Wunused-function-c
+mod_arrcus.c
+ld -o mod_arrcus.so mod_arrcus.o -shared
+make[2]: Leaving directory '/build/hsflowd-2.0.16.arcus1/src/Linux'
+make[1]: Leaving directory '/build/hsflowd-2.0.16.arcus1'
+   dh_auto_test
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot
+   dh_prep
+   dh_auto_install
+        make -j1 install DESTDIR=/build/hsflowd-2.0.16.arcus1/debian/hsflowd AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/build/hsflowd-2.0.16.arcus1'
+PLATFORM=`uname`; \
+MYVER=`./getVersion`; \
+MYREL=`./getRelease`; \
+cd src/$PLATFORM; make VERSION=$MYVER RELEASE=$MYREL INSTROOT=/build/hsflowd-2.0.16.arcus1/debian/hsflowd install
+make[2]: Entering directory '/build/hsflowd-2.0.16.arcus1/src/Linux'
+$FEATURES is [ARRCUS] from file
+$XTGTS is [ARRCUS ARRCUS]
+install -d /build/hsflowd-2.0.16.arcus1/debian/hsflowd/usr/sbin
+install -m 700 hsflowd /build/hsflowd-2.0.16.arcus1/debian/hsflowd/usr/sbin
+install -d /build/hsflowd-2.0.16.arcus1/debian/hsflowd/etc
+install -m 644 scripts/hsflowd.conf /build/hsflowd-2.0.16.arcus1/debian/hsflowd/etc
+install -d /build/hsflowd-2.0.16.arcus1/debian/hsflowd/lib/systemd/system
+install -m 644 scripts/hsflowd.service /build/hsflowd-2.0.16.arcus1/debian/hsflowd/lib/systemd/system/hsflowd.service
+install -d /build/hsflowd-2.0.16.arcus1/debian/hsflowd/etc/init.d
+install -m 755 scripts/hsflowd.deb /build/hsflowd-2.0.16.arcus1/debian/hsflowd/etc/init.d/hsflowd
+install -d /build/hsflowd-2.0.16.arcus1/debian/hsflowd/usr/lib/hsflowd/modules
+install -m 755 *.so /build/hsflowd-2.0.16.arcus1/debian/hsflowd/usr/lib/hsflowd/modules
+install -d /build/hsflowd-2.0.16.arcus1/debian/hsflowd/etc/dbus-1/system.d
+install -m 644 scripts/net.sflow.hsflowd.conf /build/hsflowd-2.0.16.arcus1/debian/hsflowd/etc/dbus-1/system.d
+make[2]: Leaving directory '/build/hsflowd-2.0.16.arcus1/src/Linux'
+make[1]: Leaving directory '/build/hsflowd-2.0.16.arcus1'
+dh_installdocs
+dh_installchangelogs
+dh_perl
+dh_link
+dh_strip_nondeterminism
+dh_compress
+dh_fixperms
+dh_strip
+dh_makeshlibs
+dh_shlibdeps
+dh_installdeb
+dh_gencontrol
+dh_md5sums
+dh_builddeb
+dpkg-deb: building package 'hsflowd-dbgsym' in '../hsflowd-dbgsym_2.0.16.arcus1_amd64.deb'.
+dpkg-deb: building package 'hsflowd' in '../hsflowd_2.0.16.arcus1_amd64.deb'.
+dpkg-genbuildinfo --build=binary
+dpkg-genchanges --build=binary >../hsflowd_2.0.16.arcus1_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+dpkg-source --after-build hsflowd-2.0.16.arcus1
+dpkg-buildpackage: info: binary-only upload (no source included)
+I: copying local configuration
+I: Copying back the cached apt archive contents
+I: unmounting /var/cache/pbuilder/local-packages filesystem
+I: unmounting dev/ptmx filesystem
+I: unmounting dev/pts filesystem
+I: unmounting dev/shm filesystem
+I: unmounting proc filesystem
+I: unmounting sys filesystem
+I: cleaning the build env
+I: removing directory /var/cache/pbuilder/build/15182 and its subdirectories
+I: Current time: Sun Mar 29 11:17:25 UTC 2020
+I: pbuilder-time-stamp: 1585480645
+touch packages/hsflowd.built
+     Successfully remade target file 'packages/hsflowd.built'.
+   Must remake target 'packages/hsflowd_2.0.16.arcus1_amd64.deb'.
+test -f packages/hsflowd_2.0.16.arcus1_amd64.deb
+touch packages/hsflowd_2.0.16.arcus1_amd64.deb
+   Successfully remade target file 'packages/hsflowd_2.0.16.arcus1_amd64.deb'.
+    File 'packages/librtr-dev_0.6.0_amd64.deb' does not exist.
+      File 'packages/rtrlib.built' does not exist.
+        File 'packages/librtr0_0.6.0.dsc' does not exist.
+       Must remake target 'packages/librtr0_0.6.0.dsc'.
+cd packages/ ; dpkg-source -b rtrlib
+dpkg-source: info: using source format '3.0 (native)'
+dpkg-source: info: building librtr0 in librtr0_0.6.0.tar.xz
+dpkg-source: info: building librtr0 in librtr0_0.6.0.tar.xz
+dpkg-source: info: building librtr0 in librtr0_0.6.0.dsc
+          Successfully remade target file 'packages/librtr0_0.6.0.dsc'.
+        Must remake target 'packages/rtrlib.built'.
+./scripts/micro-apt.py --apt-log --apt-url http://172.17.0.1:8888/ --apt-dir /home/vijayr-ovm/arrcus_rel/micro-apt --pkg-dir packages sudo env MICRO_APT_URL="http://172.17.0.1:8888/" pbuilder build --buildresult packages --debbuildopts
+-b  packages/librtr0_0.6.0.dsc
+W: /root/.pbuilderrc does not exist
+I: using fakeroot in build.
+I: pbuilder: network access will be disabled during build
+I: Current time: Sun Mar 29 11:17:26 UTC 2020
+I: pbuilder-time-stamp: 1585480646
+I: Building the build Environment
+I: extracting base tarball [/var/cache/pbuilder/base.tgz]
+^CTraceback (most recent call last):
+  File "<string>", line 8, in <module>
+Traceback (most recent call last):
+  File "./scripts/micro-apt.py", line 58, in <module>
+    if subprocess.call(args.command) != 0:
+  File "/usr/lib/python2.7/subprocess.py", line 168, in call
+  File "/usr/lib/python2.7/SocketServer.py", line 231, in serve_forever
+    return Popen(*popenargs, **kwargs).wait()
+  File "/usr/lib/python2.7/subprocess.py", line 1073, in wait
+    pid, sts = _eintr_retry_call(os.waitpid, self.pid, 0)
+  File "/usr/lib/python2.7/subprocess.py", line 121, in _eintr_retry_call
+    return func(*args)
+KeyboardInterrupt
+.depend:365: recipe for target 'packages/rtrlib.built' failed
+make: *** [packages/rtrlib.built] Interrupt
+
+
+
+
+#########  feature dependencies #########
+
+ALL:
+
+EOS:
+
+HOST:
+
+XEN: mod_xen.so OVS
+
+KVM: mod_kvm.so
+
+DOCKER: mod_docker.so
+
+ULOG: mod_ulog.so
+
+NFLOG: mod_nflog.so
+
+PCAP: mod_pcap.so
+
+TCP: mod_tcp.so
+
+NVML: mod_nvml.so
+
+OVS: mod_ovs.so
+
+CUMULUS: mod_cumulus.so
+
+OS10: mod_os10.so
+
+OPX: mod_opx.so
+
+DBUS: mod_dbus.so
+
+SYSTEMD: mod_systemd.so
+
+EAPI: mod_eapi.so
+
+ARRCUS: mod_arrcus.so

@@ -1,0 +1,4 @@
+Undo git commit --amend
+========================
+git branch fixing-things HEAD@{1}
+git reset fixing-things

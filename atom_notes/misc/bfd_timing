@@ -1,0 +1,20 @@
+[2000/02/02 22:03:53.149670][DEBUG][BFD_DSTORE_PRODUCER] bfd_dstore_publish_bfd_ipv4_peer_state(): Datastore add/update succeed for bfd ipv4 peer state
+[2000/02/02 22:03:53.149681][DEBUG][BFD_IPV4_PEER] bfd_ipv4_peer_state_object_api() 408: Success Create vrf 0x1 Local IP 3.1.1.2 remote ip 3.1.1.1 peer id 3275747917888913252State 1
+[2000/02/02 22:03:53.149690][DEBUG][BFD_IPV4_PEER] bfd_ipv4_peer_state_object_api(): Successful
+[2000/02/02 22:03:53.149697][DEBUG][BFD_IPV4_PEER] bfd_session_state_object_update_api 355: Success publishing the ipv4 peer stateSession 0x2d75cb602b7e7f64old state 3 new state 1
+[2000/02/02 22:03:53.149706][DEBUG][BFD_HOST] bfd_deinit_host_session_connection(): Calling a reset session
+[2000/02/02 22:03:53.149733][DEBUG][BFD_DSTORE_PRODUCER] Dstore delete succeed for bfd session 3275747917888913252
+[2000/02/02 22:03:53.149742][DEBUG][BFD_HOST] bfd_deinit_host_session_connection(): Success delete hw programming.
+[2000/02/02 22:03:53.149749][DEBUG][BFD_HOST] bfd_host_session_write_message(): ...
+[2000/02/02 22:03:53.149757][DEBUG][BFD_HOST] bfd_host_session_write_message(): SessionId: 0x2d75cb602b7e7f64 Pkt sent with [Down], diag 32, multi 3, length 24, my disc 240, your disc 256, des min tx:        150000, req min rx: 150000, echo rx 0
+
+
+
+
+  typedef enum bfd_session_state_e_ {
+    BFD_STATE_ADMIN_DOWN,
+    BFD_STATE_DOWN,                                                                                                                                                                                                 BFD_STATE_INIT,
+    BFD_STATE_UP,
+    BFD_STATE_UNKNOWN,
+    BFD_STATE_COUNT = BFD_STATE_UNKNOWN,
+  } bfd_session_state_e;

@@ -1,0 +1,3 @@
+LAG on J2 Medusa
+
+1. Need to distribute the LAGID on all LCs

@@ -1,0 +1,104 @@
+cint cint_utils_global.c
+cint cint_trunk.c
+cint
+
+int tid = 100;
+int p1 = 1;
+int p2 = 13;
+int p3 = 14;
+int p4 = 15;
+main_trunk(0, 0, 0, p1, p2, p3, p4, 0, tid);
+
+BCM_TRUNK_ID_SET(tid, 0, tid);
+
+existing_trunk_member_delete(0, tid, p1, 0);
+
+
+dump chg IPPE_PRT_PP_PORT_INFO
+
+dump chg IPPE_PRT_PTC_INFO
+
+BCM.0> dump chg IPPE_PRT_PTC_INFO
+IPPE_PRT_PTC_INFO.IPPE0[1]: <SRC_SYS_PORT=0x8064,IN_PP_PORT=0x25,>
+IPPE_PRT_PTC_INFO.IPPE0[13]: <SRC_SYS_PORT=0x8164,IN_PP_PORT=0x25,>
+IPPE_PRT_PTC_INFO.IPPE0[14]: <SRC_SYS_PORT=0x8264,IN_PP_PORT=0x25,>
+IPPE_PRT_PTC_INFO.IPPE0[15]: <SRC_SYS_PORT=0x8364,IN_PP_PORT=0x25,>
+
+
+BCM.0>
+BCM.0> dbal table dump table=TRUNK_MEMBERS
+====================================
+| Entries dump table TRUNK_MEMBERS |
+|   Total Entries: 4               |
+====================================
+| # | MEMBER_ || DST_              |
+|   | INDEX   || SYS_              |
+|   |         || PORT_             |
+|   |         || ID                |
+====================================
+| 0 | 6400    || 786433            |
+| 1 | 6401    || 786445            |
+| 2 | 6402    || 786446            |
+| 3 | 6403    || 786447            |
+====================================
+BCM.0>
+BCM.0>
+
+
+
+existing_trunk_member_delete(0, tid, p1, 0);
+
+
+BCM.0> dump chg IPPE_PRT_PTC_INFO
+IPPE_PRT_PTC_INFO.IPPE0[1]: <SRC_SYS_PORT=1,IN_PP_PORT=1,>
+IPPE_PRT_PTC_INFO.IPPE0[13]: <SRC_SYS_PORT=0x8164,IN_PP_PORT=0x25,>
+IPPE_PRT_PTC_INFO.IPPE0[14]: <SRC_SYS_PORT=0x8264,IN_PP_PORT=0x25,>
+IPPE_PRT_PTC_INFO.IPPE0[15]: <SRC_SYS_PORT=0x8364,IN_PP_PORT=0x25,>
+
+
+BCM.0>
+BCM.0> dbal table dump table=TRUNK_MEMBERS
+====================================
+| Entries dump table TRUNK_MEMBERS |
+|   Total Entries: 4               |
+====================================
+| # | MEMBER_ || DST_              |
+|   | INDEX   || SYS_              |
+|   |         || PORT_             |
+|   |         || ID                |
+====================================
+| 0 | 6400    || 786447            |
+| 1 | 6401    || 786445            |
+| 2 | 6402    || 786446            |
+| 3 | 6403    || 819199            |
+====================================
+BCM.0>
+
+
+existing_trunk_member_add(0, tid, p1, 0);
+
+
+BCM.0> dump chg IPPE_PRT_PTC_INFO
+IPPE_PRT_PTC_INFO.IPPE0[1]: <SRC_SYS_PORT=0x8464,IN_PP_PORT=0x25,>
+IPPE_PRT_PTC_INFO.IPPE0[13]: <SRC_SYS_PORT=0x8164,IN_PP_PORT=0x25,>
+IPPE_PRT_PTC_INFO.IPPE0[14]: <SRC_SYS_PORT=0x8264,IN_PP_PORT=0x25,>
+IPPE_PRT_PTC_INFO.IPPE0[15]: <SRC_SYS_PORT=0x8364,IN_PP_PORT=0x25,>
+
+
+BCM.0>
+BCM.0> dbal table dump table=TRUNK_MEMBERS
+====================================
+| Entries dump table TRUNK_MEMBERS |
+|   Total Entries: 4               |
+====================================
+| # | MEMBER_ || DST_              |
+|   | INDEX   || SYS_              |
+|   |         || PORT_             |
+|   |         || ID                |
+====================================
+| 0 | 6400    || 786447            |
+| 1 | 6401    || 786445            |
+| 2 | 6402    || 786446            |
+| 3 | 6403    || 786433            |
+====================================
+BCM.0>

@@ -1,0 +1,3 @@
+system ssh enable true
+system ssh permit true
+system 

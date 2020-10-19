@@ -1,0 +1,839 @@
+dbg1: selectAgentAddress
+dbg1: selectAgentAddress pegged to device in current settings
+dbg1: dbg1: my_os_calloc(32)
+selectAgentAddress selected agentIP with highest priority: device=swp1, address=10.10.10.1, previous=10.10.10.1, changed=NO
+dbg1: agentAddressChanged=NO
+dbg1: syncOutputFile
+dbg1: my_os_calloc(32)
+
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: dlopen(/usr/lib/hsflowd/modules/mod_pcap.so) failed : /usr/lib/hsflowd/modules/mod_pcap.so: cannot open shared object file: No such file or directory
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+root@switch3:~# hsflowd -dddd
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(256)
+dbg1: my_os_calloc(64)
+dbg2: myExec input> <# dmidecode 3.0
+>
+dbg2: myExec input> <Getting SMBIOS data from sysfs.
+>
+dbg2: myExec input> <SMBIOS 2.8 present.
+>
+dbg2: myExec input> <9 structures occupying 389 bytes.
+>
+dbg2: myExec input> <Table at 0x000F68C0.
+>
+dbg2: myExec input> <
+>
+dbg2: myExec input> <Handle 0x0000, DMI type 0, 24 bytes
+>                                                                                                                                                                                                    [675/922]
+dbg2: myExec input> <BIOS Information
+>
+dbg2: myExec input> <   Vendor: SeaBIOS
+>
+dbg2: myExec input> <   Version: 1.10.2-1ubuntu1
+>
+dbg2: myExec input> <   Release Date: 04/01/2014
+>
+dbg2: myExec input> <   Address: 0xE8000
+>
+dbg2: myExec input> <   Runtime Size: 96 kB
+>
+dbg2: myExec input> <   ROM Size: 64 kB
+>
+dbg2: myExec input> <   Characteristics:
+>
+dbg2: myExec input> <           BIOS characteristics not supported
+>
+dbg2: myExec input> <           Targeted content distribution is supported
+>
+dbg2: myExec input> <   BIOS Revision: 0.0
+>
+dbg2: myExec input> <
+>
+dbg2: myExec input> <Handle 0x0100, DMI type 1, 27 bytes
+>
+dbg2: myExec input> <System Information
+>
+dbg2: myExec input> <   Manufacturer: QEMU
+>
+dbg2: myExec input> <   Product Name: Standard PC (i440FX + PIIX, 1996)
+>
+dbg2: myExec input> <   Version: pc-i440fx-bionic
+>
+dbg2: myExec input> <   Serial Number: Not Specified
+>
+dbg2: myExec input> <   UUID: 4F6959D5-A847-491B-8A37-8F73EC0EDB11
+>
+dbg1: readSystemUUID: <4F6959D5-A847-491B-8A37-8F73EC0EDB11>
+dbg2: myExec callback returned NO
+started
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+autoload ARRCUS module
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+
+dbg1: my_os_calloc(128)
+dbg3: reading interface loopback10
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(512)
+dbg1: adaptor loopback10 came up
+dbg1: my_os_calloc(64)
+dbg3: reading interface swp2
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(512)
+dbg1: adaptor swp2 came up
+dbg1: device swp2 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg3: reading interface lo
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(512)
+dbg1: adaptor lo came up
+dbg1: my_os_calloc(64)
+dbg3: reading interface swp1
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(512)
+dbg1: adaptor swp1 came up
+dbg1: my_os_calloc(64)
+dbg3: reading interface sit0
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(512)
+dbg1: device sit0 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg1: my_os_calloc(256)
+dbg1: my_os_calloc(256)
+dbg3: reading interface management
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(512)
+dbg1: adaptor management came up
+dbg3: reading interface dummy0
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(512)
+dbg1: device dummy0 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg3: reading interface ma1
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(512)
+dbg1: adaptor ma1 came up
+dbg1: my_os_calloc(64)
+dbg1: setAddressPriorities
+dbg1: adaptor swp1 has v6 address fe80000000000000505400fffe039454 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor loopback10 has v6 address fe80000000000000dc558ffffedb6122 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor ma1 has v6 address fe80000000000000505400fffe3acc22 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor lo has v6 address 00000000000000000000000000000001 with scope 0x10
+dbg1: my_os_calloc(64)
+dbg1: adaptor swp2 has v6 address fe80000000000000505400fffe8ca838 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(256)
+dbg1: adaptor ma1 has v6 address 2600170004706f3f0010000901010546 with scope 0x0
+dbg1: my_os_calloc(64)
+dbg1: selectAgentAddress
+dbg1: selectAgentAddress pegged to device in config file
+dbg1: my_os_calloc(32)
+dbg1: selectAgentAddress selected agentIP with highest priority: device=swp1, address=10.10.10.1, previous=0.0.0.0, changed=YES
+dbg1: Using UUID read from BIOS (dmidecode)
+dbg1: creating sfl agent
+dbg1: my_os_calloc(2048)
+dbg1: my_os_calloc(16384)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(256)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: dlopen(/usr/lib/hsflowd/modules/mod_pcap.so) failed : /usr/lib/hsflowd/modules/mod_pcap.so: cannot open shared object file: No such file or directory
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(256)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(256)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(512)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg3: installSFlowSettings: <hostname=switch3
+sampling=10
+header=128
+datagram=1400
+polling=10
+agentIP=10.10.10.1
+agent=swp1
+ds_index=1
+collector=10.9.208.50 6343
+collector=127.0.0.1 6343
+>
+dbg3: installSFlowSettings: detected new config
+dbg1: my_os_calloc(128)
+dbg3: reading interface loopback10
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(512)
+dbg1: ETHTOOL_GMODULEINF0 loopback10 failed : Operation not supported
+dbg3: reading interface swp2
+dbg1: my_os_calloc(32)
+dbg1: device swp2 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg1: ETHTOOL_GMODULEINF0 swp2 failed : Operation not supported
+dbg1: setAdaptorSpeed(ETHTOOL_GLINKSETTINGS1): swp2 ifSpeed == 0 (changed=NO)
+dbg3: reading interface lo
+dbg1: ETHTOOL_GMODULEINF0 lo failed : Operation not supported
+dbg3: reading interface swp1
+dbg1: ETHTOOL_GMODULEINF0 swp1 failed : Operation not supported
+dbg1: setAdaptorSpeed(ETHTOOL_GLINKSETTINGS1): swp1 ifSpeed == 0 (changed=NO)
+dbg3: reading interface sit0
+dbg1: device sit0 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg1: my_os_calloc(512)
+dbg1: adaptorAddOrReplace: replacing adaptor [ifindex: 7 peer: 0 nmacs: 1 mac0: 000000000A01 name: sit0] with [ifindex: 7 peer: 0 nmacs: 1 mac0: 000000000000 name: sit0]
+dbg1: my_os_calloc(512)
+dbg1: adaptorAddOrReplace: replacing adaptor [ifindex: 1 peer: 0 nmacs: 1 mac0: 000000000000 name: lo]with [ifindex: 7 peer: 0 nmacs: 1 mac0: 000000000000 name: sit0]
+dbg1: my_os_calloc(512)
+dbg1: adaptorAddOrReplace: replacing adaptor [ifindex: 7 peer: 0 nmacs: 1 mac0: 000000000A01 name: sit0] with [ifindex: 7 peer: 0 nmacs: 1 mac0: 000000000000 name: sit0]
+dbg3: reading interface management
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(32)
+[297/922]
+dbg1: my_os_calloc(512)
+dbg1: ETHTOOL_GMODULEINF0 management failed : Operation not supported
+dbg3: reading interface dummy0
+dbg1: device dummy0 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg3: reading interface ma1
+dbg1: my_os_calloc(64)
+dbg1: ETHTOOL_GMODULEINF0 ma1 failed : Operation not supported
+dbg1: setAdaptorSpeed(ETHTOOL_GLINKSETTINGS1): ma1 ifSpeed == 0 (changed=NO)
+dbg1: setAddressPriorities
+dbg1: adaptor swp1 has v6 address fe80000000000000505400fffe039454 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor loopback10 has v6 address fe80000000000000dc558ffffedb6122 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor ma1 has v6 address fe80000000000000505400fffe3acc22 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor lo has v6 address 00000000000000000000000000000001 with scope 0x10
+dbg1: my_os_calloc(64)
+dbg1: adaptor swp2 has v6 address fe80000000000000505400fffe8ca838 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor ma1 has v6 address 2600170004706f3f0010000901010546 with scope 0x0
+dbg1: my_os_calloc(64)
+Arena 0:
+system bytes     =     135168
+in use bytes     =      50272
+Total (incl. mmap):
+system bytes     =     135168
+in use bytes     =      50272
+max mmap regions =          0
+max mmap bytes   =          0
+dbg1: evt_config_first: first valid configuration
+dbg3: installSFlowSettings: announcing config change
+dbg1: main: evt_config_changed()
+dbg1: new arrcus switchport detected: swp1
+dbg1: new arrcus switchport detected: swp2
+dbg1: swp1 (speed=0) using global_default sampling rate = 10
+dbg1: disable sampling rate for switch-port swp1
+dbg1: sit0 (speed=0) using interface_down sampling rate = 0
+dbg1: lo (speed=0) using global_default sampling rate = 10
+dbg1: dummy0 (speed=0) using interface_down sampling rate = 0
+dbg1: loopback10 (speed=0) using global_default sampling rate = 10
+dbg1: ma1 (speed=0) using global_default sampling rate = 10
+dbg1: swp2 (speed=0) using global_default sampling rate = 10
+dbg1: disable sampling rate for switch-port swp2
+dbg1: management (speed=0) using global_default sampling rate = 10
+dbg1: my_os_calloc(32)
+failed to open plugin library
+dbg1: failed to open plugin library
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: evt_config_shake: reply from poll
+
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(1024)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(256)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(32)
+dbg1: handle event packet config changed
+failed to find ifindex: No such device
+failed to find ifindex: No such device
+failed to open plugin library
+dbg1: failed to open plugin library
+dbg1: my_os_calloc(32)
+dbg1: evt_config_shake: reply from packet
+dbg1: evt_config_shake: sync complete
+dbg1: my_os_calloc(32)
+dbg1: drop_priviliges: getuid=0
+retaining root privileges because: needed to set Arrcus specifics
+dbg1: not relinquishing root privileges
+getrlimit(__RLIMIT_MEMLOCK) = 65536 (max=65536)
+getrlimit(__RLIMIT_NPROC) = 7953 (max=7953)
+getrlimit(RLIMIT_STACK) = 8388608 (max=4294967295)
+getrlimit(RLIMIT_CORE) = 0 (max=4294967295)
+getrlimit(RLIMIT_CPU) = 4294967295 (max=4294967295)
+getrlimit(RLIMIT_DATA) = 4294967295 (max=4294967295)
+getrlimit(RLIMIT_FSIZE) = 4294967295 (max=4294967295)
+getrlimit(__RLIMIT_RSS) = 4294967295 (max=4294967295)
+getrlimit(RLIMIT_NOFILE) = 1024 (max=4096)
+getrlimit(RLIMIT_AS) = 4294967295 (max=4294967295)
+getrlimit(__RLIMIT_LOCKS) = 4294967295 (max=4294967295)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(64)
+dbg1: my_os_calloc(128)
+dbg3: reading interface loopback10
+dbg1: my_os_calloc(128)
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(64)
+dbg3: reading interface swp2
+dbg1: device swp2 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg1: setAdaptorSpeed(ETHTOOL_GLINKSETTINGS1): swp2 ifSpeed == 0 (changed=NO)
+dbg3: reading interface lo
+dbg1: my_os_calloc(64)
+dbg3: reading interface swp1
+dbg1: my_os_calloc(64)
+dbg1: setAdaptorSpeed(ETHTOOL_GLINKSETTINGS1): swp1 ifSpeed == 0 (changed=NO)
+dbg3: reading interface sit0
+dbg1: device sit0 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg3: reading interface management
+dbg3: reading interface dummy0
+dbg1: device dummy0 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg3: reading interface ma1
+dbg1: my_os_calloc(64)
+dbg1: setAdaptorSpeed(ETHTOOL_GLINKSETTINGS1): ma1 ifSpeed == 0 (changed=NO)
+dbg1: setAddressPriorities
+dbg1: adaptor swp1 has v6 address fe80000000000000505400fffe039454 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor loopback10 has v6 address fe80000000000000dc558ffffedb6122 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor ma1 has v6 address fe80000000000000505400fffe3acc22 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor lo has v6 address 00000000000000000000000000000001 with scope 0x10
+dbg1: my_os_calloc(64)
+dbg1: adaptor swp2 has v6 address fe80000000000000505400fffe8ca838 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor ma1 has v6 address 2600170004706f3f0010000901010546 with scope 0x0
+dbg1: my_os_calloc(64)
+dbg1: interfaces added: 0 removed: 0 cameup: 0 wentdown: 0 changed: 0
+dbg1: selectAgentAddress
+dbg1: selectAgentAddress pegged to device in current settings
+dbg1: dbg1: my_os_calloc(32)
+selectAgentAddress selected agentIP with highest priority: device=swp1, address=10.10.10.1, previous=10.10.10.1, changed=NO
+dbg1: agentAddressChanged=NO
+dbg1: syncOutputFile
+dbg1: my_os_calloc(32)
+dbg1: my_os_calloc(32)
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg1: my_os_calloc(32)
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+
+dbg3: detectInterfaceChange: testing lo
+dbg3: detectInterfaceChange: testing loopback10
+dbg3: detectInterfaceChange: testing swp2
+dbg3: detectInterfaceChange: testing dummy0
+dbg3: detectInterfaceChange: testing swp1
+dbg3: detectInterfaceChange: testing management
+dbg3: detectInterfaceChange: testing sit0
+dbg3: detectInterfaceChange: testing ma1
+dbg3: reading interface loopback10
+dbg3: reading interface swp2
+dbg1: device swp2 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg1: setAdaptorSpeed(ETHTOOL_GLINKSETTINGS1): swp2 ifSpeed == 0 (changed=NO)
+dbg3: reading interface lo
+dbg3: reading interface swp1
+dbg1: setAdaptorSpeed(ETHTOOL_GLINKSETTINGS1): swp1 ifSpeed == 0 (changed=NO)
+dbg3: reading interface sit0
+dbg1: device sit0 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg3: reading interface management
+dbg3: reading interface dummy0
+dbg1: device dummy0 Get SIOCGIFADDR failed : Cannot assign requested address
+dbg3: reading interface ma1
+dbg1: setAdaptorSpeed(ETHTOOL_GLINKSETTINGS1): ma1 ifSpeed == 0 (changed=NO)
+dbg1: setAddressPriorities
+dbg1: adaptor swp1 has v6 address fe80000000000000505400fffe039454 with scope 0x20
+dbg1: adaptor loopback10 has v6 address fe80000000000000dc558ffffedb6122 with scope 0x20
+dbg1: adaptor ma1 has v6 address fe80000000000000505400fffe3acc22 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor lo has v6 address 00000000000000000000000000000001 with scope 0x10
+
+dbg1: my_os_calloc(64)
+dbg1: adaptor swp2 has v6 address fe80000000000000505400fffe8ca838 with scope 0x20
+dbg1: my_os_calloc(64)
+dbg1: adaptor ma1 has v6 address 2600170004706f3f0010000901010546 with scope 0x0
+dbg1: my_os_calloc(64)
+dbg1: interfaces added: 0 removed: 0 cameup: 0 wentdown: 0 changed: 0
+dbg1: selectAgentAddress
+dbg1: selectAgentAddress pegged to device in current settings
+dbg1: selectAgentAddress selected agentIP with highest priority: device=swp1, address=10.10.10.1, previous=10.10.10.1, changed=NO
+dbg1: agentAddressChanged=NO
+
+^CReceived SIGINT
+root@switch3:~#
+
+enable sflow on interface  ${switchlist} ${ni_mgmt} ${sampling_rate} ${collector_ip} ${intf_lists} ${swp_interface1} ${dir_in}
+#    configure source loopback interface  ${switchlist} ${collector_ip} ${user_name} ${password}
+i
+def enable_sflow_on_interface(self, switchlist, network_instance, sampling_rate, collector_ip, source_intf_list, intf, dir):
+
+       for i, switch in enumerate(switchlist):
+           commands = ["config", "sflow global source-interface {}".format(source_intf_list[i]), "commit", "end"]
+           switch_obj = self.tfw.get_object(switch)
+           response = switch_obj.run_cli_commands(commands)
+
+       commands = ["config", "sflow global network-instance {}".format(network_instance), "commit", "end"]
+       for switch in switchlist:
+           switch_obj = self.tfw.get_object(switch)
+           response = switch_obj.run_cli_commands(commands)
+
+       commands = ["config", "sflow global packet-sampling-rate {}".format(sampling_rate), "commit", "end"]
+       for switch in switchlist:
+           switch_obj = self.tfw.get_object(switch)
+           response = switch_obj.run_cli_commands(commands)
+
+       commands = ["config", "sflow global ipv4 collector {}".format(collector_ip), "commit", "end"]
+       for switch in switchlist:
+           switch_obj = self.tfw.get_object(switch)
+           response = switch_obj.run_cli_commands(commands)
+
+       commands = ["config", "sflow interface {} {} packet-sampling-rate 10".format(intf, dir), "commit", "end"]
+       for switch in switchlist:
+           switch_obj = self.tfw.get_object(switch)
+           response = switch_obj.run_cli_commands(commands)
+
+       return True
+
+
+def enable_sflow_on_interface(self, switchlist, network_instance, sampling_rate, collector_ip, source_intf_list, intf, dir):
+
+
+    return True
+
+
+for i, switch in enumerate(switchlist):
+    commands = ["config", "sflow global source-interface {}".format(source_intf_list[i]), "commit", "end"]
+    switch_obj = self.tfw.get_object(switch)
+    response = switch_obj.run_cli_commands(commands)
+
+commands = ["config", "sflow global network-instance {}".format(network_instance), "commit", "end"]
+for switch in switchlist:
+    switch_obj = self.tfw.get_object(switch)
+    response = switch_obj.run_cli_commands(commands)
+
+commands = ["config", "sflow global packet-sampling-rate {}".format(sampling_rate), "commit", "end"]
+for switch in switchlist:
+    switch_obj = self.tfw.get_object(switch)
+    response = switch_obj.run_cli_commands(commands)
+
+commands = ["config", "sflow global ipv4 collector {}".format(collector_ip), "commit", "end"]
+for switch in switchlist:
+    switch_obj = self.tfw.get_object(switch)
+    response = switch_obj.run_cli_commands(commands)
+
+
+
+    verify source interface  ${other_sflowlist}
+
+
+commands = ["config", "sflow interface {} {} packet-sampling-rate 10".format(intf, dir), "commit", "end"]
+for switch in switchlist:
+    switch_obj = self.tfw.get_object(switch)
+    response = switch_obj.run_cli_commands(commands)
+
+
+    def configure_source_loopback_interface(self, sflowlist):
+ #       for sflow in sflowlist:
+ #           sflow_obj = self.tfw.get_object(sflow)
+ #           sflow_obj.config.source_interface = "loopback0"
+ #           if str(sflow_obj.state.source_interface) != "loopback0":
+ #               raise Exception(
+ #                   "source_interface value not reflected in state for {}. Expected: loopback0 Received: {}".format(sflow,
+ #                                                                                                             str(
+ #                                                                                                                 sflow_obj.state.source_interface)),
+ #                   False)
+        for switch in sflowlist:
+            commands = ["config", "sflow global source-interface {}".format("loopback0"), "commit", "end"]
+            switch_obj = self.tfw.get_object(switch)
+            response = switch_obj.run_cli_commands(commands)
+
+            filename = "/etc/hsflowd.conf"
+            switchname = switch.split(":")[0]
+            switch_obj = self.tfw.get_object(switchname)
+            command = "cat {}".format(filename)
+            file_contents = switch_obj.run_ssh_command(command)
+            contents_of_hsflowd = file_contents.strip(" ").split("\r\n")
+            a = contents_of_hsflowd[8].split("= ")
+            if (str(a[1]) != 'loopback0'):
+                raise Exception(
+                    "source_interface value not reflected in state for {} in hsflowd file. Expected: loopback0 Received: {}".format(
+                        sflow, str(a[1])),
+                    False)
+        return True
+
+
+        def configure_source_loopback_interface(self, switchlist):
+
+            for sflow in sflowlist:
+                sflow_obj = self.tfw.get_object(sflow)
+                sflow_obj.config.source_interface = "ma1"
+                if str(sflow_obj.state.source_interface) != "ma1":
+                    raise Exception(
+                        "source_interface value not reflected in state for {}. Expected: ma1 Received: {}".format(sflow,
+                                                                                                                  str(
+                                                                                                                      sflow_obj.state.source_interface)),
+                        False)
+
+                filename = "/etc/hsflowd.conf"
+                switchname = sflow.split(":")[0]
+                switch_obj = self.tfw.get_object(switchname)
+                command = "cat {}".format(filename)
+                file_contents = switch_obj.run_ssh_command(command)
+                contents_of_hsflowd = file_contents.strip(" ").split("\r\n")
+                a = contents_of_hsflowd[8].split("= ")
+                if (str(a[1]) != 'ma1'):
+                    raise Exception(
+                        "source_interface value not reflected in state for {} in hsflowd file. Expected: ma1 Received: {}".format(
+                            sflow, str(a[1])),
+                        False)
+            return True
+            for switch in switchlist:
+                commands = ["config", "sflow global source-interface {}".format("loopback0"), "commit", "end"]
+                switch_obj = self.tfw.get_object(switch)
+                response = switch_obj.run_cli_commands(commands)
+
+                if str(switch_obj.state.source_interface) != "loopback0":
+                    raise Exception(
+                                "source_interface value not reflected in state for {}. Expected: loopback0 Received: {}".format(sflow,
+                                                                                        str(switch_obj.state.source_interface)), False)
+
+                filename = "/etc/hsflowd.conf"
+                switchname = switch.split(":")[0]
+                switch_obj = self.tfw.get_object(switchname)
+                command = "cat {}".format(filename)
+                file_contents = switch_obj.run_ssh_command(command)
+                contents_of_hsflowd = file_contents.strip(" ").split("\r\n")
+                a = contents_of_hsflowd[8].split("= ")
+                if (str(a[1]) != 'loopback0'):
+                    raise Exception(
+                        "source_interface value not reflected in state for {} in hsflowd file. Expected: loopback0 Received: {}".format(
+                            switch, str(a[1])),
+                        False)
+            return True
+
+
+            def configure_source_loopback_interface(self, sflowlist):
+
+                for switch in switchlist:
+                    commands = ["config", "sflow global source-interface {}".format("loopback0"), "commit", "end"]
+                    switch_obj = self.tfw.get_object(switch)
+                    response = switch_obj.run_cli_commands(commands)
+
+                    if str(switch_obj.state.source_interface) != "loopback0":
+                        raise Exception(
+                                    "source_interface value not reflected in state for {}. Expected: loopback0 Received: {}".format(sflow,
+                                                                                            str(switch_obj.state.source_interface)), False)
+
+                    filename = "/etc/hsflowd.conf"
+                    switchname = switch.split(":")[0]
+                    switch_obj = self.tfw.get_object(switchname)
+                    command = "cat {}".format(filename)
+                    file_contents = switch_obj.run_ssh_command(command)
+                    contents_of_hsflowd = file_contents.strip(" ").split("\r\n")
+                    a = contents_of_hsflowd[8].split("= ")
+                    if (str(a[1]) != 'loopback0'):
+                        raise Exception(
+                            "source_interface value not reflected in state for {} in hsflowd file. Expected: loopback0 Received: {}".format(
+                                switch, str(a[1])),
+                            False)
+                return True

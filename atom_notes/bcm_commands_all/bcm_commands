@@ -1,0 +1,548 @@
+cint> main_trunk( 13,14,100, 100 );
+trunk gport is  create: gport=234881124
+bcm_dnx_trunk_set: adding member: local_port = 13, pp_port = 0, core_id = 1
+bcm_dnx_trunk_set: adding member: local_port = 14, pp_port = 2, core_id = 0
+trunk set pm.core 1
+Trunk #100 created with 2 ports
+
+
+
+
+dbal table dump table=TRUNK_MEMBERS
+dbal table dump table=TRUNK_ATTRIBUTES
+
+BCM.0>
+BCM.0>
+BCM.0> dbal table dump table=TRUNK_ATTRIBUTES
+==========================================
+| Entries dump table TRUNK_ATTRIBUTES    |
+|   Result type  PSC_MULTIPLY_AND_DIVIDE |
+|   Total Entries: 1                     |
+==========================================
+| # | GROUP_ | POOL_ || MAX_             |
+|   | INDEX  | INDEX || MEMBER           |
+==========================================
+| 0 | 100    | 0     || 1                |
+==========================================
+=======================================
+| Entries dump table TRUNK_ATTRIBUTES |
+|   Result type  PSC_SMOOTH_DIVISION  |
+|   Total Entries: 0                  |
+=======================================
+=========================================
+| Entries dump table TRUNK_ATTRIBUTES   |
+|   Result type  PSC_CONSISTANT_HASHING |
+|   Total Entries: 0                    |
+=========================================
+BCM.0>
+BCM.0>
+BCM.0> dbal table dump table=TRUNK_MEMBERS
+====================================
+| Entries dump table TRUNK_MEMBERS |
+|   Total Entries: 2               |
+====================================
+| # | MEMBER_ || DST_              |
+|   | INDEX   || SYS_              |
+|   |         || PORT_             |
+|   |         || ID                |
+====================================
+| 0 | 6400    || 786445            |
+| 1 | 6401    || 786446            |
+====================================
+
+Association of a system port with a TM port/local port
+
+BCM.0> dbal table dump table=SYSTEM_SYSPORT_MODPORT_MAP
+=================================================
+| Entries dump table SYSTEM_SYSPORT_MODPORT_MAP |
+|   Total Entries: 46                           |
+=================================================
+| #  | CORE_ | DST_  || FAP_ | TM_              |
+|    | ID    | SYS_  || ID   | PORT             |
+|    |       | PORT_ ||      |                  |
+|    |       | ID    ||      |                  |
+=================================================
+| 0  |  1    | 0     || 0    | 0                |
+| 1  |  1    | 1     || 0    | 1                |
+| 2  |  1    | 13    || 1    | 13               |
+| 3  |  1    | 14    || 0    | 14               |
+| 4  |  1    | 15    || 0    | 15               |
+| 5  |  1    | 16    || 0    | 16               |
+| 6  |  1    | 17    || 1    | 17               |
+| 7  |  1    | 40    || 0    | 40               |
+| 8  |  1    | 200   || 0    | 200              |
+| 9  |  1    | 201   || 0    | 201              |
+| 10 |  1    | 202   || 0    | 202              |
+| 11 |  1    | 203   || 0    | 203              |
+| 12 |  1    | 218   || 0    | 218              |
+| 13 |  1    | 219   || 1    | 219              |
+| 14 |  1    | 221   || 0    | 221              |
+| 15 |  1    | 222   || 1    | 222              |
+| 16 |  1    | 230   || 0    | 230              |
+| 17 |  1    | 232   || 0    | 232              |
+| 18 |  1    | 233   || 0    | 233              |
+| 19 |  1    | 240   || 0    | 240              |
+| 20 |  1    | 254   || 0    | 255              |
+| 21 |  1    | 255   || 1    | 255              |
+| 22 |  1    | 32766 || 1    | 255              |
+| 23 |  0    | 0     || 0    | 0                |
+| 24 |  0    | 1     || 0    | 1                |
+| 25 |  0    | 13    || 1    | 13               |
+| 26 |  0    | 14    || 0    | 14               |
+| 27 |  0    | 15    || 0    | 15               |
+| 28 |  0    | 16    || 0    | 16               |
+| 29 |  0    | 17    || 1    | 17               |
+| 30 |  0    | 40    || 0    | 40               |
+| 31 |  0    | 200   || 0    | 200              |
+| 32 |  0    | 201   || 0    | 201              |
+| 33 |  0    | 202   || 0    | 202              |
+| 34 |  0    | 203   || 0    | 203              |
+| 35 |  0    | 218   || 0    | 218              |
+| 36 |  0    | 219   || 1    | 219              |
+| 37 |  0    | 221   || 0    | 221              |
+| 38 |  0    | 222   || 1    | 222              |
+| 39 |  0    | 230   || 0    | 230              |
+| 40 |  0    | 232   || 0    | 232              |
+| 41 |  0    | 233   || 0    | 233              |
+| 42 |  0    | 240   || 0    | 240              |
+| 43 |  0    | 254   || 0    | 255              |
+| 44 |  0    | 255   || 1    | 255              |
+| 45 |  0    | 32766 || 0    | 255              |
+=================================================
+
+Actual Sysport to Modport taBLe
+
+BCM.0>
+BCM.0> dbal table dump table=SYSTEM_PP_DSP_MAPPING
+=============================================
+| Entries dump table SYSTEM_PP_DSP_MAPPING  |
+|   Total Entries: 22                       |
+=============================================
+| #  | CORE_ | PP_ || TM_  | PP_  | SYSTEM_ |
+|    | ID    | DSP || PORT | PORT | PORT    |
+=============================================
+| 0  |  1    | 13  || 13   | 24   | 32868   |
+| 1  |  1    | 17  || 17   | 1    | 17      |
+| 2  |  1    | 219 || 219  | 22   | 219     |
+| 3  |  1    | 222 || 222  | 23   | 222     |
+| 4  |  1    | 255 || 255  | 0    | 255     |
+| 5  |  0    | 0   || 0    | 0    | 0       |
+| 6  |  0    | 1   || 1    | 1    | 1       |
+| 7  |  0    | 14  || 14   | 36   | 33124   |
+| 8  |  0    | 15  || 15   | 3    | 15      |
+| 9  |  0    | 16  || 16   | 4    | 16      |
+| 10 |  0    | 40  || 40   | 5    | 40      |
+| 11 |  0    | 200 || 200  | 26   | 200     |
+| 12 |  0    | 201 || 201  | 27   | 201     |
+| 13 |  0    | 202 || 202  | 28   | 202     |
+| 14 |  0    | 203 || 203  | 29   | 203     |
+| 15 |  0    | 218 || 218  | 30   | 218     |
+| 16 |  0    | 221 || 221  | 31   | 221     |
+| 17 |  0    | 230 || 230  | 32   | 230     |
+| 18 |  0    | 232 || 232  | 33   | 232     |
+| 19 |  0    | 233 || 233  | 34   | 233     |
+| 20 |  0    | 240 || 240  | 35   | 240     |
+| 21 |  0    | 255 || 255  | 0    | 254     |
+=============================================
+PP port to sysport mapping for LAG
+BCM.0>
+BCM.0>
+BCM.0> dump chg IPPE_PRT_PP_PORT_INFO
+BCM.0> dump chg IPPE_PRT_PP_PORT_INFO
+IPPE_PRT_PP_PORT_INFO.IPPE0[1]: <SRC_SYS_PORT=1,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[2]: <SRC_SYS_PORT=0xe,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[3]: <SRC_SYS_PORT=0xf,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[4]: <SRC_SYS_PORT=0x10,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[5]: <SRC_SYS_PORT=0x28,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[6]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[7]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[8]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[9]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[10]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[11]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[12]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[13]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[14]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[15]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[16]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[17]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[18]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[19]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[20]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[21]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[22]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[23]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[24]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[25]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[26]: <SRC_SYS_PORT=0xc8,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[27]: <SRC_SYS_PORT=0xc9,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[28]: <SRC_SYS_PORT=0xca,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[29]: <SRC_SYS_PORT=0xcb,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[30]: <SRC_SYS_PORT=0xda,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[31]: <SRC_SYS_PORT=0xdd,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[32]: <SRC_SYS_PORT=0xe6,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[33]: <SRC_SYS_PORT=0xe8,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[34]: <SRC_SYS_PORT=0xe9,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[35]: <SRC_SYS_PORT=0xf0,>
+IPPE_PRT_PP_PORT_INFO.IPPE0[36]: <SRC_SYS_PORT=0x8064,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[0]: <SRC_SYS_PORT=0xd,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[1]: <SRC_SYS_PORT=0x11,PARSING_CONTEXT=1,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[2]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[3]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[4]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[5]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[6]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[7]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[8]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[9]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[10]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[11]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[12]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[13]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[14]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[15]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[16]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[17]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[18]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[19]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[20]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[21]: <PARSING_CONTEXT=0x1e,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[22]: <SRC_SYS_PORT=0xdb,>
+IPPE_PRT_PP_PORT_INFO.IPPE1[23]: <SRC_SYS_PORT=0xde,>
+
+
+
+Vlan domain to pp port.
+
+BCM.0> dump chg IPPE_PP_PORT_TO_VD
+IPPE_PP_PORT_TO_VD.IPPE0[1]: <VLAN_DOMAIN=1>
+IPPE_PP_PORT_TO_VD.IPPE0[2]: <VLAN_DOMAIN=0xe>
+IPPE_PP_PORT_TO_VD.IPPE0[3]: <VLAN_DOMAIN=0xf>
+IPPE_PP_PORT_TO_VD.IPPE0[4]: <VLAN_DOMAIN=0x10>
+IPPE_PP_PORT_TO_VD.IPPE0[5]: <VLAN_DOMAIN=0x28>
+IPPE_PP_PORT_TO_VD.IPPE0[26]: <VLAN_DOMAIN=0xc8>
+IPPE_PP_PORT_TO_VD.IPPE0[27]: <VLAN_DOMAIN=0xc9>
+IPPE_PP_PORT_TO_VD.IPPE0[28]: <VLAN_DOMAIN=0xca>
+IPPE_PP_PORT_TO_VD.IPPE0[29]: <VLAN_DOMAIN=0xcb>
+IPPE_PP_PORT_TO_VD.IPPE0[36]: <VLAN_DOMAIN=0x64>
+IPPE_PP_PORT_TO_VD.IPPE1[0]: <VLAN_DOMAIN=0xd>
+IPPE_PP_PORT_TO_VD.IPPE1[1]: <VLAN_DOMAIN=0x11>
+IPPE_PP_PORT_TO_VD.IPPE1[24]: <VLAN_DOMAIN=0x64>
+
+
+
+vis port -- should show the pp ports disappear
+
+port 13 and port 14 are part of LAG and hence their pp ports disappear.
+BCM.0> vis  port
+=========================================================================================
+| Visibility Status Per Port                                                            |
+=========================================================================================
+| Name          | PP   | TM   | Type       | Core | Ingress | Ingress | Egress | Egress |
+|               | Port | Port |            |      | Enable  | Force   | Enable | Force  |
+=========================================================================================
+| cpu0          | 0    | 0    | CPU        | 0    | 1       | 1       | 1      | 1      |
+| eth1          | 1    | 1    | NIF_ETH    | 0    | 1       | 1       | 1      | 1      |
+| eth13         | N/A  | 13   | NIF_ETH    | 1    | N/A     | N/A     | 1      | 1      |
+| eth14         | N/A  | 14   | NIF_ETH    | 0    | N/A     | N/A     | 1      | 1      |
+| eth15         | 3    | 15   | NIF_ETH    | 0    | 1       | 1       | 1      | 1      |
+| eth16         | 4    | 16   | NIF_ETH    | 0    | 1       | 1       | 1      | 1      |
+| eth17         | 1    | 17   | NIF_ETH    | 1    | 1       | 1       | 1      | 1      |
+| rcy40         | 5    | 40   | RCY        | 0    | 1       | 1       | 1      | 1      |
+
+
+
+add_trunk_to_vlan( 100, 50, 1050, 1, 600);
+//add_trunk_to_vlan( int tid, int vlan_id, int vsi_id, int tagged, int lif_id )
+
+add_port_to_vlan( 15, 50, 1050, 1, 601);
+BCM.0>
+BCM.0> dump chg IPPF_VLAN_MEMBERSHIP_TABLE
+IPPF_VLAN_MEMBERSHIP_TABLE.IPPF0[1]: <VLAN_PORT_MEMBER_LINE=0x00000000000000000000000000000000000000000000000000000000000000000000000000000f0000000000000000000000000000000000000001000003e002,>
+IPPF_VLAN_MEMBERSHIP_TABLE.IPPF0[50]: <VLAN_PORT_MEMBER_LINE=0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001,>
+IPPF_VLAN_MEMBERSHIP_TABLE.IPPF1[1]: <VLAN_PORT_MEMBER_LINE=0x00000000000000000000000000000000000000000000000000000000000000000000000000000f0000000000000000000000000000000000000001000003e002,>
+IPPF_VLAN_MEMBERSHIP_TABLE.IPPF1[50]: <VLAN_PORT_MEMBER_LINE=0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001,>
+BCM.0> add_port_to_vlan( 15, 50, 1050, 1, 601);
+Unknown command: add_port_to_vlan(
+BCM.0> cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint> add_port_to_vlan( 15, 50, 1050, 1, 601);
+setting tpid
+setting egress vlan trans
+cint> exit;
+BCM.0> dump chg IPPF_VLAN_MEMBERSHIP_TABLE
+IPPF_VLAN_MEMBERSHIP_TABLE.IPPF0[1]: <VLAN_PORT_MEMBER_LINE=0x00000000000000000000000000000000000000000000000000000000000000000000000000000f0000000000000000000000000000000000000001000003e002,>
+IPPF_VLAN_MEMBERSHIP_TABLE.IPPF0[50]: <VLAN_PORT_MEMBER_LINE=0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008001,>
+IPPF_VLAN_MEMBERSHIP_TABLE.IPPF1[1]: <VLAN_PORT_MEMBER_LINE=0x00000000000000000000000000000000000000000000000000000000000000000000000000000f0000000000000000000000000000000000000001000003e002,>
+IPPF_VLAN_MEMBERSHIP_TABLE.IPPF1[50]: <VLAN_PORT_MEMBER_LINE=0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008001,>
+
+cint>
+cint> create_vlan_vsi( 50,1050 );
+cint> exit;
+BCM.0> vlan show
+==============================================================================================================================================
+| vlan show                                                                                                                                  |
+==============================================================================================================================================
+| Vlan | ports                                                            | untagged                                                         |
+==============================================================================================================================================
+| 1    | xe1,xe15-xe17 (0x00000000000000000000000000000000000000000000000 | none (0x00000000000000000000000000000000000000000000000000000000 |
+|      | 00000000000000000000000000000000000000000000000000000000000000f0 | 0000000000000000000000000000000000000000000000000000000000000000 |
+|      | 0000000000000000000000000000000000000010000038002)               | 0000000000000000000000000000000000000000)                        |
+==============================================================================================================================================
+BCM.0> add_trunk_to_vlan( 100, 50, 1050, 1, 600);
+Unknown command: add_trunk_to_vlan(
+BCM.0> cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+//add_trunk_to_vlan( int tid, int vlan_id, int vsi_id, int tagged, int lif_id )
+
+cint> add_trunk_to_vlan( 100, 50, 1050, 1, 600);
+setting tpid
+setting egress vlan trans
+cint> exit;
+BCM.0> vlan showw
+ERROR: command "showw" is not supported
+BCM.0> vlan show
+==============================================================================================================================================
+| vlan show                                                                                                                                  |
+==============================================================================================================================================
+| Vlan | ports                                                            | untagged                                                         |
+==============================================================================================================================================
+| 1    | xe1,xe15-xe17 (0x00000000000000000000000000000000000000000000000 | none (0x00000000000000000000000000000000000000000000000000000000 |
+|      | 00000000000000000000000000000000000000000000000000000000000000f0 | 0000000000000000000000000000000000000000000000000000000000000000 |
+|      | 0000000000000000000000000000000000000010000038002)               | 0000000000000000000000000000000000000000)                        |
+----------------------------------------------------------------------------------------------------------------------------------------------
+| 50   | cpu (0x000000000000000000000000000000000000000000000000000000000 | none (0x00000000000000000000000000000000000000000000000000000000 |
+|      | 000000000000000000000000000000000000000000103406c000000000000000 | 0000000000000000000000000000000000000000000000000000000000000000 |
+|      | 0000ffffffffff0000000000000000000000001)                         | 0000000000000000000000000000000000000000)                        |
+==============================================================================================================================================
+BCM.0> cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint> add_port_to_vlan( 15, 50, 1050, 1, 601);
+setting tpid
+setting egress vlan trans
+cint> exit;
+BCM.0> vlan show
+==============================================================================================================================================
+| vlan show                                                                                                                                  |
+==============================================================================================================================================
+| Vlan | ports                                                            | untagged                                                         |
+==============================================================================================================================================
+| 1    | xe1,xe15-xe17 (0x00000000000000000000000000000000000000000000000 | none (0x00000000000000000000000000000000000000000000000000000000 |
+|      | 00000000000000000000000000000000000000000000000000000000000000f0 | 0000000000000000000000000000000000000000000000000000000000000000 |
+|      | 0000000000000000000000000000000000000010000038002)               | 0000000000000000000000000000000000000000)                        |
+----------------------------------------------------------------------------------------------------------------------------------------------
+| 50   | cpu,xe15 (0x0000000000000000000000000000000000000000000000000000 | none (0x00000000000000000000000000000000000000000000000000000000 |
+|      | 00000000000000000000000000000000000000000000000103406c0000000000 | 0000000000000000000000000000000000000000000000000000000000000000 |
+|      | 000000000ffffffffff0000000000000000000008001)                    | 0000000000000000000000000000000000000000)                        |
+==============================================================================================================================================
+BCM.0>
+
+
+BCM.0>
+BCM.0>
+BCM.0> dbal table dump table=GLOBAL_TPID
+==================================
+| Entries dump table GLOBAL_TPID |
+|   Total Entries: 4             |
+==================================
+| # | TPID_ || TPID_             |
+|   | INDEX || VALUE             |
+==================================
+| 0 | 0     || 33024             |
+| 1 | 1     || 37120             |
+| 2 | 2     || 34984             |
+| 3 | 3     || MIM               |
+==================================
+BCM.0>
+
+MACT table for vsi
+BCM.0>
+BCM.0>
+BCM.0>
+BCM.0>
+BCM.0> l2 show
+==============================================================================================
+| MACT address table                                                                         |
+==============================================================================================
+| MAC address       | vsi  | Gport      | encap_id   | Destination | Type    | OutLif | Stat |
+==============================================================================================
+| 00:00:00:00:00:0F | 1050 | 0x6c00000f | 0x00000000 | 0xf         | PORT_ID | 0      | S    |
+----------------------------------------------------------------------------------------------
+| 00:00:00:00:00:10 | 1050 | 0x6c000010 | 0x00000000 | 0x10        | PORT_ID | 0      | S    |
+==============================================================================================
+BCM.0>
+
+
+
+VSI is the forwarding instance..
+
+
+BCM.0> DBaL TaBLe dump TaBLe=ESEM_FORWARD_DOMAIN_MAPPING_DB
+=============================================================================================================================================================
+| Entries dump table ESEM_FORWARD_DOMAIN_MAPPING_DB                                                                                                         |
+|   Result type  ETPS_AC_STAT                                                                                                                               |
+|   Total Entries: 2                                                                                                                                        |
+=============================================================================================================================================================
+| # | FODO            | VLAN_  | C_  || VLAN_ | VLAN_ | ACTION_ | VLAN_   | NWK_ | REMARK_ | ENCAP_QOS_    | OUT_LIF_| STAT_   | STAT_   | EGRESS_ | HITBIT |
+|   |                 | DOMAIN | VID || EDIT_ | EDIT_ | PROFILE | EDIT_   | QOS_ | PROFILE | MODEL         | PROFILE | OBJECT_ | OBJECT_ | LAST_   |        |
+|   |                 |        |     || VID_2 | VID_1 |         | PROFILE | IDX  |         |               |         | CMD     | ID      | LAYER   |        |
+=============================================================================================================================================================
+| 0 | VSI 1050 (1050) | 100    | 0   || 0     | 50    | 0       | 10      | 0    | 0       | UNIFORM (0x0) | 0       | 0       | 0       | 1       | N/A    |
+| 1 | VSI 1050 (1050) | 15     | 0   || 0     | 50    | 0       | 10      | 0    | 0       | UNIFORM (0x0) | 0       | 0       | 0       | 1       | N/A    |
+=============================================================================================================================================================
+=====================================================
+| Entries dump table ESEM_FORWARD_DOMAIN_MAPPING_DB |
+|   Result type  ETPS_AC                            |
+|   Total Entries: 0                                |
+=====================================================
+=====================================================
+| Entries dump table ESEM_FORWARD_DOMAIN_MAPPING_DB |
+|   Result type  ETPS_L2_FODO_VLANS                 |
+|   Total Entries: 0                                |
+=====================================================
+=====================================================
+| Entries dump table ESEM_FORWARD_DOMAIN_MAPPING_DB |
+|   Result type  ETPS_L2_FODO                       |
+|   Total Entries: 0                                |
+=====================================================
+=====================================================
+| Entries dump table ESEM_FORWARD_DOMAIN_MAPPING_DB |
+|   Result type  ETPS_L3_FODO                       |
+|   Total Entries: 0                                |
+=====================================================
+BCM.0>
+
+
+
+
+BCM.0> dbal taBLe duMP taBLe=IN_AC_S_VLAN
+======================================
+| Entries dump table IN_AC_S_VLAN_DB |
+|   Total Entries: 2                 |
+======================================
+| # | S_  | VLAN_  || IN_ | HITBIT   |
+|   | VID | DOMAIN || LIF |          |
+======================================
+| 0 | 50  | 100    || 8   | N/A      |
+| 1 | 50  | 15     || 10  | N/A      |
+======================================
+BCM.0>
+
+BCM.0> dbal table dump table=EGRESS_VLAN_MEMBERSHIP
+===============================================================
+| Entries dump table EGRESS_VLAN_MEMBERSHIP                   |
+|   Total Entries: 2                                          |
+===============================================================
+| # | VLAN_ || VLAN_MEMBER_DOMAIN_BMP                         |
+|   | ID    ||                                                |
+===============================================================
+| 0 | 1     || 0x3e002, 0x100, 0x0, 0x0, 0x0, 0x0, 0xf00, 0x0 |
+| 1 | 50    || 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0         |
+===============================================================
+BCM.0> dbal table dump table=INGRESS_VLAN_MEMBERSHIP
+=================================================================================
+| Entries dump table INGRESS_VLAN_MEMBERSHIP                                    |
+|   Total Entries: 2                                                            |
+=================================================================================
+| # | VLAN_ || VLAN_MEMBER_DOMAIN_BMP                                           |
+|   | ID    ||                                                                  |
+=================================================================================
+| 0 | 1     || 0x3e002, 0x100, 0x0, 0x0, 0x0, 0x0, 0xf00, 0x0, 0x0, 0x0, 0x0,   |
+|   |       || 0x0, 0x0, 0x0, 0x0, 0x0                                          |
+| 1 | 50    || 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, |
+|   |       || 0x0, 0x0, 0x0                                                    |
+=================================================================================
+
+
+
+
+BCM.0>
+BCM.0>
+BCM.0>
+BCM.0> dbal table dump table=EEDB_RIF_BASIC
+===========================================================================
+| Entries dump table EEDB_RIF_BASIC                                       |
+|   Result type  ETPS_ETH_RIF                                             |
+|   Total Entries: 1                                                      |
+===========================================================================
+| # | OUT_ || VSI  | REMARK_ | MTU_    | FORWARD_QOS_  | ACTION_ | HITBIT |
+|   | RIF  ||      | PROFILE | PROFILE | MODEL         | PROFILE |        |
+===========================================================================
+| 0 | 1050 || 1050 | 0       | 0       | UNIFORM (0x0) | 0       | N/A    |
+===========================================================================
+
+
+BCM.0> pp info fec
+================================================================================
+| No Protection FECs Hierarchy 0, (Both Cores)                                 |
+================================================================================
+| FEC_  | Stat_ | Stat_ | Dest      | MC_  | EEI | Hierarch_ | Glob_ | Glob_   |
+| Id    | Id    | Cmd   |           | RPF_ |     | TM_Flow   | Out_  | Out_LIF_|
+|       |       |       |           | Mode |     |           | LIF   | 2nd     |
+================================================================================
+| 52430 | -     | -     | LAG_ID 64 | -    | -   | -         | 1050  | 1048577 |
+================================================================================
+BCM.0> dbal table dump table=IPV6_UNICAST_PRIVATE_LPM_FORWARD
+=======================================================
+| Entries dump table IPV6_UNICAST_PRIVATE_LPM_FORWARD |
+|   Total Entries: 0                                  |
+=======================================================
+
+
+BCM.0> dbal table dump table=IPV4_UNICAST_PRIVATE_LPM_FORWARD
+=======================================================================================
+| Entries dump table IPV4_UNICAST_PRIVATE_LPM_FORWARD                                 |
+|   Total Entries: 1                                                                  |
+=======================================================================================
+| # | VRF            | IPV4                                      || KAPS_RESULT       |
+=======================================================================================
+| 0 | 5 mask: 0xffff | 16.16.16.16 (0x10101010) mask: 0xffffffff || FEC 52430 (52430) |
+=======================================================================================
+
+apt update
+install rlwrap
+
+install netcat
+rlwrap nc localhost 8888
+
+
+diag counter g/0 ?
+
+trap last info
+
+port management dump
+
+
+dbal dump table=INGREEs_PP_PORT
+dbal dump table=INGREEs_COMPENSATION_PER_IN_PORT
+
+ACL commands
+=============
+fp show
+
+
+dbal table dump table=INGRESS_PP_PORT
+=============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+| Entries dump table                                                                                                                                                                                                                          INGRESS_PP_PORT                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|   Total Entries:                                                                                                                                                                                                                            512                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+=============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+| #   | PP_  | CORE_ || VLAN_  | PORT_ | DEFAULT_ | VLAN_       | MY_CFM_MAC_MSB | MY_CFM_MAC_LSB_MAP                     | SOURCE_ | IRPP_1ST_     | PRT_QUALIFIER | TRACE_      | LAYER_ | LLVP_   | IGNORE_   | PP_     | LEARN_ | LEARN_  | SA_NOT_ | SA_DROP_   | DA_NOT_    | ECN_     | PHB_QOS_| REMARK_ | PHB_      | REMARK_   | ECN_      | TTL_      | FWD_    | STAT_   | STAT_   | VISIBILITY_ | VISIBILITY_ | INGRESS_TRAP_ID | TRAP_FWD_| TRAP_SNP_| IN_PORT_SAME_ |        MAPPED_ |
+|     | PORT | ID    || DOMAIN | VID   | LIF      | MEMBERSHIP_ |                |                                        | SYSTEM_ | PARSER_PARSER_|               | PROBABILITY | OFFSET | PROFILE | INCOMING_ | INJECT_ | ENABLE | LIF_    | FOUND_  | ACTION_    | FOUND_     | MAPPING_ | PROFILE | QOS_    | STRENGTH  | STRENGTH  | STRENGTH  | STRENGTH  | PORT_   | OBJECT_ | OBJECT_ | ENABLE      | FORCE       |                 | STRENGTH | STRENGTH | INTERFACE_    |        PP_PORT |
+|     |      |       ||        |       |          | IF          |                |                                        | PORT    | CONTEXT       |               |             |        |         | VID_      | ENABLE  |        | ENABLE  | ACTION_ | PROFILE    | ACTION_    | PROFILE  |         | PROFILE |           |           |           |           | PROFILE | ID      | CMD     |             |             |                 |          |          | FILTER_                |         |
+|     |      |       ||        |       |          |             |                |                                        |         |               |               |             |        |         | ENABLE    |         |        |         | PROFILE |            | PROFILE    |          |         |         |           |           |           |           |         |         |         |             |             |                 |          |          | PROFILE                |         |
+=============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+| 0   | 0    |  1    || 13     | 1     | 6        | 13          | 00:00:00:00:00 | 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 | 13      | ETH_A1 (0x1)  | DEFAULT (0x0) | 0           | 0      | 1       | False     | True    | True   | True    | 0       | NONE (0x0) | NONE (0x0) | 0        | 0       | 0       | LOW (0x0) | LOW (0x0) | LOW (0x0) | LOW (0x0) | 0       | 0       | 0       | True        | True        | TRAP_NONE (0x9) | 0        | 0        | ENABLE (0x1)  |        256     |
+| 1   | 1    |  1    || 17     | 1     | 6        | 17          | 00:00:00:00:00 | 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 | 17      | ETH_A1 (0x1)  | DEFAULT (0x0) | 0           | 0      | 1       | False     | True    | True   | True    | 0       | NONE (0x0) | NONE (0x0) | 0        | 0       | 0       | LOW (0x0) | LOW (0x0) | LOW (0x0) | LOW (0x0) | 0       | 0       | 0       | True        | True        | TRAP_NONE (0x9) | 0        | 0        | ENABLE (0x1)  |        257     |
+| 2   | 2    |  1    || 0      | 0     | 0        | 0           | 00:00:00:00:00 | 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 | 0       | NOP (0x1e)    | DEFAULT (0x0) | 0           | 0      | 0       | False     | True    | False  | False   | 0       | NONE (0x0) | NONE (0x0) | 0        | 0       | 0       | LOW (0x0) | LOW (0x0) | LOW (0x0) | LOW (0x0) | 0       | 0       | 0       | True        | True        | TRAP_NONE (0x9) | 0        | 0        | DISABLE (0x0) |        258     |
+| 3   | 3    |  1    || 0      | 0     | 0        | 0           | 00:00:00:00:00 | 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 | 0       | NOP (0x1e)    | DEFAULT (0x0) | 0           | 0      | 0       | False     | True    | False  | False   | 0       | NONE (0x0) | NONE (0x0) | 0        | 0       | 0       | LOW (0x0) | LOW (0x0) | LOW (0x0) | LOW (0x0) | 0       | 0       | 0       | True        | True        | TRAP_NONE (0x9) | 0        | 0        | DISABLE (0x0) |        259     |
+| 4   | 4    |  1    || 0      | 0     | 0        | 0           | 00:00:00:00:00 | 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 | 0       | NOP (0x1e)    | DEFAULT (0x0) | 0           | 0      | 0       | False     | True    | False  | False   | 0       | NONE (0x0) | NONE (0x0) | 0        | 0       | 0       | LOW (0x0) | LOW (0x0) | LOW (0x0) | LOW (0x0) | 0       | 0       | 0       | True        | True        | TRAP_NONE (0x9) | 0        | 0        | DISABLE (0x0) |        260     |
+| 5   | 5    |  1    || 0      | 0     | 0        | 0           | 00:00:00:00:00 | 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 | 0       | NOP (0x1e)    | DEFAULT (0x0) | 0           | 0      | 0       | False     | True    | False  | False   | 0       | NONE (0x0) | NONE (0x0) | 0        | 0       | 0       | LOW (0x0) | LOW (0x0) | LOW (0x0) | LOW (0x0) | 0       | 0       | 0       | True        | True        | TRAP_NONE (0x9) | 0        | 0        | DISABLE (0x0) |        261     |
+| 6   | 6    |  1    || 0      | 0     | 0        | 0           | 00:00:00:00:00 | 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 | 0       | NOP (0x1e)    | DEFAULT (0x0) | 0           | 0      | 0       | False     | True    | False  | False   | 0       | NONE (0x0) | NONE (0x0) | 0        | 0       | 0       | LOW (0x0) | LOW (0x0) | LOW (0x0) | LOW (0x0) | 0       | 0       | 0       | True        | True        | TRAP_NONE (0x9) | 0        | 0        | DISABLE (0x0) |        262     |
+
+
+get source system port
+========================
+dump chg IPPE_PRT_PTC_INFO

@@ -1,0 +1,23 @@
+power cycle of J2 switches done separately
+
+Quanta 40 port -- 4 times. with load merge and power boot.
+
+load merge with cfg txt file
+bond interface disable/enable
+bfd on bond disable/enable in two steps as discussed (on disable bfd on one side , other side shld be admin down )
+bfd global disable/enable
+isis disable/enable on bond
+reboot
+restart isis, bfd
+
+
+show network-instance default rib IPV4 ipv4-entries entry best-protocol ISIS
+ table-connection DIRECTLY_CONNECTED ISIS IPV6
+
+
+ show network-instance default protocol ISIS default interface * level * adj | tab
+
+ 49.0001.0103.0203.0401.00   --- Q40
+ 49.0002.0103.0203.0402.00  -- Edge
+ 49.0003.0103.0203.0403.00  -- 80 port
+ 49.0004.0103.0203.0404.00  -- TD3

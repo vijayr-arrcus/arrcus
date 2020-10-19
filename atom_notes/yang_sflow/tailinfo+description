@@ -1,0 +1,24 @@
+root@localhost:~# arcos_cli
+Welcome to ARCOS CLI
+root connected from 10.9.208.50 using ssh on localhost
+root@localhost# config
+Entering configuration mode terminal
+root@localhost(config)# sflow ?
+Possible completions:
+  global      Global config/state parameters for sflow
+  interface   List of interfaces on which sFlow is enabled
+root@localhost(config)# sflow interface ?
+Possible completions:
+  <Ethernet interface name, for example swp1>
+root@localhost(config)# sflow interface swp1 ?
+Possible completions:
+  <direction of traffic where sampling enabled (ingress/egress)>
+root@localhost(config)# sflow interface swp1 ingress ?
+Possible completions:
+  packet-sampling-rate   default packet sampling rate for each interface/direction
+  <cr>
+root@localhost(config)# sflow interface swp1 ingress packet-sampling-rate ?
+Description: default packet sampling rate for each interface/direction
+Possible completions:
+  <unsignedInt>
+root@localhost(config)# sflow interface swp1 ingress packet-sampling-rate

@@ -1,0 +1,99 @@
+[2020/04/06 07:32:56.845008][DEBUG][IFMGR] handle_netlink_up  modified ifindex159
+[2020/04/06 07:32:56.856964][DEBUG][IFMGR] Port admin state down for interface index 159, bond20 sent to linux
+[2020/04/06 07:32:56.870634][DEBUG][IFMGR] Bond LACP rate for bond20 chgd to 1  sudo sh -c "echo 1 > /sys/class/net/bond20/bonding/lacp_rate"
+[2020/04/06 07:32:56.877938][DEBUG][IFMGR] Port admin state up for interface index 159, bond20 sent to linux
+[2020/04/06 07:32:56.878680][DEBUG][CONFDPROXY] Called Config Handler, read socket=260, result=0
+[2020/04/06 07:32:56.879015][DEBUG][IFMGR] IFMGR sent_to_dpal : 0 and  act_cnt  0
+[2020/04/06 07:32:56.879024][DEBUG][IFMGR] IFMGR Ignored publishing bond ifindex 159 as no act members
+[2020/04/06 07:32:56.879029][DEBUG][IFMGR] handle_netlink_up  modified ifindex159
+[2020/04/06 07:32:56.879076][DEBUG][IFMGR] IFMGR sent_to_dpal : 0 and  act_cnt  0
+[2020/04/06 07:32:56.879081][DEBUG][IFMGR] IFMGR Ignored publishing bond ifindex 159 as no act members
+[2020/04/06 07:32:56.879086][DEBUG][IFMGR] handle_netlink_up  modified ifindex159
+[2020/04/06 07:45:04.930927][DEBUG][IFMGR] Bundle bond30 creation send to linux succeed
+[2020/04/06 07:45:04.931046][DEBUG][IFMGR] Bundle bond30 linux index is 160
+[2020/04/06 07:45:04.949856][DEBUG][IFMGR] Bond mode for bond30 chgd to LACP sudo sh -c "echo 4 > /sys/class/net/bond30/bonding/mode"
+[2020/04/06 07:45:04.960602][DEBUG][IFMGR] Min links for bond30 chgd to 1  sudo sh -c "echo 1 > /sys/class/net/bond30/bonding/min_links"
+[2020/04/06 07:45:04.970982][DEBUG][IFMGR] Bond LACP rate for bond30 chgd to 1  sudo sh -c "echo 1 > /sys/class/net/bond30/bonding/lacp_rate"
+[2020/04/06 07:45:04.983948][DEBUG][IFMGR] Bond miimon for bond30 chgd to 100  sudo sh -c "echo 100 > /sys/class/net/bond30/bonding/miimon"
+[2020/04/06 07:45:04.996061][DEBUG][IFMGR] Bond  all_slaves_active changed for bond30
+[2020/04/06 07:45:05.008627][DEBUG][IFMGR] Min links for bond30 chgd to 0  sudo sh -c "echo 0 > /sys/class/net/bond30/bonding/min_links"
+[2020/04/06 07:45:05.009088][DEBUG][IFMGR] ifmgr_l3_process_intf_event: Created l3_info for bond30, link_state = 0
+[2020/04/06 07:45:05.009123][DEBUG][IFMGR] new l3 interface bond30 added
+[2020/04/06 07:45:05.009155][DEBUG][IFMGR] IFMGR sent_to_dpal : 0 and  act_cnt  0
+[2020/04/06 07:45:05.009174][DEBUG][IFMGR] IFMGR Ignored publishing bond ifindex 160 as no act members
+[2020/04/06 07:45:05.016035][DEBUG][IFMGR] Port admin state up for interface index 160, bond30 sent to linux
+[2020/04/06 07:45:05.016952][DEBUG][IFMGR] L3 dstore_delete success for interface index 160
+[2020/04/06 07:45:05.017012][DEBUG][IFMGR] VRF for bond30 not set, nothing to remove
+[2020/04/06 07:45:05.017779][DEBUG][CONFDPROXY] Called Config Handler, read socket=260, result=0
+[2020/04/06 07:45:05.018240][DEBUG][IFMGR] IFMGR sent_to_dpal : 0 and  act_cnt  0
+[2020/04/06 07:45:05.018294][DEBUG][IFMGR] IFMGR Ignored publishing bond ifindex 160 as no act members
+[2020/04/06 07:45:05.018321][DEBUG][IFMGR] IFMGR publishing ifindex 160 to  lnx index 160 mapping
+[2020/04/06 07:45:05.018420][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 160 admin state = 2, link state = 1
+[2020/04/06 07:45:05.018442][DEBUG][IFMGR] handle_netlink_up  modified ifindex160
+[2020/04/06 07:45:05.018732][DEBUG][IFMGR] IFMGR sent_to_dpal : 0 and  act_cnt  0
+[2020/04/06 07:45:05.018752][DEBUG][IFMGR] IFMGR Ignored publishing bond ifindex 160 as no act members
+[2020/04/06 07:45:05.018761][DEBUG][IFMGR] handle_netlink_up  modified ifindex160
+[2020/04/06 07:45:05.033860][DEBUG][IFMGR] Port admin state down for interface index 160, bond30 sent to linux
+[2020/04/06 07:45:05.047853][DEBUG][IFMGR] Bond LACP rate for bond30 chgd to 1  sudo sh -c "echo 1 > /sys/class/net/bond30/bonding/lacp_rate"
+[2020/04/06 07:45:05.054061][DEBUG][IFMGR] Port admin state up for interface index 160, bond30 sent to linux
+[2020/04/06 07:45:05.054761][DEBUG][CONFDPROXY] Called Config Handler, read socket=260, result=0
+[2020/04/06 07:45:05.055213][DEBUG][IFMGR] IFMGR sent_to_dpal : 0 and  act_cnt  0
+[2020/04/06 07:45:05.055233][DEBUG][IFMGR] IFMGR Ignored publishing bond ifindex 160 as no act members
+[2020/04/06 07:45:05.055243][DEBUG][IFMGR] handle_netlink_up  modified ifindex160
+[2020/04/06 07:45:05.055331][DEBUG][IFMGR] IFMGR sent_to_dpal : 0 and  act_cnt  0
+[2020/04/06 07:45:05.055346][DEBUG][IFMGR] IFMGR Ignored publishing bond ifindex 160 as no act members
+[2020/04/06 07:45:05.055355][DEBUG][IFMGR] handle_netlink_up  modified ifindex160
+[2020/04/06 07:47:40.165786][DEBUG][IFMGR] Added swp26 as member of bond20
+[2020/04/06 07:47:40.172663][DEBUG][IFMGR] Port admin state down for interface index 676, swp26 sent to linux
+[2020/04/06 07:47:40.191296][DEBUG][IFMGR] Enslave swp26 to Bond bond20 send to linux successfully
+ [2020/04/06 07:47:40.196774][DEBUG][IFMGR] Port admin state up for interface index 676, swp26 sent to linux
+ [2020/04/06 07:47:40.196815][DEBUG][IFMGR] bond: bond20, member: swp26
+[2020/04/06 07:47:40.196830][DEBUG][IFMGR] MAC of swp26: 80:A2:35:E0:1C:81
+[2020/04/06 07:47:40.202209][DEBUG][IFMGR] linux mac is set to 80:A2:35:E0:1C:81 for interface bond20
+[2020/04/06 07:47:40.202254][DEBUG][IFMGR] IFMGR sent_to_dpal : 0 and  act_cnt  0
+[2020/04/06 07:47:40.202266][DEBUG][IFMGR] IFMGR Ignored publishing bond ifindex 159 as no act members
+[2020/04/06 07:47:40.203087][DEBUG][CONFDPROXY] Called Config Handler, read socket=260, result=0
+[2020/04/06 07:47:40.203484][DEBUG][IFMGR] ifmgr_handle_if_create_event: old_op_state 1, new_op_state 0
+[2020/04/06 07:47:40.203686][DEBUG][IFMGR] IFMGR publishing ifindex 676 to  lnx index 676 mapping
+[2020/04/06 07:47:40.203795][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 676 admin state = 2, link state = 1
+[2020/04/06 07:47:40.203830][DEBUG][IFMGR] handle_netlink_up  modified ifindex676
+[2020/04/06 07:47:40.203942][DEBUG][IFMGR] Link local Address fe80::82a2:35ff:fee0:1c81/64 Delete rcvd on intf from linux swp26.
+[2020/04/06 07:47:40.204060][DEBUG][IFMGR] IFMGR sent_to_dpal : 0 and  act_cnt  0
+[2020/04/06 07:47:40.204075][DEBUG][IFMGR] IFMGR Ignored publishing bond ifindex 159 as no act members
+[2020/04/06 07:47:40.204085][DEBUG][IFMGR] handle_netlink_up  modified ifindex159
+[2020/04/06 07:47:40.204135][DEBUG][IFMGR] IFMGR publishing ifindex 676 to  lnx index 676 mapping
+[2020/04/06 07:47:40.204176][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 676 admin state = 2, link state = 1
+[2020/04/06 07:47:40.204189][DEBUG][IFMGR] IFMGR publishing ifindex 676 to  lnx index 676 mapping
+[2020/04/06 07:47:40.204222][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 676 admin state = 2, link state = 1
+[2020/04/06 07:47:40.204233][DEBUG][IFMGR] handle_netlink_up  modified ifindex676
+[2020/04/06 07:47:40.204294][DEBUG][IFMGR] ifmgr_handle_if_create_event: old_op_state 0, new_op_state 1
+[2020/04/06 07:47:40.204433][DEBUG][IFMGR] IFMGR publishing ifindex 676 to  lnx index 676 mapping
+[2020/04/06 07:47:40.204521][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 676 admin state = 2, link state = 2
+[2020/04/06 07:47:40.204539][DEBUG][IFMGR] handle_netlink_up  modified ifindex676
+[2020/04/06 07:47:40.204654][DEBUG][IFMGR] Interface swp26 actor flags are 0 and partner flags are 0 and slave state 1
+[2020/04/06 07:47:40.204676][DEBUG][IFMGR] IFMGR publishing ifindex 676 to  lnx index 676 mapping
+[2020/04/06 07:47:40.204715][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 676 admin state = 2, link state = 2
+[2020/04/06 07:47:40.204727][DEBUG][IFMGR] handle_netlink_up  modified ifindex676
+[2020/04/06 07:47:40.269853][DEBUG][IFMGR] Interface swp26 actor flags are 71 and partner flags are 1 and slave state 0
+[2020/04/06 07:47:40.269909][DEBUG][IFMGR] IFMGR publishing ifindex 676 to  lnx index 676 mapping
+[2020/04/06 07:47:40.269983][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 676 admin state = 2, link state = 2
+[2020/04/06 07:47:40.270007][DEBUG][IFMGR] IFMGR sent_to_dpal : 0 and  act_cnt  1
+[2020/04/06 07:47:40.270019][DEBUG][IFMGR] IFMGR publishing ifindex 159 to  lnx index 159 mapping
+[2020/04/06 07:47:40.270040][DEBUG][IFMGR] bond bond20 cfg mem index 676 encoded
+[2020/04/06 07:47:40.270048][DEBUG][IFMGR] bond bond20 act mem index 676 encoded
+[2020/04/06 07:47:40.270078][DEBUG][IFMGR] DS BOND TBL update suceed for ifindex 159 admin state = 2, link state = 1
+[2020/04/06 07:47:40.270091][DEBUG][IFMGR] handle_netlink_up  modified ifindex676
+[2020/04/06 07:47:40.272503][DEBUG][IFMGR] ifmgr_handle_if_create_event: old_op_state 0, new_op_state 1
+[2020/04/06 07:47:40.272716][DEBUG][IFMGR] IFMGR sent_to_dpal : 1 and  act_cnt  1
+[2020/04/06 07:47:40.272733][DEBUG][IFMGR] IFMGR publishing ifindex 159 to  lnx index 159 mapping
+[2020/04/06 07:47:40.272744][DEBUG][IFMGR] bond bond20 cfg mem index 676 encoded
+[2020/04/06 07:47:40.272754][DEBUG][IFMGR] bond bond20 act mem index 676 encoded
+[2020/04/06 07:47:40.272791][DEBUG][IFMGR] DS BOND TBL update suceed for ifindex 159 admin state = 2, link state = 2
+[2020/04/06 07:47:40.272806][DEBUG][IFMGR] handle_netlink_up  modified ifindex159
+[2020/04/06 08:08:00.590736][DEBUG][IFMGR] ifmgr_handle_if_create_event: old_op_state 1, new_op_state 0
+[2020/04/06 08:08:00.591012][DEBUG][IFMGR] IFMGR publishing ifindex 674 to  lnx index 674 mapping
+[2020/04/06 08:08:00.591062][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 674 admin state = 2, link state = 1
+[2020/04/06 08:08:00.591124][DEBUG][IFMGR] L3 update v4 mtu 8974, v4 enable 0 index 674
+[2020/04/06 08:08:00.591137][DEBUG][IFMGR] IF-SUBIF-WALK: swp24
+[2020/04/06 08:08:00.591154][DEBUG][IFMGR] IF-SUBIF-STATE-SET: swp24.150 Link state change to down
+[2020/04/06 08:08:00.591165][DEBUG][IFMGR] ifmgr_subif_link_mtu_set: swp24 new mtu=9000, swp24.150 curr mtu=9000

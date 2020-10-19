@@ -1,0 +1,12 @@
+
+Meeting minutes
+================
+1st April 2020.
+
+a. EVPN -- what happens when we inject.
+b. LLDP -- should we declare that the physical member links are part of the bond.. and will each of the member links send LLDP.
+c. GLOBAL ID -- can this be distributed across multiple J2 units.
+d. Telemetry -- export of LAG specific states and interfaces.. Check with Lalit.
+e. Give a choice for the policer configuration.
+f. MIB for LAG.
+g. micro BFD -- Manav copying Keyur.

@@ -1,0 +1,55 @@
+
+cint cint_utils_global.c
+cint cint_utils_vlan.c
+cint cint_utils_l3.c
+cint cint_ip_route.c
+cint globals.c
+cint vlan_translations.c
+cint adv_vlan.c
+cint adv_trunk.c
+cint cint_trunk.c
+
+
+cint
+print bcm_dnx_sdk_l2_init(0);
+print bcm_dnx_sdk_ave_vlan_init(0);
+
+print main_trunk(0, 1, 0, 7, 8,0,0, 0, 100);
+
+// Check vlan show -- Previously no output was seen but now it will be seen.
+
+// create trunk
+_main_trunk( 7,8,100, 500 );
+// main_trunk(mem1, mem2, tid, Vlan_domain);
+// VAR Is there any LAG group table.
+// VAR Check the vlan domain (dump chg IPPE_PP_PORT_TO_VD)
+// VAR we are adding only the trunk to the Vlan Domain ?
+// The member links will inherit this property but what about the port 15, 16
+// VAR if we dont add to the vlan domain (sig get name=vlan_domain)
+
+
+// create vlan and vsi
+create_vlan_vsi( 50,1050 );
+// create_vlan_vsi(vlan, vsi);
+// VAR is this just global VLAN/VSI creation and no real show commands exists ?
+
+add_trunk_to_vlan( 100, 50, 1050, 1, 600);
+//add_trunk_to_vlan( int tid, int vlan_id, int vsi_id, int tagged, int lif_id )
+
+
+add_port_to_vlan( 25, 50, 1050, 1, 601);
+
+
+// Add mac address for the ports
+add_mac_trunk( 100, 1050, 100 );
+add_mac_port( 25, 1050, 16 );
+
+// Above is all desintation mac address, suggesting that the particular MAC address is connected/learnt on this port.;
+
+exit;
+
+tx 1 psrc=7 data=0x00000000001000000000000781000032080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161616161616161616161616161616161616161616161
+
+
+
+print main_trunk(unit, is_hash_mode, double_lbk_rng_enable, port_0, port_1, port_2, port_3, in_local_port, trunk_id);

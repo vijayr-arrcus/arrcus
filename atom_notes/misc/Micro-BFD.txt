@@ -1,0 +1,17 @@
+Micro BFD
+
+1. Choose one representative link and run BFD over the link.
+2. Representative link goes down, LAG comes down.
+3. Non representative link goes down, no detection.
+4. Round robin - This is because, when a member link goes down,
+5. BFD remains up and traffic continues to go over the link that has failed till a higher layer protocol (usually LACP or the LAG Manager)
+detects this and removes the offending link from the LAG.
+6. If the micro session goes Down, the transmission of Control packets goes back to the slow rate.
+The LAG Manager is informed which removes the member link from the LAG.
+BCM_TRUNK_PSC_PORTFLOW
+
+PORT Selection criteria
+========================
+SMOOTH DIVISION
+MULTIPLY & DIVIDE
+Table Consisten Hashing

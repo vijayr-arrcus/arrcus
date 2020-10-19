@@ -1,0 +1,42 @@
+root@J2Quanta:/etc/arcos/bcm# zile dnx.soc
+root@J2Quanta:/etc/arcos/bcm# /root/bcm.user
+2:30
+root@J2Quanta:~# cd /root/
+root@J2Quanta:~# ./kmod_hdlr.py stop
+J2 silicon found
+Unloaded kernel module
+root@J2Quanta:~# ./kmod_hdlr.py start
+J2 silicon found
+2:32
+rlwrap nc localhost 8888
+  178  service spyder stop
+  179  cd /root/
+  180  ls
+  181  ./kmod_hdlr.py stop
+  182  ./kmod_hdlr.py start
+  183  cd /etc/arcos/bcm/
+  184  /root/bcm.user
+  185  zile dnx.soc
+  186  /root/bcm.user
+  187  c
+  188  cd /root/
+  189  ./bcm.user
+  190  fg
+  191  fg
+  192  cd /root/
+  193  ./kmod_hdlr.py stop
+  194  ./kmod_hdlr.py start
+  195  cd /root/
+  196  ls
+  197  ./bcm.user
+  198  service spyder stop
+  199  cd /r
+  200  hist
+  201  history
+
+ service spyder stop
+ cd /root
+ ./kmod_hdlr.py stop
+ ./kmod_hdlr.py start
+ cd /etc/arcos/bcm
+ /root/bcm.user

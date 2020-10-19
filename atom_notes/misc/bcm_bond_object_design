@@ -1,0 +1,14 @@
+bcm_port requires both modport and sysport.
+port could be the gport.
+What should be the modport ?
+
+subinterface --
+loopback Interface
+
+How should be the dependency
+
+bcm_port_t -- bond
+bcm_port_t -- member_links
+bcm_bond_port_t -- bond.
+release_sec_key
+port speed ? -- should it be aggregate speed ?

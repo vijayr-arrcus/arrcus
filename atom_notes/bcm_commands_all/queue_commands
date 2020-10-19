@@ -1,0 +1,12 @@
+dump chg CGM_TRAFFIC_CLASS_MAPPING
+dump chg CGM_DESTINATION_TABLE
+dump chg CGM_LAG_ATTRIBUTES
+dump chg CGM_LAG_MAPPING
+
+tm ingress queue mapping
+tm ingress local_to_sys
+
+
+trunk_group_max_members_pool0=
+trunk_group_max_members_pool1=
+graceful_lag_modification_enable=

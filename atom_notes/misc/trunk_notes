@@ -1,0 +1,697 @@
+/// Series of test for POC of trunk groups ( bond ) on J2 Cmodel
+// Uses adv_trunk.c
+// The global and vlan_translation file are present inside /arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/
+// Most of the cases here only has the addition related stuff, delete apis are expected to be same
+
+#TEST1 : L2 forwarding, tagged trunk
+#TEST2 : L2 forwarding, untagged trunk
+#TEST3 : L2, with egress ACL based TC update
+#TEST4 : L2, with ingress ACL based TC update
+#TEST5 : L2 forwarding, tagged trunk add/delete members
+#TEST6 : L3 Subinterfaces Trunk, tagged trunk( creates 2 subinterface on a single trunk and checks packet forwarding. )
+
+
+---------------- #TEST1 : Basic L2 forwarding, tagged trunk  --------------------------------
+- Configuration
+-    a. create a trunk port with port 13,14 with TID 100
+-    b. create vlan 50, vsi 1050
+-    c. Add trunk 100 to that vlan, vsi and LIF 600. Keeping the tagged as bit 1
+-    d. Add port 15 to that vlan, vsi and LIF 601. Keeping the tagged as bit 1
+-    e. Add mac address for both trunk and local port 15
+----------------------------------------------------------------------------------
+
+cd ../../../../../cint/advvlan/
+cint globals.c
+cint vlan_translations.c
+cint adv_trunk.c
+
+cint
+print bcm_dnx_sdk_ave_vlan_init(0);
+
+// create trunk
+main_trunk( 13,14,100, 100 );
+// create vlan and vsi, vlan 50 and VSI 1050
+create_vlan_vsi( 50,1050 );
+// Add trunk port 100 to vlan 50, VSI 1050, tagged and vit LIF 600
+add_trunk_to_vlan( 100, 50, 1050, 1, 600);
+// Add local port 15 to vlan 50, VSI 1050, tagged and vit LIF 601
+add_port_to_vlan( 15, 50, 1050, 1, 601);
+// Add mac address 0x0000000064 for trunk 100  with VSI 1050
+add_mac_trunk( 100, 1050, 100 );
+// Add mac address 0x000000000f for local port 15  with VSI 1050
+add_mac_port( 15, 1050, 15 );
+exit;
+
+// Otput of following tables shows the added interfaces as well
+DBaL TaBLe dump TaBLe=ESEM_FORWARD_DOMAIN_MAPPING_DB
+dbal taBLe duMP taBLe=IN_AC_S_VLAN
+dbal taBLe duMP taBLe=EEDB_OUT_AC
+vlan show
+l2 show
+==============================================================================================
+| MACT address table                                                                         |
+==============================================================================================
+| MAC address       | vsi  | Gport      | encap_id   | Destination | Type    | OutLif | Stat |
+==============================================================================================
+| 00:00:00:00:00:64 | 1050 | 0x0e000064 | 0x00000000 | 0x64        | LAG_ID  | 0      | S    |
+----------------------------------------------------------------------------------------------
+| 00:00:00:00:00:0F | 1050 | 0x6c00000f | 0x00000000 | 0xf         | PORT_ID | 0      | S    |
+==============================================================================================
+
+******************** Packet forwarding ******************
+// Now lets send some packets
+1. tagged packet from 14( trunk member  ) to 15 ( egresses on 15 )
+tx 1 psrc=14 data=0x00000000000f00000000000781000032080045000046000100004011f66021212103212121010d050cfb003264476161616161616161616161616161616161
+
+>>   pp vis eklp   // packet egress from port 15
+---------------------------------------------------------------------------------------------------------------
+| Out-Port | PP_Port                           | 4 (0x4)                                                      |
+|          | TM_Port                           | 15 (0xf)                                                     |
+===============================================================================================================
+
+
+2. untagged packet from 14( trunk ) to 15 ( gets dropped because of vlan membership, as the trunk expects only tagged packets )
+tx 1 psrc=14 data=0x00000000000f000000000007080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161
+
+>>    pp vis eklp   // No packet goes out
+========================
+| eKLEAP information   |
+|   Core 0             |
+|   No visible traffic |
+========================
+
+3. tagged packet from 15 to trunk ( tagged packet goes out of the trunk )
+tx 1 psrc=15 data=0x00000000006400000000000781000032080045000046000100004011f66021212103212121010d050cfb003264476161616161616161616161616161616161
+>> pp vis eklp   // Packet egress from one of the member link
+---------------------------------------------------------------------------------------------------------------
+| Out-Port | PP_Port                           | 38 (0x26)                                                    |
+|          | TM_Port                           | 13 (0xd)                                                     |
+===============================================================================================================
+
+4. lets change the source mac address of the above packet and see if the hashing changes
+tx 1 psrc=15 data=0x00000000006400000000000881000032080045000046000100004011f66021212103212121010d050cfb003264476161616161616161616161616161616161
+
+>> pp vis eklp     // packet goes out of the other member link
+---------------------------------------------------------------------------------------------------------------
+| Out-Port | PP_Port                           | 38 (0x26)                                                    |
+|          | TM_Port                           | 14 (0xe)                                                     |
+===============================================================================================================
+
+5. untagged packet from 15 to trunk ( gets dropped because of vlan membership )
+tx 1 psrc=15 data=0x00000000000f000000000007080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161
+
+BCM.0> pp vis eklp   // packet gets dropped as expected
+========================
+| eKLEAP information   |
+|   Core 0             |
+|   No visible traffic |
+========================
+
+
+---------------- #TEST2 : Basic L2 forwarding, untagged trunk  --------------------------------
+- Configuration
+-    a. create a trunk port with port 13,14 with TID 100
+-    b. create vlan 50, vsi 1050
+-    c. Add trunk 100 to that vlan, vsi and LIF 600. Keeping the tagged as bit 0
+-    d. Add port 15 to that vlan, vsi and LIF 601. Keeping the tagged as bit 1
+-    e. Add mac address for both trunk and local port 15
+----------------------------------------------------------------------------------
+
+cd ../../../../../cint/advvlan/
+cint globals.c
+cint vlan_translations.c
+cint adv_trunk.c
+
+cint
+print bcm_dnx_sdk_ave_vlan_init(0);
+
+// create trunk
+main_trunk( 13,14,100, 100 );
+// create vlan and vsi, vlan 50 and VSI 1050
+create_vlan_vsi( 50,1050 );
+// Add trunk port 100 to vlan 50, VSI 1050, tagged and vit LIF 600
+add_trunk_to_vlan( 100, 50, 1050, 0, 600);
+// Add local port 15 to vlan 50, VSI 1050, tagged and vit LIF 601
+add_port_to_vlan( 15, 50, 1050, 1, 601);
+// Add mac address 0x0000000064 for trunk 100  with VSI 1050
+add_mac_trunk( 100, 1050, 100 );
+// Add mac address 0x000000000f for local port 15  with VSI 1050
+add_mac_port( 15, 1050, 15 );
+exit;
+
+// Otput of following tables shows the added interfaces as well
+DBaL TaBLe dump TaBLe=ESEM_FORWARD_DOMAIN_MAPPING_DB
+dbal taBLe duMP taBLe=IN_AC_S_VLAN
+dbal taBLe duMP taBLe=EEDB_OUT_AC
+vlan show    // **** UNtagged port is still not shown in the vlan show *******
+l2 show
+==============================================================================================
+| MACT address table                                                                         |
+==============================================================================================
+| MAC address       | vsi  | Gport      | encap_id   | Destination | Type    | OutLif | Stat |
+==============================================================================================
+| 00:00:00:00:00:64 | 1050 | 0x0e000064 | 0x00000000 | 0x64        | LAG_ID  | 0      | S    |
+----------------------------------------------------------------------------------------------
+| 00:00:00:00:00:0F | 1050 | 0x6c00000f | 0x00000000 | 0xf         | PORT_ID | 0      | S    |
+==============================================================================================
+
+******************** Packet forwarding ******************
+Now lets send some packets
+
+1. tagged packet from 14( trunk ) to 15  // packet gets dropped , VSI assignment fails
+tx 1 psrc=14 data=0x00000000000f00000000000781000032080045000046000100004011f66021212103212121010d050cfb003264476161616161616161616161616161616161
+
+>>    pp vis eklp   // No packet goes out
+========================
+| eKLEAP information   |
+|   Core 0             |
+|   No visible traffic |
+========================
+
+2. untagged packet from 14( trunk ) to 15 ( gets forwarded )
+tx 1 psrc=14 data=0x00000000000f000000000007080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161
+
+>>   pp vis eklp   // packet egress from port 15
+---------------------------------------------------------------------------------------------------------------
+| Out-Port | PP_Port                           | 4 (0x4)                                                      |
+|          | TM_Port                           | 15 (0xf)                                                     |
+===============================================================================================================
+
+3. tagged packet from 15 to trunk ( untagged packet goes out of the trunk )
+tx 1 psrc=15 data=0x00000000006400000000000781000032080045000046000100004011f66021212103212121010d050cfb003264476161616161616161616161616161616161
+>> pp vis eklp   // Packet egress from one of the member link,  packet is untagged as per eklp output
+---------------------------------------------------------------------------------------------------------------
+| Out-Port | PP_Port                           | 38 (0x26)                                                    |
+|          | TM_Port                           | 13 (0xd)                                                     |
+===============================================================================================================
+
+4. lets change the source mac address of the packet
+tx 1 psrc=15 data=0x00000000006400000000000881000032080045000046000100004011f66021212103212121010d050cfb003264476161616161616161616161616161616161
+
+>> pp vis eklp     // packet goes out of the other member link
+---------------------------------------------------------------------------------------------------------------
+| Out-Port | PP_Port                           | 38 (0x26)                                                    |
+|          | TM_Port                           | 14 (0xe)                                                     |
+===============================================================================================================
+
+5. untagged packet from 15 to trunk ( gets dropped because of vlan membership )
+tx 1 psrc=15 data=0x00000000000f000000000007080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161
+
+BCM.0> pp vis eklp   // packet gets dropped as expected
+========================
+| eKLEAP information   |
+|   Core 0             |
+|   No visible traffic |
+========================
+
+---------------- #TEST3 : Basic L2, with egress ACL based TC update  --------------------------------
+- Configuration ( this used bcmFieldQualifyDstPort )
+-    a. create a trunk port with port 13,14 with TID 100
+-    b. create vlan 50, vsi 1050
+-    c. Add trunk 100 to that vlan, vsi and LIF 600. Keeping the tagged as bit 1
+-    d. Add port 15 to that vlan, vsi and LIF 601. Keeping the tagged as bit 1
+-    e. Add mac address for both trunk and local port 15
+-    f. Check packet forwarding
+-    g. Add the tcam rule to update the TC value
+-    h. Check packet forwarding with the updated TC
+----------------------------------------------------------------------------------
+
+cd ../../../../../cint/advvlan/
+cint globals.c
+cint vlan_translations.c
+cint adv_trunk.c
+
+cint
+print bcm_dnx_sdk_ave_vlan_init(0);
+
+// create trunk
+main_trunk( 13,14,100, 100 );
+// create vlan and vsi, vlan 50 and VSI 1050
+create_vlan_vsi( 50,1050 );
+// Add trunk port 100 to vlan 50, VSI 1050, tagged and vit LIF 600
+add_trunk_to_vlan( 100, 50, 1050, 0, 600);
+// Add local port 15 to vlan 50, VSI 1050, tagged and vit LIF 601
+add_port_to_vlan( 15, 50, 1050, 1, 601);
+// Add mac address 0x0000000064 for trunk 100  with VSI 1050
+add_mac_trunk( 100, 1050, 100 );
+// Add mac address 0x000000000f for local port 15  with VSI 1050
+add_mac_port( 15, 1050, 15 );
+exit;
+
+** Check that the expected packet from regular port to trunk gets forwarded and notice the TC value
+
+* tagged packet from 15 to trunk ( tagged packet goes out of the trunk )
+tx 1 psrc=15 data=0x00000000006400000000000781000032080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161616161616161616161616161616161616161616161
+
+** As part of acl we are going to update the TC value of the packet
+Lets check the TC value right now
+
+sig get name=tc
+=====================================================================================================================================================
+| sys_tc                           | 3    | 00                                                               | ETPP_0 | Applet           | ETParser |
+| FTMH_TC                          | 3    | 00                                                               | ERPP_0 | EPMF             | ETMR     |
+=====================================================================================================================================================
+
+** Now lets add a egress Rule to qualify on trunk port dst and update the TC value to 6, We are looking for a hit in the rule
+// only trunk id 100 is relevant , vsi 1050 is not add as of now
+
+cint
+add_trunk_dstport_tc_rule( 100, 1050 );
+exit;
+
+cint> add_trunk_dstport_tc_rule( 100, 1050 );
+ gport passed to the acl rule is 234881124
+ Field Group ID 8 was created.
+ Field Group ID 8 was attached to Context ID 0.
+ Entry ID 0x50 (80) was added to Field Group ID 8.
+
+BCM.0> field ent info grp=8 ent=0x50
+==========================================================
+| Entry Info                                             |
+==========================================================
+| FG | FG   | Entry ID | Bank | Bank   | Entry    | Core |
+| ID | Type |          | ID   | Offset | Priority | ID   |
+==========================================================
+| 8  | TCAM | 0x000050 | 1    | 0      | 0        | 0    |
+==========================================================
+================================================================================================
+| Key & Payload Info                                                                           |
+================================================================================================
+| Qual         | Qual | Qual | Qual Val   | Qual Mask  |   | Action | Action | Action | Action |
+|              | Size | Lsb  |            |            |   |        | Size   | Lsb    | Val    |
+================================================================================================
+| DST_SYS_PORT | 16   | 0    | 0x00008064 | 0x0000F0FF |   | TC     | 3      | 29     | 0x0006 |
+================================================================================================
+=======================================================================================================================================
+| Entry Qual Raw Data                                                                                                                 |
+=======================================================================================================================================
+| Raw Value                                                        | Raw Mask                                                         |
+=======================================================================================================================================
+| 0x00000000000000000000000000000000000000000000000000000000000000 | 0x00000000000000000000000000000000000000000000000000000000000000 |
+| 0000000000000000000000000000000000000000000000000000008064       | 000000000000000000000000000000000000000000000000000000F0FF       |
+=======================================================================================================================================
+** Notice the mask above that is to take into account the system port numbering  convention for trunk memberports
+
+** Now lets send the same packet again as above :
+* tagged packet from 15 to trunk ( tagged packet goes out of the trunk )
+tx 1 psrc=15 data=0x00000000006400000000000781000032080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161616161616161616161616161616161616161616161
+
+** Updated TC value  is shown as part of the sig get command
+sig get name=tc
+=====================================================================================================================================================
+| sys_tc                           | 3    | 06                                                               | ETPP_0 | Applet           | ETParser |
+| FTMH_TC                          | 3    | 06                                                               | ERPP_0 | EPMF             | ETMR     |
+=====================================================================================================================================================
+
+
+---------------- #TEST4 : Basic L2, with ingress ACL based TC update  --------------------------------
+- Configuration ( this used bcmFieldQualifyInPort )
+-    a. create a trunk port with port 13,14 with TID 100
+-    b. create vlan 50, vsi 1050
+-    c. Add trunk 100 to that vlan, vsi and LIF 600. Keeping the tagged as bit 1
+-    d. Add port 15 to that vlan, vsi and LIF 601. Keeping the tagged as bit 1
+-    e. Add mac address for both trunk and local port 15
+-    f. Check packet forwarding
+-    g. Add the tcam rule to update the TC value
+-    h. Check packet forwarding with the updated TC
+----------------------------------------------------------------------------------
+
+cd ../../../../../cint/advvlan/
+cint globals.c
+cint vlan_translations.c
+cint adv_trunk.c
+
+cint
+print bcm_dnx_sdk_ave_vlan_init(0);
+
+// create trunk
+main_trunk( 13,14,100, 100 );
+// create vlan and vsi, vlan 50 and VSI 1050
+create_vlan_vsi( 50,1050 );
+// Add trunk port 100 to vlan 50, VSI 1050, tagged and vit LIF 600
+add_trunk_to_vlan( 100, 50, 1050, 0, 600);
+// Add local port 15 to vlan 50, VSI 1050, tagged and vit LIF 601
+add_port_to_vlan( 15, 50, 1050, 1, 601);
+// Add mac address 0x0000000064 for trunk 100  with VSI 1050
+add_mac_trunk( 100, 1050, 100 );
+// Add mac address 0x000000000f for local port 15  with VSI 1050
+add_mac_port( 15, 1050, 15 );
+exit;
+
+** Check that the expected packet from regular port to trunk gets forwarded and notice the TC value
+
+* tagged packet from 14( trunk ) to 15 ( egresses on 15 )
+tx 1 psrc=14 data=0x00000000000f00000000000781000032080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161616161616161616161616161616161616161616161
+
+** As part of acl we are going to update the TC value of the packet, Lets check the TC value right now
+
+sig get name=tc
+=====================================================================================================================================================
+| sys_tc                           | 3    | 00                                                               | ETPP_0 | Applet           | ETParser |
+| FTMH_TC                          | 3    | 00                                                               | ERPP_0 | EPMF             | ETMR     |
+=====================================================================================================================================================
+
+** Now lets add a egress Rule to qualify on trunk port dst and update the TC value to 6, We are looking for a hit in the rule
+** Only trunk id 100 is relevant , vsi 1050 is not add as of now
+
+cint
+add_trunk_inport_tc_rule( 100, 1050 );
+exit;
+
+cint> add_trunk_dstport_tc_rule( 100, 1050 );
+ gport passed to the acl rule is 234881124
+ Field Group ID 8 was created.
+ Field Group ID 8 was attached to Context ID 0.
+ Entry ID 0x50 (80) was added to Field Group ID 8.
+
+BCM.0> field ent info grp=8 ent=0x50
+==========================================================
+| Entry Info                                             |
+==========================================================
+| FG | FG   | Entry ID | Bank | Bank   | Entry    | Core |
+| ID | Type |          | ID   | Offset | Priority | ID   |
+==========================================================
+| 8  | TCAM | 0x000050 | 1    | 0      | 0        | 0    |
+==========================================================
+===========================================================================================
+| Key & Payload Info                                                                      |
+===========================================================================================
+| Qual    | Qual | Qual | Qual Val   | Qual Mask  |   | Action | Action | Action | Action |
+|         | Size | Lsb  |            |            |   |        | Size   | Lsb    | Val    |
+===========================================================================================
+| IN_PORT | 9    | 0    | 0x0000004C | 0x000001FF |   | TC     | 3      | 29     | 0x0006 |
+===========================================================================================
+=======================================================================================================================================
+| Entry Qual Raw Data                                                                                                                 |
+=======================================================================================================================================
+| Raw Value                                                        | Raw Mask                                                         |
+=======================================================================================================================================
+| 0x00000000000000000000000000000000000000000000000000000000000000 | 0x00000000000000000000000000000000000000000000000000000000000000 |
+| 000000000000000000000000000000000000000000000000000000004C       | 00000000000000000000000000000000000000000000000000000001FF       |
+=======================================================================================================================================
+** Notice the mask above that is to take into account the pp port for the trunk
+
+** Now lets send the same packet again as above :
+* tagged packet from 14( trunk ) to 15 ( egresses on 15 )
+tx 1 psrc=14 data=0x00000000000f00000000000781000032080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161616161616161616161616161616161616161616161
+
+** Updated TC value  is shown as part of the sig get command
+sig get name=tc
+=====================================================================================================================================================
+| sys_tc                           | 3    | 06                                                               | ETPP_0 | Applet           | ETParser |
+| FTMH_TC                          | 3    | 06                                                               | ERPP_0 | EPMF             | ETMR     |
+=====================================================================================================================================================
+
+
+
+---------------- #TEST5 : Basic L2 forwarding, tagged trunk add/delete members  --------------------------------
+- Configuration
+-    a. create a trunk port with port 13,14 with TID 100
+-    b. Add port 1 to the existing trunk
+-    c. create vlan 50, vsi 1050
+-    d. Add trunk 100 to that vlan, vsi and LIF 600. Keeping the tagged as bit 1
+-    e. Add port 15 to that vlan, vsi and LIF 601. Keeping the tagged as bit 1
+-    f. Add mac address for both trunk and local port 15
+-    g. Check packet forwarding on the newly added link
+-    h. Add one more link and check packe forwarding
+-    i. Delete the newly added link
+-    j. Delete one of the initial links
+----------------------------------------------------------------------------------
+
+cd ../../../../../cint/advvlan/
+cint globals.c
+cint vlan_translations.c
+cint adv_trunk.c
+
+cint
+print bcm_dnx_sdk_ave_vlan_init(0);
+
+// create trunk
+main_trunk( 13,14,100, 100 );
+
+** Lets check the contents of the truunk
+
+BCM.0> dbal table dump table=TRUNK_MEMBERS
+====================================
+| Entries dump table TRUNK_MEMBERS |
+|   Total Entries: 2               |
+====================================
+| # | MEMBER_ || DST_              |
+|   | INDEX   || SYS_              |
+|   |         || PORT_             |
+|   |         || ID                |
+====================================
+| 0 | 6400    || 786445            |
+| 1 | 6401    || 786446            |
+====================================
+BCM.0> dbal table dump table=TRUNK_ATTRIBUTES
+==========================================
+| Entries dump table TRUNK_ATTRIBUTES    |
+|   Result type  PSC_MULTIPLY_AND_DIVIDE |
+|   Total Entries: 1                     |
+==========================================
+| # | GROUP_ | POOL_ || MAX_             |
+|   | INDEX  | INDEX || MEMBER           |
+==========================================
+| 0 | 100    | 0     || 1                |
+==========================================
+
+// Add on port to the trunk, local port 1 is added to trunk
+cint
+add_trunk_member( 100, 1 );
+exit;
+
+BCM.0> dbal table dump table=TRUNK_MEMBERS
+====================================
+| Entries dump table TRUNK_MEMBERS |
+|   Total Entries: 3               |
+====================================
+| # | MEMBER_ || DST_              |
+|   | INDEX   || SYS_              |
+|   |         || PORT_             |
+|   |         || ID                |
+====================================
+| 0 | 6400    || 786445            |
+| 1 | 6401    || 786446            |
+| 2 | 6402    || 786433            |
+====================================
+BCM.0>                                                                                                                                                                         dbal table dump table=TRUNK_ATTRIBUTES
+==========================================
+| Entries dump table TRUNK_ATTRIBUTES    |
+|   Result type  PSC_MULTIPLY_AND_DIVIDE |
+|   Total Entries: 1                     |
+==========================================
+| # | GROUP_ | POOL_ || MAX_             |
+|   | INDEX  | INDEX || MEMBER           |
+==========================================
+| 0 | 100    | 0     || 2                |
+==========================================
+
+
+// create vlan and vsi, vlan 50 and VSI 1050
+create_vlan_vsi( 50,1050 );
+// Add trunk port 100 to vlan 50, VSI 1050, tagged and vit LIF 600
+add_trunk_to_vlan( 100, 50, 1050, 1, 600);
+// Add local port 15 to vlan 50, VSI 1050, tagged and vit LIF 601
+add_port_to_vlan( 15, 50, 1050, 1, 601);
+// Add mac address 0x0000000064 for trunk 100  with VSI 1050
+add_mac_trunk( 100, 1050, 100 );
+// Add mac address 0x000000000f for local port 15  with VSI 1050
+add_mac_port( 15, 1050, 15 );
+exit;
+
+* tagged packet from 15 to trunk ( tagged packet goes out of the trunk )
+tx 1 psrc=15 data=0x00000000006400000000000781000032080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161616161616161616161616161616161616161616161
+
+---------------------------------------------------------------------------------------------------------------
+| Out-Port | PP_Port                           | 38 (0x26)                                                    |
+|          | TM_Port                           | 14 (0xe)                                                     |
+===============================================================================================================
+
+* change source mac address and check egress tm port  // packet goes out of the newly added member
+tx 1 psrc=15 data=0x00000000006400000000000881000032080045000046000100004011f66021212103212121010d050cfb00326447616161616161616161616161616161616161616161616161616161616161616161616161616161616161
+
+---------------------------------------------------------------------------------------------------------------
+| Out-Port | PP_Port                           | 38 (0x26)                                                    |
+|          | TM_Port                           | 1 (0x1)                                                      |
+===============================================================================================================
+
+// Now lets add one more port
+// Add on port to the trunk, local port 16 is added to trunk
+
+cint
+add_trunk_member( 100, 16 );
+exit;
+
+BCM.0> dbal table dump table=TRUNK_MEMBERS
+====================================
+| Entries dump table TRUNK_MEMBERS |
+|   Total Entries: 4               |
+====================================
+| # | MEMBER_ || DST_              |
+|   | INDEX   || SYS_              |
+|   |         || PORT_             |
+|   |         || ID                |
+====================================
+| 0 | 6400    || 786445            |
+| 1 | 6401    || 786446            |
+| 2 | 6402    || 786433            |
+| 3 | 6403    || 786448            |
+====================================
+
+BCM.0> dbal table dump table=TRUNK_ATTRIBUTES
+==========================================
+| Entries dump table TRUNK_ATTRIBUTES    |
+|   Result type  PSC_MULTIPLY_AND_DIVIDE |
+|   Total Entries: 1                     |
+==========================================
+| # | GROUP_ | POOL_ || MAX_             |
+|   | INDEX  | INDEX || MEMBER           |
+==========================================
+| 0 | 100    | 0     || 3                |
+==========================================
+
+* So the new member is also added as expected
+Can see packets going out of the newly added port as well
+
+* Now lets delete the newly added port from the lag and see what happens
+
+cint
+delete_trunk_member( 100, 16 );
+exit;
+
+BCM.0> dbal table dump table=TRUNK_ATTRIBUTES
+==========================================
+| Entries dump table TRUNK_ATTRIBUTES    |
+|   Result type  PSC_MULTIPLY_AND_DIVIDE |
+|   Total Entries: 1                     |
+==========================================
+| # | GROUP_ | POOL_ || MAX_             |
+|   | INDEX  | INDEX || MEMBER           |
+==========================================
+| 0 | 100    | 0     || 2                |
+==========================================
+
+BCM.0>  dbal table dump table=TRUNK_MEMBERS
+====================================
+| Entries dump table TRUNK_MEMBERS |
+|   Total Entries: 4               |
+====================================
+| # | MEMBER_ || DST_              |
+|   | INDEX   || SYS_              |
+|   |         || PORT_             |
+|   |         || ID                |
+====================================
+| 0 | 6400    || 786445            |
+| 1 | 6401    || 786446            |
+| 2 | 6402    || 786433            |
+| 3 | 6403    || 819199            |    ->>>>>> This is an invalid entry
+====================================
+
+Now lets delete one of the earlier trunk member port
+cint
+delete_trunk_member( 100, 14 );
+exit;
+
+BCM.0>  dbal table dump table=TRUNK_MEMBERS
+====================================
+| Entries dump table TRUNK_MEMBERS |
+|   Total Entries: 4               |
+====================================
+| # | MEMBER_ || DST_              |
+|   | INDEX   || SYS_              |
+|   |         || PORT_             |
+|   |         || ID                |
+====================================
+| 0 | 6400    || 786445            |
+| 1 | 6401    || 786433            |
+| 2 | 6402    || 819199            |
+| 3 | 6403    || 819199            |
+====================================
+BCM.0> dbal table dump table=TRUNK_ATTRIBUTES
+==========================================
+| Entries dump table TRUNK_ATTRIBUTES    |
+|   Result type  PSC_MULTIPLY_AND_DIVIDE |
+|   Total Entries: 1                     |
+==========================================
+| # | GROUP_ | POOL_ || MAX_             |
+|   | INDEX  | INDEX || MEMBER           |
+==========================================
+| 0 | 100    | 0     || 1                |
+==========================================
+
+
+
+
+---------------- #TEST6 : L3 Subinterfaces Trunk, tagged trunk  --------------------------------
+- Configuration
+-    a. create a trunk port with port 13,14 with TID 100
+-    b. create subinterface 1 on trunk 100 with vlan 50, vsi 1050
+-    c. create subinterface 2 on trunk 100 with vlan 70, vsi 1070
+-    d. create subinterface on port 15 with vlan 60, vsi 1060
+-    e. Add routes for all 3 subinterfaces
+-    f. check packet forwarding
+------------------------------------------------------------------------------------------------
+
+
+cd ../../../../../cint/advvlan/
+cint globals.c
+cint vlan_translations.c
+cint adv_trunk.c
+
+cint
+print bcm_dnx_sdk_ave_vlan_init(0);
+
+bcm_if_t trunk_fec_id_subintf1, trunk_fec_id_subintf2;
+bcm_if_t port_fec_id;
+
+// create trunk
+// Adding local port 13,14 to trunk 100 and with Vlan domain 100
+main_trunk( 13,14,100, 100 );
+
+// This creates subintf 1 on trunk, with VLAN 50, VSI 1050, LIF 500,
+// MY_MAC 00:00:00:00:02:00 and an nexthop mac 00:00:00:00:00:05
+trunk_fec_id_subintf1 = create_trunk_subinterface_and_nh( 100, 50, 1050, 500, 2, 5 );
+
+// This creates subintf 2 on trunk, with VLAN 70, VSI 1070, LIF 700,
+// MY_MAC 00:00:00:00:02:00 and an nexthop mac 00:00:00:00:00:07
+trunk_fec_id_subintf2 = create_trunk_subinterface_and_nh( 100, 70, 1070, 700, 2, 7 );
+
+// This creates a subintf on port15, with VLAN 60, VSI 1060, LIF 600,
+// MY_MAC 00:00:00:00:02:00 and an nexthop mac 00:00:00:00:00:06
+port_fec_id = create_subinterface_and_nh( 15, 60, 1060, 600, 2, 6 );
+
+// Add route 16.16.16.16 reachable via subintf 1, tag 50
+add_ip_route( 0x10101010, 0xffffffff, trunk_fec_id_subintf1 );
+// Add route 48.48.48.48 reachable via subintf 2, tag 70
+add_ip_route( 0x30303030, 0xffffffff, trunk_fec_id_subintf2 );
+
+// Add route 32.32.32.32 reachable via port 15, tag 60
+add_ip_route( 0x20202020, 0xffffffff, port_fec_id );
+
+exit;
+
+************** Packet forwarding ****************************
+
+// Lets send packets from trunk with vlan tag 50( Subintf 1 ) to port 15 ( packet gets routed and send on port 15 )
+tx 1 psrc=13 data=0x000000000200000000000007810000320800450000460001000040111a4710101010202020200d050cfb0032882d616161616161616161616161616161616161616161
+
+// packet from port 15 with DIP 16.16.16.16, packet gets routed and egress from sunintf 1 on trunk ( vlan tag 50 )
+tx 1 psrc=15 data=0x0000000002000000000000078100003c0800450000460001000040111a4720202020101010100d050cfb0032882d616161616161616161616161616161616161616161
+
+//packet from port 15 with DIP 48.48.48.48, packet gets routed and egress from sunintf 1 on trunk ( vlan tag 70 )
+tx 1 psrc=15 data=0x0000000002000000000000078100003c080045000046000100004011da0620202020303030300d050cfb003247ed616161616161616161616161616161616161616161
+
+// Lets send a packet to trunk on vlan 70( subintf 2 )  to come out on vlan 60 on port 15
+tx 1 psrc=13 data=0x00000000020000000000000781000046080045000030000100004011da1c30303030202020200d050cfb001c7748616161616161616161616161616161616161616161
+
+// Lets send a packet from trunk port on subintf 2 ( vlan tag 70 ) and expect the packet to come out of trunk on subintf 1 ( vlan tag  50 )
+tx 1 psrc=13 data=0x00000000020000000000000781000046080045000031000100004011fa3b30303030101010100d050cfb001d3666616161616161616161616161616161616161616161
+
+// reverse packet as above
+tx 1 psrc=13 data=0x00000000020000000000000781000032080045000031000100004011fa3b10101010303030300d050cfb001d3666616161616161616161616161616161616161616161
+
+
+
+
+x=x=x=x=x=x END x=x=x=x=x=x

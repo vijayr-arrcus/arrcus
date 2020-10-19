@@ -1,0 +1,384 @@
+interface bond20
+ type                           ieee8023adLag
+ mtu                            9000
+ name                           bond20
+ description                    ""
+ enabled                        true
+ ifindex                        456
+ admin-status                   UP
+ oper-status                    UP
+ last-change                    2020-09-21T08:55:03.132482-00:00
+ counters in-octets       2078608
+ counters in-unicast-pkts 0
+ counters in-broadcast-pkts 0
+ counters in-multicast-pkts 16224
+ counters in-discards     0
+ counters in-errors       0
+ counters in-unknown-protos 0
+ counters out-octets      2077546
+ counters out-unicast-pkts 0
+ counters out-broadcast-pkts 0
+ counters out-multicast-pkts 16215
+ counters out-discards    0
+ counters out-errors      0
+ counters last-clear      2020-09-21T07:43:29.981427-00:00
+ counters in-ipv4-discards 0
+ counters in-stp-discards 0
+ counters in-vlan-discards 0
+ counters in-tcam-discards 0
+ counters in-policy-discards 0
+ counters in-mtu-exceeded-discards 0
+ load-interval                  30
+ fec                            fec-none
+ fec-corrected-errors           0
+ fec-uncorrected-errors         0
+ speed-group                    0
+ time-elapsed-since-last-change 00:20:39
+ dynamic ipv6-link-local fe80::b6a9:fcff:fe1c:bebe
+ subinterface 10
+  state index      10
+  state name       bond20.10
+  state description ""
+  state enabled    true
+  state ifindex    453
+  state admin-status UP
+  state oper-status DOWN
+  state last-change 2020-09-21T07:36:03.8615-00:00
+  state counters in-octets 0
+  state counters in-unicast-pkts 0
+  state counters in-broadcast-pkts 0
+  state counters in-multicast-pkts 0
+  subinterface 20
+  state index      20
+  state name       bond20.20
+  state description ""
+  state enabled    true
+  state ifindex    454
+  state admin-status UP
+  state oper-status DOWN
+  state last-change 2020-09-21T07:36:05.310523-00:00
+  state counters in-octets 0
+  state counters in-unicast-pkts 0
+  state counters in-broadcast-pkts 0
+  state counters in-multicast-pkts 0
+  state counters in-discards 0
+  state counters in-errors 0
+  state counters in-unknown-protos 0
+  state counters out-octets 0
+  state counters out-unicast-pkts 0
+  state counters out-broadcast-pkts 0
+  state counters out-multicast-pkts 0
+  state counters out-discards 0
+  state counters out-errors 0
+  state network-instance default
+  ipv4 state neighbor-timeout 14400
+  ipv4 address 12.12.12.1
+   state ip      12.12.12.1
+   state prefix-length 24
+   state origin  STATIC
+   state label-index 4294967295
+   subinterface 30
+ state index      30
+ state name       bond20.30
+ state description ""
+ state enabled    true
+ state ifindex    455
+ state admin-status UP
+ state oper-status DOWN
+ state last-change 2020-09-21T07:36:06.614538-00:00
+ state counters in-octets 0
+ state counters in-unicast-pkts 0
+ state counters in-broadcast-pkts 0
+ state counters in-multicast-pkts 0
+ state counters in-discards 0
+ state counters in-errors 0
+ state counters in-unknown-protos 0
+ state counters out-octets 0
+ state counters out-unicast-pkts 0
+ state counters out-broadcast-pkts 0
+ state counters out-multicast-pkts 0
+ state counters out-discards 0
+ state counters out-errors 0
+ state network-instance default
+ ipv4 state neighbor-timeout 14400
+ ipv4 address 13.13.13.1
+  state ip      13.13.13.1
+  state prefix-length 24
+  state origin  STATIC
+  state label-index 4294967295
+ ipv6 state neighbor-timeout 14400
+ ipv6 router-advertisement state interval 600
+ ipv6 router-advertisement state lifetime 1800
+ ipv6 router-advertisement state suppress false
+ ipv6 router-advertisement state virtual-router-only false
+aggregation lag-type LACP
+aggregation min-links 0
+aggregation load-balance member
+MEMBER  MEMBER  IN       OUT      IN         OUT        IN         OUT
+NAME    NAME    UNICAST  UNICAST  MULTICAST  MULTICAST  BROADCAST  BROADCAST
+------------------------------------------------------------------------------
+swp35   swp35   0        0        33         33         0          0
+swp6    swp6    0        0        33         33         0          0
+swp5    swp5    0        0        33         33         0          0
+
+
+[2020/09/21 08:55:01.454549][DEBUG][IFMGR] DEBUG: Add msg received for bond intf bond20                                                                                                                [228/713]
+[2020/09/21 08:55:01.459455][DEBUG][IFMGR] linux mac is set to B4:A9:FC:1C:BE:BE for interface bond20
+[2020/09/21 08:55:01.459500][DEBUG][IFMGR] DEBUG: Removing all vlans as members from bond20
+[2020/09/21 08:55:01.459509][DEBUG][IFMGR] DEBUG: Removing vlans from bond20
+[2020/09/21 08:55:01.466138][DEBUG][IFMGR] Port admin state up for interface index 456, bond20 sent tolinux
+[2020/09/21 08:55:01.474293][DEBUG][IFMGR] Port admin state up for interface index 3035, swp35 sent tolinux
+[2020/09/21 08:55:01.474326][DEBUG][IFMGR] DEBUG: Adding INTF swp35 obj to the txlist for add event
+[2020/09/21 08:55:01.474337][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.474354][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:01.480658][DEBUG][IFMGR] Port admin state up for interface index 3006, swp6 sent to linux
+[2020/09/21 08:55:01.480694][DEBUG][IFMGR] DEBUG: Adding INTF swp6 obj to the txlist for add event
+[2020/09/21 08:55:01.480705][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.480714][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.487008][DEBUG][IFMGR] Port admin state up for interface index 3005, swp5 sent to linux
+[2020/09/21 08:55:01.487033][DEBUG][IFMGR] DEBUG: Adding INTF swp5 obj to the txlist for add event
+[2020/09/21 08:55:01.487046][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.487054][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.487062][DEBUG][IFMGR] DEBUG: Adding all vlans as members from bond20
+[2020/09/21 08:55:01.487107][DEBUG][IFMGR] L3 update v4 enable 0 index 456 l3_info->curr_v4_cfg.enabled 0
+[2020/09/21 08:55:01.487165][DEBUG][IFMGR] L3 update v4 mtu 8974, v4 enable 0 index 456
+[2020/09/21 08:55:01.487177][DEBUG][IFMGR] DEBUG: Adding INTF bond20 obj to the txlist for add event
+[2020/09/21 08:55:01.487183][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.487189][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.491357][DEBUG][CONFDPROXY] Called Config Handler, read socket=260, result=0
+
+
+
+[2020/09/21 08:55:01.491693][DEBUG][IFMGR] ifmgr_handle_if_create_event: old_op_state 0, new_op_state 1
+[2020/09/21 08:55:01.491708][DEBUG][IFMGR] For ifindex: 456, data->link_state link_up(2)
+[2020/09/21 08:55:01.491799][DEBUG][IFMGR] DEBUG: Adding INTF bond20 obj to the txlist for add event
+[2020/09/21 08:55:01.491811][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2020/09/21 08:55:01.491818][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.491825][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.491852][DEBUG][IFMGR] L3 update v4 enable 0 index 456 l3_info->curr_v4_cfg.enabled 0
+[2020/09/21 08:55:01.491877][DEBUG][IFMGR] L3 update v4 mtu 8974, v4 enable 0 index 456
+
+
+
+
+
+
+
+[2020/09/21 08:55:01.491888][DEBUG][IFMGR] handle_netlink_up  modified ifindex456
+[2020/09/21 08:55:01.491921][DEBUG][IFMGR] ifmgr_handle_if_create_event: old_op_state 1, new_op_state 0
+[2020/09/21 08:55:01.491932][DEBUG][IFMGR] For ifindex: 456, data->link_state link_down(1)
+[2020/09/21 08:55:01.491992][DEBUG][IFMGR] DEBUG: Adding INTF bond20 obj to the txlist for add event
+[2020/09/21 08:55:01.492004][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2020/09/21 08:55:01.492010][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.492016][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.492040][DEBUG][IFMGR] L3 update v4 enable 0 index 456 l3_info->curr_v4_cfg.enabled 0
+[2020/09/21 08:55:01.492061][DEBUG][IFMGR] L3 update v4 mtu 8974, v4 enable 0 index 456
+[2020/09/21 08:55:01.492071][DEBUG][IFMGR] handle_netlink_up  modified ifindex456
+[2020/09/21 08:55:01.492120][DEBUG][IFMGR] Interface swp5 actor flags are 63 and partner flags are 63 and slave state 1
+[2020/09/21 08:55:01.492149][DEBUG][IFMGR] For ifindex: 3005, data->link_state link_down(1)
+[2020/09/21 08:55:01.492157][DEBUG][IFMGR] DEBUG: Adding INTF swp5 obj to the txlist for add event
+[2020/09/21 08:55:01.492163][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2020/09/21 08:55:01.492168][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.492173][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.492180][DEBUG][IFMGR] handle_netlink_up  modified ifindex3005
+[2020/09/21 08:55:01.492219][DEBUG][IFMGR] Interface swp6 actor flags are 63 and partner flags are 63 and slave state 1
+[2020/09/21 08:55:01.492231][DEBUG][IFMGR] For ifindex: 3006, data->link_state link_down(1)
+[2020/09/21 08:55:01.492239][DEBUG][IFMGR] DEBUG: Adding INTF swp6 obj to the txlist for add event
+[2020/09/21 08:55:01.492246][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2020/09/21 08:55:01.492254][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.492260][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.492267][DEBUG][IFMGR] handle_netlink_up  modified ifindex3006
+[2020/09/21 08:55:01.492309][DEBUG][IFMGR] Interface swp35 actor flags are 63 and partner flags are 63and slave state 1
+[2020/09/21 08:55:01.492321][DEBUG][IFMGR] For ifindex: 3035, data->link_state link_down(1)
+[2020/09/21 08:55:01.492329][DEBUG][IFMGR] DEBUG: Adding INTF swp35 obj to the txlist for add event
+[2020/09/21 08:55:01.492335][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2020/09/21 08:55:01.492341][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.492348][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.492354][DEBUG][IFMGR] handle_netlink_up  modified ifindex3035
+[2020/09/21 08:55:01.492382][DEBUG][IFMGR] Interface swp35 actor flags are 63 and partner flags are 63and slave state 1
+[2020/09/21 08:55:01.492400][DEBUG][IFMGR] For ifindex: 3035, data->link_state link_down(1)
+[2020/09/21 08:55:01.492409][DEBUG][IFMGR] DEBUG: Adding INTF swp35 obj to the txlist for add event
+[2020/09/21 08:55:01.492416][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2020/09/21 08:55:01.492422][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.492428][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.492436][DEBUG][IFMGR] handle_netlink_up  modified ifindex3035
+[2020/09/21 08:55:01.492465][DEBUG][IFMGR] Interface swp6 actor flags are 63 and partner flags are 63 and slave state 1
+[2020/09/21 08:55:01.492476][DEBUG][IFMGR] For ifindex: 3006, data->link_state link_down(1)
+[2020/09/21 08:55:01.492483][DEBUG][IFMGR] DEBUG: Adding INTF swp6 obj to the txlist for add event
+[2020/09/21 08:55:01.492489][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2020/09/21 08:55:01.492495][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.492502][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.492508][DEBUG][IFMGR] handle_netlink_up  modified ifindex3006
+[2020/09/21 08:55:01.492535][DEBUG][IFMGR] Interface swp5 actor flags are 63 and partner flags are 63 and slave state 1
+[2020/09/21 08:55:01.492546][DEBUG][IFMGR] For ifindex: 3005, data->link_state link_down(1)
+[2020/09/21 08:55:01.492554][DEBUG][IFMGR] DEBUG: Adding INTF swp5 obj to the txlist for add event
+[2020/09/21 08:55:01.492561][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2020/09/21 08:55:01.492566][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:01.492572][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:01.492579][DEBUG][IFMGR] handle_netlink_up  modified ifindex3005
+[2020/09/21 08:55:01.492603][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:01.492613][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface bond20
+[2020/09/21 08:55:01.492630][DEBUG][IFMGR] IFMGR sent_to_dpal : 1 and  act_cnt  0
+[2020/09/21 08:55:01.492637][DEBUG][IFMGR] IFMGR publishing ifindex 456 to  lnx index 456 mapping
+[2020/09/21 08:55:01.492646][DEBUG][IFMGR] bond bond20 cfg mem index 3035 encoded
+[2020/09/21 08:55:01.492652][DEBUG][IFMGR] bond bond20 cfg mem index 3006 encoded
+[2020/09/21 08:55:01.492658][DEBUG][IFMGR] bond bond20 cfg mem index 3005 encoded
+[2020/09/21 08:55:01.492681][DEBUG][IFMGR] DS BOND TBL update suceed for ifindex 456 admin state = 2, link state = 1
+[2020/09/21 08:55:01.492691][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp35
+[2020/09/21 08:55:01.492698][DEBUG][IFMGR] IFMGR publishing ifindex 3035 to  lnx index 3035 mapping
+[2020/09/21 08:55:01.492716][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3035 admin state = 2, link state = 1
+[2020/09/21 08:55:01.492725][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp6
+[2020/09/21 08:55:01.492731][DEBUG][IFMGR] IFMGR publishing ifindex 3006 to  lnx index 3006 mapping
+[2020/09/21 08:55:01.492748][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3006 admin state = 2, link state = 1
+[2020/09/21 08:55:01.492757][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp5
+[2020/09/21 08:55:01.492764][DEBUG][IFMGR] IFMGR publishing ifindex 3005 to  lnx index 3005 mapping
+[2020/09/21 08:55:01.492780][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3005 admin state = 2, link state = 1
+[2020/09/21 08:55:03.095956][DEBUG][IFMGR] Interface swp35 actor flags are 63 and partner flags are 63and slave state 1
+[2020/09/21 08:55:03.096042][DEBUG][IFMGR] ifmgr_handle_if_create_event: old_op_state 0, new_op_state 1
+[2020/09/21 08:55:03.096050][DEBUG][IFMGR] For ifindex: 3035, data->link_state link_up(2)
+[2020/09/21 08:55:03.096203][DEBUG][IFMGR] DEBUG: Adding INTF swp35 obj to the txlist for add event
+[2020/09/21 08:55:03.096215][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:03.096223][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:03.096236][DEBUG][IFMGR] handle_netlink_up  modified ifindex3035
+[2020/09/21 08:55:03.097337][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:03.097355][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp35
+[2020/09/21 08:55:03.097363][DEBUG][IFMGR] IFMGR publishing ifindex 3035 to  lnx index 3035 mapping
+[2020/09/21 08:55:03.097398][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3035 admin state = 2, link state = 2
+[2020/09/21 08:55:03.132369][DEBUG][IFMGR] ifmgr_handle_if_create_event: old_op_state 0, new_op_state 1
+[2020/09/21 08:55:03.132390][DEBUG][IFMGR] For ifindex: 456, data->link_state link_up(2)
+[2020/09/21 08:55:03.132484][DEBUG][IFMGR] DEBUG: Adding INTF bond20 obj to the txlist for add event
+[2020/09/21 08:55:03.132496][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:03.132503][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:03.132547][DEBUG][IFMGR] L3 update v4 enable 0 index 456 l3_info->curr_v4_cfg.enabled 0
+[2020/09/21 08:55:03.132575][DEBUG][IFMGR] L3 update v4 mtu 8974, v4 enable 0 index 456
+[2020/09/21 08:55:03.132595][DEBUG][IFMGR] handle_netlink_up  modified ifindex456
+[2020/09/21 08:55:03.133669][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:03.133686][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface bond20
+[2020/09/21 08:55:03.133695][DEBUG][IFMGR] IFMGR sent_to_dpal : 1 and  act_cnt  0
+[2020/09/21 08:55:03.133702][DEBUG][IFMGR] IFMGR publishing ifindex 456 to  lnx index 456 mapping
+[2020/09/21 08:55:03.133708][DEBUG][IFMGR] bond bond20 cfg mem index 3035 encoded
+[2020/09/21 08:55:03.133714][DEBUG][IFMGR] bond bond20 cfg mem index 3006 encoded
+[2020/09/21 08:55:03.133720][DEBUG][IFMGR] bond bond20 cfg mem index 3005 encoded
+[2020/09/21 08:55:03.133746][DEBUG][IFMGR] DS BOND TBL update suceed for ifindex 456 admin state = 2, link state = 2
+[2020/09/21 08:55:03.195259][DEBUG][IFMGR] DEBUG: Adding INTF swp35 obj to the txlist for add event
+[2020/09/21 08:55:03.195296][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:03.195303][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:03.196407][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:03.196425][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp35
+[2020/09/21 08:55:03.196432][DEBUG][IFMGR] IFMGR publishing ifindex 3035 to  lnx index 3035 mapping
+[2020/09/21 08:55:03.196456][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3035 admin state = 2, link state = 2
+[2020/09/21 08:55:03.234050][DEBUG][IFMGR] Interface swp35 actor flags are 71 and partner flags are 1 and slave state 0
+[2020/09/21 08:55:03.234073][DEBUG][IFMGR] For ifindex: 3035, data->link_state link_up(2)
+[2020/09/21 08:55:03.234082][DEBUG][IFMGR] DEBUG: Adding INTF swp35 obj to the txlist for add event
+[2020/09/21 08:55:03.234088][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:03.234094][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:03.234103][DEBUG][IFMGR] DEBUG: Adding INTF bond20 obj to the txlist for add event
+[2020/09/21 08:55:03.234110][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:03.234115][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:03.234122][DEBUG][IFMGR] handle_netlink_up  modified ifindex3035
+[2020/09/21 08:55:03.235220][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:03.235237][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp35
+[2020/09/21 08:55:03.235244][DEBUG][IFMGR] IFMGR publishing ifindex 3035 to  lnx index 3035 mapping
+[2020/09/21 08:55:03.235269][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3035 admin state = 2, link state = 2
+[2020/09/21 08:55:03.235279][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface bond20
+[2020/09/21 08:55:03.235287][DEBUG][IFMGR] IFMGR sent_to_dpal : 1 and  act_cnt  1
+[2020/09/21 08:55:03.235294][DEBUG][IFMGR] IFMGR publishing ifindex 456 to  lnx index 456 mapping
+[2020/09/21 08:55:03.235301][DEBUG][IFMGR] bond bond20 cfg mem index 3035 encoded
+[2020/09/21 08:55:03.235307][DEBUG][IFMGR] bond bond20 cfg mem index 3006 encoded
+[2020/09/21 08:55:03.235320][DEBUG][IFMGR] bond bond20 cfg mem index 3005 encoded
+[2020/09/21 08:55:03.235327][DEBUG][IFMGR] bond bond20 act mem index 3035 encoded
+[2020/09/21 08:55:03.235346][DEBUG][IFMGR] DS BOND TBL update suceed for ifindex 456 admin state = 2, link state = 2
+[2020/09/21 08:55:03.896678][DEBUG][IFMGR] Interface swp6 actor flags are 63 and partner flags are 63 and slave state 1
+[2020/09/21 08:55:03.896718][DEBUG][IFMGR] ifmgr_handle_if_create_event: old_op_state 0, new_op_state 1
+[2020/09/21 08:55:03.896726][DEBUG][IFMGR] For ifindex: 3006, data->link_state link_up(2)
+[2020/09/21 08:55:03.896890][DEBUG][IFMGR] DEBUG: Adding INTF swp6 obj to the txlist for add event
+[2020/09/21 08:55:03.896902][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:03.896910][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:03.896923][DEBUG][IFMGR] handle_netlink_up  modified ifindex3006
+[2020/09/21 08:55:03.899954][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:03.899977][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp6
+[2020/09/21 08:55:03.899984][DEBUG][IFMGR] IFMGR publishing ifindex 3006 to  lnx index 3006 mapping
+[2020/09/21 08:55:03.900024][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3006 admin state = 2, link state = 2
+[2020/09/21 08:55:03.998072][DEBUG][IFMGR] DEBUG: Adding INTF swp6 obj to the txlist for add event
+[2020/09/21 08:55:03.998091][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:03.998099][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:03.999202][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:03.999219][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp6
+[2020/09/21 08:55:03.999226][DEBUG][IFMGR] IFMGR publishing ifindex 3006 to  lnx index 3006 mapping
+[2020/09/21 08:55:03.999278][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3006 admin state = 2, link state = 2
+[2020/09/21 08:55:04.170029][DEBUG][IFMGR] Interface swp35 actor flags are 199 and partner flags are 3 and slave state 1
+[2020/09/21 08:55:04.170078][DEBUG][IFMGR] For ifindex: 3035, data->link_state link_up(2)
+[2020/09/21 08:55:04.170088][DEBUG][IFMGR] DEBUG: Adding INTF swp35 obj to the txlist for add event
+[2020/09/21 08:55:04.170095][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:04.170103][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:04.170113][DEBUG][IFMGR] DEBUG: Adding INTF bond20 obj to the txlist for add event
+[2020/09/21 08:55:04.170118][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:04.170124][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:04.170131][DEBUG][IFMGR] handle_netlink_up  modified ifindex3035
+[2020/09/21 08:55:04.171232][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:04.171251][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp35
+[2020/09/21 08:55:04.171258][DEBUG][IFMGR] IFMGR publishing ifindex 3035 to  lnx index 3035 mapping
+[2020/09/21 08:55:04.171299][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3035 admin state = 2, link state = 2
+[2020/09/21 08:55:04.171311][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface bond20
+[2020/09/21 08:55:04.171319][DEBUG][IFMGR] IFMGR sent_to_dpal : 1 and  act_cnt  0
+[2020/09/21 08:55:04.171325][DEBUG][IFMGR] IFMGR publishing ifindex 456 to  lnx index 456 mapping
+[2020/09/21 08:55:04.171337][DEBUG][IFMGR] bond bond20 cfg mem index 3035 encoded
+[2020/09/21 08:55:04.171343][DEBUG][IFMGR] bond bond20 cfg mem index 3006 encoded
+[2020/09/21 08:55:04.171349][DEBUG][IFMGR] bond bond20 cfg mem index 3005 encoded
+[2020/09/21 08:55:04.171372][DEBUG][IFMGR] DS BOND TBL update suceed for ifindex 456 admin state = 2, link state = 2
+[2020/09/21 08:55:04.199266][DEBUG][IFMGR] Interface swp5 actor flags are 63 and partner flags are 63 and slave state 1
+[2020/09/21 08:55:04.199304][DEBUG][IFMGR] ifmgr_handle_if_create_event: old_op_state 0, new_op_state 1
+[2020/09/21 08:55:04.199313][DEBUG][IFMGR] For ifindex: 3005, data->link_state link_up(2)
+[2020/09/21 08:55:04.199470][DEBUG][IFMGR] DEBUG: Adding INTF swp5 obj to the txlist for add event
+[2020/09/21 08:55:04.199482][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:04.199491][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:04.199503][DEBUG][IFMGR] handle_netlink_up  modified ifindex3005
+[2020/09/21 08:55:04.200578][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:04.200601][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp5
+[2020/09/21 08:55:04.200609][DEBUG][IFMGR] IFMGR publishing ifindex 3005 to  lnx index 3005 mapping
+[2020/09/21 08:55:04.200647][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3005 admin state = 2, link state = 2
+[2020/09/21 08:55:04.293986][DEBUG][IFMGR] DEBUG: Adding INTF swp5 obj to the txlist for add event
+[2020/09/21 08:55:04.294008][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:04.294015][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:04.295110][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:04.295127][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp5
+[2020/09/21 08:55:04.295135][DEBUG][IFMGR] IFMGR publishing ifindex 3005 to  lnx index 3005 mapping
+[2020/09/21 08:55:04.295166][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3005 admin state = 2, link state = 2
+[2020/09/21 08:55:06.249918][DEBUG][IFMGR] Interface swp6 actor flags are 63 and partner flags are 15 and slave state 0
+[2020/09/21 08:55:06.249980][DEBUG][IFMGR] For ifindex: 3006, data->link_state link_up(2)
+[2020/09/21 08:55:06.249991][DEBUG][IFMGR] DEBUG: Adding INTF swp6 obj to the txlist for add event
+[2020/09/21 08:55:06.250000][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:06.250008][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:06.250043][DEBUG][IFMGR] DEBUG: Adding INTF bond20 obj to the txlist for add event
+[2020/09/21 08:55:06.250051][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:06.250057][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:06.250065][DEBUG][IFMGR] handle_netlink_up  modified ifindex3006
+[2020/09/21 08:55:06.251164][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:06.251181][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp6
+[2020/09/21 08:55:06.251188][DEBUG][IFMGR] IFMGR publishing ifindex 3006 to  lnx index 3006 mapping
+[2020/09/21 08:55:06.251223][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3006 admin state = 2, link state = 2
+[2020/09/21 08:55:06.251233][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface bond20
+[2020/09/21 08:55:06.251240][DEBUG][IFMGR] IFMGR sent_to_dpal : 1 and  act_cnt  1
+[2020/09/21 08:55:06.251247][DEBUG][IFMGR] IFMGR publishing ifindex 456 to  lnx index 456 mapping
+[2020/09/21 08:55:06.251254][DEBUG][IFMGR] bond bond20 cfg mem index 3035 encoded
+[2020/09/21 08:55:06.251265][DEBUG][IFMGR] bond bond20 cfg mem index 3006 encoded
+[2020/09/21 08:55:06.251271][DEBUG][IFMGR] bond bond20 cfg mem index 3005 encoded
+[2020/09/21 08:55:06.251276][DEBUG][IFMGR] bond bond20 act mem index 3006 encoded
+[2020/09/21 08:55:06.251302][DEBUG][IFMGR] DS BOND TBL update suceed for ifindex 456 admin state = 2, link state = 2
+[2020/09/21 08:55:06.562844][DEBUG][IFMGR] Interface swp35 actor flags are 63 and partner flags are 63 and slave state 0
+[2020/09/21 08:55:06.562868][DEBUG][IFMGR] For ifindex: 3035, data->link_state link_up(2)
+[2020/09/21 08:55:06.562877][DEBUG][IFMGR] DEBUG: Adding INTF swp35 obj to the txlist for add event
+[2020/09/21 08:55:06.562883][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:06.562889][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2020/09/21 08:55:06.562898][DEBUG][IFMGR] DEBUG: Adding INTF bond20 obj to the txlist for add event
+[2020/09/21 08:55:06.562903][DEBUG][IFMGR] DEBUG: Scheduling the pub event
+[2020/09/21 08:55:06.562909][DEBUG][IFMGR] DEBUG: Pub timer already running
+[2020/09/21 08:55:06.562915][DEBUG][IFMGR] handle_netlink_up  modified ifindex3035
+[2020/09/21 08:55:06.564014][DEBUG][IFMGR] DEBUG: ifmgr_pub_cb called
+[2020/09/21 08:55:06.564036][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp35
+[2020/09/21 08:55:06.564043][DEBUG][IFMGR] IFMGR publishing ifindex 3035 to  lnx index 3035 mapping
+[2020/09/21 08:55:06.564070][DEBUG][IFMGR] DS IF TBL update suceed for ifindex 3035 admin state = 2, link state = 2
+[2020/09/21 08:55:06.564079][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface bond20
+[2020/09/21 08:55:06.564087][DEBUG][IFMGR] IFMGR sent_to_dpal : 1 and  act_cnt  2
+[2020/09/21 08:55:06.564096][DEBUG][IFMGR] IFMGR publishing ifindex 456 to  lnx index 456 mapping
+[2020/09/21 08:55:06.564103][DEBUG][IFMGR] bond bond20 cfg mem index 3035 encoded

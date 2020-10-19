@@ -1,0 +1,37 @@
+interface Bundle-Ether <AO Bundle ID>
+ description 相手ホスト名[BE<ID>]
+ bfd mode ietf
+ bfd address-family ipv6 multiplier 3
+ bfd address-family ipv6 destination fe80::x
+ bfd address-family ipv6 fast-detect
+ bfd address-family ipv6 minimum-interval 50
+ mtu 9114
+ service-policy input Set-Traffic_class
+ service-policy output Egress-Policy
+ ipv6 address fe80::x link-local
+ ipv6 enable
+ bundle minimum-active links 1
+ load-interval 30
+ dampening
+ logging events link-status
+!
+interface Bundle-Ether <RS Bundle ID>
+ description 相手ホスト名[BE<ID>]
+ mtu 9114
+ service-policy input Set-Traffic_class
+ service-policy output Egress-Policy
+ ipv6 address fe80::2 link-local
+ ipv6 enable
+ bundle minimum-active links 1
+ load-interval 30
+ dampening
+ logging events link-status
+!
+
+
+BFD + static IPV6 address -- Works
+min links --- works
+MTU --- works
+
+service-policy input Set-Traffic_class
+service-policy output Egress-Policy

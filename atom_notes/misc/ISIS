@@ -1,0 +1,3 @@
+show network-instance default protocol ISIS default interface * level * adj
+
+show network-instance default rib IPV4 ipv4-entries entry best-protocol ISIS

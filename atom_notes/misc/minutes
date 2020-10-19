@@ -1,0 +1,603 @@
+Known issues
+============
+Subinterface removal, VSI cleanup.
+Control plane qos exists but data plane doesn't.
+    DPAL restart after configuration.
+
+================================================
+
+Broadcom Case: SPA -- no update yet.
+Check with VijayK to prioritize and messaged appropriately.
+22/07/2020 -- VijayK will followup once Medusa announcement is done.
+11/08/2020 -- Amit investigated and the intermediate conversion from DSPA to PP_DSP should work.
+              VijayR to respond my today or latest tomorrow. Need to look at the Romon and then understand its implication.
+12/08/2020 -- Close this by today.
+13/08/2020 -- Requested for Medusa setup to Raj, should get back in a day or two.
+           -- Discussed on the Ramon -- looks like its a simple Switch based on the FAP ID.
+           -- Share an example to help convey our understanding.
+19/08/2020 -- Raj said we can share the medusa setup, need to do some more homework on the setup to understand and followup.
+           -- Vijayr to start looking into this.
+           -- After automation.
+
+Automation AI:
+   Finalize the J2 - TD3 topology and ensure we have a similar one in regression
+   Do not duplicated j2_ files for config
+   Do not have more than one robot file
+   Try to use std suite_setup/teardown
+   Try to eliminate the arctest/tests/robot/interfaces/IntfIxiaLibrary.py file.
+   You can send suite params via config file (use can use __all__ or not have __all__ at all).
+
+   Action Items under Amol
+   Ensure that the ixiaManager changes do not break existing tests.
+   Some more test bed samples for reference.
+   Reference on how we can check lacp state.
+   Take a look at negative cases for properties
+   Rebase with 4.3.1 arrcus_dev_test before moving forward. Do note aminor will be in sync with 4.3.1 branch by Tuesday.
+
+
+
+Memory debugger -- 05/08/2020 -- Have one successful run by today.
+                   06/08/2020 -- successful run, will try to do basic testing.
+                              -- commit the instrumentation changes to dev branch.
+                   07/08/2020 -- Documented everything in the confluence page, focus on feature validation.
+                   /var/log/core -- check for crashes, show interface command sometimes doesnt work.
+                   10/08/2020 -- only after functional verification.
+                   12/08/2020 -- take this up after merge is complete.
+                   19/08/2020 -- vijayr to pick this up after mpls.
+                   21/08/2020 -- after automation.
+
+
+
+80 port testing for multi unit.
+      VijayK to close on prioritize and test bed. -- Follow up with VijayK
+      Ping Kalyani to get the 80 port.
+      Follow up with Manish and Kalyani for the swap.
+      Get the topology setup by 16th July.
+      Test cases. -- Let us scrub the current 40 port test plan and come up with a 80 port test plan.
+      Amit to come up with the first set.
+      Vijay/Amit to sit and scrub the test plan. -- VijayR reviewing
+27/07/2020 -- Vijay to start 80 port testing.
+           -- Amit will mark whatever he has tested, vijay will work on the rest.
+29/07/2020 -- Vijay to provide a patch for the last member delete.
+           -- ACL and policer is fine.
+           -- Forwarding path is fine.
+           -- dyn add/del is fine.
+30/07/2020 -- merge_cb -- old to new if new doesnt have that set.
+           -- first create -- key and all necessary data corresponding to a particular.
+           -- subsequent update -- key + what changed.
+           -- update msg to the dstore -- PUT or POST.
+           -- PUT replaces new over old. -- dstore -- check pointing infra. --
+           -- POST would only update.
+           -- we cannot assume that its post.
+03/08/2020 -- test bond id fix on XGS, to make sure
+04/08/2020 -- finish by today.
+05/08/2020 -- timing issue between ifmgr and ACL.
+           -- try to finish the rest of the testing by today.
+06/08/2020 -- 30-40 % complete 3 bugs.
+           -- QOS not getting programmed after service spyder restart.
+           -- race condition between IFMGR and QOS.
+           -- show qos for subinterface is not working.
+07/08/2020 -- Shitanshu, there is possibility of programming qos for bond.
+10/08/2020 -- VijayR to test sflow and table map on 80 port.
+11/08/2020 -- After MPLS validation.
+12/08/2020 -- after Broadcom.
+13/08/2020 -- LK is using the setup. Share it during India day time.
+19/08/2020 -- sflow and table map has to be verified.
+           -- after mpls.
+
+if (!dpal_sent && !configure) {
+return;
+}
+
+always send.
+dpal_sent = true;
+
+
+if_object --> specific_info -- > bond object(bondid, cfd, act) --> cfgd or act member list.
+
+Should we support break out ? -- Testing effort. -- Follow up with VijayK
+      No automation.
+      Get the topology setup by 16th July.
+
+Automation. -- 10th July.
+    Amit      : 0
+    Basavaraj : 2
+    VijayR    : 0
+    Ram       : 2 + 4
+    https://github.com/Arrcus/arrcus_dev_test/tree/lag_j2_aminor
+    Syncup with Prasanna on traffic generation both for control plane and data plane.
+    Will keep Amol posted once we have resolved some basic issues.
+22/07/2020 -- No objects for LACP.
+           -- Ramji is trying to setup pycharm and work environment.
+23/07/2020 -- Ramji has setup pycharm, will go thru Prasanna videos to understand details on the infrastructure.
+23/07/2020 -- figuring out LACP object.
+           -- VijayR to upload videos from Prasanna.
+24/07/2020 -- Verify on quanta the existing new test cases.
+29/07/2020 -- Issues with Ixia APIs, pycharm issues.
+30/07/2020 -- Debug with Prasanna on the IXIA script.
+           -- Ram was able to automate min links. -- checking oper status of the bond interface.
+              Manual check -- state of the BCM. --- tear down all member links.
+              Vijay to check min links if its for linux.
+
+aminor test branch --- https://github.com/Arrcus/arrcus_dev_test/tree/aminor
+^
+lag_test development. --- https://github.com/Arrcus/arrcus_dev_test/tree/lag_j2_aminor
+^
+private branch --- Will commit to this branch. -- https://github.com/Arrcus/arrcus_dev_test/tree/lag_j2_aminor_tests
+
+03/08/2020 -- Script failing, but not clear why the failure.
+           -- Quanta arp resolution is fixing the problem.
+           -- Check with Prasanna.
+           -- may be check with tcpdump and see if there is any arp resolution difference btwn TD3 and Quanta.
+           -- default mac/gateway present in quanta & TD3 ?
+           -- Ram has committed his TCs.
+           -- Ram to look at Basavaraj test cases and see if he can pick some of them. mostly configuration only.
+               sw1port1 = swith1:swp3 -- config file
+               ${sw1port1} -- robot file.
+04/08/2020 -- one run is complete with the traffic. subsequent run yielded no traffic distribution, need to check this.
+           -- static route configurations
+           -- exit issue was not seen again, ipv4 validation failed in linux this was not reproduceable
+           -- Talk to prasanna for initial code review.
+           -- sflow
+              -- FLOW_SAMPLE -- requires traffic flow.
+              -- counters sample -- doesnt require traffic flow.
+              -- clear counters will not be reflecting.
+05/08/2020 -- address review comments from Prasanna, also check the traffic issues.
+           -- Ram to commit 4 more and take care of review comments from Prasanna.
+06/08/2020 -- Ram commited 4 more test cases. Working on more, review comments to be addressed after Basavaraj.
+           -- Basavaraj All review comments incorporated. Non subinterface configuration. Static routes are done.
+           -- All required setup has been moved to suite setup. start/stop traffic is test case specific.
+           -- Ramji & vijay to syncup on sflow.
+07/08/2020 -- Amit & Vijayr to join automation.
+07/08/2020 -- Completed one successful run. with unicast.
+           -- trying to get the subinterface static routes configured.
+           -- PR amol -- PR to be open today.
+           -- Sflow -- Ramji -- syncup with Vijayr.
+10/08/2020 -- IPV6 configs, will try today. Subinterface static configs is fine.
+           -- SVI configs.
+           -- once IPV4 is done, we will raise a PR.
+           -- Ram to start automation after coverity.
+11/08/2020 -- PR sent.
+           -- Follow up with Prasanna on review comments.
+           -- IPV6 is setup.
+           -- Traffic distribution is not consistent.
+           -- look at only unicast pkt counters, check successive iterations and then check traffic distribution.
+           -- sleep for 30 secs and check stats.
+           -- Can we move to a seperate suite, for LAG. This way our suite setup can be different from normal interface suite setup.
+           -- J2 LAG depends on the existing interface APIs, how can we work with this when we move the lag to a seperate suite.
+           -- Suite setup overrides the existing suite setup.
+12/08/2020 -- waiting for the setup to validate.
+           -- both ipv4 and ipv6 are configured simultaneously.
+           -- Ram to address the review comments after syncup with Prasanna.
+           -- vijayr to join automation.
+13/08/2020 -- Bidirectional traffic ?
+           -- IPV6 traffic counters on the box are not reflected.
+           -- Vijayr to start working on the automation.
+19/08/2020 -- amit started on the shaper.
+           -- vijayr to test 2 testcases and push.
+           -- Basavaraj -- ping from td3 to resolve the ND.
+           -- Check with Prasanna and if required we can ask him to raise a jira.
+21/08/2020 -- Review comments from Amol.
+           -- defer all no subinterface zero.
+           -- once we start the non zero subinterface we will come up with a test setup and tear down.
+26/08/2020 -- Review comments addressed.
+           -- Move to network setup and teardown model.
+           -- Basavaraj to check to the counters.
+           -- Change the counter once its free.
+           -- ixianw.create()
+           -- vijayr to move to a lag interface module.
+           -- vijayr to finish ACL. by 26/08/2020.
+           -- Negative test cases that are failing.
+           -- Amit qos changes -- shaper and policer -- use member link rate check if required.
+           -- DSCP 21.
+           -- Amit to create the network bases.
+          NW_BASE_IPV4 -- bond interface + static route, subinterface 0, gateway interfaces
+          NW_BASE_IPV6 -- bond interface + static route, subinterface 0, gateway interfaces
+          NW_SUB_IPV4  -- bond interface + static route, subinterface 1, 2 , 3, gateway interfaces
+          NW_SUB_IPV6  -- bond interface + static route, subinterface 1, 2 , 3, gateway interfaces
+
+
+
+LB key for ECMP and LAG. -- disable inner headers and check. Try the cints.
+
+PR reviews
+==========
+
+13/08/2020 -- Shitanshu has provided comments.
+           -- 17/08/2020 will start addressing comments.
+           -- Qos cleanup.
+
+           ACL
+           ===
+           a. take care of the Diffs that Shitanshu shared for XGS.
+           b. for ingress & egress.
+
+
+           QOS -- policer
+           ===============
+           Ingress
+           a. PI will send only bond notification for both XGS and DNX.
+           b. Can we achieve the above before merge.
+
+           Egress
+           a. Replicate for member links for both xgs and DNX.
+           b. Is it ok to block at the CLI level ?
+           -- DPAL infra does replication per core, now that logic has to be moved to per member link.
+           -- not very trivial.
+           -- better to block this at the CLI ?
+
+           shaping
+           =======
+           PI will send notification for member links for both XGS and DNX.
+
+
+           Table MAP
+           =========
+           a. DNX -- subinterface -- table map/rif
+           b. its per RIF.
+
+           XGS -- per port  -- table map.
+
+           If XGS as well consumes notification for bond, then we dont have to replicate for either DNX or XGS.
+
+
+Plugin string BOND specific ?
+
+
+Completed & not required
+==========================
+
+MPLS verification with LAG.
+    VijayR -- 25th July.
+27/07/2020 -- Vijayr Need to prioritize this week, need for PM/CE team.
+           -- Check with Basavaraj -- when interface -- egress is bond how are we picking the port ?
+03/08/2020 -- vijayr Will try to close by 05/08/2020.
+           -- FEC -- the egress nh should point to the trunk gport. The code already picks from bcm_port table so it should be using the trunk gport.
+           -- So mostly verification only.
+04/08/2020 -- retrofitting imtiyaz configs here.
+05/08/2020 -- syncup with Imtiyaz today.
+           -- Vijay, Imtiyaz, & Basavaraj to syncup on the configs.
+07/08/2020 -- Setup a meeting with Imtiyaz.
+10/08/2020 -- MPLS -- RIB is getting populated for label traffic.
+                   -- Verify Quanta with both EdgeCore and Quanta.
+11/08/2020 -- Verified that Label switching is fine with bond.
+           -- LER functionality verified.
+           -- LSR default behavior is PHP.
+           -- Get the LSR stuff working, then go to hash LB key.
+12/08/2020 -- Change topology since TD3 doesn't support LDP/MPLS.
+           -- Only J2 is supported, therefore a full J2 topology is being sort out.
+13/08/2020 -- They connected one link btwn 80 port and Edgecore.
+19/08/2020 -- Close this by today.
+
+IXIA  --- Q 40 (LER1) --- Q 80 (LSR) --- Q40 (LER 2) --- IXIA
+
+
+
+verify Shaping  -- 05/08/2020 -- Vijayr Try to complete this by early next week.
+                              -- amit check the stats for queueing as well.
+                   07/08/2020 -- Amit will start the queueing, stats.
+                   10/08/2020 -- schedule a call with Shitanshu.
+                   11/08/2020 -- Will complete today.
+                   12/08/2020 -- Will try to complete today.
+                              -- verified shaping, and it works.
+                              -- Check the numbers with Shitanshu once.
+                              -- counters dint showup.
+                              -- Shaping is per member link.
+                              -- Ingress policer is per core.
+                              -- Egress policer is per member link.
+                              -- All egress features should be per member link.
+                  13/08/2020  -- Shaping works verified, counters seems to be ok but there is a mismatch of 10 %.
+                              -- Egress policer not a priority so may be defer for EFT3.
+                  19/08/2020  -- amit  LK asked to check if the control plane traffic is struck in the queues.
+                              -- Let us follow up LK to understand this better,
+                                 issue should be with normal interface and any control plane pkt.
+
+
+======================
+SDK 6_5_20 -- validation + knet patch.
+30/07/2020 -- Amit to check if the knet patch exists.
+03/08/2020 -- Knet fix exists.
+           -- May be migrate after regression.
+======================
+
+
+coverity -- 06/08/2020 -- coverity run, is done.
+                       -- Trying run it on dpal/plugin/dnx, infra/ifmgr, feature/qos, feature/acl
+            07/08/2020 -- Have got the results corresponding to the changes sets, vijayr will look at the report and scrub it.
+            10/08/2020 -- rerun as suggested by Satish, only one geniune warning. Rest is noise. XLATE_ACE file.
+
+Need to get the convergence number for BFD.
+27/07/2020 -- Ram SM -- BLB -- BFD over logical bundle. -- same as micro BFD.
+                  Micro BFD -- Bundles per link BFD. -- this is yet to be supported.
+           -- Ram will update the SOT page with convergence numbers.
+29/07/2020 -- Ram will start on the BFD convergence, issue was that LAG ports on IXIA got expired.
+30/07/2020 -- Trying to test BFD+BGP+ECMP+LAG.
+03/08/2020 -- yet to test this.
+05/08/2020 -- Will try to complete by tmrw.
+06/08/2020 -- ISIS + ECMP + LAG -- check with prasanna on the configs.
+07/08/2020 -- This is done, updated the same on the confluence page.
+
+
+Stats for ACL, Policer, Policy Map.
+       Verify stats. -- Amit
+       Let us have a sitdown session and verify the changes. -- 8th July.
+       Verified for ACL counters -- main & Subinterface
+       Policer stats yet to be verified.
+            Physical member link works but bond doesn't.
+       Aggregate counter values work eventhough we have two ACL entries in the ingress.
+       Policer stats is not working.
+       Policer of subinterface bond for policer is working.
+22/07/2020 -- worked once, trying to understand why it worked the first time.
+           -- Debugging this further, may be timing based.
+23/07/2020 -- Syncup with Shitanshu, to check whether stats should be for both bond and member links.
+24/07/2020 -- Shitanshu suggested to replicate on egress.
+           -- If required setup a meeting with Shitanshu.
+27/07/2020 -- show command issue -- application error. Statistics is working, only verify.
+           -- both ingress and egress policer stats.
+           -- check if egress is per bond or per physical.
+29/07/2020 -- Check queueing stats. --- check queueing stats
+30/07/2020 -- check stats for bond where ever applicable.
+03/08/2020 -- Queueing is not clear.
+04/08/2020 -- Queueing will start.
+
+
+IXIA policer, queueing.
+    Basavaraj/Amit -- Set up IXIA for automation.
+    We have set up the Ixia for manual operation.
+
+Programming if there are any configured list.  -- Vijay/Amit. -- to understand what happens when there is a interface down member link and LACP is down.
+    We could create trunk only if there is active link.
+        Trunk not yet programmed and there is active link.
+    Basavaraj/Amit
+
+Queueing APIs XGS, DNX..  PI - PD Notifications.
+    VijayR -- Monday 22nd June.
+    ACL is done.
+    Shaping coding is done, have to test. -- VijayR - 6th July  -- 13th -- 17th July
+24/07/2020 -- Verify PM/CE team.
+02/08/2020 -- test with 80 port.
+
+    Table map is pending. this is done have to test - 6th July. -- 13th -- 15th July
+    -- Subinterface0, non zero subinterface not working, multi cores is not verified yet.
+        This seems to be working.
+            Tested with same core and multiple cores.
+            Testing with varying traffic.
+
+    TableMap
+        Ingress Subinterface 0
+            Configure all and send traffic -- pass
+            Configure one by and send traffic -- pass
+            Shutdown one by one and send traffic -- pass
+        Egress Subinterface 60
+            Configure all and send traffic -- pass
+            Configure one by and send traffic -- pass
+            Remove one by one and send traffic -- pass
+            Remove configs and check  -- pass.
+    TableMap -- Bug
+        Ingress Subinterface 60
+            Configure all and send traffic -- fail
+            Configure one by and send traffic --
+            Shutdown one by one and send traffic --
+        Egress Subinterface 0
+            Configure all and send traffic --
+            Configure one by and send traffic --
+            Remove one by one and send traffic --
+            Remove configs and check  --
+02/08/2020 -- vijayr Finish shaping & MPLS then come to this bug.
+04/08/2020 -- Check after fix in the script.
+
+
+IXIA policer, queueing.
+    Basavaraj/Amit -- Set up IXIA for automation.
+    We have set up the Ixia for manual operation.
+
+
+Code review -- PR by next week ?
+      Some kind of sanity
+        Focus on automation
+23/07/2020 -- review at 2:30 today.
+27/07/2020 -- Amit finished his review comments.
+           -- vijayr -- yet to work on the review comments, will finish in a day or two.
+                     -- DPAL crashed after my code review comments. event handler crash.
+03/08/2020 -- vijayr to fix the crash and checkin the code review code.
+04/08/2020 -- global plugin -- caller, fwd declaration.
+           -- review code is commited.
+29/07/2020 -- Test sanity and checkin code before we resume 80 port.
+           -- RamSM  -- finished his review comments and pushed as well.
+           -- Basavaraj -- intendation yang file. will take a look once again.
+03/08/2020 -- Vijayr will commit the intendation.
+
+L2 ACL, icmp
+     -- Amit Testing ICMP. BOTH CORE installation fails, but dpal goes down for core replication.
+     -- just make sure what we are installing maps to what we are deleting.
+     -- ACE objects are freed in one shot.
+     -- L2 ACL is fine. src mac filtering is fine.
+
+Topology config file -- J2
+Robot file -- 1 test case for J2 and use the parameter from J2 topology config file.
+Python acts on the parameter.
+
+
+We close the loop with CE/PM team on the queueing behaviour.
+    Pending warning message for policer for both ingress/egress. -- Basavaraj ?
+    Shaping also if required.
+    VijayR/Amit/Basavaraj -- Schedule for Monday evening.
+24/07/2020 -- Shaping, egress policer, convergence
+           -- Once we have the behavior of the above, we should reach out to PM/CE team.
+27/07/2020 -- Amit shall pick this after he is done with 80 port.
+
+PM & CE team update
+===================
+   a. Shaping
+   b. Policer ingress & egress.
+   c. Default PSC.
+   d. PSC scale limitation.
+   e. Convergence Numbers
+       i. add/del member links
+      ii. Change of PSC
+     iii. BFD -- close on the Methodology -- how to simulate line going down or missing packets.
+      iv. LACP convergence number, really required ?
+       v. Minimum links convergence number ?
+    f. Telemetry
+        Bond stats
+        Min links
+        state change --- bond & member links.
+        act/configured --- CLI & LACP.
+        Bandwidth change
+        PSC algorithm/changes
+        ACL, queueing, policer, table map -- Target specific configuration.
+        ACL, queueing, policer, table map -- stats
+    g. Traffic distribution CLI.
+    h. Features supported not supported.
+
+
+
+Sflow -- ID generation to ifmgr, then publish that as part of bond_specific_info.
+      Design discussion done, verify mirroring works on bond. -- cint or arrcus sw.
+      VijayR -- 2 weeks. -- 20th July.
+      After manual sanity testing. -- 17th July.
+      Bond stats publish
+      ID generation + DPAL changes is done
+      SFLOW changes for bond in DPAL is also done.
+          mirroring is not working for both physical and bond. -- Yet to verify, verify today.
+          EFT2 rebase.
+      Send bond port update to hsflowd -- ARRCUS side is done, hsflowd -- trying to make sure we dont break other platforms on the hsflowd side.
+      Subsribe to Stats
+      Decoder -- Packet header.
+
+
+22/07/2020 -- Physial and bond interface mirror fails post EFT3 rebase.
+           -- EFT2 it was working.
+           -- ACL entries for physical -- is fine -- acl entries exists with statisical sampling as action.
+           -- Mirroring could be the problem.
+           -- Qualifier for matching traffic is based on in_port. PP_port.
+                  There is no qualifier based on subinterface, no VSI.
+           -- Configuration of sampling in on physical interface.
+23/07/2020 -- Coding is done, have to test once we have mirror working.
+           -- will go ahead with the commit and focus on debugging mirror issue. Once that is done will take up CPU path and hsflowd testing.
+24/07/2020 -- Updated LK, on the issue.
+
+27/07/2020
+      Packet Mirroring -- pass
+      Port updates in sflow -- pass
+      port updates in hsflowd -- pass
+      statistics in sflow -- pass -- Counter packets to sflow collector -- remote device.
+      stats in hsflowd -- pass
+      port mirroring in both core 0 and core 1 -- Core 0 ingress verified.
+      sflow in egress direction -- yet to verify
+      without any physical and add physical later -- yet to verify.
+29/07/2020 -- Move to EMPF for egress.
+           -- Check if more than 21 bits quailfier for dst_port, required for trunk gport.
+           -- Check if egress sflow is required. -- PM & CE team.
+03/08/2020 -- SFLOW is done, we suport egress as well.
+
+22/07/2020 -- VijayR to finish review by today.
+           -- Amit Checked basic functionality is fine.
+23/07/2020 -- VijayR has reviewed, we should start manual testing on 80 port.
+
+Hashing algorithm. -- PSC -- M&D , SD.  -- Ram
+    Per hashing algorithm callback
+    Current bond object, return new hashing algorithm.
+      If new and old different, reprogram trunk.
+    Changes verified.
+    Convergence Numbers.
+       Change in PSC.
+          Inter add/remove -- for each of the algorithms.
+    SD -> MD -> SD -- BCM api returning error.
+    Basavaraj/Amit
+
+22/07/2020 -- Trunk members count was not passed properly.
+Trunk_set API -- array of gports we pass of the trunk members.
+              -- active member links in the bcm_bond_object.
+              -- get_meber_cnt_from_trunk --- broadcom.
+              Try with active member links list from bond_object.
+23/07/2020 -- x number active links. -- add/remove/add and then change PSC.A
+           -- merge cb is implemented for PSC.
+swp2 --- remove --- add.
+0x8064 ------------- 0x8164.
+0x8064.
+[port sysport mapping] after psc change.
+27/07/2020 -- Commited to the dev branch. Will finish the convergence testing by today.
+
+Telemetry
+=========
+Bond stats
+Min links
+state change --- bond & member links.
+act/configured --- CLI & LACP.
+Bandwidth change
+PSC algorithm/changes
+ACL, queueing, policer,  table map -- Target specific configuration.
+ACL, queueing, policer,  table map -- stats
+22/07/2020 -- email sent to PM/CE.
+
+
+Egress ACL on subinterface to be tested once we reach aminor. Its more of validation as the hardware programming happens as expected.
+22/07/2020  -- Works after EFT3 rebase
+
+BFD is not working.
+    between TD3 and Quanta. Works between Quanta and Edgecore. -- verify once.
+    Ping works ?
+    Was working before.
+    ISIS not working.
+    BGP not working.
+    ISIS + BFD quanta + TD3 interop check with Test team.
+        Try aminor with normal physical.
+
+XGS -- we have to ignore notification for bond.
+  Have to take care for XGS as well. -- Basavaraj
+  XGS DPAL doesn't come up, need to check why.
+  LK responded saying only SDK16-sp1 changes are included in aminor_sdk_6_5_19.
+  a. Bond with member links.
+  b. Configure ACL on the main bond interface.
+  c. Check DPAL logs.
+
+  Aminor -- + LAG control plan -- qos, ACL, table map.
+                               -- Aminor dpal, make changes here in private branch. and verify.
+                               -- Return for bond interface -- we should be fine.
+              6.5.16 + arrcus_sw of LAG branch and check if dpal comes up.
+  Vijay & Basavaraj to debug the DPAL issue.
+
+Load balance CLI.
+Basavaraj -- Followup and close on Yang.
+Set up a meeting to close on this.
+Will patch it to LAG dev branch, and close the review with Ebben seperately.
+Share the Arista configuration:
+  https://www.arista.com/en/um-eos/eos-section-12-5-port-channel-and-lacp-configuration-commands#ww1153170
+
+Subinterface support for ACL/Policer verification.
+    Subinterface for Table map is only subinterface.
+    ACL its done.    Amit
+    Policer also done.
+    Verify for Table map for both the cores.
+    Also verify if there is no member in the core the entries should be installed.
+    Egress subinterface qual is not working, need to replicate.
+
+    Works on aminor_sdk_6_5_19, but not for us. Even for physical interfaces.
+        The PF entries are the same in both the case.
+        The sdk versions are the same as well.
+
+ECMP works fine, need to understand code a bit to make sure we are not missing anything.
+
+Run icmp.py to test control and data plan traffic, for every commit.
+    Copy the script to every switch and preconfig everything.
+    Save configs required as well.
+    VijayR
+LAG + Srv6
+   Share configs and review.  -- Being done by SRv6 team.
+
+ACL issues vijay/Amit to debug and close. -- COPP solved the problem or reduced the likelihood.
+Close ACL / Policer loop with Csaba.
+    VijayR/Amit -- 1 Week from now. --- This is done
+
+Close on the hashing alogrithms.
+    Amit/VijayK -- 2 Weeks to close with Broadcom. -- This is done
+
+Configuration file for automation testing.
+    VijayR -- Friday 19th June.  -- This is done
+ISIS Testing with 3 router setup.
+    Test data path and punt path.
+      Basavaraj. -- This is done for ISIS.
+Also verify per core for each.
+      VijayR/Amit -- 2 Weeks from now.
+          VijayR to give a brief on counters for ACL. -- This is done

@@ -1,0 +1,40 @@
+LAG on J2 Design review
+
+High level architecture over view of LAG on J2
+==============================================
+   i. Control plane
+   ii. LACP integration
+   iii. GLOBAL ID integration
+   iv. DPAL DNX and J2 layer
+
+Key design decisions.
+===================
+  i.  GLOBAL ID
+  ii. Port to Gport -- Including programming for NH.
+  iii.QOS ingress/egress - Programmable mapping and filtering.
+  iv. Sflow changes.
+  v. Policer
+  vi. No association of a member link with a lag until all configs are removed.
+  vii. Mixed speed member links ?
+  viii. QOS on subinterface not supported yet.
+
+Convergence
+============
+  i.   Make before break -- during update
+  ii.  Hashing algorithm used to resolve link when one member link goes down.
+  iii. Micro BFD vs BFD.
+  iv. LACP fast timers
+
+Scale
+=====
+  i. 256 LAG groups with 64 member links each
+  ii. Multi unit scenario -- medusa case.
+  iii. config reload scenario.
+  iv. Scale for QOS, policer
+
+Telemetry
+==========
+  i. Interface counters currently
+  ii. No MIB support for LAG exists even for XGS.
+
+Programmable mapping and filter.

@@ -1,0 +1,201 @@
+
+cint cint_utils_global.c
+cint cint_trunk.c
+cint
+
+print main_trunk(0, 1, 0, 25, 30,0,0, 0, 100);
+
+
+
+
+Pkt being sent -- ping ICMP , srcIP = 33.33.33.2, DST IP = 33.33.33.1, untagged packet.
+
+
+21:44:40.957008 00:a0:c9:00:00:01 > b4:a9:fc:1c:be:be, ethertype IPv4 (0x0800), length 98: (tos 0x0, ttl 64, id 3355, offset 0, flags [DF], proto ICMP (1), length 84)
+    33.33.33.2 > 33.33.33.1: ICMP echo request, id 24605, seq 573, length 64
+        0x0000:  b4a9 fc1c bebe 00a0 c900 0001 0800 4500  ..............E.
+        0x0010:  0054 0d1b 4000 4001 a949 2121 2102 2121  .T..@.@..I!!!.!!
+        0x0020:  2101 0800 4608 601d 023d c8d1 985e 0000  !...F.`..=...^..
+        0x0030:  0000 219a 0e00 0000 0000 1011 1213 1415  ..!.............
+        0x0040:  1617 1819 1a1b 1c1d 1e1f 2021 2223 2425  ...........!"#$%
+        0x0050:  2627 2829 2a2b 2c2d 2e2f 3031 3233 3435  &'()*+,-./012345
+        0x0060:  3637                                     67
+
+
+
+
+BCM.0>
+BCM.0>
+BCM.0>
+BCM.0> sig get stage=prt core=1
+chip_db:, sdk_db_dir:/usr/arcos/db filename:internal/DNX-Devices.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:DNX-Devices.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:DNX-Devices.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:internal/SystemHeadersObjects.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:SystemHeadersObjects.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:internal/SystemHeadersObjects.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:SystemHeadersObjects.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:DNX-Devices.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:internal/LocalSystemHeadersObjects.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:LocalSystemHeadersObjects.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:LocalSystemHeadersObjects.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:internal/LocalSystemHeadersObjects.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:LocalSystemHeadersObjects.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:internal/NetworkHeadersObjects.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:NetworkHeadersObjects.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:DNX-Devices.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:internal/SystemHeadersObjectsJ1.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:SystemHeadersObjectsJ1.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:internal/SystemHeadersObjectsJ1.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:SystemHeadersObjectsJ1.xml
+===============================================================================================================================
+| Signals                       |
+===============================================================================================================================
+| Attribute           | Size | Value                                                            | Status | Block | From | To  |
+===============================================================================================================================
+| PTC                 | 8    | 19                                                               |  glob  | IRPP  | NIF  | PRT |
+| Valid_Bytes         | 8    | 61                                                               |  glob  | IRPP  | NIF  | PRT |
+| Header              | 1152 | b4a9fc1cbebe00a0c90000010800450000543fa14000400176c3212121022121 |  glob  | IRPP  | NIF  | PRT |
+|                     |      | 210108004d2e601d0054d4cf985e000000001b5f030000000000101112131415 |  |       |      |     |
+|                     |      | 161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435 |  |       |      |     |
+|                     |      | 3637ab5a2ab8fd07070707070707070700000000000000000000000000000000 |  |       |      |     |
+|                     |      | 74656d20284172634f53290e04009c00                                 |  |       |      |     |
+|   ETH0              | 112  | b4a9fc1cbebe00a0c90000010800                                     |  |       |      |     |
+|     DA              | 48   | B4:A9:FC:1C:BE:BE                                                |  |       |      |     |
+|     SA              | 48   | 00:A0:C9:00:00:01                                                |  |       |      |     |
+|     Type            | 16   | IPv4(0x800)                                                      |  |       |      |     |
+|   IPv4              | 160  | 450000543fa14000400176c32121210221212101                         |  |       |      |     |
+|     Version         | 4    | 04                                                               |  |       |      |     |
+|     IHL             | 4    | 05                                                               |  |       |      |     |
+|     TOS             | 8    | 00                                                               |  |       |      |     |
+|       DSCP          | 6    | 00                                                               |  |       |      |     |
+|       ECN           | 2    | 00                                                               |  |       |      |     |
+|     Total_Length    | 16   | 0054                                                             |  |       |      |     |
+|     Identification  | 16   | 3fa1                                                             |  |       |      |     |
+|     Flags           | 3    | 02                                                               |  |       |      |     |
+|     Fragment_Offset | 13   | 0000                                                             |  |       |      |     |
+|     TTL             | 8    | 40                                                               |  |       |      |     |
+|     Protocol        | 8    | 01                                                               |  |       |      |     |
+|     Checksum        | 16   | 76c3                                                             |  |       |      |     |
+|     SIP             | 32   | 33.33.33.2                                                       |  |       |      |     |
+|     DIP             | 32   | 33.33.33.1                                                       |  |       |      |     |
+| Recycle_Cmd         | 16   | 0000                                                             |  glob  | IRPP  | NIF  | PRT |
+|   Prt_Profile       | 4    | 00                                                               |  |       |      |     |
+|   Mirror_Profile    | 4    | 00                                                               |  |       |      |     |
+|   Snoop_Profile     | 4    | 00                                                               |  |       |      |     |
+|   Fwd_Profile       | 4    | 00                                                               |  |       |      |     |
+| TS                  | 32   | 00000000                                                         |  glob  | IRPP  | NIF  | PRT |
+| Tag_Swap_Res        | 2    | 00                                                               |  glob  | IRPP  | NIF  | PRT |
+===============================================================================================================================
+
+
+
+BCM.0>
+BCM.0> sig get stage=nif core=1
+chip_db:, sdk_db_dir:/usr/arcos/db filename:internal/DNX-Devices.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:DNX-Devices.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:DNX-Devices.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:internal/SystemHeadersObjects.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:SystemHeadersObjects.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:internal/SystemHeadersObjects.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:SystemHeadersObjects.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:DNX-Devices.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:internal/LocalSystemHeadersObjects.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:LocalSystemHeadersObjects.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:internal/LocalSystemHeadersObjects.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:LocalSystemHeadersObjects.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:internal/NetworkHeadersObjects.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:NetworkHeadersObjects.xml
+chip_db:, sdk_db_dir:/usr/arcos/db filename:DNX-Devices.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:internal/SystemHeadersObjectsJ1.xml
+chip_db:jericho_2_b0, sdk_db_dir:/usr/arcos/db filename:SystemHeadersObjectsJ1.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:internal/SystemHeadersObjectsJ1.xml
+chip_db:jericho_2, sdk_db_dir:/usr/arcos/db filename:SystemHeadersObjectsJ1.xml
+===================================================================================================================================
+| Signals                                                                                                                         |
+===================================================================================================================================
+| Attribute           | Size | Value                                                            | Status | Block | From | To      |
+===================================================================================================================================
+| PTC                 | 8    | 19                                                               |  glob  | IRPP  | NIF  | PRT     |
+| Valid_Bytes         | 8    | 61                                                               |  glob  | IRPP  | NIF  | PRT     |
+| Header              | 1152 | b4a9fc1cbebe00a0c90000010800450000543fa14000400176c3212121022121 |  glob  | IRPP  | NIF  | PRT     |
+|                     |      | 210108004d2e601d0054d4cf985e000000001b5f030000000000101112131415 |        |       |      |         |
+|                     |      | 161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435 |        |       |      |         |
+|                     |      | 3637ab5a2ab8fd07070707070707070700000000000000000000000000000000 |        |       |      |         |
+|                     |      | 74656d20284172634f53290e04009c00                                 |        |       |      |         |
+|   ETH0              | 112  | b4a9fc1cbebe00a0c90000010800                                     |        |       |      |         |
+|     DA              | 48   | B4:A9:FC:1C:BE:BE                                                |        |       |      |         |
+|     SA              | 48   | 00:A0:C9:00:00:01                                                |        |       |      |         |
+|     Type            | 16   | IPv4(0x800)                                                      |        |       |      |         |
+|   IPv4              | 160  | 450000543fa14000400176c32121210221212101                         |        |       |      |         |
+|     Version         | 4    | 04                                                               |        |       |      |         |
+|     IHL             | 4    | 05                                                               |        |       |      |         |
+|     TOS             | 8    | 00                                                               |        |       |      |         |
+|       DSCP          | 6    | 00                                                               |        |       |      |         |
+|       ECN           | 2    | 00                                                               |        |       |      |         |
+|     Total_Length    | 16   | 0054                                                             |        |       |      |         |
+|     Identification  | 16   | 3fa1                                                             |        |       |      |         |
+|     Flags           | 3    | 02                                                               |        |       |      |         |
+|     Fragment_Offset | 13   | 0000                                                             |        |       |      |         |
+|     TTL             | 8    | 40                                                               |        |       |      |         |
+|     Protocol        | 8    | 01                                                               |        |       |      |         |
+|     Checksum        | 16   | 76c3                                                             |        |       |      |         |
+|     SIP             | 32   | 33.33.33.2                                                       |        |       |      |         |
+|     DIP             | 32   | 33.33.33.1                                                       |        |       |      |         |
+| Recycle_Cmd         | 16   | 0000                                                             |  glob  | IRPP  | NIF  | PRT     |
+|   Prt_Profile       | 4    | 00                                                               |        |       |      |         |
+|   Mirror_Profile    | 4    | 00                                                               |        |       |      |         |
+|   Snoop_Profile     | 4    | 00                                                               |        |       |      |         |
+|   Fwd_Profile       | 4    | 00                                                               |        |       |      |         |
+| TS                  | 32   | 00000000                                                         |  glob  | IRPP  | NIF  | PRT     |
+| Tag_Swap_Res        | 2    | 00                                                               |  glob  | IRPP  | NIF  | PRT     |
+| Pkt_Header          | 512  | b4a9fc1cbebe00a0c90000010800450000547c9d4000400139c7212121022121 |  reg   | IRPP  | NIF  | IParser |
+|                     |      | 210108005a71601d02ef7fd2985e00000000607e030000000000101112131415 |        |       |      |         |
+| PTC                 | 8    | 19                                                               |  reg   | IRPP  | NIF  | IParser |
+| Valid_Bytes         | 7    | 61                                                               |  reg   | IRPP  | NIF  | IParser |
+| TS                  | 32   | 00000000                                                         |  reg   | IRPP  | NIF  | IParser |
+| Cmd                 | 16   | 0000                                                             |  reg   | IRPP  | NIF  | IParser |
+| Tag_Swap            | 2    | 00                                                               |  reg   | IRPP  | NIF  | IParser |
+| IPv6_Sr             | 1    | 00                                                               |  reg   | IRPP  | NIF  | IParser |
+| Bytes_to_Add        | 8    | N/A                                                              |        | ETPP  | BTC  | NIF     |
+| Header_to_Add       | 1280 | N/A                                                              |        | ETPP  | BTC  | NIF     |
+| Bytes_to_Strip      | 8    | N/A                                                              |        | ETPP  | BTC  | NIF     |
+| Tail_Size           | 5    | N/A                                                              |        | ETPP  | BTC  | NIF     |
+===================================================================================================================================
+BCM.0>
+
+
+BCM.0>
+BCM.0> sig get stage=iparser core=1
+=========================================================================================================================================
+| Signals                                                                                                                               |
+=========================================================================================================================================
+| Attribute              | Size | Value                                                            | Status | Block | From    | To      |
+=========================================================================================================================================
+| Layer_Offsets          | 64   | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Layer_Protocols        | 40   | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Layer_Qualifiers       | 128  | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Layer_Records_CRC32    | 256  | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Mem_Soft_Err           | 1    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Pkt_Header_Size        | 8    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Pkt_Header_Size_Err    | 1    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Internal_4_1_48        | 1    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Internal_4_1_43        | 5    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Internal_4_1_40        | 3    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Prt_Qualifier          | 3    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Recycle_Fwd_Profile    | 4    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Recycle_Mirror_Profile | 4    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Recycle_Snoop_Profile  | 4    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Src_Sys_Port_ID        | 16   | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Trace_Pkt              | 1    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| In_Port                | 8    | N/A                                                              |  prev  | IRPP  | IParser | LLR     |
+| Pkt_Header             | 512  | b4a9fc1cbebe00a0c9000001080045000054fef040004001b773212121022121 |  reg   | IRPP  | NIF     | IParser |
+|                        |      | 21010800cb45601d0331c2d2985e00000000a3670c0000000000101112131415 |        |       |         |         |
+| PTC                    | 8    | 19                                                               |  reg   | IRPP  | NIF     | IParser |
+| Valid_Bytes            | 7    | 61                                                               |  reg   | IRPP  | NIF     | IParser |
+| TS                     | 32   | 00000000                                                         |  reg   | IRPP  | NIF     | IParser |
+| Cmd                    | 16   | 0000                                                             |  reg   | IRPP  | NIF     | IParser |
+| Tag_Swap               | 2    | 00                                                               |  reg   | IRPP  | NIF     | IParser |
+| IPv6_Sr                | 1    | 00                                                               |  reg   | IRPP  | NIF     | IParser |
+=========================================================================================================================================
+BCM.0>
