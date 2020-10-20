@@ -1,0 +1,60 @@
+break module 1 ports 51 break 10gx4
+commit
+exit
+
+!
+interface bond30
+ enabled true
+ subinterface 0
+  ipv4 address 3.0.0.2
+   prefix-length 24
+  !
+!
+int swp55
+ethernet port-speed SPEED_40GB
+enable true
+ethernet aggregate-id bond30
+
+int swp56
+ethernet port-speed SPEED_40GB
+enable true
+ethernet aggregate-id bond30
+
+int swp51s1
+enable true
+subinterface 0
+ipv4 address 4.0.0.1 prefix-length 24
+
+network-instance default
+mpls dynamic-label mpls-label-blocks [ dynamic ]
+mpls global reserved-label-block dynamic
+local-id    dynamic
+lower-bound 100000
+upper-bound 120000
+!
+ mpls signaling-protocols ldp global lsr-id 10.0.0.5
+ mpls signaling-protocols ldp global fec-filter default-export-policy ACCEPT_ROUTE
+ mpls signaling-protocols ldp interface-attributes interface bond30
+  link-hello        true
+  transport-address 3.0.0.2
+ !
+ protocol STATIC routes
+  static-route 1.0.0.0/24
+   next-hop-index 1
+    next-hop 3.0.0.1
+    interface bond30
+   !
+  !
+  static-route 2.0.0.0/24
+   next-hop-index 1
+    next-hop 3.0.0.1
+    interface bond30
+   !
+  !
+!
+network-instance management
+ interface ma1
+ !
+!
+lldp interface bond30
+!

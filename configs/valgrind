@@ -1,0 +1,1 @@
+valgrind -v --tool=memcheck --leak-check=full --show-leak-kinds=all --error-exitcode=9 ./bitmaptest || (echo "Leak detected"; exit 1)

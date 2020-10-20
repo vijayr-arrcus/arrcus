@@ -1,0 +1,98 @@
+TD3
+===
+int swp53
+enable true
+no ethernet aggregate
+commit
+subinterface 0
+ipv4 address 70.1.1.1 prefix-length 24
+commit
+
+network-instance default
+protocol STATIC route_30.1.1.0
+static-route 30.1.1.0/24
+next-hop-index 1
+next-hop 70.1.1.2
+interface swp53
+commit
+end
+
+
+
+Quanta
+======
+int swp3
+enable true
+subinterface 0
+ipv4 address 70.1.1.2 prefix-length 24
+commit
+
+int bond30
+enable true
+commit
+
+int swp5
+enable true
+no subinterface
+ethernet aggregate-id bond30
+commit
+
+int swp6
+enable true
+no subinterface
+ethernet aggregate-id bond30
+commit
+
+int swp35
+enable true
+no subinterface
+ethernet aggregate-id bond30
+commit
+
+int bond30
+subinterface 60
+ipv4 address 30.1.1.1 prefix-length 24
+commit
+
+
+
+Edge Core
+==========
+int bond30
+enable true
+commit
+
+int swp6
+enable true
+no subinterface
+ethernet aggregate-id bond30
+commit
+
+int swp7
+enable true
+no subinterface
+ethernet aggregate-id bond30
+commit
+
+
+int swp36
+enable true
+no subinterface
+ethernet aggregate-id bond30
+commit
+
+int bond30
+subinterface 60
+ipv4 address 30.1.1.2 prefix-length 24
+commit
+
+network-instance default
+protocol STATIC route_70.1.1.0
+static-route 70.1.1.0/24
+next-hop-index 1
+next-hop 30.1.1.1
+interface bond30
+subinterface 60
+commit
+end
+

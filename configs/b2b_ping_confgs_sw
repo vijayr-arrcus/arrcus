@@ -1,0 +1,107 @@
+                   (sflow_NI1)(10.1.1.1) swp15 >>>>>> swp11 (10.1.1.2)
+                                             |            |
+                              (10.9.4.11) xp38         UUT(J+) (10.9.4.15)
+                                             |            |
+                   (sflow_NI2)(10.2.1.1) swp16 <<<<<< swp12 (10.2.1.2)
+
+bash ip vrf exec sflow_NI1 ping 10.2.1.1
+netstat -i | egrep "sflow|swp11|swp12|Iface"
+cat /proc/net/dev | egrep "sflow|Inter|bytes|swp11|swp12"
+
+Redstone configs
+================
+interface swp15
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_10GB
+ subinterface 0
+  ipv4 address 10.1.1.1
+   prefix-length 24
+  !
+ !
+!
+
+interface swp16
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_10GB
+ subinterface 0
+  ipv4 address 10.2.1.1
+   prefix-length 24
+  !
+ !
+!
+
+network-instance sflow_NI1
+ interface swp15
+ !
+ protocol STATIC static-routes
+  static-route 10.2.1.0/24
+   next-hop-index "10.2.1.0 nh"
+    next-hop 10.1.1.2
+    interface swp15
+   !
+  !
+ !
+!
+
+network-instance sflow_NI2
+ interface swp16
+ !
+ protocol STATIC static-routes
+  static-route 10.1.1.0/24
+   next-hop-index "10.1.1.0 nh"
+    next-hop 10.2.1.2
+    interface swp16
+   !
+  !
+ !
+!
+
+
+show network-instance default rib IPV4 ipv4-entries entry 10.1.1.0/24
+
+ipv4-entries entry 10.1.1.0/24
+ best-protocol DIRECTLY_CONNECTED
+ origins origin
+  origin-protocol DIRECTLY_CONNECTED
+  metric          1
+  pref            0
+  tag             0
+  nhid            14
+  last-updated    2019-12-10T09:42:58.446777-00:00
+  flags           0
+  next-hops next-hop
+   next-hop  10.1.1.2
+   recurse   false
+   weight    100
+   interface swp11
+   pathid    13
+
+J+ configs
+===========
+interface swp11
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_10GB
+ subinterface 0
+  enabled true
+  ipv4 address 10.1.1.2
+   prefix-length 24
+  !
+ !
+!
+
+interface swp12
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_10GB
+ subinterface 0
+  enabled true
+  ipv4 address 10.2.1.2
+   prefix-length 24
+  !
+ !
+!
+
+cat /proc/net/dev | egrep "sflow|Inter|bytes|swp11|swp12"

@@ -1,0 +1,66 @@
+!
+interface bond70
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 2.0.0.2
+   prefix-length 24
+  !
+ !
+!
+interface bond80
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 3.0.0.1
+   prefix-length 24
+  !
+ !
+!
+network-instance default
+ mpls dynamic-label mpls-label-blocks [ dynamic ]
+ mpls global config icmp-tunnelling true
+ mpls global reserved-label-block dynamic
+  local-id    dynamic
+  lower-bound 100000
+  upper-bound 120000
+ !
+ mpls signaling-protocols ldp global lsr-id 10.0.0.2
+ mpls signaling-protocols ldp interface-attributes interface bond70
+  link-hello        true
+  transport-address 1.0.0.2
+ !
+ mpls signaling-protocols ldp interface-attributes interface bond80
+  link-hello        true
+  transport-address 2.0.0.1
+ !
+  static-route 4.0.0.0/24
+   next-hop-index 1
+    next-hop 3.0.0.2
+    interface bond80
+   !
+  !
+  static-route 99.99.99.98/32
+   next-hop-index 1
+    next-hop 2.0.0.1
+    interface bond70
+   !
+  !
+  static-route 99.99.99.99/32
+   next-hop-index 1
+    next-hop 3.0.0.2
+    interface bond80
+   !
+  !
+ !
+!
+network-instance management
+ interface ma1
+ !
+!
+lldp interface ma1
+!
+lldp interface bond70
+!
+lldp interface bond80
+!

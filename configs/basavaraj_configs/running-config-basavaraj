@@ -1,0 +1,284 @@
+version "4.3.1.EFT1 [release] 2020-05-08 15:59:28"
+system login-banner "ARCOS (c) Arrcus, Inc."
+system ssh-server enable true
+system ssh-server permit-root-login true
+system aaa authentication admin-user admin-password $6$DLFizpkutHK.jzSL$Xxe6/Oj59vtVuR.pbyFc2ArTyJC2rk8wCYRTKt6YfPUBXizDHw40wdtKXRf2a2CA6pg6hvVNOr9/gTWz0cgMF0
+interface ma1
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+ !
+!
+interface swp1
+ type ethernetCsmacd
+!
+interface swp2
+ type ethernetCsmacd
+!
+interface swp3
+ type ethernetCsmacd
+!
+interface swp4
+ type ethernetCsmacd
+!
+interface swp5
+ type ethernetCsmacd
+!
+interface swp6
+ type ethernetCsmacd
+!
+interface swp7
+ type ethernetCsmacd
+!
+interface swp8
+ type ethernetCsmacd
+!
+interface swp9
+ type ethernetCsmacd
+!
+interface swp10
+ type ethernetCsmacd
+!
+interface swp11
+ type ethernetCsmacd
+!
+interface swp12
+ type ethernetCsmacd
+!
+interface swp13
+ type ethernetCsmacd
+!
+interface swp14
+ type ethernetCsmacd
+!
+interface swp15
+ type ethernetCsmacd
+!
+interface swp16
+ type ethernetCsmacd
+!
+interface swp17
+ type ethernetCsmacd
+!
+interface swp18
+ type ethernetCsmacd
+!
+interface swp19
+ type ethernetCsmacd
+!
+interface swp20
+ type ethernetCsmacd
+!
+interface swp21
+ type ethernetCsmacd
+!
+interface swp22
+ type ethernetCsmacd
+!
+interface swp23
+ type ethernetCsmacd
+!
+interface swp24
+ type ethernetCsmacd
+!
+interface swp25
+ type    ethernetCsmacd
+ enabled true
+ ethernet aggregate-id bond10
+!
+interface swp26
+ type ethernetCsmacd
+!
+interface swp27
+ type ethernetCsmacd
+!
+interface swp28
+ type ethernetCsmacd
+!
+interface swp29
+ type ethernetCsmacd
+!
+interface swp30
+ type    ethernetCsmacd
+ enabled true
+ ethernet aggregate-id bond200
+!
+interface swp31
+ type ethernetCsmacd
+!
+interface swp32
+ type ethernetCsmacd
+!
+interface swp33
+ type ethernetCsmacd
+!
+interface swp34
+ type ethernetCsmacd
+!
+interface swp35
+ type ethernetCsmacd
+!
+interface swp36
+ type ethernetCsmacd
+!
+interface swp37
+ type ethernetCsmacd
+!
+interface swp38
+ type ethernetCsmacd
+!
+interface swp39
+ type ethernetCsmacd
+!
+interface swp40
+ type ethernetCsmacd
+!
+interface bond10
+ type    ieee8023adLag
+ enabled true
+ subinterface 0
+  ipv4 address 3.3.3.2
+   prefix-length 24
+  !
+  ipv4 neighbor 3.3.3.1
+   ip                 3.3.3.1
+   link-layer-address 00:a0:c9:00:00:01
+  !
+  acl-service-policies ingress-acl-sets
+   acl-set ACL_IPV4
+    set-name v4_acl_1_vj
+   !
+  !
+ !
+!
+interface bond200
+ type    ieee8023adLag
+ enabled true
+ subinterface 0
+  enabled true
+  ipv4 address 11.11.11.12
+   prefix-length 24
+  !
+ !
+!
+network-instance default
+!
+network-instance management
+ interface ma1
+ !
+!
+network-instance test-vrf
+ interface bond200
+ !
+!
+bfd profile GLOBAL
+ enabled                     true
+ desired-minimum-tx-interval 150
+ required-minimum-receive    150
+ detection-multiplier        3
+ v4-hw-offload               false
+ v6-hw-offload               true
+!
+lacp interface bond10
+!
+lacp interface bond200
+!
+lldp interface ma1
+!
+lldp interface swp1
+!
+lldp interface swp2
+!
+lldp interface swp3
+!
+lldp interface swp4
+!
+lldp interface swp5
+!
+lldp interface swp6
+!
+lldp interface swp7
+!
+lldp interface swp8
+!
+lldp interface swp9
+!
+lldp interface swp10
+!
+lldp interface swp11
+!
+lldp interface swp12
+!
+lldp interface swp13
+!
+lldp interface swp14
+!
+lldp interface swp15
+!
+lldp interface swp16
+!
+lldp interface swp17
+!
+lldp interface swp18
+!
+lldp interface swp19
+!
+lldp interface swp20
+!
+lldp interface swp21
+!
+lldp interface swp22
+!
+lldp interface swp23
+!
+lldp interface swp24
+!
+lldp interface swp25
+!
+lldp interface swp26
+!
+lldp interface swp27
+!
+lldp interface swp28
+!
+lldp interface swp29
+!
+lldp interface swp30
+!
+lldp interface swp31
+!
+lldp interface swp32
+!
+lldp interface swp33
+!
+lldp interface swp34
+!
+lldp interface swp35
+!
+lldp interface swp36
+!
+lldp interface swp37
+!
+lldp interface swp38
+!
+lldp interface swp39
+!
+lldp interface swp40
+!
+acl acl-set v4-acl_1_Vinod ACL_IPV4
+ acl-entry 221
+  ipv4 source-address 1.1.0.0/24
+  ipv4 destination-address 1.1.0.0/24
+  actions forwarding-action DROP
+ !
+!
+acl acl-set v4_acl_1_vj ACL_IPV4
+ acl-entry 1
+  ipv4 source-address 3.3.3.0/24
+  ipv4 destination-address 2.2.2.0/24
+  actions forwarding-action DROP
+ !
+!
+control-plane service-policy INGRESS
+ name __system_default_copp_policy__
+!

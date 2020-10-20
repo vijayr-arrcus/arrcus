@@ -1,0 +1,274 @@
+TD3                    J2
+
+3.3.3.1 swp55 ---- swp25 3.3.3.2
+        (ni1)
+2.2.2.1 swp54 ---- swp30 2.2.2.2
+        (ni2)
+
+
+TD3
+===
+int swp54
+enable
+no subinterface 0
+subinterface 0
+ipv4 address 2.2.2.1 prefix-length 24
+ipv4 neighbor 2.2.2.2 link-layer-address b4:a9:fc:1c:be:be
+commit
+end
+config
+network-instance ni2
+interface swp54
+protocol STATIC route_3.3.3.0
+static-route 3.3.3.0/24
+next-hop-index 1
+next-hop 2.2.2.2
+interface swp54
+commit
+end
+
+config
+int swp55
+enable
+no subinterface 0
+subinterface 0
+ipv4 address 3.3.3.1 prefix-length 24
+ipv4 neighbor 3.3.3.2 link-layer-address b4:a9:fc:1c:be:be
+commit
+end
+config
+network-instance default
+protocol STATIC route_2.2.2.0
+static-route 2.2.2.0/24
+next-hop-index 1
+next-hop 3.3.3.2
+interface swp55
+commit
+end
+
+
+bash ip vrf exec ni1 ping 2.2.2.1
+
+J2
+=====
+config
+int bond10
+enable
+commit
+end
+
+config
+int swp25
+enable
+no subinterface 0
+ethernet aggregate bond10
+commit
+end
+
+config
+int bond10
+subinterface 0
+ipv4 address 3.3.3.2 prefix 24
+ipv4 neighbor 3.3.3.1 link-layer-address 00:a0:c9:00:00:01
+commit
+end
+
+int swp25
+enable
+no subinterface 0
+subinterface 0
+ipv4 address 3.3.3.2 prefix 24
+ipv4 neighbor 3.3.3.1 link-layer-address 00:a0:c9:00:00:01
+commit
+end
+
+
+config
+int swp30
+enable
+no subinterface 0
+subinterface 0
+ipv4 address 2.2.2.2 prefix 24
+ipv4 neighbor 2.2.2.1 link-layer-address 00:a0:c9:00:00:01
+commit
+end
+
+
+Table Map configs
+=================
+qos tablemap dscp-to-tclass
+to-type   LOCAL_TC
+from-type DSCP
+!
+local-tc-entry 4 0
+  local-tc-value  4
+  drop-precedence 0
+  from-value 46
+!
+
+qos tablemap tclass-to-dscp
+ to-type   DSCP
+ from-type LOCAL_TC
+ local-tc-entry 4 0
+  local-tc-value  4
+  drop-precedence 0
+  to-value        48
+
+
+int swp25
+qos service-tablemap INGRESS name dscp-to-tclass
+
+int swp30
+qos service-tablemap EGRESS name tclass-to-dscp
+
+
+
+
+D3                    J2
+
+3.3.3.1 swp55 ---- swp25 3.3.3.2
+        (ni1)
+2.2.2.1 swp54 ---- swp30 2.2.2.2
+        (ni2)
+
+
+TD3
+===
+int swp54
+enable
+no subinterface 0
+subinterface 0
+ipv4 address 2.2.2.1 prefix-length 24
+ipv4 neighbor 2.2.2.2 link-layer-address b4:a9:fc:1c:be:be commit                                                                                                                                                                                                        end
+config
+network-instance ni2
+interface swp54
+protocol STATIC route_3.3.3.0
+static-route 3.3.3.0/24
+next-hop-index 1
+next-hop 2.2.2.2
+interface swp54
+commit
+end
+
+config
+int swp55
+enable
+no subinterface 0
+subinterface 0
+ipv4 address 3.3.3.1 prefix-length 24
+ipv4 neighbor 3.3.3.2 link-layer-address b4:a9:fc:1c:be:be
+commit                                                                                                                                                                                                        end
+config                                                                                                                                                                                                        network-instance default
+protocol STATIC route_2.2.2.0
+static-route 2.2.2.0/24
+next-hop-index 1
+next-hop 3.3.3.2
+interface swp55
+commit
+end
+
+
+bash ip vrf exec ni1 ping 2.2.2.1
+
+J2
+=====
+config
+int bond10
+enable
+commit
+end
+
+config
+int swp25
+enable
+no subinterface 0
+ethernet aggregate bond10
+commit
+end
+
+config
+int bond10
+subinterface 0
+ipv4 address 3.3.3.2 prefix 24
+ipv4 neighbor 3.3.3.1 link-layer-address 00:a0:c9:00:00:01
+commit
+end
+
+int swp25
+enable
+no subinterface 0
+subinterface 0
+ipv4 address 3.3.3.2 prefix 24
+ipv4 neighbor 3.3.3.1 link-layer-address 00:a0:c9:00:00:01
+commit
+end
+
+config
+int bond20
+enable
+commit
+end
+
+config
+int swp30
+enable
+no subinterface 0
+ethernet aggregate bond20
+
+commit
+end
+
+config
+int bond20
+enable
+no subinterface 0
+subinterface 0
+ipv4 address 2.2.2.2 prefix 24
+ipv4 neighbor 2.2.2.1 link-layer-address 00:a0:c9:00:00:01
+commit
+end
+
+
+config
+int swp30
+enable
+no subinterface 0
+subinterface 0
+ipv4 address 2.2.2.2 prefix 24
+ipv4 neighbor 2.2.2.1 link-layer-address 00:a0:c9:00:00:01
+commit
+end
+
+
+Table Map configs
+=================
+qos tablemap dscp-to-tclass
+to-type   LOCAL_TC
+from-type DSCP
+!
+local-tc-entry 4 0
+  local-tc-value  4
+  drop-precedence 0
+  from-value 46
+!
+
+qos tablemap tclass-to-dscp
+ to-type   DSCP
+ from-type LOCAL_TC
+ local-tc-entry 4 0
+  local-tc-value  4
+  drop-precedence 0
+  to-value        48
+
+int swp25
+qos service-tablemap INGRESS name dscp-to-tclass
+
+int swp30
+qos service-tablemap EGRESS name tclass-to-dscp
+
+int bond10
+qos service-tablemap INGRESS name dscp-to-tclass
+
+int bond20
+qos service-tablemap EGRESS name tclass-to-dscp

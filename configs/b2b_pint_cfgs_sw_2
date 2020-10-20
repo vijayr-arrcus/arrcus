@@ -1,0 +1,119 @@
+                   (sflow_NI1)(10.10.10.1) swp4s1 >>>>>> swp4 (10.10.10.2)
+                                             |            |
+                             (10.9.4.12) seastne2     UUT(J+) (10.9.4.15)
+                                             |            |
+                   (sflow_NI2)(20.20.20.1) swp4s2 <<<<<< swp5 (20.20.20.2)
+
+bash ip vrf exec sflow_NI1 ping 20.20.20.1
+netstat -i | egrep "sflow|swp11|swp12|Iface"
+cat /proc/net/dev | egrep "sflow|Inter|bytes|swp4|swp5"
+
+seastone configs
+================
+
+break-out module 1
+!
+ports 4
+break 10gx4
+!
+
+interface swp4s1
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_10GB
+ subinterface 0
+  ipv4 address 10.10.10.1
+   prefix-length 24
+  !
+ !
+!
+
+interface swp4s2
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 20.20.20.1
+   prefix-length 24
+  !
+ !
+!
+
+network-instance sflow_NI1
+ interface swp4s1
+ !
+ protocol STATIC static-routes
+  static-route 20.20.20.0/24
+   next-hop-index "20.20.20.0 nh"
+    next-hop 10.10.10.2
+    interface swp4s1
+   !
+  !
+ !
+!
+
+network-instance sflow_NI2
+ interface swp4s2
+ !
+ protocol STATIC static-routes
+  static-route 10.10.10.0/24
+   next-hop-index "10.10.10.0 nh"
+    next-hop 20.20.20.2
+    interface swp4s2
+   !
+  !
+ !
+!
+
+
+show network-instance default rib IPV4 ipv4-entries entry 10.1.1.0/24
+
+ipv4-entries entry 10.1.1.0/24
+ best-protocol DIRECTLY_CONNECTED
+ origins origin
+  origin-protocol DIRECTLY_CONNECTED
+  metric          1
+  pref            0
+  tag             0
+  nhid            14
+  last-updated    2019-12-10T09:42:58.446777-00:00
+  flags           0
+  next-hops next-hop
+   next-hop  10.1.1.2
+   recurse   false
+   weight    100
+   interface swp11
+   pathid    13
+
+J+ configs
+===========
+interface swp4
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_10GB
+ subinterface 0
+  enabled true
+  ipv4 address 10.10.10.2
+   prefix-length 24
+  !
+ !
+!
+
+interface swp5
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_10GB
+ subinterface 0
+  enabled true
+  ipv4 address 20.20.20.2
+   prefix-length 24
+  !
+ !
+!
+
+cat /proc/net/dev | egrep "sflow|Inter|bytes|swp11|swp12"
+
+/usr/lib/hsflowd/modules  mod_arrcus.so
+
+dmesg -n 1 && echo "debug=0xfffff" > /proc/bcm/knet/debug
+/var/log/message
+echo "debug=0" > /proc/bcm/knet/debflowd

@@ -1,0 +1,96 @@
+interface bond20
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 1.0.0.2
+   prefix-length 24
+  !
+ !
+!
+interface bond70
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 2.0.0.1
+   prefix-length 24
+  !
+ !
+!
+interface loopback1
+ type    softwareLoopback
+ enabled true
+ subinterface 0
+  ipv4 address 99.99.99.98
+   prefix-length 32
+  !
+ !
+!
+interface loopback2
+ type    softwareLoopback
+ enabled true
+ subinterface 0
+  ipv4 address 100.0.0.1
+   prefix-length 32
+  !
+ !
+!
+network-instance default
+ mpls dynamic-label mpls-label-blocks [ dynamic ]
+ mpls global config icmp-tunnelling true
+ mpls global reserved-label-block dynamic
+  local-id    dynamic
+  lower-bound 100000
+  upper-bound 120000
+ !
+ mpls signaling-protocols ldp global lsr-id 10.0.0.1
+ mpls signaling-protocols ldp global fec-filter default-export-policy ACCEPT_ROUTE
+ mpls signaling-protocols ldp interface-attributes interface swp1
+  link-hello        true
+  transport-address 1.0.0.1
+ !
+ protocol BGP p1
+  global as 1
+  global router-id 10.0.0.1
+  global afi-safi IPV4_UNICAST
+   network 100.0.0.1/32
+   !
+  !
+  neighbor 99.99.99.99
+   peer-as 1
+   transport local-address 99.99.99.98
+   afi-safi IPV4_UNICAST
+    next-hop SELF
+    exit
+   !
+   exit
+  !
+ !
+ protocol STATIC routes
+  static-route 3.0.0.0/24
+   next-hop-index 1
+    next-hop 2.0.0.2
+    interface bond70
+   !
+  !
+  static-route 4.0.0.0/24
+   next-hop-index 1
+    next-hop 2.0.0.2
+    interface bond70
+   !
+  !
+  static-route 99.99.99.99/32
+   next-hop-index 1
+    next-hop 2.0.0.2
+    interface bond70
+   !
+  !
+ !
+!
+network-instance management
+ interface ma1
+ !
+!
+lldp interface ma1
+!
+lldp interface bond70
+!

@@ -1,0 +1,63 @@
+int swp11
+enable true
+no subinterface 0
+subinterface 0
+ipv4 address 1.0.0.2 prefix-length 24
+ethernet port-speed SPEED_40GB
+
+interface bond20
+ enabled true
+ subinterface 0
+  ipv4 address 2.0.0.1
+   prefix-length 24
+  !
+ !
+!
+int swp5
+enabled true
+ethernet aggregate-id bond20
+!
+int swp6
+enabled true
+ethernet aggregate-id bond20
+!
+int swp35
+enabled true
+ethernet aggregate-id bond20
+!
+
+network-instance default
+ mpls dynamic-label mpls-label-blocks [ dynamic ]
+ mpls global reserved-label-block dynamic
+  local-id    dynamic
+  lower-bound 100000
+  upper-bound 120000
+ !
+ mpls signaling-protocols ldp global lsr-id 10.0.0.1
+ mpls signaling-protocols ldp global fec-filter default-export-policy ACCEPT_ROUTE
+ mpls signaling-protocols ldp interface-attributes interface bond20
+  link-hello        true
+  transport-address 2.0.0.1
+ !
+ protocol STATIC routes
+  static-route 3.0.0.0/24
+   next-hop-index 1
+    next-hop 2.0.0.2
+    interface bond20
+   !
+  !
+  static-route 4.0.0.0/24
+   next-hop-index 1
+    next-hop 2.0.0.2
+    interface bond20
+   !
+  !
+!
+network-instance management
+ interface ma1
+ !
+!
+lldp interface ma1
+!
+lldp interface bond20
+!

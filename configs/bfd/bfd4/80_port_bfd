@@ -1,0 +1,621 @@
+version "4.3.1.EFT3 [release] 2020-10-09 06:17:33"
+system login-banner "ArcOS (c) Arrcus, Inc."
+system ssh-server enable true
+system ssh-server permit-root-login true
+system aaa authentication admin-user admin-password $6$b0hya.7yyMVi10Yo$kGyJn3wo4TZIevN3PBUSAc0GEMWWrli2uMVQcitpyyNSGOzoTQILc8RLk4JDkBKy0KQpnW0/k1xU1shZZdeiY/
+break-out module 1
+ ports 1
+  break 10gx4
+ !
+ ports 11
+  break 25gx4
+ !
+ ports 17
+  break 25gx4
+ !
+!
+interface ma1
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+ exit
+!
+interface swp3
+ type ethernetCsmacd
+!
+interface swp4
+ type    ethernetCsmacd
+ enabled true
+ ethernet aggregate-id bond40
+!
+interface swp5
+ type    ethernetCsmacd
+ enabled true
+ subinterface 100
+  vlan vlan-id 100
+  ipv4 enabled false
+  ipv6 enabled false
+ exit
+!
+interface swp6
+ type    ethernetCsmacd
+ enabled true
+ subinterface 100
+  vlan vlan-id 100
+ exit
+!
+interface swp7
+ type ethernetCsmacd
+!
+interface swp8
+ type ethernetCsmacd
+!
+interface swp9
+ type ethernetCsmacd
+!
+interface swp10
+ type ethernetCsmacd
+!
+interface swp13
+ type ethernetCsmacd
+!
+interface swp14
+ type ethernetCsmacd
+!
+interface swp15
+ type ethernetCsmacd
+!
+interface swp16
+ type ethernetCsmacd
+!
+interface swp19
+ type ethernetCsmacd
+!
+interface swp20
+ type ethernetCsmacd
+!
+interface swp21
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 80.80.0.1
+   prefix-length 24
+  exit
+ exit
+ qos service-tablemap INGRESS
+  name dscp-to-tclass
+ !
+!
+interface swp22
+ type ethernetCsmacd
+!
+interface swp23
+ type ethernetCsmacd
+!
+interface swp24
+ type    ethernetCsmacd
+ enabled true
+ ethernet aggregate-id bond40
+!
+interface swp25
+ type ethernetCsmacd
+!
+interface swp26
+ type ethernetCsmacd
+!
+interface swp27
+ type ethernetCsmacd
+!
+interface swp28
+ type ethernetCsmacd
+!
+interface swp29
+ type ethernetCsmacd
+!
+interface swp30
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  enabled true
+  ipv4 address 3.0.0.1
+   prefix-length 24
+  exit
+ exit
+!
+interface swp31
+ type ethernetCsmacd
+!
+interface swp32
+ type ethernetCsmacd
+!
+interface swp33
+ type ethernetCsmacd
+!
+interface swp34
+ type ethernetCsmacd
+!
+interface swp35
+ type ethernetCsmacd
+!
+interface swp36
+ type ethernetCsmacd
+!
+interface swp37
+ type ethernetCsmacd
+!
+interface swp38
+ type ethernetCsmacd
+!
+interface swp39
+ type ethernetCsmacd
+!
+interface swp40
+ type ethernetCsmacd
+!
+interface swp41
+ type ethernetCsmacd
+!
+interface swp42
+ type ethernetCsmacd
+!
+interface swp43
+ type ethernetCsmacd
+!
+interface swp44
+ type    ethernetCsmacd
+ enabled true
+ ethernet aggregate-id bond40
+!
+interface swp45
+ type ethernetCsmacd
+!
+interface swp46
+ type ethernetCsmacd
+!
+interface swp47
+ type ethernetCsmacd
+!
+interface swp48
+ type ethernetCsmacd
+!
+interface swp49
+ type ethernetCsmacd
+!
+interface swp50
+ type ethernetCsmacd
+!
+interface swp51
+ type ethernetCsmacd
+!
+interface swp52
+ type ethernetCsmacd
+!
+interface swp53
+ type ethernetCsmacd
+!
+interface swp54
+ type ethernetCsmacd
+!
+interface swp55
+ type ethernetCsmacd
+!
+interface swp56
+ type ethernetCsmacd
+!
+interface swp57
+ type ethernetCsmacd
+!
+interface swp58
+ type ethernetCsmacd
+!
+interface swp59
+ type ethernetCsmacd
+!
+interface swp60
+ type ethernetCsmacd
+!
+interface swp61
+ type ethernetCsmacd
+!
+interface swp62
+ type ethernetCsmacd
+!
+interface swp63
+ type ethernetCsmacd
+!
+interface swp64
+ type ethernetCsmacd
+!
+interface swp65
+ type ethernetCsmacd
+!
+interface swp66
+ type ethernetCsmacd
+!
+interface swp67
+ type ethernetCsmacd
+!
+interface swp68
+ type ethernetCsmacd
+!
+interface swp69
+ type ethernetCsmacd
+!
+interface swp70
+ type ethernetCsmacd
+!
+interface swp71
+ type ethernetCsmacd
+!
+interface swp72
+ type ethernetCsmacd
+!
+interface swp73
+ type ethernetCsmacd
+!
+interface swp74
+ type ethernetCsmacd
+!
+interface swp75
+ type ethernetCsmacd
+!
+interface swp76
+ type ethernetCsmacd
+!
+interface swp77
+ type ethernetCsmacd
+!
+interface swp78
+ type ethernetCsmacd
+!
+interface swp79
+ type ethernetCsmacd
+!
+interface swp80
+ type ethernetCsmacd
+!
+interface bond40
+ type    ieee8023adLag
+ enabled true
+ subinterface 0
+  ipv4 address 3.1.1.2
+   prefix-length 24
+  exit
+  ipv6 address 3::2
+   prefix-length 64
+  exit
+ exit
+!
+interface swp1s1
+ type ethernetCsmacd
+ subinterface 0
+  ipv4 address 10.0.0.1
+   prefix-length 24
+  exit
+ exit
+ qos service-policy EGRESS
+  name qos-policy-egress
+ !
+!
+interface swp1s2
+ type ethernetCsmacd
+!
+interface swp1s3
+ type ethernetCsmacd
+!
+interface swp1s4
+ type ethernetCsmacd
+!
+interface swp11s1
+ type    ethernetCsmacd
+ enabled true
+!
+interface swp11s2
+ type ethernetCsmacd
+!
+interface swp11s3
+ type ethernetCsmacd
+!
+interface swp11s4
+ type ethernetCsmacd
+!
+interface swp17s1
+ type ethernetCsmacd
+!
+interface swp17s2
+ type ethernetCsmacd
+ subinterface 0
+ exit
+ qos service-tablemap INGRESS
+  name dscp-to-tclass
+ !
+!
+interface swp17s3
+ type ethernetCsmacd
+!
+interface swp17s4
+ type ethernetCsmacd
+!
+network-instance default
+ protocol ISIS default
+  global net       [ 49.0001.0103.0203.0405.00 ]
+  global level-capability LEVEL_2
+  global max-ecmp-paths 16
+  global graceful-restart enabled true
+  global transport lsp-mtu-size 8974
+  global af IPV6 UNICAST
+   enabled true
+   exit
+  !
+  global af IPV4 UNICAST
+   enabled true
+   exit
+  !
+  level 2
+   enabled true
+   exit
+  !
+  interface bond40
+   enabled      true
+   network-type POINT_TO_POINT
+   bfd bfd-tlv true
+   af IPV6 UNICAST
+    enabled true
+   !
+   af IPV4 UNICAST
+    enabled true
+   !
+   level 2
+    enabled true
+    exit
+   !
+   exit
+  !
+ !
+!
+network-instance management
+ interface ma1
+ !
+!
+bfd profile GLOBAL
+ enabled                     true
+ desired-minimum-tx-interval 150
+ required-minimum-receive    150
+ detection-multiplier        3
+!
+lacp interface bond40
+!
+lldp interface ma1
+!
+lldp interface swp3
+!
+lldp interface swp4
+!
+lldp interface swp5
+!
+lldp interface swp6
+!
+lldp interface swp7
+!
+lldp interface swp8
+!
+lldp interface swp9
+!
+lldp interface swp10
+!
+lldp interface swp13
+!
+lldp interface swp14
+!
+lldp interface swp15
+!
+lldp interface swp16
+!
+lldp interface swp19
+!
+lldp interface swp20
+!
+lldp interface swp21
+!
+lldp interface swp22
+!
+lldp interface swp23
+!
+lldp interface swp24
+!
+lldp interface swp25
+!
+lldp interface swp26
+!
+lldp interface swp27
+!
+lldp interface swp28
+!
+lldp interface swp29
+!
+lldp interface swp30
+!
+lldp interface swp31
+!
+lldp interface swp32
+!
+lldp interface swp33
+!
+lldp interface swp34
+!
+lldp interface swp35
+!
+lldp interface swp36
+!
+lldp interface swp37
+!
+lldp interface swp38
+!
+lldp interface swp39
+!
+lldp interface swp40
+!
+lldp interface swp41
+!
+lldp interface swp42
+!
+lldp interface swp43
+!
+lldp interface swp44
+!
+lldp interface swp45
+!
+lldp interface swp46
+!
+lldp interface swp47
+!
+lldp interface swp48
+!
+lldp interface swp49
+!
+lldp interface swp50
+!
+lldp interface swp51
+!
+lldp interface swp52
+!
+lldp interface swp53
+!
+lldp interface swp54
+!
+lldp interface swp55
+!
+lldp interface swp56
+!
+lldp interface swp57
+!
+lldp interface swp58
+!
+lldp interface swp59
+!
+lldp interface swp60
+!
+lldp interface swp61
+!
+lldp interface swp62
+!
+lldp interface swp63
+!
+lldp interface swp64
+!
+lldp interface swp65
+!
+lldp interface swp66
+!
+lldp interface swp67
+!
+lldp interface swp68
+!
+lldp interface swp69
+!
+lldp interface swp70
+!
+lldp interface swp71
+!
+lldp interface swp72
+!
+lldp interface swp73
+!
+lldp interface swp74
+!
+lldp interface swp75
+!
+lldp interface swp76
+!
+lldp interface swp77
+!
+lldp interface swp78
+!
+lldp interface swp79
+!
+lldp interface swp80
+!
+lldp interface swp1s1
+!
+lldp interface swp1s2
+!
+lldp interface swp1s3
+!
+lldp interface swp1s4
+!
+lldp interface swp11s1
+!
+lldp interface swp11s2
+!
+lldp interface swp11s3
+!
+lldp interface swp11s4
+!
+lldp interface swp17s1
+!
+lldp interface swp17s2
+!
+lldp interface swp17s3
+!
+lldp interface swp17s4
+!
+qos classifier tclass-1
+ filter LOCAL_TC
+  local-tc-value [ 1 ]
+ !
+!
+qos classifier tclass-2
+ filter LOCAL_TC
+  local-tc-value [ 2 ]
+ !
+!
+qos classifier tclass-3
+ filter LOCAL_TC
+  local-tc-value [ 3 ]
+ !
+!
+qos policy qos-policy-egress
+ classifier tclass-1
+  action RATE_EXCESS
+   ratio 1
+  !
+ !
+ classifier tclass-2
+  action RATE_EXCESS
+   ratio 2
+  !
+ !
+ classifier tclass-3
+  action RATE_EXCESS
+   ratio 3
+  !
+ !
+!
+qos tablemap dscp-to-tclass
+ to-type   LOCAL_TC
+ from-type DSCP
+ local-tc-entry 0 0
+  from-value [ 30 ]
+ !
+ local-tc-entry 1 0
+  from-value [ 21 ]
+ !
+ local-tc-entry 2 0
+  from-value [ 22 ]
+ !
+ local-tc-entry 3 0
+  from-value [ 23 ]
+ !
+ local-tc-entry 4 0
+  from-value [ 12 ]
+ !
+ local-tc-entry 5 0
+  from-value [ 14 36 38 ]
+ !
+ local-tc-entry 6 0
+  from-value [ 16 ]
+ !
+ local-tc-entry 7 0
+  from-value [ 32 ]
+ !
+!

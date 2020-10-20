@@ -1,0 +1,51 @@
+TD3
+====
+interface bond20
+enabled true
+subinterface 0
+ipv4 address 20.1.1.3
+prefix-length 24
+!
+interface swp52
+enabled true
+ethernet aggregate-id bond20
+!
+interface swp53
+enabled true
+ethernet aggregate-id bond20
+!
+interface swp54
+enabled true
+ethernet aggregate-id bond20
+!
+
+interface bond40
+enabled true
+subinterface 0
+ipv4 address 40.1.1.3
+prefix-length 24
+!
+interface swp55
+enabled true
+ethernet port-speed SPEED_40GB
+ethernet aggregate-id bond40
+!
+interface swp56
+enabled true
+ethernet port-speed SPEED_40GB
+ethernet aggregate-id bond40
+!
+
+network-instance default
+protocol STATIC route_30.1.1.0
+static-route 10.1.1.0/24
+next-hop-index nh1
+next-hop 120.1.1.1
+interface swp52
+!
+!
+static-route 30.1.1.0/24
+next-hop-index 2
+next-hop 20.1.1.1
+interface bond20
+!

@@ -1,0 +1,50 @@
+    swp1 ------ swp1
+    |            |
+   r1           r2
+    |            |
+    swp2 ------ swp2
+
+r1 configs
+==========
+interface swp1
+ enable
+ type ethernetCsmacd
+ subinterface 0
+  ipv4 address 10.1.1.1
+   prefix-length 24
+
+interface swp2
+ enable
+  type ethernetCsmacd
+  subinterface 0
+   ipv4 address 10.1.1.2
+    prefix-length 24
+
+!
+network-instance sf-1
+ interface swp1
+ !
+!
+network-instance sf-2
+ interface swp2
+ !
+!
+
+
+ping -I sf-1 10.1.1.1
+ping -I sf-1 10.1.1.2
+
+r2 configs
+==========
+
+config
+vlan 2
+interface swp1
+    enable
+	ethernet switched-vlan interface-mode access
+	ethernet switched-vlan access-vlan 2
+
+interface swp2
+    enable
+	ethernet switched-vlan interface-mode access
+	ethernet switched-vlan access-vlan 2

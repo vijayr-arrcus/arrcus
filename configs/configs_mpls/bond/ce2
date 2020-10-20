@@ -1,0 +1,24 @@
+interface bond40
+enable true
+subinterface 0
+ipv4 address 4.0.0.2 prefix-length 24
+commit
+
+
+network-instance default
+protocol STATIC routes
+static-route 1.0.0.0/24
+next-hop-index 1
+next-hop 4.0.0.1
+interface bond40
+
+static-route 2.0.0.0/24
+next-hop-index 1
+next-hop 4.0.0.1
+interface bond40
+
+static-route 3.0.0.0/24
+next-hop-index 1
+next-hop 4.0.0.1
+interface bond40
+commit

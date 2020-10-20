@@ -1,0 +1,82 @@
+version "4.3.1.EFT2 [release] 2020-07-14 21:46:27"
+system hostname lsr2
+system login-banner "ARCOS (c) Arrcus, Inc."
+system aaa authentication admin-user admin-password $6$45.xtCxp$NHORwpgM4fwL1b.9uKcL7J89ZoOcQ6zhauB1ZivfEcWsxmFybTtdq57tQ8oxGZePYAootxKC6L6NTIZwdxpth0
+interface ma1
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+ !
+!
+interface swp1
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 3.0.0.1
+   prefix-length 24
+  !
+ !
+!
+interface swp2
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 2.0.0.2
+   prefix-length 24
+  !
+ !
+!
+network-instance default
+ mpls dynamic-label mpls-label-blocks [ dynamic ]
+ mpls global reserved-label-block dynamic
+  local-id    dynamic
+  lower-bound 100000
+  upper-bound 120000
+ !
+ mpls signaling-protocols ldp global lsr-id 10.0.0.3
+ mpls signaling-protocols ldp global fec-filter default-export-policy ACCEPT_ROUTE
+ mpls signaling-protocols ldp interface-attributes interface swp1
+  link-hello        true
+  transport-address 3.0.0.1
+ !
+ mpls signaling-protocols ldp interface-attributes interface swp2
+  link-hello        true
+  transport-address 2.0.0.2
+ !
+ protocol STATIC routes
+  static-route 1.0.0.0/24
+   next-hop-index 1
+    next-hop 2.0.0.1
+    interface swp2
+   !
+  !
+  static-route 4.0.0.0/24
+   next-hop-index 1
+    next-hop 3.0.0.2
+    interface swp1
+   !
+  !
+  static-route 99.99.99.98/32
+   next-hop-index 1
+    next-hop 2.0.0.1
+    interface swp2
+   !
+  !
+  static-route 99.99.99.99/32
+   next-hop-index 1
+    next-hop 3.0.0.2
+    interface swp1
+   !
+  !
+ !
+!
+network-instance management
+ interface ma1
+ !
+!
+lldp interface ma1
+!
+lldp interface swp1
+!
+lldp interface swp2
+!

@@ -1,0 +1,40 @@
+break module 1 ports 51 break 10gx4
+commit
+exit
+
+int swp55
+ethernet port-speed SPEED_40GB
+enable true
+subinterface 0
+ipv4 address 4.0.0.2 prefix-length 24
+
+int swp51s1
+enable true
+subinterface 0
+ipv4 address 5.0.0.1 prefix-length 24
+
+network-instance default
+ protocol STATIC routes
+  static-route 1.0.0.0/24
+   next-hop-index 1
+    next-hop 4.0.0.1
+    interface swp55
+   !
+  !
+  static-route 2.0.0.0/24
+   next-hop-index 1
+    next-hop 4.0.0.1
+    interface swp55
+   !
+  !
+  static-route 3.0.0.0/24
+   next-hop-index 1
+    next-hop 4.0.0.1
+    interface swp55
+   !
+  !
+!
+network-instance management
+ interface ma1
+ !
+!

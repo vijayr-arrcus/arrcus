@@ -1,0 +1,70 @@
+Edge core
+=========
+interface swp6
+type    ethernetCsmacd
+enabled true
+subinterface 0
+ipv4 address 10.10.10.1
+prefix-length 24
+!
+!
+!
+interface swp7
+type    ethernetCsmacd
+enabled true
+subinterface 0
+ipv4 address 20.20.20.1
+prefix-length 24
+!
+
+network-instance default
+protocol STATIC route_20.20.20.0
+static-route 20.20.20.0/24
+next-hop-index 1
+next-hop 10.10.10.2
+interface swp6
+commit
+end
+
+
+network-instance ni1
+interface swp36
+protocol STATIC route_10.10.10.1
+static-route 10.10.10.0/24
+next-hop-index 1
+next-hop 20.20.20.2
+interface swp36
+commit
+end
+
+Quanta
+=======
+
+interface swp5
+ type    ethernetCsmacd
+ enabled true
+ no subinterface 0
+ ethernet aggregate-id bond10
+ commit
+!
+
+interface bond10
+ enabled true
+ subinterface 0
+  ipv4 address 10.10.10.2
+   prefix-length 24
+  !
+ !
+ commit
+!
+
+interface swp35
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 20.20.20.2
+   prefix-length 24
+  !
+ !
+ commit
+!

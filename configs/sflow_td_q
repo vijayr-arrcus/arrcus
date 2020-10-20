@@ -1,0 +1,72 @@
+
+             swp2 (50.2.1.1)            swp52 (50.2.1.2) default
+
+     Q                                              TD3
+
+            swp30 (60.2.1.1)            swp54 (60.2.1.2) ni-1
+
+
+
+Quanta
+
+config
+int swp2
+enable true
+subinterface 0
+ipv4 address 50.2.1.1 prefix-length 24
+commit
+end
+
+config
+int swp30
+enable true
+subinterface 0
+ipv4 address 60.2.1.1 prefix-length 24
+commit
+end
+
+TD3
+
+config
+int swp52
+enable true
+subinterface 0
+ipv4 address 50.2.1.2 prefix-length 24
+commit
+end
+
+config
+int swp54
+enable true
+subinterface 0
+ipv4 address 60.2.1.2 prefix-length 24
+commit
+end
+
+
+             swp2 (50.2.1.1)            swp52 (50.2.1.2) default
+
+     Q                                              TD3
+
+            swp30 (60.2.1.1)            swp54 (60.2.1.2) ni-1
+
+config
+network-instance default
+protocol STATIC route_60.2.1.0
+static-route 60.2.1.0/24
+next-hop-index 1
+next-hop 50.2.1.1
+interface swp52
+commit
+end
+
+config
+network-instance ni1
+interface swp54
+protocol STATIC route_50.2.1.0
+static-route 50.2.1.0/24
+next-hop-index 1
+next-hop 60.2.1.1
+interface swp54
+commit
+end

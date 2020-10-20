@@ -1,0 +1,102 @@
+version "4.3.1.EFT2 [release] 2020-07-14 21:46:27"
+system hostname ler2
+system login-banner "ARCOS (c) Arrcus, Inc."
+system aaa authentication admin-user admin-password $6$45.xtCxp$NHORwpgM4fwL1b.9uKcL7J89ZoOcQ6zhauB1ZivfEcWsxmFybTtdq57tQ8oxGZePYAootxKC6L6NTIZwdxpth0
+interface ma1
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+ !
+!
+interface swp2
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 4.0.0.2
+   prefix-length 24
+  !
+ !
+!
+interface loopback1
+ type    softwareLoopback
+ enabled true
+ subinterface 0
+  ipv4 address 99.99.99.99
+   prefix-length 32
+  !
+ !
+!
+interface loopback2
+ type    softwareLoopback
+ enabled true
+ subinterface 0
+  ipv4 address 100.0.0.2
+   prefix-length 32
+  !
+ !
+!
+network-instance default
+ mpls dynamic-label mpls-label-blocks [ dynamic ]
+ mpls global reserved-label-block dynamic
+  local-id    dynamic
+  lower-bound 100000
+  upper-bound 120000
+ !
+ mpls signaling-protocols ldp global lsr-id 10.0.0.5
+ mpls signaling-protocols ldp global fec-filter default-export-policy ACCEPT_ROUTE
+ mpls signaling-protocols ldp interface-attributes interface swp2
+  link-hello        true
+  transport-address 4.0.0.2
+ !
+ protocol BGP p1
+  global as 1
+  global router-id 10.0.0.5
+  global afi-safi IPV4_UNICAST
+   network 100.0.0.2/32
+   !
+  !
+  neighbor 99.99.99.98
+   peer-as 1
+   transport local-address 99.99.99.99
+   afi-safi IPV4_UNICAST
+    next-hop SELF
+    exit
+   !
+   exit
+  !
+ !
+ protocol STATIC routes
+  static-route 1.0.0.0/24
+   next-hop-index 1
+    next-hop 4.0.0.1
+    interface swp2
+   !
+  !
+  static-route 2.0.0.0/24
+   next-hop-index 1
+    next-hop 4.0.0.1
+    interface swp2
+   !
+  !
+  static-route 3.0.0.0/24
+   next-hop-index 1
+    next-hop 4.0.0.1
+    interface swp2
+   !
+  !
+  static-route 99.99.99.98/32
+   next-hop-index 1
+    next-hop 4.0.0.1
+    interface swp2
+   !
+  !
+ !
+!
+network-instance management
+ interface ma1
+ !
+!
+lldp interface ma1
+!
+lldp interface swp2
+!

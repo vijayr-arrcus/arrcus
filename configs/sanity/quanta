@@ -1,0 +1,47 @@
+Quanta configs
+================
+interface bond20
+enabled true
+subinterface 0
+ipv4 address 20.1.1.1
+prefix-length 24
+
+interface swp2
+enabled true
+no subinterface 0
+ethernet port-speed SPEED_100GB
+ethernet aggregate-id bond20
+!
+interface swp3
+fec     fec-none
+no subinterface 0
+ethernet port-speed SPEED_100GB
+ethernet aggregate-id bond20
+!
+interface swp30
+enabled true
+no subinterface 0
+ethernet port-speed SPEED_100GB
+ethernet aggregate-id bond20
+!
+interface bond30
+enabled true
+subinterface 60
+ipv4 address 30.1.1.1
+prefix-length 24
+
+interface swp5
+enabled true
+no subinterface 0
+ethernet aggregate-id bond30
+
+interface swp6
+enabled true
+no subinterface 0
+ethernet aggregate-id bond30
+!
+interface swp35
+enabled true
+no subinterface 0
+ethernet aggregate-id bond30
+!

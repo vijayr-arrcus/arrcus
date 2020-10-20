@@ -1,0 +1,120 @@
+10.10.10.1 bond 10                     bond 10 (10.10.10.2)
+           |---- swp6   ----  swp5 ----|
+    EC     |---- swp7   ----  swp6 ----| Quanta
+20.20.20.1 bond 500                    bond 500 (20.20.20.2)
+(ni1)      |--- swp36   ----  swp35 ---|
+
+Edge core
+=========
+int bond10
+enable
+subinterface 0
+ipv4 address 10.10.10.1 prefix-length 24
+
+int bond500
+enable
+subinterface 0
+ipv4 address 20.20.20.1 prefix-length 24
+commit
+
+interface swp6
+type    ethernetCsmacd
+enabled true
+no subinterface 0
+ethernet aggregate-id bond10
+commit
+!
+!
+!
+interface swp7
+type    ethernetCsmacd
+enabled true
+no subinterface 0
+ethernet aggregate-id bond10
+commit
+!
+
+interface swp36
+enabled true
+no subinterface 0
+ethernet aggregate-id bond500
+commit
+!
+
+10.10.10.1 bond 10                     bond 10 (10.10.10.2)
+(default)  |---- swp6   ----  swp5 ----|
+    EC     |---- swp7   ----  swp6 ----| Quanta
+20.20.20.1 bond 500                    bond 500 (20.20.20.2)
+           |--- swp36   ----  swp35 ---|
+
+network-instance default
+ protocol STATIC route_10.10.10.0
+  static-route 10.10.10.0/24
+   next-hop-index 1
+    next-hop 20.20.20.2
+    interface bond500
+   !
+  !
+ !
+!
+network-instance management
+ interface ma1
+ !
+!
+network-instance ni1
+ interface bond10
+ !
+ protocol STATIC route_20.20.20.0
+  static-route 20.20.20.0/24
+   next-hop-index 1
+    next-hop 10.10.10.2
+    interface bond10
+   !
+  !
+ !
+!
+Quanta
+=======
+
+interface bond10
+ enabled true
+ subinterface 0
+  ipv4 address 10.10.10.2
+   prefix-length 24
+  !
+ !
+ commit
+!
+
+interface bond500
+enabled true
+ subinterface 0
+  ipv4 address 20.20.20.2
+   prefix-length 24
+  !
+ !
+ commit
+!
+
+interface swp5
+ type    ethernetCsmacd
+ enabled true
+ no subinterface 0
+ ethernet aggregate-id bond10
+ commit
+!
+
+interface swp6
+ type    ethernetCsmacd
+ enabled true
+ no subinterface 0
+ ethernet aggregate-id bond10
+ commit
+!
+
+interface swp35
+ type    ethernetCsmacd
+ enabled true
+ ethernet aggregate-id bond500
+ commit
+!

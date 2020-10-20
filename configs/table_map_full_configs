@@ -1,0 +1,160 @@
+Quanta configs
+================
+interface bond20
+enabled true
+subinterface 0
+ipv4 address 20.1.1.1
+prefix-length 24
+
+interface swp2
+enabled true
+ethernet port-speed SPEED_100GB
+ethernet aggregate-id bond20
+!
+interface swp3
+enabled true
+fec     fec-none
+ethernet port-speed SPEED_100GB
+ethernet aggregate-id bond20
+!
+interface swp30
+enabled true
+ethernet port-speed SPEED_100GB
+ethernet aggregate-id bond20
+!
+interface bond30
+enabled true
+subinterface 60
+ipv4 address 30.1.1.1
+prefix-length 24
+
+interface swp5
+enabled true
+ethernet aggregate-id bond30
+
+interface swp6
+enabled true
+ethernet aggregate-id bond30
+!
+interface swp35
+enabled true
+ethernet aggregate-id bond30
+!
+
+Edgecore
+=========
+interface bond30
+enabled true
+subinterface 60
+ipv4 address 30.1.1.2
+prefix-length 24
+
+interface swp6
+enabled true
+no subinterface 0
+ethernet aggregate-id bond30
+!
+interface swp7
+enabled true
+no subinterface 0
+ethernet aggregate-id bond30
+!
+interface swp36
+enabled true
+no subinterface 0
+ethernet aggregate-id bond30
+!
+
+interface bond40
+enabled true
+subinterface 0
+ipv4 address 40.1.1.2
+prefix-length 24
+
+interface swp3
+enabled true
+ethernet port-speed SPEED_40GB
+ethernet aggregate-id bond40
+!
+interface swp31
+enabled true
+ethernet port-speed SPEED_40GB
+ethernet aggregate-id bond40
+! 
+
+
+TD3
+====
+interface bond20
+enabled true
+subinterface 0
+ipv4 address 20.1.1.3
+prefix-length 24
+!
+interface swp52
+enabled true
+ethernet aggregate-id bond20
+!
+interface swp53
+enabled true
+ethernet aggregate-id bond20
+!
+interface swp54
+enabled true
+ethernet aggregate-id bond20
+!
+
+interface bond40
+enabled true
+subinterface 0
+ipv4 address 40.1.1.3
+prefix-length 24
+!
+interface swp55
+enabled true
+ethernet port-speed SPEED_40GB
+ethernet aggregate-id bond40
+!
+interface swp56
+enabled true
+ethernet port-speed SPEED_40GB
+ethernet aggregate-id bond40
+!
+
+
+
+Edgecore
+
+#!/usr/bin/python
+from scapy.all import *
+
+count=50
+dst_ip="2.2.2.1"
+src_ip="3.3.3.1"
+src_mac="68:21:5f:25:42:6a"
+dst_mac="b4:a9:fc:1c:be:be"
+i = 1
+while i < count:
+    str = "HelloWorld - %d"%(i)
+    p = sendp(Ether()/IP(src=src_ip, dst=dst_ip, tos=184)/ICMP(), iface="bond30")
+    print("pkt ",i," sent")
+    i+=1
+
+
+
+TD3
+
+from scapy.all import *
+
+count=50
+dst_ip="20.1.1.3"
+src_ip="30.1.1.2"
+src_mac="00:e0:ec:cb:37:b1"
+dst_mac="b4:a9:fc:1c:be:be"
+i = 1
+while i < count:
+    str = "HelloWorld - %d"%(i)
+    p = sendp(Ether()/IP(src=src_ip, dst=dst_ip, tos=184)/ICMP(), iface="bond20")
+    print("pkt ",i," sent")
+    i+=1
+

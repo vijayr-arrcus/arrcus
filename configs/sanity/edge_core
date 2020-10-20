@@ -1,0 +1,52 @@
+Edgecore
+=========
+interface bond30
+enabled true
+subinterface 60
+ipv4 address 30.1.1.2
+prefix-length 24
+
+interface swp6
+enabled true
+no subinterface 0
+ethernet aggregate-id bond30
+!
+interface swp7
+enabled true
+no subinterface 0
+ethernet aggregate-id bond30
+!
+interface swp36
+enabled true
+no subinterface 0
+ethernet aggregate-id bond30
+!
+
+interface bond40
+enabled true
+subinterface 0
+ipv4 address 40.1.1.2
+prefix-length 24
+
+interface swp3
+enabled true
+no subinterface 0
+ethernet port-speed SPEED_40GB
+ethernet aggregate-id bond40
+!
+interface swp31
+enabled true
+no subinterface 0
+ethernet port-speed SPEED_40GB
+ethernet aggregate-id bond40
+! 
+
+network-instance default
+protocol STATIC route_20.1.1.0
+static-route 20.1.1.0/24
+next-hop-index 1
+next-hop 30.1.1.1
+interface    bond30
+subinterface 60
+!
+!

@@ -1,0 +1,71 @@
+interface swp6
+ type    ethernetCsmacd
+ enabled true
+ ethernet aggregate-id bond200
+!
+interface swp7
+ type    ethernetCsmacd
+ enabled true
+ ethernet aggregate-id bond200
+!
+interface swp36
+ type    ethernetCsmacd
+ enabled true
+ ethernet aggregate-id bond200
+!
+!
+interface bond200
+ type    ieee8023adLag
+ enabled true
+ subinterface 0
+  ipv4 address 10.10.10.2
+   prefix-length 24
+  exit
+  ipv6 address 1::2
+   prefix-length 64
+  exit
+ exit
+!
+network-instance default
+ protocol ISIS p1
+  global net [ 49.0001.0000.0000.000b.00 49.0001.0001.0000.2001.00 ]
+  global af IPV6 UNICAST
+   enabled true
+   exit
+  !
+  global af IPV4 UNICAST
+   enabled true
+   exit
+  !
+  level 1
+   enabled true
+   authentication csnp-authentication true
+   authentication psnp-authentication true
+   authentication lsp-authentication true
+   authentication key auth-password $8$bcLtVkV9KuZizLA2w9Bowo9M4XGPFqP7kwuVg8n2f3Y=
+   authentication key crypto-algorithm MD5
+   exit
+  !
+  level 2
+   enabled false
+   exit
+  !
+  interface bond200
+   enabled true
+   bfd bfd-tlv true
+   af IPV6 UNICAST
+    enabled true
+   !
+   af IPV4 UNICAST
+    enabled true
+  exit
+  !
+!
+bfd profile GLOBAL
+ enabled                     true
+ desired-minimum-tx-interval 150
+ required-minimum-receive    150
+ detection-multiplier        3
+ v4-hw-offload               true
+ v6-hw-offload               true
+!

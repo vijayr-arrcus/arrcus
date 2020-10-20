@@ -1,0 +1,57 @@
+!
+interface bond30
+ enabled true
+ subinterface 0
+  ipv4 address 3.0.0.2
+   prefix-length 24
+  !
+!
+int swp10
+enable true
+ethernet aggregate-id bond30
+
+int swp3
+enable true
+subinterface 0
+ipv4 address 4.0.0.1 prefix-length 24
+
+network-instance default
+network-instance default mpls signaling-protocols ldp global attributes php-type EXPLICIT
+mpls dynamic-label mpls-label-blocks [ dynamic ]
+mpls global reserved-label-block dynamic
+local-id    dynamic
+lower-bound 100000
+upper-bound 120000
+!
+ mpls signaling-protocols ldp global lsr-id 10.0.0.5
+ mpls signaling-protocols ldp global fec-filter default-export-policy ACCEPT_ROUTE
+ mpls signaling-protocols ldp global transport-address ipv4 3.0.0.2
+ mpls signaling-protocols ldp interface-attributes interface bond30
+  link-hello        true
+  address-families address-family IPV4 afi-name IPV4 enabled
+ !
+ protocol STATIC routes
+  static-route 1.0.0.0/24
+   next-hop-index 1
+    next-hop 3.0.0.1
+    interface bond30
+   !
+  !
+  static-route 2.0.0.0/24
+   next-hop-index 1
+    next-hop 3.0.0.1
+    interface bond30
+   !
+  !
+  static-route 5.0.0.0/24
+   next-hop-index 1
+    next-hop 4.0.0.2
+    interface swp3
+   !
+!
+network-instance management
+ interface ma1
+ !
+!
+lldp interface bond30
+!

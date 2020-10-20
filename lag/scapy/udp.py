@@ -4,8 +4,8 @@ import math
 import random
 
 data = 'Hello world hello world hello world zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'
-src_ip = "20.20.20.1"
-dst_ip = "10.10.10.1"
+src_ip = "2.1.1.2"
+dst_ip = "50.1.1.2"
 dst_mac = "b4:a9:fc:1c:be:be"
 _src_mac =  ":21:5F:25:42:"
 _src_mac =  "68:21:5F:25:42:6A"
@@ -19,6 +19,7 @@ while j < 500:
  src_mac = _src_mac
  dport = random.randint(0,65535)
  sport = random.randint(0,65535)
- p = Ether(src=src_mac,dst=dst_mac) /IP(src=src_ip, dst=dst_ip) / UDP(sport=sport, dport=dport)/data
- sendp(p, iface="swp6",count=random.randint(0,500))
+# p = Ether(src=src_mac,dst=dst_mac) /IP(src=src_ip, dst=dst_ip) / UDP(sport=sport, dport=dport)/data
+ p = Ether() /IP(src=src_ip, dst=dst_ip) / UDP(sport=sport, dport=dport)/data
+ sendp(p, iface="bond30",count=random.randint(0,500))
  i+=1

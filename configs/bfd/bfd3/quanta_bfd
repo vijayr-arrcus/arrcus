@@ -1,0 +1,295 @@
+version "4.3.1.EFT3 [release] 2020-10-07 13:38:41"
+system login-banner "ArcOS (c) Arrcus, Inc."
+system ssh-server enable true
+system ssh-server permit-root-login true
+system restconf-server enable true
+system aaa authentication admin-user admin-password $6$u1CIsox5n77bayGO$bNN0EFWu8AtijlzrlKLKdWv1zO0gqKNZREPI1.hRy9juaVPILe.4E6B4DarKph74uvNErVr8WV55lpfs0vygB1
+interface ma1
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+ exit
+!
+interface swp1
+ type ethernetCsmacd
+!
+interface swp2
+ type ethernetCsmacd
+!
+interface swp3
+ type ethernetCsmacd
+!
+interface swp4
+ type ethernetCsmacd
+!
+interface swp5
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 1.1.1.1
+   prefix-length 24
+  exit
+  ipv6 address 1::1
+   prefix-length 64
+  exit
+ exit
+!
+interface swp6
+ type ethernetCsmacd
+!
+interface swp7
+ type ethernetCsmacd
+!
+interface swp8
+ type ethernetCsmacd
+!
+interface swp9
+ type ethernetCsmacd
+!
+interface swp10
+ type ethernetCsmacd
+!
+interface swp11
+ type ethernetCsmacd
+!
+interface swp12
+ type ethernetCsmacd
+!
+interface swp13
+ type ethernetCsmacd
+!
+interface swp14
+ type ethernetCsmacd
+!
+interface swp15
+ type ethernetCsmacd
+!
+interface swp16
+ type ethernetCsmacd
+!
+interface swp17
+ type ethernetCsmacd
+!
+interface swp18
+ type ethernetCsmacd
+!
+interface swp19
+ type ethernetCsmacd
+!
+interface swp20
+ type ethernetCsmacd
+!
+interface swp21
+ type ethernetCsmacd
+!
+interface swp22
+ type ethernetCsmacd
+!
+interface swp23
+ type ethernetCsmacd
+!
+interface swp24
+ type ethernetCsmacd
+!
+interface swp25
+ type ethernetCsmacd
+!
+interface swp26
+ type ethernetCsmacd
+!
+interface swp27
+ type ethernetCsmacd
+!
+interface swp28
+ type ethernetCsmacd
+!
+interface swp29
+ type ethernetCsmacd
+!
+interface swp30
+ type ethernetCsmacd
+!
+interface swp31
+ type ethernetCsmacd
+!
+interface swp32
+ type ethernetCsmacd
+!
+interface swp33
+ type ethernetCsmacd
+!
+interface swp34
+ type ethernetCsmacd
+!
+interface swp35
+ type ethernetCsmacd
+!
+interface swp36
+ type ethernetCsmacd
+!
+interface swp37
+ type ethernetCsmacd
+!
+interface swp38
+ type ethernetCsmacd
+!
+interface swp39
+ type ethernetCsmacd
+!
+interface swp40
+ type ethernetCsmacd
+!
+interface loopback1
+ type    softwareLoopback
+ enabled true
+ subinterface 0
+  ipv4 address 100.1.1.1
+   prefix-length 32
+  exit
+  ipv6 address 100:1::1:1
+   prefix-length 128
+  exit
+ exit
+!
+network-instance default
+ protocol ISIS default
+  global net       [ 49.0001.0101.0203.0405.00 ]
+  global level-capability LEVEL_2
+  global max-ecmp-paths 16
+  global graceful-restart enabled true
+  global transport lsp-mtu-size 8974
+  global af IPV6 UNICAST
+   enabled true
+   exit
+  !
+  global af IPV4 UNICAST
+   enabled true
+   exit
+  !
+  level 2
+   enabled true
+   exit
+  !
+  interface swp5
+   enabled      true
+   network-type POINT_TO_POINT
+   bfd bfd-tlv true
+   af IPV6 UNICAST
+    enabled true
+   !
+   af IPV4 UNICAST
+    enabled true
+   !
+   level 2
+    enabled true
+    exit
+   !
+   exit
+  !
+  interface loopback1
+   af IPV6 UNICAST
+    enabled true
+   !
+   af IPV4 UNICAST
+    enabled true
+   !
+   level 2
+    enabled true
+    exit
+   !
+   exit
+  !
+ !
+!
+network-instance management
+ interface ma1
+ !
+!
+bfd profile GLOBAL
+ enabled                     true
+ desired-minimum-tx-interval 150
+ required-minimum-receive    150
+ detection-multiplier        3
+!
+lldp interface ma1
+!
+lldp interface swp1
+!
+lldp interface swp2
+!
+lldp interface swp3
+!
+lldp interface swp4
+!
+lldp interface swp5
+!
+lldp interface swp6
+!
+lldp interface swp7
+!
+lldp interface swp8
+!
+lldp interface swp9
+!
+lldp interface swp10
+!
+lldp interface swp11
+!
+lldp interface swp12
+!
+lldp interface swp13
+!
+lldp interface swp14
+!
+lldp interface swp15
+!
+lldp interface swp16
+!
+lldp interface swp17
+!
+lldp interface swp18
+!
+lldp interface swp19
+!
+lldp interface swp20
+!
+lldp interface swp21
+!
+lldp interface swp22
+!
+lldp interface swp23
+!
+lldp interface swp24
+!
+lldp interface swp25
+!
+lldp interface swp26
+!
+lldp interface swp27
+!
+lldp interface swp28
+!
+lldp interface swp29
+!
+lldp interface swp30
+!
+lldp interface swp31
+!
+lldp interface swp32
+!
+lldp interface swp33
+!
+lldp interface swp34
+!
+lldp interface swp35
+!
+lldp interface swp36
+!
+lldp interface swp37
+!
+lldp interface swp38
+!
+lldp interface swp39
+!
+lldp interface swp40
+!

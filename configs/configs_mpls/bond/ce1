@@ -1,0 +1,23 @@
+int bond20
+enable true
+subinterface 0
+ipv4 address 1.0.0.1 prefix-length 24
+commit
+end
+
+network-instance default
+protocol STATIC routes
+static-route 2.0.0.0/24
+next-hop-index 1
+next-hop 1.0.0.2
+interface bond20
+
+static-route 3.0.0.0/24
+next-hop-index 1
+next-hop 1.0.0.2
+interface bond20
+
+static-route 4.0.0.0/24
+next-hop-index 1
+next-hop 1.0.0.2
+interface bond20
