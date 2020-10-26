@@ -1,0 +1,8 @@
+Download docker.gz from ci page
+Sudo docker load -i <docker.gz>
+Sudo docker images
+Get the loaded image name
+Sudo docker tag arcos:<image> arcos:latest
+Now your docker image will be ready
+
+arrcus_dev_test/scripts/dockerscripts/auto_docker.sh -f topo.json
