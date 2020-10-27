@@ -173,40 +173,28 @@ add_gport_to_vlan( bcm_gport_t gport, int vlan_id, int vsi_id,
   bcm_vlan_port_t vp;
   bcm_vlan_port_translation_t vp_trans;
   uint32_t in_gp, out_gp;
+  bcm_port_match_info_t       port_match;
   // Add gport to a vlan membership and define its
   // egress tag properties
   // Assumes symmetric configuration between incomming and outgoing
   // vlan port membership
+   /*
   rv = bcm_vlan_gport_add(unit, vlan_id, gport,
 			  tagged ? 0 : BCM_VLAN_GPORT_ADD_UNTAGGED);
 
   if (rv = BCM_E_NONE) {
     printf("\nfailed to create trunk %d", rv);
   }
+  */
   // set the untagged property for trunk
   if (!tagged) {
     //Note: ingress VLAN miss is drop by default (PG 21.5.2)
     // This sets untagged packets default vlan for the incoming port
     rv = bcm_port_untagged_vlan_set(unit, gport, vlan_id);
-  if (rv = BCM_E_NONE) {
-    printf("\nfailed to create trunk %d", rv);
+    if (rv = BCM_E_NONE) {
+      printf("\nfailed to create trunk %d", rv);
+    }
   }
-  }
-
-
-  /*
-   * create (p,v) outLIF, for an entry in ESEM_FORWARD_DOMAIN_MAPPING_DB
-   */
-  // TODO_AMIT somehow we donot need any id for this guy ???
-  // Pick up anything egressing on a port x VSI independently of VID.
-  bcm_vlan_port_t_init(&vp);
-  vp.criteria = BCM_VLAN_PORT_MATCH_PORT_VLAN;
-  vp.port = gport;
-  vp.vsi = vsi_id;
-  vp.flags |= BCM_VLAN_PORT_CREATE_EGRESS_ONLY;
-  vp.flags |= BCM_VLAN_PORT_VLAN_TRANSLATION;
-  rv = bcm_vlan_port_create(unit, &vp);
-  out_gp = vp.vlan_port_id;
 
   // Set up Symmetric Lifs for the port VLAN
   // This is what is being used for J2
@@ -214,23 +202,44 @@ add_gport_to_vlan( bcm_gport_t gport, int vlan_id, int vsi_id,
   if (tagged) {
     vp.criteria = BCM_VLAN_PORT_MATCH_PORT_VLAN;
   } else {
-    vp.criteria = BCM_VLAN_PORT_MATCH_PORT_UNTAGGED;
+    vp.criteria = BCM_VLAN_PORT_MATCH_PORT_INITIAL_VLAN;
   }
   vp.port = gport;
-  BCM_GPORT_SUB_TYPE_LIF_SET(vp.vlan_port_id, 0, lif_id + 0x1000);
-  BCM_GPORT_VLAN_PORT_ID_SET(vp.vlan_port_id, vp.vlan_port_id);
-  vp.flags = BCM_VLAN_PORT_WITH_ID;
   vp.egress_vlan = vp.match_vlan = vlan_id;
+  vp.vsi = vsi_id;
+//  BCM_GPORT_SUB_TYPE_LIF_SET(vp.vlan_port_id, 0, lif_id + 0x1000);
+  BCM_GPORT_VLAN_PORT_ID_SET(vp.vlan_port_id, lif_id);
+  vp.flags = BCM_VLAN_PORT_WITH_ID | BCM_VLAN_PORT_CREATE_INGRESS_ONLY;
   // Create an LIF for this port vlan
   rv = bcm_vlan_port_create(unit, &vp);
   in_gp = vp.vlan_port_id;
 
   // Adds the LIFs to VSI
-  rv = bcm_vswitch_port_add(unit, vsi_id, vp.vlan_port_id);
-  if (rv = BCM_E_NONE) {
-    printf("\nfailed to create trunk %d", rv);
-  }
+//  rv = bcm_vswitch_port_add(unit, vsi_id, vp.vlan_port_id);
+ // if (rv = BCM_E_NONE) {
+ //   printf("\nfailed to create trunk %d", rv);
+ // }
+  /*
+   * create (p,v) outLIF, for an entry in ESEM_FORWARD_DOMAIN_MAPPING_DB
+   */
+  // TODO_AMIT somehow we donot need any id for this guy ???
+  // Pick up anything egressing on a port x VSI independently of VID.
+  bcm_vlan_port_t_init(&vp);
+  vp.criteria = BCM_VLAN_PORT_MATCH_NONE;
+  vp.port = gport;
+  vp.vsi = vsi_id;
+  vp.flags |= BCM_VLAN_PORT_CREATE_EGRESS_ONLY;
+  vp.flags |= BCM_VLAN_PORT_WITH_ID;
+  BCM_GPORT_VLAN_PORT_ID_SET(vp.vlan_port_id, lif_id);
+  rv = bcm_vlan_port_create(unit, &vp);
 
+  bcm_port_match_info_t_init(&port_match);
+  port_match.match = BCM_PORT_MATCH_PORT_VLAN;
+  port_match.port = gport;
+  port_match.match_vlan = vsi_id;
+  port_match.flags = BCM_PORT_MATCH_EGRESS_ONLY;
+  rv = bcm_port_match_add(unit, vp.vlan_port_id, &port_match);
+  out_gp = vp.vlan_port_id;
   /*
    * associate Egress VLAN edit class and VLAN edit
    * parameters to be used for VLAN editing on outLIF for
@@ -241,6 +250,7 @@ add_gport_to_vlan( bcm_gport_t gport, int vlan_id, int vsi_id,
   bcm_vlan_port_translation_t_init(&vp_trans);
   vp_trans.new_outer_vlan = vlan_id;
   vp_trans.gport = in_gp;
+//  vp_trans.gport = vp.vlan_port_id;
   if (tagged) {
     vp_trans.vlan_edit_class_id = EGRESS_EDIT_CLASS_TAGGED;
   } else {
@@ -334,6 +344,8 @@ add_port_to_vlan( int port, int vlan_id, int vsi_id, int tagged, int lif_id )
 {
   bcm_gport_t gport;
   BCM_GPORT_SYSTEM_PORT_ID_SET( gport, port );
+  bcm_port_tpid_delete_all(unit, port);
+  bcm_port_tpid_add(unit, port, 0x8100, 0);
   set_tpid( gport);
   add_gport_to_vlan( gport, vlan_id, vsi_id, tagged, lif_id );
   return 0;
