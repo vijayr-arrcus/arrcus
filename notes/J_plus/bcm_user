@@ -42,13 +42,9 @@ rlwrap nc localhost 8888
  /root/bcm.user
 
 
- 46  cd /usr/share/arcos/
-47  ./kmod_hdlr.py stop
-48  ./kmod_hdlr.py start
-49  cd /
-50  find -name dnx.soc
-51  cd /etc/arcos/bcm
-52  ls
-53  ~/bcmsdk_6_5_20/bcm.user.dbg
-54  ~/bcmsdk_6_5_20/bcm.user.dbg
-55  ~/bcmsdk_6_5_20/bcm.user.dbg
+service spyder stop
+cd /usr/share/arcos/
+./kmod_hdlr.py stop
+./kmod_hdlr.py start
+cd /etc/arcos/bcm
+~/bcmsdk_6_5_20/bcm.user.dbg
