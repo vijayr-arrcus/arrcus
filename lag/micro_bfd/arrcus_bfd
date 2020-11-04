@@ -1,0 +1,22 @@
+
+bfd_ipv4_peer_object_api  -- notify dpal
+ds_bfd_ipv4_peer_object_pack_as_obj -- notify BFD to create a session.
+
+bfd_session_create_api,
+bfd_hal_program,
+bfd_init_host_session_connection  -- create FD and map it  to the session.
+bfd_host_session_write_message
+
+If the HAL full offload DOWN session is programmed into the hardware.
+Session entry already has if_index but is used for link local IPv6 address while creating source port.
+
+bfd_host_session_update_state -- update internal states
+bfd_dstore_publish_bfd_ipv4_peer_state  -- notify others of state change
+
+
+session_info.if_index = decoded_obj.if_index;  if_index is if_index for link local address.
+
+
+
+Packet on an interface corresponds to the BFD session for that interface.
+What happens if there is not session on that interface ?
