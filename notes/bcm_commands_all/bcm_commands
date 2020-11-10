@@ -6,7 +6,75 @@ trunk set pm.core 1
 Trunk #100 created with 2 ports
 
 
+BCM.0> dump chg CGM_SMOOTH_DIVISION 1023
+dump chg CGM_SMOOTH_DIVISION 1023
+CGM_SMOOTH_DIVISION.CGM0[1023]: <MEMBER_3=0xe,MEMBER_2=0xf,MEMBER_1=0xf,MEMBER_0=0xf,ECC=0x1e>
+CGM_SMOOTH_DIVISION.CGM1[1023]: <MEMBER_3=0xe,MEMBER_2=0xf,MEMBER_1=0xf,MEMBER_0=0xf,ECC=0x1e>
+BCM.0>
+BCM.0> mod CGM_SMOOTH_DIVISION 1023 1 MEMBER_2=0xa
+mod CGM_SMOOTH_DIVISION 1023 1 MEMBER_2=0xa
+WRITE[CGM_SMOOTH_DIVISION], DATA: 0x2ceaff
+WRITE[CGM_SMOOTH_DIVISION], DATA: 0x2ceaff
+BCM.0>
+BCM.0> dump chg CGM_SMOOTH_DIVISION 1023
+dump chg CGM_SMOOTH_DIVISION 1023
+CGM_SMOOTH_DIVISION.CGM0[1023]: <MEMBER_3=0xe,MEMBER_2=0xa,MEMBER_1=0xf,MEMBER_0=0xf,ECC=0x2c>
+CGM_SMOOTH_DIVISION.CGM1[1023]: <MEMBER_3=0xe,MEMBER_2=0xa,MEMBER_1=0xf,MEMBER_0=0xf,ECC=0x2c>
+BCM.0>
 
+dump chg CGM_MEMBER_TO_DSP_MAPPING
+CGM_MEMBER_TO_DSP_MAPPING.CGM0[64]: <DESTINATION=0xc03ee>
+CGM_MEMBER_TO_DSP_MAPPING.CGM0[65]: <DESTINATION=0xc03ef>
+CGM_MEMBER_TO_DSP_MAPPING.CGM0[66]: <DESTINATION=0xc040c>
+CGM_MEMBER_TO_DSP_MAPPING.CGM1[64]: <DESTINATION=0xc03ee>
+CGM_MEMBER_TO_DSP_MAPPING.CGM1[65]: <DESTINATION=0xc03ef>
+CGM_MEMBER_TO_DSP_MAPPING.CGM1[66]: <DESTINATION=0xc040c>
+BCM.0>
+BCM.0> tm lag
+tm lag
+=======================================================================================================
+|                                                    Lag info                                         |
+=======================================================================================================
+| Pool | Max Groups | Max Members | Group | PSC                           | System port | Is Disabled |
+=======================================================================================================
+| 0    | 256        | 64          | 1     | BCM_TRUNK_PSC_SMOOTH_DIVISION | 0x6c0003ee  | False       |
+|      |            |             |       |                               | 0x6c0003ef  | False       |
+|      |            |             |       |                               | 0x6c00040c  | False       |
+-------------------------------------------------------------------------------------------------------
+| 1    | 256        | 64          |       |                               |             |             |
+=======================================================================================================
+BCM.0>
+BCM.0> dbal table info MEMBER
+dbal table info MEMBER
+========================================
+|              Possible tables         |
+========================================
+| Table Name                           |
+========================================
+| EGRESS_VLAN_MEMBERSHIP               |
+| FEC_ECMP_MEMBERS                     |
+| INGRESS_VLAN_MEMBERSHIP              |
+| INGRESS_VLAN_MEMBERSHIP_INFO         |
+| TRUNK_CONSISTENT_HASHING_MEMBERS_MAP |
+| TRUNK_MEMBERS                        |
+========================================
+BCM.0>
+BCM.0> dbal table dump table=TRUNK_MEMBERS
+dbal table dump table=TRUNK_MEMBERS
+====================================
+| Entries dump table TRUNK_MEMBERS |
+|   Total Entries: 3               |
+====================================
+| # | MEMBER_ || DST_              |
+|   | INDEX   || SYS_              |
+|   |         || PORT_             |
+|   |         || ID                |
+====================================
+| 0 | 64      || 787438            |
+| 1 | 65      || 787439            |
+| 2 | 66      || 787468            |
+====================================
+BCM.0>
 
 dbal table dump table=TRUNK_MEMBERS
 dbal table dump table=TRUNK_ATTRIBUTES

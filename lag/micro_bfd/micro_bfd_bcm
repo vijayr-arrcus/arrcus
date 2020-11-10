@@ -1,0 +1,155 @@
+Bond implementation.
+http://d-scholarship.pitt.edu/7672/1/GuptaSumedha_16Apr_2010.pdf
+
+
+bcm_sdk/src/examples/sand/cint_bfd_over_lag.c
+bcmBFDTunnelTypeUdp
+BCM_BFD_ENDPOINT_MICRO_BFD
+dnx_bfd_endpoint_create_non_default
+dnx_bfd_endpoint_db_build_param_for_oamp_mep_db
+
+
+DNX_OAMP_BFD_MEP_MICRO_BFD
+OAMP_MEP_MICRO_BFD
+dnx_oamp_mep_db_bfd_endpoint_set
+
+DBAL_TABLE_OAMP_MEP_STATIC_DATA_DB
+
+DBAL_TABLE_OAMP_MEP_DB
+
+DBAL_TABLE_OAMP_MEP_DB
+
+DBAL_TABLE_OAMP_MEP_DB
+
+CGM_SMOOTH_DIVISION
+
+OAMP_ENTRY_ID
+
+
+BCM_TRUNK_MEMBER_EGRESS_DISABLE
+
+
+dbal table dump table=OAMP_MEP_DB OAMP_ENTRY_ID="=73740"
+dbal table dump table=OAMP_MEP_DB OAMP_ENTRY_ID="=65548"
+dump chg OAMP_MEP_DB_BFD_ON_IPV4_ONE_HOP
+
+
+BCM.0>
+BCM.0> dbal table info TRUNK
+dbal table info TRUNK
+========================================
+|              Possible tables         |
+========================================
+| Table Name                           |
+========================================
+| STACK_DOMAIN_TO_STACK_TRUNK_SW_STATE |
+| STACK_TRUNK_RESOLVE_TABLE            |
+| TRUNK_ACTIVE_CONFIGURATION_SELECTOR  |
+| TRUNK_ATTRIBUTES                     |
+| TRUNK_CONSISTENT_HASHING_MEMBERS_MAP |
+| TRUNK_CONSISTENT_HASHING_PROFILE     |
+| TRUNK_EGRESS_ATTRIBUTES              |
+| TRUNK_EGRESS_MC_RESOLUTION           |
+| TRUNK_MEMBERS                        |
+| TRUNK_POOL_ATTRIBUTES                |
+| TRUNK_SMOOTH_DIVISION                |
+========================================
+
+
+
+BCM.0> cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint> add_trunk_member_disable(100,15);
+bcm_dnx_trunk_member_add: adding member: local_port = 15, pp_port = 4, core_id = 0
+cint> exit;
+BCM.0> dbal table dump table=SYSTEM_PP_DSP_MAPPING
+=============================================
+| Entries dump table SYSTEM_PP_DSP_MAPPING  |
+|   Total Entries: 22                       |
+=============================================
+| #  | CORE_ | PP_ || TM_  | PP_  | SYSTEM_ |
+|    | ID    | DSP || PORT | PORT | PORT    |
+=============================================
+| 0  |  1    | 219 || 219  | 20   | 219     |
+| 1  |  1    | 222 || 222  | 21   | 222     |
+| 2  |  1    | 255 || 255  | 0    | 255     |
+| 3  |  0    | 0   || 0    | 0    | 0       |
+| 4  |  0    | 1   || 1    | 1    | 1       |
+| 5  |  0    | 13  || 13   | 38   | 32868   |
+| 6  |  0    | 14  || 14   | 38   | 33124   |
+| 7  |  0    | 15  || 15   | 38   | 33380   |
+| 8  |  0    | 16  || 16   | 5    | 16      |
+| 9  |  0    | 17  || 17   | 6    | 17      |
+| 10 |  0    | 40  || 40   | 7    | 40      |
+| 11 |  0    | 200 || 200  | 28   | 200     |
+| 12 |  0    | 201 || 201  | 29   | 201     |
+| 13 |  0    | 202 || 202  | 30   | 202     |
+| 14 |  0    | 203 || 203  | 31   | 203     |
+| 15 |  0    | 218 || 218  | 32   | 218     |
+| 16 |  0    | 221 || 221  | 33   | 221     |
+| 17 |  0    | 230 || 230  | 34   | 230     |
+| 18 |  0    | 232 || 232  | 35   | 232     |
+| 19 |  0    | 233 || 233  | 36   | 233     |
+| 20 |  0    | 240 || 240  | 37   | 240     |
+| 21 |  0    | 255 || 255  | 0    | 254     |
+=============================================
+BCM.0> vis lag
+==================================================
+| LAGs                                           |
+==================================================
+| Pool | Group | Core | PP Port | Enable | Force |
+==================================================
+| 0    | 100   | 0    | 38      | 1      | 0     |
+|      |       | 1    | 22      | 1      | 0     |
+==================================================
+BCM.0> tm lag
+================================================================================================
+| Lag info                                                                                     |
+================================================================================================
+| Pool | Max Groups | Max Members | Group | PSC                    | System port | Is Disabled |
+================================================================================================
+| 0    | 256        | 64          | 100   | BCM_TRUNK_PSC_PORTFLOW | 0x6c00000d  | False       |
+|      |            |             |       |                        | 0x6c00000e  | False       |
+|      |            |             |       |                        | 0x6c00000f  | True        |
+------------------------------------------------------------------------------------------------
+| 1    | 256        | 64          |       |                        |             |             |
+================================================================================================
+BCM.0>
+cint> add_trunk_member_disable(100, 15);
+bcm_dnx_trunk_member_add: adding member: local_port = 15, pp_port = 4, core_id = 0
+cint> exit;
+BCM.0> tm lag
+================================================================================================
+| Lag info                                                                                     |
+================================================================================================
+| Pool | Max Groups | Max Members | Group | PSC                    | System port | Is Disabled |
+================================================================================================
+| 0    | 256        | 64          | 100   | BCM_TRUNK_PSC_PORTFLOW | 0x6c00000d  | False       |
+|      |            |             |       |                        | 0x6c00000e  | False       |
+|      |            |             |       |                        | 0x6c00000f  | True        |
+------------------------------------------------------------------------------------------------
+| 1    | 256        | 64          |       |                        |             |             |
+================================================================================================
+BCM.0> cint
+Entering C Interpreter. Type 'exit;' to quit.
+cint> add_trunk_member(100, 15);
+cint> exit;
+BCM.0> tm lag
+================================================================================================
+| Lag info                                                                                     |
+================================================================================================
+| Pool | Max Groups | Max Members | Group | PSC                    | System port | Is Disabled |
+================================================================================================
+| 0    | 256        | 64          | 100   | BCM_TRUNK_PSC_PORTFLOW | 0x6c00000d  | False       |
+|      |            |             |       |                        | 0x6c00000e  | False       |
+|      |            |             |       |                        | 0x6c00000f  | False       |
+------------------------------------------------------------------------------------------------
+| 1    | 256        | 64          |       |                        |             |             |
+================================================================================================
+BCM.0> cint
+Entering C Interpreter. Type 'exit;' to quit.
+cint> add_trunk_member_disable(100, 15);
+src/bcm/dnx/trunk/trunk.c[2053]dnx_trunk_member_add_verify unit 0: Error 'Invalid configuration' indicated, Invalid configuration, either member is already found in another trunk, or amissconfiguration was detected with member flags
+src/bcm/dnx/trunk/trunk.c[2243]bcm_dnx_trunk_member_add unit 0: Error indicated (Invalid configuration) on VERIFY ;
+cint>
