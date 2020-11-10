@@ -1,0 +1,18 @@
+sflow global state counter-sampling-interval 60
+sflow global state packet-sampling-rate 100000
+sflow global state network-instance management
+sflow global state counter-samples 8165
+sflow global state packet-samples 12682
+sflow global state ipv4 source-address 10.27.102.2
+sflow global state ipv4 collector
+ADDRESS      PORT  
+-------------------
+10.9.208.50  6343  
+
+sflow interface
+                                    PACKET    
+                                    SAMPLING  
+NAME   DIRECTION  NAME   DIRECTION  RATE      
+----------------------------------------------
+swp30  ingress    swp30  ingress    -         
+

@@ -1,0 +1,10 @@
+sflow global state counter-sampling-interval 60
+sflow global state packet-sampling-rate 100000
+sflow global state network-instance default
+sflow global state counter-samples 0
+sflow global state packet-samples 0
+sflow global state ipv4 collector
+ADDRESS    PORT  
+-----------------
+127.0.0.1  6343  
+
