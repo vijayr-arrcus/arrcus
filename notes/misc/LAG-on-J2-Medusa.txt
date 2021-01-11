@@ -1,3 +1,37 @@
 LAG on J2 Medusa
 
 1. Need to distribute the LAGID on all LCs
+i
+
+build VM
+
+Boot server: ssh user@10.9.205.57 / Arrcus2018
+Computer Server: ssh root@192.168.56.2
+      ARCOS cli -- medusa-arcon -c
+                      show chasis
+                      show chasis | tab
+
+                      show interface | select oper-status
+
+      medusa-arcon -d --list-pods   { lc0-lc}
+
+          medusa-arcon -d --bash-pod lc0-lc  -- telnet into Line Card 0. (This is a container)
+                spyder list
+                telnet localhost 8888
+
+          medusa-arcon -d --bash-pod lc0-lc
+
+
+First transfer the binaries to Compute Server .
+      ssh lc0  -- host linux and not a container.
+            docker ps will list the container.
+
+                touch 1.txt
+                      cp touch1.txt /var/log/arcos/core/
+      spyder stop -- dpal
+      spyder start -- dpal
+
+
+CS container
+      medusa-arcon -d --bash-pod-cs-cp
+            all control plane processes are running here.

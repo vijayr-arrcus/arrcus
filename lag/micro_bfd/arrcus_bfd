@@ -6,6 +6,12 @@ bfd_session_create_api,
 bfd_hal_program,
 bfd_init_host_session_connection  -- create FD and map it  to the session.
 bfd_host_session_write_message
+bfd_host_session_rx_handler -- incoming pkt handler.
+
+bfd_host_session_process_change Process state changes -- state machine implementation.
+
+
+DPAL -- > bfd_session_state_object_api
 
 If the HAL full offload DOWN session is programmed into the hardware.
 Session entry already has if_index but is used for link local IPv6 address while creating source port.
@@ -13,10 +19,21 @@ Session entry already has if_index but is used for link local IPv6 address while
 bfd_host_session_update_state -- update internal states
 bfd_dstore_publish_bfd_ipv4_peer_state  -- notify others of state change
 
-
 session_info.if_index = decoded_obj.if_index;  if_index is if_index for link local address.
+path_id gives the next hop interface and encapsulation.
 
 
 
 Packet on an interface corresponds to the BFD session for that interface.
 What happens if there is not session on that interface ?
+
+Why do we deinit the session when we receive NOT_UP from DPAL.
+
+
+bcm_bfd_event_register -- register for callbacks.
+
+bcm_dnx_bfd_session_cfg_main_create_cb
+bcmsdk_bfd_session_cfg_object_create
+
+
+Is it possible to have ipv6 link local address

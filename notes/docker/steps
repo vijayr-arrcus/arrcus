@@ -6,3 +6,9 @@ Sudo docker tag arcos:<image> arcos:latest
 Now your docker image will be ready
 
 arrcus_dev_test/scripts/dockerscripts/auto_docker.sh -f topo.json
+
+sudo docker ps -a
+sudo docker commit <container-id> arcos:latest
+
+
+  /usr/share/arcos/ui/

@@ -1,0 +1,71 @@
+ipv4-nexthop-entry 22
+ level 1
+ flags 8
+ ipv4-path
+                                    NH      NH                                 NUM    IGP   IGP
+PATH                IP       PUSH   TUNNEL  TUNNEL  RTEP             NETWORK   COLL   PATH  PATH
+ID    PATH TYPE     ADDRESS  LABEL  ID      VNI ID  MAC   INTERFACE  INSTANCE  PATHS  ID    TYPE
+--------------------------------------------------------------------------------------------------
+21    CONNECTED_V4  1.1.1.2  -      -       -       -     vlan10     default   -      -     -
+
+root@lag-j2-2# show dpal object-type bcm-ingress-nh-0
+dpal object-type bcm-ingress-nh-0
+ stats total-creates    3
+ stats total-placeholders 0
+ stats total-deletes    0
+ stats total-updates    2
+ stats total-create-deferrals 2
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 0
+ generic-entries entry nhid:2097153
+  state created
+  internal hwid "52430\n"
+ generic-entries entry nhid:3145729
+  state created
+  internal hwid "52430\n"
+ generic-entries entry nhid:17
+  state pending-create
+  pending-parent bcm-port-0 ifindex:0
+ generic-entries entry nhid:19
+  state pending-create
+  pending-parent bcm-port-0 ifindex:0
+ generic-entries entry nhid:21
+  state created
+  internal hwid "524288\n"
+  parent global-mac-rif-encap mac_addr:00:e0:ec:cb:37:b1,rif:13
+  parent bcm-port-0 ifindex:1003
+  parent global-rif ifindex:13
+
+bcm_dnx_ingress_nh_construct()
+  if (cp_info.iftype == DPAL_IF_TYPE_SVI) {
+     ds_bcm_ingress_nh_dst_port_set(nh, l2ifindex);
+
+
+
+     root@lag-j2-2#
+     root@lag-j2-2#
+     root@lag-j2-2# show network-instance default fib IPV4 ipv4-adjacency
+     ipv4-adjacency
+     IF                LINK    VRF                                         NHT  PATH
+     INDEX  INTERFACE  STATUS  ID   IPADDR   HWADDR             L2IFINDEX  IP   ID
+     ---------------------------------------------------------------------------------
+     1024   swp24      DOWN    1
+     1025   swp25      DOWN    1
+     1026   swp26      DOWN    1
+     1027   swp27      DOWN    1
+     1028   swp28      DOWN    1
+     1029   swp29      DOWN    1
+     1030   swp30      DOWN    1
+     1031   swp31      DOWN    1
+     1032   swp32      DOWN    1
+     1033   swp33      DOWN    1
+     1034   swp34      DOWN    1
+     1035   swp35      DOWN    1
+     1036   swp36      DOWN    1
+     1037   swp37      DOWN    1
+     1038   swp38      DOWN    1
+     1039   swp39      DOWN    1
+     1040   swp40      DOWN    1
+     21     vlan10     UP      1    1.1.1.2  00:e0:ec:cb:37:b1  1003
+     24     swp3.10    UP      1
+     1001   swp1       DOWN    1

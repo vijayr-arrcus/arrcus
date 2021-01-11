@@ -1,6 +1,10 @@
 Bond implementation.
 http://d-scholarship.pitt.edu/7672/1/GuptaSumedha_16Apr_2010.pdf
 
+PG107:bcm_port_update
+
+tilfa-dev is the branch where latest lingscan handler code is committed
+
 
 bcm_sdk/src/examples/sand/cint_bfd_over_lag.c
 bcmBFDTunnelTypeUdp

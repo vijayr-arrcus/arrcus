@@ -1,0 +1,35 @@
+int loopback0
+subinterface 0
+ipv4 address 8.8.8.8 prefix-length 32
+!
+network-instance default
+ protocol BGP default
+  global as 65401
+  global router-id 8.8.8.8
+  global afi-safi IPV4_UNICAST
+   use-maximum-paths ebgp maximum-paths 8
+   use-maximum-paths ibgp maximum-paths 8
+  !
+  global afi-safi IPV6_UNICAST
+   use-maximum-paths ebgp maximum-paths 8
+   use-maximum-paths ibgp maximum-paths 8
+  !
+  neighbor 1.1.1.1
+   peer-as 65400
+   bfd enable true
+   bfd strict static true
+   afi-safi IPV4_UNICAST
+    exit
+   !
+   exit
+  !
+ !
+!
+bfd profile GLOBAL
+ enabled                     true
+ desired-minimum-tx-interval 150
+ required-minimum-receive    150
+ detection-multiplier        3
+ v4-hw-offload               true
+ v6-hw-offload               true
+ !

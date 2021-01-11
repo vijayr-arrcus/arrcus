@@ -1,0 +1,40 @@
+interface bond0.400
+type    ieee8023adLag
+ enabled true
+ subinterface 400
+   enabled true
+   vlan vlan-id 400
+   ipv4 address 130.130.130.2
+    prefix-length 24
+exit
+exit
+
+interface swp5
+ type    ethernetCsmacd
+ enabled true
+ fec     fec-none
+ ethernet port-speed SPEED_100GB
+ ethernet aggregate-id bond0.400
+!
+commit
+
+int swp5
+no ethernet aggregate-id bond0.400
+no interface bond0.400
+commit
+
+interface bond0
+  type    ieee8023adLag
+enabled true
+ subinterface 400
+  enabled true
+   vlan vlan-id 400
+   ipv4 address 130.130.130.2
+   prefix-length 24
+   exit
+  exit
+ exit
+commit
+interface swp5
+ ethernet aggregate-id bond0
+ commit

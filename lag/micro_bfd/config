@@ -1,0 +1,22 @@
+a.	Configuration.
+config
+  bfd profile GLOBAL
+    micro source ipv4 address <address>
+
+  interface bond20
+    bfd micro
+      enable true
+      destination ipv4 address <address>
+      source ipv4 address <address>
+      min-links <num>
+
+show bfd micro interface bond20
+b.	Support of min links for micro BFD -- > bond interface will go down once bfd active member links is less than configured.
+This could be different or same from min-links of LACP. For now the two min-links configurations are being kept different.
+c.	Initially we had concluded that if the session corresponding to any of the AF is down, the member link will be marked down and removed from LB table.
+Since we are checking connectivity of the member links, is it required to support sessions for both AF ?, can we stick to only IPV4 sessions ?
+d.	Is this required for XGS family of switches as well ?, this is being planned only for DNX J2 for now.
+e.	The RFC 7130, suggest that the initial protocol packets be sent with a dedicated multicast destination MAC and optionally move to the actual destination MAC.
+We intend to have an implementation where all destination will be for a dedicated multicast MAC address.
+f.	Once BFD declares the link as inactive, LACP will still be enabled on the link and will timeout as per its own timers.
+BFD timeout will not impact LACP states.

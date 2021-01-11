@@ -1,9 +1,20 @@
+a. Gone thru the RFCs and have frozen on the Design.
+b. need to close with the CE team on the limitations and requirements.
+c. Working on defining an IOCTL
+
+
+
+
 cint> main_trunk( 13,14,100, 100 );
 trunk gport is  create: gport=234881124
 bcm_dnx_trunk_set: adding member: local_port = 13, pp_port = 0, core_id = 1
 bcm_dnx_trunk_set: adding member: local_port = 14, pp_port = 2, core_id = 0
 trunk set pm.core 1
 Trunk #100 created with 2 ports
+
+
+vis lag force=on enable=on group=100 pool=0
+
 
 
 BCM.0> dump chg CGM_SMOOTH_DIVISION 1023
@@ -614,3 +625,7 @@ dbal table dump table=INGRESS_PP_PORT
 get source system port
 ========================
 dump chg IPPE_PRT_PTC_INFO
+
+
+
+0x8101 
