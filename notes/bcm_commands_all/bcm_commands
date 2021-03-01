@@ -3,7 +3,9 @@ b. need to close with the CE team on the limitations and requirements.
 c. Working on defining an IOCTL
 
 
-
+diag counter g coredisplay
+clear counters
+show counters
 
 cint> main_trunk( 13,14,100, 100 );
 trunk gport is  create: gport=234881124
@@ -12,7 +14,9 @@ bcm_dnx_trunk_set: adding member: local_port = 14, pp_port = 2, core_id = 0
 trunk set pm.core 1
 Trunk #100 created with 2 ports
 
+vis lag force=on enable=on group=1 pool=0
 
+vis lag force=on enable=on group=100 pool=0
 vis lag force=on enable=on group=100 pool=0
 
 
@@ -628,4 +632,4 @@ dump chg IPPE_PRT_PTC_INFO
 
 
 
-0x8101 
+0x8101

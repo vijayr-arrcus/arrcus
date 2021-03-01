@@ -15,6 +15,16 @@ network-instance default
    use-maximum-paths ibgp maximum-paths 8
   !
   !
+   neighbor 1.1.1.2
+    peer-as 65401
+    bfd enable true
+    bfd strict static true
+    afi-safi IPV4_UNICAST
+     exit
+    !
+    exit
+   !
+  !
 peer-group dynamic-peer-group
  peer-as 65401
  bfd enable true
@@ -34,15 +44,3 @@ bfd profile GLOBAL
  detection-multiplier        3
  v4-hw-offload               true
  v6-hw-offload               true
-
-
- !
-  neighbor 1.1.1.2
-   peer-as 65401
-   bfd enable true
-   bfd strict static true
-   afi-safi IPV4_UNICAST
-    exit
-   !
-   exit
-  !

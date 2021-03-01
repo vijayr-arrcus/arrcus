@@ -50,7 +50,7 @@ network-instance default
    enabled false
    exit
   !
-  interface bond20
+  interface bond10
    enabled true
    bfd bfd-tlv true
    af IPV6 UNICAST

@@ -1,0 +1,149 @@
+pp vis fdt core=0
+=========================================================================================================
+|                                       PP_VIS_FDT_Core=0 Results                                       |
+=========================================================================================================
+| Stage   | FWD_     | OutLIFs     | EEI | Trap_Code                             | Trap_    | Trap_     |
+|         | Action_  |             |     |                                       | Strength | Qualifier |
+|         | Dest     |             |     |                                       |          |           |
+=========================================================================================================
+| LLR     | N/A      | N/A         | N/A | INGRESS_TRAP_ID_TRAP_NONE(0x9)        | 00       | 00003b    |
+---------------------------------------------------------------------------------------------------------
+| VTT1    | MC_ID    |  0: 000000  | 0   | INGRESS_TRAP_ID_TRAP_NONE(0x9)        | 00       | 00003b    |
+|         | 7ffff    |  1: 000000  |     |                                       |          |           |
+---------------------------------------------------------------------------------------------------------
+| VTT2    | MC_ID    |  0: 000000  | 0   | INGRESS_TRAP_ID_TRAP_NONE(0x9)        | 00       | 00003b    |
+|         | 7ffff    |  1: 000000  |     |                                       |          |           |
+---------------------------------------------------------------------------------------------------------
+| VTT3    | MC_ID    |  0: 000000  | 0   | INGRESS_TRAP_ID_TRAP_NONE(0x9)        | 00       | 00003b    |
+|         | 7ffff    |  1: 000000  |     |                                       |          |           |
+---------------------------------------------------------------------------------------------------------
+| VTT4    | MC_ID    |  0: 000000  | 0   | INGRESS_TRAP_ID_TRAP_NONE(0x9)        | 00       | 00003b    |
+|         | 7ffff    |  1: 000000  |     |                                       |          |           |
+---------------------------------------------------------------------------------------------------------
+| VTT5    | MC_ID    |  0: 000000  | 0   | INGRESS_TRAP_ID_TRAP_NONE(0x9)        | 00       | 00003b    |
+|         | 7ffff    |  1: 000000  |     |                                       |          |           |
+---------------------------------------------------------------------------------------------------------
+| FWD1    | MC_ID    |  0: 000000  | 0   | INGRESS_TRAP_ID_TRAP_NONE(0x9)        | 00       | 00003b    |
+|         | 7ffff    |  1: 000000  |     |                                       |          |           |
+---------------------------------------------------------------------------------------------------------
+| FWD2    | FEC      |  0: 000000  | 0   | INGRESS_TRAP_ID_TRAP_BFD_O_IPV6(0xe8) | 07       | 010008    |
+|         | ccd1     |  1: 000000  |     |                                       |          |           |
+---------------------------------------------------------------------------------------------------------
+| IPMF1-2 | FEC      |  0: 000000  | 0   | INGRESS_TRAP_ID_TRAP_BFD_O_IPV6(0xe8) | 07       | 010008    |
+|         | ccd1     |  1: 000000  |     |                                       |          |           |
+|         |          |  2: 000000  |     |                                       |          |           |
+|         |          |  3: 000000  |     |                                       |          |           |
+---------------------------------------------------------------------------------------------------------
+| FER     | PORT_ID  |  0: 000000  | 0   | INGRESS_TRAP_ID_TRAP_BFD_O_IPV6(0xe8) | 07       | 010008    |
+|         | 0        |  1: 000000  |     |                                       |          |           |
+|         |          |  2: 000000  |     |                                       |          |           |
+|         |          |  3: 000000  |     |                                       |          |           |
+---------------------------------------------------------------------------------------------------------
+| IPMF3   | PORT_ID  |  0: 000000  | 0   | INGRESS_TRAP_ID_TRAP_BFD_O_IPV6(0xe8) | 07       | 010008    |
+|         | 0        |  1: 000000  |     |                                       |          |           |
+|         |          |  2: 000000  |     |                                       |          |           |
+|         |          |  3: 000000  |     |                                       |          |           |
+---------------------------------------------------------------------------------------------------------
+| LBP     | PORT_ID  | N/A         | N/A | N/A                                   | N/A      | N/A       |
+|         | 103      |             |     |                                       |          |           |
+=========================================================================================================
+BCM.0>
+BCM.0>
+BCM.0> pp vis term core=0
+pp vis term core=0
+=================================================
+| Ingress Handled Headers                       |
+|   Core 0: Packet header is: BFDoUDPoIPv6oETH0 |
+=================================================
+| Stage | Handled Headers                       |
+=================================================
+| VTT1  | ETH0                                  |
+| VTT2  |                                       |
+| VTT3  |                                       |
+| VTT4  |                                       |
+| VTT5  |                                       |
+| FWD1  | IPv6                                  |
+=================================================
+BCM.0>
+BCM.0>
+BCM.0> pp vis pkttm core=0
+pp vis pkttm core=0
+=================================================
+|     Packet TM Information Core=0 Results      |
+=================================================
+| Name                       | Value   | Size   |
+|                            |         | (bits) |
+=================================================
+| Fwd_Action_Destination     | 0c0103  |  21    |
+|   type                     | PORT_ID |  6     |
+|   value                    | 103     |  15    |
+| Tc                         | 01      |  3     |
+| Dp                         | 00      |  2     |
+| Int_Stat_Meter_Dp_Cmd      | 00      |  4     |
+| Lag_Lb_Key                 | b718    |  16    |
+| St_Vsq_Ptr                 | 00      |  8     |
+| Visibility                 | 01      |  1     |
+| System_Headers_Size        | 26      |  7     |
+| NWK_Header_Truncate_Size   | 3e      |  8     |
+| NWK_Header_Append_Size_Ptr | 00      |  8     |
+| Counter_ID_0               | 000023  |  20    |
+| Counter_ID_1               | N/A     |  0     |
+| Counter_ID_2               | N/A     |  0     |
+| Counter_ID_3               | N/A     |  0     |
+| Counter_ID_4               | N/A     |  0     |
+| Counter_ID_5               | N/A     |  0     |
+| Counter_ID_6               | N/A     |  0     |
+| Counter_ID_7               | N/A     |  0     |
+| Counter_ID_8               | N/A     |  0     |
+| Counter_ID_9               | N/A     |  0     |
+| Meter_ID_0                 | 000023  |  20    |
+| Meter_ID_1                 | N/A     |  0     |
+| Meter_ID_2                 | N/A     |  0     |
+| Ethernet_Meter_ID          | 07      |  3     |
+| snif0_cmd                  | 00      |  5     |
+| snif0_code                 | 0009    |  9     |
+| snif0_qualifier            | 00      |  8     |
+| snif1_cmd                  | 00      |  5     |
+| snif1_code                 | 01e0    |  9     |
+| snif1_qualifier            | 00      |  8     |
+| snif2_cmd                  | 00      |  5     |
+| snif2_code                 | 0000    |  9     |
+| snif2_qualifier            | 00      |  8     |
+=================================================
+BCM.0>
+
+if ((l3info.vlan_id == DEFAULT_VLAN_ID) &&
+       (l3info.intf_type == IF_TYPE_BOND)) {
+     int entry_id = 0;
+     uint8_t dst_mac[6] = {0x01, 0x00, 0x5E, 0x90, 0x00, 0x01};
+     uint8_t mac_mask[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+     LOG_ERR_MSG("DNX-L3IF", "%s: Install multicast mac as my mac\n",
+                 __FUNCTION__);
+     rc = bcm_bnx_sdk_my_station_add_mac(unit,
+                                         l3info.vsi_id, 0xffff,
+                                         dst_mac, mac_mask, &entry_id);
+     if (rc != RET_CODE_SUCCESS) {
+       LOG_ERR_MSG("DNX-L3IF", "%s(): Failed to set BFD my mac for "
+                   "if %" PRIu64 "\n", __FUNCTION__, ifindex);
+       return (rc);
+     }
+     ds_bcm_l3if_bfd_mymac_hwid()
+   }
+
+
+   if (info->vlan_id == DEFAULT_VLAN_ID) {
+      int entry_id = 0;
+      uint8_t dst_mac[6] = {0x01, 0x00, 0x5E, 0x90, 0x00, 0x01};
+      uint8_t mac_mask[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+      LOG_ERR_MSG("DNX-L3IF", "%s: Install multicast mac as my mac\n",
+                  __FUNCTION__);
+      rc = bcm_bnx_sdk_my_station_add_mac(unit,
+                                          info->vsi_id, 0xffff,
+                                          dst_mac, mac_mask, &entry_id);
+      if (rc != RET_CODE_SUCCESS) {
+        LOG_ERR_MSG("DNX-L3IF", "%s(): Failed to set BFD my mac for "
+                    "if %" PRIu64 "\n", __FUNCTION__, ifindex);
+        return (rc);
+      }
+      ds_bcm_l3if_bfd_mymac_hwid_set(info->l3if, entry_id);
+    }

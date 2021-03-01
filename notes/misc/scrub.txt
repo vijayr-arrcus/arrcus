@@ -28,6 +28,12 @@ Arrcus2018
 chasis: 10.27.102.27
 App server:10.9.101.253
 
+service spyder stop; rm /var/confd/cdb/*.cdb; rm -rf /mnt/onl/config/cdb/; confd --ignore-initial-validation; confd --stop; service spyder start
 
 Medusa user
 ============
+  tail -f /var/log/arcos/ifmgr.bin_logfile.txt | egrep "micro|update_active|egress|encode|bfd|bond"
+
+
+5320 --
+5313 --

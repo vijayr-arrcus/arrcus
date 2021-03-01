@@ -49,7 +49,7 @@ network-instance default
    enabled false
    exit
   !
-  interface bond200
+  interface bond10
    enabled true
    bfd bfd-tlv true
    af IPV6 UNICAST
@@ -74,4 +74,3 @@ bfd profile GLOBAL
  v4-hw-offload               true
  v6-hw-offload               true
 !
-

@@ -102,7 +102,7 @@ bcm_dnx_group_tuple_t gtuple;
 print bcm_dnx_sdk_fg_create (0, BCM_DNX_FG_L2, BCM_DNX_PMF_INGRESS, BCM_DNX_TARGET_PV, &gtuple);
 print bcm_dnx_sdk_fg_create (0, BCM_DNX_FG_TUPLE, BCM_DNX_PMF_INGRESS, BCM_DNX_TARGET_PV, &gtuple);
 //D ::2 S ::1122
-print bcm_dnx_sdk_fe_create (0, 0, bcmFieldActionDropPrecedence, 1, gtuple.group_id); 
+print bcm_dnx_sdk_fe_create (0, 0, bcmFieldActionDropPrecedence, 1, gtuple.group_id);
 
 bcm_gport_t snoop_gport_id;
 bcm_dnx_sdk_snoop_dest_create(0, 0, &snoop_gport_id);
@@ -141,12 +141,12 @@ bcm_dnx_pmf_contexts_destroy(0);
 exit;
 
 
-field group list
+field group list group=9
 field group info group=9
 field entry info group=9 entry=0x2090056
 sig get name=fwd_action_destination
 sig get name=ACL
- 
+
 #pkt to drop due to srcMAC match
 tx 1 psrc=1 DATA=0x0000000000020000000011228100003208004500003500000000800026c40a0000050a000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20
 #pass as no match
@@ -278,9 +278,9 @@ src/appl/diag/dnx/tx/diag_dnx_tx.c[799]diag_dnx_check_pkt_fields unit <nounit>:W
 [bcmAdapterRX]
 [bcmAdapterRX]src/bcm/dnx/algo/algo_gpm.c[1535]dnx_algo_gpm_gport_from_lif unit 0:[bcmAdapterRX] Error 'Internal error' indicated, Unknown dbal_table_id for egress local lif (0x8000)
 [bcmAdapterRX]
-[bcmAdapterRX]src/bcm/dnx/rx/rx.c[1098]dnx_rx_system_header_parse unit 0:[bcmAdapterRX] Error 'Internal error' indicated ; 
+[bcmAdapterRX]src/bcm/dnx/rx/rx.c[1098]dnx_rx_system_header_parse unit 0:[bcmAdapterRX] Error 'Internal error' indicated ;
 [bcmAdapterRX]
-[bcmAdapterRX]src/bcm/dnx/rx/rx.c[1435]dnx_rx_packet_parse unit 0:[bcmAdapterRX] Error 'Internal error' indicated ; 
+[bcmAdapterRX]src/bcm/dnx/rx/rx.c[1435]dnx_rx_packet_parse unit 0:[bcmAdapterRX] Error 'Internal error' indicated ;
 BCM.0> pp vis ppi
 ======================================================================================
 | Packet_Parsing and Port Information, Core=0                                        |
@@ -417,16 +417,16 @@ print str(Ether(dst="00:00:00:00:00:02", src="00:00:00:00:11:22")/Dot1Q(vlan=50)
 tx 1 psrc=2 data=0x00000000000200000000112281000032080045000021000100004000f36757560609151515016162636465666768696a6b6c6d
 
 bcm_dnx_xlate_counter_init() missing:
-[2000/01/05 03:37:40.652530]**ERR**[BCM PLUGIN] unit 0 app : Statsid Create Failed stats_id 268435455, direction 1 rc -5 
-[2000/01/05 03:37:40.652580]**ERR**[BCM PLUGIN] unit 0 app : set Stats failed, acl_id 1284584866200729876, ace_id 65544 , fp_id 268435455, stage, egress , counter_id 268435455, rc -5 
+[2000/01/05 03:37:40.652530]**ERR**[BCM PLUGIN] unit 0 app : Statsid Create Failed stats_id 268435455, direction 1 rc -5
+[2000/01/05 03:37:40.652580]**ERR**[BCM PLUGIN] unit 0 app : set Stats failed, acl_id 1284584866200729876, ace_id 65544 , fp_id 268435455, stage, egress , counter_id 268435455, rc -5
 
 [2000/01/05 03:37:40.652970]**ERR**[BCM PLUGIN] app : bcm_field_group_status_get failed, sdk : Feature unavailable
 [2000/01/05 03:37:40.652987]**ERR**[BCM PLUGIN] app : bcm_field_group_status_get failed, sdk : Feature unavailable
-[2000/01/05 03:37:40.653053]**ERR**[BCM PLUGIN] unit 0 app : Statsid Create Failed stats_id 268435455, direction 1 rc -5 
-[2000/01/05 03:37:40.653070]**ERR**[BCM PLUGIN] app : Failed to set action Trap : %s 
+[2000/01/05 03:37:40.653053]**ERR**[BCM PLUGIN] unit 0 app : Statsid Create Failed stats_id 268435455, direction 1 rc -5
+[2000/01/05 03:37:40.653070]**ERR**[BCM PLUGIN] app : Failed to set action Trap : %s
 , sdk : Feature unavailable
-[2000/01/05 03:37:40.653076]**ERR**[BCM PLUGIN] unit 0 app : set action failed, acl_id 1284584866200729876, ace_id 100 , fp_id 268435455, stage, egress , action 1, rc -1 
-[2000/01/05 03:37:40.653084]**ERR**[BCM PLUGIN] unit 0 app : set Stats failed, acl_id 1284584866200729876, ace_id 100 , fp_id 268435455, stage, egress , counter_id 268435455, rc -5 
+[2000/01/05 03:37:40.653076]**ERR**[BCM PLUGIN] unit 0 app : set action failed, acl_id 1284584866200729876, ace_id 100 , fp_id 268435455, stage, egress , action 1, rc -1
+[2000/01/05 03:37:40.653084]**ERR**[BCM PLUGIN] unit 0 app : set Stats failed, acl_id 1284584866200729876, ace_id 100 , fp_id 268435455, stage, egress , counter_id 268435455, rc -5
 [2000/01/05 03:37:40.653238]**ERR**[BCM PLUGIN] app : bcm_field_group_status_get failed, sdk : Feature unavailable
 [2000/01/05 03:37:40.653250]**ERR**[BCM PLUGIN] app : bcm_field_group_status_get failed, sdk : Feature unavailable
 
@@ -444,7 +444,7 @@ cint /home/user/arrcus_sw/dpal/plugin/bcm/dnx/jericho_2/cint/cint_acl.c
 cint
 
 bcm_field_range_t id;
-print bcm_dnx_sdk_fe_find_range(0,bcmFieldRangeTypeL4SrcPort,0,10,bcmFieldStageIngressPMF1,&id); 
+print bcm_dnx_sdk_fe_find_range(0,bcmFieldRangeTypeL4SrcPort,0,10,bcmFieldStageIngressPMF1,&id);
 
 print bcm_dnx_sdk_fe_write_range(0,bcmFieldRangeTypeL4SrcPort,0,10,bcmFieldStageIngressPMF1,0);
 print bcm_dnx_sdk_fe_write_range(0,bcmFieldRangeTypeL4SrcPort,0,10,bcmFieldStageIngressPMF1,1);
@@ -492,7 +492,7 @@ bcm_dnx_pmf_ud_quals(0);
 bcm_dnx_pmf_tcam_info_init(&g_bcm_dnx_tcam_info);
 //BCM_GPORT_LOCAL_SET();
 print bcm_port_class_set(0, 0x4000000, bcmPortClassFieldIngressPMF3TrafficManagementPortCs, 1);
-// Move COPP to egress, pick up COPP packets from ths class ID 
+// Move COPP to egress, pick up COPP packets from ths class ID
 // bcm_port_class_set
 //  (unit, olp_port, bcmPortClassFieldEgressPacketProcessingPortCs, olp_port_class_id));
 //bcm_dnx_sdk_pre_copp_fg(0,0);
@@ -625,7 +625,7 @@ FL:  20
 acl_dstore.h:
 #define  QUALIFIER_IP_SRC_ADDR      0x01 32 64(high only)
 #define  QUALIFIER_IP_DST_ADDR      0x02 32 128
-#define  QUALIFIER_IP_PROTO         0x04 8  
+#define  QUALIFIER_IP_PROTO         0x04 8
 #define  QUALIFIER_IP_L4_PORTS      0x08 32
 #define  QUALIFIER_IP_RANGE         0x10 24(not used)
 
@@ -675,4 +675,3 @@ bcm_dnx_sdk_test_quals(u, &tuple_i);
 bcm_dnx_sdk_test_quals(u, &v4_i_v6pkt);
 bcm_dnx_pmf_test_fgs_destroy(u);
 bcm_dnx_pmf_contexts_destroy(u);
-
