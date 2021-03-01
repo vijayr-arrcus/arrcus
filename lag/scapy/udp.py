@@ -21,6 +21,6 @@ while j < 500:
  sport = random.randint(0,65535)
 # p = Ether(src=src_mac,dst=dst_mac) /IP(src=src_ip, dst=dst_ip) / UDP(sport=sport, dport=dport)/data
  p = Ether() /IP(src=src_ip, dst=dst_ip) / UDP(sport=sport, dport=dport)/data
- r_count = random.randint(0,500)
- sendp(p, iface="bond30",count=r_count)
+ num = random.randint(0,500)
+ sendp(p, iface="bond30",count=num)
  i+=1

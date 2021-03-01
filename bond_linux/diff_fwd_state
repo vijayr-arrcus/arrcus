@@ -1,0 +1,154 @@
+diff --git a/linux-4.19.84/drivers/net/bonding/bond_main.c b/linux-4.19.84/drivers/net/bonding/bond_main.c
+index 9b8143d..8aab4ab 100644
+--- a/linux-4.19.84/drivers/net/bonding/bond_main.c
++++ b/linux-4.19.84/drivers/net/bonding/bond_main.c
+@@ -1513,6 +1513,8 @@ int bond_enslave(struct net_device *bond_dev, struct net_device *slave_dev,
+ 	 */
+ 	bond_hw_addr_copy(new_slave->perm_hwaddr, slave_dev->dev_addr,
+ 			  slave_dev->addr_len);
++  // By default the member link is forwarding.
++  new_slave->fwd_state = BOND_FWD_STATE_ACTIVE;
+ 
+ 	if (!bond->params.fail_over_mac ||
+ 	    BOND_MODE(bond) != BOND_MODE_ACTIVEBACKUP) {
+diff --git a/linux-4.19.84/drivers/net/bonding/bond_sysfs_slave.c b/linux-4.19.84/drivers/net/bonding/bond_sysfs_slave.c
+index 4985268..7bffcfd 100644
+--- a/linux-4.19.84/drivers/net/bonding/bond_sysfs_slave.c
++++ b/linux-4.19.84/drivers/net/bonding/bond_sysfs_slave.c
+@@ -17,16 +17,57 @@
+ struct slave_attribute {
+ 	struct attribute attr;
+ 	ssize_t (*show)(struct slave *, char *);
++  ssize_t (*store)(struct slave *, const char *, size_t);
+ };
+ 
+-#define SLAVE_ATTR(_name, _mode, _show)				\
++#define SLAVE_ATTR(_name, _mode, _show, _store)				\
+ const struct slave_attribute slave_attr_##_name = {		\
+ 	.attr = {.name = __stringify(_name),			\
+ 		 .mode = _mode },				\
+ 	.show	= _show,					\
++  .store = _store,        \
+ };
++
+ #define SLAVE_ATTR_RO(_name)					\
+-	SLAVE_ATTR(_name, 0444, _name##_show)
++	SLAVE_ATTR(_name, 0444, _name##_show, NULL)
++
++#define SLAVE_ATTR_RW(_name)					\
++	SLAVE_ATTR(_name, 0666, _name##_show, _name##_store)
++
++static ssize_t fwd_state_show (struct slave *slave, char *buf)
++{
++  switch (bond_slave_fwd_state(slave)) {
++    case BOND_FWD_STATE_ACTIVE:
++      return sprintf(buf, "active\n");
++    case BOND_FWD_STATE_INACTIVE:
++      return sprintf(buf, "inactive\n");
++    default:
++      return sprintf(buf, "UNKNOWN\n");
++  }
++}
++
++static ssize_t fwd_state_store (struct slave *slave, const char *buf, size_t len)
++{
++  int rc = 0;
++  int fwd_state = BOND_FWD_STATE_ACTIVE;
++
++  rc = kstrtoint(buf, 0, &fwd_state);
++  if (rc < 0) {
++    return rc;
++  }
++
++  if (fwd_state == BOND_FWD_STATE_ACTIVE ||
++      fwd_state == BOND_FWD_STATE_INACTIVE) {
++    slave->fwd_state = fwd_state;
++    bond_update_slave_arr(slave->bond, NULL);
++  } else {
++    return -EINVAL;
++  }
++  printk(KERN_ALERT "setting slave %s fwd state %d \n",
++         slave->dev->name, fwd_state);
++  return len;
++}
++static SLAVE_ATTR_RW(fwd_state);
+ 
+ static ssize_t state_show(struct slave *slave, char *buf)
+ {
+@@ -114,6 +155,7 @@ static SLAVE_ATTR_RO(ad_partner_oper_port_state);
+ 
+ static const struct slave_attribute *slave_attrs[] = {
+ 	&slave_attr_state,
++	&slave_attr_fwd_state,
+ 	&slave_attr_mii_status,
+ 	&slave_attr_link_failure_count,
+ 	&slave_attr_perm_hwaddr,
+@@ -136,8 +178,22 @@ static ssize_t slave_show(struct kobject *kobj,
+ 	return slave_attr->show(slave, buf);
+ }
+ 
++static ssize_t slave_store(struct kobject *kobj, struct attribute *attr,
++                            const char *buf, size_t len)
++{
++	struct slave_attribute *slave_attr = to_slave_attr(attr);
++	struct slave *slave = to_slave(kobj);
++
++  if (!slave_attr->store) {
++    return -EIO;
++  }
++
++	return slave_attr->store(slave, buf, len);
++}
++
+ static const struct sysfs_ops slave_sysfs_ops = {
+ 	.show = slave_show,
++  .store = slave_store,
+ };
+ 
+ static struct kobj_type slave_ktype = {
+diff --git a/linux-4.19.84/include/net/bonding.h b/linux-4.19.84/include/net/bonding.h
+index 8116648..1550d0d 100644
+--- a/linux-4.19.84/include/net/bonding.h
++++ b/linux-4.19.84/include/net/bonding.h
+@@ -153,6 +153,7 @@ struct slave {
+ 			      BOND_STATE_ACTIVE and BOND_STATE_BACKUP */
+ 	       inactive:1, /* indicates inactive slave */
+ 	       should_notify:1, /* indicates whether the state changed */
++         fwd_state:1,
+ 	       should_notify_link:1; /* indicates whether the link changed */
+ 	u8     duplex;
+ 	u32    original_mtu;
+@@ -388,6 +389,10 @@ static inline void bond_slave_state_notify(struct bonding *bond)
+ 		}
+ 	}
+ }
++static inline int bond_slave_fwd_state(struct slave *slave)
++{
++	return slave->fwd_state;
++}
+ 
+ static inline int bond_slave_state(struct slave *slave)
+ {
+@@ -402,7 +407,8 @@ static inline bool bond_is_active_slave(struct slave *slave)
+ static inline bool bond_slave_can_tx(struct slave *slave)
+ {
+ 	return bond_slave_is_up(slave) && slave->link == BOND_LINK_UP &&
+-	       bond_is_active_slave(slave);
++	       bond_is_active_slave(slave) &&
++         (slave->fwd_state == BOND_FWD_STATE_ACTIVE);
+ }
+ 
+ static inline bool bond_is_active_slave_dev(const struct net_device *slave_dev)
+diff --git a/linux-4.19.84/include/uapi/linux/if_bonding.h b/linux-4.19.84/include/uapi/linux/if_bonding.h
+index 61a1bf6..d2200d4 100644
+--- a/linux-4.19.84/include/uapi/linux/if_bonding.h
++++ b/linux-4.19.84/include/uapi/linux/if_bonding.h
+@@ -78,6 +78,8 @@
+ #define BOND_LINK_DOWN  2           /* link has been down for too long time */
+ #define BOND_LINK_BACK  3           /* link is going back */
+ 
++#define BOND_FWD_STATE_INACTIVE  0  /* link is active */
++#define BOND_FWD_STATE_ACTIVE    1  /* link is inactive */
+ /* each slave has several states */
+ #define BOND_STATE_ACTIVE       0   /* link is active */
+ #define BOND_STATE_BACKUP       1   /* link is backup */
