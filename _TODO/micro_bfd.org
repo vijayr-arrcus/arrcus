@@ -1,52 +1,52 @@
 IFMGR. -- Vijay
-* Min links behavior: [prasanna and CE team to define the behavior]
-  * When added wait for transition to UP ?
-    RFC talks only about Disable egress.
-  * When session becomes down because peer is down
-  * Session is down when peer is deleted.
-  * When session is deleted because LACP or Link is down.
+    * Min links behavior: [prasanna and CE team to define the behavior]
+      * When added wait for transition to UP ?
+        RFC talks only about Disable egress.
+      * When session becomes down because peer is down
+      * Session is down when peer is deleted.
+      * When session is deleted because LACP or Link is down.
 
-* IPv4 & IPv6 forwarding. -- Today
-  * Disable egress when any AF is down.
-    UP only if both AF is up.
-  * Code review comments from last time.
-  * Code cleanup.
-* Linux patch to remove the printk dint work.
+    * IPv4 & IPv6 forwarding. -- Today
+      * Disable egress when any AF is down.
+        UP only if both AF is up.
+      * Code review comments from last time.
+      * Code cleanup.
+    * Linux patch to remove the printk dint work.
 
 BFD: -- Ashutosh/Raj/Vijay/Kalyani.
-* BFD code reorg.
-  * DEMUX in BFD session.
-  * based on current implementation how much restructuring has to be done.
-* BFD states definition in bfd_micro_host.c.
-* BFD VLAN 0 parsing in the software receive path.
+  * BFD code reorg.
+    * DEMUX in BFD session.
+    * based on current implementation how much restructuring has to be done.
+  * BFD states definition in bfd_micro_host.c.
+  * BFD VLAN 0 parsing in the software receive path.
 
 DPAL: -- Vijay/Raj.
-* Validate the imapact of INGRESS disable for software path on xgs and DNX.
-  * Cint validation.
-    * Check control plane & Data plane.
-    * Bond cint - https://github.com/vijayr-arrcus/arrcus/blob/master/lag/cint_j2/adv_trunk.c
-* impact of the list changes in XGS. -- Dont care for now.
+  * Validate the imapact of INGRESS disable for software path on xgs and DNX.
+    * Cint validation.
+      * Check control plane & Data plane.
+      * Bond cint - https://github.com/vijayr-arrcus/arrcus/blob/master/lag/cint_j2/adv_trunk.c
+  * impact of the list changes in XGS. -- Dont care for now.
 
 TILFA: -- Csaba.
-* identify micro bfd session in session state change callback.
-* handle session state change and link state change.
-  * link state change happens first and we wait for 150 * 3 ms for session state change.
-* Multiple link failure handling.
-* Hierarchical BFD [out of scope ?]
-  * Micro down translates to Macro BFD down.
-  * Link state down + min links translate to MACRO bfd down ?
-* What is the default for XR(cisco)
+  * identify micro bfd session in session state change callback.
+  * handle session state change and link state change.
+    * link state change happens first and we wait for 150 * 3 ms for session state change.
+  * Multiple link failure handling.
+  * Hierarchical BFD [out of scope ?]
+    * Micro down translates to Macro BFD down.
+    * Link state down + min links translate to MACRO bfd down ?
+  * What is the default for XR(cisco)
 
 Vijay/Prasanna:
-* Unit test plan.
-* Solution test.
-* Scale.
+  * Unit test plan.
+  * Solution test.
+  * Scale.
 
 Mayur & Prasanna.
-* Automation - Micro BFD.
-* Behavior of cisco under various conditions.
-  * BFD and interface states.
-* Normal BFD regression status ?
+  * Automation - Micro BFD.
+  * Behavior of cisco under various conditions.
+    * BFD and interface states.
+  * Normal BFD regression status ?
 
 
 [2021/02/23 17:02:16.167424]--INFO--[DNX-SDK-BOND] bcm_dnx_bond_update_handle_active_list: old_list_len:1 new_list_len:0 old_min_links:1 min_links:1
