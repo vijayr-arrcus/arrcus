@@ -1,14 +1,14 @@
 IFMGR. -- Vijay
-    * Min links behavior: [prasanna and CE team to define the behavior]
-      * When added wait for transition to UP ?
-        RFC talks only about Disable egress.
+  * Min links behavior: [prasanna and CE team to define the behavior]
+   * When added wait for transition to UP ?
+      * RFC talks only about Disable egress.
       * When session becomes down because peer is down
       * Session is down when peer is deleted.
       * When session is deleted because LACP or Link is down.
 
-    * IPv4 & IPv6 forwarding. -- Today
-      * Disable egress when any AF is down.
-        UP only if both AF is up.
+  * IPv4 & IPv6 forwarding. -- Today
+    * Disable egress when any AF is down.
+      * UP only if both AF is up.
       * Code review comments from last time.
       * Code cleanup.
     * Linux patch to remove the printk dint work.
@@ -25,6 +25,9 @@ DPAL: -- Vijay/Raj.
     * Cint validation.
       * Check control plane & Data plane.
       * Bond cint - https://github.com/vijayr-arrcus/arrcus/blob/master/lag/cint_j2/adv_trunk.c
+      * Validate BFD punt packet to CPU.
+      * LACP packet punted to CPU.
+      * offload session to hardware
   * impact of the list changes in XGS. -- Dont care for now.
 
 TILFA: -- Csaba.
