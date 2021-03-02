@@ -1,0 +1,60 @@
+Information from Prasanna:
+
+a. When peer BFD is removed without min links what happens.
+    Does LACP get reset, stopped or what happens.
+b. Need to look into packet capture.
+c. with peer BFD admin down how does min links work.\
+d. how does min links with static bond work ?
+e. How do valuate whats the impact of resetting LACP.
+    * LACP goes down and would take 3 seconds to declare down again.
+    * but that member was egress disabled before and removed from trunk as well.
+
+
+BFD not configured on Peer:
+
+Cisco side BFD configured with Arrcus side BFD not configured.
+   state is unknown.
+Configured min links Bundle remains UP.
+
+
+BFD configured on PEER:
+   we configure BFD on Cisco device first and before we configured BFD on Arrcus device the state shows its down.
+   Cisco device is configured with min links
+   BOth BFD sessions came up.
+   Bundle on Cisco was UP.
+   did a no of bfd micro on Arrcus
+   on Cisco device bundle is down
+   BFD shows down instead of ADMIN DOWN. -- bug RFC calls this out.
+   But the physical member link LACP shows MUX as distributing -- not sure if this means anything.
+   we tried removing min links - Bond interface dint come up on Arrcus.
+   Removed BFD on Cisco device, bond interface came up.
+
+   Remove bfd on both device
+   configure BFD on Cisco device without min links.
+   configure BFD on Arrcus device.
+   check BFD state on both sides.  UP and interface is up on both sides.
+    remove bfd on arrcus device.  BFD went down in cisco device and bond interface went down in Cisco device.
+    added BFD configs on arrcus device and Bundle came up.
+    default min-links is 1 ?
+        Verified min-links is 1, we configured static bond on Arrcus side without min links on Cisco device with LACP and bond went down.
+
+    LACP is UP, BFD is down, bond interface is down -- Cisco.
+    Only way to get interface up again is to configure bfd on peer or remove bfd on local.
+    So min links of BFD is managed differently then min links of LACP.
+
+
+    Configure static bond on both interface.
+    strange LACP or static is member link property on Cisco device. -- not relevant here...
+    without lacp both the bonds came up.
+    Configure BFD on Cisco device.
+    session state was unknown
+    Bundle interface was up on Cisco device.
+    confgiured BFD on arrcus
+    sessions came up.
+    did a no of micro bfd on arrcus
+    session is detected a down in cisco
+    Bundle is brought down -- min links - 1
+
+    Not sure if we send ADMIN down when we do no bfd micro ?
+    How do we check what the hardware sends when we delete the BFD session.
+    But that apart

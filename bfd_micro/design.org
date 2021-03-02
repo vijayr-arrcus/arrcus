@@ -1,8 +1,9 @@
-# With egress disabled list.
+* With egress disabled list.
   * Ingress disable is not mandatory.
       - its the peer's responsibility to switch traffic.
       - I do the best to handle the packets I receive.
-      - Even if stop handling ingress packets its a bigger problem since the peer side has not stopped sending and will never stop sending.
+      - Even if we stop handling ingress packets its a bigger problem since the peer side has not stopped
+        sending and will never stop sending.
       - Irrespective I stop receiving or not peer will continue to send.
       - So we need to fix egress on the peer not ingress on the local.
       - Or the routes converge but packet egressing out on peer are lost -- ingress disable makes things worse.
@@ -16,9 +17,9 @@
         - and so there is no way BFD will come up on the 2 other links let alone on the 3rd member link.
         - Upon min links (3) < act cnt why not send active count down, why send zero active count.
         - for normal physical oper down is from BCM so the hardware might drop ingressing traffic.
+          - We cannot delete the trunk so as to keep the bfd sessions alive.
           - But disabling ingress is not priority its peers problem.
-        - We cannot delete the trunk so as to keep the bfd sessions alive.
-      -
+
   * LACP
     * Micro BFD configuration.
       * Wait for LACP to be up.
@@ -39,5 +40,40 @@
           * Deleting BFD will remove the member link from egress disabled member list.
           * and then subsequently removes it from active member list.
           * Every update to any of the list results in a notification to DPAL.
-        * Min Links:
-          *
+        * Problems with egress disabled list:
+          * We need to handle BFD down, LACP down in subsequent steps.
+          * may be if BFD delete is happening because LACP or
+            link going down we stagger notifying DPAL and wait for the final list to be sent out.
+          * addition to the disabled list is always sent down.
+          * But fault detection should be reacted to quickly, however again context gives us enough information
+            should notification can wait or sent immediately.
+            * Any notification from BFD the session is down should be acted in immediately.
+            * Any notification caused by no micro bfd notification should be sent immediately.
+            * no ethernet agg will result in active list being removed from so can wait.
+            * But all this are a little prone to bugs since timing and sequence play a role.
+          * But how do we handle static bond ?
+          * How does TILFA play a role.
+        * Min links -- when act_cnt < min-links all current active becomes egress disabled irrespective of BFD state.
+          * What if current BFD active goes down..
+          * We still send current active as egress disabled.
+      * Software BFD + TILFA doesnt make sense:
+        * Code flow remains the same, no change.
+  * static
+    * by default link is active list until otherwise LINK DOWN.
+    * if BFD goes down, we have to mark the interface egress disable.
+    * But we would receive link down before egress disable, so we will automatically remove from the active list.
+    * how would TILFA handle this, there is link down and BFD down notifications.
+    * incase of link down we would be considering LINK_DOWN and admin down the same way ?
+    * BFD down is egress disabled + 1
+    * LINK down is active - 1.
+    * But the Math works out to be the same.
+  * TILFA
+    * Any down notification from DPAL will be first handled by TILFA.
+    * any new down notification, check if its already in egress disabled list.
+    * egress disable from DPAL, but then we have to write OAM object.
+      * We could also not change anything in the LIST and just mark it egress disabled.
+      * PI worker thread notification would come and this time it will move it to egress disable list.
+        * So it becomes important that we dont miss any egress disable list notification from worker thread.
+          * If not the interface will continue to be in egress disable until otherwise
+      * Once we receive egress enable in DPAL we again enable it.
+    * if act_cnt - egress_disable < min_links the switch over.
