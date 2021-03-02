@@ -1,4 +1,4 @@
-* LACP restart
+LACP restart
   * LACP
     * Micro BFD configuration.
       * Wait for LACP to be up.
