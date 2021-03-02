@@ -40,7 +40,9 @@ BFD configured on PEER:
 
     LACP is UP, BFD is down, bond interface is down -- Cisco.
     Only way to get interface up again is to configure bfd on peer or remove bfd on local.
-    So min links of BFD is managed differently then min links of LACP.
+    So min links of BFD is managed differently then min links of LACP.  --- This is critical
+        - How important is it that we adhere to Cisco behavior.
+        - if this is a make or break then we have to go with
 
 
     Configure static bond on both interface.
@@ -54,7 +56,7 @@ BFD configured on PEER:
     did a no of micro bfd on arrcus
     session is detected a down in cisco
     Bundle is brought down -- min links - 1
-
+        - So bfd is down, link is up and 
     Not sure if we send ADMIN down when we do no bfd micro ?
     How do we check what the hardware sends when we delete the BFD session.
     But that apart

@@ -51,6 +51,7 @@
             * Any notification caused by no micro bfd notification should be sent immediately.
             * no ethernet agg will result in active list being removed from so can wait.
             * But all this are a little prone to bugs since timing and sequence play a role.
+            * If bfd is being deleted since link is going down we can wait since anyway active list will be deleted.
           * But how do we handle static bond ?
           * How does TILFA play a role.
         * Min links -- when act_cnt < min-links all current active becomes egress disabled irrespective of BFD state.
@@ -62,7 +63,7 @@
     * by default link is active list until otherwise LINK DOWN.
     * if BFD goes down, we have to mark the interface egress disable.
     * But we would receive link down before egress disable, so we will automatically remove from the active list.
-    * how would TILFA handle this, there is link down and BFD down notifications.
+      * how would TILFA handle this, there is link down and BFD down notifications.
     * incase of link down we would be considering LINK_DOWN and admin down the same way ?
     * BFD down is egress disabled + 1
     * LINK down is active - 1.
