@@ -1,7 +1,5 @@
 vis lag force=on enable=on group=1 pool=0
 
-
-
 | Signals                                                                          |                                                                                                                                             [1378/2832]
 ====================================================================================
 | Attribute           | Size | Value                | Status | Block | From | To   |
