@@ -1,0 +1,43 @@
+# With egress disabled list.
+  # Ingress disable is not mandatory.
+      - its the peer's responsibility to switch traffic.
+      - I do the best to handle the packets I receive.
+      - Even if stop handling ingress packets its a bigger problem since the peer side has not stopped sending and will never stop sending.
+      - Irrespective I stop receiving or not peer will continue to send.
+      - So we need to fix egress on the peer not ingress on the local.
+      - Or the routes converge but packet egressing out on peer are lost -- ingress disable makes things worse.
+      - But why should we even worry about ingress disable.
+        - The problem was with min links < act cnt
+        - when bond interface goes down with min links (3) < act cnt (2)
+        - active list is empty, eventhough LACP and hence BFD is up on 2 member links.
+        - One way to fix this was what ever is configured list set ingress/egress disable or just egress disable.
+        - so that the trunk always has a VSI to receive packets on the member links.
+        - So we delete the member links from the bond in DPAL.
+        - and so there is no way BFD will come up on the 2 other links let alone on the 3rd member link.
+        - Upon min links (3) < act cnt why not send active count down, why send zero active count.
+        - for normal physical oper down is from BCM so the hardware might drop ingressing traffic.
+          - But disabling ingress is not priority its peers problem.
+        - We cannot delete the trunk so as to keep the bfd sessions alive.
+      -
+  # LACP
+    * Micro BFD configuration.
+      * Wait for LACP to be up.
+        * LACP adds interface to active list.
+        * All member links in active list programmed in hardware.
+        * Noting in egress disabled list.
+      * BFD goes down
+        * In linux disable egress.
+        * add to egress disabled list.
+          * DPAL takes care of deleting the member link and then adding it back with EGRESS_DISABLE FLAG.
+        * wait for LACP to time out.
+        * if LACP times out.
+        * remove from active list.
+        * We always make sure that a member link in egress disabled list is in active member list.
+        * This is achieved by:
+          * start bfd only when LACP is up.
+          * when remove member link we always do that by first delete BFD.
+          * Deleting BFD will remove the member link from egress disabled member list.
+          * and then subsequently removes it from active member list.
+          * Every update to any of the list results in a notification to DPAL.
+        * Min Links:
+          *
