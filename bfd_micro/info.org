@@ -53,3 +53,4 @@ BFD configured on PEER:
     
     If ip address is removed on the peer -- BFD goes down and brings bundle down on the local device in Cisco.
     Clarification: Bottom Line: If there is no IP reachability should bond interface be UP or DOWN.
+    Clarification: no static bundle.. so we dont have to worry ?
