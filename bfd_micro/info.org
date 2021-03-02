@@ -59,3 +59,5 @@ BFD configured on PEER:
     Not sure if we send ADMIN down when we do no bfd micro ?
     How do we check what the hardware sends when we delete the BFD session.
     But that apart
+    
+    If ip address is removed on the peer -- BFD goes down and brings bundle down on the local device in Cisco.
