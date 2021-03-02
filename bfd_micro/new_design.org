@@ -1,36 +1,56 @@
+* We have to delete BFD session once LACP goes down.
+
 LACP restart
   * LACP
     * Micro BFD configuration.
       * Wait for LACP to be up.
         * LACP adds interface to active list.
         * All member links in active list programmed in hardware.
-      * BFD goes down
+        * Then BFD is created on the member link.
+        * Ifmgr waits for BFD to be UP once before it can react to any events.
+      * BFD goes down -- hw offloaded.
+        * BFD event thread in DPAL would egress disable that member link.
+        * delete BFD session.
         * reset LACP, and remove member link from active member list.
-        * wait for LACP to come up, if LACP comes up and LACP is up add back the member links to the list.
+        * This results in DPAL removing the member link from the trunk. --  main_cb.
+        * wait for LACP to come up, if LACP comes up and LACP is up add back the active member links to the list.
+          * Start BFD session again on the interface.
         * if LACP times out.
           * we dont have to add back.
+          * We dont create any BFD session.
+      * LACP goes down
+        * If bfd session is created delete the session.
+        * member link will be removed from active member list and notify DPAL.
       * Software BFD + TILFA doesnt make sense:
         * Code flow remains the same, no change.
   * static
-    * by default link is active list until otherwise LINK DOWN.
-    * if BFD goes down, we have to mark the interface egress disable.
-    * But we would receive link down before egress disable, so we will automatically remove from the active list.
-      * how would TILFA handle this, there is link down and BFD down notifications.
-        * we would receive Link down first and if appropriate switch to protected bond.
-        * if we receive BFD down we still mark member link egress disabled
-    * incase of link down we would be considering LINK_DOWN and BFD admin down the same way ?
-    * BFD down is egress disabled + 1
-    * LINK down is active - 1.
-    * But the Math works out to be the same.
-    * if act_cnt - egress_disable < min_links then switch over.
+    * by default link is in active list until otherwise LINK DOWN.
+    * in DPAL -- both link down and BFD down will result in egress disable of the member link -- its still in active .
+    * in the control plane removes the members from the active member list and deletes the BFD session.
+    * Link goes down
+        * Remove from active member list
+          * Delete BFD Session.
+    * BFD goes down.
+      * notify DPAL egress disable.
+      * Hw off load
+        * Delete current BFD session and recreate the same session ? -- from ifmgr.
+      * Software BFD
+        * notify egress disable
+       CLI   LACP    BFD
+    * {cfg {active {egress disabled}}}
+    * min links calculation
+    * once BFD is UP remove it from egress disabled list and send update to DPAL.
 
-  * TILFA
-    * Any down notification from DPAL will be first handled by TILFA.
-    * any new down notification, check if its already in egress disabled list.
+(act_cnt - egress_disable) < min_links then switch over.
+
+
+TILFA
+    * Any down notification from DPAL will be first handled by DPAL.
+    * any new BFD down notification, check if its already in egress disabled list.
     * egress disable from DPAL, but then we have to write OAM object.
       * We could also not change anything in the LIST and just mark it egress disabled.
       * PI worker thread notification would come and this time it will move it to egress disable list.
         * So it becomes important that we dont miss any egress disable list notification from worker thread.
           * If not the interface will continue to be in egress disable until otherwise
       * Once we receive egress enable in DPAL we again enable it.
-    * if act_cnt - egress_disable < min_links then switch over.
+    * if
