@@ -1,5 +1,5 @@
 # With egress disabled list.
-  # Ingress disable is not mandatory.
+  * Ingress disable is not mandatory.
       - its the peer's responsibility to switch traffic.
       - I do the best to handle the packets I receive.
       - Even if stop handling ingress packets its a bigger problem since the peer side has not stopped sending and will never stop sending.
@@ -19,7 +19,7 @@
           - But disabling ingress is not priority its peers problem.
         - We cannot delete the trunk so as to keep the bfd sessions alive.
       -
-  # LACP
+  * LACP
     * Micro BFD configuration.
       * Wait for LACP to be up.
         * LACP adds interface to active list.
