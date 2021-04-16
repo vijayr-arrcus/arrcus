@@ -1,0 +1,11 @@
+LACP is verifying LINK rechability.
+  * BFD is verifying IP forwardabiltiy, one is not alternative to other.
+      * However if LACP is not UP no point in verifying IP reachability.
+      * But LACP up doesnt mean IP is reachable.
+      ```Currently, the Link Aggregation Control Protocol (LACP) is used to
+   detect failures on a per-physical-member link.  However, the use of
+   BFD for failure detection would (1) provide a faster detection, (2)
+   provide detection in the absence of LACP, and (3) would be able to
+   verify the ability for each member link to be able to forward L3
+   packets.
+      ```

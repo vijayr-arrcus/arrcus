@@ -9,9 +9,6 @@ sflow global ipv4 collector 10.9.208.50
 sflow interface bond40 ingress
 packet-sampling 30
 
-
-867024041097751
-
 SJC_ARRCUS\lag
 password: Arrcus2018
 

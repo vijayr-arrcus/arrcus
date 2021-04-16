@@ -1,0 +1,4 @@
+cases to worry about:
+ - no member link
+ - enable/disable interface
+ - LACP time out

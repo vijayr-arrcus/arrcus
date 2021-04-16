@@ -1,0 +1,1 @@
+ping -6 2001:abcd:cafe:3000:2:: segs 2001:abcd:cafe:2000:2::
