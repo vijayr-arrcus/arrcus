@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# To be run on PE1 (10.27.101.21)
 from scapy.all import *
 
 data="hello world"
