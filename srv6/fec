@@ -1,0 +1,33 @@
+/usr/share/arcos/dev_info.json
+
+"NumFecsEcmp"       : 32767,
+  "GlobalDropFec"     : 52430,
+  "GlobalDstMissFec"  : 52431,
+  "GlobalDstUnresFec" : 52432,
+  "GlobalDstLocalFec" : 52433,
+  "StartBank0Fec"     : 52434,
+  "FecModeStatic"     : true,
+
+ccce -- 52430
+ccd2 -- 52434
+
+
+get_gbl_drop_fecid
+
+get_gbl_dst_local_fecid
+
+
+offload_ctxt_obj_t offload_obj[] =
+{
+  { DPAL_V4_ROUTE, NULL, NULL, cplane_obj_alloc, cplane_obj_free },
+  { DPAL_V6_ROUTE, NULL, NULL, cplane_obj_alloc, cplane_obj_free },
+  { BCM_HOST_V4, bcm_dnx_prog_route, NULL, bcm_obj_alloc, bcm_obj_free },
+  { BCM_HOST_V6, bcm_dnx_prog_route, NULL, bcm_obj_alloc, bcm_obj_free },
+  { BCM_ROUTE_V4, bcm_dnx_prog_route, NULL, bcm_obj_alloc, bcm_obj_free },
+  { BCM_ROUTE_V6, bcm_dnx_prog_route, NULL, bcm_obj_alloc, bcm_obj_free },
+  { 0, NULL, NULL, NULL, NULL }
+};
+
+
+extract_egress_id  -- ds_bcm_ingress_nh_hwid_get
+    construct_bcm_route
