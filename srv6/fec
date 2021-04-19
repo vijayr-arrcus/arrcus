@@ -16,6 +16,10 @@ get_gbl_drop_fecid
 
 get_gbl_dst_local_fecid
 
+bcm_dnx_ingress_nh_add_del
+    bcm_dnx_ingress_handle_special_nh
+          FIB_PATH_FLAG_DROP  -->  FIB_PATH_DROP
+
 
 offload_ctxt_obj_t offload_obj[] =
 {
