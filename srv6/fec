@@ -32,6 +32,5 @@ offload_ctxt_obj_t offload_obj[] =
   { 0, NULL, NULL, NULL, NULL }
 };
 
-
 extract_egress_id  -- ds_bcm_ingress_nh_hwid_get
     construct_bcm_route
