@@ -1,0 +1,407 @@
+version "aminor [release] 2021-04-29 18:05:33"
+system login-banner "ArcOS (c) Arrcus, Inc."
+system ssh-server enable true
+system ssh-server permit-root-login true
+system restconf-server enable true
+system aaa authentication admin-user admin-password $6$/L1SIZGVhMzEJykk$O8obQUe7lVLF8uZ4sUwnxT0p2bUQ4.6YnpF679O1XNZ7YpX6XA.bTFwQaEWkiJnKmcBI2.UaOTA6iK9lp6ojS1
+alias mps
+ expansion "show mbroker system-mps table | tab | nomore "
+!
+interface ma1
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+ exit
+!
+interface swp0
+ type ethernetCsmacd
+!
+interface swp1
+ type    ethernetCsmacd
+ enabled true
+!
+interface swp2
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_40GB
+ subinterface 0
+  vlan vlan-id 10
+  ipv4 address 4.1.1.2
+   prefix-length 24
+  exit
+  ipv6 address 4:1:1::2
+   prefix-length 64
+  exit
+  qos service-tablemap EGRESS
+   name ut_egr
+  exit
+  acl-service-policies ingress-acl-sets
+   acl-set ACL_IPV6
+    set-name acl_ipv6
+   exit
+  exit
+ exit
+ qos service-policy INGRESS
+  name ut_p1
+ !
+!
+interface swp3
+ type    ethernetCsmacd
+ enabled true
+!
+interface swp4
+ type ethernetCsmacd
+!
+interface swp5
+ type    ethernetCsmacd
+ enabled true
+ subinterface 1
+  enabled true
+  vlan vlan-id 1
+  ipv4 address 5.1.1.1
+   prefix-length 24
+  exit
+ exit
+!
+interface swp6
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 2.2.2.2
+   prefix-length 24
+  exit
+ exit
+!
+interface swp7
+ type ethernetCsmacd
+!
+interface swp8
+ type ethernetCsmacd
+!
+interface swp9
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 3.1.1.2
+   prefix-length 24
+  exit
+ exit
+!
+interface swp10
+ type    ethernetCsmacd
+ enabled true
+!
+interface swp11
+ type ethernetCsmacd
+!
+interface swp12
+ type ethernetCsmacd
+!
+interface swp13
+ type ethernetCsmacd
+!
+interface swp14
+ type ethernetCsmacd
+!
+interface swp15
+ type ethernetCsmacd
+!
+interface swp16
+ type ethernetCsmacd
+!
+interface swp17
+ type ethernetCsmacd
+!
+interface swp18
+ type ethernetCsmacd
+!
+interface swp19
+ type ethernetCsmacd
+!
+interface swp20
+ type ethernetCsmacd
+!
+interface swp21
+ type ethernetCsmacd
+!
+interface swp22
+ type ethernetCsmacd
+!
+interface swp23
+ type ethernetCsmacd
+!
+interface swp24
+ type ethernetCsmacd
+!
+interface swp25
+ type ethernetCsmacd
+!
+interface swp26
+ type ethernetCsmacd
+!
+interface swp27
+ type ethernetCsmacd
+!
+interface swp28
+ type ethernetCsmacd
+!
+interface swp29
+ type ethernetCsmacd
+!
+interface swp30
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_40GB
+ subinterface 0
+  ipv4 address 4.2.1.2
+   prefix-length 24
+  exit
+  ipv6 router-advertisement suppress true
+  ipv6 address 4:2:1::2
+   prefix-length 64
+  exit
+ exit
+ qos service-policy INGRESS
+  name ut_p1
+ !
+ qos service-tablemap EGRESS
+  name ut_egr
+ !
+!
+interface swp31
+ type    ethernetCsmacd
+ enabled true
+!
+interface swp32
+ type ethernetCsmacd
+!
+interface swp33
+ type ethernetCsmacd
+!
+interface swp34
+ type ethernetCsmacd
+!
+interface swp35
+ type ethernetCsmacd
+!
+interface swp36
+ type ethernetCsmacd
+!
+interface swp37
+ type ethernetCsmacd
+!
+interface swp38
+ type ethernetCsmacd
+!
+interface swp39
+ type ethernetCsmacd
+!
+interface bond10
+ type    ieee8023adLag
+ enabled true
+!
+interface bond20
+ type    ieee8023adLag
+ enabled true
+ bfd micro remote-address ipv4 1.1.1.1
+ bfd micro remote-address ipv6 1::1
+ bfd micro enabled true
+ subinterface 0
+  ipv4 address 1.1.1.2
+   prefix-length 24
+  exit
+  ipv6 address 1::2
+   prefix-length 64
+  exit
+ exit
+!
+interface loopback0
+ type softwareLoopback
+ subinterface 0
+  ipv4 address 8.8.8.8
+   prefix-length 32
+  exit
+ exit
+!
+network-instance default
+ protocol BGP default
+  global as 65401
+  global router-id 8.8.8.8
+  global afi-safi IPV4_UNICAST
+   use-maximum-paths ebgp maximum-paths 8
+   use-maximum-paths ibgp maximum-paths 8
+  !
+  global afi-safi IPV6_UNICAST
+   use-maximum-paths ebgp maximum-paths 8
+   use-maximum-paths ibgp maximum-paths 8
+  !
+  neighbor 5.1.1.2
+   peer-as 65400
+   bfd enable true
+   bfd strict static true
+   afi-safi IPV4_UNICAST
+    exit
+   !
+   exit
+  !
+ !
+ protocol STATIC default
+  static-route 20.1.1.0/24
+   next-hop-index 1
+    next-hop 30.1.1.1
+   !
+  !
+ !
+!
+network-instance management
+ interface ma1
+ !
+!
+network-instance vlan10
+ type L2VLAN
+ vlan 10
+!
+bfd profile GLOBAL
+ enabled                     true
+ desired-minimum-tx-interval 150
+ required-minimum-receive    150
+ detection-multiplier        3
+ v4-hw-offload               true
+ v6-hw-offload               true
+!
+lacp interface bond10
+!
+lacp interface bond20
+!
+lldp interface ma1
+!
+lldp interface swp0
+!
+lldp interface swp1
+!
+lldp interface swp3
+!
+lldp interface swp4
+!
+lldp interface swp5
+!
+lldp interface swp6
+!
+lldp interface swp7
+!
+lldp interface swp8
+!
+lldp interface swp9
+!
+lldp interface swp10
+!
+lldp interface swp11
+!
+lldp interface swp12
+!
+lldp interface swp13
+!
+lldp interface swp14
+!
+lldp interface swp15
+!
+lldp interface swp16
+!
+lldp interface swp17
+!
+lldp interface swp18
+!
+lldp interface swp19
+!
+lldp interface swp20
+!
+lldp interface swp21
+!
+lldp interface swp22
+!
+lldp interface swp23
+!
+lldp interface swp24
+!
+lldp interface swp25
+!
+lldp interface swp26
+!
+lldp interface swp27
+!
+lldp interface swp28
+!
+lldp interface swp29
+!
+lldp interface swp31
+!
+lldp interface swp32
+!
+lldp interface swp33
+!
+lldp interface swp34
+!
+lldp interface swp35
+!
+lldp interface swp36
+!
+lldp interface swp37
+!
+lldp interface swp38
+!
+lldp interface swp39
+!
+acl acl-set acl_ipv6 ACL_IPV6
+ acl-entry 1
+  ipv6 destination-address 2001:abcd:cafe:2000:1::/128
+  actions forwarding-action REDIRECT
+ !
+!
+qos classifier ut_10_1
+ filter DSCP
+  dscp-value [ 10 ]
+ !
+!
+qos classifier ut_28_2
+ filter DSCP
+  dscp-value [ 28 ]
+ !
+!
+qos classifier ut_12_3
+ filter DSCP
+  dscp-value [ 12 ]
+ !
+!
+qos policy ut_p1
+ classifier ut_10_1
+  action MARK
+   local-tc 1
+  !
+ !
+ classifier ut_28_2
+  action MARK
+   local-tc 2
+  !
+ !
+ classifier ut_12_3
+  action MARK
+   local-tc 3
+  !
+ !
+!
+qos tablemap ut_egr
+ to-type   DSCP
+ from-type LOCAL_TC
+ local-tc-entry 1 0
+  to-value 9
+ !
+ local-tc-entry 2 0
+  to-value 27
+ !
+ local-tc-entry 3 0
+  to-value 11
+ !
+!
+vlan 10
+ exit
+!
