@@ -34,3 +34,8 @@ Medusa user
 
 5320 --
 5313 --
+
+USERVER012
+server: 10.9.195.31
+username: root
+password: onl

@@ -1,0 +1,33 @@
+1. Go to Arrcus/arrcus_sw(https://github.com/Arrcus/arrcus_sw) and to the top right, find "Fork". Click on it
+2. It will open an popup asking where to fork. When you click on <_myid_>-arrcus, you will be able to create a fork the repo.
+Now you have fork of arrcus_sw in (https://github.com/<_myid_>-arrcus/arrcus_sw).
+1. Get the URL for clone from that forked repo.
+2. Go to local machine (wherever code edit/build is done).
+3. Change the origin (of arrcus_sw) to point to the forked repo:
+     git remote set-url origin git@github.com:<_myid_>-arrcus/arrcus_sw.git
+4. Now when git push, even for the exist branches would go to forked repo (instead of your previous origin Arrcus/arrcus_sw).
+Raising PR:
+1. Go to https://github.com/Arrcus/arrcus_sw/pulls
+2. Click on "New Pull Request"
+3. Under Compare Changes, click on "compare across forks".
+4. Now select
+     Target repo: Arrcus/arrcus_sw
+     Target branch: <_target_branch_>
+     Source repo: <_myid_>-arrcus/arrcus_sw
+     Source branch: <_my_branch_>
+5. Click on "Create pull request"
+Checking out from latest aminor:
+Though are options of syncing your fork from Arrcus/arrcus_sw frequently with scripts in github,
+I went with a manual approach where I have a local branch tracking the changes in Arrcus/arrcus_sw.
+Set the upstream remote to make branching off from latest code easier.
+1. In the local machine set an upstream remote (where you edit the code):
+   `git remote add upstream git@github.com:Arrcus/arrcus_sw.git
+2. Now to checkout aminor:
+    git checkout -b aminor --track upstream/aminor
+Now the local aminor branch can keep track of Arrcus/arrcus_sw. We can do git pull to Fast forward to latest. (We can skip this step 2, if one is okay to directly checkout, rebase from upstream branch instead of maintaining a local branch).
+Lets say we want to create a new branch off aminor:
+1. Now create a new branch off aminor:
+    git checkout -b <_new_branch_> aminor
+2. Now to push to your repo:
+    git push --set-upstream  origin <_new_branch_>
+Here I am presuming git remote set-url origin was done beforehand to point origin to the forked repo.
