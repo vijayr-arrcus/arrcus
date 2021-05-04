@@ -1,0 +1,250 @@
+version "4.3.1.EFT3.P1 [release] 2020-11-24 08:07:49"
+system login-banner "ArcOS (c) Arrcus, Inc."
+system ssh-server enable true
+system ssh-server permit-root-login true
+system aaa authentication admin-user admin-password $6$bGXUND.wwl3K4v.2$31XnJ/.qOD0tn62R5S0Ew..i.o83fmAs5qM109FCYXptI/nUTEKkvROgWxInkd8ptYg7uhWsMNJ1NvlxfNMqg0
+hardware platform buffer-fairness false
+interface ma1
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+ exit
+!
+interface swp1
+ type ethernetCsmacd
+!
+interface swp2
+ type ethernetCsmacd
+!
+interface swp3
+ type ethernetCsmacd
+!
+interface swp4
+ type ethernetCsmacd
+!
+interface swp5
+ type ethernetCsmacd
+!
+interface swp6
+ type ethernetCsmacd
+!
+interface swp7
+ type ethernetCsmacd
+!
+interface swp8
+ type ethernetCsmacd
+!
+interface swp9
+ type ethernetCsmacd
+!
+interface swp10
+ type ethernetCsmacd
+!
+interface swp11
+ type ethernetCsmacd
+!
+interface swp12
+ type ethernetCsmacd
+!
+interface swp13
+ type ethernetCsmacd
+!
+interface swp14
+ type ethernetCsmacd
+!
+interface swp15
+ type ethernetCsmacd
+!
+interface swp16
+ type ethernetCsmacd
+!
+interface swp17
+ type ethernetCsmacd
+!
+interface swp18
+ type ethernetCsmacd
+!
+interface swp19
+ type ethernetCsmacd
+!
+interface swp20
+ type ethernetCsmacd
+!
+interface swp21
+ type ethernetCsmacd
+!
+interface swp22
+ type ethernetCsmacd
+!
+interface swp23
+ type ethernetCsmacd
+!
+interface swp24
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+  ipv4 address 171.1.1.1
+   prefix-length 24
+  exit
+ exit
+!
+interface swp25
+ type ethernetCsmacd
+!
+interface swp26
+ type ethernetCsmacd
+!
+interface swp27
+ type ethernetCsmacd
+!
+interface swp28
+ type    ethernetCsmacd
+ enabled true
+ ethernet switched-vlan interface-mode TRUNK
+ ethernet switched-vlan trunk-vlans [ 10 ]
+!
+interface swp29
+ type ethernetCsmacd
+!
+interface swp30
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_40GB
+ ethernet switched-vlan interface-mode TRUNK
+ ethernet switched-vlan trunk-vlans [ 10 ]
+!
+interface swp31
+ type ethernetCsmacd
+!
+interface swp32
+ type ethernetCsmacd
+!
+interface swp33
+ type ethernetCsmacd
+!
+interface swp34
+ type ethernetCsmacd
+!
+interface swp35
+ type ethernetCsmacd
+!
+interface swp36
+ type ethernetCsmacd
+!
+interface swp37
+ type ethernetCsmacd
+!
+interface swp38
+ type ethernetCsmacd
+!
+interface swp39
+ type ethernetCsmacd
+!
+interface swp40
+ type ethernetCsmacd
+!
+interface vlan10
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 161.1.1.100
+   prefix-length 24
+  exit
+ exit
+!
+network-instance default
+!
+network-instance management
+ interface ma1
+ !
+!
+network-instance vlan10
+ type L2VLAN
+ vlan 10
+!
+lldp interface ma1
+!
+lldp interface swp1
+!
+lldp interface swp2
+!
+lldp interface swp3
+!
+lldp interface swp4
+!
+lldp interface swp5
+!
+lldp interface swp6
+!
+lldp interface swp7
+!
+lldp interface swp8
+!
+lldp interface swp9
+!
+lldp interface swp10
+!
+lldp interface swp11
+!
+lldp interface swp12
+!
+lldp interface swp13
+!
+lldp interface swp14
+!
+lldp interface swp15
+!
+lldp interface swp16
+!
+lldp interface swp17
+!
+lldp interface swp18
+!
+lldp interface swp19
+!
+lldp interface swp20
+!
+lldp interface swp21
+!
+lldp interface swp22
+!
+lldp interface swp23
+!
+lldp interface swp24
+!
+lldp interface swp25
+!
+lldp interface swp26
+!
+lldp interface swp27
+!
+lldp interface swp28
+!
+lldp interface swp29
+!
+lldp interface swp30
+!
+lldp interface swp31
+!
+lldp interface swp32
+!
+lldp interface swp33
+!
+lldp interface swp34
+!
+lldp interface swp35
+!
+lldp interface swp36
+!
+lldp interface swp37
+!
+lldp interface swp38
+!
+lldp interface swp39
+!
+lldp interface swp40
+!
+stp enabled-protocol RAPID_PVST
+vlan 10
+ exit
+!
