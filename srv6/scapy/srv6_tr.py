@@ -10,6 +10,8 @@ sid_addresses_next_hop_end=["2001:abcd:cafe:2000:1::"]
 sid_addresses_multi_hop_end=["2001:abcd:cafe:3000:1::", "2001:abcd:cafe:2000:1::"]
 sid_addresses_next_hop_end_x=["2001:abcd:cafe:2000:8003::"]
 sid_addresses_multi_hop_end_x=["2001:abcd:cafe:3000:8003::", "2001:abcd:cafe:2000:8003::"]
+sid_addresses_next_hop_end_dx=["2001:abcd:cafe:2000:10::"]
+sid_addresses_multi_hop_end_dx=["2001:abcd:cafe:3000:3::", "2001:abcd:cafe:2000:1::"]
 sid_addresses_next_hop_end_dt=["2001:abcd:cafe:2000:3::"]
 sid_addresses_multi_hop_end_dt=["2001:abcd:cafe:3000:3::", "2001:abcd:cafe:2000:1::"]
 src_inner_ip_v6="1::1"
@@ -148,9 +150,9 @@ def send_to_END_X_ipv6_ipv6_multi_hop_no_srh():
 
 def send_to_END_DX_ipv6_ipv6_next_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6="2001:abcd:cafe:2000:10::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
+    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dx, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
     p.show()
     sendp(p, iface=interface, count=100000)
 
@@ -158,7 +160,7 @@ def send_to_END_DX_ipv6_udp_next_hop ():
     global ttl_new
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses, segleft=seg_left)/UDP(dport=udp_dst_port)/data
+    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dx, segleft=seg_left)/UDP(dport=udp_dst_port)/data
     p.show()
     sendp(p, iface=interface, count=100000)
 
