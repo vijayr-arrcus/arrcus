@@ -31,6 +31,8 @@ udp_dst_port=33434
 
 def send_packet(p, intf, t_count):
     i = 0
+    p.show()
+    time.sleep(5)
     while (i < t_count):
         sendp(p, iface=intf, count=1000)
         i = i+1000
