@@ -3,7 +3,7 @@
 from scapy.all import *
 import time
 
-data="hello world"
+data="hello world 123456789123456789"
 interface="swp9"
 src_mac="B4:A9:FC:5B:6C:77"
 dst_mac="B4:A9:FC:98:B2:2A"
