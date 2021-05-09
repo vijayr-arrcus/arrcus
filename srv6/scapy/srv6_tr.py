@@ -6,11 +6,21 @@ data="hello world"
 interface="swp9"
 src_mac="B4:A9:FC:5B:6C:77"
 dst_mac="B4:A9:FC:98:B2:2A"
+dip_next_hop_end="2001:abcd:cafe:2000:1::"
+dip_multi_hop_end="2001:abcd:cafe:3000:1::"
+dip_next_hop_end_x="2001:abcd:cafe:2000:8002::"
+dip_multi_hop_end_x="2001:abcd:cafe:3000:8002::"
+dip_next_hop_end_dx="2001:abcd:cafe:2000:c::"
+dip_multi_hop_end_dx="2001:abcd:cafe:3000:e::"
+dip_next_hop_end_dt="2001:abcd:cafe:2000:2::"
+dip_multi_hop_end_dt="2001:abcd:cafe:3000:3::"
 sid_addresses_next_hop_end=["2001:abcd:cafe:2000:1::"]
 sid_addresses_multi_hop_end=["2001:abcd:cafe:3000:1::", "2001:abcd:cafe:2000:1::"]
-sid_addresses_next_hop_end_x=["2001:abcd:cafe:2000:8003::"]
-sid_addresses_multi_hop_end_x=["2001:abcd:cafe:3000:8003::", "2001:abcd:cafe:2000:8003::"]
-sid_addresses_next_hop_end_dt=["2001:abcd:cafe:2000:3::"]
+sid_addresses_next_hop_end_x=["2001:abcd:cafe:2000:8002::"]
+sid_addresses_multi_hop_end_x=["2001:abcd:cafe:3000:8002::", "2001:abcd:cafe:2000:8002::"]
+sid_addresses_next_hop_end_dx=["2001:abcd:cafe:2000:c::"]
+sid_addresses_multi_hop_end_dx=["2001:abcd:cafe:3000:e::", "2001:abcd:cafe:2000:1::"]
+sid_addresses_next_hop_end_dt=["2001:abcd:cafe:2000:2::"]
 sid_addresses_multi_hop_end_dt=["2001:abcd:cafe:3000:3::", "2001:abcd:cafe:2000:1::"]
 src_inner_ip_v6="1::1"
 dst_inner_ip_v6="1::2"
@@ -20,7 +30,7 @@ udp_dst_port=33434
 
 def send_to_END_ipv6_ipv6_next_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_next_hop_end
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim= ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
     p.show()
@@ -28,7 +38,7 @@ def send_to_END_ipv6_ipv6_next_hop ():
 
 def send_to_END_ipv6_udp_next_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_next_hope_end
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim= ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end, segleft=seg_left)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -36,7 +46,7 @@ def send_to_END_ipv6_udp_next_hop ():
 
 def send_to_END_ipv6_udp_next_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_next_hope_end
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -44,7 +54,7 @@ def send_to_END_ipv6_udp_next_hop_no_srh():
 
 def send_to_END_ipv6_ipv6_next_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_next_hope_end
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6()/data
     p.show()
@@ -52,7 +62,7 @@ def send_to_END_ipv6_ipv6_next_hop_no_srh():
 
 def send_to_END_ipv6_ipv6_multi_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end
     seg_left=1
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
     p.show()
@@ -60,7 +70,7 @@ def send_to_END_ipv6_ipv6_multi_hop ():
 
 def send_to_END_ipv6_udp_multi_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end
     seg_left=1
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -68,7 +78,7 @@ def send_to_END_ipv6_udp_multi_hop ():
 
 def send_to_END_ipv6_udp_multi_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:3000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -76,7 +86,7 @@ def send_to_END_ipv6_udp_multi_hop_no_srh():
 
 def send_to_END_ipv6_ipv6_multi_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:3000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6()/data
     p.show()
@@ -84,7 +94,7 @@ def send_to_END_ipv6_ipv6_multi_hop_no_srh():
 
 def send_to_END_X_ipv6_ipv6_next_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:8003::"
+    dst_srv6_ip_v6=dip_next_hop_end_x
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_x, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
     p.show()
@@ -92,7 +102,7 @@ def send_to_END_X_ipv6_ipv6_next_hop ():
 
 def send_to_END_X_ipv6_udp_next_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:8003::"
+    dst_srv6_ip_v6=dip_next_hop_end_x
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_x, segleft=seg_left)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -100,7 +110,7 @@ def send_to_END_X_ipv6_udp_next_hop ():
 
 def send_to_END_X_ipv6_udp_next_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:8003::"
+    dst_srv6_ip_v6=dip_next_hop_end_x
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -108,7 +118,7 @@ def send_to_END_X_ipv6_udp_next_hop_no_srh():
 
 def send_to_END_X_ipv6_ipv6_next_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:8003::"
+    dst_srv6_ip_v6=dip_next_hop_end_x
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6()/data
     p.show()
@@ -116,7 +126,7 @@ def send_to_END_X_ipv6_ipv6_next_hop_no_srh():
 
 def send_to_END_X_ipv6_ipv6_multi_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:8003::"
+    dst_srv6_ip_v6=dip_multi_hop_end_x
     seg_left=1
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
     p.show()
@@ -124,7 +134,7 @@ def send_to_END_X_ipv6_ipv6_multi_hop ():
 
 def send_to_END_X_ipv6_udp_multi_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:8003::"
+    dst_srv6_ip_v6=dip_multi_hop_end_x
     seg_left=1
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -132,7 +142,7 @@ def send_to_END_X_ipv6_udp_multi_hop ():
 
 def send_to_END_X_ipv6_udp_multi_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:3000:8003::"
+    dst_srv6_ip_v6=dip_multi_hop_end_x
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -140,7 +150,7 @@ def send_to_END_X_ipv6_udp_multi_hop_no_srh():
 
 def send_to_END_X_ipv6_ipv6_multi_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:3000:8003::"
+    dst_srv6_ip_v6=dip_multi_hop_end_x
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6()/data
     p.show()
@@ -148,7 +158,7 @@ def send_to_END_X_ipv6_ipv6_multi_hop_no_srh():
 
 def send_to_END_DX_ipv6_ipv6_next_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_next_hop_end_dx
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
     p.show()
@@ -156,7 +166,7 @@ def send_to_END_DX_ipv6_ipv6_next_hop ():
 
 def send_to_END_DX_ipv6_udp_next_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_next_hop_end_dx
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses, segleft=seg_left)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -164,7 +174,7 @@ def send_to_END_DX_ipv6_udp_next_hop ():
 
 def send_to_END_DX_ipv6_udp_next_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_next_hop_end_dx
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -172,7 +182,7 @@ def send_to_END_DX_ipv6_udp_next_hop_no_srh():
 
 def send_to_END_DX_ipv6_ipv6_next_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_next_hop_end_dx
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6()/data
     p.show()
@@ -180,7 +190,7 @@ def send_to_END_DX_ipv6_ipv6_next_hop_no_srh():
 
 def send_to_END_DX_ipv6_ipv6_multi_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dx
     seg_left=1
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
     p.show()
@@ -188,7 +198,7 @@ def send_to_END_DX_ipv6_ipv6_multi_hop ():
 
 def send_to_END_DX_ipv6_udp_multi_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dx
     seg_left=1
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -196,7 +206,7 @@ def send_to_END_DX_ipv6_udp_multi_hop ():
 
 def send_to_END_DX_ipv6_udp_multi_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dx
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -204,7 +214,7 @@ def send_to_END_DX_ipv6_udp_multi_hop_no_srh():
 
 def send_to_END_DX_ipv6_ipv6_multi_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dx
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6()/data
     p.show()
@@ -212,7 +222,7 @@ def send_to_END_DX_ipv6_ipv6_multi_hop_no_srh():
 
 def send_to_END_DT_ipv6_ipv6_next_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
+    dst_srv6_ip_v6=dip_next_hop_end_dt
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dt, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
     p.show()
@@ -220,7 +230,7 @@ def send_to_END_DT_ipv6_ipv6_next_hop ():
 
 def send_to_END_DT_ipv6_udp_next_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
+    dst_srv6_ip_v6=dip_next_hop_end_dt
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dt, segleft=seg_left)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -228,7 +238,7 @@ def send_to_END_DT_ipv6_udp_next_hop ():
 
 def send_to_END_DT_ipv6_udp_next_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
+    dst_srv6_ip_v6=dip_next_hop_end_dt
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -236,7 +246,7 @@ def send_to_END_DT_ipv6_udp_next_hop_no_srh():
 
 def send_to_END_DT_ipv6_ipv6_next_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
+    dst_srv6_ip_v6=dip_next_hop_end_dt
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6()/data
     p.show()
@@ -244,7 +254,7 @@ def send_to_END_DT_ipv6_ipv6_next_hop_no_srh():
 
 def send_to_END_DT_ipv6_ipv6_multi_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dt
     seg_left=1
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
     p.show()
@@ -252,7 +262,7 @@ def send_to_END_DT_ipv6_ipv6_multi_hop ():
 
 def send_to_END_DT_ipv6_udp_multi_hop ():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dt
     seg_left=1
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -260,7 +270,7 @@ def send_to_END_DT_ipv6_udp_multi_hop ():
 
 def send_to_END_DT_ipv6_udp_multi_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:3000:3::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dt
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/UDP(dport=udp_dst_port)/data
     p.show()
@@ -268,7 +278,7 @@ def send_to_END_DT_ipv6_udp_multi_hop_no_srh():
 
 def send_to_END_DT_ipv6_ipv6_multi_hop_no_srh():
     global ttl_new
-    dst_srv6_ip_v6="2001:abcd:cafe:3000:3::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dt
     seg_left=0
     p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/IPv6()/data
     p.show()

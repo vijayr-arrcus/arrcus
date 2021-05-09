@@ -14,6 +14,8 @@ bcm_dnx_trunk_set: adding member: local_port = 14, pp_port = 2, core_id = 0
 trunk set pm.core 1
 Trunk #100 created with 2 ports
 
+vis lag force=on enable=on group=2 pool=0
+
 vis lag force=on enable=on group=1 pool=0
 
 vis lag force=on enable=on group=100 pool=0
