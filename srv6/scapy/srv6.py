@@ -21,224 +21,370 @@ src_srv6_ip_v6="2001:10:1::1:1"
 def send_to_END_ipv6_ipv6_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end, segleft=seg_left, lastentry=last_entry)/\
+            IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_ipv6_icmp_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end, segleft=seg_left)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end, segleft=seg_left, lastentry=last_entry)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_ipv6_icmp_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_ipv6_ipv6_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6()/data
+    last_entry=0
+    Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_ipv6_ipv6_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=1
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
+    last_entry=1
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left, lastentry=last_entry)/\
+            IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_ipv6_icmp_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=1
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/ICMPv6EchoRequest()/data
+    last_entry=1
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left, lastentry=last_entry)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_ipv6_icmp_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:1::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_ipv6_ipv6_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:1::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_X_ipv6_ipv6_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_x, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_x, segleft=seg_left, lastentry=last_entry)/\
+            IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_X_ipv6_icmp_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_x, segleft=seg_left)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_x, segleft=seg_left, lastentry=last_entry)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_X_ipv6_icmp_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_X_ipv6_ipv6_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_X_ipv6_ipv6_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
     seg_left=1
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_x, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
+    last_entry=1
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_x, segleft=seg_left, lastentry=last_entry)/\
+            IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_X_ipv6_icmp_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
     seg_left=1
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_x, segleft=seg_left)/ICMPv6EchoRequest()/data
+    last_entry=1
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_x, segleft=seg_left, lastentry=last_entry)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_X_ipv6_icmp_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:8002::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_X_ipv6_ipv6_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:8002::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DX_ipv6_ipv6_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:10::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dx, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dx, segleft=seg_left, lastentry=last_entry)/\
+            IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DX_ipv6_icmp_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:10::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dx, segleft=seg_left)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dx, segleft=seg_left, lastentry=last_entry)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DX_ipv6_icmp_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:10::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DX_ipv6_ipv6_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:10::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DX_ipv6_ipv6_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=1
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
+    last_entry=1
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left, lastentry=last_entry)/\
+            IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DX_ipv6_icmp_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=1
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left)/ICMPv6EchoRequest()/data
+    last_entry=1
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left, lastentry=last_entry)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DX_ipv6_icmp_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DX_ipv6_ipv6_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DT_ipv6_ipv6_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dt, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dt, segleft=seg_left, lastentry=last_entry)/\
+            IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DT_ipv6_icmp_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dt, segleft=seg_left)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dt, segleft=seg_left, lastentry=last_entry)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DT_ipv6_icmp_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DT_ipv6_ipv6_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DT_ipv6_ipv6_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=1
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dt, segleft=seg_left)/IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/data
+    last_entry=1
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dt, segleft=seg_left, lastentry=last_entry)/\
+            IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DT_ipv6_icmp_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
     seg_left=1
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dt, segleft=seg_left)/ICMPv6EchoRequest()/data
+    last_entry=1
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            \
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            \
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dt, segleft=seg_left, lastentry=last_entry)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DT_ipv6_icmp_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:3::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/ICMPv6EchoRequest()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            ICMPv6EchoRequest()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
 def send_to_END_DT_ipv6_ipv6_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:3::"
     seg_left=0
-    p=Ether(src=src_mac, dst=dst_mac)/IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/IPv6()/data
+    last_entry=0
+    p=Ether(src=src_mac, dst=dst_mac)/\
+            IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
+            IPv6()/\
+            data
     p.show()
     sendp(p, iface=interface, count=100000)
 
