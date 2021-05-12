@@ -29,7 +29,7 @@ sid_addresses_multi_hop_end_dx=["2001:abcd:cafe:3000:e::", "2001:abcd:cafe:2000:
 
 dip_next_hop_end_dt="2001:abcd:cafe:2000:2::"
 sid_addresses_next_hop_end_dt=["2001:abcd:cafe:2000:2::"]
-dip_multi_hop_end_dt="2001:abcd:cafe:2000:2::"
+dip_multi_hop_end_dt="2001:abcd:cafe:2000:1::"
 dip_multi_hop_end_dt_no_srh="2001:abcd:cafe:3000:3::"
 sid_addresses_multi_hop_end_dt=["2001:abcd:cafe:3000:3::", "2001:abcd:cafe:2000:1::"]
 src_inner_ip_v6="1::1"
@@ -281,7 +281,7 @@ def send_to_END_DX_ipv6_ipv6_multi_hop ():
     last_entry=1
     p=Ether(src=src_mac, dst=dst_mac)/\
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/\
-            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left,lastentry=last_entry)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dx, segleft=seg_left,lastentry=last_entry)/\
             IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
             data
     send_packet(p, interface, t_count=100000)
@@ -293,7 +293,7 @@ def send_to_END_DX_ipv6_udp_multi_hop ():
     last_entry=1
     p=Ether(src=src_mac, dst=dst_mac)/\
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/\
-            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left,lastentry=last_entry)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dx, segleft=seg_left,lastentry=last_entry)/\
             UDP(dport=udp_dst_port)/\
             data
     send_packet(p, interface, t_count=100000)
@@ -371,7 +371,7 @@ def send_to_END_DT_ipv6_ipv6_multi_hop ():
     last_entry=1
     p=Ether(src=src_mac, dst=dst_mac)/\
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/\
-            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left,lastentry=last_entry)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dt, segleft=seg_left,lastentry=last_entry)/\
             IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
             data
     send_packet(p, interface, t_count=100000)
@@ -383,7 +383,7 @@ def send_to_END_DT_ipv6_udp_multi_hop ():
     last_entry=1
     p=Ether(src=src_mac, dst=dst_mac)/\
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6, hlim=ttl_new)/\
-            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left,lastentry=last_entry)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dt, segleft=seg_left,lastentry=last_entry)/\
             UDP(dport=udp_dst_port)/\
             data
     send_packet(p, interface, t_count=100000)

@@ -6,17 +6,45 @@ data="hello world asdf'oskd;ljas;'ldjalksdjlkajsdlkjalkdsjglkasjdlkjasdlkgjalkdj
 interface="swp9"
 src_mac="B4:A9:FC:5B:6C:77"
 dst_mac="B4:A9:FC:98:B2:2A"
+dip_next_hop_end="2001:abcd:cafe:2000:1::"
 sid_addresses_next_hop_end=["2001:abcd:cafe:2000:1::"]
+dip_multi_hop_end="2001:abcd:cafe:2000:1::"
+dip_multi_hop_end_no_srh="2001:abcd:cafe:3000:1::"
 sid_addresses_multi_hop_end=["2001:abcd:cafe:3000:1::", "2001:abcd:cafe:2000:1::"]
+
+dip_next_hop_end_x="2001:abcd:cafe:2000:8002::"
 sid_addresses_next_hop_end_x=["2001:abcd:cafe:2000:8002::"]
-sid_addresses_multi_hop_end_x=["2001:abcd:cafe:3000:8002::", "2001:abcd:cafe:2000:8004::"]
-sid_addresses_next_hop_end_dx=["2001:abcd:cafe:2000:10::"]
-sid_addresses_multi_hop_end_dx=["2001:abcd:cafe:3000:3::", "2001:abcd:cafe:2000:1::"]
-sid_addresses_next_hop_end_dt=["2001:abcd:cafe:2000:3::"]
+dip_multi_hop_end_x="2001:abcd:cafe:2000:1::"
+dip_multi_hop_end_x_no_srh="2001:abcd:cafe:3000:8002::"
+sid_addresses_multi_hop_end_x=["2001:abcd:cafe:3000:8002::", "2001:abcd:cafe:2000:1::"]
+
+
+dip_next_hop_end_dx="2001:abcd:cafe:2000:c::"
+sid_addresses_next_hop_end_dx=["2001:abcd:cafe:2000:c::"]
+dip_multi_hop_end_dx="2001:abcd:cafe:2000:1::"
+dip_multi_hop_end_dx_no_srh="2001:abcd:cafe:3000:e::"
+sid_addresses_multi_hop_end_dx=["2001:abcd:cafe:3000:e::", "2001:abcd:cafe:2000:1::"]
+
+
+dip_next_hop_end_dt="2001:abcd:cafe:2000:2::"
+sid_addresses_next_hop_end_dt=["2001:abcd:cafe:2000:2::"]
+dip_multi_hop_end_dt="2001:abcd:cafe:2000:1::"
+dip_multi_hop_end_dt_no_srh="2001:abcd:cafe:3000:3::"
 sid_addresses_multi_hop_end_dt=["2001:abcd:cafe:3000:3::", "2001:abcd:cafe:2000:1::"]
 src_inner_ip_v6="1::1"
 dst_inner_ip_v6="1::2"
 src_srv6_ip_v6="2001:10:1::1:1"
+
+def send_packet(p, intf, t_count):
+    i = 0
+    p.show()
+    raw_input("Press key to continue ...")
+    sendp(p, iface=intf, count=t_count)
+#    while (i < t_count):
+#        send_packet(p, iface=intf, count=1000)
+#        i = i+1000
+#        time.sleep(2.5)
+#
 
 def send_to_END_ipv6_ipv6_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
@@ -27,8 +55,7 @@ def send_to_END_ipv6_ipv6_next_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end, segleft=seg_left, lastentry=last_entry)/\
             IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_ipv6_icmp_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
@@ -39,8 +66,7 @@ def send_to_END_ipv6_icmp_next_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end, segleft=seg_left, lastentry=last_entry)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_ipv6_icmp_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
@@ -50,8 +76,7 @@ def send_to_END_ipv6_icmp_next_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_ipv6_ipv6_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
@@ -61,8 +86,7 @@ def send_to_END_ipv6_ipv6_next_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             IPv6()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_ipv6_ipv6_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
@@ -73,8 +97,7 @@ def send_to_END_ipv6_ipv6_multi_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left, lastentry=last_entry)/\
             IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_ipv6_icmp_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
@@ -85,8 +108,7 @@ def send_to_END_ipv6_icmp_multi_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left, lastentry=last_entry)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_ipv6_icmp_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:1::"
@@ -96,8 +118,7 @@ def send_to_END_ipv6_icmp_multi_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_ipv6_ipv6_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:1::"
@@ -107,8 +128,7 @@ def send_to_END_ipv6_ipv6_multi_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             IPv6()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_X_ipv6_ipv6_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
@@ -119,8 +139,7 @@ def send_to_END_X_ipv6_ipv6_next_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_x, segleft=seg_left, lastentry=last_entry)/\
             IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_X_ipv6_icmp_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
@@ -131,8 +150,7 @@ def send_to_END_X_ipv6_icmp_next_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_x, segleft=seg_left, lastentry=last_entry)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_X_ipv6_icmp_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
@@ -142,8 +160,7 @@ def send_to_END_X_ipv6_icmp_next_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_X_ipv6_ipv6_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
@@ -153,8 +170,7 @@ def send_to_END_X_ipv6_ipv6_next_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             IPv6()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_X_ipv6_ipv6_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
@@ -165,8 +181,7 @@ def send_to_END_X_ipv6_ipv6_multi_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_x, segleft=seg_left, lastentry=last_entry)/\
             IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_X_ipv6_icmp_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:8002::"
@@ -177,8 +192,7 @@ def send_to_END_X_ipv6_icmp_multi_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_x, segleft=seg_left, lastentry=last_entry)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_X_ipv6_icmp_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:8002::"
@@ -188,8 +202,7 @@ def send_to_END_X_ipv6_icmp_multi_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_X_ipv6_ipv6_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:8002::"
@@ -199,8 +212,7 @@ def send_to_END_X_ipv6_ipv6_multi_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             IPv6()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DX_ipv6_ipv6_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:10::"
@@ -211,8 +223,7 @@ def send_to_END_DX_ipv6_ipv6_next_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dx, segleft=seg_left, lastentry=last_entry)/\
             IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DX_ipv6_icmp_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:10::"
@@ -223,8 +234,7 @@ def send_to_END_DX_ipv6_icmp_next_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dx, segleft=seg_left, lastentry=last_entry)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DX_ipv6_icmp_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:10::"
@@ -234,8 +244,7 @@ def send_to_END_DX_ipv6_icmp_next_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DX_ipv6_ipv6_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:10::"
@@ -245,54 +254,49 @@ def send_to_END_DX_ipv6_ipv6_next_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             IPv6()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DX_ipv6_ipv6_multi_hop ():
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dx
     seg_left=1
     last_entry=1
     p=Ether(src=src_mac, dst=dst_mac)/\
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
-            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left, lastentry=last_entry)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dx, segleft=seg_left, lastentry=last_entry)/\
             IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DX_ipv6_icmp_multi_hop ():
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dx
     seg_left=1
     last_entry=1
     p=Ether(src=src_mac, dst=dst_mac)/\
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
-            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end, segleft=seg_left, lastentry=last_entry)/\
+            IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dx, segleft=seg_left, lastentry=last_entry)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DX_ipv6_icmp_multi_hop_no_srh():
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dx_no_srh
     seg_left=0
     last_entry=0
     p=Ether(src=src_mac, dst=dst_mac)/\
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DX_ipv6_ipv6_multi_hop_no_srh():
-    dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
+    dst_srv6_ip_v6=dip_multi_hop_end_dx_no_srh
     seg_left=0
     last_entry=0
     p=Ether(src=src_mac, dst=dst_mac)/\
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             IPv6()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DT_ipv6_ipv6_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
@@ -303,8 +307,7 @@ def send_to_END_DT_ipv6_ipv6_next_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dt, segleft=seg_left, lastentry=last_entry)/\
             IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DT_ipv6_icmp_next_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
@@ -315,8 +318,7 @@ def send_to_END_DT_ipv6_icmp_next_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_next_hop_end_dt, segleft=seg_left, lastentry=last_entry)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DT_ipv6_icmp_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
@@ -326,8 +328,7 @@ def send_to_END_DT_ipv6_icmp_next_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DT_ipv6_ipv6_next_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:3::"
@@ -337,8 +338,7 @@ def send_to_END_DT_ipv6_ipv6_next_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             IPv6()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DT_ipv6_ipv6_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
@@ -349,8 +349,7 @@ def send_to_END_DT_ipv6_ipv6_multi_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dt, segleft=seg_left, lastentry=last_entry)/\
             IPv6(src=src_inner_ip_v6, dst=dst_inner_ip_v6)/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DT_ipv6_icmp_multi_hop ():
     dst_srv6_ip_v6="2001:abcd:cafe:2000:1::"
@@ -363,8 +362,7 @@ def send_to_END_DT_ipv6_icmp_multi_hop ():
             IPv6ExtHdrSegmentRouting(addresses=sid_addresses_multi_hop_end_dt, segleft=seg_left, lastentry=last_entry)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DT_ipv6_icmp_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:3::"
@@ -374,8 +372,7 @@ def send_to_END_DT_ipv6_icmp_multi_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             ICMPv6EchoRequest()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def send_to_END_DT_ipv6_ipv6_multi_hop_no_srh():
     dst_srv6_ip_v6="2001:abcd:cafe:3000:3::"
@@ -385,8 +382,7 @@ def send_to_END_DT_ipv6_ipv6_multi_hop_no_srh():
             IPv6(src=src_srv6_ip_v6, dst=dst_srv6_ip_v6)/\
             IPv6()/\
             data
-    p.show()
-    sendp(p, iface=interface, count=100000)
+    send_packet(p, interface, t_count=100000)
 
 def main(argv):
     while (1):
