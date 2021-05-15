@@ -1,0 +1,6 @@
+#!/bin/sh
+P=../
+scp $P/arrcus-base* $P/arrcus-cp-api* $P/arrcus-lc-api* $P/arrcus-pltf-api* $P/arrcus-wh* \
+ $P/arrcus-cp* $P/arrcus-lc-common* $P/arrcus-lc-cp* $P/arrcus-lc-hw* \
+ $P/arrcus-ppm-api* $P/arrcus-init-scripts-arcos* $P/arrcus-init-scripts-base* $P/arrcus-pltf-agent* \
+ $P/arrcus-arcos* root@$1:/tmp/$2
