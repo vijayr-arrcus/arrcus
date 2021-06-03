@@ -1,0 +1,55 @@
+Build steps -- https://arrcus.atlassian.net/wiki/spaces/ENG/pages/1222345038/Sonic+Build+Instructions
+
+1. all service runs in a arcos-container
+    routing protocols, BFD
+2. dstore ?
+    central redis-db, used for interprocess communication
+          pub-sub ?
+    seperate library for arcos-sonic-redis
+          similar to existing dstore and ML libraries.
+3. Sonic dpal plugin which write to the redis-db, so all control plan protocols write to the sonic-dpal plugin and make it to redis-db
+4. south of redis-db
+      swss -- switch
+          similar to dpal, specific to underlying hardware.
+          orch-agent running within a container.
+              multiple daemons to program each aspect of the hardware.
+      syncd --
+5. redis-db -- about 16 dbs.
+      we currently use about 7 and typically use about 4.
+          2. application db. (appDB)
+              read from the DB.
+                    https://github.com/Arrcus/arrcus_sw/blob/sonic_dev/layer2/l2mc/app/l2mc_redis.c
+                    uses the arcos sonic redis library to read from the configDB.
+                          use callbacks for each particular table and get notified upon change
+              once we handle the CLI, appropriate application DB is updated.
+                which triggers the swss ?
+                        https://github.com/Arrcus/sonic-swss/blob/arcsx-package/orchagent/l2mcorch.cpp
+                           this code will trigger a SAI API this time.
+               syncd will resolve the object IDs and program them down to the ASIC DB -- schema for a feature
+                        schema's are ussualy defined in the HLD (high level design documents)
+                     and call the appropriate APIs.
+
+          3. asic db
+               usually to check if what was pushed to the hardware.
+               usually only to debug issues.
+
+          1. config DB
+              cli configuration is pushed to the configDB.
+                  currently the schema for the cLI is not yang based.
+                      cli are a set of the python files, to set a particular key value pair.
+              sonic-utilities handles the config part.
+                      https://github.com/Arrcus/sonic-utilities/blob/323d7bba75203577cf5743f89764e6ed496e430c/config/l2mc.py
+                        data from the cli and writes to the config DB.
+          4. state DB.
+              any state information is stored in the state DB.
+                 used to handle out of sync confiurations. -- port security -- sandeep
+
+         5. counters DB.
+
+6. SAI library ?
+      Need to check with shitanshu
+
+7. Everything in sonic goes to syslog.
+      need to get the buildvm.
+8. Need a setup to just get feel of everything.
+      li yang, sudhin.
