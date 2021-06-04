@@ -93,3 +93,10 @@ ingress_rif.vrf = 20;
 BCM_GPORT_TUNNEL_TO_L3_ITF_LIF(ingress_rif.intf_id, tunnel_term_set.tunnel_id);
 rv = intf_ingress_rif_set(unit, &ingress_rif);
 printf("intf_ingress_rif_set. rv = %d \n", rv);
+
+bcm_vswitch_cross_connect_t gports;
+bcm_vswitch_cross_connect_t_init(&gports);
+gports.port1 = tunnel_term_set.tunnel_id;
+BCM_GPORT_FORWARD_PORT_SET(gports.port2, 2);
+int rv;
+rv = bcm_vswitch_cross_connect_add(unit, &gports);
