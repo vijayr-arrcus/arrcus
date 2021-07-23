@@ -1,0 +1,14 @@
+version
+attach
+show unit
+bsh --> bcm LT shell
+    exit
+bsh -c 'command' --> execute bcm LT shell commands from primary shell.
+dsh --> SDKLT debug shell
+   exit
+
+dsh -c 'lt list -b mirror'
+
+cint
+    print bshell  --> execute diag shell command without leaving CINT.
+    
