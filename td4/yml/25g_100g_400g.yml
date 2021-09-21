@@ -40,6 +40,18 @@ device:
             :
                 PC_PHYS_PORT_ID: 1
             ?
+                PORT_ID: 5
+            :
+                PC_PHYS_PORT_ID: 2
+            ?
+                PORT_ID: 6
+            :
+                PC_PHYS_PORT_ID: 3
+            ?
+                PORT_ID: 7
+            :
+                PC_PHYS_PORT_ID: 4
+            ?
                 PORT_ID: 2
             :
                 PC_PHYS_PORT_ID: 9
@@ -220,7 +232,7 @@ device:
                 LINK_TRAINING: 1
                 MAX_FRAME_SIZE: 9416
             ?
-                PORT_ID: [[1, 4],
+                PORT_ID: [[1, 7],
                           [20, 23]]
             :
                 &port_mode_25g
