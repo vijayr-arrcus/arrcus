@@ -1,0 +1,1029 @@
+HSDK documentation -- https://brcmsemiconductor-csm.wolkenservicedesk.com/wolken-support/article?legacyId=KB0028258
+
+
+Logical Table documentation guide
+
+echo 0xf > /proc/linux_ngknet/debug_level  /* enable debug logs*/
+
+port xe,ce,cd linkscan=sw en=t
+port xe3 linkscan=sw en=t
+
+PermitRootLogin no
+
+  echo 0xffff > /proc/linux_ngknet/debug_level
+sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config; service ssh restart
+dmesg -w
+
+
+cat /proc/linux_ngknet/netif_info
+cat /proc/linux_ngknet/filter_info
+cat /proc/linux_ngbde
+
+
+BCM56880_A0-PRG-2021-04-13
+
+port xe3 en=t lb=mac
+
+port xe7 en=t lb=mac
+
+ps xe7
+vlan create 10 pbm=xe3
+tx 1 pbm=xe3 vlan=10 len=100
+show c xe7
+
+
+port xe7 lb=none
+
+tx 1000 pbm=xe1 vlan=10 len=100 sm=0x12 dm=0x13
+
+tx 1000 pbm=ce4 vlan=20 len=100 sm=0x12 dm=0x13
+
+tcpdump -nnXSs 0 -i swp3
+
+
+int port = 23;   /* Ingress port to match filter */
+int prio = 0;
+bcm_pktio_filter_t filter;
+filter.type = BCM_PKTIO_FILTER_T_RX_PKT;
+filter.priority = 0;
+filter.dest_type = BCM_PKTIO_DEST_T_NETIF;
+filter.dest_id = 10; /* above created netif id */
+filter.match_flags = BCM_PKTIO_FILTER_M_INGPORT;
+filter.m_ingport = port;
+print bcm_pktio_filter_create(0, &filter);
+
+
+
+port xe0 lb=mac
+vlan create 100 pbm=xe0,cpu
+pw start report +all
+tx 1 pbm=xe0 vlan=100 untagged=yes
+
+lt EGR_VFI update -i VFI=3966 TAG_ACTION=0
+
+Kindly refer to KB0028889 for Setting up Logical Table Documentation Guide [lt-doc-6.5.22]
+
+EGR_L3_OIF_1
+EGR_L3_NEXT_HOP_1
+
+You can also use "eventstat" command to see if any tx/rx drops.
+
+
+BCM.0> help EventSTAT
+BCM.0> estat show drop
+BCM.0> estat show drop rx
+BCM.0> estat show z drop
+BCM.0> estat show trace
+
+If you are looking for packet drop debugging then please refer below article 19034.
+
+
+Trident4 - Trace And Drop Events
+https://brcmsemiconductor-csm.wolkenservicedesk.com/wolken-support/article?articleId=19034
+
+
+
+Also refer below useful links.
+
+
+
+Trident4 - DataCenter NPL Application (DNA) Pipeline
+https://brcmsemiconductor-csm.wolkenservicedesk.com/wolken-support/article?articleId=17583
+
+
+How to Setup Logical Table Documentation Guide:
+https://brcmsemiconductor-csm.wolkenservicedesk.com/wolken-support/article?articleId=20790
+
+
+HSDK - Useful CLI Commands
+https://brcmsemiconductor-csm.wolkenservicedesk.com/wolken-support/article?articleId=19954
+
+pw start // packet watcher packets punted to cpu
+show c
+clear c
+vlan show
+port cd3-cd31 en=0
+
+
+BCM.0> bcmltshell
+
+BCMLT.0> exit
+
+BCM.0> debugshell
+
+sdklt.0> exit
+
+BCM.0> bcmltshell
+
+BCMLT.0> debugshell
+
+sdklt.0> exit
+
+BCMLT.0> exit
+
+BCM.0> bsh
+
+BCMLT.0> exit
+
+BCM.0> dsh
+
+sdklt.0> exit
+
+BCM.0> bsh -c "ltcapture start logfile=/tmp/capture.lcap"
+
+BCM.0>
+
+
+bsh -c 'lt L2_HOST_TABLE traverse -l'  // mac table
+bsh -c 'lt PORT lookup PORT_ID=2' // port information
+bsh -c 'lt PORT traverse'
+
+bsh -c 'lt traverse -l ing_vfi_table'
+bsh -c 'lt traverse -l VLAN_ING_MEMBER_PROFILE'
+
+The option -b can be used with the list argument to list only the table names.
+
+The option -l can be used to list extended field information.
+
+The option -m can be used to list the logical to physical table mapping information.
+
+The option -d can be used to display the documentation of the LT.
+
+
+# List all LT names for the device.
+
+BCMLT.0> lt list -b
+
+VLAN_ING_EGR_STG_MEMBER_PROFILE
+
+PC_PM_PROP
+
+FLEX_QOS_EGR_POLICY
+
+FLEX_QOS_ING_PHB
+
+PC_PORT_STATUS
+
+ING_L3_NEXT_HOP_1_TABLE
+
+. . .
+
+. . .
+
+EGR_L2_OIF_STR_PROFILE
+
+MON_FLOWTRACKER_GROUP
+
+BCMLT.0>
+
+
+
+# List all LT names for the device which contains “L3_IPV4_UC_ROUTE in its name
+
+BCMLT.0> lt list -b L3_IPV4_UC_ROUTE
+
+L3_IPV4_UC_ROUTE_OVERRIDE
+
+L3_IPV4_UC_ROUTE_VRF
+
+L3_IPV4_UC_ROUTE
+
+BCMLT.0>
+
+
+# List all LT and associated field names for the LT L3_IPV4_UC_ROUTE
+
+# @ prefix indicates exact match
+BCMLT.0> lt list @L3_IPV4_UC_ROUTE
+
+L3_IPV4_UC_ROUTE
+
+  7 fields (2 key-type fields):
+
+    DATA_TYPE
+
+    MISC_CTRL_1
+
+    MISC_CTRL_0
+
+    DESTINATION_TYPE
+
+    DESTINATION
+
+    IPV4_MASK (key)
+
+    IPV4 (key)
+
+BCMLT.0>
+
+
+
+# List all LT names and detailed field information for the LT L3_IPV4_UC_ROUTE.
+
+# Very useful to find out what values can be passed to the fields especially the fields of type symbol
+BCMLT.0> lt list -l @L3_IPV4_UC_ROUTE
+
+L3_IPV4_UC_ROUTE
+
+  7 fields (2 key-type fields):
+
+    DATA_TYPE
+
+        Width: 1 bit
+
+        Value (default, min, max): 0, 0, 1
+
+        Attribute: R/W
+
+    MISC_CTRL_1
+
+        Width: 4 bits
+
+        Value (default, min, max): 0, 0, 0xf
+
+        Attribute: R/W
+
+    MISC_CTRL_0
+
+        Width: 4 bits
+
+        Value (default, min, max): 0, 0, 0xf
+
+        Attribute: R/W
+
+    DESTINATION_TYPE
+
+        Width: 4 bits
+
+        Attribute: R/W, symbol
+
+        Symbol: 10
+
+          NO_OP         L2_OIF RESERVED      VP ECMP NHOP          L2MC_GROUP L3MC_GROUP RESERVED_1 ECMP_MEMBER
+
+        Default value: NO_OP
+
+    DESTINATION
+
+        Width: 16 bits
+
+        Value (default, min, max): 0, 0, 0xffff
+
+        Attribute: R/W
+
+    IPV4_MASK
+
+        Width: 32 bits
+
+        Value (default, min, max): 0, 0, 0xffffffff
+
+        Attribute: R/W, key
+
+    IPV4
+
+        Width: 32 bits
+
+        Value (default, min, max): 0, 0, 0xffffffff
+
+        Attribute: R/W, key
+
+BCMLT.0>
+
+
+
+
+# List the logical to physical mappings for the L3_MTU_PROFILE table.
+
+BCMLT.0> lt list -m L3_MTU_PROFILE
+
+L3_MTU_PROFILE
+
+  PT Reference:
+
+    IPOST_SEQ_NUM_MTU_CHECK_L3_MTU_PROFILEm
+
+  2 fields (1 key-type field):
+
+    L3_MTU
+
+        Handler: Direct
+
+          Map: IPOST_SEQ_NUM_MTU_CHECK_L3_MTU_PROFILEm.L3_MTU_LENf
+
+          Bit (min, max): 0, 13
+
+    L3_MTU_PROFILE_ID (key)
+
+        Handler: Direct
+
+          Map: IPOST_SEQ_NUM_MTU_CHECK_L3_MTU_PROFILEm.__INDEX
+
+          Bit (min, max): 0, 9
+
+BCMLT.0>
+
+
+
+
+# List the table documentation for the VLAN table.
+
+# The prefix ^ indicates the CLI to search for all LTs whose name begins with VLAN
+
+BCMLT.0> lt list -d L3_MTU_PROFILE
+
+L3_MTU_PROFILE
+
+  Description: The L3_MTU_PROFILE profile table is used to specify the L3 MTU.
+
+  2 fields (1 key-type field):
+
+    L3_MTU
+
+        Description: L3 payload MTU length for IP packets.
+
+    L3_MTU_PROFILE_ID (key)
+
+        Description: L3 MTU profile ID.
+
+BCMLT.0>
+
+
+
+# Insert an entry with L3_MTU_PROFILE_ID=2 into L3_MTU_PROFILE LT and configure the L3_MTU value as 2000.
+BCMLT.0> lt L3_MTU_PROFILE insert L3_MTU_PROFILE_ID=2 L3_MTU=2000
+
+Table L3_MTU_PROFILE:
+
+  insert L3_MTU_PROFILE_ID=2 L3_MTU=0x7d0
+
+BCMLT.0>
+
+
+
+# Use array subscript notation for fields of type array
+BCMLT.0> BCMLT.0> lt VLAN_ING_MEMBER_PROFILE insert VLAN_ING_MEMBER_PROFILE_ID=4 MEMBER_PORTS[1]=1 MEMBER_PORTS[2]=1
+
+Table VLAN_ING_MEMBER_PROFILE:
+
+  insert VLAN_ING_MEMBER_PROFILE_ID=4 MEMBER_PORTS[1]=1 MEMBER_PORTS[2]=1
+
+
+
+# Look up an entry with VLAN_ING_MEMBER_PROFILE_ID=4 in logical table VLAN_ING_MEMBER_PROFILE.
+BCMLT.0> lt VLAN_ING_MEMBER_PROFILE lookup VLAN_ING_MEMBER_PROFILE_ID=4
+
+Table VLAN_ING_MEMBER_PROFILE:
+
+  lookup VLAN_ING_MEMBER_PROFILE_ID=4
+
+    MEMBER_PORTS[0]=0,MEMBER_PORTS[1-2]=1,MEMBER_PORTS[3-159]=0
+
+    VLAN_ING_MEMBER_PROFILE_ID=4
+
+BCMLT.0>
+
+
+
+
+# Traverse the whole logical table. lt <LT_NAME> traverse -l
+
+# To filter out fields which 0 values. Use grep -v “=0”
+
+# Please note grep -v “=0” may not show fields of type array properly
+
+# as array fields are displayed in one line and even if one of the array indices # contains =0, grep will filter it out
+
+
+BCMLT.0> lt L2_HOST_TABLE traverse -l | grep -v "=0"
+
+Table L2_HOST_TABLE:
+
+  traverse
+
+    DST_PVLAN_PORT_TYPE=PROMISCUOUS
+
+    DESTINATION_TYPE=ECMP
+
+    DESTINATION=2
+
+    VFI=1
+
+  1 entry is traversed for lookup operation.
+
+
+
+
+
+
+# Delete an entry with L3_MTU_PROFILE_ID=1 in logical table L3_MTU_PROFILE.
+BCMLT.0> lt L3_MTU_PROFILE delete L3_MTU_PROFILE_ID=1
+
+Table L3_MTU_PROFILE:
+
+  delete L3_MTU_PROFILE_ID=1
+
+BCMLT.0>
+
+BCM.0>
+BCM.0> debug
+debug
+Available layers:
+APPL APPLDNX BCM BCMAPI BCMBD BCMCFG BCMCTH BCMDI BCMDNX BCMDRD BCMEVM BCMFP BCMHA BCMIMM BCMISSU BCMLM BCMLRD BCMLT BCMLTD BCMLTM BCMLTX BCMMGMT BCMPC BCMPKT BCMPTM BCMSEC BCMTM BCMTRM BOARD SAL SHARED SHAREDSWDNX SHR SOC SOCDNX SWSTAT
+EDNX SYS TKS
+BCM.0>
+
+l2 forwarding
+==============
+BCM.0>
+BCM.0> ps xe1
+ps xe1
+              ena/        speed/ link auto    STP                  lrn             max    cut            loop
+        port  link  Lns   duplex scan neg?   state   pause  discrd ops   medium  frame   thru       FEC  back
+    xe1(  2)  up     1   25G  FD   SW  No   Forward          None   FA Backplane  9026   Yes      RS528   MAC
+BCM.0>
+BCM.0> bsh -c 'lt PORT lookup PORT_ID=2'
+bsh -c 'lt PORT lookup PORT_ID=2'
+Table PORT:
+  lookup PORT_ID=2
+    MTU=0x2342(9026)
+    MTU_CHECK=1
+    ING_SYSTEM_PORT_TABLE_ID=2
+    L2_EIF_ID=2
+    PORT_ID=2
+BCM.0>
+BCM.0> ps xe2
+ps xe2
+              ena/        speed/ link auto    STP                  lrn             max    cut            loop
+        port  link  Lns   duplex scan neg?   state   pause  discrd ops   medium  frame   thru       FEC  back
+    xe2(  3)  up     1   25G  FD   SW  No   Forward          None   FA Backplane  9026   Yes      RS528
+BCM.0>
+BCM.0> bsh -c 'lt PORT lookup PORT_ID=3'
+bsh -c 'lt PORT lookup PORT_ID=3'
+Table PORT:
+  lookup PORT_ID=3
+    MTU=0x2342(9026)
+    MTU_CHECK=1
+    ING_SYSTEM_PORT_TABLE_ID=3
+    L2_EIF_ID=3
+    PORT_ID=3
+BCM.0>
+
+BCM.0>
+BCM.0> bsh -c 'lt list ING_SYSTEM_PORT'
+bsh -c 'lt list ING_SYSTEM_PORT'
+ING_SYSTEM_PORT_TABLE
+  13 fields (1 key-type field):
+    STRENGTH_PROFILE_INDEX
+    FLEX_CTR_ACTION
+    IPBM_INDEX
+    INGRESS_PP_PORT
+    BITMAP_PROFILE_SECTION_SEL
+    BITMAP_PROFILE_INDEX
+    RANGE_TABLE_INDEX
+    LOAD_BALANCE_NUMBER
+    L2_IIF_STRENGTH
+    L2_IIF
+    INNER_L2HDR_OTPID_ENABLE
+    OUTER_L2HDR_OTPID_ENABLE
+    SYSTEM_SOURCE (key)
+BCM.0>
+BCM.0> bsh -c 'lt ING_SYSTEM_PORT_TABLE lookup SYSTEM_SOURCE=2'
+bsh -c 'lt ING_SYSTEM_PORT_TABLE lookup SYSTEM_SOURCE=2'
+Table ING_SYSTEM_PORT_TABLE:
+  lookup SYSTEM_SOURCE=2
+    STRENGTH_PROFILE_INDEX=1
+    FLEX_CTR_ACTION=0
+    IPBM_INDEX=2
+    INGRESS_PP_PORT=2
+    BITMAP_PROFILE_SECTION_SEL=0
+    BITMAP_PROFILE_INDEX=0
+    RANGE_TABLE_INDEX=0
+    LOAD_BALANCE_NUMBER=0
+    L2_IIF_STRENGTH=0
+    L2_IIF=2
+    INNER_L2HDR_OTPID_ENABLE=1
+    OUTER_L2HDR_OTPID_ENABLE=1
+    SYSTEM_SOURCE=2
+BCM.0>
+BCM.0>
+BCM.0> bsh -c 'lt ING_SYSTEM_PORT_TABLE lookup SYSTEM_SOURCE=3'
+bsh -c 'lt ING_SYSTEM_PORT_TABLE lookup SYSTEM_SOURCE=3'
+Table ING_SYSTEM_PORT_TABLE:
+  lookup SYSTEM_SOURCE=3
+    STRENGTH_PROFILE_INDEX=1
+    FLEX_CTR_ACTION=0
+    IPBM_INDEX=3
+    INGRESS_PP_PORT=3
+    BITMAP_PROFILE_SECTION_SEL=0
+    BITMAP_PROFILE_INDEX=0
+    RANGE_TABLE_INDEX=0
+    LOAD_BALANCE_NUMBER=0
+    L2_IIF_STRENGTH=0
+    L2_IIF=3
+    INNER_L2HDR_OTPID_ENABLE=1
+    OUTER_L2HDR_OTPID_ENABLE=1
+    SYSTEM_SOURCE=3
+BCM.0>
+BCM.0>
+BCM.0> bsh -c 'lt ING_L2_IIF_TABLE lookup L2_IIF=2'
+bsh -c 'lt ING_L2_IIF_TABLE lookup L2_IIF=2'
+Table ING_L2_IIF_TABLE:
+  lookup L2_IIF=2
+    OPAQUE_CTRL_ID_1=0
+    OPAQUE_CTRL_ID=0
+    ECMP_AND_PROT_SWT_SFC_PROFILE_INDEX=0
+    NHOP_2_OR_ECMP_GROUP_INDEX_1=0
+    DESTINATION_TYPE=NO_OP
+    DESTINATION=0
+    VLAN_TAG_PRESERVE_CTRL=2
+    VFI=0xfff(4095)
+    L3_IIF=0
+    FLEX_DIGEST_CTRL_ID_B=0
+    FLEX_DIGEST_CTRL_ID_A=0
+    DEFAULT_OTAG_DOT1P_CFI=0
+    DEFAULT_ITAG_DOT1P_CFI=0
+    PORT_GROUP_ID=0
+    CLASS_ID=0
+    FLEX_CTR_ACTION=0
+    CML_FLAGS_MOVE=4
+    CML_FLAGS_NEW=4
+    CNG=0
+    INT_CN=0
+    INT_PRI=0
+    VLAN_TO_VFI_MAPPING_ENABLE=1
+    VLAN_XLATE_ENABLE=0
+    VN_ID_LOOKUP_CTRL=0
+    IPMC_REMAP_ENABLE=0
+    PVLAN_CHECK_ENABLE=0
+    IPV6_TUNNEL_ENABLE=0
+    IPV4_TUNNEL_ENABLE=0
+    VXLAN_ENABLE=0
+    MPLS_ENABLE=1
+    L2_IIF=2
+BCM.0>
+BCM.0>
+BCM.0> bsh -c 'lt ING_L2_IIF_TABLE lookup L2_IIF=3'
+bsh -c 'lt ING_L2_IIF_TABLE lookup L2_IIF=3'
+Table ING_L2_IIF_TABLE:
+  lookup L2_IIF=3
+    OPAQUE_CTRL_ID_1=0
+    OPAQUE_CTRL_ID=0
+    ECMP_AND_PROT_SWT_SFC_PROFILE_INDEX=0
+    NHOP_2_OR_ECMP_GROUP_INDEX_1=0
+    DESTINATION_TYPE=NO_OP
+    DESTINATION=0
+    VLAN_TAG_PRESERVE_CTRL=2
+    VFI=0xfff(4095)
+    L3_IIF=0
+    FLEX_DIGEST_CTRL_ID_B=0
+    FLEX_DIGEST_CTRL_ID_A=0
+    DEFAULT_OTAG_DOT1P_CFI=0
+    DEFAULT_ITAG_DOT1P_CFI=0
+    PORT_GROUP_ID=0
+    CLASS_ID=0
+    FLEX_CTR_ACTION=0
+    CML_FLAGS_MOVE=4
+    CML_FLAGS_NEW=4
+    CNG=0
+    INT_CN=0
+    INT_PRI=0
+    VLAN_TO_VFI_MAPPING_ENABLE=1
+    VLAN_XLATE_ENABLE=0
+    VN_ID_LOOKUP_CTRL=0
+    IPMC_REMAP_ENABLE=0
+    PVLAN_CHECK_ENABLE=0
+    IPV6_TUNNEL_ENABLE=0
+    IPV4_TUNNEL_ENABLE=0
+    VXLAN_ENABLE=0
+    MPLS_ENABLE=1
+    L2_IIF=3
+
+    BCM.0>
+    BCM.0> bsh -c 'lt ING_L2_IIF_ATTRIBUTES_TABLE lookup L2_IIF=2'
+    bsh -c 'lt ING_L2_IIF_ATTRIBUTES_TABLE lookup L2_IIF=2'
+    Table ING_L2_IIF_ATTRIBUTES_TABLE:
+      lookup L2_IIF=2
+        FLEX_STATE_ACTION=0
+        STORM_CTRL_UUCAST_ENABLE=0
+        STORM_CTRL_UMCAST_ENABLE=0
+        STORM_CTRL_MCAST_ENABLE=0
+        STORM_CTRL_BCAST_ENABLE=0
+        STORM_CTRL_METER_INDEX=0
+        SAMPLER_INDEX_5_4=0
+        SAMPLER_INDEX_3_0=0
+        QOS_REMARK_CTRL=0
+        DOT1P_PTR=0
+        DSCP_PTR=0
+        STATIC_MOVE_DROP=1
+        HONOR_SRC_DISCARD_ON_STN_MOVE=0
+        HG3_SRC_PORT_KNOCKOUT_DISABLE=0
+        SRC_PORT_KNOCKOUT_DISABLE=0
+        MIRROR_INDEX_3=0
+        MIRROR_INDEX_2=0
+        MIRROR_INDEX_1=0
+        MIRROR_INDEX_0=0
+        SRC_LAG_ID=0
+        IS_SRC_LAG=0
+        USE_DSCP_FOR_PHB=0
+        USE_ITAG_DOT1P_CFI_FOR_PHB=0
+        USE_OTAG_DOT1P_CFI_FOR_PHB=1
+        L2_IIF=2
+    BCM.0>
+
+    BCM.0>
+BCM.0> bsh -c 'lt ING_L2_IIF_ATTRIBUTES_TABLE lookup L2_IIF=3'
+bsh -c 'lt ING_L2_IIF_ATTRIBUTES_TABLE lookup L2_IIF=3'
+Table ING_L2_IIF_ATTRIBUTES_TABLE:
+  lookup L2_IIF=3
+    FLEX_STATE_ACTION=0
+    STORM_CTRL_UUCAST_ENABLE=0
+    STORM_CTRL_UMCAST_ENABLE=0
+    STORM_CTRL_MCAST_ENABLE=0
+    STORM_CTRL_BCAST_ENABLE=0
+    STORM_CTRL_METER_INDEX=0
+    SAMPLER_INDEX_5_4=0
+    SAMPLER_INDEX_3_0=0
+    QOS_REMARK_CTRL=0
+    DOT1P_PTR=0
+    DSCP_PTR=0
+    STATIC_MOVE_DROP=1
+    HONOR_SRC_DISCARD_ON_STN_MOVE=0
+    HG3_SRC_PORT_KNOCKOUT_DISABLE=0
+    SRC_PORT_KNOCKOUT_DISABLE=0
+    MIRROR_INDEX_3=0
+    MIRROR_INDEX_2=0
+    MIRROR_INDEX_1=0
+    MIRROR_INDEX_0=0
+    SRC_LAG_ID=0
+    IS_SRC_LAG=0
+    USE_DSCP_FOR_PHB=0
+    USE_ITAG_DOT1P_CFI_FOR_PHB=0
+    USE_OTAG_DOT1P_CFI_FOR_PHB=1
+    L2_IIF=3
+BCM.0>
+VFI (key)                                                                                                                                                                                                                               BCM.0>
+BCM.0> bsh -c 'lt ING_VFI_TABLE lookup vfi=10'                                                                                                                                                                                              bsh -c 'lt ING_VFI_TABLE lookup vfi=10'
+Table ING_VFI_TABLE:                                                                                                                                                                                                                          lookup VFI=0xa
+L2_HOST_NARROW_LOOKUP_ENABLE=0
+DO_NOT_LEARN=0
+L2UC_MISS_ACTION=FLOOD                                                                                                                                                                                                                      L2MC_MISS_ACTION=FLOOD
+IPV6MC_L2_ENABLE=1
+IPV4MC_L2_ENABLE=1
+SRC_PVLAN_PORT_TYPE=PROMISCUOUS
+OPAQUE_CTRL_ID=0
+EXPECTED_OUTER_TPID_BITMAP=0
+BITMAP_PROFILE_INDEX=0
+MEMBERSHIP_PROFILE_PTR=4
+SPANNING_TREE_GROUP=3
+STRENGTH_PROFILE_INDEX=2
+FLEX_CTR_ACTION=0
+L3_IIF=0
+DESTINATION_TYPE=L2MC_GROUP
+DESTINATION=0xf02(3842)
+MAPPED_VFI=0xa(10)
+VFI=0xa(10)
+BCM.0>
+
+BCM.0>
+BCM.0> bsh -c 'lt VLAN_ING_MEMBER_PROFILE lookup VLAN_ING_MEMBER_PROFILE_ID=4'
+bsh -c 'lt VLAN_ING_MEMBER_PROFILE lookup VLAN_ING_MEMBER_PROFILE_ID=4'
+Table VLAN_ING_MEMBER_PROFILE:
+  lookup VLAN_ING_MEMBER_PROFILE_ID=4
+    MEMBER_PORTS[0-1]=0,MEMBER_PORTS[2-3]=1,MEMBER_PORTS[4-38]=0,MEMBER_PORTS[39]=1,MEMBER_PORTS[40-78]=0,MEMBER_PORTS[79]=1,MEMBER_PORTS[80-118]=0,MEMBER_PORTS[119]=1,MEMBER_PORTS[120-158]=0,MEMBER_PORTS[159]=1
+    VLAN_ING_MEMBER_PROFILE_ID=4
+BCM.0>
+BCM.0> ps xe1
+ps xe1
+              ena/        speed/ link auto    STP                  lrn             max    cut            loop
+        port  link  Lns   duplex scan neg?   state   pause  discrd ops   medium  frame   thru       FEC  back
+    xe1(  2)  up     1   25G  FD   SW  No   Forward          None   FA Backplane  9026   Yes      RS528   MAC
+BCM.0>
+BCM.0> ps xe2
+ps xe2
+              ena/        speed/ link auto    STP                  lrn             max    cut            loop
+        port  link  Lns   duplex scan neg?   state   pause  discrd ops   medium  frame   thru       FEC  back
+    xe2(  3)  up     1   25G  FD   SW  No   Forward          None   FA Backplane  9026   Yes      RS528
+BCM.0>
+
+
+BOND
+=====
+Egress
+
+forward lookup --> OIF --> L2_EIF-> LAG ? --> TRUNK_ID instead of SYSTEM_ID --> TRUNK_TABLE --> LB_MODE / Dynamic load balancing -- > UC_MEMBER_PORT_SYSTEM
+--->PORT_SYSTEM_DESTINATION table --> PORT_ID --->
+
+
+BCM.0>
+BCM.0> bsh -c 'lt traverse -l @TRUNK'
+bsh -c 'lt traverse -l @TRUNK'
+Traverse table [TRUNK]:
+    RH_UC_EGR_BLOCK[0-127]=0
+    RH_MEMBER_L2_EIF[0-127]=0
+    RH_UC_MEMBER_PORT_SYSTEM[0-127]=0
+    RH_UC_MEMBER_CNT=0
+    RH_UC_RANDOM_SEED=0
+    RH_SIZE=RH_SIZE_64
+    NONUC_EGR_BLOCK[0-127]=0
+    UC_EGR_BLOCK[0-127]=0
+    MEMBER_L2_EIF[0-127]=0
+    NONUC_MEMBER_PORT_SYSTEM[0]=0x51(81),NONUC_MEMBER_PORT_SYSTEM[1]=0x52(82),NONUC_MEMBER_PORT_SYSTEM[2]=0x2a(42),NONUC_MEMBER_PORT_SYSTEM[3-127]=0
+    UC_MEMBER_PORT_SYSTEM[0]=0x51(81),UC_MEMBER_PORT_SYSTEM[1]=0x52(82),UC_MEMBER_PORT_SYSTEM[2]=0x2a(42),UC_MEMBER_PORT_SYSTEM[3-127]=0
+    NONUC_MEMBER_CNT=3
+    UC_MEMBER_CNT=3
+    UC_MAX_MEMBERS=3
+    LB_MODE=REG_HASH
+    TRUNK_ID=0xa(10)
+  1 entry traversed.
+BCM.0>
+
+
+BCM.0>
+BCM.0> bsh -c 'lt PORT lookup PORT_ID=81'
+bsh -c 'lt PORT lookup PORT_ID=81'
+Table PORT:
+  lookup PORT_ID=0x51
+    MTU=0x2342(9026)
+    MTU_CHECK=1
+    ING_SYSTEM_PORT_TABLE_ID=0x51(81)
+    L2_EIF_ID=0xa1(161)
+    PORT_ID=0x51(81)
+BCM.0>
+
+L2_IIF is the same for the ports.
+
+BCM.0>
+BCM.0> bsh -c 'lt ING_SYSTEM_PORT_TABLE lookup SYSTEM_SOURCE=81'
+bsh -c 'lt ING_SYSTEM_PORT_TABLE lookup SYSTEM_SOURCE=81'
+Table ING_SYSTEM_PORT_TABLE:
+  lookup SYSTEM_SOURCE=0x51
+    STRENGTH_PROFILE_INDEX=1
+    FLEX_CTR_ACTION=0
+    IPBM_INDEX=1
+    INGRESS_PP_PORT=0x51(81)
+    BITMAP_PROFILE_SECTION_SEL=0
+    BITMAP_PROFILE_INDEX=0
+    RANGE_TABLE_INDEX=0
+    LOAD_BALANCE_NUMBER=0
+    L2_IIF_STRENGTH=0
+    L2_IIF=0xa1(161)
+    INNER_L2HDR_OTPID_ENABLE=1
+    OUTER_L2HDR_OTPID_ENABLE=1
+    SYSTEM_SOURCE=0x51(81)
+BCM.0>
+BCM.0> bsh -c 'lt ING_SYSTEM_PORT_TABLE lookup SYSTEM_SOURCE=82'
+bsh -c 'lt ING_SYSTEM_PORT_TABLE lookup SYSTEM_SOURCE=82'
+Table ING_SYSTEM_PORT_TABLE:
+  lookup SYSTEM_SOURCE=0x52
+    STRENGTH_PROFILE_INDEX=1
+    FLEX_CTR_ACTION=0
+    IPBM_INDEX=2
+    INGRESS_PP_PORT=0x52(82)
+    BITMAP_PROFILE_SECTION_SEL=0
+    BITMAP_PROFILE_INDEX=0
+    RANGE_TABLE_INDEX=0
+    LOAD_BALANCE_NUMBER=0
+    L2_IIF_STRENGTH=0
+    L2_IIF=0xa1(161)
+    INNER_L2HDR_OTPID_ENABLE=1
+    OUTER_L2HDR_OTPID_ENABLE=1
+    SYSTEM_SOURCE=0x52(82)
+BCM.0>
+
+BCM.0>
+BCM.0> bsh -c 'lt ING_SYSTEM_PORT_TABLE lookup SYSTEM_SOURCE=42'
+bsh -c 'lt ING_SYSTEM_PORT_TABLE lookup SYSTEM_SOURCE=42'
+Table ING_SYSTEM_PORT_TABLE:
+  lookup SYSTEM_SOURCE=0x2a
+    STRENGTH_PROFILE_INDEX=1
+    FLEX_CTR_ACTION=0
+    IPBM_INDEX=2
+    INGRESS_PP_PORT=0x2a(42)
+    BITMAP_PROFILE_SECTION_SEL=0
+    BITMAP_PROFILE_INDEX=0
+    RANGE_TABLE_INDEX=0
+    LOAD_BALANCE_NUMBER=0
+    L2_IIF_STRENGTH=0
+    L2_IIF=0xa1(161)
+    INNER_L2HDR_OTPID_ENABLE=1
+    OUTER_L2HDR_OTPID_ENABLE=1
+    SYSTEM_SOURCE=0x2a(42)
+BCM.0>
+
+BCM.0>
+BCM.0> bsh -c 'lt ING_L2_IIF_TABLE lookup L2_IIF=161'
+bsh -c 'lt ING_L2_IIF_TABLE lookup L2_IIF=161'
+Table ING_L2_IIF_TABLE:
+  lookup L2_IIF=0xa1
+    OPAQUE_CTRL_ID_1=0
+    OPAQUE_CTRL_ID=0
+    ECMP_AND_PROT_SWT_SFC_PROFILE_INDEX=0
+    NHOP_2_OR_ECMP_GROUP_INDEX_1=0
+    DESTINATION_TYPE=NO_OP
+    DESTINATION=0
+    VLAN_TAG_PRESERVE_CTRL=2
+    VFI=0xfff(4095)
+    L3_IIF=0
+    FLEX_DIGEST_CTRL_ID_B=0
+    FLEX_DIGEST_CTRL_ID_A=0
+    DEFAULT_OTAG_DOT1P_CFI=0
+    DEFAULT_ITAG_DOT1P_CFI=0
+    PORT_GROUP_ID=0
+    CLASS_ID=0
+    FLEX_CTR_ACTION=0
+    CML_FLAGS_MOVE=4
+    CML_FLAGS_NEW=4
+    CNG=0
+    INT_CN=0
+    INT_PRI=0
+    VLAN_TO_VFI_MAPPING_ENABLE=1
+    VLAN_XLATE_ENABLE=0
+    VN_ID_LOOKUP_CTRL=0
+    IPMC_REMAP_ENABLE=0
+    PVLAN_CHECK_ENABLE=0
+    IPV6_TUNNEL_ENABLE=0
+    IPV4_TUNNEL_ENABLE=0
+    VXLAN_ENABLE=0
+    MPLS_ENABLE=1
+    L2_IIF=0xa1(161)
+BCM.0>
+
+Witout Bond for port 82.
+
+BCM.0>
+BCM.0> bsh -c 'lt ING_L2_IIF_TABLE lookup L2_IIF=82'
+bsh -c 'lt ING_L2_IIF_TABLE lookup L2_IIF=82'
+Table ING_L2_IIF_TABLE:
+  lookup L2_IIF=0x52
+    OPAQUE_CTRL_ID_1=0
+    OPAQUE_CTRL_ID=0
+    ECMP_AND_PROT_SWT_SFC_PROFILE_INDEX=0
+    NHOP_2_OR_ECMP_GROUP_INDEX_1=0
+    DESTINATION_TYPE=NO_OP
+    DESTINATION=0
+    VLAN_TAG_PRESERVE_CTRL=2
+    VFI=0xfff(4095)
+    L3_IIF=0
+    FLEX_DIGEST_CTRL_ID_B=0
+    FLEX_DIGEST_CTRL_ID_A=0
+    DEFAULT_OTAG_DOT1P_CFI=0
+    DEFAULT_ITAG_DOT1P_CFI=0
+    PORT_GROUP_ID=0
+    CLASS_ID=0
+    FLEX_CTR_ACTION=0
+    CML_FLAGS_MOVE=4
+    CML_FLAGS_NEW=4
+    CNG=0
+    INT_CN=0
+    INT_PRI=0
+    VLAN_TO_VFI_MAPPING_ENABLE=1
+    VLAN_XLATE_ENABLE=0
+    VN_ID_LOOKUP_CTRL=0
+    IPMC_REMAP_ENABLE=0
+    PVLAN_CHECK_ENABLE=0
+    IPV6_TUNNEL_ENABLE=0
+    IPV4_TUNNEL_ENABLE=0
+    VXLAN_ENABLE=0
+    MPLS_ENABLE=1
+    L2_IIF=0x52(82)
+BCM.0>
+
+
+BCM.0>
+BCM.0> l2 add trunk=true TrunkGroupId=10 MAC=0x13 vlan=10
+l2 add trunk=true TrunkGroupId=10 MAC=0x13 vlan=10
+ADD: mac=00:00:00:00:00:13 vlan=10 GPORT=0x0 Trunk=10
+BCM.0>
+BCM.0> l2 show
+l2 show
+mac=e8:c5:7a:8f:69:2f vlan=3966 GPORT=0x28 modid=0 port=40/ce0 Hit
+mac=00:00:00:00:00:13 vlan=10 GPORT=0x0 Trunk=10
+BCM.0>
+
+BCM.0>
+BCM.0> l2 show
+l2 show
+mac=e8:c5:7a:8f:69:2f vlan=3966 GPORT=0x28 modid=0 port=40/ce0 Hit
+mac=00:00:00:00:00:13 vlan=10 GPORT=0x0 Trunk=10
+BCM.0>
+BCM.0> bsh -c 'lt L2_HOST_TABLE traverse'
+bsh -c 'lt L2_HOST_TABLE traverse'
+Table L2_HOST_TABLE:
+  traverse
+    VFI=0xf7e(3966)
+    MAC_ADDR=0xe8c5_7a8f692f
+
+    VFI=0xa(10)
+    MAC_ADDR=0x13(19)
+  2 entries traversed.
+BCM.0>
+BCM.0> bsh -c 'lt traverse -l L2_HOST_TABLE'
+bsh -c 'lt traverse -l L2_HOST_TABLE'
+Traverse table [L2_HOST_TABLE]:
+    SRC_ENTRY_INDEX=0x24258(148056)
+    DST_ENTRY_INDEX=0x4258(16984)
+    MISC_CTRL_1=0
+    MISC_CTRL_0=1
+    FLEX_CTR_ACTION=2
+    ECMP_AND_PROT_SWT_SFC_PROFILE_INDEX=0
+    NHOP_2_OR_ECMP_GROUP_INDEX_1=0
+    COMMUNITY_PVLAN_ID=0
+    DST_VP_GROUP=0
+    DST_PVLAN_PORT_TYPE=PROMISCUOUS
+    CLASS_ID=0
+    DESTINATION_TYPE=L2_OIF
+    DESTINATION=0x28(40)
+    STRENGTH_PROFILE_INDEX=8
+    VFI=0xf7e(3966)
+    MAC_ADDR=0xe8c5_7a8f692f
+
+    SRC_ENTRY_INDEX=0x2e790(190352)
+    DST_ENTRY_INDEX=0xe790(59280)
+    MISC_CTRL_1=0
+    MISC_CTRL_0=1
+    FLEX_CTR_ACTION=2
+    ECMP_AND_PROT_SWT_SFC_PROFILE_INDEX=0
+    NHOP_2_OR_ECMP_GROUP_INDEX_1=0
+    COMMUNITY_PVLAN_ID=0
+    DST_VP_GROUP=0
+    DST_PVLAN_PORT_TYPE=PROMISCUOUS
+    CLASS_ID=0
+    DESTINATION_TYPE=L2_OIF
+    DESTINATION=0xa1(161)
+    STRENGTH_PROFILE_INDEX=8
+    VFI=0xa(10)
+    MAC_ADDR=0x13(19)
+  2 entries traversed.
+BCM.0>
+
+BCM.0>
+BCM.0> bsh -c 'lt list EGR_L2_OIF'
+bsh -c 'lt list EGR_L2_OIF'
+EGR_L2_OIF
+  14 fields (1 key-type field):
+    TUNNEL_TOS_REMARK_BASE_PTR
+    VIEW_T
+    FLEX_CTR_ACTION
+    EFP_CTRL_ID
+    STRENGTH_PRFL_IDX
+    EGR_PORT_GROUP_ID
+    DOT1P_REMARK_BASE_PTR
+    TOS_REMARK_BASE_PTR
+    DOT1P_PTR_STR
+    TPID_1
+    TPID_0
+    L2_PROCESS_CTRL
+    EDIT_CTRL_ID
+    L2_OIF (key)
+
+    BCM.0>
+    BCM.0> bsh -c 'lt EGR_L2_OIF lookup L2_OIF=161'
+    bsh -c 'lt EGR_L2_OIF lookup L2_OIF=161'
+    Table EGR_L2_OIF:
+      lookup L2_OIF=0xa1
+        TUNNEL_TOS_REMARK_BASE_PTR=0
+        VIEW_T=VT_L2_OIF_ITPID
+        EFP_CTRL_ID=0
+        STRENGTH_PRFL_IDX=2
+        EGR_PORT_GROUP_ID=0
+        DOT1P_REMARK_BASE_PTR=0x10(16)
+        TOS_REMARK_BASE_PTR=0
+        DOT1P_PTR_STR=3
+        TPID_1=0x8100(33024)
+        TPID_0=0x8100(33024)
+        L2_PROCESS_CTRL=2
+        EDIT_CTRL_ID=0
+        L2_OIF=0xa1(161)
+    BCM.0>
+
+    BCM.0>
+BCM.0> bsh -c 'lt L2_EIF_SYSTEM_DESTINATION lookup L2_EIF_ID=161'
+bsh -c 'lt L2_EIF_SYSTEM_DESTINATION lookup L2_EIF_ID=161'
+Table L2_EIF_SYSTEM_DESTINATION:
+  lookup L2_EIF_ID=0xa1
+    DLB_ID=0
+    DLB_ID_VALID=0
+    FLEX_CTR_ACTION_ID=0
+    TRUNK_ID=0xa(10)
+    SYSTEM_PORT=0
+    IS_TRUNK=1
+    L2_EIF_ID=0xa1(161)
+BCM.0>
+
+
+BCM.0> bsh
+bsh
+lt traverse -l TRUNK_CONTROL
+lt traverse -l TRUNK_CONTROL
+
+Traverse table [DLB_TRUNK_CONTROL]:
+    FP_ING_SEED=1
+    MONITOR_SEED=1
+    SEED=0
+  1 entry traversed.
+
+  BCM.0>
+BCM.0> sc TrunkRandomSeed
+sc TrunkRandomSeed
+0x0
+BCM.0>
