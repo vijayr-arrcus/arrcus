@@ -1,6 +1,3 @@
-
-
-
 sudo apt-get install elfutils
 export HSDK_YAML_LIB_PATH=$PWD/pkgs/YAML_0_1_7
 export YAML=${HSDK_YAML_LIB_PATH}/build/
@@ -18,7 +15,7 @@ sudo apt-get install -y python-yaml
 sudo apt-get install -y python-filelock
 sudo apt-get install -y libyaml-dev
 wget http://ftp.us.debian.org/debian/pool/main/e/elfutils/elfutils_0.168-1_amd64.deb
-sudo dpkg -i 
+sudo dpkg -i
 debian/rules prepare build-stash build-phymod build-yaml
 
 

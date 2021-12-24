@@ -1,0 +1,480 @@
+root@lag-td3-1#
+root@lag-td3-1# show control-plane state
+control-plane state service-policy INGRESS
+ name __system_default_copp_policy__
+ classifiers classifier system-bpdu
+  state name    system-bpdu
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                       ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE   UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      100000  -     10000  -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     7      -       -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-lacp
+  state name    system-lacp
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                       ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE   UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      100000  -     10000  -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     7      -       -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-isis
+  state name    system-isis
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                       ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE   UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      100000  -     10000  -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     7      -       -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-bgp
+  state name    system-bgp
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      20000  -     128    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     7      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-ospf
+  state name    system-ospf
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      20000  -     128    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     7      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-bgp6
+  state name    system-bgp6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      20000  -     128    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     7      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-ospf6
+  state name    system-ospf6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      20000  -     128    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     7      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-lldp                                                                                                                                                                  [402/66381]
+  state name    system-lldp
+  state match-packets 4
+  state match-bytes 636
+  state offered-rate "64 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      10000  -     512    -     -      -     -      -     -       -       -       4        636      -        -       0        0        -        -       -
+MARK    -     6      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-vrrp
+  state name    system-vrrp
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      10000  -     512    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     6      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-vrrp6
+  state name    system-vrrp6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      10000  -     512    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     6      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+ classifiers classifier system-icmp6
+  state name    system-icmp6
+  state match-packets 3
+  state match-bytes 366
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      10000  -     512    -     -      -     -      -     -       -       -       3        366      -        -       0        0        -        -       -
+MARK    -     6      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-sftp
+  state name    system-sftp
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-tftp
+  state name    system-tftp
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+ classifiers classifier system-ntp                                                                                                                                                                   [324/66381]
+  state name    system-ntp
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-ssh
+  state name    system-ssh
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-telnet
+  state name    system-telnet
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+ classifiers classifier system-tacacsradius
+  state name    system-tacacsradius
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-snmp
+  state name    system-snmp
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-sftp6
+  state name    system-sftp6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-tftp6
+  state name    system-tftp6                                                                                                                                                                         [245/66381]
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-ntp6
+  state name    system-ntp6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-ssh6
+  state name    system-ssh6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-telnet6
+  state name    system-telnet6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-tacacsradius6
+  state name    system-tacacsradius6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-snmp6
+  state name    system-snmp6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      1000   -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     2      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-monitor-icmp
+  state name    system-monitor-icmp
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      75     -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     1      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+ classifiers classifier system-monitor-icmp6
+  state name    system-monitor-icmp6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      75     -     32     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     1      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-dhcp
+  state name    system-dhcp
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      300    -     64     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     1      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-dhcp6
+  state name    system-dhcp6
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      300    -     64     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     1      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-arp
+  state name    system-arp
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE                       [109/66381]
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      2000   -     512    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     6      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-exception-v4
+  state name    system-exception-v4
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      2000   -     512    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     1      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-exception-v6
+  state name    system-exception-v6
+  state match-packets 2
+  state match-bytes 308
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      2000   -     512    -     -      -     -      -     -       -       -       2        308      -        -       0        0        -        -       -
+MARK    -     1      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-exception-l3destmiss
+  state name    system-exception-l3destmiss
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      2000   -     512    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     1      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-exception-selfip
+  state name    system-exception-selfip
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      2000   -     512    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     1      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-exception-glean
+  state name    system-exception-glean
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      2000   -     512    -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     1      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+
+ classifiers classifier system-exception-mirror
+  state name    system-exception-mirror
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      70000  -     70000  -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     3      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+ classifiers classifier __catch_all_class__
+  state name    __catch_all_class__
+  state match-packets 0
+  state match-bytes 0
+  state offered-rate "0 bps"
+  state dropped-rate "0 bps"
+  actions action
+              LOCAL                                                      ACTION  ACTION  ACTION  CONFORM  CONFORM  EXCEED   EXCEED  VIOLATE  VIOLATE  CONFORM  EXCEED  VIOLATE
+TYPE    TYPE  TC     VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  VALUE  UNIT  TYPE    TYPE    TYPE    PACKETS  BYTES    PACKETS  BYTES   PACKETS  BYTES    RATE     RATE    RATE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POLICE  -     -      50     -     12     -     -      -     -      -     -       -       -       0        0        -        -       0        0        -        -       -
+MARK    -     0      -      -     -      -     -      -     -      -     -       -       -       -        -        -        -       -        -        -        -       -
+

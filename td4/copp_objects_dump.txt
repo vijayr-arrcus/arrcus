@@ -1,0 +1,89 @@
+./mpsctl -t /default/oper/acl/hal/acl/ -s Acl.acl_hal_acl_object
+
+Operation : UPDATE
+ {
+  "acl_id": 5541943097347642742,
+  "acl_type": 3,
+  "acl_name": "copp-system-bpdu",
+  "owner_name": "copp"
+}
+
+
+./mpsctl -t /default/hal/copp/copp_hal_policer/ -s Qos.qos_hal_police_object
+
+MPS service URI: /system/ipc/arcos_mps_ctrl
+        Table ID: [/default/hal/copp/copp_hal_policer/][35]
+        Schema ID: Qos.qos_hal_police_object
+########################################################################
+Operation : UPDATE
+ {
+  "police_id": -1570259515,
+  "committed_rate": {
+    "qos_rate": 100000,
+    "qos_unit": 4
+  },
+  "committed_burst": 10000
+}
+
+
+./mpsctl -t /default/oper/acl/hal/ace/ -s Acl.acl_hal_ace_object
+
+MPS service URI: /system/ipc/arcos_mps_ctrl
+        Table ID: [/default/oper/acl/hal/ace/][26]
+        Schema ID: Acl.acl_hal_ace_object
+########################################################################
+Operation : UPDATE
+ {
+  "acl_id": 5541943097347642742,
+  "sequence_id": 1000,
+  "priority": 1000,
+  "match_action": {
+    "eth_params": {
+      "dest_mac": "AQAMzMzN"
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5541943097347642742,
+  "sequence_id": 1001,
+  "priority": 1001,
+  "match_action": {
+    "eth_params": {
+      "dest_mac": "AYDCAAAA"
+    },
+    "action": 1
+  }
+}
+
+./mpsctl -t /default/hal/copp/copp_hal_service_policy/ -s Qos.qos_hal_service_policy_object
+
+########################################################################
+Operation : UPDATE
+ {
+  "target": {
+    "target_id": 4294967295,
+    "target_type": 1,
+    "direction": 2
+  },
+  "bind_id_1": 9223372036854775807,
+  "bind_id_2": -6744213259961227540,
+  "action_type": 14,
+  "police_id": -1570259515,
+  "dep_type": 5021,
+  "seq_num": 0
+}
+Operation : UPDATE
+ {
+  "target": {
+    "target_id": 4294967295,
+    "target_type": 1,
+    "direction": 2
+  },
+  "bind_id_1": 9223372036854775807,
+  "bind_id_2": -6744213259961227540,
+  "action_type": 13,
+  "mark_value": 7,
+  "seq_num": 0
+}
