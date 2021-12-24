@@ -1,0 +1,1381 @@
+MPS service URI: /system/ipc/arcos_mps_ctrl
+	Table ID: [/default/oper/acl/hal/ace/][26]
+	Schema ID: Acl.acl_hal_ace_object
+########################################################################
+Operation : UPDATE
+ {
+  "acl_id": 5541943097347642742,
+  "sequence_id": 1000,
+  "priority": 1000,
+  "match_action": {
+    "eth_params": {
+      "dest_mac": "AQAMzMzN"
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5541943097347642742,
+  "sequence_id": 1001,
+  "priority": 1001,
+  "match_action": {
+    "eth_params": {
+      "dest_mac": "AYDCAAAA"
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 2629458848150939003,
+  "sequence_id": 1100,
+  "priority": 1100,
+  "match_action": {
+    "eth_params": {
+      "dest_mac": "AYDCAAAC"
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 9217787439154516159,
+  "sequence_id": 1200,
+  "priority": 1200,
+  "match_action": {
+    "eth_params": {
+      "dest_mac": "AYDCAAAU"
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 9217787439154516159,
+  "sequence_id": 1201,
+  "priority": 1201,
+  "match_action": {
+    "eth_params": {
+      "dest_mac": "AYDCAAAV"
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 9217787439154516159,
+  "sequence_id": 1202,
+  "priority": 1202,
+  "match_action": {
+    "eth_params": {
+      "dest_mac": "CQArAAAF"
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 6761969311741771884,
+  "sequence_id": 2000,
+  "priority": 2000,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 6,
+      "source_port_range": {
+        "range_from": 179,
+        "range_to": 179
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 6761969311741771884,
+  "sequence_id": 2001,
+  "priority": 2001,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 6,
+      "dest_port_range": {
+        "range_from": 179,
+        "range_to": 179
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2189181395409382817,
+  "sequence_id": 2100,
+  "priority": 2100,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 89
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 3220215505906600568,
+  "sequence_id": 3000,
+  "priority": 3000,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 6,
+      "source_port_range": {
+        "range_from": 179,
+        "range_to": 179
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 3220215505906600568,
+  "sequence_id": 3001,
+  "priority": 3001,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 6,
+      "dest_port_range": {
+        "range_from": 179,
+        "range_to": 179
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -3254193941113428645,
+  "sequence_id": 3100,
+  "priority": 3100,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 89
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -7481072482704443501,
+  "sequence_id": 4000,
+  "priority": 4000,
+  "match_action": {
+    "eth_params": {
+      "eth_type": 35020
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 4077053194642269153,
+  "sequence_id": 5000,
+  "priority": 5000,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 112
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 3883878470691715973,
+  "sequence_id": 6000,
+  "priority": 6000,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 112
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5512767993987655078,
+  "sequence_id": 6100,
+  "priority": 6100,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 133,
+        "type_to": 133
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5512767993987655078,
+  "sequence_id": 6101,
+  "priority": 6101,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 134,
+        "type_to": 134
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5512767993987655078,
+  "sequence_id": 6102,
+  "priority": 6102,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 135,
+        "type_to": 135
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5512767993987655078,
+  "sequence_id": 6103,
+  "priority": 6103,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 136,
+        "type_to": 136
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 105796873520669626,
+  "sequence_id": 7000,
+  "priority": 7000,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 6,
+      "dest_port_range": {
+        "range_from": 115,
+        "range_to": 115
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 105796873520669626,
+  "sequence_id": 7001,
+  "priority": 7001,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 6,
+      "source_port_range": {
+        "range_from": 115,
+        "range_to": 115
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -8602546389071224479,
+  "sequence_id": 7100,
+  "priority": 7100,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 69,
+        "range_to": 69
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -8602546389071224479,
+  "sequence_id": 7101,
+  "priority": 7101,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 69,
+        "range_to": 69
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 7289578052846536121,
+  "sequence_id": 7300,
+  "priority": 7300,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 123,
+        "range_to": 123
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 7289578052846536121,
+  "sequence_id": 7301,
+  "priority": 7301,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 123,
+        "range_to": 123
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 7466562464117333497,
+  "sequence_id": 7400,
+  "priority": 7400,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 6,
+      "dest_port_range": {
+        "range_from": 22,
+        "range_to": 22
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 7466562464117333497,
+  "sequence_id": 7401,
+  "priority": 7401,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 6,
+      "source_port_range": {
+        "range_from": 22,
+        "range_to": 22
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -8984371333378073969,
+  "sequence_id": 7500,
+  "priority": 7500,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 6,
+      "dest_port_range": {
+        "range_from": 23,
+        "range_to": 23
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -8984371333378073969,
+  "sequence_id": 7501,
+  "priority": 7501,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 6,
+      "source_port_range": {
+        "range_from": 23,
+        "range_to": 23
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5404494382252364720,
+  "sequence_id": 7600,
+  "priority": 7600,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 1812,
+        "range_to": 1812
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5404494382252364720,
+  "sequence_id": 7601,
+  "priority": 7601,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 1813,
+        "range_to": 1813
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5404494382252364720,
+  "sequence_id": 7602,
+  "priority": 7602,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 1645,
+        "range_to": 1645
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5404494382252364720,
+  "sequence_id": 7603,
+  "priority": 7603,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 1646,
+        "range_to": 1646
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5404494382252364720,
+  "sequence_id": 7604,
+  "priority": 7604,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 1812,
+        "range_to": 1812
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5404494382252364720,
+  "sequence_id": 7605,
+  "priority": 7605,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 1813,
+        "range_to": 1813
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5404494382252364720,
+  "sequence_id": 7606,
+  "priority": 7606,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 1645,
+        "range_to": 1645
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5404494382252364720,
+  "sequence_id": 7607,
+  "priority": 7607,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 1646,
+        "range_to": 1646
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5404494382252364720,
+  "sequence_id": 7608,
+  "priority": 7608,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 6,
+      "dest_port_range": {
+        "range_from": 49,
+        "range_to": 49
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5404494382252364720,
+  "sequence_id": 7609,
+  "priority": 7609,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 6,
+      "source_port_range": {
+        "range_from": 49,
+        "range_to": 49
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 3330905261587504007,
+  "sequence_id": 7700,
+  "priority": 7700,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 161,
+        "range_to": 161
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 3330905261587504007,
+  "sequence_id": 7701,
+  "priority": 7701,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 162,
+        "range_to": 162
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5629828901280993126,
+  "sequence_id": 8000,
+  "priority": 8000,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 6,
+      "dest_port_range": {
+        "range_from": 115,
+        "range_to": 115
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5629828901280993126,
+  "sequence_id": 8001,
+  "priority": 8001,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 6,
+      "source_port_range": {
+        "range_from": 115,
+        "range_to": 115
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -8269054447868106827,
+  "sequence_id": 8100,
+  "priority": 8100,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 69,
+        "range_to": 69
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -8269054447868106827,
+  "sequence_id": 8101,
+  "priority": 8101,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 69,
+        "range_to": 69
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 2264397769295399613,
+  "sequence_id": 8300,
+  "priority": 8300,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 123,
+        "range_to": 123
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 2264397769295399613,
+  "sequence_id": 8301,
+  "priority": 8301,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 123,
+        "range_to": 123
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -331246405366268179,
+  "sequence_id": 8400,
+  "priority": 8400,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 6,
+      "dest_port_range": {
+        "range_from": 22,
+        "range_to": 22
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -331246405366268179,
+  "sequence_id": 8401,
+  "priority": 8401,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 6,
+      "source_port_range": {
+        "range_from": 22,
+        "range_to": 22
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 350193060191351931,
+  "sequence_id": 8500,
+  "priority": 8500,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 6,
+      "dest_port_range": {
+        "range_from": 23,
+        "range_to": 23
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 350193060191351931,
+  "sequence_id": 8501,
+  "priority": 8501,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 6,
+      "source_port_range": {
+        "range_from": 23,
+        "range_to": 23
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2416301986023796748,
+  "sequence_id": 8600,
+  "priority": 8600,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 1812,
+        "range_to": 1812
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2416301986023796748,
+  "sequence_id": 8601,
+  "priority": 8601,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 1813,
+        "range_to": 1813
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2416301986023796748,
+  "sequence_id": 8602,
+  "priority": 8602,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 1645,
+        "range_to": 1645
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2416301986023796748,
+  "sequence_id": 8603,
+  "priority": 8603,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 1646,
+        "range_to": 1646
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2416301986023796748,
+  "sequence_id": 8604,
+  "priority": 8604,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 1812,
+        "range_to": 1812
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2416301986023796748,
+  "sequence_id": 8605,
+  "priority": 8605,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 1813,
+        "range_to": 1813
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2416301986023796748,
+  "sequence_id": 8606,
+  "priority": 8606,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 1645,
+        "range_to": 1645
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2416301986023796748,
+  "sequence_id": 8607,
+  "priority": 8607,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 1646,
+        "range_to": 1646
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2416301986023796748,
+  "sequence_id": 8608,
+  "priority": 8608,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 6,
+      "dest_port_range": {
+        "range_from": 49,
+        "range_to": 49
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -2416301986023796748,
+  "sequence_id": 8609,
+  "priority": 8609,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 6,
+      "source_port_range": {
+        "range_from": 49,
+        "range_to": 49
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5380504157147087923,
+  "sequence_id": 8700,
+  "priority": 8700,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 161,
+        "range_to": 161
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5380504157147087923,
+  "sequence_id": 8701,
+  "priority": 8701,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 162,
+        "range_to": 162
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -350797505700747093,
+  "sequence_id": 10000,
+  "priority": 10000,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 1,
+      "icmp_params": {
+        "type_from": 8,
+        "type_to": 8
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -350797505700747093,
+  "sequence_id": 10001,
+  "priority": 10001,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 1,
+      "icmp_params": {
+        "type_from": 0,
+        "type_to": 0
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -350797505700747093,
+  "sequence_id": 10002,
+  "priority": 10002,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 1,
+      "icmp_params": {
+        "type_from": 3,
+        "type_to": 3,
+        "code_from": 1,
+        "code_to": 3
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -350797505700747093,
+  "sequence_id": 10003,
+  "priority": 10003,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 1,
+      "icmp_params": {
+        "type_from": 11,
+        "type_to": 11,
+        "code_from": 0,
+        "code_to": 1
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -350797505700747093,
+  "sequence_id": 10004,
+  "priority": 10004,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 33434,
+        "range_to": 33534
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5902915916297278351,
+  "sequence_id": 12000,
+  "priority": 12000,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 128,
+        "type_to": 128
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5902915916297278351,
+  "sequence_id": 12001,
+  "priority": 12001,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 129,
+        "type_to": 129
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5902915916297278351,
+  "sequence_id": 12002,
+  "priority": 12002,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 1,
+        "type_to": 1,
+        "code_from": 4,
+        "code_to": 4
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5902915916297278351,
+  "sequence_id": 12003,
+  "priority": 12003,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 3,
+        "type_to": 3,
+        "code_from": 0,
+        "code_to": 1
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5902915916297278351,
+  "sequence_id": 12004,
+  "priority": 12004,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "dest_port_range": {
+        "range_from": 33434,
+        "range_to": 33534
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -3170033726580919476,
+  "sequence_id": 13000,
+  "priority": 13000,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 67,
+        "range_to": 68
+      },
+      "dest_port_range": {
+        "range_from": 67,
+        "range_to": 68
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 2304000475519843856,
+  "sequence_id": 14000,
+  "priority": 14000,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 17,
+      "source_port_range": {
+        "range_from": 546,
+        "range_to": 547
+      },
+      "dest_port_range": {
+        "range_from": 546,
+        "range_to": 547
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": -6841680663332156980,
+  "sequence_id": 15000,
+  "priority": 15000,
+  "match_action": {
+    "eth_params": {
+      "eth_type": 2054
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5793635286984342425,
+  "sequence_id": 16000,
+  "priority": 16000,
+  "match_action": {
+    "ipv4_params": {
+      "ip_options_flag": true
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5793635286984342425,
+  "sequence_id": 16001,
+  "priority": 16001,
+  "match_action": {
+    "ipv4_params": {
+      "protocol": 1,
+      "icmp_params": {
+        "type_from": 3,
+        "type_to": 3,
+        "code_from": 0,
+        "code_to": 15
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5793635286984342425,
+  "sequence_id": 16002,
+  "priority": 16002,
+  "match_action": {
+    "ipv4_params": {
+      "hop_limit": 1
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5793635286984342425,
+  "sequence_id": 16003,
+  "priority": 16003,
+  "match_action": {
+    "ipv4_params": {
+      "fragment_flag": true
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 4541934263043890153,
+  "sequence_id": 17000,
+  "priority": 17000,
+  "match_action": {
+    "ipv6_params": {
+      "ip_options_flag": true
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 4541934263043890153,
+  "sequence_id": 17001,
+  "priority": 17001,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 1,
+        "type_to": 1,
+        "code_from": 0,
+        "code_to": 0
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 4541934263043890153,
+  "sequence_id": 17002,
+  "priority": 17002,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 1,
+        "type_to": 1,
+        "code_from": 1,
+        "code_to": 1
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 4541934263043890153,
+  "sequence_id": 17003,
+  "priority": 17003,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 1,
+        "type_to": 1,
+        "code_from": 2,
+        "code_to": 2
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 4541934263043890153,
+  "sequence_id": 17004,
+  "priority": 17004,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 1,
+        "type_to": 1,
+        "code_from": 3,
+        "code_to": 3
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 4541934263043890153,
+  "sequence_id": 17005,
+  "priority": 17005,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 1,
+        "type_to": 1,
+        "code_from": 4,
+        "code_to": 4
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 4541934263043890153,
+  "sequence_id": 17006,
+  "priority": 17006,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 1,
+        "type_to": 1,
+        "code_from": 5,
+        "code_to": 5
+      }
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 4541934263043890153,
+  "sequence_id": 17007,
+  "priority": 17007,
+  "match_action": {
+    "ipv6_params": {
+      "protocol": 58,
+      "icmp_params": {
+        "type_from": 1,
+        "type_to": 1,
+        "code_from": 6,
+        "code_to": 6
+      }
+    },
+    "action": 1
+  }
+}
+Good Bye
