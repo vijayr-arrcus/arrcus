@@ -380,36 +380,39 @@ int cint_field_trunk_qual_tc_rule(
     sal_strncpy_s(dest_char, "trunk_port_quals", sizeof(fg_info.name));
     fg_info.nof_quals = 1;
     fg_info.nof_actions = 1;
-    attach_info.key_info.nof_quals = fg_info.nof_quals;
-    attach_info.payload_info.nof_actions = fg_info.nof_actions;
-    entry_info.nof_entry_quals = fg_info.nof_quals;
-    entry_info.nof_entry_actions = fg_info.nof_actions;
-    entry_info.core = core;
-
     fg_info.qual_types[0] = qual_type;
-    attach_info.key_info.qual_types[0] = fg_info.qual_types[0];
-    attach_info.key_info.qual_info[0].input_type = bcmFieldInputTypeMetaData;
-    attach_info.key_info.qual_info[0].input_arg = 0;
-    attach_info.key_info.qual_info[0].offset = 0;
-    entry_info.entry_qual[0].type = fg_info.qual_types[0];
-    entry_info.entry_qual[0].value[0] = trunk_gport; // Ths basicall accepts trunk gport
-    entry_info.entry_qual[0].mask[0] = qual_mask;
-
     fg_info.action_types[0] = bcmFieldActionPrioIntNew;
-    attach_info.payload_info.action_types[0] = fg_info.action_types[0];
-    entry_info.entry_action[0].type = fg_info.action_types[0];
-    entry_info.entry_action[0].value[0] = 6; //Cint_field_trunk_port_quals_tc_action_value;
-
     /** Create the field group. */
     rv = bcm_field_group_add(unit, BCM_FIELD_FLAG_MSB_RESULT_ALIGN, &fg_info,
 			     &Cint_field_trunk_port_quals_fg_id);
     printf("Field Group ID %d was created. \n", Cint_field_trunk_port_quals_fg_id);
 
+    attach_info.key_info.nof_quals = fg_info.nof_quals;
+    attach_info.payload_info.nof_actions = fg_info.nof_actions;
+    attach_info.key_info.qual_types[0] = fg_info.qual_types[0];
+    attach_info.key_info.qual_info[0].input_type = bcmFieldInputTypeMetaData;
+    attach_info.key_info.qual_info[0].input_arg = 0;
+    attach_info.key_info.qual_info[0].offset = 0;
+    attach_info.payload_info.action_types[0] = fg_info.action_types[0];
     /** Attach the created field group to the context. */
     rv = bcm_field_group_context_attach(unit, 0, Cint_field_trunk_port_quals_fg_id,
 					context_id, &attach_info);
     printf("Field Group ID %d was attached to Context ID %d. \n",
 	   Cint_field_trunk_port_quals_fg_id, context_id);
+
+
+    entry_info.nof_entry_quals = fg_info.nof_quals;
+    entry_info.nof_entry_actions = fg_info.nof_actions;
+    entry_info.core = core;
+
+    entry_info.entry_qual[0].type = fg_info.qual_types[0];
+    entry_info.entry_qual[0].value[0] = trunk_gport; // Ths basicall accepts trunk gport
+    entry_info.entry_qual[0].mask[0] = qual_mask;
+
+    entry_info.entry_action[0].type = fg_info.action_types[0];
+    entry_info.entry_action[0].value[0] = 6; //Cint_field_trunk_port_quals_tc_action_value;
+
+
 
     /** Add an entry to the created field group. */
     rv = bcm_field_entry_add(unit, 0, Cint_field_trunk_port_quals_fg_id, &entry_info,
