@@ -1,0 +1,24 @@
+- Policy
+    - classifier
+        - action
+        - ACL
+
+(gdb) cont
+
+Continuing.
+
+[Switching to Thread 0x7fb2c57fa700 (LWP 4399)]
+
+CPP_INTERFACE_ID COPP_DEFAULT_POLICY_ID copp_eth_acl_init consumer_thread_wq acl_consumer_msg_processing
+
+qos_hal_publish_spolicy_instance
+
+Thread 10 "qos.bin" hit Breakpoint 3, copp_populate_spolicy_instance ( tctxt=tctxt@entry=0x7fb2b00088e0) at ./feature/qos/app/copp_confd_spolicy_oper.c:252 252 ./feature/qos/app/copp_confd_spolicy_oper.c: No such file or directory. (gdb) cont Continuing.
+
+Thread 10 "qos.bin" hit Breakpoint 1, qos_populate_spolicy_classifiers ( tctxt=tctxt@entry=0x7fb2b00088e0) at ./feature/qos/app/qos_confd_spolicy_oper.c:912 912 ./feature/qos/app/qos_confd_spolicy_oper.c: No such file or directory. (gdb) cont Continuing.
+
+Thread 10 "qos.bin" hit Breakpoint 2, qos_populate_spolicy_class_action ( classname_str=classname_str@entry=0x7fb2c57f27c0 "system-bpdu", tctxt=tctxt@entry=0x7fb2b00088e0) at ./feature/qos/app/qos_confd_spolicy_oper.c:1086 1086 in ./feature/qos/app/qos_confd_spolicy_oper.c (gdb) cont Continuing.
+
+Thread 10 "qos.bin" hit Breakpoint 1, qos_populate_spolicy_classifiers ( tctxt=tctxt@entry=0x7fb2b00088e0) at ./feature/qos/app/qos_confd_spolicy_oper.c:912 912 in ./feature/qos/app/qos_confd_spolicy_oper.c (gdb) cont Continuing.
+
+Thread 10 "qos.bin" hit Breakpoint 2, qos_populate_spolicy_class_action ( classname_str=classname_str@entry=0x7fb2c57f27c0 "system-bpdu", tctxt=tctxt@entry=0x7fb2b00088e0) at ./feature/qos/app/qos_confd_spolicy_oper.c:1086 1086 in ./feature/qos/app/qos_confd_spolicy_oper.c (gdb) d Delete all breakpoints? (y or n) y (gdb) c
