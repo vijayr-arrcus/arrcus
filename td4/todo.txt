@@ -1,5 +1,11 @@
-1. Packet watcher
+1. finish excel sheet
 2. Event tracer.
-3. Scappy traffic generator
-4. code review
-
+3. Packet watcher
+  a. Need to make this work.
+4. image buildA
+5. Scappy traffic generator
+6. code review
+7. Catch all COPP.
+  a. what happens if we have user defined copp.
+  c. will the policing be reset what was before.
+8. Have to read the bcm case updates shivaram has provided.
