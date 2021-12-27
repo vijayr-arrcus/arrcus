@@ -13,7 +13,10 @@
 8. User defained COPP. -- Need clarity
   a. Where do we stand for the Class ID fix.
     i. in the future we want to avoid having multiple entries in the presel group.
-  b. why not use EFP.
+  b. why not use EFP.  Mon Dec 27 2021
     i. Do we support all the QSET and ASET in EFP.
     ii. how do we map CPU bound traffic in COSQ.
+    iii. Old to new qset mapping
+    iv.
 9. Have to read the bcm case updates shivaram has provided.
+10. verify gport match against CPU.
