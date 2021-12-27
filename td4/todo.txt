@@ -1,11 +1,19 @@
 1. finish excel sheet
 2. Event tracer.
-3. Packet watcher
+3. Packet watcher -- Need clarity
   a. Need to make this work.
-4. image buildA
+  b. Traffic is going to CPU but no estat.
+4. image build
 5. Scappy traffic generator
 6. code review
 7. Catch all COPP.
   a. what happens if we have user defined copp.
-  c. will the policing be reset what was before.
-8. Have to read the bcm case updates shivaram has provided.
+  b. will the policing be reset what was before.
+  c. if we move the reason code to presel what is the maximum number of presel ids that can be mapped to a group
+8. User defained COPP. -- Need clarity
+  a. Where do we stand for the Class ID fix.
+    i. in the future we want to avoid having multiple entries in the presel group.
+  b. why not use EFP.
+    i. Do we support all the QSET and ASET in EFP.
+    ii. how do we map CPU bound traffic in COSQ.
+9. Have to read the bcm case updates shivaram has provided.

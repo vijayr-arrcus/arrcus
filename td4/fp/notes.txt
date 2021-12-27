@@ -26,3 +26,7 @@ Thread 10 "qos.bin" hit Breakpoint 2, qos_populate_spolicy_class_action ( classn
 bcm_acl_insert_fp_entry
 bcm_xgs_qos_serv_pol_insert_fp_entry
 bcmsdk_policer_create
+
+FP_GROUP_TYPE_IFP_COPP:
+FP_GROUP_TYPE_IFP_DEFAULT_COPP:
+
