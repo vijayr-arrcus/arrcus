@@ -62,7 +62,7 @@ EID 0x00000002: gid=0x1,
     Part:1 Offset1: 44 Width1:   4
     DATA=0x0000000a
     MASK=0xffffffff
- DstClassL3
+ DstClassL4
     Part:1 Offset0: 64 Width0:  12
     DATA=0x00000002
     MASK=0x000000ff
