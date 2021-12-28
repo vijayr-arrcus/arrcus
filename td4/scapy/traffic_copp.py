@@ -1,12 +1,14 @@
+#!/usr/bin/python
 from scapy.all import *
 
-dst_ip="140.1.1.2"
+data="hello world 123456789123456789123456789123456789123456789"
 src_ip="140.1.1.1"
+dst_ip="140.1.1.2"
 dst_ip6="1140:1::2"
 src_ip6="1140:1::1"
 dmac="00:18:23:30:e5:d7"
 smac="00:00:05:9f:66:73"
-port="swp2s1"
+interface="swp2"
 
 def send_packet (p, intf, t_count):
     i = 0;
@@ -20,7 +22,7 @@ def send_ip_v6_traffic ():
     return pkt
 
 def send_ip_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip6, dst=dst_ip6)/data
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/data
     return pkt
 
 def send_bgp_v4_traffic ():
@@ -47,6 +49,7 @@ def send_stp_traffic ():
 # LACP:
 def send_lacp_traffic ():
     pkt = Ether(src=smac, dst="01:80:C2:00:00:02")/data
+    return pkt
 
 # ISIS:
 def send_isis_traffic ():
@@ -67,16 +70,17 @@ def send_isis_traffic ():
 def send_vrrp_v4_traffic ():
     pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/VRRP()/data
     return pkt
+
 def send_vrrp_v6_traffic ():
     pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/VRRP()/data
     return pkt
 
 def send_trace_route_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=33434, sport=33434)/data
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=33434, sport=33434)/data
     return pkt
 
 def send_trace_route_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=33434, sport=33434)/data
+    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=33434, sport=33434)/data
     return pkt
 
 # SSH/TELNET:
@@ -110,29 +114,29 @@ def send_ssh_v6_traffic ():
 
 # TFTP:
 def send_tftp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=69, sport=10000)/data
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=69, sport=10000)/data
     return pkt
 
 def send_tftp_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=69, sport=10000)/data
+    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=69, sport=10000)/data
     return pkt
 
 # SFTP:
 def send_sftp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=115, sport=10000)/data
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=115, sport=10000)/data
     return pkt
 
 def send_sftp_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=115, sport=10000)/data
+    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=115, sport=10000)/data
     return pkt
 
 # NTP:
 def send_ntp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=123, sport=10000)/data
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=123, sport=10000)/data
     return pkt
 
 def send_ntp_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=123, sport=10000)/data
+    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=123, sport=10000)/data
     return pkt
 
 def main(argv):
@@ -199,14 +203,14 @@ def main(argv):
         if in_traffic_class == 17:
             p = send_tftp_v6_traffic()
         if in_traffic_class == 18:
-            p = send_stftp_v4_traffic()
+            p = send_sftp_v4_traffic()
         if in_traffic_class == 19:
-            p = send_stftp_v6_traffic()
+            p = send_sftp_v6_traffic()
         if in_traffic_class == 20:
             p = send_ntp_v4_traffic()
         if in_traffic_class == 21:
             p = send_ntp_v6_traffic()
         send_packet(p, interface, pkt_cnt)
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     main(sys.argv[1:])
