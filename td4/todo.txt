@@ -20,3 +20,4 @@
   a. there are some drop cancel rules, need to understand those.
 10. look at flex counters code.
 11. old new aset, qset mapping.
+12. The QSET event bit size using hint.
