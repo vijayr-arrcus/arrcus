@@ -25,8 +25,34 @@ def send_ip_v4_traffic ():
     pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/data
     return pkt
 
+def send_lldp_traffic ():
+    mac_lldp_multicast = '01:80:c2:00:00:0e'
+    chassis = bytearray(7)
+    chassis[0:3] = (0x02, 0x06, 0x07)
+    chassis[3:] = str.encode('fakey', 'utf-8')
+    sysname = bytearray(7)
+    sysname[0:2] = (0x0a, 0x05)
+    sysname[2:] = str.encode('Lies!', 'utf-8')
+    sysdesc = bytearray(12)
+    sysdesc[0:2] = (0x0c, 0x0a)
+    sysdesc[2:] = str.encode('MS-DOS 1.0', 'utf-8')
+    portID = bytearray((0x04, 0x07, 0x03, 0x00, 0x01, 0x02, 0xff, 0xfe, 0xfd)) # fake MAC address
+    TTL = bytearray((0x06,0x02, 0x00,0x78))
+    end = bytearray((0x00, 0x00))
+    payload = bytes(chassis + portID + TTL + sysname + sysdesc + end)
+    pkt = Ether(src=smac, dst=mac_lldp_multicast, type=0x88cc)/Raw(load=bytes(payload))/Padding(b'\x00\x00\x00\x00')
+    return pkt
+
+def send_ospf_v6_traffic ():
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip6, dst=dst_ip6)/OSPFv3_Hdr(src='172.17.2.2')/OSPFv3_Hello(router='172.17.2.2',backup='172.17.2.1',neighbor='172.17.2.1')
+    return pkt
+
+def send_ospf_v4_traffic ():
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/OSPF_Hdr(src='172.17.2.2')/OSPF_Hello(router='172.17.2.2',backup='172.17.2.1',neighbor='172.17.2.1')
+    return pkt
+
 def send_bgp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=179, sport=179)/data
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=179, sport=179)
     return pkt
 
 def send_bgp_v6_traffic ():
@@ -38,7 +64,17 @@ def send_icmp_v4_traffic ():
     return pkt
 
 def send_icmp_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/ICMPv6EchoRequest()/data
+    print("1. Router Solicitation")
+    print("2. Router Advertisement")
+    print("3. ND-NS")
+    print("4. ND-NA")
+    icmp_sub_text = input("Enter ICMP type > ")
+    choice = int(icmp_sub_text)
+    if choice == 1:
+    if choice == 4:
+    if choice == 3:
+    if choice == 4:
+	pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/ICMPv6ND_RA()/ ICMPv6NDOptPrefixInfo(prefix="2001:db8:cafe:deca::", prefixlen=64)/ ICMPv6NDOptSrcLLAddr(lladdr="00:b0:de:ad:be:ef"), loop=1, inter=3)
     return pkt
 
 # STP:
@@ -68,11 +104,11 @@ def send_isis_traffic ():
 
 # VRRP:
 def send_vrrp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/VRRP()/data
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/VRRP()
     return pkt
 
 def send_vrrp_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/VRRP()/data
+    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/VRRP()
     return pkt
 
 def send_trace_route_v4_traffic ():
