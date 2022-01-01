@@ -18,11 +18,11 @@ def send_packet (p, intf, t_count):
 
 def send_ip_v6_traffic ():
     # IP/IP6
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/data
+    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)
     return pkt
 
 def send_ip_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/data
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)
     return pkt
 
 def send_lldp_traffic ():
@@ -52,39 +52,57 @@ def send_ospf_v4_traffic ():
     return pkt
 
 def send_bgp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=179, sport=179)
+    print("1. dport 179")
+    print("2. sport 179")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=179, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(sport=179, dport=10000)
     return pkt
 
 def send_bgp_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=179, sport=179)/data
+    print("1. dport 179")
+    print("2. sport 179")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=179, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(sport=179, dport=10000)
     return pkt
 
 def send_icmp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/ICMP()/data
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/ICMP()
     return pkt
 
 def send_icmp_v6_traffic ():
     print("1. Router Solicitation")
     print("2. Router Advertisement")
-    print("3. ND-NS")
-    print("4. ND-NA")
+    print("3. Neighbor Solicitation")
+    print("4. Neighbor Advertisement")
     icmp_sub_text = input("Enter ICMP type > ")
     choice = int(icmp_sub_text)
     if choice == 1:
-    if choice == 4:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/ICMPv6ND_RS()
+    if choice == 2:
+# ETHER_BROADCAST
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/ICMPv6ND_RA()
     if choice == 3:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/ICMPv6ND_NS(tgt=dst_ip6)
     if choice == 4:
-	pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/ICMPv6ND_RA()/ ICMPv6NDOptPrefixInfo(prefix="2001:db8:cafe:deca::", prefixlen=64)/ ICMPv6NDOptSrcLLAddr(lladdr="00:b0:de:ad:be:ef"), loop=1, inter=3)
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/ICMPv6ND_NA(tgt=dst_ip6)/ICMPv6NDOptDstLLAddr()
     return pkt
 
 # STP:
 def send_stp_traffic ():
-    pkt = Ether(src=smac, dst="01:80:C2:00:00:00")/LLC()/STP()/data
+    pkt = Ether(src=smac, dst="01:80:C2:00:00:00")/LLC()/STP()
     return pkt
 
 # LACP:
 def send_lacp_traffic ():
-    pkt = Ether(src=smac, dst="01:80:C2:00:00:02")/data
+    pkt = Ether(src=smac, dst="01:80:C2:00:00:02")
     return pkt
 
 # ISIS:
@@ -95,11 +113,11 @@ def send_isis_traffic ():
     isis_sub_text = input("Enter isis traffic type > ")
     choice = int(isis_sub_text)
     if choice == 1:
-        pkt = Ether(src=smac, dst="01:80:C2:00:00:14")/data
+        pkt = Ether(src=smac, dst="01:80:C2:00:00:14")
     if choice == 2:
-        pkt = Ether(src=smac, dst="01:80:C2:00:00:15")/data
+        pkt = Ether(src=smac, dst="01:80:C2:00:00:15")
     if choice == 3:
-        pkt = Ether(src=smac, dst="09:00:2b:00:00:05")/data
+        pkt = Ether(src=smac, dst="09:00:2b:00:00:05")
     return pkt
 
 # VRRP:
@@ -112,67 +130,242 @@ def send_vrrp_v6_traffic ():
     return pkt
 
 def send_trace_route_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=33434, sport=33434)/data
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=33434, sport=33434)
     return pkt
 
 def send_trace_route_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=33434, sport=33434)/data
+    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=33434, sport=33434)
     return pkt
 
 # SSH/TELNET:
 def send_ssh_v4_traffic ():
     print("1. dport 21 ")
     print("2. dport 22 ")
-    print("3. dport 23 ")
-    ssh_v4_text = input("Enter ssh v4 traffic type > ")
-    choice = int(ssh_v4_text)
+    print("3. sport 21 ")
+    print("4. sport 22 ")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
     if choice == 1:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=21, sport=10000)/data
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=21, sport=10000)
     if choice == 2:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=22, sport=10000)/data
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=22, sport=10000)
     if choice == 3:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=23, sport=10000)/data
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(sport=21, dport=10000)
+    if choice == 4:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(sport=22, dport=10000)
     return pkt
+
+
+def send_telnet_v4_traffic ():
+    print("1. dport 23 ")
+    print("2. sport 23 ")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=23, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(sport=10000, dport=23)
+    return pkt
+
+def send_radius_v4_traffic ():
+    print("1. dport 1812 ")
+    print("2. dport 1813 ")
+    print("3. dport 1645 ")
+    print("4. dport 1646 ")
+    print("5. sport 1812 ")
+    print("6. sport 1813 ")
+    print("7. sport 1645 ")
+    print("8. sport 1646 ")
+    in_text = input("Enter data type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=1812, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=1813, sport=10000)
+    if choice == 3:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=1645, sport=10000)
+    if choice == 4:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=1646, sport=10000)
+    if choice == 5:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=1000, sport=1812)
+    if choice == 6:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=1000, sport=1813)
+    if choice == 7:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=1000, sport=1645)
+    if choice == 8:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=1000, sport=1646)
+    return pkt
+
+def send_sftp_v6_traffic ():
+    print("1. dport 115")
+    print("2. sport 115")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=115, sport=1000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=1000, sport=115)
+    return pkt
+
+def send_snmp_v4_traffic ():
+    print("1. dport 161 ")
+    print("2. dport 162 ")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=161, sport=1000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=162, sport=1000)
+    return pkt
+
+def send_tacacs_v4_traffic ():
+    print("1. dport 49 ")
+    print("2. sport 49 ")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=49, sport=1000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=1000, sport=49)
+    return pkt
+
+def send_snmp_v6_traffic ():
+    print("1. dport 161 ")
+    print("2. dport 162 ")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=161, sport=1000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=162, sport=1000)
+    return pkt
+
+def send_tacacs_v6_traffic ():
+    print("1. dport 49 ")
+    print("2. sport 49 ")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=49, sport=1000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=1000, sport=49)
+    return pkt
+
+def send_radius_v6_traffic ():
+    print("1. dport 1812 ")
+    print("2. dport 1813 ")
+    print("3. dport 1645 ")
+    print("4. dport 1646 ")
+    print("5. sport 1812 ")
+    print("6. sport 1813 ")
+    print("7. sport 1645 ")
+    print("8. sport 1646 ")
+    in_text = input("Enter data type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=1812, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=1813, sport=10000)
+    if choice == 3:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=1645, sport=10000)
+    if choice == 4:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=1646, sport=10000)
+    if choice == 5:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=1000, sport=1812)
+    if choice == 6:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=1000, sport=1813)
+    if choice == 7:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=1000, sport=1645)
+    if choice == 8:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=1000, sport=1646)
+    return pkt
+
+
+def send_telnet_v6_traffic ():
+    print("1. dport 23 ")
+    print("2. sport 23 ")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=23, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(sport=10000, dport=23)
+    return pkt
+
 
 def send_ssh_v6_traffic ():
     print("1. dport 21 ")
     print("2. dport 22 ")
-    print("3. dport 23 ")
-    ssh_v6_text = input("Enter ssh v6 traffic type > ")
-    choice = int(ssh_v6_text)
+    print("3. sport 21 ")
+    print("4. sport 22 ")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
     if choice == 1:
-        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=21, sport=10000)/data
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=21, sport=10000)
     if choice == 2:
-        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=22, sport=10000)/data
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=22, sport=10000)
     if choice == 3:
-        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=23, sport=10000)/data
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(sport=21, dport=10000)
+    if choice == 4:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(sport=22, dport=10000)
     return pkt
 
 # TFTP:
 def send_tftp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=69, sport=10000)/data
+    print("1. dport 69 ")
+    print("2. sport 69 ")
+    in_text = input("Enter traffic type > ")
+    choice = int(text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=69, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(sport=69, dport=10000)
     return pkt
 
 def send_tftp_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=69, sport=10000)/data
+    print("1. dport 69 ")
+    print("2. sport 69 ")
+    in_text = input("Enter traffic type > ")
+    choice = int(text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=69, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(sport=69, dport=10000)
     return pkt
 
 # SFTP:
 def send_sftp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=115, sport=10000)/data
-    return pkt
-
-def send_sftp_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/TCP(dport=115, sport=10000)/data
+    print("1. dport 115")
+    print("2. sport 115")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=115, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/TCP(dport=10000, sport=115)
     return pkt
 
 # NTP:
 def send_ntp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=123, sport=10000)/data
+    print("1. dport 123")
+    print("2. sport 123")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=123, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(sport=123, dport=10000)
     return pkt
 
 def send_ntp_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=123, sport=10000)/data
+    print("1. dport 123")
+    print("2. sport 123")
+    in_text = input("Enter traffic type > ")
+    choice = int(in_text)
+    if choice == 1:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=123, sport=10000)
+    if choice == 2:
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(sport=123, dport=10000)
     return pkt
 
 def main(argv):
