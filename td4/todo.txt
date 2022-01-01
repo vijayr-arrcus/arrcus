@@ -21,3 +21,25 @@
 10. look at flex counters code.
 11. old new aset, qset mapping.
 12. The QSET event bit size using hint.
+
+Cint Verification:
+1. multiple hints.
+2. size of the field based on the interested reason codes.
+3. turn off all copy to cpu reason codes except for bcmPktTraceEventIngressIfpMeter
+      a. make sure that only the policed green packet is punted to CPU.
+      b. if there is no match then no copy to CPU.
+      c. if we turn bcmPktTraceEventIngressIfpMeter also off then even if there is a match or not no copy to CPU.
+      d. Have the 4 reason code + dst gport in presel and have FE configured.
+        - Send traffic and verify if one of the 5 presel matches + main TCAM match, traffic policed.
+        - If no match in presel then packet should be dropped.
+        - Match is presel but no match in main tcam packet should be dropped.
+4. turn off all copy to cpu reason codes except for bcmPktTraceEventIngressIfp
+      a. make sure that only the policed green packet is punted to CPU.
+      b. if there is no match then no copy to CPU.
+      c. if we turn bcmPktTraceEventIngressIfpMeter also off then even if there is a match or not no copy to CPU.
+      d. Have the 4 reason code + dst gport in presel and have FE configured.
+        - Send traffic and verify if one of the 5 presel matches + main TCAM match, traffic policed.
+        - If no match in presel then packet should be dropped.
+        - Match is presel but no match in main tcam packet should be dropped.
+5. Do we need both bcmPktTraceEventIngressIfp and bcmPktTraceEventIngressIfpMeter to be enabled.
+
