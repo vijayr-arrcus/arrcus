@@ -225,6 +225,48 @@ EID 0x00000074: gid=0x2,
 BCM.0>
  */
 
+/*
+ * cint>
+ * cint> print min;
+ * print min;
+ * int min = 33434 (0x829a)
+ * cint>
+ * cint>
+ * cint> print max;
+ * print max;
+ * int max = 33534 (0x82fe)
+ * cint>
+ * BCM.0>
+ BCM.0>
+BCM.0> fp show entry 123
+fp show entry 123
+EID 0x0000007b: gid=0x2,
+ slice=3, slice_idx=0x6, part=0, prio=0x3d1, flags=0x10602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x6, part=1, prio=0x3d1, flags=0x10604, Installed, Enabled, color_indep=1
+
+ RangeCheck
+    Part:0 Offset1: 64 Width1:  16
+    Part:1 Offset0:  0 Width0:  16
+    DATA=0x00000002
+    MASK=0x00000002
+ DstPort
+    Part:0 Offset0: 48 Width0:  16
+    Part:0 Offset1: 152 Width1:   1
+    DATA=0x00000000
+    MASK=0x0001ffff
+ IpType
+    Part:0 Offset0: 104 Width0:   4
+    Part:1 Offset1: 158 Width1:   1
+    DATA=0x00000000
+    MASK=0x0000000e
+         action={act=RpDrop, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=1(0x1), param1=1(0x1), param2=0(0), param3=0(0)}
+         policer={pid=0x2d, level=0, peak_kbits_sec=0, peak_kbits_burst=0, commit_kbits_sec=0x3e8, commit_kbits_burst=0xc8, PacketBased=0x1, mode=0, entries=2, Clean}
+         statistics={stat id 44  slice = 9 idx=15 entries=1}{Packets}{Bytes}
+         Extended statistics=NULL
+BCM.0>*
+ */
+
 void
 bcm_ipv4_entry_create_dst_any_range (int unit)
 {
