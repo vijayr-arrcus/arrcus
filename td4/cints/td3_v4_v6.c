@@ -79,16 +79,19 @@ my_bcm_create_fp_group (int unit)
   print fp_group_config;
 }
 bcm_field_entry_t v4_any_dst_fp_entry_id;
+bcm_field_entry_t v4_any_dst_range_fp_entry_id;
 bcm_field_entry_t v4_any_src_fp_entry_id;
 bcm_field_entry_t v4_opt_dst_fp_entry_id;
 bcm_field_entry_t v4_opt_src_fp_entry_id;
 
 int v4_any_dst_fp_stats_id;
+int v4_any_dst_range_fp_stats_id;
 int v4_any_src_fp_stats_id;
 int v4_opt_dst_fp_stats_id;
 int v4_opt_src_fp_stats_id;
 
 bcm_policer_t v4_any_dst_policer_id;
+bcm_policer_t v4_any_dst_range_policer_id;
 bcm_policer_t v4_any_src_policer_id;
 bcm_policer_t v4_opt_dst_policer_id;
 bcm_policer_t v4_opt_src_policer_id;
@@ -185,6 +188,55 @@ bcm_ipv4_entry_create_dst_any (int unit)
   print bcm_field_entry_policer_attach(unit, v4_any_dst_fp_entry_id,
                                        0, v4_any_dst_policer_id);
   print bcm_field_entry_install(unit, v4_any_dst_fp_entry_id);
+}
+
+void
+bcm_ipv4_entry_create_dst_any_range (int unit)
+{
+  int flags = BCM_FIELD_RANGE_DSTPORT;
+  bcm_range_config_t range_config;
+  bcm_field_range_t range_id;
+  bcm_policer_config_t pol_cfg;
+  bcm_field_stat_t stats[2] = {bcmFieldStatPackets, bcmFieldStatBytes};
+  bcm_pbmp_t              pbmp_mask;
+  int min = 0, max = 5;
+
+  print bcm_field_entry_create(unit, fp_group_config.group, &v4_any_dst_range_fp_entry_id);
+  print bcm_field_range_create(unit, &range_id, flags, min, max);
+  print range_id;
+ // print bcm_field_group_ports_get(unit, fp_group_config.group, &pbmp_mask);
+//  print bcm_range_config_t_init(&range_config);
+ // range_config.rtype = bcmRangeTypeL4DstPort;
+  //range_config.min = min;
+//  range_config.max = max;
+ // range_config.ports = pbmp_mask;
+ // print bcm_range_create(unit, 0, &range_config);
+//  print range_config;
+
+  print bcm_field_qualify_RangeCheck(unit, v4_any_dst_range_fp_entry_id, range_id, 0);
+
+  print v4_any_dst_range_fp_entry_id;
+  print bcm_field_qualify_clear(unit, v4_any_dst_range_fp_entry_id);
+  print bcm_field_qualify_IpType(unit, v4_any_dst_range_fp_entry_id, bcmFieldIpTypeIpv4Any);
+  print bcm_field_qualify_DstPort(unit, v4_any_dst_range_fp_entry_id, 0, 0xFFFFFFFF, 0, 0xFFFFFFFF);
+  print bcm_field_entry_prio_set(unit, v4_any_dst_range_fp_entry_id, (1000-23));
+
+  print bcm_field_stat_create(unit, fp_group_config.group,
+                               2,stats , &v4_any_dst_range_fp_stats_id);
+  print bcm_field_entry_stat_attach(unit, v4_any_dst_range_fp_entry_id, v4_any_dst_range_fp_stats_id);
+  print bcm_field_action_add(unit, v4_any_dst_range_fp_entry_id, bcmFieldActionCosQCpuNew, local_tc, local_tc);
+  print bcm_field_action_add(unit, v4_any_dst_range_fp_entry_id, bcmFieldActionRpDrop, 0, 0);
+  bcm_policer_config_t_init(&pol_cfg);
+  pol_cfg.mode = bcmPolicerModeSrTcm;
+  pol_cfg.ckbits_sec = 1000;
+  pol_cfg.ckbits_burst = 200;
+  pol_cfg.flags = BCM_POLICER_MODE_PACKETS;
+  pol_cfg.flags |= BCM_POLICER_COLOR_BLIND;
+  print bcm_policer_create(unit, &pol_cfg, &v4_any_dst_range_policer_id);
+
+  print bcm_field_entry_policer_attach(unit, v4_any_dst_range_fp_entry_id,
+                                       0, v4_any_dst_range_policer_id);
+  print bcm_field_entry_install(unit, v4_any_dst_range_fp_entry_id);
 }
 
 /*
