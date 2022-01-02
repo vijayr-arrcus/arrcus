@@ -30,3 +30,9 @@ bcmsdk_policer_create
 FP_GROUP_TYPE_IFP_COPP:
 FP_GROUP_TYPE_IFP_DEFAULT_COPP:
 
+
+__system_default_copp_policy__
+  copp_default_policy_name
+  copp_create_and_publish_default_policy
+
+bcm_field_qualify_RangeCheck
