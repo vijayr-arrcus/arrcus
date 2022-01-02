@@ -190,6 +190,41 @@ bcm_ipv4_entry_create_dst_any (int unit)
   print bcm_field_entry_install(unit, v4_any_dst_fp_entry_id);
 }
 
+/*
+ *
+  int min = 0, max = 5;
+  With min = 0 and max = 5 we always get data =  0x00000040;
+  with min = 0 and max = 6 data = 0x00000080;
+BCM.0>
+BCM.0> fp show entry 116
+fp show entry 116
+EID 0x00000074: gid=0x2,
+ slice=3, slice_idx=0, part=0, prio=0x3d1, flags=0x10602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0, part=1, prio=0x3d1, flags=0x10604, Installed, Enabled, color_indep=1
+
+ RangeCheck
+    Part:0 Offset1: 64 Width1:  16
+    Part:1 Offset0:  0 Width0:  16
+    DATA=0x00000040
+    MASK=0x00000040
+ DstPort
+    Part:0 Offset0: 48 Width0:  16
+    Part:0 Offset1: 152 Width1:   1
+    DATA=0x00000000
+    MASK=0x0001ffff
+ IpType
+    Part:0 Offset0: 104 Width0:   4
+    Part:1 Offset1: 158 Width1:   1
+    DATA=0x00000000
+    MASK=0x0000000e
+         action={act=RpDrop, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=1(0x1), param1=1(0x1), param2=0(0), param3=0(0)}
+         policer={pid=0x26, level=0, peak_kbits_sec=0, peak_kbits_burst=0, commit_kbits_sec=0x3e8, commit_kbits_burst=0xc8, PacketBased=0x1, mode=0, entries=2, Clean}
+         statistics={stat id 37  slice = 9 idx=3 entries=1}{Packets}{Bytes}
+         Extended statistics=NULL
+BCM.0>
+ */
+
 void
 bcm_ipv4_entry_create_dst_any_range (int unit)
 {
@@ -202,6 +237,7 @@ bcm_ipv4_entry_create_dst_any_range (int unit)
   int min = 0, max = 5;
 
   print bcm_field_entry_create(unit, fp_group_config.group, &v4_any_dst_range_fp_entry_id);
+  print v4_any_dst_range_fp_entry_id;
   print bcm_field_range_create(unit, &range_id, flags, min, max);
   print range_id;
  // print bcm_field_group_ports_get(unit, fp_group_config.group, &pbmp_mask);
@@ -213,10 +249,8 @@ bcm_ipv4_entry_create_dst_any_range (int unit)
  // print bcm_range_create(unit, 0, &range_config);
 //  print range_config;
 
-  print bcm_field_qualify_RangeCheck(unit, v4_any_dst_range_fp_entry_id, range_id, 0);
-
-  print v4_any_dst_range_fp_entry_id;
   print bcm_field_qualify_clear(unit, v4_any_dst_range_fp_entry_id);
+  print bcm_field_qualify_RangeCheck(unit, v4_any_dst_range_fp_entry_id, range_id, 0);
   print bcm_field_qualify_IpType(unit, v4_any_dst_range_fp_entry_id, bcmFieldIpTypeIpv4Any);
   print bcm_field_qualify_DstPort(unit, v4_any_dst_range_fp_entry_id, 0, 0xFFFFFFFF, 0, 0xFFFFFFFF);
   print bcm_field_entry_prio_set(unit, v4_any_dst_range_fp_entry_id, (1000-23));
