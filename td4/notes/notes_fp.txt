@@ -36,3 +36,29 @@ __system_default_copp_policy__
   copp_create_and_publish_default_policy
 
 bcm_field_qualify_RangeCheck
+
+Catch all case ?
+
+EID 0x00000001: gid=0x1,
+ slice=0, slice_idx=0, part=0, prio=0x7ffffffd, flags=0x10602, Installed, Enabled, color_indep=1
+ slice=1, slice_idx=0, part=1, prio=0x7ffffffd, flags=0x10604, Installed, Enabled, color_indep=1
+
+ DstPort
+    Part:0 Offset0: 48 Width0:  16
+    Part:0 Offset1: 152 Width1:   1
+    DATA=0x00000000
+    MASK=0x0001ffff
+ PacketRes
+    Part:1 Offset0: 40 Width0:   4
+    Part:1 Offset1: 44 Width1:   4
+    DATA=0x0000000a
+    MASK=0xffffffff
+ DstClassL3
+    Part:1 Offset0: 64 Width0:  12
+    DATA=0x00000001
+    MASK=0x000000ff
+         action={act=CosQCpuNew, param0=1(0x1), param1=1(0x1), param2=0(0), param3=0(0)}
+         action={act=RpDrop, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         policer={pid=0x21, level=0, peak_kbits_sec=0, peak_kbits_burst=0, commit_kbits_sec=0x7d0, commit_kbits_burst=0x200, PacketBased=0x1, mode=0, entries=2, Clean}
+         statistics={stat id 1  slice = 8 idx=2 entries=2}{GreenBytes}{GreenPackets}{RedBytes}{RedPackets}
+         Extended statistics=NULL
