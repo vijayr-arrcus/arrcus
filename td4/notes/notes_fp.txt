@@ -36,3 +36,5 @@ __system_default_copp_policy__
   copp_create_and_publish_default_policy
 
 bcm_field_qualify_RangeCheck
+
+MON_ING_TRACE_EVENT
