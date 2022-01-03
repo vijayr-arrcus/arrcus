@@ -1,5 +1,6 @@
 #!/usr/bin/python
 from scapy.all import *
+from scapy.contrib.ospf import *
 
 data="hello world 123456789123456789123456789123456789123456789"
 src_ip="140.1.1.1"
@@ -51,11 +52,11 @@ def send_arp_traffic ():
     return pkt;
 
 def send_ospf_v6_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip6, dst=dst_ip6)/OSPFv3_Hdr(src='172.17.2.2')/OSPFv3_Hello(router='172.17.2.2',backup='172.17.2.1',neighbor='172.17.2.1')
+    pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/OSPFv3_Hdr()/OSPFv3_Hello()
     return pkt
 
 def send_ospf_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/OSPF_Hdr(src='172.17.2.2')/OSPF_Hello(router='172.17.2.2',backup='172.17.2.1',neighbor='172.17.2.1')
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/OSPF_Hdr()/OSPF_Hello()
     return pkt
 
 def send_bgp_v4_traffic ():
@@ -271,7 +272,7 @@ def send_icmp_monitor_v6_traffic ():
     print("3. type 1 code 4")
     print("4. type 3 code 0")
     print("5. type 3 code 1")
-    print("5. dport 33434")
+    print("6. dport 33434")
     in_text = input("Enter traffic type > ")
     choice = int(in_text)
     if choice == 1:
@@ -296,13 +297,13 @@ def send_dhcp_v6_traffic ():
     in_text = input("Enter traffic type > ")
     choice = int(in_text)
     if choice == 1:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src, dst=dst)/UDP(dport=546, sport=546)
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=546, sport=546)
     if choice == 2:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src, dst=dst)/UDP(dport=546, sport=547)
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=546, sport=547)
     if choice == 3:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src, dst=dst)/UDP(dport=547, sport=546)
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=547, sport=546)
     if choice == 4:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src, dst=dst)/UDP(dport=547, sport=547)
+        pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=547, sport=547)
     return pkt
 
 def send_dhcp_v4_traffic ():
@@ -313,13 +314,13 @@ def send_dhcp_v4_traffic ():
     in_text = input("Enter traffic type > ")
     choice = int(in_text)
     if choice == 1:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src, dst=dst)/UDP(dport=67, sport=67)
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=67, sport=67)
     if choice == 2:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src, dst=dst)/UDP(dport=67, sport=68)
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=67, sport=68)
     if choice == 3:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src, dst=dst)/UDP(dport=68, sport=67)
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=68, sport=67)
     if choice == 4:
-        pkt = Ether(src=smac, dst=dmac)/IP(src=src, dst=dst)/UDP(dport=68, sport=68)
+        pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=68, sport=68)
     return pkt
 
 def send_snmp_v6_traffic ():
@@ -408,7 +409,7 @@ def send_tftp_v4_traffic ():
     print("1. dport 69 ")
     print("2. sport 69 ")
     in_text = input("Enter traffic type > ")
-    choice = int(text)
+    choice = int(in_text)
     if choice == 1:
         pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=69, sport=10000)
     if choice == 2:
@@ -419,7 +420,7 @@ def send_tftp_v6_traffic ():
     print("1. dport 69 ")
     print("2. sport 69 ")
     in_text = input("Enter traffic type > ")
-    choice = int(text)
+    choice = int(in_text)
     if choice == 1:
         pkt = Ether(src=smac, dst=dmac)/IPv6(src=src_ip6, dst=dst_ip6)/UDP(dport=69, sport=10000)
     if choice == 2:
@@ -512,95 +513,139 @@ def main(argv):
 
         in_text = input("Enter traffic option > ")
         in_traffic_class = int(in_text)
-        print"Input provided is", in_traffic_class
         if in_traffic_class == 1:
+            tc_str = "STP"
             p = send_stp_traffic()
         if in_traffic_class == 2:
+            tc_str = "LACP"
             p = send_lacp_traffic()
         if in_traffic_class == 3:
+            tc_str = "isis"
             p = send_isis_traffic()
         if in_traffic_class == 4:
+            tc_str = "bgp"
             p = send_bgp_v4_traffic()
         if in_traffic_class == 5:
+            tc_str = "ospf"
             p = send_ospf_v4_traffic()
         if in_traffic_class == 6:
+            tc_str = "bgp6"
             p = send_bgp_v6_traffic()
         if in_traffic_class == 7:
+            tc_str = "ospf6"
             p = send_ospf_v6_traffic()
         if in_traffic_class == 8:
+            tc_str = "lldp"
             p = send_lldp_traffic()
         if in_traffic_class == 9:
             p = send_vrrp_v4_traffic()
+            tc_str = "vrrp4"
         if in_traffic_class == 10:
+            tc_str = "vrrp6"
             p = send_vrrp_v6_traffic()
         if in_traffic_class == 11:
+            tc_str = "icmp6"
             p = send_icmp_v6_traffic()
         if in_traffic_class == 12:
+            tc_str = "sftp4"
             p = send_sftp_v4_traffic()
         if in_traffic_class == 13:
+            tc_str = "tftp4"
             p = send_tftp_v4_traffic()
         if in_traffic_class == 14:
+            tc_str = "ntp4"
             p = send_ntp_v4_traffic()
         if in_traffic_class == 15:
+            tc_str = "ssh4"
             p = send_ssh_v4_traffic()
         if in_traffic_class == 16:
+            tc_str = "telnet4"
             p = send_telnet_v4_traffic()
         if in_traffic_class == 17:
+            tc_str = "radius4"
             p = send_radius_v4_traffic()
         if in_traffic_class == 18:
+            tc_str = "tacacs4"
             p = send_tacacs_v4_traffic()
         if in_traffic_class == 19:
+            tc_str = "snmp4"
             p = send_snmp_v4_traffic()
         if in_traffic_class == 20:
+            tc_str = "sftp6"
             p = send_sftp_v6_traffic()
         if in_traffic_class == 21:
+            tc_str = "tftp6"
             p = send_tftp_v6_traffic()
         if in_traffic_class == 22:
+            tc_str = "ntp6"
             p = send_ntp_v6_traffic()
         if in_traffic_class == 23:
+            tc_str = "ssh6"
             p = send_ssh_v6_traffic()
         if in_traffic_class == 24:
+            tc_str = "telnet6"
             p = send_telnet_v6_traffic()
         if in_traffic_class == 25:
+            tc_str = "radius6"
             p = send_radius_v6_traffic()
         if in_traffic_class == 26:
+            tc_str = "tacacs6"
             p = send_tacacs_v6_traffic()
         if in_traffic_class == 27:
+            tc_str = "snmp6"
             p = send_snmp_v6_traffic()
         if in_traffic_class == 28:
+            tc_str = "icmp4"
             p = send_icmp_monitor_v4_traffic()
         if in_traffic_class == 29:
+            tc_str = "icmp-mon6"
             p = send_icmp_monitor_v6_traffic()
         if in_traffic_class == 30:
+            tc_str = "dhcp4"
             p = send_dhcp_v4_traffic()
         if in_traffic_class == 31:
+            tc_str = "dhcp6"
             p = send_dhcp_v6_traffic()
         if in_traffic_class == 32:
+            tc_str = "arp"
             p = send_arp_traffic()
         if in_traffic_class == 33:
+            tc_str = "exception4"
             p = send_exception_v4_traffic()
         if in_traffic_class == 34:
+            tc_str = "exception6"
             p = send_exception_v6_traffic()
         if in_traffic_class == 35:
+            tc_str = "dst miss4"
             p = send_l3_dst_miss_v4_traffic()
         if in_traffic_class == 36:
+            tc_str = "dst miss6"
             p = send_l3_dst_miss_v6_traffic()
         if in_traffic_class == 37:
+            tc_str = "self-ip4"
             p = send_self_ip_v4_traffic()
         if in_traffic_class == 38:
+            tc_str = "self-ip6"
             p = send_self_ip_v6_traffic()
         if in_traffic_class == 39:
+            tc_str = "glean4"
             p = send_glean_v4_traffic()
         if in_traffic_class == 40:
+            tc_str = "glean6"
             p = send_glean_v6_traffic()
         if in_traffic_class == 41:
+            tc_str = "ip6"
             p = send_ip_v6_traffic()
         if in_traffic_class == 42:
+            tc_str = "ip4"
             p = send_ip_v4_traffic()
         if in_traffic_class == 43:
+            tc_str = "TraceRt4"
             p = send_trace_route_v4_traffic()
         if in_traffic_class == 44:
+            tc_str = "TraceRt6"
             p = send_trace_route_v6_traffic()
+        print"Input provided is", tc_str
 
 
         send_packet(p, interface, pkt_cnt)
