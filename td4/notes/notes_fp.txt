@@ -37,7 +37,6 @@ __system_default_copp_policy__
 
 bcm_field_qualify_RangeCheck
 
-<<<<<<< HEAD
 Catch all case ?
 
 EID 0x00000001: gid=0x1,
