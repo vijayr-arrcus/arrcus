@@ -13,6 +13,9 @@ interface="swp2"
 def send_packet (p, intf, t_count):
     i = 0;
     p.show()
+    k = chexdump(p , dump=True)
+    a  = k.replace(", 0x", "")
+    print a
     raw_input("Press key to continue")
     sendp(p, iface=intf, count=t_count)
 
