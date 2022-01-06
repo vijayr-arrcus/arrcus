@@ -69,3 +69,50 @@ bcmFieldQualifyDstType
 
 bcm56880_a0_dna_4_8_7_0_pkt_flexhdr.c
 bcm56880_a0_pkt_rxpmd.c
+
+IFP:
+BCM_IF_ERROR_RETURN(bcm_field_action_add(unit, entry,
+																				 bcmFieldActionEgressClassSelect,
+																				 BCM_FIELD_EGRESS_CLASS_SELECT_NEW,
+																				 0));
+BCM_IF_ERROR_RETURN(bcm_field_action_add(unit, entry,
+																				 bcmFieldActionNewClassId,
+																				 ifp_cls_id,
+																				 0));
+EFP:
+BCM_IF_ERROR_RETURN(bcm_field_qualify_IngressClassField(unit, entry, ifp_cls_id,
+                                                        ifp_cls_id_mask));
+
+
+
+BCM.0> l3 host show
+l3 host show
+     VRF Net Addr            INTF UL_INTF HIT
+--------------------------------------------
+0       0    140.1.1.2           100001 0    n
+BCM.0>
+BCM.0> l3 route show
+l3 route show
+        VRF      Net Addr           INTF UL_INTF  HIT FORTE
+--------------------------------------------
+0       0        0.0.0.0/0           100001 0    n n
+1       0        140.1.1.0/24        100001 0    n n
+BCM.0>
+BCM.0> l3 egress show
+l3 egress show
+EgrID        MAC Address   Intf      Port Module   MTU       Type Drop
+---------------------------------------------------------------
+100001  00:00:00:00:00:00  16383     0            0 16383    overlay   no
+100002  00:00:00:00:00:00  16383    -1 BlackHole     -1 16383    overlay  yes
+100003  34:ef:b6:41:ef:95      1   120            0 16383    overlay   no
+BCM.0>
+BCM.0> l3 intf show
+l3 intf show
+INTF  VID   MAC Address
+----------------------------------------------
+1     3966  e8:c5:7a:8f:91:3f  OverLay
+
+
+bcm_field_qualify_ForwardingType
+bcm_field_qualify_PacketStatus
+BCM_FIELD_PKT_STATUS_UCASTUNKNOWN

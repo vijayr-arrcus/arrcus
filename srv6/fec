@@ -34,3 +34,70 @@ offload_ctxt_obj_t offload_obj[] =
 
 extract_egress_id  -- ds_bcm_ingress_nh_hwid_get
     construct_bcm_route
+
+XGS
+    g_asic_global_ctxt.g_l3punt2cpu_egrobj
+    xlate_nhid_to_bcmsdk_egress_obj
+
+ //Lalit TODO This can come from config file at init time like in DNX
+  /* Create global shared copy to cpu nexthop */
+  bcm_l3_egress_t_init(&egr_obj);
+  egr_obj.intf = -1;
+  egr_obj.port = 0;
+  egr_obj.flags = BCM_L3_L2TOCPU;
+  if (cfg->init_flags == HW_BOOT_MODE_WARM) {
+    rv = bcm_l3_egress_find(unit, &egr_obj, &egr_obj_if);
+    if (BCM_E_NONE != rv) {
+      bcmsdk_trace_l3_gen_error(__FUNCTION__, "Failed to find global copy to "
+                        " cpu egress object after warm boot", bcm_errmsg(rv), unit);
+      rv = bcm_l3_egress_create(unit, 0, &egr_obj, &egr_obj_if);
+    }
+  } else {
+    rv = bcm_l3_egress_create(unit, 0, &egr_obj, &egr_obj_if);
+  }
+  if (BCM_E_NONE != rv) {
+    bcmsdk_trace_l3_gen_error(__FUNCTION__, "Failed to create global copy to cpu egress object",
+                      bcm_errmsg(rv), unit);
+    return RET_CODE_FAILURE;
+  } else {
+    g_asic_global_ctxt.g_l3punt2cpu_egrobj = egr_obj_if;
+  }
+
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0> cint
+cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint>
+cint> bcm_l3_egress_t egr_obj;
+bcm_l3_egress_t egr_obj;
+cint>
+cint> bcm_if_t egr_obj_if;
+bcm_if_t egr_obj_if;
+cint>
+cint> bcm_l3_egress_t_init(&egr_obj);
+bcm_l3_egress_t_init(&egr_obj);
+cint>
+cint> egr_obj.intf = -1;
+egr_obj.intf = -1;
+cint>
+cint> egr_obj.port = 0;
+egr_obj.port = 0;
+cint>
+cint> egr_obj.flags = BCM_L3_L2TOCPU;
+egr_obj.flags = BCM_L3_L2TOCPU;
+cint>
+cint> print bcm_l3_egress_find(unit, &egr_obj, &egr_obj_if);
+print bcm_l3_egress_find(unit, &egr_obj, &egr_obj_if);
+int $$ = 0 (0x0)
+cint>
+cint> print egr_obj_if
+print egr_obj_if
+
+;
+;
+int egr_obj_if = 100001 (0x186a1)
+cint>
