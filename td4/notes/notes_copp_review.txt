@@ -1,0 +1,33 @@
+1. Current Pipeline when compared to TD3.
+2. Qset Aset differences in TD3 and TD4.
+3. Match at DFP and recirculate.
+4. Match EFP and police
+5. Preselector to achieve MxN and catch all.
+6. No catch all for Reason Code
+7. Gport has now forward types as well.
+
+
+
+Reason Code:
+
+bcmPktTraceEventIngressL2SrcStaticMove ,
+bcmPktTraceEventIngressPktIntegrityCheckFailed ,
+bcmPktTraceEventIngressProtocolPkt,
+bcmPktTraceEventIngressL2DstLookupMiss,
+bcmPktTraceEventIngressL2DstLookup,
+bcmPktTraceEventIngressL3DstLookupMiss,
+bcmPktTraceEventIngressL3DstLookup,
+bcmPktTraceEventIngressL3HdrError,
+bcmPktTraceEventIngressL3TtlError
+
+For destination Types
+
+typedef enum bcm_field_DstType_e {
+	bcmFieldDstTypeL2EgrIntf = 0, /* L2 Outgoing Interface. */
+	bcmFieldDstTypeVp = 1, /* Virtual Port. */
+	bcmFieldDstTypeEcmp = 2, /* ECMP. */
+	bcmFieldDstTypeL3Egr = 3, /* Next Hop Index. */
+	bcmFieldDstTypeL2Mcast = 4, /* Layer2 Multicast. */
+	bcmFieldDstTypeL3Mcast = 5, /* Layer3 Multicast. */
+	bcmFieldDstTypeCount = 6 /* Always Last. Not a usable value. */
+} bcm_field_DstType_t;
