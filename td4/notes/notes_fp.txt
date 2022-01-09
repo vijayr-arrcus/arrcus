@@ -116,3 +116,5 @@ INTF  VID   MAC Address
 bcm_field_qualify_ForwardingType
 bcm_field_qualify_PacketStatus
 BCM_FIELD_PKT_STATUS_UCASTUNKNOWN
+
+set local-tc <0..7>
