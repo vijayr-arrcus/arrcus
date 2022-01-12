@@ -118,3 +118,6 @@ bcm_field_qualify_PacketStatus
 BCM_FIELD_PKT_STATUS_UCASTUNKNOWN
 
 set local-tc <0..7>
+
+bcmsdk_xgs_qos_cpu_port_sched_init
+qos_cpu_port_info_init_cb
