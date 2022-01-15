@@ -30,7 +30,7 @@ bcm_l3_route_t_init(&route_t);
 route_t.l3a_subnet = 0x0A010100;
 route_t.l3a_ip_mask = 0xffffff00;
 route_t.l3a_intf = egr_obj_if;
-route_t.l3a_vrf = 1;
+route_t.l3a_vrf = 0;
 route_t.l3a_opaque_ctrl_id = 6;
 rv = bcm_l3_route_add(unit, &route_t);
 if (BCM_FAILURE(rv)) {
@@ -41,7 +41,7 @@ bcm_l3_host_t_init(&host_t);
 host_t.l3a_subnet = 0x0A010101;
 host_t.l3a_ip_mask = 0xffffffff;
 host_t.l3a_intf = egr_obj_if;
-host_t.l3a_vrf = 1;
+host_t.l3a_vrf = 0;
 host_t.l3a_opaque_ctrl_id = 6;
 rv = bcm_l3_host_add(unit, &host_t);
 if (BCM_FAILURE(rv)) {
