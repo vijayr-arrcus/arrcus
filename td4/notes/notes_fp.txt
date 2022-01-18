@@ -70,7 +70,7 @@ bcmFieldQualifyDstType
 bcm56880_a0_dna_4_8_7_0_pkt_flexhdr.c
 bcm56880_a0_pkt_rxpmd.c
 
-IFP:
+IFP to EFP
 BCM_IF_ERROR_RETURN(bcm_field_action_add(unit, entry,
 																				 bcmFieldActionEgressClassSelect,
 																				 BCM_FIELD_EGRESS_CLASS_SELECT_NEW,
@@ -82,6 +82,8 @@ BCM_IF_ERROR_RETURN(bcm_field_action_add(unit, entry,
 EFP:
 BCM_IF_ERROR_RETURN(bcm_field_qualify_IngressClassField(unit, entry, ifp_cls_id,
                                                         ifp_cls_id_mask));
+
+BCM_IF_ERROR_RETURN(bcm_field_action_add(unit, entry, bcmFieldActionEgressClassSelect, BCM_FIELD_EGRESS_CLASS_SELECT_NEW, 0)); BCM_IF_ERROR_RETURN(bcm_field_action_add(unit, entry, bcmFieldActionNewClassId, ifp_cfg.ifp_src_cls_id, 0));
 
 
 
