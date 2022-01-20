@@ -1,20 +1,3 @@
-/*
- * =====================================================================================
- *
- *       Filename:  td4_route.c
- *
- *    Description:
- *
- *        Version:  1.0
- *        Created:  01/12/2022 05:43:02 PM
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  YOUR NAME (),
- *   Organization:
- *
- * =====================================================================================
- */
 #include <stdlib.h>
 cint_reset();
 int unit = 0;
