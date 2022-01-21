@@ -1,0 +1,20 @@
+BCM.0> fp list actions Exactmatch
+List of supported actions:
+CopyToCpu
+RedirectPort
+RedirectCancel
+RedirectIpmc
+RedirectMcast
+Drop
+DropCancel
+StatGroup
+IngressDstTypeSelect
+AssignOpaqueObject0
+StatGroupWithoutCounterIndex
+VxlanGbpEnable
+AssignVxlanGbpId
+BCM.0>
+BCM.0> fi
+Unknown command: fi
+BCM.0>
+BCM.0> log off

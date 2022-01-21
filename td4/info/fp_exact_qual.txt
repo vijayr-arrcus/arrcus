@@ -1,3 +1,5 @@
+File logging started to fp_qual_exact.txt
+BCM.0>
 BCM.0> fp list qualifiers Exactmatch
 List of supported qualifiers:
 SrcIp6
@@ -179,6 +181,4 @@ IfaVersion
 MplsForwardingControlWord
 MplsCtrlPktType
 IngressL2InterfaceVfi
-BCM.0>
-BCM.0>
 BCM.0>

@@ -1,0 +1,45 @@
+File logging started to fp_egress_action.txt
+BCM.0>
+BCM.0> fp list actions egress
+List of supported actions:
+PrioPktNew
+TosNew
+Drop
+DropCancel
+RpDrop
+RpDropCancel
+RpPrioIntNew
+YpDrop
+YpDropCancel
+YpPrioIntNew
+InnerVlanNew
+OuterVlanNew
+OuterVlanCfiNew
+OuterTpidNew
+GpDrop
+GpDropCancel
+GpPrioIntNew
+PolicerGroup
+StatGroup
+TtlSet
+RpIntCongestionNotificationNew
+YpIntCongestionNotificationNew
+GpIntCongestionNotificationNew
+GroupClassSet
+DscpMapNew
+Erspan3HdrGbpSrcIdAdd
+AssignOpaqueObject1
+AssignOpaqueObject2
+TunnelOuterVlanNew
+PktTraceIdx
+InsertHiGig3Ext0
+StatGroupWithoutCounterIndex
+OuterVlanTagActions
+InnerVlanTagActions
+TunnelOuterVlanTagActions
+EgressIFAMetadataProfileIndex
+VlanTagPreserve
+MirrorTruncateControl
+TruncateIpLength
+TruncateUdpLength
+BCM.0>
