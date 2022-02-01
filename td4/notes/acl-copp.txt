@@ -1,0 +1,5 @@
+ACL_LIST_TYPE_IPV4
+ACL_LIST_TYPE_IPV6
+ACL_LIST_TYPE_ETH
+
+bcm_copp_create_exception_type_entries

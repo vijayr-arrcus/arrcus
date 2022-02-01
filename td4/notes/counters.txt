@@ -1,0 +1,23 @@
+ds_qos_hal_service_policy_stats_object_matched_pkts_set
+fetch_stats_cb
+bcm_ace_stats_api
+bcmsdk_fetch_stats
+bcm_service_policy_stats_api
+
+   rc = ds_qos_hal_service_policy_stats_object_bind_id_1_get(stats,
+                                                &policyid);
+    if (RET_CODE_SUCCESS != rc) {
+      LOG_ERR_MSG(BCM_PLUGIN_STR, "%s():policy id not set\n", __FUNCTION__);
+      continue;
+    }
+    rc = ds_qos_hal_service_policy_stats_object_bind_id_2_get(stats,
+                                                &classid);
+    if (RET_CODE_SUCCESS != rc) {
+      LOG_ERR_MSG(BCM_PLUGIN_STR, "%s(): classid not set\n", __FUNCTION__);
+      continue;
+    }
+
+bcm_xgs_copp_serv_pol_hw_stats_get
+
+  bcm_xgs_copp_acl_walk_arg_t arg;
+
