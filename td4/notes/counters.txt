@@ -21,3 +21,16 @@ bcm_xgs_copp_serv_pol_hw_stats_get
 
   bcm_xgs_copp_acl_walk_arg_t arg;
 
+
+
+1. bcmsdk_acl_create_fp_group -- create ACL group
+   Create flexcoutner id. -- bcm_create_fp_group, bcmsdk_flexctr_fp_group_action_create
+   the flexcounter id created is stored in a static array. -- This array is for all flexcounters in the system.
+   The range of indexes to be used to count stats is also stored as part of the array.
+   So basically the number of counters a flexcounter action can track. -- This is to track per FP group the number of flex counter actions.
+   Not sure what is the subtype for group. we only have one group. -- bcm_find_update_filter_grp, bcm_acl_target_extract_info, group_type = FP_GROUP_TYPE_IFP_COPP, bcm_get_fp_group_subtype
+2. subtype for COPP is bcm_xgs_copp_target_find_update_filter_grp FP_GROUP_SUBTYPE_L2IPV4IPV6.
+3. bcm_xgs_copp_process_service_policy_add create
+4. bcm_xgs_copp_process_service_policy_add -- Create service police for a traffic class.
+   create hw stats id.
+5. fp_flexctr_attach_cb attach stats_id to FP entry. here we track red and green counters.
