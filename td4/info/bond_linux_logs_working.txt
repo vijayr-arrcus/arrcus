@@ -1,0 +1,253 @@
+[10191.309914] bond10 (uninitialized): Begin bond_init
+[10191.310080] bond10 (uninitialized): event: 10
+[10191.310082] bond10 (uninitialized): IFF_MASTER
+[10191.310923] bond10: event: b
+[10191.310925] bond10: IFF_MASTER
+[10191.311096] bond10: event: 5
+[10191.311098] bond10: IFF_MASTER
+[10191.327080] bond10: Setting MII monitoring interval to 100
+[10191.340527] bond10: Setting xmit hash policy to layer3+4 (1)
+[10191.354875] bond10: Setting min links value to 1
+[10191.369375] bond10: Setting LACP rate to fast (1)
+[10191.383917] bond10: Setting MII monitoring interval to 100
+[10191.413437] bond10: Setting min links value to 1
+[10191.420437] bond10: event: d
+[10191.420439] bond10: IFF_MASTER
+[10191.420790] IPv6: ADDRCONF(NETDEV_UP): bond10: link is not ready
+[10191.420796] 8021q: adding VLAN 0 to HW filter on device bond10
+[10191.425592] bond10: event: 1
+[10191.425594] bond10: IFF_MASTER
+[10191.431232] bond10: event: 16
+[10191.431234] bond10: IFF_MASTER
+[10191.431238] bond10: bond=0000000004de6330, new_mtu=8974
+[10191.431717] bond10: event: 7
+[10191.431719] bond10: IFF_MASTER
+[10195.961072] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[10195.972974] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[10199.126669] swp27: event: 9
+[10199.130487] swp27: event: 2
+[10199.144619] bond10: swp27 is !NETIF_F_VLAN_CHALLENGED
+[10199.144639] swp27: event: 13
+[10199.144644] bond10: bond_dev=000000000646aa99 slave_dev=00000000e05d647f slave_dev->name=swp27 slave_dev->addr_len=6
+[10199.145006] bond10: event: 8
+[10199.145008] bond10: IFF_MASTER
+[10199.145041] swp27: Setting new MAC address
+[10199.145282] swp27: event: 8
+[10199.145304] swp27: event: d
+[10199.148784] swp27: event: 1
+[10199.149042] swp27: event: 1a
+[10199.149044] swp27: IFF_SLAVE
+[10199.149048] bond10: Initial state of slave_dev is BOND_LINK_UP
+[10199.149230] swp27: event: 1a
+[10199.149233] swp27: IFF_SLAVE
+[10199.149237] bond10: Port 1 Received link speed 0 update from adapter
+[10199.149240] bond10: Port 1 Received status full duplex update from adapter
+[10199.149242] swp27: speed changed to 0 for port swp27
+[10199.149245] LAG 0 was cleared
+[10199.154233] swp27: event: 19
+[10199.154241] swp27: IFF_SLAVE
+[10199.154466] swp27: event: 14
+[10199.154470] swp27: IFF_SLAVE
+[10199.154684] bond10: event: b
+[10199.154686] bond10: IFF_MASTER
+[10199.154691] bond10: Enslaving swp27 as a backup interface with an up link
+[10199.155382] swp27: event: 18
+[10199.155383] swp27: IFF_SLAVE
+[10199.166933] bond10: bond=0000000004de6330
+[10199.166936] bond10: slave 00000000082892d1 swp27
+[10199.166938] swp27: Setting new MAC address
+[10199.167251] swp27: event: 8
+[10199.167252] swp27: IFF_SLAVE
+[10199.167476] bond10: event: 8
+[10199.167480] bond10: IFF_MASTER
+[10199.217421] Rx Machine: Port=1 (swp27), Last State=0, Curr State=1
+[10199.217424] Periodic Machine: Port=1, Last State=0, Curr State=1
+[10199.217427] bond10: Port 1 joined LAG 1(new LAG)
+[10199.217431] bond10: best Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[10199.217434] bond10: best ports 00000000557d036a slave 00000000082892d1 swp27
+[10199.217437] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[10199.217438] bond10: LAG 1 chosen as the active LAG
+[10199.217440] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=1
+[10199.217451] Mux Machine: Port=1 (swp27), Last State=0, Curr State=1
+[10199.217711] swp27: event: 1a
+[10199.217713] swp27: IFF_SLAVE
+[10199.217720] bond10: bond_mii_monitor : slave bond10
+[10199.217723] bond10: bond_should_notify_peers: slave NULL
+[10199.217728] bond10: Adding slave dev swp27 to tx hash array[0]
+[10199.217742] IPv6: ADDRCONF(NETDEV_CHANGE): bond10: link becomes ready
+[10199.221910] bond10: event: 4
+[10199.221913] bond10: IFF_MASTER
+[10199.321458] bond10: bond_mii_monitor : slave bond10
+[10199.321461] bond10: bond_should_notify_peers: slave NULL
+[10199.321467] Rx Machine: Port=1 (swp27), Last State=2, Curr State=4
+[10199.321469] Periodic Machine: Port=1, Last State=1, Curr State=2
+[10199.321471] Mux Machine: Port=1 (swp27), Last State=1, Curr State=2
+[10199.425424] update lacpdu: swp27, actor port state c7
+[10199.425445] Sent LACPDU on port 1
+[10199.425450] bond10: bond_mii_monitor : slave bond10
+[10199.425452] bond10: bond_should_notify_peers: slave NULL
+[10199.529426] bond10: bond_mii_monitor : slave bond10
+[10199.529429] bond10: bond_should_notify_peers: slave NULL
+[10199.623968] bond10: Received LACPDU on port 1 slave swp27
+[10199.623980] Rx Machine: Port=1 (swp27), Last State=4, Curr State=6
+[10199.623982] swp27 partner sync=1
+[10199.633427] bond10: Port 1 left LAG 1
+[10199.633429] LAG 1 was cleared
+[10199.633432] bond10: Port 1 joined LAG 1(new LAG)
+[10199.633435] bond10: best Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[10199.633438] bond10: best ports 00000000557d036a slave 00000000082892d1 swp27
+[10199.633440] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[10199.633442] bond10: LAG 1 chosen as the active LAG
+[10199.633444] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=1
+[10199.633451] bond10: bond_mii_monitor : slave bond10
+[10199.633453] bond10: bond_should_notify_peers: slave NULL
+[10199.633457] bond10: Adding slave dev swp27 to tx hash array[0]
+[10199.737424] bond10: bond_mii_monitor : slave bond10
+[10199.737427] bond10: bond_should_notify_peers: slave NULL
+[10199.841427] bond10: bond_mii_monitor : slave bond10
+[10199.841430] bond10: bond_should_notify_peers: slave NULL
+[10199.945427] bond10: bond_mii_monitor : slave bond10
+[10199.945430] bond10: bond_should_notify_peers: slave NULL
+[10200.049435] bond10: bond_mii_monitor : slave bond10
+[10200.049438] bond10: bond_should_notify_peers: slave NULL
+[10200.153459] bond10: bond_mii_monitor : slave bond10
+[10200.153462] bond10: bond_should_notify_peers: slave NULL
+[10200.257424] Periodic Machine: Port=1, Last State=2, Curr State=4
+[10200.257430] bond10: bond_mii_monitor : slave bond10
+[10200.257432] bond10: bond_should_notify_peers: slave NULL
+[10200.361426] bond10: bond_mii_monitor : slave bond10
+[10200.361428] bond10: bond_should_notify_peers: slave NULL
+[10200.361434] Periodic Machine: Port=1, Last State=4, Curr State=2
+[10200.361436] update lacpdu: swp27, actor port state 7
+[10200.361459] Sent LACPDU on port 1
+[10200.465435] bond10: bond_mii_monitor : slave bond10
+[10200.465438] bond10: bond_should_notify_peers: slave NULL
+[10200.559945] bond10: Received LACPDU on port 1 slave swp27
+[10200.559958] Rx Machine: Port=1 (swp27), Last State=6, Curr State=6
+[10200.559960] swp27 partner sync=1
+[10200.564628] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[10200.569428] bond10: bond_mii_monitor : slave bond10
+[10200.572985] bond10: bond_should_notify_peers: slave NULL
+[10200.576911] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[10200.673429] bond10: bond_mii_monitor : slave bond10
+[10200.673432] bond10: bond_should_notify_peers: slave NULL
+[10200.777426] bond10: bond_mii_monitor : slave bond10
+[10200.777428] bond10: bond_should_notify_peers: slave NULL
+[10200.881428] bond10: bond_mii_monitor : slave bond10
+[10200.881430] bond10: bond_should_notify_peers: slave NULL
+[10200.985423] bond10: bond_mii_monitor : slave bond10
+[10200.985425] bond10: bond_should_notify_peers: slave NULL
+[10201.089424] bond10: bond_mii_monitor : slave bond10
+[10201.089427] bond10: bond_should_notify_peers: slave NULL
+[10201.193427] bond10: bond_mii_monitor : slave bond10
+[10201.193430] bond10: bond_should_notify_peers: slave NULL
+[10201.297426] Periodic Machine: Port=1, Last State=2, Curr State=4
+[10201.297429] update lacpdu: swp27, actor port state 7
+[10201.297447] Sent LACPDU on port 1
+[10201.297452] bond10: bond_mii_monitor : slave bond10
+[10201.297454] bond10: bond_should_notify_peers: slave NULL
+[10201.401426] bond10: bond_mii_monitor : slave bond10
+[10201.401429] bond10: bond_should_notify_peers: slave NULL
+[10201.401434] Periodic Machine: Port=1, Last State=4, Curr State=2
+[10201.401436] Mux Machine: Port=1 (swp27), Last State=2, Curr State=3
+[10201.401437] Disabling port 1(LAG 1)
+[10201.401678] swp27: event: 1a
+[10201.401681] swp27: IFF_SLAVE
+[10201.505429] bond10: bond_mii_monitor : slave bond10
+[10201.505432] bond10: bond_should_notify_peers: slave NULL
+[10201.609426] bond10: bond_mii_monitor : slave bond10
+[10201.609429] bond10: bond_should_notify_peers: slave NULL
+[10201.609434] update lacpdu: swp27, actor port state f
+[10201.609455] Sent LACPDU on port 1
+[10201.713429] bond10: bond_mii_monitor : slave bond10
+[10201.713432] bond10: bond_should_notify_peers: slave NULL
+[10201.807940] bond10: Received LACPDU on port 1 slave swp27
+[10201.807952] Rx Machine: Port=1 (swp27), Last State=6, Curr State=6
+[10201.807954] swp27 partner sync=1
+[10201.817424] bond10: bond_mii_monitor : slave bond10
+[10201.817427] bond10: bond_should_notify_peers: slave NULL
+[10201.921429] bond10: bond_mii_monitor : slave bond10
+[10201.921432] bond10: bond_should_notify_peers: slave NULL
+[10202.025425] bond10: bond_mii_monitor : slave bond10
+[10202.025428] bond10: bond_should_notify_peers: slave NULL
+[10202.129428] bond10: bond_mii_monitor : slave bond10
+[10202.129431] bond10: bond_should_notify_peers: slave NULL
+[10202.233415] bond10: bond_mii_monitor : slave bond10
+[10202.233418] bond10: bond_should_notify_peers: slave NULL
+[10202.337424] Periodic Machine: Port=1, Last State=2, Curr State=4
+[10202.337430] bond10: bond_mii_monitor : slave bond10
+[10202.337431] bond10: bond_should_notify_peers: slave NULL
+[10202.441427] bond10: bond_mii_monitor : slave bond10
+[10202.441429] bond10: bond_should_notify_peers: slave NULL
+[10202.441434] Periodic Machine: Port=1, Last State=4, Curr State=2
+[10202.545426] update lacpdu: swp27, actor port state f
+[10202.545450] Sent LACPDU on port 1
+[10202.545455] bond10: bond_mii_monitor : slave bond10
+[10202.545457] bond10: bond_should_notify_peers: slave NULL
+[10202.649426] bond10: bond_mii_monitor : slave bond10
+[10202.649429] bond10: bond_should_notify_peers: slave NULL
+[10202.743971] bond10: Received LACPDU on port 1 slave swp27
+[10202.743983] Rx Machine: Port=1 (swp27), Last State=6, Curr State=6
+[10202.743984] swp27 partner sync=1
+[10202.753429] bond10: bond_mii_monitor : slave bond10
+[10202.753432] bond10: bond_should_notify_peers: slave NULL
+[10202.857425] bond10: bond_mii_monitor : slave bond10
+[10202.857428] bond10: bond_should_notify_peers: slave NULL
+[10202.961427] bond10: bond_mii_monitor : slave bond10
+[10202.961430] bond10: bond_should_notify_peers: slave NULL
+[10202.965036] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[10202.977271] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[10203.065428] bond10: bond_mii_monitor : slave bond10
+[10203.065431] bond10: bond_should_notify_peers: slave NULL
+[10203.169428] bond10: bond_mii_monitor : slave bond10
+[10203.169431] bond10: bond_should_notify_peers: slave NULL
+[10203.273428] bond10: bond_mii_monitor : slave bond10
+[10203.273431] bond10: bond_should_notify_peers: slave NULL
+[10203.377426] Periodic Machine: Port=1, Last State=2, Curr State=4
+[10203.377432] bond10: bond_mii_monitor : slave bond10
+[10203.377433] bond10: bond_should_notify_peers: slave NULL
+[10203.481425] bond10: bond_mii_monitor : slave bond10
+[10203.481428] bond10: bond_should_notify_peers: slave NULL
+[10203.481433] Periodic Machine: Port=1, Last State=4, Curr State=2
+[10203.481435] update lacpdu: swp27, actor port state f
+[10203.481456] Sent LACPDU on port 1
+[10203.585428] bond10: bond_mii_monitor : slave bond10
+[10203.585431] bond10: bond_should_notify_peers: slave NULL
+[10203.680027] bond10: Received LACPDU on port 1 slave swp27
+[10203.680039] Rx Machine: Port=1 (swp27), Last State=6, Curr State=6
+[10203.680040] swp27 partner sync=1
+[10203.689426] bond10: bond_mii_monitor : slave bond10
+[10203.689429] bond10: bond_should_notify_peers: slave NULL
+[10203.793430] bond10: bond_mii_monitor : slave bond10
+[10203.793433] bond10: bond_should_notify_peers: slave NULL
+[10203.897425] bond10: bond_mii_monitor : slave bond10
+[10203.897427] bond10: bond_should_notify_peers: slave NULL
+[10204.001430] bond10: bond_mii_monitor : slave bond10
+[10204.001433] bond10: bond_should_notify_peers: slave NULL
+[10204.105426] bond10: bond_mii_monitor : slave bond10
+[10204.105428] bond10: bond_should_notify_peers: slave NULL
+[10204.209429] bond10: bond_mii_monitor : slave bond10
+[10204.209432] bond10: bond_should_notify_peers: slave NULL
+[10204.313425] bond10: bond_mii_monitor : slave bond10
+[10204.313427] bond10: bond_should_notify_peers: slave NULL
+[10204.417426] Periodic Machine: Port=1, Last State=2, Curr State=4
+[10204.417428] update lacpdu: swp27, actor port state f
+[10204.417449] Sent LACPDU on port 1
+[10204.417454] bond10: bond_mii_monitor : slave bond10
+[10204.417456] bond10: bond_should_notify_peers: slave NULL
+[10204.521424] bond10: bond_mii_monitor : slave bond10
+[10204.521427] bond10: bond_should_notify_peers: slave NULL
+[10204.521432] Periodic Machine: Port=1, Last State=4, Curr State=2
+[10204.625426] bond10: bond_mii_monitor : slave bond10
+[10204.625428] bond10: bond_should_notify_peers: slave NULL
+[10204.729424] bond10: bond_mii_monitor : slave bond10
+[10204.729427] bond10: bond_should_notify_peers: slave NULL
+[10204.833430] bond10: bond_mii_monitor : slave bond10
+[10204.833433] bond10: bond_should_notify_peers: slave NULL
+[10204.927933] bond10: Received LACPDU on port 1 slave swp27
+[10204.927945] Rx Machine: Port=1 (swp27), Last State=6, Curr State=6
+[10204.927947] swp27 partner sync=1
+[10204.937426] bond10: bond_mii_monitor : slave bond10
+[10204.937429] bond10: bond_should_notify_peers: slave NULL
+[10205.041429] bond10: bond_mii_monitor : slave bond10
+[10205.041431] bond10: bond_should_notify_peers: slave NULL
