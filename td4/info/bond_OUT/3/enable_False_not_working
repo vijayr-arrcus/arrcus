@@ -1,0 +1,109 @@
+[219591.758931] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[219591.770998] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[219593.959390] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[219593.971875] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[219598.959366] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[219598.971448] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[219603.958752] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[219603.971105] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[219607.137472] bond10: swp28 is !NETIF_F_VLAN_CHALLENGED
+[219607.137502] swp28: event: 13
+[219607.137507] bond10: bond_dev=00000000d8aed867 slave_dev=000000006fc8b652 slave_dev->name=swp28 slave_dev->addr_len=6
+[219607.137907] bond10: event: 8
+[219607.137909] bond10: IFF_MASTER
+[219607.137962] swp28: Setting new MAC address
+[219607.138152] swp28: event: 8
+[219607.138187] swp28: event: d
+[219607.142551] swp28: event: 1
+[219607.142770] swp28: event: 1a
+[219607.142772] swp28: IFF_SLAVE
+[219607.142776] bond10: Initial state of slave_dev is BOND_LINK_DOWN
+[219607.142949] swp28: event: 1a
+[219607.142951] swp28: IFF_SLAVE
+[219607.142956] bond10: Port 1 Received link speed 0 update from adapter
+[219607.142958] LAG 0 was cleared
+[219607.142964] swp28: event: 19
+[219607.142965] swp28: IFF_SLAVE
+[219607.143152] swp28: event: 14
+[219607.143154] swp28: IFF_SLAVE
+[219607.143419] bond10: event: b
+[219607.143421] bond10: IFF_MASTER
+[219607.143427] bond10: Enslaving swp28 as a backup interface with a down link
+[219607.145509] swp28: event: 18
+[219607.145512] swp28: IFF_SLAVE
+[219607.151596] bond10: bond=000000008f43cf0b
+[219607.151600] bond10: slave 0000000062c9cc15 swp28
+[219607.151602] swp28: Setting new MAC address
+[219607.151832] swp28: event: 8
+[219607.151834] swp28: IFF_SLAVE
+[219607.152089] bond10: event: 8
+[219607.152091] bond10: IFF_MASTER
+[219607.168560] Rx Machine: Port=1 (swp28), Last State=0, Curr State=1
+[219607.168562] Periodic Machine: Port=1, Last State=0, Curr State=1
+[219607.168565] bond10: Port 1 joined LAG 13(new LAG)
+[219607.168568] Mux Machine: Port=1 (swp28), Last State=0, Curr State=1
+[219607.272543] Rx Machine: Port=1 (swp28), Last State=2, Curr State=3
+[219607.272548] bond10: Port 1 left LAG 13
+[219607.272549] LAG 13 was cleared
+[219607.272552] bond10: Port 1 joined LAG 13(new LAG)
+[219607.272554] Mux Machine: Port=1 (swp28), Last State=1, Curr State=2
+[219608.958678] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[219608.971003] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[219609.352501] Mux Machine: Port=1 (swp28), Last State=2, Curr State=3
+[219613.911864] swp28: event: 4
+[219613.911867] swp28: IFF_SLAVE
+[219613.911871] bond10: Port 1 Received link speed 0 update from adapter
+[219613.911873] bond10: Port 1 slave swp28 changed speed/duplex
+[219613.929713] swp28: event: 1a
+[219613.929715] swp28: IFF_SLAVE
+[219613.929720] bond10: link status definitely up for interface swp28, 400000 Mbps full duplex
+[219613.929724] bond10: Port 1 Received link speed 0 update from adapter
+[219613.929727] bond10: Port 1 Received status full duplex update from adapter
+[219613.929730] swp28: speed changed to 0 for port swp28
+[219613.929760] bond10: best Agg=13; P=1; a k=0; p k=1; Ind=1; Act=0
+[219613.934845] bond10: best ports 00000000d9f598c9 slave 0000000062c9cc15 swp28
+[219613.934848] bond10: Agg=13; P=1; a k=0; p k=1; Ind=1; Act=0
+[219613.934850] bond10: Warning: No 802.3ad response from the link partner for any adapters in the bond
+[219613.943996] bond10: LAG 13 chosen as the active LAG
+[219613.943997] bond10: Agg=13; P=1; a k=0; p k=1; Ind=1; Act=1
+[219613.944005] bond10: Port 1 changed link status to UP
+[219613.944010] bond10: Adding slave dev swp28 to tx hash array[0]
+[219613.944012] bond10: first active interface up!
+[219613.946255] bond10: event: 4
+[219613.946256] bond10: IFF_MASTER
+[219613.947513] swp28: event: 18
+[219613.947516] swp28: IFF_SLAVE
+[219614.032554] Periodic Machine: Port=1, Last State=1, Curr State=2
+[219614.032872] swp28: event: 1a
+[219614.032874] swp28: IFF_SLAVE
+[219614.124416] bond10: Received LACPDU on port 1 slave swp28
+[219614.124426] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+[219614.136543] Periodic Machine: Port=1, Last State=2, Curr State=3
+[219614.136547] bond10: Port 1 left LAG 13
+[219614.136549] LAG 13 was cleared
+[219614.136551] bond10: Port 1 joined LAG 13(new LAG)
+[219614.136555] bond10: best Agg=13; P=1; a k=1; p k=1; Ind=0; Act=0
+[219614.136558] bond10: best ports 00000000d9f598c9 slave 0000000062c9cc15 swp28
+[219614.136560] bond10: Agg=13; P=1; a k=1; p k=1; Ind=0; Act=0
+[219614.136562] bond10: LAG 13 chosen as the active LAG
+[219614.136564] bond10: Agg=13; P=1; a k=1; p k=1; Ind=0; Act=1
+[219614.136573] bond10: Adding slave dev swp28 to tx hash array[0]
+[219614.240576] update lacpdu: swp28, actor port state 4d
+[219614.240597] Sent LACPDU on port 1
+[219614.436402] bond10: Received LACPDU on port 1 slave swp28
+[219614.436413] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+[219614.448543] bond10: Port 1 left LAG 13
+[219614.448545] LAG 13 was cleared
+[219614.448547] bond10: Port 1 joined LAG 13(new LAG)
+[219614.448550] bond10: best Agg=13; P=1; a k=1; p k=1; Ind=0; Act=0
+[219614.448554] bond10: best ports 00000000d9f598c9 slave 0000000062c9cc15 swp28
+[219614.448556] bond10: Agg=13; P=1; a k=1; p k=1; Ind=0; Act=0
+[219614.448558] bond10: LAG 13 chosen as the active LAG
+[219614.448560] bond10: Agg=13; P=1; a k=1; p k=1; Ind=0; Act=1
+[219614.448568] bond10: Adding slave dev swp28 to tx hash array[0]
+[219616.773769] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[219616.786141] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[219621.766290] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[219621.778617] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[219623.957881] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[219623.970170] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.

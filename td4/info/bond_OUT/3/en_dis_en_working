@@ -1,0 +1,184 @@
+[225118.962058] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[225123.863154] swp28: event: 9
+[225123.868081] swp28: event: 2
+[225123.882103] bond10: swp28 is !NETIF_F_VLAN_CHALLENGED
+[225123.882122] swp28: event: 13
+[225123.882128] bond10: bond_dev=00000000d8aed867 slave_dev=000000006fc8b652 slave_dev->name=swp28 slave_dev->addr_len=6
+[225123.882484] bond10: event: 8
+[225123.882487] bond10: IFF_MASTER
+[225123.882537] swp28: Setting new MAC address
+[225123.882750] swp28: event: 8
+[225123.882784] swp28: event: d
+[225123.888935] swp28: event: 1
+[225123.889258] swp28: event: 1a
+[225123.889261] swp28: IFF_SLAVE
+[225123.889264] bond10: Initial state of slave_dev is BOND_LINK_UP
+[225123.889422] swp28: event: 1a
+[225123.889424] swp28: IFF_SLAVE
+[225123.889428] bond10: Port 1 Received link speed 0 update from adapter
+[225123.889431] bond10: Port 1 Received status full duplex update from adapter
+[225123.889433] swp28: speed changed to 0 for port swp28
+[225123.889435] LAG 0 was cleared
+[225123.894507] swp28: event: 19
+[225123.894508] swp28: IFF_SLAVE
+[225123.894830] swp28: event: 14
+[225123.894832] swp28: IFF_SLAVE
+[225123.895079] bond10: event: b
+[225123.895081] bond10: IFF_MASTER
+[225123.895085] bond10: Enslaving swp28 as a backup interface with an up link
+[225123.895969] Rx Machine: Port=1 (swp28), Last State=0, Curr State=1
+[225123.895971] Periodic Machine: Port=1, Last State=0, Curr State=1
+[225123.895975] bond10: Port 1 joined LAG 15(new LAG)
+[225123.895979] bond10: best Agg=15; P=1; a k=1; p k=1; Ind=0; Act=0
+[225123.895982] bond10: best ports 0000000017897fae slave 000000009a8391a1 swp28
+[225123.895984] bond10: Agg=15; P=1; a k=1; p k=1; Ind=0; Act=0
+[225123.895986] bond10: LAG 15 chosen as the active LAG
+[225123.895988] bond10: Agg=15; P=1; a k=1; p k=1; Ind=0; Act=1
+[225123.895998] Mux Machine: Port=1 (swp28), Last State=0, Curr State=1
+[225123.896194] swp28: event: 1a
+[225123.896196] swp28: IFF_SLAVE
+[225123.896205] bond10: Adding slave dev swp28 to tx hash array[0]
+[225123.900472] bond10: event: 4
+[225123.900474] bond10: IFF_MASTER
+[225123.900940] swp28: event: 18
+[225123.900943] swp28: IFF_SLAVE
+[225123.906621] bond10: bond=000000008f43cf0b
+[225123.906624] bond10: slave 000000009a8391a1 swp28
+[225123.906626] swp28: Setting new MAC address
+[225123.906907] swp28: event: 8
+[225123.906922] swp28: IFF_SLAVE
+[225123.907254] bond10: event: 8
+[225123.907256] bond10: IFF_MASTER
+[225123.948810] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[225123.960975] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[225123.999970] Rx Machine: Port=1 (swp28), Last State=2, Curr State=4
+[225123.999973] Periodic Machine: Port=1, Last State=1, Curr State=2
+[225123.999975] Mux Machine: Port=1 (swp28), Last State=1, Curr State=2
+[225124.103971] update lacpdu: swp28, actor port state c5
+[225124.103997] Sent LACPDU on port 1
+[225124.359866] bond10: Received LACPDU on port 1 slave swp28
+[225124.359875] Rx Machine: Port=1 (swp28), Last State=4, Curr State=6
+[225124.359877] swp28 partner sync=1
+[225124.415978] Periodic Machine: Port=1, Last State=2, Curr State=3
+[225124.415982] bond10: Port 1 left LAG 15
+[225124.415983] LAG 15 was cleared
+[225124.415985] bond10: Port 1 joined LAG 15(new LAG)
+[225124.415989] bond10: best Agg=15; P=1; a k=1; p k=1; Ind=0; Act=0
+[225124.415992] bond10: best ports 0000000017897fae slave 000000009a8391a1 swp28
+[225124.415994] bond10: Agg=15; P=1; a k=1; p k=1; Ind=0; Act=0
+[225124.415996] bond10: LAG 15 chosen as the active LAG
+[225124.415998] bond10: Agg=15; P=1; a k=1; p k=1; Ind=0; Act=1
+[225124.416007] bond10: Adding slave dev swp28 to tx hash array[0]
+[225126.079983] Mux Machine: Port=1 (swp28), Last State=2, Curr State=3
+[225126.079986] Disabling port 1(LAG 15)
+[225126.080239] swp28: event: 1a
+[225126.080241] swp28: IFF_SLAVE
+[225126.183976] Mux Machine: Port=1 (swp28), Last State=3, Curr State=4
+[225126.183978] Enabling port 1(LAG 15)
+[225126.184202] swp28: event: 1a
+[225126.184204] swp28: IFF_SLAVE
+[225126.184214] bond10: Adding slave dev swp28 to tx hash array[0]
+[225126.287984] update lacpdu: swp28, actor port state 3d
+[225126.288010] Sent LACPDU on port 1
+[225126.543834] bond10: Received LACPDU on port 1 slave swp28
+[225126.543844] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[225126.543846] swp28 partner sync=1
+[225128.949356] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[225128.961703] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[225130.354257] swp28: event: 9
+[225130.354259] swp28: IFF_SLAVE
+[225130.357157] swp28: event: 2
+[225130.357160] swp28: IFF_SLAVE
+[225130.376286] swp28: event: 1a
+[225130.376288] swp28: IFF_SLAVE
+[225130.376658] swp28: event: 1a
+[225130.376660] swp28: IFF_SLAVE
+[225130.376664] bond10: link status definitely down for interface swp28, disabling it
+[225130.376676] bond10: Port 1 changed link status to DOWN
+[225130.382111] bond10: event: 4
+[225130.382113] bond10: IFF_MASTER
+[225130.383944] swp28: event: 18
+[225130.383947] swp28: IFF_SLAVE
+[225130.448012] Rx Machine: Port=1 (swp28), Last State=6, Curr State=2
+[225130.448014] Periodic Machine: Port=1, Last State=3, Curr State=1
+[225136.560286] swp28: event: d
+[225136.560289] swp28: IFF_SLAVE
+[225136.563791] swp28: event: 1
+[225136.563792] swp28: IFF_SLAVE
+[225136.563798] bond10: Port 1 Received link speed 0 update from adapter
+[225136.563800] bond10: Port 1 slave swp28 changed speed/duplex
+[225136.956703] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[225136.968986] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[225137.651723] swp28: event: 4
+[225137.651725] swp28: IFF_SLAVE
+[225137.651730] bond10: Port 1 Received link speed 0 update from adapter
+[225137.651732] bond10: Port 1 slave swp28 changed speed/duplex
+[225137.656194] swp28: event: 1a
+[225137.656196] swp28: IFF_SLAVE
+[225137.656202] bond10: link status definitely up for interface swp28, 400000 Mbps full duplex
+[225137.656206] bond10: Port 1 Received link speed 0 update from adapter
+[225137.656209] bond10: Port 1 Received status full duplex update from adapter
+[225137.656211] swp28: speed changed to 0 for port swp28
+[225137.656216] bond10: best Agg=15; P=1; a k=1; p k=1; Ind=0; Act=0
+[225137.661288] bond10: best ports 0000000017897fae slave 000000009a8391a1 swp28
+[225137.661291] bond10: Agg=15; P=1; a k=1; p k=1; Ind=0; Act=0
+[225137.661297] bond10: LAG 15 chosen as the active LAG
+[225137.661304] bond10: Agg=15; P=1; a k=1; p k=1; Ind=0; Act=1
+[225137.661319] bond10: Port 1 changed link status to UP
+[225137.661329] bond10: first active interface up!
+[225137.664590] bond10: event: 4
+[225137.664591] bond10: IFF_MASTER
+[225137.665954] swp28: event: 18
+[225137.665957] swp28: IFF_SLAVE
+[225137.728012] Rx Machine: Port=1 (swp28), Last State=2, Curr State=4
+[225137.728015] Periodic Machine: Port=1, Last State=1, Curr State=2
+[225137.728017] Mux Machine: Port=1 (swp28), Last State=4, Curr State=3
+[225137.728019] Disabling port 1(LAG 15)
+[225137.775926] bond10: Received LACPDU on port 1 slave swp28
+[225137.775937] Rx Machine: Port=1 (swp28), Last State=4, Curr State=6
+[225137.775938] swp28 partner sync=1
+[225137.831977] Periodic Machine: Port=1, Last State=2, Curr State=3
+[225137.831980] Mux Machine: Port=1 (swp28), Last State=3, Curr State=4
+[225137.831981] Enabling port 1(LAG 15)
+[225137.831983] update lacpdu: swp28, actor port state 3d
+[225137.832005] Sent LACPDU on port 1
+[225137.832218] swp28: event: 1a
+[225137.832221] swp28: IFF_SLAVE
+[225137.832228] bond10: Adding slave dev swp28 to tx hash array[0]
+[225138.087876] bond10: Received LACPDU on port 1 slave swp28
+[225138.087886] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[225138.087888] swp28 partner sync=1
+[225141.958654] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[225141.971254] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[225142.430859] swp28: event: 1a
+[225142.430862] swp28: IFF_SLAVE
+[225142.430886] swp28: event: 19
+[225142.430887] swp28: IFF_SLAVE
+[225142.431104] swp28: event: 14
+[225142.431106] swp28: IFF_SLAVE
+[225142.431180] bond10: Unbinding Link Aggregation Group 15
+[225142.431182] update lacpdu: swp28, actor port state 1
+[225142.431203] LAG 15 was cleared
+[225142.431204] bond10: Removing an active aggregator
+[225142.431206] bond10: Unbinding port 1
+[225142.431209] bond10: Releasing backup interface swp28
+[225142.450310] bond10: event: 8
+[225142.450312] bond10: IFF_MASTER
+[225142.450375] bond10: event: 11
+[225142.450376] bond10: IFF_MASTER
+[225142.450640] bond10: event: b
+[225142.450641] bond10: IFF_MASTER
+[225142.450655] swp28: event: 9
+[225142.453946] swp28: event: 2
+[225142.453983] swp28: Setting new MAC address
+[225142.454233] swp28: event: 8
+[225142.456684] bond10: event: 4
+[225142.456686] bond10: IFF_MASTER
+[225142.461840] swp28: event: d
+[225142.465472] swp28: event: 1
+[225143.948758] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[225143.961255] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[225148.950438] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[225148.962764] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[225153.948701] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[225153.961070] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.

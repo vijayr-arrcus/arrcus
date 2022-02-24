@@ -1,0 +1,356 @@
+[168616.768961] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[168616.781267] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[168619.878993] swp28: event: 9
+[168619.883391] swp28: event: 2
+[168619.897765] bond10: swp28 is !NETIF_F_VLAN_CHALLENGED
+[168619.897785] swp28: event: 13
+[168619.897790] bond10: bond_dev=0000000040f98f86 slave_dev=000000004b8d9304 slave_dev->name=swp28 slave_dev->addr_len=6
+[168619.898120] bond10: event: 8
+[168619.898122] bond10: IFF_MASTER
+[168619.898167] swp28: Setting new MAC address
+[168619.898347] swp28: event: 8
+[168619.898378] swp28: event: d
+[168619.901810] swp28: event: 1
+[168619.902016] swp28: event: 1a
+[168619.902018] swp28: IFF_SLAVE
+[168619.902021] bond10: Initial state of slave_dev is BOND_LINK_UP
+[168619.902195] swp28: event: 1a
+[168619.902197] swp28: IFF_SLAVE
+[168619.902201] bond10: Port 1 Received link speed 0 update from adapter
+[168619.902205] bond10: Port 1 Received status full duplex update from adapter
+[168619.902207] swp28: speed changed to 0 for port swp28
+[168619.902209] LAG 0 was cleared
+[168619.907282] swp28: event: 19
+[168619.907284] swp28: IFF_SLAVE
+[168619.907561] swp28: event: 14
+[168619.907564] swp28: IFF_SLAVE
+[168619.907884] bond10: event: b
+[168619.907886] bond10: IFF_MASTER
+[168619.907890] bond10: Enslaving swp28 as a backup interface with an up link
+[168619.909736] swp28: event: 18
+[168619.909739] swp28: IFF_SLAVE
+[168619.920703] bond10: bond=0000000075f59d1c
+[168619.920716] bond10: slave 00000000d20e2014 swp28
+[168619.920718] swp28: Setting new MAC address
+[168619.921013] swp28: event: 8
+[168619.921015] swp28: IFF_SLAVE
+[168619.921304] bond10: event: 8
+[168619.921306] bond10: IFF_MASTER
+[168619.973812] Rx Machine: Port=1 (swp28), Last State=0, Curr State=1
+[168619.973815] Periodic Machine: Port=1, Last State=0, Curr State=1
+[168619.973818] bond10: Port 1 joined LAG 2(new LAG)
+[168619.973822] bond10: best Agg=2; P=1; a k=1; p k=1; Ind=0; Act=0
+[168619.973825] bond10: best ports 0000000091a81ba6 slave 00000000d20e2014 swp28
+[168619.973827] bond10: Agg=2; P=1; a k=1; p k=1; Ind=0; Act=0
+[168619.973829] bond10: LAG 2 chosen as the active LAG
+[168619.973831] bond10: Agg=2; P=1; a k=1; p k=1; Ind=0; Act=1
+[168619.973841] Mux Machine: Port=1 (swp28), Last State=0, Curr State=1
+[168619.974142] swp28: event: 1a
+[168619.974144] swp28: IFF_SLAVE
+[168619.977514] bond10: event: 4
+[168619.977516] bond10: IFF_MASTER
+[168619.977764] bond10: Adding slave dev swp28 to tx hash array[0]
+[168619.989778] bond10: bond_should_notify_peers: slave NULL
+[168620.077775] Rx Machine: Port=1 (swp28), Last State=2, Curr State=4
+[168620.077777] Periodic Machine: Port=1, Last State=1, Curr State=2
+[168620.077779] Mux Machine: Port=1 (swp28), Last State=1, Curr State=2
+[168620.093811] bond10: bond_should_notify_peers: slave NULL
+[168620.181768] update lacpdu: swp28, actor port state c7
+[168620.181792] Sent LACPDU on port 1
+[168620.197774] bond10: bond_should_notify_peers: slave NULL
+[168620.301771] bond10: bond_should_notify_peers: slave NULL
+[168620.405775] bond10: bond_should_notify_peers: slave NULL
+[168620.493561] bond10: Received LACPDU on port 1 slave swp28
+[168620.493573] Rx Machine: Port=1 (swp28), Last State=4, Curr State=6
+[168620.493575] swp28 partner sync=1
+[168620.493748] Periodic Machine: Port=1, Last State=2, Curr State=3
+[168620.493752] bond10: Port 1 left LAG 2
+[168620.493754] LAG 2 was cleared
+[168620.493756] bond10: Port 1 joined LAG 2(new LAG)
+[168620.493759] bond10: best Agg=2; P=1; a k=1; p k=1; Ind=0; Act=0
+[168620.493763] bond10: best ports 0000000091a81ba6 slave 00000000d20e2014 swp28
+[168620.493765] bond10: Agg=2; P=1; a k=1; p k=1; Ind=0; Act=0
+[168620.493767] bond10: LAG 2 chosen as the active LAG
+[168620.493769] bond10: Agg=2; P=1; a k=1; p k=1; Ind=0; Act=1
+[168620.493776] bond10: Adding slave dev swp28 to tx hash array[0]
+[168620.509776] bond10: bond_should_notify_peers: slave NULL
+[168620.613774] bond10: bond_should_notify_peers: slave NULL
+[168620.717771] bond10: bond_should_notify_peers: slave NULL
+[168620.821776] bond10: bond_should_notify_peers: slave NULL
+[168620.925775] bond10: bond_should_notify_peers: slave NULL
+[168621.029782] bond10: bond_should_notify_peers: slave NULL
+[168621.133775] bond10: bond_should_notify_peers: slave NULL
+[168621.237774] bond10: bond_should_notify_peers: slave NULL
+[168621.341771] bond10: bond_should_notify_peers: slave NULL
+[168621.429565] bond10: Received LACPDU on port 1 slave swp28
+[168621.429577] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168621.429579] swp28 partner sync=1
+[168621.445809] bond10: bond_should_notify_peers: slave NULL
+[168621.549776] bond10: bond_should_notify_peers: slave NULL
+[168621.653773] bond10: bond_should_notify_peers: slave NULL
+[168621.757764] bond10: bond_should_notify_peers: slave NULL
+[168621.769399] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[168621.781707] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[168621.861775] bond10: bond_should_notify_peers: slave NULL
+[168621.965775] bond10: bond_should_notify_peers: slave NULL
+[168622.069774] bond10: bond_should_notify_peers: slave NULL
+[168622.157776] Mux Machine: Port=1 (swp28), Last State=2, Curr State=3
+[168622.157778] Disabling port 1(LAG 2)
+[168622.158032] swp28: event: 1a
+[168622.158035] swp28: IFF_SLAVE
+[168622.173772] bond10: bond_should_notify_peers: slave NULL
+[168622.261778] Mux Machine: Port=1 (swp28), Last State=3, Curr State=4
+[168622.261780] Enabling port 1(LAG 2)
+[168622.262010] swp28: event: 1a
+[168622.262013] swp28: IFF_SLAVE
+[168622.262021] bond10: Adding slave dev swp28 to tx hash array[0]
+[168622.277776] bond10: bond_should_notify_peers: slave NULL
+[168622.365571] bond10: Received LACPDU on port 1 slave swp28
+[168622.365583] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168622.365585] swp28 partner sync=1
+[168622.365732] update lacpdu: swp28, actor port state 3f
+[168622.365750] Sent LACPDU on port 1
+[168622.381809] bond10: bond_should_notify_peers: slave NULL
+[168622.485771] bond10: bond_should_notify_peers: slave NULL
+[168622.589773] bond10: bond_should_notify_peers: slave NULL
+[168622.677513] bond10: Received LACPDU on port 1 slave swp28
+[168622.677525] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168622.677526] swp28 partner sync=1
+[168622.693774] bond10: bond_should_notify_peers: slave NULL
+[168622.797773] bond10: bond_should_notify_peers: slave NULL
+[168622.901772] bond10: bond_should_notify_peers: slave NULL
+[168623.005775] bond10: bond_should_notify_peers: slave NULL
+[168623.109727] bond10: bond_should_notify_peers: slave NULL
+[168623.213778] bond10: bond_should_notify_peers: slave NULL
+[168623.317814] bond10: bond_should_notify_peers: slave NULL
+[168623.421769] bond10: bond_should_notify_peers: slave NULL
+[168623.525771] bond10: bond_should_notify_peers: slave NULL
+[168623.613530] bond10: Received LACPDU on port 1 slave swp28
+[168623.613542] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168623.613543] swp28 partner sync=1
+[168623.629774] bond10: bond_should_notify_peers: slave NULL
+[168623.733769] bond10: bond_should_notify_peers: slave NULL
+[168623.837770] bond10: bond_should_notify_peers: slave NULL
+[168623.941772] bond10: bond_should_notify_peers: slave NULL
+[168624.045809] bond10: bond_should_notify_peers: slave NULL
+[168624.149722] bond10: bond_should_notify_peers: slave NULL
+[168624.253775] bond10: bond_should_notify_peers: slave NULL
+[168624.357780] bond10: bond_should_notify_peers: slave NULL
+[168624.461812] bond10: bond_should_notify_peers: slave NULL
+[168624.549532] bond10: Received LACPDU on port 1 slave swp28
+[168624.549543] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168624.549544] swp28 partner sync=1
+[168624.565775] bond10: bond_should_notify_peers: slave NULL
+[168624.669770] bond10: bond_should_notify_peers: slave NULL
+[168624.773774] bond10: bond_should_notify_peers: slave NULL
+[168624.877736] bond10: bond_should_notify_peers: slave NULL
+[168624.981775] bond10: bond_should_notify_peers: slave NULL
+[168625.085775] bond10: bond_should_notify_peers: slave NULL
+[168625.189809] bond10: bond_should_notify_peers: slave NULL
+[168625.293774] bond10: bond_should_notify_peers: slave NULL
+[168625.397774] bond10: bond_should_notify_peers: slave NULL
+[168625.485569] bond10: Received LACPDU on port 1 slave swp28
+[168625.485581] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168625.485583] swp28 partner sync=1
+[168625.501773] bond10: bond_should_notify_peers: slave NULL
+[168625.605774] bond10: bond_should_notify_peers: slave NULL
+[168625.709774] bond10: bond_should_notify_peers: slave NULL
+[168625.813774] bond10: bond_should_notify_peers: slave NULL
+[168625.917774] bond10: bond_should_notify_peers: slave NULL
+[168626.021774] bond10: bond_should_notify_peers: slave NULL
+[168626.126768] bond10: bond_should_notify_peers: slave NULL
+[168626.229812] bond10: bond_should_notify_peers: slave NULL
+[168626.333773] bond10: bond_should_notify_peers: slave NULL
+[168626.437773] bond10: bond_should_notify_peers: slave NULL
+[168626.541773] bond10: bond_should_notify_peers: slave NULL
+[168626.645773] bond10: bond_should_notify_peers: slave NULL
+[168626.733568] bond10: Received LACPDU on port 1 slave swp28
+[168626.733581] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168626.733582] swp28 partner sync=1
+[168626.749774] bond10: bond_should_notify_peers: slave NULL
+[168626.769022] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[168626.781440] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[168626.853772] bond10: bond_should_notify_peers: slave NULL
+[168626.957774] bond10: bond_should_notify_peers: slave NULL
+[168627.061774] bond10: bond_should_notify_peers: slave NULL
+[168627.165771] bond10: bond_should_notify_peers: slave NULL
+[168627.269771] bond10: bond_should_notify_peers: slave NULL
+[168627.373772] bond10: bond_should_notify_peers: slave NULL
+[168627.477721] bond10: bond_should_notify_peers: slave NULL
+[168627.581773] bond10: bond_should_notify_peers: slave NULL
+[168627.669571] bond10: Received LACPDU on port 1 slave swp28
+[168627.669583] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168627.669585] swp28 partner sync=1
+[168627.685775] bond10: bond_should_notify_peers: slave NULL
+[168627.789817] bond10: bond_should_notify_peers: slave NULL
+[168627.893775] bond10: bond_should_notify_peers: slave NULL
+[168627.997773] bond10: bond_should_notify_peers: slave NULL
+[168628.101774] bond10: bond_should_notify_peers: slave NULL
+[168628.205767] bond10: bond_should_notify_peers: slave NULL
+[168628.309809] bond10: bond_should_notify_peers: slave NULL
+[168628.413773] bond10: bond_should_notify_peers: slave NULL
+[168628.517772] bond10: bond_should_notify_peers: slave NULL
+[168628.605564] bond10: Received LACPDU on port 1 slave swp28
+[168628.605577] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168628.605578] swp28 partner sync=1
+[168628.621774] bond10: bond_should_notify_peers: slave NULL
+[168628.725774] bond10: bond_should_notify_peers: slave NULL
+[168628.829772] bond10: bond_should_notify_peers: slave NULL
+[168628.933772] bond10: bond_should_notify_peers: slave NULL
+[168629.037774] bond10: bond_should_notify_peers: slave NULL
+[168629.141768] bond10: bond_should_notify_peers: slave NULL
+[168629.245768] bond10: bond_should_notify_peers: slave NULL
+[168629.349812] bond10: bond_should_notify_peers: slave NULL
+[168629.453775] bond10: bond_should_notify_peers: slave NULL
+[168629.557774] bond10: bond_should_notify_peers: slave NULL
+[168629.661773] bond10: bond_should_notify_peers: slave NULL
+[168629.765771] bond10: bond_should_notify_peers: slave NULL
+[168629.853571] bond10: Received LACPDU on port 1 slave swp28
+[168629.853583] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168629.853584] swp28 partner sync=1
+[168629.869809] bond10: bond_should_notify_peers: slave NULL
+[168629.973773] bond10: bond_should_notify_peers: slave NULL
+[168630.077773] bond10: bond_should_notify_peers: slave NULL
+[168630.182773] bond10: bond_should_notify_peers: slave NULL
+[168630.285809] bond10: bond_should_notify_peers: slave NULL
+[168630.389772] bond10: bond_should_notify_peers: slave NULL
+[168630.493773] bond10: bond_should_notify_peers: slave NULL
+[168630.597775] bond10: bond_should_notify_peers: slave NULL
+[168630.701775] bond10: bond_should_notify_peers: slave NULL
+[168630.789565] bond10: Received LACPDU on port 1 slave swp28
+[168630.789576] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168630.789578] swp28 partner sync=1
+[168630.805780] bond10: bond_should_notify_peers: slave NULL
+[168630.909775] bond10: bond_should_notify_peers: slave NULL
+[168631.013786] bond10: bond_should_notify_peers: slave NULL
+[168631.117773] bond10: bond_should_notify_peers: slave NULL
+[168631.221779] bond10: bond_should_notify_peers: slave NULL
+[168631.325773] bond10: bond_should_notify_peers: slave NULL
+[168631.429772] bond10: bond_should_notify_peers: slave NULL
+[168631.533773] bond10: bond_should_notify_peers: slave NULL
+[168631.637730] bond10: bond_should_notify_peers: slave NULL
+[168631.725576] bond10: Received LACPDU on port 1 slave swp28
+[168631.725587] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168631.725589] swp28 partner sync=1
+[168631.741728] bond10: bond_should_notify_peers: slave NULL
+[168631.770673] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[168631.782961] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[168631.845772] bond10: bond_should_notify_peers: slave NULL
+[168631.949738] bond10: bond_should_notify_peers: slave NULL
+[168632.053774] bond10: bond_should_notify_peers: slave NULL
+[168632.157776] bond10: bond_should_notify_peers: slave NULL
+[168632.261776] bond10: bond_should_notify_peers: slave NULL
+[168632.365772] bond10: bond_should_notify_peers: slave NULL
+[168632.469778] bond10: bond_should_notify_peers: slave NULL
+[168632.573784] bond10: bond_should_notify_peers: slave NULL
+[168632.677779] bond10: bond_should_notify_peers: slave NULL
+[168632.781773] bond10: bond_should_notify_peers: slave NULL
+[168632.885776] bond10: bond_should_notify_peers: slave NULL
+[168632.973578] bond10: Received LACPDU on port 1 slave swp28
+[168632.973588] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168632.973590] swp28 partner sync=1
+[168632.989775] bond10: bond_should_notify_peers: slave NULL
+[168633.093774] bond10: bond_should_notify_peers: slave NULL
+[168633.197776] bond10: bond_should_notify_peers: slave NULL
+[168633.302772] bond10: bond_should_notify_peers: slave NULL
+[168633.405773] bond10: bond_should_notify_peers: slave NULL
+[168633.509777] bond10: bond_should_notify_peers: slave NULL
+[168633.613774] bond10: bond_should_notify_peers: slave NULL
+[168633.717775] bond10: bond_should_notify_peers: slave NULL
+[168633.821775] bond10: bond_should_notify_peers: slave NULL
+[168633.909571] bond10: Received LACPDU on port 1 slave swp28
+[168633.909582] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168633.909583] swp28 partner sync=1
+[168633.925774] bond10: bond_should_notify_peers: slave NULL
+[168634.029775] bond10: bond_should_notify_peers: slave NULL
+[168634.133715] bond10: bond_should_notify_peers: slave NULL
+[168634.238723] bond10: bond_should_notify_peers: slave NULL
+[168634.341740] bond10: bond_should_notify_peers: slave NULL
+[168634.445777] bond10: bond_should_notify_peers: slave NULL
+[168634.549779] bond10: bond_should_notify_peers: slave NULL
+[168634.653775] bond10: bond_should_notify_peers: slave NULL
+[168634.757772] bond10: bond_should_notify_peers: slave NULL
+[168634.845587] bond10: Received LACPDU on port 1 slave swp28
+[168634.845598] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168634.845599] swp28 partner sync=1
+[168634.861776] bond10: bond_should_notify_peers: slave NULL
+[168634.965773] bond10: bond_should_notify_peers: slave NULL
+[168635.069774] bond10: bond_should_notify_peers: slave NULL
+[168635.173776] bond10: bond_should_notify_peers: slave NULL
+[168635.277774] bond10: bond_should_notify_peers: slave NULL
+[168635.381809] bond10: bond_should_notify_peers: slave NULL
+[168635.485810] bond10: bond_should_notify_peers: slave NULL
+[168635.589771] bond10: bond_should_notify_peers: slave NULL
+[168635.693723] bond10: bond_should_notify_peers: slave NULL
+[168635.797776] bond10: bond_should_notify_peers: slave NULL
+[168635.901775] bond10: bond_should_notify_peers: slave NULL
+[168636.005771] bond10: bond_should_notify_peers: slave NULL
+[168636.093579] bond10: Received LACPDU on port 1 slave swp28
+[168636.093589] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168636.093591] swp28 partner sync=1
+[168636.109728] bond10: bond_should_notify_peers: slave NULL
+[168636.213718] bond10: bond_should_notify_peers: slave NULL
+[168636.317808] bond10: bond_should_notify_peers: slave NULL
+[168636.421773] bond10: bond_should_notify_peers: slave NULL
+[168636.525769] bond10: bond_should_notify_peers: slave NULL
+[168636.629774] bond10: bond_should_notify_peers: slave NULL
+[168636.733732] bond10: bond_should_notify_peers: slave NULL
+[168636.837777] bond10: bond_should_notify_peers: slave NULL
+[168636.941727] bond10: bond_should_notify_peers: slave NULL
+[168637.029582] bond10: Received LACPDU on port 1 slave swp28
+[168637.029593] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168637.029594] swp28 partner sync=1
+[168637.045770] bond10: bond_should_notify_peers: slave NULL
+[168637.149769] bond10: bond_should_notify_peers: slave NULL
+[168637.253771] bond10: bond_should_notify_peers: slave NULL
+[168637.357728] bond10: bond_should_notify_peers: slave NULL
+[168637.461771] bond10: bond_should_notify_peers: slave NULL
+[168637.565772] bond10: bond_should_notify_peers: slave NULL
+[168637.669773] bond10: bond_should_notify_peers: slave NULL
+[168637.773775] bond10: bond_should_notify_peers: slave NULL
+[168637.877778] bond10: bond_should_notify_peers: slave NULL
+[168637.965547] bond10: Received LACPDU on port 1 slave swp28
+[168637.965557] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+[168637.965558] swp28 partner sync=1
+[168637.981767] bond10: bond_should_notify_peers: slave NULL
+[168638.085737] bond10: bond_should_notify_peers: slave NULL
+[168638.189773] bond10: bond_should_notify_peers: slave NULL
+[168638.293774] bond10: bond_should_notify_peers: slave NULL
+[168638.370581] swp28: event: 1a
+[168638.370584] swp28: IFF_SLAVE
+[168638.370617] swp28: event: 19
+[168638.370618] swp28: IFF_SLAVE
+[168638.370851] swp28: event: 14
+[168638.370853] swp28: IFF_SLAVE
+[168638.370928] bond10: Unbinding Link Aggregation Group 2
+[168638.370939] update lacpdu: swp28, actor port state 3
+[168638.370971] LAG 2 was cleared
+[168638.370973] bond10: Removing an active aggregator
+[168638.370976] bond10: Unbinding port 1
+[168638.370981] bond10: Releasing backup interface swp28
+[168638.380037] bond10: event: 8
+[168638.380039] bond10: IFF_MASTER
+[168638.380105] bond10: event: 11
+[168638.380107] bond10: IFF_MASTER
+[168638.380355] bond10: event: b
+[168638.380356] bond10: IFF_MASTER
+[168638.380370] swp28: event: 9
+[168638.383230] swp28: event: 2
+[168638.383267] swp28: Setting new MAC address
+[168638.383525] swp28: event: 8
+[168638.386642] bond10: event: 4
+[168638.386645] bond10: IFF_MASTER
+[168638.391347] swp28: event: d
+[168638.394790] swp28: event: 1
+[168639.309978] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[168639.322316] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[168644.304475] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[168644.316835] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[168646.768894] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[168646.781331] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[168651.769247] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[168651.781593] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[168656.768355] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[168656.780499] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[168661.768938] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[168661.781300] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.

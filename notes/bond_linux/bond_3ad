@@ -1,0 +1,53 @@
+bond_enslave
+
+void ifmgr_get_bond_slave_partner_flags (char *name, uint16_t *flags)
+{
+    char cmd[IFMGR_CMD_LEN];
+    snprintf(cmd, sizeof(cmd),
+            "cat /sys/class/net/%s/bonding_slave/ad_partner_oper_port_state", name);
+    *flags = 0;
+    ifmgr_get_cmd_data(cmd, flags);
+}
+
+if (bond_if->curr_cfg->fallback_mode && elem->fallback_cfg_removed) {
+	partner_flags = 0;
+} else {
+	ifmgr_get_bond_slave_partner_flags(memb_if->if_name, &partner_flags);
+}
+
+CONFD_SET_TAG_ENUM_VALUE(&tag_v[n++], oc_lacp_timeout,
+												 ((memb_if->link_state == LINK_STATE_UP) &&
+													(partner_flags & LACP_STATE_TIMEOUT)) ? oc_lacp_SHORT : oc_lacp_LONG);
+CONFD_SET_TAG_ENUM_VALUE(&tag_v[n++], oc_lacp_synchronization,
+												 ((memb_if->link_state == LINK_STATE_UP) &&
+													(partner_flags & LACP_STATE_SYNC)) ? oc_lacp_IN_SYNC : oc_lacp_OUT_SYNC);
+
+
+#define  LACP_STATE_ACTIVITY 0x01
+#define  LACP_STATE_TIMEOUT 0x02
+#define  LACP_STATE_AGGREGATION 0x04
+#define  LACP_STATE_SYNC 0x08
+#define  LACP_STATE_COLLECTING 0x10
+#define  LACP_STATE_DISTRIBUTING 0x20
+#define  LACP_STATE_DEFUALTED 0x40
+#define  LACP_STATE_EXPIRED 0x80
+
+#define LACP_STATE_WORKING (LACP_STATE_ACTIVITY | LACP_STATE_TIMEOUT | \
+          LACP_STATE_AGGREGATION | LACP_STATE_SYNC | \
+          LACP_STATE_COLLECTING | LACP_STATE_DISTRIBUTING)
+
+
+tatic ssize_t ad_partner_oper_port_state_show(struct slave *slave, char *buf)
+{
+  const struct port *ad_port;
+
+  if (BOND_MODE(slave->bond) == BOND_MODE_8023AD) {
+    ad_port = &SLAVE_AD_INFO(slave)->port;
+    if (ad_port->aggregator)
+      return sprintf(buf, "%u\n",
+               ad_port->partner_oper.port_state);
+  }
+
+  return sprintf(buf, "N/A\n");
+}
+static SLAVE_ATTR_RO(ad_partner_oper_port_state);

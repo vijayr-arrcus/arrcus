@@ -1,0 +1,83 @@
+root@10.27.105.41's password:
+root@td4-6-s32db:~# dmesg -w | grep "Rx Machine"
+[  476.159327] Rx Machine: Port=1 (swp28), Last State=0, Curr State=1
+[  476.263424] Rx Machine - VIJAY: Port=1 (swp28), Last State=2, Curr State=4 vars=258
+[  476.263426] Rx Machine: Port=1 (swp28), Last State=2, Curr State=4
+[  476.492385] Rx Machine: Port=1 (swp28), Last State=4, Curr State=6
+[  478.676422] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+
+
+
+
+
+
+
+
+
+[  502.700412] Rx Machine: Port=1 (swp28), Last State=6, Curr State=6
+
+
+[ 2477.191444] Rx Machine - 2: Port=1 (swp28), Last State=0, Curr State=1 vars=15
+[ 2477.295468] Rx Machine - 0: Port=1 (swp28), Last State=2, Curr State=2 vars=258 port enabled 1
+[ 2477.295469] Rx Machine - 1: Port=1 (swp28), Last State=2, Curr State=4 vars=258
+[ 2477.295471] Rx Machine - 2: Port=1 (swp28), Last State=2, Curr State=4 vars=258
+[ 2477.666871] Rx Machine - 2: Port=1 (swp28), Last State=4, Curr State=6 vars=270
+[ 2479.850925] Rx Machine - 2: Port=1 (swp28), Last State=6, Curr State=6 vars=370
+
+
+
+
+
+
+
+
+
+Not working
+============
+
+
+
+[  544.383383] Rx Machine: Port=1 (swp28), Last State=0, Curr State=1
+[  544.487389] Rx Machine - VIJAY: Port=1 (swp28), Last State=2, Curr State=3 vars=256
+[  544.487391] Rx Machine: Port=1 (swp28), Last State=2, Curr State=3
+[  553.556641] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+
+
+
+[ 2336.008407] Rx Machine - 2: Port=1 (swp28), Last State=0, Curr State=1 vars=15
+[ 2336.111467] Rx Machine - 0: Port=1 (swp28), Last State=2, Curr State=2 vars=256 port enabled 1
+[ 2336.111470] Rx Machine - 1: Port=1 (swp28), Last State=2, Curr State=3 vars=256
+[ 2336.111472] Rx Machine - 2: Port=1 (swp28), Last State=2, Curr State=3 vars=256
+
+[ 2441.162752] Rx Machine - 2: Port=1 (swp28), Last State=3, Curr State=3 vars=370
+
+
+=========
+
+root@td4-6-s32db:~# dmesg -C
+root@td4-6-s32db:~# dmesg -C
+root@td4-6-s32db:~# dmesg -w | grep "Rx Machine"
+[ 1219.745002] Rx Machine - 2: Port=1 (swp28), Last State=0, Curr State=1 vars=15
+[ 1219.849098] Rx Machine - 0: Port=1 (swp28), Last State=2, Curr State=2 vars=256 port enabled 1
+[ 1219.849100] Rx Machine - 1: Port=1 (swp28), Last State=2, Curr State=3 vars=256
+[ 1219.849102] Rx Machine - 2: Port=1 (swp28), Last State=2, Curr State=3 vars=256
+Enable port here.
+[ 1248.169342] Rx Machine - 12 update keys : Port=1 (swp28), Last State=0, Curr State=3 vars=368 port enabled 1
+[ 1248.169346] Rx Machine - 13 update keys : Port=1 (swp28), Last State=0, Curr State=3 vars=370 port enabled 1 dupplex 1
+[ 1248.399339] Rx Machine - 2: Port=1 (swp28), Last State=3, Curr State=3 vars=370
+^C
+root@td4-6-s32db:~#
+root@td4-6-s32db:~#
+
+Working
+======
+
+[ 1372.464191] Rx Machine - 12 update keys : Port=1 (swp28), Last State=0, Curr State=0 vars=3 port enabled 1
+[ 1372.464195] Rx Machine - 13 update keys : Port=1 (swp28), Last State=0, Curr State=0 vars=3 port enabled 1 dupplex1
+[ 1372.522052] Rx Machine - 2: Port=1 (swp28), Last State=0, Curr State=1 vars=15
+[ 1372.625102] Rx Machine - 0: Port=1 (swp28), Last State=2, Curr State=2 vars=258 port enabled 1
+[ 1372.625104] Rx Machine - 1: Port=1 (swp28), Last State=2, Curr State=4 vars=258
+[ 1372.625106] Rx Machine - 2: Port=1 (swp28), Last State=2, Curr State=4 vars=258
+[ 1372.887919] Rx Machine - 2: Port=1 (swp28), Last State=4, Curr State=6 vars=270
+[ 1373.199919] Rx Machine - 2: Port=1 (swp28), Last State=6, Curr State=6 vars=322
+[ 1375.071970] Rx Machine - 2: Port=1 (swp28), Last State=6, Curr State=6 vars=370

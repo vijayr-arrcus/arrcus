@@ -1,0 +1,644 @@
+[169770.297967] bcm0_0: event: 4
+[169770.298027] bcm0_0: event: 9
+[169770.300432] bcm0_0: event: 2
+[169770.303079] bcm0_0 (unregistering): event: 6
+[169770.437418] arcos-system: event: 9
+[169770.439759] arcos-system: event: 2
+[169770.441006] arcos-system (unregistering): event: 6
+[169770.565684] bcm0: event: 9
+[169770.569046] bcm0: event: 2
+[169770.571679] bcm0 (unregistering): event: 6
+[169770.712103] arcos-system (uninitialized): event: 10
+[169770.712355] arcos-system: event: 5
+[169770.714503] arcos-system: event: d
+[169770.717806] arcos-system: event: 1
+[169770.861185] Broadcom NGBDE unloaded successfully
+[169771.023200] bond10: event: 9
+[169771.023202] bond10: IFF_MASTER
+[169771.025668] bond10: event: 2
+[169771.025671] bond10: IFF_MASTER
+[169771.028199] bond10 (unregistering): event: 6
+[169771.028201] bond10 (unregistering): IFF_MASTER
+[169771.028221] bond10 (unregistering): Released all slaves
+[169771.310234] vlan10: event: 9
+[169771.312662] vlan10: event: 2
+[169771.314532] vlan10 (unregistering): event: 6
+[169771.510812] Broadcom NGBDE loaded successfully
+[169788.375599] bcm0 (uninitialized): event: 10
+[169788.376501] bcm0: event: 5
+[169788.394544] bcm0 (unregistering): event: 6
+[169788.424726] bcm0 (uninitialized): event: 10
+[169788.426127] bcm0: event: 5
+[169788.426540] bcm0: event: d
+[169788.430447] bcm0: event: 1
+[169788.439687] bcm0_0 (uninitialized): event: 10
+[169788.441678] bcm0_0: event: 5
+[169788.441931] bcm0_0: event: d
+[169788.444056] device bcm0_0 entered promiscuous mode
+[169788.449100] bcm0_0: event: 1
+[169788.890112] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[169788.901501] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[169789.559925] arc_mac_lrn (uninitialized): event: 10
+[169789.560527] arc_mac_lrn: event: 5
+[169789.573483] arc_mac_lrn: event: d
+[169789.579728] arc_mac_lrn: event: 1
+[169791.117291] swp0 (uninitialized): event: 10
+[169791.118237] swp0: event: 5
+[169791.126541] swp1 (uninitialized): event: 10
+[169791.128646] swp1: event: 5
+[169791.147727] swp2 (uninitialized): event: 10
+[169791.148823] swp2: event: 5
+[169791.156145] swp3 (uninitialized): event: 10
+[169791.157313] swp3: event: 5
+[169791.167795] swp4 (uninitialized): event: 10
+[169791.168810] swp4: event: 5
+[169791.174327] swp5 (uninitialized): event: 10
+[169791.175561] swp5: event: 5
+[169791.179393] swp6 (uninitialized): event: 10
+[169791.180396] swp6: event: 5
+[169791.186336] swp7 (uninitialized): event: 10
+[169791.187212] swp7: event: 5
+[169791.191676] swp8 (uninitialized): event: 10
+[169791.192467] swp8: event: 5
+[169791.198480] swp9 (uninitialized): event: 10
+[169791.199403] swp9: event: 5
+[169791.199923] vlan10 (uninitialized): event: 10
+[169791.200211] vlan10: event: 5
+[169791.204555] swp10 (uninitialized): event: 10
+[169791.205173] swp10: event: 5
+[169791.209936] swp11 (uninitialized): event: 10
+[169791.210601] swp11: event: 5
+[169791.214621] swp12 (uninitialized): event: 10
+[169791.215263] swp12: event: 5
+[169791.219268] swp13 (uninitialized): event: 10
+[169791.219918] swp13: event: 5
+[169791.225421] swp14 (uninitialized): event: 10
+[169791.226390] swp14: event: 5
+[169791.232662] swp15 (uninitialized): event: 10
+[169791.233644] swp15: event: 5
+[169791.239883] swp16 (uninitialized): event: 10
+[169791.240551] swp16: event: 5
+[169791.244948] swp17 (uninitialized): event: 10
+[169791.245604] swp17: event: 5
+[169791.250247] swp18 (uninitialized): event: 10
+[169791.251052] swp18: event: 5
+[169791.255827] swp19 (uninitialized): event: 10
+[169791.256703] swp19: event: 5
+[169791.261463] swp20 (uninitialized): event: 10
+[169791.262133] swp20: event: 5
+[169791.267074] swp21 (uninitialized): event: 10
+[169791.267790] swp21: event: 5
+[169791.272254] swp22 (uninitialized): event: 10
+[169791.272990] swp22: event: 5
+[169791.277390] swp23 (uninitialized): event: 10
+[169791.278156] swp23: event: 5
+[169791.282968] swp24 (uninitialized): event: 10
+[169791.283785] swp24: event: 5
+[169791.288548] swp25 (uninitialized): event: 10
+[169791.289221] swp25: event: 5
+[169791.293979] swp26 (uninitialized): event: 10
+[169791.294643] swp26: event: 5
+[169791.299801] swp27 (uninitialized): event: 10
+[169791.300671] swp27: event: 5
+[169791.306046] swp28 (uninitialized): event: 10
+[169791.306800] swp28: event: 5
+[169791.311917] swp29 (uninitialized): event: 10
+[169791.312597] swp29: event: 5
+[169791.317692] swp30 (uninitialized): event: 10
+[169791.318365] swp30: event: 5
+[169791.323333] swp31 (uninitialized): event: 10
+[169791.324001] swp31: event: 5
+[169795.074545] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[169795.086772] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[169798.956447] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[169798.968764] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[169803.948740] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[169803.961203] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[169805.566878] swp0: event: 16
+[169805.566883] swp0: Changing MTU from 9000 to 8974
+[169805.567189] swp0: event: 7
+[169805.572386] swp0: event: d
+[169805.574075] IPv6: ADDRCONF(NETDEV_UP): swp0: link is not ready
+[169805.575705] swp0: event: 1
+[169805.588592] swp1: event: 16
+[169805.588596] swp1: Changing MTU from 9000 to 8974
+[169805.588808] swp1: event: 7
+[169805.593967] swp1: event: d
+[169805.595635] IPv6: ADDRCONF(NETDEV_UP): swp1: link is not ready
+[169805.599859] swp1: event: 1
+[169805.614417] swp2: event: 16
+[169805.614421] swp2: Changing MTU from 9000 to 8974
+[169805.614781] swp2: event: 7
+[169805.620336] swp2: event: d
+[169805.622072] IPv6: ADDRCONF(NETDEV_UP): swp2: link is not ready
+[169805.625539] swp2: event: 1
+[169805.649443] swp3: event: 16
+[169805.649448] swp3: Changing MTU from 9000 to 8974
+[169805.649900] swp3: event: 7
+[169805.655049] swp3: event: d
+[169805.656707] IPv6: ADDRCONF(NETDEV_UP): swp3: link is not ready
+[169805.659573] swp3: event: 1
+[169805.671981] swp4: event: 16
+[169805.671986] swp4: Changing MTU from 9000 to 8974
+[169805.672360] swp4: event: 7
+[169805.677511] swp4: event: d
+[169805.679213] IPv6: ADDRCONF(NETDEV_UP): swp4: link is not ready
+[169805.682564] swp4: event: 1
+[169805.696499] swp5: event: 16
+[169805.696504] swp5: Changing MTU from 9000 to 8974
+[169805.696922] swp5: event: 7
+[169805.702372] swp5: event: d
+[169805.704304] IPv6: ADDRCONF(NETDEV_UP): swp5: link is not ready
+[169805.707630] swp5: event: 1
+[169805.721002] swp6: event: 16
+[169805.721007] swp6: Changing MTU from 9000 to 8974
+[169805.721288] swp6: event: 7
+[169805.727159] swp6: event: d
+[169805.729118] IPv6: ADDRCONF(NETDEV_UP): swp6: link is not ready
+[169805.732432] swp6: event: 1
+[169805.746216] swp7: event: 16
+[169805.746220] swp7: Changing MTU from 9000 to 8974
+[169805.746529] swp7: event: 7
+[169805.752256] swp7: event: d
+[169805.754199] IPv6: ADDRCONF(NETDEV_UP): swp7: link is not ready
+[169805.757439] swp7: event: 1
+[169805.771196] swp8: event: 16
+[169805.771201] swp8: Changing MTU from 9000 to 8974
+[169805.771542] swp8: event: 7
+[169805.777096] swp8: event: d
+[169805.779026] IPv6: ADDRCONF(NETDEV_UP): swp8: link is not ready
+[169805.783304] swp8: event: 1
+[169805.797323] swp9: event: 16
+[169805.797328] swp9: Changing MTU from 9000 to 8974
+[169805.797688] swp9: event: 7
+[169805.803609] swp9: event: d
+[169805.805474] IPv6: ADDRCONF(NETDEV_UP): swp9: link is not ready
+[169805.808838] swp9: event: 1
+[169805.823848] swp10: event: 16
+[169805.823853] swp10: Changing MTU from 9000 to 8974
+[169805.824181] swp10: event: 7
+[169805.829694] swp10: event: d
+[169805.831553] IPv6: ADDRCONF(NETDEV_UP): swp10: link is not ready
+[169805.834859] swp10: event: 1
+[169805.848242] swp11: event: 16
+[169805.848247] swp11: Changing MTU from 9000 to 8974
+[169805.848582] swp11: event: 7
+[169805.854189] swp11: event: d
+[169805.856230] IPv6: ADDRCONF(NETDEV_UP): swp11: link is not ready
+[169805.859458] swp11: event: 1
+[169805.873581] swp12: event: 16
+[169805.873624] swp12: Changing MTU from 9000 to 8974
+[169805.874015] swp12: event: 7
+[169805.879363] swp12: event: d
+[169805.881393] IPv6: ADDRCONF(NETDEV_UP): swp12: link is not ready
+[169805.884647] swp12: event: 1
+[169805.897855] swp13: event: 16
+[169805.897860] swp13: Changing MTU from 9000 to 8974
+[169805.898196] swp13: event: 7
+[169805.903849] swp13: event: d
+[169805.905706] IPv6: ADDRCONF(NETDEV_UP): swp13: link is not ready
+[169805.910110] swp13: event: 1
+[169805.923810] swp14: event: 16
+[169805.923814] swp14: Changing MTU from 9000 to 8974
+[169805.924204] swp14: event: 7
+[169805.929514] swp14: event: d
+[169805.931365] IPv6: ADDRCONF(NETDEV_UP): swp14: link is not ready
+[169805.934692] swp14: event: 1
+[169805.948721] swp15: event: 16
+[169805.948725] swp15: Changing MTU from 9000 to 8974
+[169805.949059] swp15: event: 7
+[169805.954561] swp15: event: d
+[169805.956553] IPv6: ADDRCONF(NETDEV_UP): swp15: link is not ready
+[169805.961161] swp15: event: 1
+[169805.974493] swp16: event: 16
+[169805.974498] swp16: Changing MTU from 9000 to 8974
+[169805.974821] swp16: event: 7
+[169805.980256] swp16: event: d
+[169805.982096] IPv6: ADDRCONF(NETDEV_UP): swp16: link is not ready
+[169805.986434] swp16: event: 1
+[169805.999627] swp17: event: 16
+[169805.999632] swp17: Changing MTU from 9000 to 8974
+[169806.000027] swp17: event: 7
+[169806.005516] swp17: event: d
+[169806.007382] IPv6: ADDRCONF(NETDEV_UP): swp17: link is not ready
+[169806.010659] swp17: event: 1
+[169806.024341] swp18: event: 16
+[169806.024346] swp18: Changing MTU from 9000 to 8974
+[169806.024688] swp18: event: 7
+[169806.030093] swp18: event: d
+[169806.031943] IPv6: ADDRCONF(NETDEV_UP): swp18: link is not ready
+[169806.036230] swp18: event: 1
+[169806.049154] swp19: event: 16
+[169806.049159] swp19: Changing MTU from 9000 to 8974
+[169806.049473] swp19: event: 7
+[169806.055078] swp19: event: d
+[169806.056919] IPv6: ADDRCONF(NETDEV_UP): swp19: link is not ready
+[169806.060193] swp19: event: 1
+[169806.073927] swp20: event: 16
+[169806.073932] swp20: Changing MTU from 9000 to 8974
+[169806.074255] swp20: event: 7
+[169806.079952] swp20: event: d
+[169806.081803] IPv6: ADDRCONF(NETDEV_UP): swp20: link is not ready
+[169806.085085] swp20: event: 1
+[169806.098540] swp21: event: 16
+[169806.098545] swp21: Changing MTU from 9000 to 8974
+[169806.098890] swp21: event: 7
+[169806.104450] swp21: event: d
+[169806.106504] IPv6: ADDRCONF(NETDEV_UP): swp21: link is not ready
+[169806.109767] swp21: event: 1
+[169806.123544] swp22: event: 16
+[169806.123549] swp22: Changing MTU from 9000 to 8974
+[169806.123900] swp22: event: 7
+[169806.129492] swp22: event: d
+[169806.131527] IPv6: ADDRCONF(NETDEV_UP): swp22: link is not ready
+[169806.134803] swp22: event: 1
+[169806.150236] swp23: event: 16
+[169806.150241] swp23: Changing MTU from 9000 to 8974
+[169806.150571] swp23: event: 7
+[169806.156358] swp23: event: d
+[169806.158327] IPv6: ADDRCONF(NETDEV_UP): swp23: link is not ready
+[169806.161552] swp23: event: 1
+[169806.176641] swp24: event: 16
+[169806.176646] swp24: Changing MTU from 9000 to 8974
+[169806.176927] swp24: event: 7
+[169806.182578] swp24: event: d
+[169806.184452] IPv6: ADDRCONF(NETDEV_UP): swp24: link is not ready
+[169806.187774] swp24: event: 1
+[169806.201583] swp25: event: 16
+[169806.201600] swp25: Changing MTU from 9000 to 8974
+[169806.201919] swp25: event: 7
+[169806.207660] swp25: event: d
+[169806.209510] IPv6: ADDRCONF(NETDEV_UP): swp25: link is not ready
+[169806.212646] swp25: event: 1
+[169806.225601] swp26: event: 16
+[169806.225606] swp26: Changing MTU from 9000 to 8974
+[169806.225924] swp26: event: 7
+[169806.231512] swp26: event: d
+[169806.233133] IPv6: ADDRCONF(NETDEV_UP): swp26: link is not ready
+[169806.235047] swp26: event: 1
+[169806.245416] swp27: event: 16
+[169806.245419] swp27: Changing MTU from 9000 to 8974
+[169806.245729] swp27: event: 7
+[169806.251377] swp27: event: d
+[169806.253366] IPv6: ADDRCONF(NETDEV_UP): swp27: link is not ready
+[169806.256750] swp27: event: 1
+[169806.274212] swp28: event: d
+[169806.276261] IPv6: ADDRCONF(NETDEV_UP): swp28: link is not ready
+[169806.282093] swp28: event: 1
+[169806.288260] bond10 (uninitialized): Begin bond_init
+[169806.288359] bond10 (uninitialized): event: 10
+[169806.288360] bond10 (uninitialized): IFF_MASTER
+[169806.289142] bond10: event: b
+[169806.289144] bond10: IFF_MASTER
+[169806.289312] bond10: event: 5
+[169806.289313] bond10: IFF_MASTER
+[169806.306125] bond10: Setting MII monitoring interval to 100
+[169806.320773] bond10: Setting xmit hash policy to layer3+4 (1)
+[169806.335424] bond10: Setting min links value to 1
+[169806.350121] bond10: Setting LACP rate to fast (1)
+[169806.364794] bond10: Setting MII monitoring interval to 100
+[169806.393929] bond10: Setting min links value to 1
+[169806.422774] swp28: event: 9
+[169806.425368] swp28: event: 2
+[169806.439025] bond10: swp28 is !NETIF_F_VLAN_CHALLENGED
+[169806.439043] swp28: event: 13
+[169806.439048] bond10: bond_dev=00000000d8aed867 slave_dev=000000006fc8b652 slave_dev->name=swp28 slave_dev->addr_len=6
+[169806.439357] bond10: event: 8
+[169806.439359] bond10: IFF_MASTER
+[169806.439399] swp28: event: 16
+[169806.439403] swp28: Changing MTU from 9000 to 1500
+[169806.439637] swp28: event: 7
+[169806.439640] swp28: Setting new MAC address
+[169806.439813] swp28: event: 8
+[169806.439840] swp28: event: d
+[169806.443320] swp28: event: 1
+[169806.443612] swp28: event: 1a
+[169806.443614] swp28: IFF_SLAVE
+[169806.443617] bond10: Initial state of slave_dev is BOND_LINK_DOWN
+[169806.443780] swp28: event: 1a
+[169806.443782] swp28: IFF_SLAVE
+[169806.443787] bond10: Port 1 Received link speed 0 update from adapter
+[169806.443789] LAG 0 was cleared
+[169806.443797] swp28: event: 19
+[169806.443798] swp28: IFF_SLAVE
+[169806.443977] swp28: event: 14
+[169806.443979] swp28: IFF_SLAVE
+[169806.444138] bond10: event: b
+[169806.444140] bond10: IFF_MASTER
+[169806.444147] bond10: Enslaving swp28 as a backup interface with a down link
+[169806.445619] swp28: event: 18
+[169806.445622] swp28: IFF_SLAVE
+[169806.457659] bond10: bond=000000008f43cf0b
+[169806.457662] bond10: slave 00000000a404b3fa swp28
+[169806.457664] swp28: Setting new MAC address
+[169806.457964] swp28: event: 8
+[169806.457966] swp28: IFF_SLAVE
+[169806.458202] bond10: event: 8
+[169806.458204] bond10: IFF_MASTER
+[169806.474115] swp29: event: 16
+[169806.474120] swp29: Changing MTU from 9000 to 8974
+[169806.474422] swp29: event: 7
+[169806.480027] swp29: event: d
+[169806.481877] IPv6: ADDRCONF(NETDEV_UP): swp29: link is not ready
+[169806.486423] swp29: event: 1
+[169806.513184] swp30: event: 16
+[169806.513188] swp30: Changing MTU from 9000 to 8974
+[169806.513498] swp30: event: 7
+[169806.519163] swp30: event: d
+[169806.521103] IPv6: ADDRCONF(NETDEV_UP): swp30: link is not ready
+[169806.524355] swp30: event: 1
+[169806.537916] swp31: event: 16
+[169806.537920] swp31: Changing MTU from 9000 to 8974
+[169806.538238] swp31: event: 7
+[169806.543931] swp31: event: d
+[169806.545682] IPv6: ADDRCONF(NETDEV_UP): swp31: link is not ready
+[169806.548956] swp31: event: 1
+[169806.566765] bond10: bond=000000008f43cf0b
+[169806.566769] bond10: slave 00000000a404b3fa swp28
+[169806.566771] swp28: Setting new MAC address
+[169806.567073] swp28: event: 8
+[169806.567075] swp28: IFF_SLAVE
+[169806.567308] bond10: event: 8
+[169806.567310] bond10: IFF_MASTER
+[169806.572900] bond10: event: 16
+[169806.572902] bond10: IFF_MASTER
+[169806.572906] bond10: bond=000000008f43cf0b, new_mtu=8974
+[169806.572910] bond10: s 00000000a404b3fa c_m 000000000fc7b7db
+[169806.572914] swp28: event: 16
+[169806.572916] swp28: IFF_SLAVE
+[169806.572918] swp28: Changing MTU from 1500 to 8974
+[169806.573264] swp28: event: 7
+[169806.573266] swp28: IFF_SLAVE
+[169806.573471] bond10: event: 7
+[169806.573473] bond10: IFF_MASTER
+[169806.579251] bond10: event: d
+[169806.579254] bond10: IFF_MASTER
+[169806.579310] bond10: bond_should_notify_peers: slave NULL
+[169806.579319] Rx Machine: Port=1 (swp28), Last State=0, Curr State=1
+[169806.579320] Periodic Machine: Port=1, Last State=0, Curr State=1
+[169806.579323] bond10: Port 1 joined LAG 1(new LAG)
+[169806.579325] Mux Machine: Port=1 (swp28), Last State=0, Curr State=1
+[169806.579537] IPv6: ADDRCONF(NETDEV_UP): bond10: link is not ready
+[169806.579543] 8021q: adding VLAN 0 to HW filter on device bond10
+[169806.583187] bond10: event: 1
+[169806.583189] bond10: IFF_MASTER
+[169806.610556] vlan10: event: d
+[169806.614238] vlan10: event: 1
+[169806.620399] vlan10: event: 8
+[169806.685655] Rx Machine: Port=1 (swp28), Last State=2, Curr State=3
+[169806.685659] bond10: Port 1 left LAG 1
+[169806.685660] LAG 1 was cleared
+[169806.685662] bond10: Port 1 joined LAG 1(new LAG)
+[169806.685666] Mux Machine: Port=1 (swp28), Last State=1, Curr State=2
+[169806.685670] bond10: bond_should_notify_peers: slave NULL
+[169806.789654] bond10: bond_should_notify_peers: slave NULL
+[169806.893653] bond10: bond_should_notify_peers: slave NULL
+[169806.927398] IPv6: ADDRCONF(NETDEV_CHANGE): swp5: link becomes ready
+[169806.930730] swp5: event: 4
+[169806.997655] bond10: bond_should_notify_peers: slave NULL
+[169807.101605] bond10: bond_should_notify_peers: slave NULL
+[169807.205652] bond10: bond_should_notify_peers: slave NULL
+[169807.296039] vlan10: event: 4
+[169807.309602] bond10: bond_should_notify_peers: slave NULL
+[169807.413602] bond10: bond_should_notify_peers: slave NULL
+[169807.517653] bond10: bond_should_notify_peers: slave NULL
+[169807.571119] bond10: bond=000000008f43cf0b
+[169807.571122] bond10: slave 00000000a404b3fa swp28
+[169807.571125] swp28: Setting new MAC address
+[169807.571480] swp28: event: 8
+[169807.571482] swp28: IFF_SLAVE
+[169807.571756] bond10: event: 8
+[169807.571758] bond10: IFF_MASTER
+[169807.621611] bond10: bond_should_notify_peers: slave NULL
+[169807.725612] bond10: bond_should_notify_peers: slave NULL
+[169807.829608] bond10: bond_should_notify_peers: slave NULL
+[169807.933612] bond10: bond_should_notify_peers: slave NULL
+[169808.037652] bond10: bond_should_notify_peers: slave NULL
+[169808.141611] bond10: bond_should_notify_peers: slave NULL
+[169808.245655] bond10: bond_should_notify_peers: slave NULL
+[169808.349609] bond10: bond_should_notify_peers: slave NULL
+[169808.453606] bond10: bond_should_notify_peers: slave NULL
+[169808.557659] bond10: bond_should_notify_peers: slave NULL
+[169808.661654] bond10: bond_should_notify_peers: slave NULL
+[169808.765657] Mux Machine: Port=1 (swp28), Last State=2, Curr State=3
+[169808.765662] bond10: bond_should_notify_peers: slave NULL
+[169808.869668] bond10: bond_should_notify_peers: slave NULL
+[169808.949874] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[169808.962163] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[169808.973596] bond10: bond_should_notify_peers: slave NULL
+[169809.077655] bond10: bond_should_notify_peers: slave NULL
+[169809.181663] bond10: bond_should_notify_peers: slave NULL
+[169809.285663] bond10: bond_should_notify_peers: slave NULL
+[169809.389654] bond10: bond_should_notify_peers: slave NULL
+[169809.493665] bond10: bond_should_notify_peers: slave NULL
+[169809.597660] bond10: bond_should_notify_peers: slave NULL
+[169809.701655] bond10: bond_should_notify_peers: slave NULL
+[169809.805658] bond10: bond_should_notify_peers: slave NULL
+[169809.909659] bond10: bond_should_notify_peers: slave NULL
+[169810.013659] bond10: bond_should_notify_peers: slave NULL
+[169810.117609] bond10: bond_should_notify_peers: slave NULL
+[169810.221672] bond10: bond_should_notify_peers: slave NULL
+[169810.325653] bond10: bond_should_notify_peers: slave NULL
+[169810.357352] swp28: event: 4
+[169810.357355] swp28: IFF_SLAVE
+[169810.357360] bond10: Port 1 Received link speed 0 update from adapter
+[169810.357361] bond10: Port 1 slave swp28 changed speed/duplex
+[169810.387954] IPv6: ADDRCONF(NETDEV_CHANGE): swp30: link becomes ready
+[169810.391296] swp30: event: 4
+[169810.429660] bond10: bond_should_notify_peers: slave NULL
+[169810.429882] swp28: event: 1a
+[169810.429885] swp28: IFF_SLAVE
+[169810.429890] bond10: link status definitely up for interface swp28, 400000 Mbps full duplex
+[169810.429894] bond10: Port 1 Received link speed 0 update from adapter
+[169810.429896] bond10: Port 1 Received status full duplex update from adapter
+[169810.429898] swp28: speed changed to 0 for port swp28
+[169810.429904] bond10: best Agg=1; P=1; a k=0; p k=1; Ind=1; Act=0
+[169810.434978] bond10: best ports 000000003530303d slave 00000000a404b3fa swp28
+[169810.434981] bond10: Agg=1; P=1; a k=0; p k=1; Ind=1; Act=0
+[169810.434983] bond10: Warning: No 802.3ad response from the link partner for any adapters in the bond
+[169810.444109] bond10: LAG 1 chosen as the active LAG
+[169810.444111] bond10: Agg=1; P=1; a k=0; p k=1; Ind=1; Act=1
+[169810.444121] bond10: Port 1 changed link status to UP
+[169810.444130] bond10: Adding slave dev swp28 to tx hash array[0]
+[169810.444132] bond10: first active interface up!
+[169810.444145] IPv6: ADDRCONF(NETDEV_CHANGE): bond10: link becomes ready
+[169810.447203] bond10: event: 4
+[169810.447204] bond10: IFF_MASTER
+[169810.448618] swp28: event: 18
+[169810.448619] swp28: IFF_SLAVE
+[169810.533657] Periodic Machine: Port=1, Last State=1, Curr State=2
+[169810.533660] update lacpdu: swp28, actor port state 4f
+[169810.533680] Sent LACPDU on port 1
+[169810.533989] swp28: event: 1a
+[169810.533991] swp28: IFF_SLAVE
+[169810.549659] bond10: bond_should_notify_peers: slave swp28
+[169810.637654] Periodic Machine: Port=1, Last State=2, Curr State=3
+[169810.653657] bond10: bond_should_notify_peers: slave swp28
+[169810.757650] bond10: bond_should_notify_peers: slave swp28
+[169810.774511] bond10: Received LACPDU on port 1 slave swp28
+[169810.774520] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+[169810.845651] bond10: Port 1 left LAG 1
+[169810.845653] LAG 1 was cleared
+[169810.845655] bond10: Port 1 joined LAG 1(new LAG)
+[169810.845659] bond10: best Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169810.845662] bond10: best ports 000000003530303d slave 00000000a404b3fa swp28
+[169810.845664] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169810.845666] bond10: LAG 1 chosen as the active LAG
+[169810.845668] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=1
+[169810.845676] bond10: Adding slave dev swp28 to tx hash array[0]
+[169810.861688] bond10: bond_should_notify_peers: slave swp28
+[169810.965653] bond10: bond_should_notify_peers: slave swp28
+[169811.069654] bond10: bond_should_notify_peers: slave swp28
+[169811.173668] bond10: bond_should_notify_peers: slave swp28
+[169811.277653] bond10: bond_should_notify_peers: slave swp28
+[169811.381657] bond10: bond_should_notify_peers: slave swp28
+[169811.398550] bond10: Received LACPDU on port 1 slave swp28
+[169811.398561] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+[169811.469657] bond10: Port 1 left LAG 1
+[169811.469659] LAG 1 was cleared
+[169811.469662] bond10: Port 1 joined LAG 1(new LAG)
+[169811.469665] bond10: best Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169811.469668] bond10: best ports 000000003530303d slave 00000000a404b3fa swp28
+[169811.469671] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169811.469672] bond10: LAG 1 chosen as the active LAG
+[169811.469674] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=1
+[169811.469683] bond10: Adding slave dev swp28 to tx hash array[0]
+[169811.485690] bond10: bond_should_notify_peers: slave swp28
+[169811.589655] bond10: bond_should_notify_peers: slave swp28
+[169811.693654] bond10: bond_should_notify_peers: slave swp28
+[169811.797652] bond10: bond_should_notify_peers: slave swp28
+[169811.901656] bond10: bond_should_notify_peers: slave swp28
+[169812.005690] bond10: bond_should_notify_peers: slave swp28
+[169812.109653] bond10: bond_should_notify_peers: slave swp28
+[169812.213653] bond10: bond_should_notify_peers: slave swp28
+[169812.317654] bond10: bond_should_notify_peers: slave swp28
+[169812.334558] bond10: Received LACPDU on port 1 slave swp28
+[169812.334569] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+[169812.405655] bond10: Port 1 left LAG 1
+[169812.405657] LAG 1 was cleared
+[169812.405659] bond10: Port 1 joined LAG 1(new LAG)
+[169812.405662] bond10: best Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169812.405666] bond10: best ports 000000003530303d slave 00000000a404b3fa swp28
+[169812.405668] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169812.405670] bond10: LAG 1 chosen as the active LAG
+[169812.405672] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=1
+[169812.405681] bond10: Adding slave dev swp28 to tx hash array[0]
+[169812.421656] bond10: bond_should_notify_peers: slave swp28
+[169812.525655] bond10: bond_should_notify_peers: slave swp28
+[169812.629654] bond10: bond_should_notify_peers: slave swp28
+[169812.733654] bond10: bond_should_notify_peers: slave swp28
+[169812.837657] bond10: bond_should_notify_peers: slave swp28
+[169812.941653] bond10: bond_should_notify_peers: slave swp28
+[169813.045667] bond10: bond_should_notify_peers: slave swp28
+[169813.150600] bond10: bond_should_notify_peers: slave swp28
+[169813.253655] bond10: bond_should_notify_peers: slave swp28
+[169813.270552] bond10: Received LACPDU on port 1 slave swp28
+[169813.270562] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+[169813.341657] bond10: Port 1 left LAG 1
+[169813.341659] LAG 1 was cleared
+[169813.341661] bond10: Port 1 joined LAG 1(new LAG)
+[169813.341665] bond10: best Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169813.341668] bond10: best ports 000000003530303d slave 00000000a404b3fa swp28
+[169813.341670] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169813.341672] bond10: LAG 1 chosen as the active LAG
+[169813.341674] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=1
+[169813.341683] bond10: Adding slave dev swp28 to tx hash array[0]
+[169813.357691] bond10: bond_should_notify_peers: slave swp28
+[169813.461653] bond10: bond_should_notify_peers: slave swp28
+[169813.565651] bond10: bond_should_notify_peers: slave swp28
+[169813.669651] bond10: bond_should_notify_peers: slave swp28
+[169813.773653] bond10: bond_should_notify_peers: slave swp28
+[169813.877653] bond10: bond_should_notify_peers: slave swp28
+[169813.981654] bond10: bond_should_notify_peers: slave swp28
+[169814.085654] bond10: bond_should_notify_peers: slave swp28
+[169814.190653] bond10: bond_should_notify_peers: slave swp28
+[169814.293660] bond10: bond_should_notify_peers: slave swp28
+[169814.398650] bond10: bond_should_notify_peers: slave swp28
+[169814.501658] bond10: bond_should_notify_peers: slave swp28
+[169814.518570] bond10: Received LACPDU on port 1 slave swp28
+[169814.518573] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+[169814.589656] bond10: Port 1 left LAG 1
+[169814.589658] LAG 1 was cleared
+[169814.589661] bond10: Port 1 joined LAG 1(new LAG)
+[169814.589664] bond10: best Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169814.589668] bond10: best ports 000000003530303d slave 00000000a404b3fa swp28
+[169814.589670] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169814.589672] bond10: LAG 1 chosen as the active LAG
+[169814.589674] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=1
+[169814.589684] bond10: Adding slave dev swp28 to tx hash array[0]
+[169814.605697] bond10: bond_should_notify_peers: slave swp28
+[169814.709656] bond10: bond_should_notify_peers: slave swp28
+[169814.813655] bond10: bond_should_notify_peers: slave swp28
+[169814.917660] bond10: bond_should_notify_peers: slave swp28
+[169815.021652] bond10: bond_should_notify_peers: slave swp28
+[169815.125648] bond10: bond_should_notify_peers: slave swp28
+[169815.134877] i40e 0000:b6:00.0 enp182s0f0: SFP module type unrecognized or no SFP connector.
+[169815.147201] i40e 0000:b6:00.1 enp182s0f1: SFP module type unrecognized or no SFP connector.
+[169815.229654] bond10: bond_should_notify_peers: slave swp28
+[169815.333606] bond10: bond_should_notify_peers: slave swp28
+[169815.437653] bond10: bond_should_notify_peers: slave swp28
+[169815.454562] bond10: Received LACPDU on port 1 slave swp28
+[169815.454573] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+[169815.525603] bond10: Port 1 left LAG 1
+[169815.525605] LAG 1 was cleared
+[169815.525607] bond10: Port 1 joined LAG 1(new LAG)
+[169815.525611] bond10: best Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169815.525614] bond10: best ports 000000003530303d slave 00000000a404b3fa swp28
+[169815.525616] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169815.525618] bond10: LAG 1 chosen as the active LAG
+[169815.525620] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=1
+[169815.525629] bond10: Adding slave dev swp28 to tx hash array[0]
+[169815.541649] bond10: bond_should_notify_peers: slave swp28
+[169815.645653] bond10: bond_should_notify_peers: slave swp28
+[169815.749658] bond10: bond_should_notify_peers: slave swp28
+[169815.854594] bond10: bond_should_notify_peers: slave swp28
+[169815.957653] bond10: bond_should_notify_peers: slave swp28
+[169816.061663] bond10: bond_should_notify_peers: slave swp28
+[169816.165652] bond10: bond_should_notify_peers: slave swp28
+[169816.269656] bond10: bond_should_notify_peers: slave swp28
+[169816.373651] bond10: bond_should_notify_peers: slave swp28
+[169816.390568] bond10: Received LACPDU on port 1 slave swp28
+[169816.390571] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+[169816.461651] bond10: Port 1 left LAG 1
+[169816.461653] LAG 1 was cleared
+[169816.461656] bond10: Port 1 joined LAG 1(new LAG)
+[169816.461660] bond10: best Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169816.461663] bond10: best ports 000000003530303d slave 00000000a404b3fa swp28
+[169816.461665] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169816.461667] bond10: LAG 1 chosen as the active LAG
+[169816.461669] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=1
+[169816.461678] bond10: Adding slave dev swp28 to tx hash array[0]
+[169816.477666] bond10: bond_should_notify_peers: slave swp28
+[169816.581661] bond10: bond_should_notify_peers: slave swp28
+[169816.685614] bond10: bond_should_notify_peers: slave swp28
+[169816.789653] bond10: bond_should_notify_peers: slave swp28
+[169816.893650] bond10: bond_should_notify_peers: slave swp28
+[169816.997653] bond10: bond_should_notify_peers: slave swp28
+[169817.101645] bond10: bond_should_notify_peers: slave swp28
+[169817.205644] bond10: bond_should_notify_peers: slave swp28
+[169817.309652] bond10: bond_should_notify_peers: slave swp28
+[169817.413649] bond10: bond_should_notify_peers: slave swp28
+[169817.517655] bond10: bond_should_notify_peers: slave swp28
+[169817.621654] bond10: bond_should_notify_peers: slave swp28
+[169817.638569] bond10: Received LACPDU on port 1 slave swp28
+[169817.638580] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
+[169817.709655] bond10: Port 1 left LAG 1
+[169817.709657] LAG 1 was cleared
+[169817.709659] bond10: Port 1 joined LAG 1(new LAG)
+[169817.709663] bond10: best Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169817.709666] bond10: best ports 000000003530303d slave 00000000a404b3fa swp28
+[169817.709669] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=0
+[169817.709670] bond10: LAG 1 chosen as the active LAG
+[169817.709672] bond10: Agg=1; P=1; a k=1; p k=1; Ind=0; Act=1
+[169817.709682] bond10: Adding slave dev swp28 to tx hash array[0]
+[169817.725655] bond10: bond_should_notify_peers: slave swp28
+[169817.829654] bond10: bond_should_notify_peers: slave swp28
+[169817.933652] bond10: bond_should_notify_peers: slave swp28
+[169818.037654] bond10: bond_should_notify_peers: slave swp28
+[169818.141654] bond10: bond_should_notify_peers: slave swp28
+[169818.245645] bond10: bond_should_notify_peers: slave swp28
+[169818.349650] bond10: bond_should_notify_peers: slave swp28
+[169818.453690] bond10: bond_should_notify_peers: slave swp28
+[169818.557657] bond10: bond_should_notify_peers: slave swp28
+[169818.574572] bond10: Received LACPDU on port 1 slave swp28
+[169818.574583] Rx Machine: Port=1 (swp28), Last State=3, Curr State=3
