@@ -81,3 +81,68 @@ Working
 [ 1372.887919] Rx Machine - 2: Port=1 (swp28), Last State=4, Curr State=6 vars=270
 [ 1373.199919] Rx Machine - 2: Port=1 (swp28), Last State=6, Curr State=6 vars=322
 [ 1375.071970] Rx Machine - 2: Port=1 (swp28), Last State=6, Curr State=6 vars=370
+
+
+
+
+
+Working
+=========
+
+[34470.949374] Rx Machine - 2: Port=1 (swp28), Last State=3, Curr State=3 vars=370
+[34494.080080] Rx Machine - 12 update keys : Port=1 (swp28), Last State=0, Curr State=0 vars=3 port enabled 1
+[34494.080083] Rx Machine - 13 update keys : Port=1 (swp28), Last State=0, Curr State=0 vars=3 port enabled 1 dupplex1
+[34494.080086] swp28: speed changed to 0 for port swp28
+[34494.123031] Rx Machine - 2: Port=1 (swp28), Last State=0, Curr State=1 vars=15
+[34494.226029] Rx Machine - 0: Port=1 (swp28), Last State=2, Curr State=2 vars=258 port enabled 1
+[34494.226031] Rx Machine - 1: Port=1 (swp28), Last State=2, Curr State=4 vars=258
+[34494.226033] Rx Machine - 2: Port=1 (swp28), Last State=2, Curr State=4 vars=258
+[34494.349485] Rx Machine - 2: Port=1 (swp28), Last State=4, Curr State=6 vars=270
+[34494.349487] swp28 partner sync=1
+
+
+[34496.533461] Rx Machine - 2: Port=1 (swp28), Last State=6, Curr State=6 vars=370
+[34496.533464] swp28 partner sync=1
+
+==== Shutdown port ======
+[34502.149536] Rx Machine - 2: Port=1 (swp28), Last State=6, Curr State=6 vars=370
+[34502.149538] swp28 partner sync=1
+[34507.362418] Rx Machine - 12 update keys : Port=1 (swp28), Last State=0, Curr State=6 vars=370 port enabled 0
+[34507.362421] Rx Machine - 13 update keys : Port=1 (swp28), Last State=0, Curr State=6 vars=368 port enabled 0 dupplex 0
+[34507.362431] bond10: Port 1 changed link status to DOWN
+[34507.434120] Rx Machine - 2: Port=1 (swp28), Last State=6, Curr State=2 vars=368
+
+
+
+
+====== Bring up port ======
+[34522.052697] bond10: Port 1 slave swp28 changed speed/duplex
+[34523.138207] bond10: Port 1 slave swp28 changed speed/duplex
+[34523.171268] Rx Machine - 12 update keys : Port=1 (swp28), Last State=0, Curr State=2 vars=304 port enabled 1
+[34523.171271] Rx Machine - 13 update keys : Port=1 (swp28), Last State=0, Curr State=2 vars=306 port enabled 1 dupplex 1
+[34523.171273] swp28: speed changed to 0 for port swp28
+[34523.176284] bond10: Port 1 changed link status to UP
+[34523.242117] Rx Machine - 0: Port=1 (swp28), Last State=2, Curr State=2 vars=306 port enabled 1
+[34523.242120] Rx Machine - 1: Port=1 (swp28), Last State=2, Curr State=4 vars=306
+[34523.242122] Rx Machine - 2: Port=1 (swp28), Last State=2, Curr State=4 vars=306
+[34523.365591] Rx Machine - 2: Port=1 (swp28), Last State=4, Curr State=6 vars=318
+[34523.365594] swp28 partner sync=1
+
+
+Not working
+===========
+====== Port is down config bond =====
+[34618.722087] Rx Machine - 2: Port=1 (swp28), Last State=0, Curr State=1 vars=15
+[34618.826086] Rx Machine - 0: Port=1 (swp28), Last State=2, Curr State=2 vars=256 port enabled 1
+[34618.826089] Rx Machine - 1: Port=1 (swp28), Last State=2, Curr State=3 vars=256
+[34618.826091] Rx Machine - 2: Port=1 (swp28), Last State=2, Curr State=3 vars=256
+
+
+
+====== Bring up port =======
+[34636.198326] bond10: Port 1 slave swp28 changed speed/duplex
+[34636.242187] Rx Machine - 12 update keys : Port=1 (swp28), Last State=0, Curr State=3 vars=368 port enabled 1
+[34636.242188] Rx Machine - 13 update keys : Port=1 (swp28), Last State=0, Curr State=3 vars=370 port enabled 1 dupplex 1
+[34636.242189] swp28: speed changed to 0 for port swp28
+[34636.256234] bond10: Port 1 changed link status to UP
+[34636.623153] Rx Machine - 2: Port=1 (swp28), Last State=3, Curr State=3 vars=370

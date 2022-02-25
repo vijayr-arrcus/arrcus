@@ -51,3 +51,6 @@ tatic ssize_t ad_partner_oper_port_state_show(struct slave *slave, char *buf)
   return sprintf(buf, "N/A\n");
 }
 static SLAVE_ATTR_RO(ad_partner_oper_port_state);
+
+
+bond_3ad_handle_link_change
