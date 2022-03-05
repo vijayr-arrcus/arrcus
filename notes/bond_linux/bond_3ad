@@ -54,3 +54,29 @@ static SLAVE_ATTR_RO(ad_partner_oper_port_state);
 
 
 bond_3ad_handle_link_change
+
+
+
+/* rx machine states(43.4.11 in the 802.3ad standard) */
+typedef enum {
+  AD_RX_DUMMY,
+  AD_RX_INITIALIZE, /* rx Machine */
+  AD_RX_PORT_DISABLED,  /* rx Machine */
+  AD_RX_LACP_DISABLED,  /* rx Machine */
+  AD_RX_EXPIRED,    /* rx Machine */
+  AD_RX_DEFAULTED,  /* rx Machine */
+  AD_RX_CURRENT   /* rx Machine */
+} rx_states_t;
+
+/* mux machine states(43.4.13 in the 802.3ad standard) */
+typedef enum {
+  AD_MUX_DUMMY,
+  AD_MUX_DETACHED,  /* mux machine */
+  AD_MUX_WAITING,   /* mux machine */
+  AD_MUX_ATTACHED,  /* mux machine */
+  AD_MUX_COLLECTING_DISTRIBUTING  /* mux machine */
+} mux_states_t;
+
+
+bond_3ad_bind_slave
+

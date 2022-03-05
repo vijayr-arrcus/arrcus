@@ -157,9 +157,9 @@ l2 add mac=0x2 vl=50 port=cd1 static=1
 l2 add mac=0x3 vl=50 port=cd2 static=1
 vlan create 50 pbm=cd0,cd1,cd2
 port cd0 en=1 lb=mac
-port cd1 en=0 lb=mac
-port cd2 en=0 lb=mac
-tx 100 pbm=cd2 vl=50 sm=0x1 dm=0xABCDABCDABCD Length=155
+port cd1 en=1 lb=mac
+port cd2 en=1 lb=mac
+tx 10 pbm=cd2 vl=50 sm=0x1 dm=0xABCDABCDABCD Length=155
 
 hsdk code already has this decode info and "pmddecode" command is using the same access routines to decode the metadata. So please explore below files and the pointed functions to understand and same way you can decode your RCPU packet.
 
@@ -175,3 +175,9 @@ libs/sdklt/bcmpkt/chip/bcm56880_a0/dna_4_8_7_0/bcm56880_a0_dna_4_8_7_0_pkt_flexh
 If you are specifically looking for the RX reasons to print from RCPU packet, then you can decode the last two words(words 16,17) with bcm56880_a0_dna_4_8_7_0_rxpmd_flex_reason_decode() function.
 
 https://brcmsemiconductor-csm.wolkenservicedesk.com/wolken-support/allcases/request-details?requestId=CS00012231679
+
+
+
+
+bcma_bcmpktcmd_pmddecode 
+    
