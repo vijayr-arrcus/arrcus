@@ -1,0 +1,45 @@
+
+typedef enum if_fec_type_e_ {
+  IF_FEC_TYPE_INVALID = 0,
+  IF_FEC_TYPE_NONE = 1,
+  IF_FEC_TYPE_BASER,
+  IF_FEC_TYPE_RS,
+  IF_FEC_TYPE_RS108,
+  IF_FEC_TYPE_RS206 = 5,
+  IF_FEC_TYPE_RS272,
+  IF_FEC_TYPE_RS304,
+  IF_FEC_TYPE_RS544,
+  IF_FEC_TYPE_RS545,
+  IF_FEC_TYPE_RS272_2XN = 10,
+  IF_FEC_TYPE_RS544_2XN,
+  IF_FEC_TYPE_MAX
+} if_fec_type_e;
+
+static bcm_port_phy_fec_t xlate_ifmgr_fec_to_sdk (if_fec_type_e fec)
+{
+  bcm_port_phy_fec_t fec_tbl[] = {
+    bcmPortPhyFecNone, /* This elem is skipped as valid fec's from ifmgr start at idx 1 */
+    bcmPortPhyFecNone,
+    bcmPortPhyFecBaseR,
+    bcmPortPhyFecRsFec,
+    bcmPortPhyFecRs108,
+    bcmPortPhyFecRs206,
+    bcmPortPhyFecRs272,
+    bcmPortPhyFecRs304,
+    bcmPortPhyFecRs544,
+    bcmPortPhyFecRs545,
+    bcmPortPhyFecRs272_2xN,
+    bcmPortPhyFecRs544_2xN
+
+  };
+
+  if (fec < IF_FEC_TYPE_NONE || fec > IF_FEC_TYPE_RS544_2XN) {
+    return bcmPortPhyFecNone;
+
+  }
+  return fec_tbl[fec];
+}
+
+25G -- IFMGR FEC (3)  -- bcmPortPhyFecRsFec
+100G -- IFMGR FEC (8) -- bcmPortPhyFecRs544
+400G -- IFMGR FEC (11) -- bcmPortPhyFecRs544_2xN
