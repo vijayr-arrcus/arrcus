@@ -1,0 +1,7 @@
+
+System Copp
+  -- Disable CPU=1 for everything except for IFP_METERING
+  -- GPCopyToCPU.
+
+User defined COPP
+  -- Enable the default trace events to CPU=1

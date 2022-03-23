@@ -1,0 +1,70 @@
+BCM.0>
+BCM.0> cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint> int_reset();
+** error: identifier 'int_reset' is not a function
+cint> int unit = 0;
+cint> bcm_port_t port = 62;
+cint> bcm_port_resource_t port_info;
+cint> bcm_port_resource_t_init(&port_info);
+cint> print bcm_port_resource_get(unit, port, &port_info);
+int $$ = 0 (0x0)
+cint> print port_info;
+bcm_port_resource_t port_info = {
+    unsigned int flags = 0 (0x0)
+    int port = 62 (0x3e)
+    int physical_port = 113 (0x71)
+    int speed = 100000 (0x186a0)
+    int rx_speed = 0 (0x0)
+    int lanes = 4 (0x4)
+    _shr_port_encap_t encap = 0 (0x0)
+    bcm_port_phy_fec_t fec_type = bcmPortPhyFecRs544 (4)
+    int phy_lane_config = 32772 (0x8004)
+    int link_training = 0 (0x0)
+    int roe_compression = 0 (0x0)
+    int num_subports = 0 (0x0)
+    int line_card = 0 (0x0)
+    int base_flexe_instance = -1 (0xffffffff)
+}
+cint> exit
+BCM.0> ps
+              ena/        speed/ link auto    STP                  lrn             max    cut            loop
+        port  link  Lns   duplex scan neg?   state   pause  discrd ops   medium  frame   thru       FEC  back
+    ce0(  1)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    ce1(  2)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    ce2(  3)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    ce3(  4)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    ce4( 20)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    ce5( 21)  up     4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    ce6( 22)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    ce7( 23)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    xe0( 38)  down   1   10G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No       NONE
+    ce8( 40)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    ce9( 41)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce10( 42)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce11( 43)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce12( 60)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce13( 61)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce14( 62)  up     4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce15( 63)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    xe1( 78)  down   1   10G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No       NONE
+   ce16( 80)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce17( 81)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce18( 82)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce19( 83)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce20(100)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce21(101)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce22(102)  up     4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce23(103)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    xe2(118)  down   1   10G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No       NONE
+   ce24(120)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce25(121)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce26(122)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce27(123)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce28(140)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce29(141)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce30(142)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+   ce31(143)  down   4  100G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No  RS544-1xN
+    xe3(158)  down   1   10G  FD   SW  No   Forward  TX RX   None   FA Backplane  9412    No       NONE
+BCM.0>

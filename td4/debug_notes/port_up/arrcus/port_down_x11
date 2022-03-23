@@ -1,0 +1,8 @@
+cint_reset();
+bcm_l3_egress_t egr_obj;
+bcm_if_t egr_obj_if;
+bcm_l3_egress_t_init(&egr_obj);
+egr_obj.flags |= BCM_L3_DST_DISCARD;
+egr_obj.intf = -1;
+egr_obj.port = 21;
+print bcm_l3_egress_create(0, 0, &egr_obj, &egr_obj_if);

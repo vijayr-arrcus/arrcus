@@ -43,3 +43,158 @@ static bcm_port_phy_fec_t xlate_ifmgr_fec_to_sdk (if_fec_type_e fec)
 25G -- IFMGR FEC (3)  -- bcmPortPhyFecRsFec
 100G -- IFMGR FEC (8) -- bcmPortPhyFecRs544
 400G -- IFMGR FEC (11) -- bcmPortPhyFecRs544_2xN
+
+[2018/03/25 08:38:40.356975][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 100663296, admin state = 2, linkstate = 2, fec_tytpe = 0
+[2018/03/25 08:38:50.085141]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 1, name ma1 index 3
+[2018/03/25 08:38:50.092237]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 3, name swp0 index 1001
+[2018/03/25 08:38:50.097037]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 3, name swp1 index 1002
+[2018/03/25 08:38:50.097450][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 3, admin state = 2, link state =2, fec_tytpe = 1
+[2018/03/25 08:38:50.097558][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1001, admin state = 1, link state = 1, fec_tytpe = 3
+[2018/03/25 08:38:50.097654][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1002, admin state = 1, link state = 1, fec_tytpe = 3
+[2018/03/25 08:38:50.109966]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 3, name swp2 index 1003
+[2018/03/25 08:38:50.110265]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 3, name swp3 index 1004
+[2018/03/25 08:38:50.110527]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 3, name swp4 index 1005
+[2018/03/25 08:38:50.217432][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1003, admin state = 1, link state = 1, fec_tytpe = 3
+[2018/03/25 08:38:50.217457][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1004, admin state = 1, link state = 1, fec_tytpe = 3
+[2018/03/25 08:38:50.217479][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1005, admin state = 1, link state = 1, fec_tytpe = 3
+[2018/03/25 08:38:50.549085]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 3, name swp5 index 1006
+[2018/03/25 08:38:50.549384]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 3, name swp6 index 1007
+[2018/03/25 08:38:50.549601]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 3, name swp7 index 1008
+[2018/03/25 08:38:50.549780]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 8, name swp8 index 1009
+[2018/03/25 08:38:50.549992]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 8, name swp9 index 1010
+[2018/03/25 08:38:50.550187]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 8, name swp10 index 1011
+[2018/03/25 08:38:50.550371]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 8, name swp11 index 1012
+[2018/03/25 08:38:50.550576]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 8, name swp12 index 1013
+[2018/03/25 08:38:50.550765]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 8, name swp13 index 1014
+[2018/03/25 08:38:50.550946]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 8, name swp14 index 1015
+[2018/03/25 08:38:50.551125]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 8, name swp15 index 1016
+[2018/03/25 08:38:50.551308]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp16 index 1017
+[2018/03/25 08:38:50.551541]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp17 index 1018
+[2018/03/25 08:38:50.551786]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp18 index 1019
+[2018/03/25 08:38:50.551978]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp19 index 1020
+[2018/03/25 08:38:50.552227]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp20 index 1021
+[2018/03/25 08:38:50.552439]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp21 index 1022
+[2018/03/25 08:38:50.552655]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp22 index 1023
+[2018/03/25 08:38:50.552849]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp23 index 1024
+[2018/03/25 08:38:50.553035]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp24 index 1025
+[2018/03/25 08:38:50.553217]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp25 index 1026
+[2018/03/25 08:38:50.553397]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp26 index 1027
+[2018/03/25 08:38:50.553584]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp27 index 1028
+[2018/03/25 08:38:50.553769]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp28 index 1029
+[2018/03/25 08:38:50.553974]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp29 index 1030
+[2018/03/25 08:38:50.554153]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp30 index 1031
+[2018/03/25 08:38:50.554340]**ERR**[IFMGR] ifmgr_handle_if_create_event VIJAY fec type 11, name swp31 index 1032
+[2018/03/25 08:39:05.691694][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 3, admin state = 2, link state =2, fec_tytpe = 3
+[2018/03/25 08:39:05.691744][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1001, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.691782][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1002, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.691816][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1003, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.691855][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1004, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.691904][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1005, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.691941][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1006, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.691979][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1007, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.692014][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1008, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.692050][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1009, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.692085][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1010, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.692124][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1011, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.692169][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1012, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.692221][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1013, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.692267][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1014, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.692313][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1015, admin state = 2, link state = 1, fec_tytpe = 2
+[2018/03/25 08:39:05.692369][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1016, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.692418][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1017, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.692478][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1018, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.692530][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1019, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.692563][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1020, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.692612][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1021, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.692665][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1022, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.692708][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1023, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.692748][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1024, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.692799][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1025, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.692839][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1026, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.692891][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1027, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.692931][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1028, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.692989][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1029, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.693023][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1030, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.693061][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1031, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.693103][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1032, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.693158][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 15003, admin state = 2, link state = 1, fec_tytpe = 0
+[2018/03/25 08:39:05.693209][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 15004, admin state = 2, link state = 1, fec_tytpe = 0
+[2018/03/25 08:39:05.693261][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 15006, admin state = 2, link state = 2, fec_tytpe = 0
+[2018/03/25 08:39:05.938188][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1001, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.938246][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1002, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.938307][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1003, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.938358][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1004, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.938413][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1005, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.938474][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1006, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.938543][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1007, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.938591][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1008, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.938643][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1009, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.938691][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1010, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.938741][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1011, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.938797][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1012, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.938842][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1013, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.938900][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1014, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.938947][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1015, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:05.938995][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1016, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:05.939043][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1017, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939094][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1018, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939145][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1019, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939191][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1020, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939237][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1021, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939292][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1022, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939353][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1023, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939410][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1024, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939463][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1025, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939530][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1026, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939582][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1027, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939633][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1028, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939685][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1029, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939737][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1030, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939797][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1031, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939848][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1032, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:05.939905][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 15003, admin state = 2, link state = 1, fec_tytpe = 0
+[2018/03/25 08:39:05.939958][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 15004, admin state = 2, link state = 1, fec_tytpe = 0
+[2018/03/25 08:39:06.533714][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 3, admin state = 2, link state =2, fec_tytpe = 3
+[2018/03/25 08:39:06.533757][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1001, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.533795][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1002, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.533831][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1003, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.533873][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1004, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.533926][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1006, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.533975][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1007, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.534052][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1008, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.534106][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1009, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:06.534147][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1010, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:06.534182][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1012, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.534216][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1013, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:06.534254][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1014, admin state = 2, link state = 1, fec_tytpe = 8
+[2018/03/25 08:39:06.534291][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1015, admin state = 2, link state = 1, fec_tytpe = 2
+[2018/03/25 08:39:06.534343][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1017, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.534406][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1018, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.534457][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1019, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.534519][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1020, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.534579][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1021, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.534628][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1022, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.534680][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1023, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.534731][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1024, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.534797][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1025, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.534847][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1026, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.534897][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1027, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.534948][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1028, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.534996][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1029, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.535046][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1030, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.535093][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1031, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.535139][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1032, admin state = 2, link state = 1, fec_tytpe = 11
+[2018/03/25 08:39:06.535195][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 15003, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.535241][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 15004, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:06.535300][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 15006, admin state = 2, link state = 2, fec_tytpe = 3
+[2018/03/25 08:39:06.535353][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1011, admin state = 2, link state = 2, fec_tytpe = 3
+[2018/03/25 08:39:06.906586][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1012, admin state = 2, link state = 2, fec_tytpe = 3
+[2018/03/25 08:39:08.838152][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1011, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:09.103737][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1023, admin state = 2, link state = 2, fec_tytpe = 11
+[2018/03/25 08:39:09.865743][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1012, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:10.292007][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1012, admin state = 2, link state = 2, fec_tytpe = 3
+[2018/03/25 08:39:10.548187][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1011, admin state = 2, link state = 1, fec_tytpe = 3
+[2018/03/25 08:39:10.548223][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1023, admin state = 2, link state = 2, fec_tytpe = 11
+[2018/03/25 08:39:10.548268][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1012, admin state = 2, link state = 2, fec_tytpe = 3
+[2018/03/25 08:39:10.814513][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1011, admin state = 2, link state = 2, fec_tytpe = 3
+[2018/03/25 08:39:10.820038][DEBUG][IFMGR] VIJAY MPSC IF TBL add/update publish succeeded for ifindex 1011, admin state = 2, link state = 2, fec_tytpe = 3

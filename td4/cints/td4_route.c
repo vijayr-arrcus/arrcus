@@ -15,8 +15,8 @@ route_t.l3a_subnet = 0x0A010100;
 route_t.l3a_ip_mask = 0xffffff00;
 route_t.l3a_intf = egr_obj_if;
 route_t.l3a_vrf = 0;
-route_t.l3a_opaque_ctrl_id = 6;
-route_t.l3a_lookup_class = 6;
+route_t.l3a_opaque_ctrl_id = 0;
+route_t.l3a_lookup_class = 0;
 rv = bcm_l3_route_add(unit, &route_t);
 if (BCM_FAILURE(rv)) {
     printf(“Error in bcm_l3_route_add: %s\n”, bcm_errmsg(rv));
