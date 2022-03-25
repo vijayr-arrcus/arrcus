@@ -1,0 +1,271 @@
+[bcmPWN.0]Packet[1209]:
+Packet[1209]:   Ethernet: dst<e8:c5:7a:b5:58:23> src<00:01:01:01:09:05> Tagged Packet ProtID<0x8100> Ctrl<0x0064> Internet Protocol (IP)
+Packet[1209]:   IP: V(4) src<100.1.19.10> dst<101.1.19.10> hl<5> service-type<0> tl<1478> id<0> frg-off<0> ttl<64> > chk-sum<0x85e5>
+[bcmPWN.0]
+[bcmPWN.0]Packet[1210]: data[0000]: {e8c57ab55823} {000101010905} 8100 0064
+[bcmPWN.0]Packet[1210]: data[0010]: 0800 4500 05c6 0000 0000 403d 85e5 6401
+[bcmPWN.0]Packet[1210]: data[0020]: 130a 6501 130a ecc0 d680 6f76 8300 4978
+[bcmPWN.0]Packet[1210]: data[0030]: 6960 4800 0000 1011 1213 9f5a 5e6c 0596
+[bcmPWN.0]Packet[1210]: data[0040]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1210]: data[0050]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1210]: data[0060]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1210]: data[0070]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1210]: data[0080]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1210]: data[0090]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1210]: data[00a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1210]: data[00b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1210]: data[00c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1210]: data[00d0]: aaab acad aeaf b0b1 b2b3 b4b5 b6b7 b8b9
+[bcmPWN.0]Packet[1210]: data[00e0]: babb bcbd bebf c0c1 c2c3 c4c5 c6c7 c8c9
+[bcmPWN.0]Packet[1210]: data[00f0]: cacb cccd cecf d0d1 d2d3 d4d5 d6d7 d8d9
+[bcmPWN.0]Packet[1210]: data[0100]: dadb dcdd dedf e0e1 e2e3 e4e5 e6e7 e8e9
+[bcmPWN.0]Packet[1210]: data[0110]: eaeb eced eeef f0f1 f2f3 f4f5 f6f7 f8f9
+[bcmPWN.0]Packet[1210]: data[0120]: fafb fcfd feff 0001 0203 0405 0607 0809
+[bcmPWN.0]Packet[1210]: data[0130]: 0a0b 0c0d 0e0f 1011 1213 1415 1617 1819
+[bcmPWN.0]Packet[1210]: data[0140]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1210]: data[0150]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1210]: data[0160]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1210]: data[0170]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1210]: data[0180]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1210]: data[0190]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1210]: data[01a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1210]: data[01b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1210]: data[01c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1210]: data[01d0]: aaab acad aeaf b0b1 b2b3 b4b5 b6b7 b8b9
+[bcmPWN.0]Packet[1210]: data[01e0]: babb bcbd bebf c0c1 c2c3 c4c5 c6c7 c8c9
+[bcmPWN.0]Packet[1210]: data[01f0]: cacb cccd cecf d0d1 d2d3 d4d5 d6d7 d8d9
+[bcmPWN.0]Packet[1210]: data[0200]: dadb dcdd dedf e0e1 e2e3 e4e5 e6e7 e8e9
+[bcmPWN.0]Packet[1210]: data[0210]: eaeb eced eeef f0f1 f2f3 f4f5 f6f7 f8f9
+[bcmPWN.0]Packet[1210]: data[0220]: fafb fcfd feff 0001 0203 0405 0607 0809
+[bcmPWN.0]Packet[1210]: data[0230]: 0a0b 0c0d 0e0f 1011 1213 1415 1617 1819
+[bcmPWN.0]Packet[1210]: data[0240]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1210]: data[0250]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1210]: data[0260]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1210]: data[0270]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1210]: data[0280]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1210]: data[0290]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1210]: data[02a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1210]: data[02b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1210]: data[02c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1210]: data[02d0]: aaab acad aeaf b0b1 b2b3 b4b5 b6b7 b8b9
+[bcmPWN.0]Packet[1210]: data[02e0]: babb bcbd bebf c0c1 c2c3 c4c5 c6c7 c8c9
+[bcmPWN.0]Packet[1210]: data[02f0]: cacb cccd cecf d0d1 d2d3 d4d5 d6d7 d8d9
+[bcmPWN.0]Packet[1210]: data[0300]: dadb dcdd dedf e0e1 e2e3 e4e5 e6e7 e8e9
+[bcmPWN.0]Packet[1210]: data[0310]: eaeb eced eeef f0f1 f2f3 f4f5 f6f7 f8f9
+[bcmPWN.0]Packet[1210]: data[0320]: fafb fcfd feff 0001 0203 0405 0607 0809
+[bcmPWN.0]Packet[1210]: data[0330]: 0a0b 0c0d 0e0f 1011 1213 1415 1617 1819
+[bcmPWN.0]Packet[1210]: data[0340]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1210]: data[0350]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1210]: data[0360]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1210]: data[0370]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1210]: data[0380]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1210]: data[0390]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1210]: data[03a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1210]: data[03b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1210]: data[03c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1210]: data[03d0]: aaab acad aeaf b0b1 b2b3 b4b5 b6b7 b8b9
+[bcmPWN.0]Packet[1210]: data[03e0]: babb bcbd bebf c0c1 c2c3 c4c5 c6c7 c8c9
+[bcmPWN.0]Packet[1210]: data[03f0]: cacb cccd cecf d0d1 d2d3 d4d5 d6d7 d8d9
+[bcmPWN.0]Packet[1210]: data[0400]: dadb dcdd dedf e0e1 e2e3 e4e5 e6e7 e8e9
+[bcmPWN.0]Packet[1210]: data[0410]: eaeb eced eeef f0f1 f2f3 f4f5 f6f7 f8f9
+[bcmPWN.0]Packet[1210]: data[0420]: fafb fcfd feff 0001 0203 0405 0607 0809
+[bcmPWN.0]Packet[1210]: data[0430]: 0a0b 0c0d 0e0f 1011 1213 1415 1617 1819
+[bcmPWN.0]Packet[1210]: data[0440]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1210]: data[0450]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1210]: data[0460]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1210]: data[0470]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1210]: data[0480]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1210]: data[0490]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1210]: data[04a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1210]: data[04b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1210]: data[04c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1210]: data[04d0]: aaab acad aeaf b0b1 b2b3 b4b5 b6b7 b8b9
+[bcmPWN.0]Packet[1210]: data[04e0]: babb bcbd bebf c0c1 c2c3 c4c5 c6c7 c8c9
+[bcmPWN.0]Packet[1210]: data[04f0]: cacb cccd cecf d0d1 d2d3 d4d5 d6d7 d8d9
+[bcmPWN.0]Packet[1210]: data[0500]: dadb dcdd dedf e0e1 e2e3 e4e5 e6e7 e8e9
+[bcmPWN.0]Packet[1210]: data[0510]: eaeb eced eeef f0f1 f2f3 f4f5 f6f7 f8f9
+[bcmPWN.0]Packet[1210]: data[0520]: fafb fcfd feff 0001 0203 0405 0607 0809
+[bcmPWN.0]Packet[1210]: data[0530]: 0a0b 0c0d 0e0f 1011 1213 1415 1617 1819
+[bcmPWN.0]Packet[1210]: data[0540]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1210]: data[0550]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1210]: data[0560]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1210]: data[0570]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1210]: data[0580]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1210]: data[0590]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1210]: data[05a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1210]: data[05b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1210]: data[05c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1210]: data[05d0]: aaab acad aeaf 51d8
+[bcmPWN.0]
+
+[RX metadata information]
+	QUEUE_NUM=1
+	PKT_LENGTH=0x5dc
+	SRC_PORT_NUM=0x3f
+	IP_ROUTED=1
+	SWITCH=1
+	MATCH_ID_LO=0xa01424
+	MPB_FLEX_DATA_TYPE=0xd
+	EGR_ZONE_REMAP_CTRL=1
+	COPY_TO_CPU=1
+[FLEX fields]
+	EFFECTIVE_TTL_7_0=0x40
+	ENTROPY_LABEL_LOW_15_0=0xdc3a
+	EVENT_TRACE_VECTOR_31_16=8
+	INGRESS_PP_PORT_7_0=0x3f
+	L2_OIF_10_0=0x50
+	L3_IIF_13_0=0xc
+	L3_OIF_1_13_0=0x3fff
+	MPLS_LABEL_DECAP_COUNT_3_0=8
+	NHOP_INDEX_1_15_0=1
+	PARSER_VHLEN_0_15_0=0x8a
+	PKT_MISC_CTRL_0_3_0=1
+	SYSTEM_DESTINATION_15_0=0x50
+	SYSTEM_OPCODE_3_0=1
+	SYSTEM_SOURCE_15_0=0x3f
+	VFI_15_0=0x64
+	VLAN_TAG_PRESERVE_CTRL_SVP_MIRROR_ENABLE_1_0=2
+[RX reasons]
+	IFP_METER
+[Decode match id]
+	INGRESS_PKT_OUTER_L2_HDR_L2
+	INGRESS_PKT_OUTER_L2_HDR_OTAG
+	INGRESS_PKT_OUTER_L3_L4_HDR_ETHERTYPE
+	INGRESS_PKT_OUTER_L3_L4_HDR_IPV4
+	INGRESS_PKT_OUTER_L3_L4_HDR_UNKNOWN_L4
+
+[bcmPWN.0]Packet[1210]:
+Packet[1210]:   Ethernet: dst<e8:c5:7a:b5:58:23> src<00:01:01:01:09:05> Tagged Packet ProtID<0x8100> Ctrl<0x0064> Internet Protocol (IP)
+Packet[1210]:   IP: V(4) src<100.1.19.10> dst<101.1.19.10> hl<5> service-type<0> tl<1478> id<0> frg-off<0> ttl<64> > chk-sum<0x85e5>
+[bcmPWN.0]
+[bcmPWN.0]Packet[1211]: data[0000]: {e8c57ab55823} {000101010905} 8100 0064
+[bcmPWN.0]Packet[1211]: data[0010]: 0800 4500 05c6 0000 0000 403d 85e5 6401
+[bcmPWN.0]Packet[1211]: data[0020]: 130a 6501 130a ecc0 d680 6f76 8300 4978
+[bcmPWN.0]Packet[1211]: data[0030]: 6960 4800 0000 1011 1213 9f60 2acc 0596
+[bcmPWN.0]Packet[1211]: data[0040]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1211]: data[0050]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1211]: data[0060]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1211]: data[0070]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1211]: data[0080]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1211]: data[0090]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1211]: data[00a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1211]: data[00b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1211]: data[00c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1211]: data[00d0]: aaab acad aeaf b0b1 b2b3 b4b5 b6b7 b8b9
+[bcmPWN.0]Packet[1211]: data[00e0]: babb bcbd bebf c0c1 c2c3 c4c5 c6c7 c8c9
+[bcmPWN.0]Packet[1211]: data[00f0]: cacb cccd cecf d0d1 d2d3 d4d5 d6d7 d8d9
+[bcmPWN.0]Packet[1211]: data[0100]: dadb dcdd dedf e0e1 e2e3 e4e5 e6e7 e8e9
+[bcmPWN.0]Packet[1211]: data[0110]: eaeb eced eeef f0f1 f2f3 f4f5 f6f7 f8f9
+[bcmPWN.0]Packet[1211]: data[0120]: fafb fcfd feff 0001 0203 0405 0607 0809
+[bcmPWN.0]Packet[1211]: data[0130]: 0a0b 0c0d 0e0f 1011 1213 1415 1617 1819
+[bcmPWN.0]Packet[1211]: data[0140]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1211]: data[0150]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1211]: data[0160]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1211]: data[0170]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1211]: data[0180]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1211]: data[0190]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1211]: data[01a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1211]: data[01b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1211]: data[01c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1211]: data[01d0]: aaab acad aeaf b0b1 b2b3 b4b5 b6b7 b8b9
+[bcmPWN.0]Packet[1211]: data[01e0]: babb bcbd bebf c0c1 c2c3 c4c5 c6c7 c8c9
+[bcmPWN.0]Packet[1211]: data[01f0]: cacb cccd cecf d0d1 d2d3 d4d5 d6d7 d8d9
+[bcmPWN.0]Packet[1211]: data[0200]: dadb dcdd dedf e0e1 e2e3 e4e5 e6e7 e8e9
+[bcmPWN.0]Packet[1211]: data[0210]: eaeb eced eeef f0f1 f2f3 f4f5 f6f7 f8f9
+[bcmPWN.0]Packet[1211]: data[0220]: fafb fcfd feff 0001 0203 0405 0607 0809
+[bcmPWN.0]Packet[1211]: data[0230]: 0a0b 0c0d 0e0f 1011 1213 1415 1617 1819
+[bcmPWN.0]Packet[1211]: data[0240]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1211]: data[0250]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1211]: data[0260]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1211]: data[0270]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1211]: data[0280]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1211]: data[0290]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1211]: data[02a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1211]: data[02b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1211]: data[02c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1211]: data[02d0]: aaab acad aeaf b0b1 b2b3 b4b5 b6b7 b8b9
+[bcmPWN.0]Packet[1211]: data[02e0]: babb bcbd bebf c0c1 c2c3 c4c5 c6c7 c8c9
+[bcmPWN.0]Packet[1211]: data[02f0]: cacb cccd cecf d0d1 d2d3 d4d5 d6d7 d8d9
+[bcmPWN.0]Packet[1211]: data[0300]: dadb dcdd dedf e0e1 e2e3 e4e5 e6e7 e8e9
+[bcmPWN.0]Packet[1211]: data[0310]: eaeb eced eeef f0f1 f2f3 f4f5 f6f7 f8f9
+[bcmPWN.0]Packet[1211]: data[0320]: fafb fcfd feff 0001 0203 0405 0607 0809
+[bcmPWN.0]Packet[1211]: data[0330]: 0a0b 0c0d 0e0f 1011 1213 1415 1617 1819
+[bcmPWN.0]Packet[1211]: data[0340]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1211]: data[0350]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1211]: data[0360]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1211]: data[0370]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1211]: data[0380]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1211]: data[0390]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1211]: data[03a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1211]: data[03b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1211]: data[03c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1211]: data[03d0]: aaab acad aeaf b0b1 b2b3 b4b5 b6b7 b8b9
+[bcmPWN.0]Packet[1211]: data[03e0]: babb bcbd bebf c0c1 c2c3 c4c5 c6c7 c8c9
+[bcmPWN.0]Packet[1211]: data[03f0]: cacb cccd cecf d0d1 d2d3 d4d5 d6d7 d8d9
+[bcmPWN.0]Packet[1211]: data[0400]: dadb dcdd dedf e0e1 e2e3 e4e5 e6e7 e8e9
+[bcmPWN.0]Packet[1211]: data[0410]: eaeb eced eeef f0f1 f2f3 f4f5 f6f7 f8f9
+[bcmPWN.0]Packet[1211]: data[0420]: fafb fcfd feff 0001 0203 0405 0607 0809
+[bcmPWN.0]Packet[1211]: data[0430]: 0a0b 0c0d 0e0f 1011 1213 1415 1617 1819
+[bcmPWN.0]Packet[1211]: data[0440]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1211]: data[0450]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1211]: data[0460]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1211]: data[0470]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1211]: data[0480]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1211]: data[0490]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1211]: data[04a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1211]: data[04b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1211]: data[04c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1211]: data[04d0]: aaab acad aeaf b0b1 b2b3 b4b5 b6b7 b8b9
+[bcmPWN.0]Packet[1211]: data[04e0]: babb bcbd bebf c0c1 c2c3 c4c5 c6c7 c8c9
+[bcmPWN.0]Packet[1211]: data[04f0]: cacb cccd cecf d0d1 d2d3 d4d5 d6d7 d8d9
+[bcmPWN.0]Packet[1211]: data[0500]: dadb dcdd dedf e0e1 e2e3 e4e5 e6e7 e8e9
+[bcmPWN.0]Packet[1211]: data[0510]: eaeb eced eeef f0f1 f2f3 f4f5 f6f7 f8f9
+[bcmPWN.0]Packet[1211]: data[0520]: fafb fcfd feff 0001 0203 0405 0607 0809
+[bcmPWN.0]Packet[1211]: data[0530]: 0a0b 0c0d 0e0f 1011 1213 1415 1617 1819
+[bcmPWN.0]Packet[1211]: data[0540]: 1a1b 1c1d 1e1f 2021 2223 2425 2627 2829
+[bcmPWN.0]Packet[1211]: data[0550]: 2a2b 2c2d 2e2f 3031 3233 3435 3637 3839
+[bcmPWN.0]Packet[1211]: data[0560]: 3a3b 3c3d 3e3f 4041 4243 4445 4647 4849
+[bcmPWN.0]Packet[1211]: data[0570]: 4a4b 4c4d 4e4f 5051 5253 5455 5657 5859
+[bcmPWN.0]Packet[1211]: data[0580]: 5a5b 5c5d 5e5f 6061 6263 6465 6667 6869
+[bcmPWN.0]Packet[1211]: data[0590]: 6a6b 6c6d 6e6f 7071 7273 7475 7677 7879
+[bcmPWN.0]Packet[1211]: data[05a0]: 7a7b 7c7d 7e7f 8081 8283 8485 8687 8889
+[bcmPWN.0]Packet[1211]: data[05b0]: 8a8b 8c8d 8e8f 9091 9293 9495 9697 9899
+[bcmPWN.0]Packet[1211]: data[05c0]: 9a9b 9c9d 9e9f a0a1 a2a3 a4a5 a6a7 a8a9
+[bcmPWN.0]Packet[1211]: data[05d0]: aaab acad aeaf 51d8
+[bcmPWN.0]
+
+[RX metadata information]
+	QUEUE_NUM=1
+	PKT_LENGTH=0x5dc
+	SRC_PORT_NUM=0x3f
+	IP_ROUTED=1
+	SWITCH=1
+	MATCH_ID_LO=0xa01424
+	MPB_FLEX_DATA_TYPE=0xd
+	EGR_ZONE_REMAP_CTRL=1
+	COPY_TO_CPU=1
+[FLEX fields]
+	EFFECTIVE_TTL_7_0=0x40
+	ENTROPY_LABEL_LOW_15_0=0xdc3a
+	EVENT_TRACE_VECTOR_31_16=8
+	INGRESS_PP_PORT_7_0=0x3f
+	L2_OIF_10_0=0x50
+	L3_IIF_13_0=0xc
+	L3_OIF_1_13_0=0x3fff
+	MPLS_LABEL_DECAP_COUNT_3_0=8
+	NHOP_INDEX_1_15_0=1
+	PARSER_VHLEN_0_15_0=0x8a
+	PKT_MISC_CTRL_0_3_0=1
+	SYSTEM_DESTINATION_15_0=0x50
+	SYSTEM_OPCODE_3_0=1
+	SYSTEM_SOURCE_15_0=0x3f
+	VFI_15_0=0x64
+	VLAN_TAG_PRESERVE_CTRL_SVP_MIRROR_ENABLE_1_0=2
+[RX reasons]
+	IFP_METER
+[Decode match id]
+	INGRESS_PKT_OUTER_L2_HDR_L2
+	INGRESS_PKT_OUTER_L2_HDR_OTAG
+	INGRESS_PKT_OUTER_L3_L4_HDR_ETHERTYPE
+	INGRESS_PKT_OUTER_L3_L4_HDR_IPV4
+	INGRESS_PKT_OUTER_L3_L4_HDR_UNKNOWN_L4

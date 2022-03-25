@@ -1,0 +1,2725 @@
+version "5.1.1.DEV5 [release] 2022-03-14 16:45:32"
+system hostname td4-203-34
+system login-banner "ArcOS (c) Arrcus, Inc."
+system clock timezone-name US/Mountain
+system ssh-server enable true
+system ssh-server permit-root-login true
+system ports console-port permit-root-login true
+system ports console-port permit-non-root-login true
+system ports console-port baud-rate 115200
+system ports console-port idle-timeout 65535
+system restconf-server enable true
+system aaa authentication admin-user admin-password $6$Ebk138n9eUhY3T7/$eiqEFyhjVAVzfNqoIufyX5gRBbOr5h6KTPgO1qrzgY77nQyYQASZdKcvVW077HGwfazSxoIcubCOY2PIHyk0Q1
+system bash-alias alias ltrah
+ command "ls -ltrah"
+!
+system crontab crontab-entry midnight_ping
+ user     root
+ timespec "0 0 * * *"
+ command  "ping -c 1 10.0.0.44"
+!
+system crontab crontab-entry midnight_top
+ user     root
+ timespec "0 0 * * *"
+ command  "top -c -n 1 >> /tmp/all_tops"
+!
+system snmp-server enable true
+system snmp-server protocol-version [ V2C V3 ]
+system snmp-server community arrcos
+system snmp-server community public
+system snmp-server community snmp-world
+system snmp-server target swt1
+ enable            true
+ address           192.168.0.18
+ target-parameters sw_tp1
+!
+system snmp-server target swt2
+ enable            true
+ address           192.168.0.18
+ target-parameters sw_tpu1
+!
+system snmp-server target-parameter sw_tp1
+ security-model V2C
+!
+system snmp-server target-parameter sw_tpu1
+ security-model           USM
+ security-name            user1
+ message-processing-model V3
+!
+system snmp-server usm local-engine user user1
+ authentication protocol SNMP_AUTH_MD5
+ authentication key $8$LcaE54syXD12PWhsfcpsH5/s4349b8ZKfCfvHj/XsRU=
+!
+system snmp-server usm local-engine user user2
+ authentication protocol SNMP_AUTH_SHA
+ authentication key $8$wxwrITTrsSVFKs9P9RZ9FKpemN4ELXCv/b+Tc5sru3U=
+!
+system snmp-server usm local-engine user user3
+ authentication protocol SNMP_AUTH_MD5
+ authentication key $8$A5inr2g3QcqtCnmq2fa3xjSmbRIEtbSW5bfAPjT6/6E=
+ privacy protocol SNMP_PRIV_AES
+ privacy key $8$MwHXsZ0NpQQfSeOwDu7YEsZoHoKdbMTlvNpWUjVTbFw=
+!
+system snmp-server usm local-engine user user4
+ authentication protocol SNMP_AUTH_MD5
+ authentication key $8$CGBuWYKRBVwbz+7bOUqeuV7qEiXSIRYaPgx9I+lfK4E=
+ privacy protocol SNMP_PRIV_DES
+ privacy key $8$Qs2F3XPGIAjGr65zjEJfSCqsaDGXHcbb2JcvmVze63w=
+!
+system snmp-server usm local-engine user user5
+!
+alias asu
+ expansion "show network-instance default protocol BGP default all-neighbor state session-state | select state session-elapsed-time | select state peer-as | select state established-transitions | select state local-as"
+!
+alias su
+ expansion "show interface swp* | select admin-status UP | select oper-status | select counters in-pkts-rate | select counters out-pkts-rate | select last-change"
+!
+event ON_ARCOS_START
+ description ON_ARCOS_START
+ event-entry 0
+  execute "rm -fr /tmp/ON_CONFIG_START_1; date  > /tmp/ON_ARCOS_START_0"
+ !
+ event-entry 100
+  execute "rm -fr /tmp/ON_CONFIG_START_1; date  > /tmp/ON_ARCOS_START_100"
+ !
+!
+event ON_CONFIG_START
+ description ON_CONFIG_START
+ event-entry 0
+  execute "rm -fr /tmp/ON_CONFIG_START_1; date  > /tmp/ON_CONFIG_START_0"
+ !
+ event-entry 100
+  execute "rm -fr /tmp/ON_CONFIG_START_1; date  > /tmp/ON_CONFIG_START_100"
+ !
+ event-entry 4294967295
+  execute "rm -fr /tmp/ON_CONFIG_START_1; date  > /tmp/ON_CONFIG_START_4294967295"
+ !
+!
+event ON_BOOT
+ description ON_BOOT
+ event-entry 0
+  execute "rm -fr /tmp/ON_CONFIG_START_1; date  > /tmp/ON_BOOT_0"
+ !
+ event-entry 100
+  execute "rm -fr /tmp/ON_CONFIG_START_1; date  > /tmp/ON_BOOT_100"
+ !
+ event-entry 4294967295
+  execute "rm -fr /tmp/ON_CONFIG_START_1; date  > /tmp/ON_BOOT_4294967295"
+ !
+!
+hardware platform forwarding-scale fwd-profile P1
+interface ma1
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+ exit
+!
+interface swp0
+ type ethernetCsmacd
+!
+interface swp1
+ type ethernetCsmacd
+!
+interface swp2
+ type ethernetCsmacd
+!
+interface swp3
+ type ethernetCsmacd
+!
+interface swp4
+ type ethernetCsmacd
+!
+interface swp5
+ type ethernetCsmacd
+!
+interface swp6
+ type ethernetCsmacd
+!
+interface swp7
+ type ethernetCsmacd
+!
+interface swp8
+ type ethernetCsmacd
+!
+interface swp9
+ type ethernetCsmacd
+!
+interface bond1
+ type    ieee8023adLag
+ mtu     9000
+ enabled true
+ aggregation switched-vlan interface-mode TRUNK
+ aggregation switched-vlan trunk-vlans [ 1007 1008 1009 1010 1011 1012 1013 ]
+!
+interface swp10
+ type ethernetCsmacd
+!
+interface swp11
+ type    ethernetCsmacd
+ enabled true
+ fec     rs
+ ethernet port-speed SPEED_100GB
+!
+interface swp12
+ type    ethernetCsmacd
+ enabled false
+ ethernet port-speed SPEED_100GB
+!
+interface swp13
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp14
+ type ethernetCsmacd
+!
+interface swp15
+ type ethernetCsmacd
+!
+interface swp16
+ type ethernetCsmacd
+!
+interface swp17
+ type ethernetCsmacd
+!
+interface swp18
+ type ethernetCsmacd
+!
+interface swp19
+ type ethernetCsmacd
+!
+interface swp20
+ type ethernetCsmacd
+!
+interface swp21
+ type ethernetCsmacd
+!
+interface swp22
+ type ethernetCsmacd
+!
+interface swp23
+ type ethernetCsmacd
+!
+interface swp24
+ type    ethernetCsmacd
+ mtu     9000
+ enabled true
+ fec     rs
+ ethernet port-speed SPEED_400GB
+ ethernet switched-vlan interface-mode ACCESS
+ ethernet switched-vlan access-vlan 1001
+!
+interface swp25
+ type    ethernetCsmacd
+ mtu     9000
+ enabled false
+ fec     rs
+ ethernet port-speed SPEED_400GB
+ ethernet switched-vlan interface-mode ACCESS
+ ethernet switched-vlan access-vlan 1002
+!
+interface swp26
+ type    ethernetCsmacd
+ mtu     9000
+ enabled false
+ fec     fec-none
+ ethernet port-speed SPEED_400GB
+ ethernet switched-vlan interface-mode TRUNK
+ ethernet switched-vlan trunk-vlans [ 1003 1004 ]
+!
+interface swp27
+ type    ethernetCsmacd
+ mtu     9000
+ enabled false
+ fec     fec-none
+ ethernet port-speed SPEED_400GB
+ ethernet switched-vlan interface-mode TRUNK
+ ethernet switched-vlan trunk-vlans [ 1005 1006 ]
+!
+interface swp28
+ type    ethernetCsmacd
+ mtu     9000
+ enabled false
+ fec     fec-none
+ ethernet port-speed SPEED_400GB
+ ethernet aggregate-id bond1
+!
+interface swp29
+ type    ethernetCsmacd
+ mtu     9000
+ enabled false
+ fec     fec-none
+ ethernet port-speed SPEED_400GB
+ ethernet aggregate-id bond1
+!
+interface swp30
+ type    ethernetCsmacd
+ mtu     9000
+ enabled true
+ fec     rs
+ ethernet port-speed SPEED_400GB
+ ethernet switched-vlan interface-mode TRUNK
+ ethernet switched-vlan trunk-vlans [ 100 ]
+!
+interface swp31
+ type    ethernetCsmacd
+ mtu     9000
+ enabled true
+ fec     rs
+ ethernet port-speed SPEED_400GB
+ ethernet switched-vlan interface-mode TRUNK
+ ethernet switched-vlan trunk-vlans [ 101 ]
+!
+interface vlan100
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 100.1.1.1
+   prefix-length 16
+  exit
+  ipv6 address 100:1:1::1
+   prefix-length 64
+  exit
+ exit
+!
+interface vlan101
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 101.1.1.1
+   prefix-length 16
+  exit
+  ipv6 address 101:1:1::1
+   prefix-length 64
+  exit
+ exit
+!
+interface vlan1001
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 11.11.11.1
+   prefix-length 24
+  exit
+  ipv6 address 11:11:11::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1002
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 12.12.12.1
+   prefix-length 24
+  exit
+  ipv6 address 12:12:12::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1003
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 13.13.13.1
+   prefix-length 24
+  exit
+  ipv6 address 13:13:13::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1004
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 14.14.14.1
+   prefix-length 24
+  exit
+  ipv6 address 14:14:14::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1005
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 15.15.15.1
+   prefix-length 24
+  exit
+  ipv6 address 15:15:15::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1006
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 16.16.16.1
+   prefix-length 24
+  exit
+  ipv6 address 16:16:16::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1007
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 17.17.17.1
+   prefix-length 24
+  exit
+  ipv6 address 17:17:17::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1008
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 18.18.18.1
+   prefix-length 24
+  exit
+  ipv6 address 18:18:18::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1009
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 19.19.19.1
+   prefix-length 24
+  exit
+  ipv6 address 19:19:19::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1010
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 20.20.20.1
+   prefix-length 24
+  exit
+  ipv6 address 20:20:20::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1011
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 21.21.21.1
+   prefix-length 24
+  exit
+  ipv6 address 21:21:21::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1012
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 22.22.22.1
+   prefix-length 24
+  exit
+  ipv6 address 22:22:22::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface vlan1013
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 23.23.23.1
+   prefix-length 24
+  exit
+  ipv6 address 23:23:23::1
+   prefix-length 112
+  exit
+  ipv6 address fe80::b6a9:fcff:fe70:c1d8
+   prefix-length 64
+  exit
+ exit
+ acl-service-policies ingress-acl-sets
+  acl-set ACL_IPV6
+   set-name ipv6-acl-set1
+  !
+  acl-set ACL_IPV4
+   set-name ipv4-acl-set1
+  !
+  acl-set ACL_L2
+   set-name l2-acl-set1
+  !
+ !
+!
+interface loopback101
+ type    softwareLoopback
+ mtu     9000
+ enabled true
+ subinterface 0
+  ipv4 address 101.101.101.101
+   prefix-length 32
+  exit
+  ipv6 address 101:101:101::101
+   prefix-length 128
+  exit
+ exit
+!
+interface loopback102
+ type    softwareLoopback
+ mtu     9000
+ enabled true
+ subinterface 0
+  ipv4 address 102.102.102.102
+   prefix-length 32
+  exit
+  ipv6 address 102:102:102::102
+   prefix-length 128
+  exit
+ exit
+!
+interface loopback103
+ type    softwareLoopback
+ mtu     9000
+ enabled true
+ subinterface 0
+  ipv4 address 103.103.103.103
+   prefix-length 32
+  exit
+  ipv6 address 103:103:103::103
+   prefix-length 128
+  exit
+ exit
+!
+interface loopback104
+ type    softwareLoopback
+ mtu     9000
+ enabled true
+ subinterface 0
+  ipv4 address 104.104.104.104
+   prefix-length 32
+  exit
+  ipv6 address 104:104:104::104
+   prefix-length 128
+  exit
+ exit
+!
+interface loopback105
+ type    softwareLoopback
+ mtu     9000
+ enabled true
+ subinterface 0
+  ipv4 address 105.105.105.105
+   prefix-length 32
+  exit
+  ipv6 address 105:105:105::105
+   prefix-length 128
+  exit
+ exit
+!
+interface loopback106
+ type    softwareLoopback
+ mtu     9000
+ enabled true
+ subinterface 0
+  ipv4 address 106.106.106.106
+   prefix-length 32
+  exit
+  ipv6 address 106:106:106::106
+   prefix-length 128
+  exit
+ exit
+!
+network-instance default
+ table-connection DIRECTLY_CONNECTED BGP IPV6
+ !
+ table-connection DIRECTLY_CONNECTED BGP IPV4
+ !
+ table-connection STATIC BGP IPV6
+ !
+ table-connection STATIC BGP IPV4
+ !
+ protocol BGP default
+  global as 4200001001
+  global router-id 101.101.101.101
+  global afi-safi IPV6_LABELED_UNICAST
+   use-maximum-paths eibgp maximum-paths 64
+  !
+  global afi-safi IPV4_UNICAST
+   use-maximum-paths eibgp maximum-paths 64
+  !
+  global afi-safi IPV4_LABELED_UNICAST
+   use-maximum-paths eibgp maximum-paths 64
+  !
+  global afi-safi IPV6_UNICAST
+   use-maximum-paths eibgp maximum-paths 64
+  !
+  neighbor 12.12.12.2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 13.13.13.2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 14.14.14.2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 15.15.15.2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 16.16.16.2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 17.17.17.2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 18.18.18.2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 19.19.19.2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 20.20.20.2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 21.21.21.2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 22.22.22.2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 23.23.23.2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV4_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV4_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 12:12:12::2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 13:13:13::2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 14:14:14::2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 15:15:15::2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 16:16:16::2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 17:17:17::2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 18:18:18::2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 19:19:19::2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 20:20:20::2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 21:21:21::2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 22:22:22::2
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  neighbor 23:23:23::2
+   peer-as 4200001002
+   bfd enable true
+   afi-safi IPV6_LABELED_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   afi-safi IPV6_UNICAST
+    apply-policy import-policy [ import-policy-2 ]
+    apply-policy export-policy [ export-policy-1 ]
+    exit
+   !
+   exit
+  !
+  peer-group PG_BGP_v4
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV4_UNICAST
+    exit
+   !
+  !
+  peer-group PG_BGP_v6
+   peer-as 4200001002
+   bfd enable false
+   afi-safi IPV6_UNICAST
+    exit
+   !
+  !
+  dynamic-neighbor-prefix 11.11.11.0/24
+   peer-group PG_BGP_v4
+  !
+  dynamic-neighbor-prefix 11:11:11::/96
+   peer-group PG_BGP_v6
+  !
+ !
+ protocol STATIC default
+  static-route 1.1.1.1/32
+   next-hop-index 1
+    next-hop DROP
+   !
+  !
+  static-route 10.27.0.0/16
+   next-hop-index 0
+    next-hop 10.27.201.37
+    interface ma1
+   !
+  !
+  static-route 112.0.1.0/24
+   next-hop-index 0
+    next-hop 100.1.1.1
+    interface swp30
+   !
+   next-hop-index 1
+    next-hop 101.1.1.1
+    interface swp31
+   !
+  !
+  static-route 113.0.1.0/24
+   next-hop-index 0
+    next-hop 100.1.1.1
+    interface swp30
+   !
+   next-hop-index 1
+    next-hop 101.1.1.1
+    interface swp31
+   !
+  !
+  static-route 1:1:1::1/128
+   next-hop-index 1
+    next-hop DROP
+   !
+  !
+  static-route 112:0:1::/120
+   next-hop-index 0
+    next-hop 100:1:1::1
+    interface swp30
+   !
+   next-hop-index 1
+    next-hop 101:1:1::1
+    interface swp31
+   !
+  !
+  static-route 113:0:1::/120
+   next-hop-index 0
+    next-hop 100:1:1::1
+    interface swp30
+   !
+   next-hop-index 1
+    next-hop 101:1:1::1
+    interface swp31
+   !
+  !
+ !
+!
+network-instance management
+ interface ma1
+ !
+!
+network-instance vlan100
+ type L2VLAN
+ vlan 100
+!
+network-instance vlan1001
+ type L2VLAN
+ vlan 1001
+!
+network-instance vlan1002
+ type L2VLAN
+ vlan 1002
+!
+network-instance vlan1003
+ type L2VLAN
+ vlan 1003
+!
+network-instance vlan1004
+ type L2VLAN
+ vlan 1004
+!
+network-instance vlan1005
+ type L2VLAN
+ vlan 1005
+!
+network-instance vlan1006
+ type L2VLAN
+ vlan 1006
+!
+network-instance vlan1007
+ type L2VLAN
+ vlan 1007
+!
+network-instance vlan1008
+ type L2VLAN
+ vlan 1008
+!
+network-instance vlan1009
+ type L2VLAN
+ vlan 1009
+!
+network-instance vlan101
+ type L2VLAN
+ vlan 101
+!
+network-instance vlan1010
+ type L2VLAN
+ vlan 1010
+!
+network-instance vlan1011
+ type L2VLAN
+ vlan 1011
+!
+network-instance vlan1012
+ type L2VLAN
+ vlan 1012
+!
+network-instance vlan1013
+ type L2VLAN
+ vlan 1013
+!
+bfd profile GLOBAL
+ enabled                     true
+ desired-minimum-tx-interval 150
+ required-minimum-receive    150
+ detection-multiplier        3
+!
+lacp interface bond1
+!
+lldp interface ma1
+!
+lldp interface swp0
+!
+lldp interface swp1
+!
+lldp interface swp2
+!
+lldp interface swp3
+!
+lldp interface swp4
+!
+lldp interface swp5
+!
+lldp interface swp6
+!
+lldp interface swp7
+!
+lldp interface swp8
+!
+lldp interface swp9
+!
+lldp interface swp10
+!
+lldp interface swp11
+!
+lldp interface swp12
+!
+lldp interface swp13
+!
+lldp interface swp14
+!
+lldp interface swp15
+!
+lldp interface swp16
+!
+lldp interface swp17
+!
+lldp interface swp18
+!
+lldp interface swp19
+!
+lldp interface swp20
+!
+lldp interface swp21
+!
+lldp interface swp22
+!
+lldp interface swp23
+!
+lldp interface swp24
+!
+lldp interface swp25
+!
+lldp interface swp26
+!
+lldp interface swp27
+!
+lldp interface swp28
+!
+lldp interface swp29
+!
+lldp interface swp30
+!
+lldp interface swp31
+!
+routing-policy defined-sets prefix-set both-prefix-1
+ prefix 50.0.11.0/24 exact
+ !
+ prefix 50:0:1::b:0/112 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv4-prefix-1
+ prefix 50.0.1.0/24 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv4-prefix-10
+ prefix 50.0.10.0/24 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv4-prefix-2
+ prefix 50.0.2.0/24 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv4-prefix-3
+ prefix 50.0.3.0/24 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv4-prefix-4
+ prefix 50.0.4.0/24 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv4-prefix-5
+ prefix 50.0.5.0/24 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv4-prefix-6
+ prefix 50.0.6.0/24 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv4-prefix-7
+ prefix 50.0.7.0/24 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv4-prefix-8
+ prefix 50.0.8.0/24 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv4-prefix-9
+ prefix 50.0.9.0/24 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv6-prefix-1
+ prefix 50:0:1::1:0/112 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv6-prefix-10
+ prefix 50:0:1::a:0/112 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv6-prefix-2
+ prefix 50:0:1::2:0/112 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv6-prefix-3
+ prefix 50:0:1::3:0/112 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv6-prefix-4
+ prefix 50:0:1::4:0/112 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv6-prefix-5
+ prefix 50:0:1::5:0/112 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv6-prefix-6
+ prefix 50:0:1::6:0/112 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv6-prefix-7
+ prefix 50:0:1::7:0/112 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv6-prefix-8
+ prefix 50:0:1::8:0/112 exact
+ !
+!
+routing-policy defined-sets prefix-set ipv6-prefix-9
+ prefix 50:0:1::9:0/112 exact
+ !
+!
+routing-policy defined-sets bgp-defined-sets community-set C00
+ community-member [ 10:1 10:2 ]
+!
+routing-policy defined-sets bgp-defined-sets community-set C11
+ community-member        [ 11:1 11:2 ]
+ community-set-reference [ C00 ]
+!
+routing-policy defined-sets bgp-defined-sets community-set C22
+ community-member        [ 12:1 12:2 ]
+ community-set-reference [ C11 ]
+!
+routing-policy defined-sets bgp-defined-sets ext-community-set E00
+ ext-community-member [ route-target:1:1 ]
+!
+routing-policy defined-sets bgp-defined-sets ext-community-set E11
+ ext-community-member        [ route-target:1:2 ]
+ ext-community-set-reference [ E00 ]
+!
+routing-policy defined-sets bgp-defined-sets ext-community-set E22
+ ext-community-member        [ route-target:1:3 ]
+ ext-community-set-reference [ E11 ]
+!
+routing-policy defined-sets bgp-defined-sets as-path-set A00
+!
+routing-policy defined-sets bgp-defined-sets as-path-set A11
+ as-path-set-reference [ A00 ]
+!
+routing-policy defined-sets bgp-defined-sets as-path-set A22
+ as-path-set-reference [ A11 ]
+!
+routing-policy defined-sets bgp-defined-sets large-community-set L00
+ large-community-member [ 10:10:10 ]
+!
+routing-policy defined-sets bgp-defined-sets large-community-set L11
+ large-community-member        [ 1:1:1 ]
+ large-community-set-reference [ L00 ]
+!
+routing-policy defined-sets bgp-defined-sets large-community-set L22
+ large-community-member [ 2:2:2 ]
+!
+routing-policy policy-definition export-policy-1
+ statement 100
+  actions accept-route
+ !
+!
+routing-policy policy-definition import-policy-1
+ statement 01
+  conditions match-prefix-set prefix-set ipv4-prefix-1
+  actions accept-route
+  actions bgp-actions set-route-origin EGP
+  actions bgp-actions set-local-pref 101
+  actions bgp-actions set-med 50
+  actions bgp-actions set-as-path-prepend repeat-n 5
+  actions bgp-actions set-community method REFERENCE
+  actions bgp-actions set-community options ADD
+  actions bgp-actions set-community reference community-set-ref C22
+  actions bgp-actions set-ext-community method REFERENCE
+  actions bgp-actions set-ext-community options ADD
+  actions bgp-actions set-ext-community reference ext-community-set-ref E22
+  actions bgp-actions set-large-community method REFERENCE
+  actions bgp-actions set-large-community options ADD
+  actions bgp-actions set-large-community reference large-community-set-ref L11
+ !
+ statement 02
+  conditions match-prefix-set prefix-set ipv6-prefix-1
+  actions accept-route
+  actions bgp-actions set-route-origin EGP
+  actions bgp-actions set-local-pref 101
+  actions bgp-actions set-med 50
+  actions bgp-actions set-as-path-prepend repeat-n 5
+  actions bgp-actions set-community method REFERENCE
+  actions bgp-actions set-community options ADD
+  actions bgp-actions set-community reference community-set-ref C22
+  actions bgp-actions set-ext-community method REFERENCE
+  actions bgp-actions set-ext-community options ADD
+  actions bgp-actions set-ext-community reference ext-community-set-ref E22
+  actions bgp-actions set-large-community method REFERENCE
+  actions bgp-actions set-large-community options ADD
+  actions bgp-actions set-large-community reference large-community-set-ref L11
+ !
+ statement 03
+  conditions match-prefix-set prefix-set ipv4-prefix-2
+  actions accept-route
+  actions bgp-actions set-route-origin EGP
+ !
+ statement 04
+  conditions match-prefix-set prefix-set ipv6-prefix-2
+  actions accept-route
+  actions bgp-actions set-route-origin EGP
+ !
+ statement 05
+  conditions match-prefix-set prefix-set ipv4-prefix-3
+  actions accept-route
+  actions bgp-actions set-local-pref 101
+ !
+ statement 06
+  conditions match-prefix-set prefix-set ipv6-prefix-3
+  actions accept-route
+  actions bgp-actions set-local-pref 101
+ !
+ statement 07
+  conditions match-prefix-set prefix-set ipv4-prefix-4
+  actions accept-route
+  actions bgp-actions set-aigp IGP
+ !
+ statement 08
+  conditions match-prefix-set prefix-set ipv6-prefix-4
+  actions accept-route
+  actions bgp-actions set-aigp IGP
+ !
+ statement 09
+  conditions match-prefix-set prefix-set ipv4-prefix-5
+  actions accept-route
+  actions bgp-actions drop-attr [ 8 ]
+ !
+ statement 10
+  conditions match-prefix-set prefix-set ipv6-prefix-5
+  actions accept-route
+  actions bgp-actions drop-attr [ 8 ]
+ !
+ statement 11
+  conditions match-prefix-set prefix-set ipv4-prefix-6
+  actions accept-route
+  actions bgp-actions set-med 500
+ !
+ statement 12
+  conditions match-prefix-set prefix-set ipv6-prefix-6
+  actions accept-route
+  actions bgp-actions set-med 500
+ !
+ statement 13
+  conditions match-prefix-set prefix-set both-prefix-1
+  actions accept-route
+  actions bgp-actions set-route-origin EGP
+  actions bgp-actions set-local-pref 200
+  actions bgp-actions set-med 150
+  actions bgp-actions drop-attr [ 32 ]
+  actions bgp-actions set-as-path-prepend repeat-n 2
+  actions bgp-actions set-community method REFERENCE
+  actions bgp-actions set-community options ADD
+  actions bgp-actions set-community reference community-set-ref C22
+  actions bgp-actions set-ext-community method REFERENCE
+  actions bgp-actions set-ext-community options ADD
+  actions bgp-actions set-ext-community reference ext-community-set-ref E22
+  actions bgp-actions set-large-community method REFERENCE
+  actions bgp-actions set-large-community options ADD
+  actions bgp-actions set-large-community reference large-community-set-ref L11
+ !
+ statement 14
+  conditions match-prefix-set prefix-set ipv4-prefix-7
+  actions accept-route
+  actions bgp-actions set-community method REFERENCE
+  actions bgp-actions set-community options ADD
+  actions bgp-actions set-community reference community-set-ref C22
+ !
+ statement 15
+  conditions match-prefix-set prefix-set ipv6-prefix-7
+  actions accept-route
+  actions bgp-actions set-community method REFERENCE
+  actions bgp-actions set-community options ADD
+  actions bgp-actions set-community reference community-set-ref C22
+ !
+ statement 16
+  conditions match-prefix-set prefix-set ipv4-prefix-8
+  actions accept-route
+  actions bgp-actions set-large-community method REFERENCE
+  actions bgp-actions set-large-community options ADD
+  actions bgp-actions set-large-community reference large-community-set-ref L22
+ !
+ statement 17
+  conditions match-prefix-set prefix-set ipv6-prefix-8
+  actions accept-route
+  actions bgp-actions set-large-community method REFERENCE
+  actions bgp-actions set-large-community options ADD
+  actions bgp-actions set-large-community reference large-community-set-ref L22
+ !
+ statement 18
+  conditions match-prefix-set prefix-set ipv4-prefix-9
+  actions accept-route
+  actions bgp-actions set-ext-community method REFERENCE
+  actions bgp-actions set-ext-community options ADD
+  actions bgp-actions set-ext-community reference ext-community-set-ref E22
+ !
+ statement 19
+  conditions match-prefix-set prefix-set ipv6-prefix-9
+  actions accept-route
+  actions bgp-actions set-ext-community method REFERENCE
+  actions bgp-actions set-ext-community options ADD
+  actions bgp-actions set-ext-community reference ext-community-set-ref E22
+ !
+ statement 20
+  conditions match-prefix-set prefix-set ipv4-prefix-10
+  actions accept-route
+  actions bgp-actions set-as-path-prepend repeat-n 5
+ !
+ statement 21
+  conditions match-prefix-set prefix-set ipv6-prefix-10
+  actions accept-route
+  actions bgp-actions set-as-path-prepend repeat-n 5
+ !
+ statement 100
+  actions accept-route
+ !
+!
+routing-policy policy-definition import-policy-2
+ statement 100
+  actions accept-route
+ !
+!
+telemetry-system destination-group g1
+ destination 10.27.158.249 9092
+ !
+!
+telemetry-system persistent-subscription g1
+ sensors [ ACL_STATISTICS LLDP EVPN BGP_STATE LICENSE RIB_ROUTES OS_STATS PLATFORM_STATE L2RIB_STATE INTERFACE_STATISTICS ISIS_STATE ]
+ destination-group g1
+ !
+!
+telemetry-system global status on
+telemetry-system global cuid arrcus
+acl acl-set copp-system-arp-ud ACL_L2
+ acl-entry 7000
+  description arp
+  l2 ethertype ETHERTYPE_ARP
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-bgp-ud ACL_IPV4
+ acl-entry 7000
+  description bgp
+  ipv4 protocol IP_TCP
+  transport destination-port 179
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description bgp
+  ipv4 protocol IP_TCP
+  transport source-port 179
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-bgp6-ud ACL_IPV6
+ acl-entry 3000
+  description BGP6
+  ipv6 protocol IP_TCP
+  transport destination-port 179
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 3001
+  description BGP6
+  ipv6 protocol IP_TCP
+  transport source-port 179
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-bpdu-ud ACL_IPV4
+ acl-entry 7700
+  description bpdu
+  ipv4 protocol IP_TCP
+  transport destination-port 115
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7701
+  description bpdu
+  ipv4 protocol IP_TCP
+  transport source-port 115
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-dhcp-ud ACL_IPV4
+ acl-entry 7000
+  description dhcp
+  ipv4 protocol IP_UDP
+  transport destination-port 65535
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description dhcp
+  ipv4 protocol IP_UDP
+  transport source-port 68
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-dhcp6-ud ACL_IPV6
+ acl-entry 14000
+  description DHCP
+  ipv6 protocol IP_UDP
+  transport destination-port 65535
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 14001
+  description DHCP
+  ipv6 protocol IP_UDP
+  transport source-port 68
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-exception-v4-ud ACL_IPV4
+ acl-entry 7000
+  description exception-v4
+  ipv4 protocol IP_TCP
+  transport destination-port 161
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description exception-v4
+  ipv4 protocol IP_TCP
+  transport source-port 162
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-exception-v6-ud ACL_IPV6
+ acl-entry 17000
+  description "IP OPTIONS"
+  ipv6 ip-options
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 17001
+  description "IP UNREACHABLE"
+  ipv6 protocol IP_ICMPV6
+  ipv6 icmpv6-type ICMPV6_DST_UNREACH
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 17002
+  description "IP UNREACHABLE"
+  ipv6 protocol           IP_ICMPV6
+  ipv6 icmpv6-type        ICMPV6_DST_UNREACH
+  ipv6 icmpv6-dst-unreach-code 1
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 17003
+  description "IP UNREACHABLE"
+  ipv6 protocol           IP_ICMPV6
+  ipv6 icmpv6-type        ICMPV6_DST_UNREACH
+  ipv6 icmpv6-dst-unreach-code 2
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 17004
+  description "IP UNREACHABLE"
+  ipv6 protocol           IP_ICMPV6
+  ipv6 icmpv6-type        ICMPV6_DST_UNREACH
+  ipv6 icmpv6-dst-unreach-code 3
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 17005
+  description "IP UNREACHABLE"
+  ipv6 protocol           IP_ICMPV6
+  ipv6 icmpv6-type        ICMPV6_DST_UNREACH
+  ipv6 icmpv6-dst-unreach-code 4
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 17006
+  description "IP UNREACHABLE"
+  ipv6 protocol           IP_ICMPV6
+  ipv6 icmpv6-type        ICMPV6_DST_UNREACH
+  ipv6 icmpv6-dst-unreach-code 5
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 17007
+  description "IP UNREACHABLE"
+  ipv6 protocol           IP_ICMPV6
+  ipv6 icmpv6-type        ICMPV6_DST_UNREACH
+  ipv6 icmpv6-dst-unreach-code 6
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-icmp6-ud ACL_IPV6
+ acl-entry 7000
+  description icmp6
+  ipv6 protocol IP_TCP
+  transport destination-port 161
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description icmp6
+  ipv6 protocol IP_TCP
+  transport source-port 162
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-isis-ud ACL_L2
+ acl-entry 1200
+  description ISIS
+  l2 destination-mac 01:80:c2:00:00:14
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 1201
+  description ISIS
+  l2 destination-mac 01:80:c2:00:00:15
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 1202
+  description ISIS
+  l2 destination-mac 09:00:2b:00:00:05
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-lacp-ud ACL_L2
+ acl-entry 1100
+  description LACP
+  l2 destination-mac 01:80:c2:00:00:02
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-lldp-ud ACL_L2
+ acl-entry 1100
+  description LLDP
+  l2 destination-mac 01:80:c2:00:00:0e
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-monitor-icmp-ud ACL_IPV4
+ acl-entry 7000
+  description monitor-icmp
+  ipv4 protocol IP_TCP
+  transport destination-port 161
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description monitor-icmp
+  ipv4 protocol IP_TCP
+  transport source-port 162
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-monitor-icmp6-ud ACL_IPV6
+ acl-entry 7700
+  description monitor-icmp6
+  ipv6 protocol IP_TCP
+  transport destination-port 115
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7701
+  description monitor-icmp6
+  ipv6 protocol IP_TCP
+  transport source-port 115
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-ntp-ud ACL_IPV4
+ acl-entry 7700
+  description ntp
+  ipv4 protocol IP_UDP
+  transport destination-port 123
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7701
+  description ntp
+  ipv4 protocol IP_UDP
+  transport source-port 123
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-ntp6 ACL_IPV6
+ acl-entry 7700
+  description ntp6
+  ipv6 protocol IP_UDP
+  transport destination-port 65535
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7701
+  description ntp6
+  ipv6 protocol IP_UDP
+  transport source-port 123
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-ntp6-ud ACL_IPV6
+ acl-entry 8300
+  description NTP
+  ipv6 protocol IP_UDP
+  transport destination-port 123
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 8500
+  description NTP
+  ipv6 protocol IP_UDP
+  transport source-port 123
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-ospf-ud ACL_IPV4
+ acl-entry 7000
+  description ospf
+  ipv4 protocol IP_TCP
+  transport destination-port 161
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description ospf
+  ipv4 protocol IP_TCP
+  transport source-port 162
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-ospf6-ud ACL_IPV6
+ acl-entry 7000
+  description ospf6
+  ipv6 protocol IP_TCP
+  transport destination-port 161
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description ospf6
+  ipv6 protocol IP_TCP
+  transport source-port 162
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-sftp-ud ACL_IPV4
+ acl-entry 7000
+  description SFTP
+  ipv4 protocol IP_TCP
+  transport destination-port 115
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description SFTP
+  ipv4 protocol IP_TCP
+  transport source-port 115
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-sftp6-ud ACL_IPV6
+ acl-entry 7000
+  description SFTP6
+  ipv6 protocol IP_TCP
+  transport destination-port 115
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description SFTP6
+  ipv6 protocol IP_TCP
+  transport source-port 115
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-snmp-ud ACL_IPV4
+ acl-entry 7700
+  description SFTP
+  ipv4 protocol IP_UDP
+  transport destination-port 161
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7701
+  description SFTP
+  ipv4 protocol IP_UDP
+  transport source-port 161
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-snmp6-ud ACL_IPV6
+ acl-entry 7000
+  description snmp6
+  ipv6 protocol IP_UDP
+  transport destination-port 161
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description snmp6
+  ipv6 protocol IP_UDP
+  transport source-port 162
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-ssh-ud ACL_IPV4
+ acl-entry 7000
+  description ssh
+  ipv4 protocol IP_TCP
+  transport destination-port 22
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description ssh
+  ipv4 protocol IP_TCP
+  transport source-port 22
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-ssh6-ud ACL_IPV6
+ acl-entry 7000
+  description ssh6
+  ipv6 protocol IP_TCP
+  transport destination-port 22
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description ssh6
+  ipv6 protocol IP_TCP
+  transport source-port 22
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-tacacsradius-ud ACL_IPV4
+ acl-entry 7700
+  description tacacsradius
+  ipv4 protocol IP_TCP
+  transport destination-port 49
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7701
+  description tacacsradius
+  ipv4 protocol IP_TCP
+  transport source-port 49
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-tacacsradius6-ud ACL_IPV6
+ acl-entry 7000
+  description tacacsradius6
+  ipv6 protocol IP_TCP
+  transport destination-port 49
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description tacacsradius6
+  ipv6 protocol IP_TCP
+  transport source-port 49
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-telnet-ud ACL_IPV4
+ acl-entry 7000
+  description telnet
+  ipv4 protocol IP_TCP
+  transport destination-port 23
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description telnet
+  ipv4 protocol IP_TCP
+  transport source-port 65535
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-telnet6-ud ACL_IPV6
+ acl-entry 8500
+  description TELNET
+  ipv6 protocol IP_TCP
+  transport destination-port 23
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 8501
+  description TELNET
+  ipv6 protocol IP_TCP
+  transport source-port 23
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-tftp-ud ACL_IPV4
+ acl-entry 7000
+  description tftp
+  ipv4 protocol IP_UDP
+  transport destination-port 69
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description tftp
+  ipv4 protocol IP_UDP
+  transport source-port 69
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-tftp6-ud ACL_IPV6
+ acl-entry 7000
+  description tftp6
+  ipv6 protocol IP_UDP
+  transport destination-port 69
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 7001
+  description tftp6
+  ipv6 protocol IP_UDP
+  transport source-port 69
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-vrrp-ud ACL_IPV4
+ acl-entry 5000
+  description V
+  ipv4 protocol 112
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set copp-system-vrrp6-ud ACL_IPV6
+ acl-entry 6000
+  description V
+  ipv6 protocol 112
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ipv4-acl-set1 ACL_IPV4
+ acl-entry 1
+  description "ACL  entry 1"
+  ipv4 source-address 150.150.0.2/32
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 2
+  ipv4 source-address 151.70.0.2/32
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 3
+  ipv4 source-address 0.0.0.0/0
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ipv4_acl_combined1 ACL_IPV4
+ acl-entry 10
+  description "ACL dscp ttl combined"
+  ipv4 source-address 50.0.1.1/32
+  ipv4 dscp      22
+  ipv4 protocol  IP_TCP
+  ipv4 hop-limit 32
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 20
+  ipv4 source-address 50.0.1.1/32
+  ipv4 destination-address 70.0.1.1/32
+  ipv4 dscp           24
+  ipv4 protocol       IP_UDP
+  ipv4 packet-length  494..512
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 40
+  ipv4 source-address 50.0.1.1/32
+  ipv4 destination-address 70.0.1.1/32
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 50
+  ipv4 source-address 100.1.1.0/24
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ipv4_acl_combined2 ACL_IPV4
+ acl-entry 10
+  description "ACL dscp ttl combined"
+  ipv4 source-address 60.0.1.1/32
+  ipv4 dscp      26
+  ipv4 protocol  IP_TCP
+  ipv4 hop-limit 64
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 20
+  ipv4 source-address 60.0.1.1/32
+  ipv4 destination-address 80.0.1.1/32
+  ipv4 dscp           20
+  ipv4 protocol       IP_UDP
+  ipv4 packet-length  494..512
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 40
+  ipv4 source-address 60.0.1.1/32
+  ipv4 destination-address 80.0.1.1/32
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 50
+  ipv4 source-address 101.1.1.0/24
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ipv4_acl_egress_combined1 ACL_IPV4
+ acl-entry 10
+  description "ACL dscp ttl combined"
+  ipv4 source-address 70.0.1.1/32
+  ipv4 dscp      22
+  ipv4 protocol  IP_TCP
+  ipv4 hop-limit 30
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 20
+  ipv4 source-address 70.0.1.1/32
+  ipv4 destination-address 50.0.1.1/32
+  ipv4 dscp           24
+  ipv4 protocol       IP_UDP
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 40
+  ipv4 source-address 70.0.1.1/32
+  ipv4 destination-address 50.0.1.1/32
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ipv4_acl_egress_combined2 ACL_IPV4
+ acl-entry 10
+  description "ACL dscp ttl combined"
+  ipv4 source-address 80.0.1.1/32
+  ipv4 dscp      26
+  ipv4 protocol  IP_TCP
+  ipv4 hop-limit 62
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 20
+  ipv4 source-address 80.0.1.1/32
+  ipv4 destination-address 60.0.1.1/32
+  ipv4 dscp           20
+  ipv4 protocol       IP_UDP
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 40
+  ipv4 source-address 80.0.1.1/32
+  ipv4 destination-address 60.0.1.1/32
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ipv6-acl-set1 ACL_IPV6
+ acl-entry 1
+  description "ACL  entry 1"
+  ipv6 source-address 150:150::/64
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 2
+  ipv6 source-address 151:70::/64
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 3
+  ipv6 source-address ::/0
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ipv6_acl_combined1 ACL_IPV6
+ acl-entry 10
+  description "IPv6 ACL dscp ttl combined"
+  ipv6 source-address 50:0:1::1/128
+  ipv6 dscp      22
+  ipv6 protocol  IP_TCP
+  ipv6 hop-limit 32
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 20
+  ipv6 source-address 50:0:1::1/128
+  ipv6 destination-address 70:0:1::1/128
+  ipv6 dscp           24
+  ipv6 protocol       IP_UDP
+  ipv6 packet-length  400..512
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 40
+  ipv6 source-address 50:0:1::1/128
+  ipv6 destination-address 70:0:1::1/128
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 50
+  ipv6 source-address 100:1:1::/96
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ipv6_acl_combined2 ACL_IPV6
+ acl-entry 10
+  description "ACL dscp ttl combined"
+  ipv6 source-address 60:0:1::1/128
+  ipv6 dscp      26
+  ipv6 protocol  IP_TCP
+  ipv6 hop-limit 64
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 20
+  ipv6 source-address 60:0:1::1/128
+  ipv6 destination-address 80:0:1::1/128
+  ipv6 dscp           20
+  ipv6 protocol       IP_UDP
+  ipv6 packet-length  494..512
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 40
+  ipv6 source-address 60:0:1::1/128
+  ipv6 destination-address 80:0:1::1/128
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 50
+  ipv6 source-address 101:1:1::/96
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ipv6_acl_egress_combined1 ACL_IPV6
+ acl-entry 10
+  description "IPv6 ACL dscp ttl combined"
+  ipv6 source-address 70:0:1::1/128
+  ipv6 dscp      22
+  ipv6 protocol  IP_TCP
+  ipv6 hop-limit 30
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 20
+  ipv6 source-address 70:0:1::1/128
+  ipv6 destination-address 50:0:1::1/128
+  ipv6 dscp           24
+  ipv6 protocol       IP_UDP
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 40
+  ipv6 source-address 70:0:1::1/128
+  ipv6 destination-address 50:0:1::1/128
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ipv6_acl_egress_combined2 ACL_IPV6
+ acl-entry 10
+  description "ACL dscp ttl combined"
+  ipv6 source-address 80:0:1::1/128
+  ipv6 dscp      26
+  ipv6 protocol  IP_TCP
+  ipv6 hop-limit 62
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 20
+  ipv6 source-address 80:0:1::1/128
+  ipv6 destination-address 60:0:1::1/128
+  ipv6 dscp           20
+  ipv6 protocol       IP_UDP
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 40
+  ipv6 source-address 80:0:1::1/128
+  ipv6 destination-address 60:0:1::1/128
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set l2-acl-set1 ACL_L2
+ acl-entry 1
+  description "ACL  entry 1"
+  l2 source-mac 11:11:11:11:11:11
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 2
+  l2 source-mac   11:11:11:11:11:11
+  l2 source-mac-mask 00:00:00:00:00:00
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+ acl-entry 3
+  l2 destination-mac   11:11:11:11:11:11
+  l2 destination-mac-mask 00:00:00:00:00:00
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+acl acl-set ma1_deny_icmp ACL_IPV4
+ acl-entry 10
+  ipv4 protocol IP_ICMP
+  actions forwarding-action DROP
+  actions log-action LOG_NONE
+ !
+ acl-entry 20
+  actions forwarding-action ACCEPT
+  actions log-action LOG_NONE
+ !
+!
+copp classifier copp-class-system-dhcp
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name copp-system-dhcp-ud
+ !
+!
+copp classifier copp-class-system-dhcp6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-dhcp6-ud
+ !
+!
+copp classifier copp-class-system-isis
+ filter ACL
+  acl-type ACL_L2
+  acl-name copp-system-isis-ud
+ !
+!
+copp classifier copp-class-system-lldp
+ filter ACL
+  acl-type ACL_L2
+  acl-name copp-system-lldp-ud
+ !
+!
+copp classifier copp-class-system-ntp
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name copp-system-ntp-ud
+ !
+!
+copp classifier copp-class-system-ntp6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-ntp6-ud
+ !
+!
+copp classifier copp-class-system-sftp
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name copp-system-sftp-ud
+ !
+!
+copp classifier copp-class-system-sftp6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-sftp6-ud
+ !
+!
+copp classifier copp-class-system-snmp6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-snmp6-ud
+ !
+!
+copp classifier copp-class-system-ssh
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name copp-system-ssh-ud
+ !
+!
+copp classifier copp-class-system-ssh6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-ssh6-ud
+ !
+!
+copp classifier copp-class-system-tacacsradius
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name copp-system-tacacsradius-ud
+ !
+!
+copp classifier copp-class-system-tacacsradius6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-tacacsradius6-ud
+ !
+!
+copp classifier copp-class-system-telnet
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name copp-system-telnet-ud
+ !
+!
+copp classifier copp-class-system-telnet6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-telnet6-ud
+ !
+!
+copp classifier copp-class-system-tftp
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name copp-system-tftp-ud
+ !
+!
+copp classifier copp-class-system-tftp6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-tftp6-ud
+ !
+!
+copp classifier copp-class-system-arp
+ filter ACL
+  acl-type ACL_L2
+  acl-name copp-system-arp-ud
+ !
+!
+copp classifier copp-class-system-bgp
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name copp-system-bgp-ud
+ !
+!
+copp classifier copp-class-system-bgp6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-bgp6-ud
+ !
+!
+copp classifier copp-class-system-lacp
+ filter ACL
+  acl-type ACL_L2
+  acl-name copp-system-lacp-ud
+ !
+!
+copp classifier copp-class-system-ospf
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name copp-system-ospf-ud
+ !
+!
+copp classifier copp-class-system-ospf6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-ospf6-ud
+ !
+!
+copp classifier copp-class-system-icmp6
+ filter ACL
+  acl-type ACL_IPV6
+  acl-name copp-system-icmp6-ud
+ !
+!
+qos classifier qos_classifier_1
+ filter LOCAL_TC
+  local-tc-value [ 1 ]
+ !
+!
+qos classifier qos_classifier_2
+ filter LOCAL_TC
+  local-tc-value [ 2 ]
+ !
+!
+qos classifier qos_classifier_3
+ filter LOCAL_TC
+  local-tc-value [ 3 ]
+ !
+!
+qos classifier qos_classifier_4
+ filter LOCAL_TC
+  local-tc-value [ 4 ]
+ !
+!
+qos policy qos-policy-1
+ classifier qos_classifier_1
+  action RATE_EXCESS
+   ratio 1
+  !
+ !
+ classifier qos_classifier_2
+  action RATE_EXCESS
+   ratio 2
+  !
+ !
+ classifier qos_classifier_3
+  action RATE_MIN
+   rate value 1
+   rate unit gbps
+  !
+  action RATE_MAX
+   rate value 1
+   rate unit gbps
+  !
+ !
+ classifier qos_classifier_4
+  action PRIORITY
+   level 1
+  !
+ !
+!
+qos tablemap dscp-to-tclass-1
+ to-type   LOCAL_TC
+ from-type DSCP
+ local-tc-entry 1 0
+  from-value [ 20 ]
+ !
+ local-tc-entry 2 0
+  from-value [ 22 ]
+ !
+ local-tc-entry 3 0
+  from-value [ 23 24 ]
+ !
+ local-tc-entry 4 0
+  from-value [ 25 26 ]
+ !
+ local-tc-entry 5 0
+  from-value [ 36 37 38 ]
+ !
+ local-tc-entry 6 0
+  from-value [ 39 40 41 ]
+ !
+ local-tc-entry 7 0
+  from-value [ 48 ]
+ !
+!
+vlan 100
+ name vlan100
+ exit
+!
+vlan 101
+ name vlan101
+ exit
+!
+vlan 1001
+ name vlan1001
+ exit
+!
+vlan 1002
+ name vlan1002
+ exit
+!
+vlan 1003
+ name vlan1003
+ exit
+!
+vlan 1004
+ name vlan1004
+ exit
+!
+vlan 1005
+ name vlan1005
+ exit
+!
+vlan 1006
+ name vlan1006
+ exit
+!
+vlan 1007
+ name vlan1007
+ exit
+!
+vlan 1008
+ name vlan1008
+ exit
+!
+vlan 1009
+ name vlan1009
+ exit
+!
+vlan 1010
+ name vlan1010
+ exit
+!
+vlan 1011
+ name vlan1011
+ exit
+!
+vlan 1012
+ name vlan1012
+ exit
+!
+vlan 1013
+ name vlan1013
+ exit
+!
