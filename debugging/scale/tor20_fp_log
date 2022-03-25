@@ -1,7 +1,7 @@
 File logging started to tor20_fp_log
-BCM.0> 
+BCM.0>
 BCM.0> l3 host show
-     VRF Net Addr            INTF UL_INTF HIT 
+     VRF Net Addr            INTF UL_INTF HIT
 --------------------------------------------
 0       0    101.1.9.72          107180 0    n
 1       0    101.1.13.204        100343 0    n
@@ -5022,7 +5022,7 @@ BCM.0> l3 host show
 5016    0    101.1.19.150        107337 0    n
 5017    0    101.1.27.174        100360 0    n
 5018    0    101.1.18.148        107671 0    n
-BCM.0> 
+BCM.0>
 BCM.0> l3 egress show
 EgrID        MAC Address   Intf      Port Module   MTU       Type Drop
 ---------------------------------------------------------------
@@ -15038,7 +15038,7 @@ EgrID        MAC Address   Intf      Port Module   MTU       Type Drop
 
 132769  00:00:00:00:00:00  16385    -1 BlackHole     -1     0   underlay  yes
 
-BCM.0> 
+BCM.0>
 BCM.0> l3 route show
         VRF      Net Addr           INTF UL_INTF  HIT FORTE
 --------------------------------------------
@@ -15048,7 +15048,7 @@ BCM.0> l3 route show
 3       0        201.1.0.0/16        100003 0    n n
 4       0        100.1.0.0/16        100001 0    n n
 5       0        101.1.0.0/16        100001 0    n n
-BCM.0> 
+BCM.0>
 BCM.0> l2 show
 mac=00:12:01:00:0c:64 vlan=101 GPORT=0x40 modid=0 port=64/cd15
 mac=00:12:01:00:08:0e vlan=101 GPORT=0x40 modid=0 port=64/cd15
@@ -20052,41 +20052,41 @@ mac=00:12:01:00:0e:3f vlan=101 GPORT=0x40 modid=0 port=64/cd15
 mac=00:12:01:00:04:fd vlan=101 GPORT=0x40 modid=0 port=64/cd15
 mac=00:12:01:00:0f:91 vlan=101 GPORT=0x40 modid=0 port=64/cd15
 mac=00:12:01:00:12:c9 vlan=101 GPORT=0x40 modid=0 port=64/cd15
-BCM.0> 
+BCM.0>
 BCM.0> ps
               ena/        speed/ link auto    STP                  lrn             max    cut            loop
         port  link  Lns   duplex scan neg?   state   pause  discrd ops   medium  frame   thru       FEC  back
-    xe0(  1)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528      
-    xe1(  2)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528      
-    xe2(  3)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528      
-    xe3(  4)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528      
-    xe4(  5)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528      
-    xe5(  6)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528      
-    xe6(  7)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528      
-    xe7(  8)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528      
-    ce0(  9)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN      
-    ce1( 10)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN      
-    ce2( 20)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN      
-    ce3( 21)  down   4  100G  FD   SW  No   Forward          None   FA Backplane  9412   Yes      RS528      
-    ce4( 22)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN      
-    ce5( 23)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN      
-    ce6( 24)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN      
-    ce7( 25)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN      
-    cd0( 26)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-    cd1( 27)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-    cd2( 28)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-    cd3( 29)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-    cd4( 40)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-    cd5( 41)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-    cd6( 42)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-    cd7( 43)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-    cd8( 44)  up     8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-    cd9( 45)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-   cd10( 46)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-   cd11( 60)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-   cd12( 61)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-   cd13( 62)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-   cd14( 63)  up     8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-   cd15( 64)  up     8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN      
-BCM.0> 
-BCM.0> 
+    xe0(  1)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528
+    xe1(  2)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528
+    xe2(  3)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528
+    xe3(  4)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528
+    xe4(  5)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528
+    xe5(  6)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528
+    xe6(  7)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528
+    xe7(  8)  !ena   1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528
+    ce0(  9)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN
+    ce1( 10)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN
+    ce2( 20)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN
+    ce3( 21)  down   4  100G  FD   SW  No   Forward          None   FA Backplane  9412   Yes      RS528
+    ce4( 22)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN
+    ce5( 23)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN
+    ce6( 24)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN
+    ce7( 25)  !ena   4  100G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-1xN
+    cd0( 26)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+    cd1( 27)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+    cd2( 28)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+    cd3( 29)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+    cd4( 40)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+    cd5( 41)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+    cd6( 42)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+    cd7( 43)  !ena   4  200G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+    cd8( 44)  up     8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+    cd9( 45)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+   cd10( 46)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+   cd11( 60)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+   cd12( 61)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+   cd13( 62)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+   cd14( 63)  up     8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+   cd15( 64)  up     8  400G  FD   SW  No   Forward          None   FA Backplane  9000   Yes  RS544-2xN
+BCM.0>
+BCM.0>

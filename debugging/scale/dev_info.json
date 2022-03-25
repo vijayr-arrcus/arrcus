@@ -1,0 +1,147 @@
+dpalcfg_add_update_hw_config
+
+{
+    "resources": {
+        "L3 Egress" : {
+            "size"       : 65536
+        }, riot_overlay_l3_egress_mem_size
+        "L3 ECMP" : {
+            "size"       : 512
+        },
+        "Flex Ingress Stat" : {
+            "size"       : 83968
+        },
+        "Flex Egress Stat" : {
+            "size"       : 32768
+        }
+    },
+    "overlay_nh_profile": [
+      {
+        "name": "P1",
+        "id": 1,
+        "desc": "Profile 1: 15% of the overall nexthops are for overlay",
+        "value": 15
+      },
+      {
+        "name": "P2",
+        "id": 2,
+        "desc": "Profile 2: 25% of the overall nexthops are for overlay",
+        "value": 25
+      },
+      {
+        "name": "P3",
+        "id": 3,
+        "desc": "Profile 3: 50% of the overall nexthops are for overlay",
+        "value": 50
+      },
+      {
+        "name": "P4",
+        "id": 4,
+        "desc": "Profile 4: 80% of the overall nexthops are for overlay",
+        "value": 80
+      }
+    ],
+    "default_scale_profile_id": 1,
+    "scale_profile": [
+      {
+        "name": "P1",
+        "id": 1,
+        "desc": "Profile 1: 32768 L2 Entries, 16384 Host Entries, 393216 LPM Entries.",
+        "l2": {
+          "name": "l2_mem_entries",
+          "size": 32768,
+          "value": "32768"
+        },
+        "l3": {
+          "name": "l3_mem_entries",
+          "size": 16384,
+          "value": "16384"
+        },
+        "alpm": {
+          "name": "l3_alpm_enable",
+          "size": 393216,
+          "value": "2"
+        }
+      },
+      {
+        "name": "P2",
+        "id": 2,
+        "desc": "Profile 2: 294912 L2 Entries, 16384 Host Entries, 16384 LPM Entries.",
+        "l2": {
+          "name": "l2_mem_entries",
+          "size": 294912,
+          "value": "294912"
+        },
+        "l3": {
+          "name": "l3_mem_entries",
+          "size": 16384,
+          "value": "16384"
+        },
+        "alpm": {
+          "name": "l3_alpm_enable",
+          "size": 16384,
+          "value": "0"
+        }
+      },
+      {
+        "name": "P3",
+        "id": 3,
+        "desc": "Profile 3: 229376 L2 Entries, 81920 Host Entries, 16384 LPM Entries.",
+        "l2": {
+          "name": "l2_mem_entries",
+          "size": 229376,
+          "value": "229376"
+        },
+        "l3": {
+          "name": "l3_mem_entries",
+          "size": 81920,
+          "value": "81920"
+        },
+        "alpm": {
+          "name": "l3_alpm_enable",
+          "size": 16384,
+          "value": "0"
+        }
+      },
+      {
+        "name": "P4",
+        "id": 4,
+        "desc": "Profile 4: 163840 L2 Entries, 147456 Host Entries, 16384 LPM Entries.",
+        "l2": {
+          "name": "l2_mem_entries",
+          "size": 163840,
+          "value": "163840"
+        },
+        "l3": {
+          "name": "l3_mem_entries",
+          "size": 147456,
+          "value": "147456"
+        },
+        "alpm": {
+          "name": "l3_alpm_enable",
+          "size": 16384,
+          "value": "0"
+        }
+      },
+      {
+        "name": "P5",
+        "id": 5,
+        "desc": "Profile 5: 98304 L2 Entries, 212992 Host Entries, 16384 LPM Entries.",
+        "l2": {
+          "name": "l2_mem_entries",
+          "size": 98304,
+          "value": "98304"
+        },
+        "l3": {
+          "name": "l3_mem_entries",
+          "size": 212992,
+          "value": "212992"
+        },
+        "alpm": {
+          "name": "l3_alpm_enable",
+          "size": 16384,
+          "value": "0"
+        }
+      }
+    ]
+}
