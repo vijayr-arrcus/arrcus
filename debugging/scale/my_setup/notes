@@ -1,0 +1,148 @@
+show control-plane state service-policy classifiers classifier system-exception-glean
+
+TOR1:
+
+19:40:21.832458 IP6 200:1:1::5 > 100:1:1::5: no next header
+Packet is ingressing on swp30 and egressing on swp6
+
+
+     l3 host add
+           {ip=<val> | ip6=<val>} [vrf=<val>] intf=<val> [ul_intf=<val>]
+           [ecmp=<bool>] [<Replace>=<bool>]
+        l3 host delete
+           {ip=<val> | ip6=<val>} [vrf=<val>]
+        l3 host get
+           {ip=<val> | ip6=<val>} [vrf=<val>]
+        l3 host clear [v6=<bool>]
+        l3 host show [v6=<bool>] [start=<val>] [end=<val>]
+
+
+
+983     0    0100:0001:0001:0000:0000:0000:0000:0005 116074 0    n
+
+
+BCM.0>
+BCM.0> l3 egress show
+l3 egress show
+EgrID        MAC Address   Intf      Port Module   MTU       Type Drop
+---------------------------------------------------------------
+116074  00:13:01:00:00:04      2     7            0 16383    overlay   no
+
+
+    xe6(  7)  up     1   25G  FD   SW  No   Forward          None   FA Backplane  9000   Yes      RS528
+
+
+
+
+490     0    0100:0001:0001:0000:0000:0000:0000:0476 103342 0    n
+ddd``````````$i
+
+103342  00:13:01:00:04:75      2     7            0 16383    overlay   no
+
+
+   MISC_CTRL_1=0
+    MISC_CTRL_0=1
+    ECMP_AND_PROT_SWT_SFC_PROFILE_INDEX=0
+    NHOP_2_OR_ECMP_GROUP_INDEX_1=0
+    CLASS_ID=0
+    DESTINATION_TYPE=NHOP
+    DESTINATION=0x1a49(6729)
+    VRF=0
+    IPV6_ADDR=0x01010001_00010000_00000000_00000476
+
+
+BCM.0>
+BCM.0> l3 egress show
+l3 egress show
+EgrID        MAC Address   Intf      Port Module   MTU       Type Drop
+---------------------------------------------------------------
+100001  00:00:00:00:00:00  16383     0            0 16383    overlay   no
+
+100002  00:00:00:00:00:00  16383    -1 BlackHole     -1 16383    overlay  yes
+
+BCM.0> l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0474
+
+BCM.0> l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0476
+l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0476
+VRF Net Addr            INTF UL_INTF
+--------------------------------------------
+0    0100:0001:0001:0000:0000:0000:0000:0476 103342 0    n
+BCM.0>
+
+if I remove the host entry software forwarding happens and no hardware forwarding
+If I add back only hardware forwarding
+
+
+BCM.0>
+BCM.0> l3 host show v6=1
+l3 host show v6=1
+     VRF Net Addr            INTF UL_INTF HIT
+--------------------------------------------
+0       0    0100:0001:0001:0000:0000:0000:0000:01da 100434 0    n
+1       0    0100:0001:0001:0000:0000:0000:0000:0519 103479 0    n
+2       0    0101:0001:0001:0000:0000:0000:0000:04e1 104276 0    n
+3       0    0100:0001:0001:0000:0000:0000:0000:080e 105376 0    n
+
+
+
+
+11:52:03.269390 IP 200.1.1.2 > 100.1.1.2:  ip-proto-61 958
+11:52:03.269625 IP6 200:1:1::84 > 100:1:1::46c: no next header
+11:52:03.269671 IP6 200:1:1::85 > 100:1:1::46d: no next header
+11:52:03.269705 IP6 200:1:1::86 > 100:1:1::46e: no next header
+11:52:03.269737 IP6 200:1:1::87 > 100:1:1::46f: no next header
+11:52:03.269767 IP6 200:1:1::89 > 100:1:1::471: no next header
+11:52:03.269797 IP6 200:1:1::8c > 100:1:1::474: no next header
+11:52:03.269827 IP6 200:1:1::8d > 100:1:1::475: no next header
+11:52:03.271576 IP 150.1.0.1 > 100.1.1.2:  ip-proto-61 958
+11:52:03.271637 IP 200.1.1.2 > 100.1.1.2:  ip-proto-61 958
+11:52:03.272268 IP6 200:1:1::15a > 100:1:1::92a: no next header
+11:52:03.272314 IP6 200:1:1::16b > 100:1:1::93b: no next header
+11:52:03.273101 IP6 200:1:1::2c3 > 100:1:1::a93: no next header
+11:52:03.273161 IP6 200:1:1::2c9 > 100:1:1::a99: no next header
+11:52:03.273193 IP6 200:1:1::2ca > 100:1:1::a9a: no next header
+11:52:03.273222 IP6 200:1:1::31b > 100:1:1::aeb: no next header
+11:52:03.273772 IP6 200:1:1::27 > 100:1:1::bdf: no next header
+11:52:03.274330 IP6 200:1:1::128 > 100:1:1::ce0: no next header
+11:52:03.274881 IP6 200:1:1::225 > 100:1:1::ddd: no next header
+11:52:03.275916 IP 150.1.0.1 > 100.1.1.2:  ip-proto-61 958
+11:52:03.275976 IP 200.1.1.2 > 100.1.1.2:  ip-proto-61 958
+11:52:03.278093 IP 200.1.1.2 > 100.1.1.2:  ip-proto-61 958
+11:52:03.280233 IP 150.1.0.1 > 100.1.1.2:  ip-proto-61 958
+11:52:03.280293 IP 200.1.1.2 > 100.1.1.2:  ip-proto-61 958
+11:52:03.280503 IP6 200:1:1::84 > 100:1:1::46c: no next header
+11:52:03.280546 IP6 200:1:1::85 > 100:1:1::46d: no next header
+11:52:03.280578 IP6 200:1:1::86 > 100:1:1::46e: no next header
+11:52:03.280608 IP6 200:1:1::87 > 100:1:1::46f: no next header
+11:52:03.280638 IP6 200:1:1::89 > 100:1:1::471: no next header
+11:52:03.280668 IP6 200:1:1::8c > 100:1:1::474: no next header
+11:52:03.282445 IP 200.1.1.2 > 100.1.1.2:  ip-proto-61 958
+11:52:03.283153 IP6 200:1:1::15a > 100:1:1::92a: no next header
+11:52:03.283200 IP6 200:1:1::16b > 100:1:1::93b: no next header
+
+
+
+
+BCM.0>
+BCM.0> l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0474
+l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0474
+VRF Net Addr            INTF UL_INTF
+--------------------------------------------
+0    0100:0001:0001:0000:0000:0000:0000:0474 103335 0    n
+BCM.0>
+BCM.0>
+
+
+BCM.0>
+BCM.0> l3 host add ip6=0100:0001:0001:0000:0000:0000:0000:0476 vrf=0 intf=103342 ul_intf=0
+l3 host add ip6=0100:0001:0001:0000:0000:0000:0000:0476 vrf=0 intf=103342 ul_intf=0
+BCM.0>
+BCM.0> l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0476
+l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0476
+VRF Net Addr            INTF UL_INTF
+--------------------------------------------
+0    0100:0001:0001:0000:0000:0000:0000:0476 103342 0    n
+BCM.0>
+BCM.0> l3 host add ip6=0100:0001:0001:0000:0000:0000:0000:0474 vrf=0 intf=103335 ul_intf=0
+
+Even after removing the host entry it continues to match glean traffic.
