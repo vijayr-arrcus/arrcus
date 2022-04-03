@@ -60,7 +60,7 @@ EgrID        MAC Address   Intf      Port Module   MTU       Type Drop
 
 100002  00:00:00:00:00:00  16383    -1 BlackHole     -1 16383    overlay  yes
 
-BCM.0> l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0474
+BCM.0> l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0477
 
 BCM.0> l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0476
 l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:0476
@@ -146,3 +146,368 @@ BCM.0>
 BCM.0> l3 host add ip6=0100:0001:0001:0000:0000:0000:0000:0474 vrf=0 intf=103335 ul_intf=0
 
 Even after removing the host entry it continues to match glean traffic.
+
+
+        l3 route add
+           {ip=<val> | ip6=<val>} masklen=<val> [vrf=<val>] [ecmp=<bool>]
+           intf=<val> [ul_intf=<val>] [DstDiscard=<bool>] [<Replace>=<bool>]
+           [FORTE=<bool>]
+        l3 route delete
+           {ip=<val> | ip6=<val>} masklen=<val> [vrf=<val>] [FORTE=<bool>]
+        l3 route get
+           {ip=<val> | ip6=<val>} masklen=<val> [vrf=<val>] [FORTE=<bool>]
+        l3 route clear [v6=<bool>] [vrf=<val>]
+               - vrf: -1 - OVERRIDE, -2 - GLOBAL; -4 - VRF_ALL.
+        l3 route show [v6=<bool>] [start=<val>] [end=<val>]
+
+
+
+100:1:1::93b
+
+
+3050    0    0100:0001:0001:0000:0000:0000:0000:093b 103308 0    n
+
+103308  00:13:01:00:09:3a      2     7            0 16383    overlay   no
+
+
+lt L3_IPV6_UC_ROUTE_VRF traverse -l
+
+lt L3_IPV6_UNICAST_TABLE traverse -l
+
+   MISC_CTRL_1=0
+    MISC_CTRL_0=7
+    ECMP_AND_PROT_SWT_SFC_PROFILE_INDEX=0
+    NHOP_2_OR_ECMP_GROUP_INDEX_1=0
+    CLASS_ID=0
+    DESTINATION_TYPE=NHOP
+    DESTINATION=0xcec(3308)
+    VRF=0
+    IPV6_ADDR=0x01000001_00010000_00000000_0000093b
+
+BCM.0> l3 host get ip6=0100:0001:0001:0000:0000:0000:0000:093b
+    IPV6_ADDR=0x01000001_00010000_00000000_0000093b
+
+
+
+03:42:07.605076 IP6 200:1:1::34f > 101:1:1::61: no next header
+03:42:07.605614 IP6 200:1:1::5f > 101:1:1::159: no next header
+03:42:07.606013 IP6 200:1:1::117 > 101:1:1::211: no next header
+03:42:07.606454 IP6 200:1:1::1e1 > 101:1:1::2db: no next header
+03:42:07.606954 IP6 200:1:1::2c7 > 101:1:1::3c1: no next header
+03:42:07.607700 IP6 200:1:1::18 > 100:1:1::18: no next header
+03:42:07.607885 IP6 200:1:1::8a > 100:1:1::8a: no next header
+03:42:07.608667 IP6 200:1:1::1da > 100:1:1::1da: no next header
+03:42:07.608936 IP6 200:1:1::26d > 100:1:1::26d: no next header
+03:42:07.609454 IP6 200:1:1::35c > 100:1:1::35c: no next header
+03:42:07.609874 IP6 200:1:1::35 > 100:1:1::41d: no next header
+03:42:07.610846 IP6 200:1:1::1dc > 100:1:1::5c4: no next header
+03:42:07.611336 IP6 200:1:1::2d4 > 100:1:1::6bc: no next header
+03:42:07.611534 IP6 200:1:1::330 > 100:1:1::718: no next header
+03:42:07.612786 IP6 200:1:1::16f > 100:1:1::93f: no next header
+03:42:07.612843 IP6 200:1:1::19d > 100:1:1::96d: no next header
+03:42:07.613235 IP6 200:1:1::255 > 100:1:1::a25: no next header
+03:42:07.613653 IP6 200:1:1::316 > 100:1:1::ae6: no next header
+03:42:07.613953 IP6 200:1:1::3a0 > 100:1:1::b70: no next header
+03:42:07.614413 IP6 200:1:1::8b > 100:1:1::c43: no next header
+03:42:07.614893 IP6 200:1:1::168 > 100:1:1::d20: no next header
+03:42:07.615599 IP6 200:1:1::28e > 100:1:1::e46: no next header
+03:42:07.615956 IP6 200:1:1::34f > 101:1:1::61: no next header
+03:42:07.616494 IP6 200:1:1::5f > 101:1:1::159: no next header
+03:42:07.616893 IP6 200:1:1::117 > 101:1:1::211: no next header
+03:42:07.617766 IP6 200:1:1::290 > 101:1:1::38a: no next header
+03:42:07.617916 IP6 200:1:1::2ec > 101:1:1::3e6: no next header
+03:42:07.618515 IP6 200:1:1::18 > 100:1:1::18: no next header
+03:42:07.618954 IP6 200:1:1::e2 > 100:1:1::e2: no next header
+03:42:07.619494 IP6 200:1:1::1da > 100:1:1::1da: no next header
+03:42:07.619952 IP6 200:1:1::2ad > 100:1:1::2ad: no next header
+03:42:07.620452 IP6 200:1:1::393 > 100:1:1::393: no next header
+03:42:07.620955 IP6 200:1:1::92 > 100:1:1::47a: no next header
+03:42:07.621726 IP6 200:1:1::1dc > 100:1:1::5c4: no next header
+03:42:07.622216 IP6 200:1:1::2d4 > 100:1:1::6bc: no next header
+03:42:07.622415 IP6 200:1:1::330 > 100:1:1::718: no next header
+03:42:07.623671 IP6 200:1:1::16f > 100:1:1::93f: no next header
+03:42:07.623728 IP6 200:1:1::19d > 100:1:1::96d: no next header
+03:42:07.624116 IP6 200:1:1::255 > 100:1:1::a25: no next header
+03:42:07.624534 IP6 200:1:1::316 > 100:1:1::ae6: no next header
+03:42:07.625345 IP6 200:1:1::8b > 100:1:1::c43: no next header
+03:42:07.625479 IP6 200:1:1::de > 100:1:1::c96: no next header
+03:42:07.626075 IP6 200:1:1::1f2 > 100:1:1::daa: no next header
+03:42:07.626414 IP6 200:1:1::28e > 100:1:1::e46: no next header
+03:42:07.627426 IP6 200:1:1::5f > 101:1:1::159: no next header
+03:42:07.627775 IP6 200:1:1::117 > 101:1:1::211: no next header
+03:42:07.628093 IP6 200:1:1::1aa > 101:1:1::2a4: no next header
+03:42:07.628594 IP6 200:1:1::290 > 101:1:1::38a: no next header
+03:42:07.628913 IP6 200:1:1::323 > 101:1:1::41d: no next header
+03:42:07.629395 IP6 200:1:1::18 > 100:1:1::18: no next header
+03:42:07.629934 IP6 200:1:1::110 > 100:1:1::110: no next header
+03:42:07.630374 IP6 200:1:1::1da > 100:1:1::1da: no next header
+
+
+
+Sheetal setup
+
+
+[RX metadata information]
+        QUEUE_NUM=1
+        PKT_LENGTH=0x7e
+        SRC_PORT_NUM=0x2d
+        IP_ROUTED=1
+        SWITCH=1
+        MATCH_ID_LO=0x802404
+        MPB_FLEX_DATA_TYPE=0xd
+        EGR_ZONE_REMAP_CTRL=1
+        COPY_TO_CPU=1
+[FLEX fields]
+        EFFECTIVE_TTL_7_0=0x40
+        ENTROPY_LABEL_LOW_15_0=0x895a
+        EVENT_TRACE_VECTOR_31_16=8
+        INGRESS_PP_PORT_7_0=0x2d
+        L2_OIF_10_0=0x50
+        L3_IIF_13_0=6
+        L3_OIF_1_13_0=0x3fff
+        MPLS_LABEL_DECAP_COUNT_3_0=8
+        NHOP_INDEX_1_15_0=1
+        PKT_MISC_CTRL_0_3_0=1
+        SYSTEM_DESTINATION_15_0=0x50
+        SYSTEM_OPCODE_3_0=1
+        SYSTEM_SOURCE_15_0=0x2d
+        VFI_15_0=0xf7f
+        VLAN_TAG_PRESERVE_CTRL_SVP_MIRROR_ENABLE_1_0=2
+[RX reasons]
+        IFP_METER
+[Decode match id]
+        INGRESS_PKT_OUTER_L2_HDR_L2
+        INGRESS_PKT_OUTER_L3_L4_HDR_ETHERTYPE
+        INGRESS_PKT_OUTER_L3_L4_HDR_ICMP
+        INGRESS_PKT_OUTER_L3_L4_HDR_IPV6
+
+
+[bcmPWN.0]
+[bcmPWN.0]Packet[2]: data[0000]: {e8c57ab55701} {e8c57a8f8e42} 8100 0f7f
+[bcmPWN.0]Packet[2]: data[0010]: 86dd 600a 845e 0040 3a40 0018 0018 0018
+[bcmPWN.0]Packet[2]: data[0020]: 0000 0000 0000 0000 0002 0200 0001 0001
+[bcmPWN.0]Packet[2]: data[0030]: 0000 0000 0000 0000 0055 8000 9f06 32f9
+[bcmPWN.0]Packet[2]: data[0040]: 0002 3584 9538 0000 0000 2153 0000 0000
+[bcmPWN.0]Packet[2]: data[0050]: 0000 1011 1213 1415 1617 1819 1a1b 1c1d
+[bcmPWN.0]Packet[2]: data[0060]: 1e1f 2021 2223 2425 2627 2829 2a2b 2c2d
+[bcmPWN.0]Packet[2]: data[0070]: 2e2f 3031 3233 3435 3637
+[bcmPWN.0]
+
+[RX metadata information]
+        QUEUE_NUM=1
+        PKT_LENGTH=0x7e
+        SRC_PORT_NUM=0x2d
+        IP_ROUTED=1
+        SWITCH=1
+        MATCH_ID_LO=0x802404
+        MPB_FLEX_DATA_TYPE=0xd
+        EGR_ZONE_REMAP_CTRL=1
+        COPY_TO_CPU=1
+[FLEX fields]
+        EFFECTIVE_TTL_7_0=0x40
+        ENTROPY_LABEL_LOW_15_0=0x895a
+        EVENT_TRACE_VECTOR_31_16=8
+        INGRESS_PP_PORT_7_0=0x2d
+        L2_OIF_10_0=0x50
+        L3_IIF_13_0=6                                                                                                                                                                                                                                 L3_OIF_1_13_0=0x3fff                                                                                                                                                                                                                          MPLS_LABEL_DECAP_COUNT_3_0=8
+        NHOP_INDEX_1_15_0=1
+        PKT_MISC_CTRL_0_3_0=1
+        SYSTEM_DESTINATION_15_0=0x50
+        SYSTEM_OPCODE_3_0=1
+        SYSTEM_SOURCE_15_0=0x2d
+        VFI_15_0=0xf7f
+        VLAN_TAG_PRESERVE_CTRL_SVP_MIRROR_ENABLE_1_0=2
+[RX reasons]
+        IFP_METER
+[Decode match id]
+        INGRESS_PKT_OUTER_L2_HDR_L2
+        INGRESS_PKT_OUTER_L3_L4_HDR_ETHERTYPE
+        INGRESS_PKT_OUTER_L3_L4_HDR_ICMP
+        INGRESS_PKT_OUTER_L3_L4_HDR_IPV6
+
+[bcmPWN.0]Packet[2]:
+Packet[2]:   Ethernet: dst<e8:c5:7a:b5:57:01> src<e8:c5:7a:8f:8e:42> Tagged Packet ProtID<0x8100> Ctrl<0x0f7f> IP version 6
+
+
+
+cint>                                                                                                                                                                                                                             [3148/80909]
+print host_t;
+bcm_l3_host_t host_t = {
+    unsigned int l3a_flags = 131072 (0x20000)
+    unsigned int l3a_flags2 = 0 (0x0)
+    int l3a_vrf = 0 (0x0)
+    uint32 l3a_ip_addr = 0.0.4.119                                                                                                                                                                                                                uint8[16] l3a_ip6_addr = 0200:0001:0001:0000:0000:0000:0000:0055
+    int l3a_pri = 0 (0x0)
+    int l3a_intf = 115891 (0x1c4b3)
+    int l3a_ul_intf = 0 (0x0)
+    uint8[6] l3a_nexthop_mac = 00:00:00:00:00:00
+    int l3a_modid = 0 (0x0)
+    int l3a_port_tgid = 0 (0x0)
+    int l3a_stack_port = 0 (0x0)
+    int l3a_ipmc_ptr = 0 (0x0)
+    int l3a_lookup_class = 0 (0x0)
+    int encap_id = 0 (0x0)
+    int native_intf = 0 (0x0)
+    unsigned int flow_handle = 0 (0x0)
+    unsigned int flow_option_handle = 0 (0x0)
+    bcm_flow_logical_field_t[20] logical_fields = {
+        bcm_flow_logical_field_t logical_fields[0] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[1] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[2] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[3] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[4] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[5] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[6] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[7] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[8] = {
+            unsigned int id = 0 (0x0)A
+
+
+       }
+        bcm_flow_logical_field_t logical_fields[8] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[9] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[10] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[11] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[12] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[13] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[14] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[15] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[16] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+        bcm_flow_logical_field_t logical_fields[17] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+
+
+       bcm_flow_logical_field_t logical_fields[19] = {
+            unsigned int id = 0 (0x0)
+            unsigned int value = 0 (0x0)
+        }
+    }
+    unsigned int num_of_fields = 0 (0x0)
+    int l3a_ipmc_ptr_l2 = 0 (0x0)
+    unsigned int stat_id = 0 (0x0)
+    int stat_pp_profile = 0 (0x0)
+    int l3a_mtu = 0 (0x0)
+    int l3a_opaque_ctrl_id = 0 (0x0)
+}
+
+
+
+cint>
+cint> print egr_obj;
+print egr_obj;
+bcm_l3_egress_t egr_obj = {
+    unsigned int flags = 0 (0x0)
+    unsigned int flags2 = 0 (0x0)
+    unsigned int flags3 = 0 (0x0)
+    int intf = 1 (0x1)
+    uint8[6] mac_addr = 00:14:01:00:00:54
+    uint16 vlan = 0 (0x0000)
+    int module = 0 (0x0)
+    int port = 63 (0x3f)
+    int trunk = 0 (0x0)
+    unsigned int mpls_flags = 0 (0x0)
+    uint32 mpls_label = 4294967295 (0xffffffff)
+    bcm_mpls_egress_action_t mpls_action = BCM_MPLS_EGRESS_ACTION_SWAP (0)
+    int mpls_qos_map_id = 0 (0x0)
+    int mpls_ttl = 0 (0x0)
+    unsigned char mpls_pkt_pri = 0 (0x00)
+
+
+
+
+
+Spine --> tor2 ---> ixia
+
+     tor2 ingress port we do a policing and green packets copy to cpu. -- glean
+         in tcpdump in cpu we will see a icmp request packet.
+							in ixia i see two  icmp requests with the same sequence number.
+
+move host table entry -- packet is still glean and copied to cpu
+add back the host entry with opaque_id = 0, packet no longer punted to cpu.
+
+host table /128 route -- glean 7
+route table /64 route -- glean 7
+
+
+
+
+    MISC_CTRL_1=0
+    MISC_CTRL_0=7
+    ECMP_AND_PROT_SWT_SFC_PROFILE_INDEX=0
+    NHOP_2_OR_ECMP_GROUP_INDEX_1=0
+    CLASS_ID=0
+    DESTINATION_TYPE=NHOP
+    DESTINATION=0x34e(846)
+    VRF=0
+    IPV4_ADDR=0xc80106d7(3355510487)
+
+
+BCM.0>
+BCM.0> l3 egress get EgrID=101107
+l3 egress get EgrID=101107
+EgrID        MAC Address   Intf      Port Module   MTU       Type Drop
+---------------------------------------------------------------
+101107  00:14:01:00:0b:93      2    63            0 16383    overlay   no
+
+BCM.0>
+
+BCM.0>
+BCM.0> l3 host get ip=200.1.12.148
+l3 host get ip=200.1.12.148
+VRF Net Addr            INTF UL_INTF
+--------------------------------------------
+0    200.1.12.148        101107 0    n
+BCM.0>

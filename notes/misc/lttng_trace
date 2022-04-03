@@ -1,0 +1,3 @@
+lttng snapshot record
+cd /root/lttng-traces
+babeltrace * > trace
