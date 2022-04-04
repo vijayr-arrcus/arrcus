@@ -1,3 +1,15 @@
 lttng snapshot record
 cd /root/lttng-traces
 babeltrace * > trace
+
+
+lttng destroy
+cat /dev/null > /var/log/arcos/l2rib.bin_logfile.txt
+cat /dev/null > /var/log/arcos/rib.bin_logfile.txt
+cat /dev/null > /var/log/arcos/fib.bin_logfile.txt
+cat /dev/null > /var/log/arcos/ifmgr.bin_logfile.txt
+cat /dev/null > /var/log/arcos/adjmgr.bin_logfile.txt
+cat /dev/null > /var/log/arcos/dpal.bin_logfile.txt
+cat /dev/null > /var/log/arcos/sysmgr.bin_logfile.txt
+cat /dev/null > /var/log/syslog
+python /usr/share/arcos/trace_init.py
