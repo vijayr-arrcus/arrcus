@@ -159,7 +159,7 @@ Even after removing the host entry it continues to match glean traffic.
         l3 route clear [v6=<bool>] [vrf=<val>]
                - vrf: -1 - OVERRIDE, -2 - GLOBAL; -4 - VRF_ALL.
         l3 route show [v6=<bool>] [start=<val>] [end=<val>]
-
+_ROUTE_VRF traverse -lUC_ROUTE_VRF traverse -l
 
 
 100:1:1::93b

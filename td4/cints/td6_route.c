@@ -28,14 +28,17 @@ int unit = 0;
 bcm_l3_egress_t egr_obj;
 bcm_if_t egr_obj_if;
 bcm_l3_host_t host_t;
+bcm_l3_route_t route_t;
 bcm_l3_host_t_init(&host_t);
-bcm_ip6_t ip6_addr = {0x02, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x42};
+bcm_l3_route_t_init(&route_t);
+bcm_ip6_t ip6_addr = {0x02, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x93};
 host_t.l3a_ip_addr = 0x01000001000100000000000000000477;
 host_t.l3a_ip6_addr = ip6_addr;
 host_t.l3a_flags |= BCM_L3_IP6;
 host_t.l3a_vrf = 0;
 rv = bcm_l3_host_find(unit, &host_t);
 print host_t;
+rv = bcm_l3_route_find(unit, &host_t, &route_t);
 bcm_l3_egress_get(unit, host_t.l3a_intf, &egr_obj);
 host_t.l3a_flags |= BCM_L3_REPLACE;
 host_t.l3a_opaque_ctrl_id = 0;
@@ -89,3 +92,26 @@ lt L3_IPV4_UNICAST_TABLE traverse -l
     DESTINATION=9
     VRF=0
     IPV4_ADDR=0xa010308(167838472)
+cint_reset();
+int rv = BCM_E_NONE;
+int unit = 0;
+bcm_l3_egress_t egr_obj;
+bcm_if_t egr_obj_if;
+bcm_l3_host_t host_t;
+bcm_l3_route_t route_t;
+bcm_l3_host_t_init(&host_t);
+bcm_l3_route_t_init(&route_t);
+bcm_ip6_t ip6_addr = {0x02, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+bcm_ip6_t p6_mask = {0};
+route_t.l3a_flags = BCM_L3_IP6;
+route_t.l3a_ip6_net = ip6_addr;
+bcm_l3_route_get(unit, &route_t);
+print route_t;
+bcm_l3_egress_get(unit, host_t.l3a_intf, &egr_obj);
+host_t.l3a_flags |= BCM_L3_REPLACE;
+host_t.l3a_opaque_ctrl_id = 0;
+rv = bcm_l3_host_add(unit, &host_t);
+if (BCM_FAILURE(rv)) {
+    printf(“Error in bcm_l3_route_add: %s\n”, bcm_errmsg(rv));
+}
+
