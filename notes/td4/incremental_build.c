@@ -31,13 +31,11 @@ sudo apt-get install -y python-filelock
 sudo apt-get install -y libyaml-dev
 
 wget http://ftp.us.debian.org/debian/pool/main/e/elfutils/elfutils_0.168-1_amd64.deb
-
 sudo dpkg -i *.deb
-
 debian/rules prepare build-stash build-phymod build-yaml
 
 
-make sure /usr/src/linux-headers-4.19.84-arrcus exists if not get the header files from infra1 @ /home/vijayr/linux-headers-4.19.84-arrcus.tar.gz
+
 
 
 make -f $PWD/systems/linux/user/x86-smp_generic_64-2_6/Makefile -j32 MAKE_LOCAL=$PWD/make/Make.local.xgs

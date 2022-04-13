@@ -1,0 +1,6 @@
+1. access port mac learning
+2. trunk port mac learning
+3. native port mac learning
+4. access port + VNI mac learning
+5. trunk port  + VNI mac learning
+6. native port + VNI mac learning

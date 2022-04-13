@@ -31,14 +31,13 @@ bcm_l3_host_t host_t;
 bcm_l3_route_t route_t;
 bcm_l3_host_t_init(&host_t);
 bcm_l3_route_t_init(&route_t);
-bcm_ip6_t ip6_addr = {0x02, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x93};
+bcm_ip6_t ip6_addr = {0x02, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x05, 0x8d};
 host_t.l3a_ip_addr = 0x01000001000100000000000000000477;
 host_t.l3a_ip6_addr = ip6_addr;
 host_t.l3a_flags |= BCM_L3_IP6;
 host_t.l3a_vrf = 0;
 rv = bcm_l3_host_find(unit, &host_t);
 print host_t;
-rv = bcm_l3_route_find(unit, &host_t, &route_t);
 bcm_l3_egress_get(unit, host_t.l3a_intf, &egr_obj);
 host_t.l3a_flags |= BCM_L3_REPLACE;
 host_t.l3a_opaque_ctrl_id = 0;
@@ -81,7 +80,7 @@ DATA_TYPE=WIDE_MODE
     IPV4=0xa010200(167838208)
 
 
-lt L3_IPV4_UNICAST_TABLE traverse -l
+lt L3_IPV6_UNICAST_TABLE traverse -l
 
   MISC_CTRL_1=0
     MISC_CTRL_0=5
