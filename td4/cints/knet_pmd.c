@@ -13,13 +13,15 @@ print bcm_pktio_netif_create(unit, &netif);
 
 bcm_pktio_filter_t_init(&filter);
 filter.type = BCM_PKTIO_FILTER_T_RX_PKT;
-filter.priority = 10;
+filter.priority = 1;
 filter.dest_type = BCM_PKTIO_DEST_T_NETIF;
 sal_memcpy(filter.desc, "Filter netdev-swp18-100", 20);
 filter.dest_id = netif.id;
 filter.match_flags = BCM_PKTIO_FILTER_M_REASON;
 BCM_PKTIO_REASON_SET(filter.m_flex_reason,
                      BCM_PKTIO_RXPMD_FLEX_REASON_L2_SRC_STATIC_MOVE);
+BCM_PKTIO_REASON_SET(filter.m_flex_reason,
+                     BCM_PKTIO_RXPMD_FLEX_REASON_L3_DST_LOOKUP_MISS);
 print bcm_pktio_filter_create(unit, &filter);
 
 [539914.199030] Rx packet sent up to ndev19 (64 bytes).

@@ -1,0 +1,4 @@
+git remote add upstream git@github.com:Arrcus/arrcus_sw.git
+git fetch upstream
+git fetch upstream v4.3.1.EFT8
+git push origin v4.3.1.EFT8

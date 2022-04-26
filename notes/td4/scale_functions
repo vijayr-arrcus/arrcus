@@ -1,0 +1,285 @@
+static ret_code_e
+bcmsdk_resource_init(dpal_worker_h wh, dpal_plugin_init_cfg_t *cfg)
+{
+  ret_code_e rc = RET_CODE_SUCCESS;
+  const char *str_val;
+  dpal_resource_info_t info;
+  dpal_dev_h dh;
+  bcmsdk_dev_info_t *dev_info = NULL;
+
+  dev_info = (bcmsdk_dev_info_t *)cfg->dev_scale_info->opaque;
+
+  /*
+   * Only one device supported in XGS for now
+   */
+  dh = dpal_plugin_get_first_device(wh);
+
+  memset(&info, 0, sizeof(info));
+  info.name = "L2 Entry";
+  info.max_entries = dev_info->l2_scale_info.size;
+  info.hwm_threshold_pct = 80;
+
+  g_asic_global_ctxt.l2_entry_rh =
+    dpal_resource_register(dpal_plugin_get_resource_context(dh),
+                           &info);
+
+  memset(&info, 0, sizeof(info));
+  info.name = "L3 Host";
+  info.max_entries = dev_info->l3_scale_info.size;
+  info.hwm_threshold_pct = 80;
+
+  g_asic_global_ctxt.l3_host_rh =
+    dpal_resource_register(dpal_plugin_get_resource_context(dh),
+                           &info);
+
+  memset(&info, 0, sizeof(info));
+  info.name = "L3 ALPM";
+  info.max_entries = dev_info->alpm_scale_info.size;
+  info.hwm_threshold_pct = 80;
+  g_asic_global_ctxt.l3_alpm_rh =
+    dpal_resource_register(dpal_plugin_get_resource_context(dh),
+                           &info);
+
+  memset(&info, 0, sizeof(info));
+  info.name = "L3 Egress";
+  info.max_entries = dev_info->l3_egress_size;
+  info.hwm_threshold_pct = 80;
+  g_asic_global_ctxt.l3_egress_rh =
+    dpal_resource_register(dpal_plugin_get_resource_context(dh),
+                           &info);
+
+  memset(&info, 0, sizeof(info));
+  info.name = "L3 ECMP";
+  info.max_entries = dev_info->l3_ecmp_size;
+  info.hwm_threshold_pct = 80;
+  g_asic_global_ctxt.l3_ecmp_rh =
+    dpal_resource_register(dpal_plugin_get_resource_context(dh),
+                           &info);
+
+  memset(&info, 0, sizeof(info));
+  info.name = "Flex Ingress Stat";
+  info.max_entries = dev_info->flex_ingress_stat_size;
+
+  g_asic_global_ctxt.flex_ingress_stat_rh =
+    dpal_resource_register(dpal_plugin_get_resource_context(dh),
+                           &info);
+
+  memset(&info, 0, sizeof(info));
+  info.name = "Flex Egress Stat";
+  info.max_entries = dev_info->flex_egress_stat_size;
+
+  g_asic_global_ctxt.flex_egress_stat_rh =
+    dpal_resource_register(dpal_plugin_get_resource_context(dh),
+                           &info);
+
+  return RET_CODE_SUCCESS;
+}
+
+
+static ret_code_e
+parse_dev_info(dpal_plugin_init_cfg_t *cfg, uint32_t *profile_id)
+{
+  json_error_t error;
+  ret_code_e rc = RET_CODE_SUCCESS;
+  json_t *root = NULL, *node = NULL;
+  json_t *arr_val;
+  size_t index;
+  int idx = 0;
+  bcmsdk_dev_info_t *dev_info = NULL;
+
+  dev_info = (bcmsdk_dev_info_t *)cfg->dev_scale_info->opaque;
+
+  root = json_load_file(cfg->dev_info_fname, 0, &error);
+  if (!root)
+    return RET_CODE_FAILURE;
+
+  node = json_object_get(root, "resources");
+  if (!node)
+    goto parse_err;
+
+  if (!get_dev_resource_info(node, &dev_info->l3_egress_size, "L3 Egress"))
+    goto parse_err;
+
+  if (!get_dev_resource_info(node, &dev_info->l3_ecmp_size, "L3 ECMP"))
+    goto parse_err;
+
+  if (!get_dev_resource_info(node, &dev_info->flex_ingress_stat_size, "Flex Ingress Stat"))
+    goto parse_err;
+
+  if (!get_dev_resource_info(node, &dev_info->flex_egress_stat_size, "Flex Egress Stat"))
+    goto parse_err;
+
+  node = json_object_get(root, "default_scale_profile_id");
+  if (!node)
+    goto parse_err;
+  cfg->dev_scale_info->def_profile_id = json_integer_value(node);
+  if (*profile_id == 0) {
+    *profile_id = cfg->dev_scale_info->def_profile_id;
+  }
+
+  node = NULL;
+  node = json_object_get(root, "overlay_nh_profile");
+  if (!node)
+    goto skip_overlay_nh;
+
+  if (!json_is_array(node))
+    goto parse_err;
+
+  json_array_foreach(node, index, arr_val) {
+    if (!json_is_object(arr_val))
+      continue;
+    idx++;
+  }
+
+  cfg->dev_scale_info->ov_nh_info = (dpal_overlay_nh_profile_info_t *)
+                             malloc(idx * sizeof(dpal_overlay_nh_profile_info_t));
+  if (!cfg->dev_scale_info->ov_nh_info)
+    goto parse_err;
+
+  memset(cfg->dev_scale_info->ov_nh_info, 0,
+         idx * sizeof(dpal_overlay_nh_profile_info_t));
+
+  idx = 0;
+  json_array_foreach(node, index, arr_val) {
+    if (!get_overlay_nh_profile_info(arr_val,
+                                &cfg->dev_scale_info->ov_nh_info[idx])) {
+      goto parse_err;
+    }
+    idx++;
+  }
+  cfg->dev_scale_info->num_ov_nh_profile = idx;
+
+skip_overlay_nh:
+  idx = 0;
+  node = NULL;
+  node = json_object_get(root, "scale_profile");
+  if (!node)
+    goto parse_err;
+
+  if (!json_is_array(node))
+    goto parse_err;
+
+  json_array_foreach(node, index, arr_val) {
+    if (!json_is_object(arr_val))
+      continue;
+    idx++;
+  }
+
+  cfg->dev_scale_info->scale_info = (dpal_scale_profile_info_t *)
+                             malloc(idx * sizeof(dpal_scale_profile_info_t));
+  if (!cfg->dev_scale_info->scale_info)
+    goto parse_err;
+
+  memset(cfg->dev_scale_info->scale_info, 0,
+         idx * sizeof(dpal_scale_profile_info_t));
+  
+  idx = 0;
+  json_array_foreach(node, index, arr_val) {
+    if (!get_scale_profile_info(arr_val,
+                                &cfg->dev_scale_info->scale_info[idx])) {
+      goto parse_err;
+    }
+
+    if (!get_dev_scale_info(arr_val, &cfg->dev_scale_info->scale_info[idx].l2_scale_info, "l2")) {
+      goto parse_err;
+    }
+
+    if (!get_dev_scale_info(arr_val, &cfg->dev_scale_info->scale_info[idx].l3_scale_info, "l3")) {
+      goto parse_err;
+    }
+
+    if (!get_dev_scale_info(arr_val, &cfg->dev_scale_info->scale_info[idx].lpm_scale_info, "alpm")) {
+      goto parse_err;
+    }
+
+    if (cfg->dev_scale_info->scale_info[idx].id == *profile_id) {
+      memcpy(&dev_info->l2_scale_info, &cfg->dev_scale_info->scale_info[idx].l2_scale_info, sizeof(dpal_scale_info_t));
+      memcpy(&dev_info->l3_scale_info, &cfg->dev_scale_info->scale_info[idx].l3_scale_info, sizeof(dpal_scale_info_t));
+      memcpy(&dev_info->alpm_scale_info, &cfg->dev_scale_info->scale_info[idx].lpm_scale_info, sizeof(dpal_scale_info_t));
+    }
+    idx++;
+  }
+  cfg->dev_scale_info->num_scale_profile = idx;
+
+  json_decref(root);
+  return RET_CODE_SUCCESS;
+parse_err:
+  bcmsdk_trace_init_error("Failed to parse dev info json", 0);
+  json_decref(root);
+  return RET_CODE_FAILURE;
+}
+
+static ret_code_e
+bcmsdk_config_update(dpal_plugin_init_cfg_t *cfg)
+{
+  int rv = 0;
+  bcmsdk_dev_info_t *dev_info = NULL;
+
+  dev_info = (bcmsdk_dev_info_t *)cfg->dev_scale_info->opaque;
+
+  if (cfg->dev_scale_info->cur_profile_id !=
+      cfg->dev_scale_info->def_profile_id) {
+    rv = sal_config_set(dev_info->l2_scale_info.name,
+                        dev_info->l2_scale_info.value);
+    if (rv != 0) {
+      return RET_CODE_FAILURE;
+    }
+
+    rv = sal_config_set(dev_info->l3_scale_info.name,
+                        dev_info->l3_scale_info.value);
+    if (rv != 0) {
+      return RET_CODE_FAILURE;
+    }
+
+    rv = sal_config_set(dev_info->alpm_scale_info.name,
+                        dev_info->alpm_scale_info.value);
+    if (rv != 0) {
+      return RET_CODE_FAILURE;
+    }
+  }
+
+  if (RET_CODE_SUCCESS != bcmsdk_riot_config_update(cfg)) {
+    return RET_CODE_FAILURE;
+  }
+
+  return RET_CODE_SUCCESS;
+}
+static ret_code_e
+bcmsdk_riot_config_update(dpal_plugin_init_cfg_t *cfg)
+{
+  int rv = 0;
+  bcmsdk_dev_info_t *dev_info = NULL;
+  int idx;
+  uint32_t value = 0;
+  char val[BUFSIZ] = {0};
+  char name[BUFSIZ] = {0};
+
+  dev_info = (bcmsdk_dev_info_t *)cfg->dev_scale_info->opaque;
+
+  if (cfg->dev_scale_info->cur_ov_nh_profile_id) {
+    for (idx = 0; idx < cfg->dev_scale_info->num_ov_nh_profile; idx++) {
+      if (cfg->dev_scale_info->ov_nh_info[idx].id ==
+          cfg->dev_scale_info->cur_ov_nh_profile_id) {
+        BCMSDK_SAL_CONFIG_SET(name, val, "riot_enable", 1);
+        BCMSDK_SAL_CONFIG_SET(name, val,
+                              "riot_overlay_l3_intf_mem_size", 6144);
+
+        value = dev_info->l3_egress_size *
+                (cfg->dev_scale_info->ov_nh_info[idx].value/100.0);
+        /* bcmi_l3_riot_bank_sel: Please allocate entries in the multiple of 4096. */
+        if (value % 4096) {
+          value = ((value / 4096) + 1) * 4096;
+        }
+        BCMSDK_SAL_CONFIG_SET(name, val,
+                              "riot_overlay_l3_egress_mem_size", value);
+
+        BCMSDK_SAL_CONFIG_SET(name, val, "l3_ecmp_levels", 2);
+        BCMSDK_SAL_CONFIG_SET(name, val,
+                              "riot_overlay_ecmp_resilient_hash_size", 32768);
+        //BCMSDK_SAL_CONFIG_SET(name, val, "max_vp_lags", 0);
+        bcmsdk_set_riot_enabled();
+      }
+    }
+  }
+  return RET_CODE_SUCCESS;
+}
