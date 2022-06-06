@@ -11,7 +11,7 @@ egr_obj.flags = BCM_L3_L2TOCPU;
 rv = bcm_l3_egress_create(unit, 0, &egr_obj, &egr_obj_if);
 bcm_l3_route_t route_t;
 bcm_l3_route_t_init(&route_t);
-route_t.l3a_subnet = 0xc8010000;
+route_t.l3a_subnet = 0xc8030000;
 route_t.l3a_ip_mask = 0xffff0000;
 route_t.l3a_intf = 100001;
 route_t.l3a_vrf = 0;

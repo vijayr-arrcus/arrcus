@@ -36,10 +36,6 @@ sudo dpkg -i *.deb
 
 debian/rules prepare build-stash build-phymod build-yaml
 
-
-make sure /usr/src/linux-headers-4.19.84-arrcus exists if not get the header files from infra1 @ /home/vijayr/linux-headers-4.19.84-arrcus.tar.gz
-
-
 make -f $PWD/systems/linux/user/x86-smp_generic_64-2_6/Makefile -j32 MAKE_LOCAL=$PWD/make/Make.local.xgs
 
 cp $PWD/build/linux/user/common/libsdk.so libbcm_sdk_xgs.so
@@ -55,3 +51,7 @@ cd $PWD/build/linux-x86-smp_generic_64-2_6/x86-smp_generic_64-2_6
 
 
 scp *.ko root@10.9.8.33:/lib/modules/4.19.84-arrcus/bcm/xgs/
+
+make sure /usr/src/linux-headers-4.19.84-arrcus exists if not get the header files from infra1 @ /home/vijayr/linux-headers-4.19.84-arrcus.tar.gz
+
+

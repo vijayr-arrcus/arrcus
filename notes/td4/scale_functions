@@ -219,27 +219,23 @@ bcmsdk_config_update(dpal_plugin_init_cfg_t *cfg)
 
   if (cfg->dev_scale_info->cur_profile_id !=
       cfg->dev_scale_info->def_profile_id) {
-    rv = sal_config_set(dev_info->l2_scale_info.name,
+    rv = soc_cm_config_str_set(dev_info->l2_scale_info.name,
                         dev_info->l2_scale_info.value);
     if (rv != 0) {
       return RET_CODE_FAILURE;
     }
 
-    rv = sal_config_set(dev_info->l3_scale_info.name,
+    rv = soc_cm_config_str_set(dev_info->l3_scale_info.name,
                         dev_info->l3_scale_info.value);
     if (rv != 0) {
       return RET_CODE_FAILURE;
     }
 
-    rv = sal_config_set(dev_info->alpm_scale_info.name,
+    rv = soc_cm_config_str_set(dev_info->alpm_scale_info.name,
                         dev_info->alpm_scale_info.value);
     if (rv != 0) {
       return RET_CODE_FAILURE;
     }
-  }
-
-  if (RET_CODE_SUCCESS != bcmsdk_riot_config_update(cfg)) {
-    return RET_CODE_FAILURE;
   }
 
   return RET_CODE_SUCCESS;

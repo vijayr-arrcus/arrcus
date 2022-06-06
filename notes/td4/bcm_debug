@@ -1029,6 +1029,9 @@ sc TrunkRandomSeed
 BCM.0>
 
 PROTOCOL_PKT_FORWARD_TABLE
+
+lt traverse -l PROTOCOL_PKT_FORWARD_TABLE
+
 MON_ING_TRACE_EVENT -- whethere a particular event should copy to CPU or not.
 
 Metering red 

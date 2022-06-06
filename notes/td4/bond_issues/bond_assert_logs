@@ -1,0 +1,56 @@
+###########################################################
+# Begin Logging -- Process ID: 8084
+###########################################################
+[2000/04/11 01:44:07.476678]**ERR**[DPAL-TD4] init flags 0
+[2000/04/11 01:44:13.268675]**ERR**[DPAL Plugin] SUCCESS in loading plugin bcmxgs (path /usr/lib/libdpal_plugin_xgs.so), error (null)
+[2000/04/11 01:44:13.268804]**ERR**[DPAL Plugin] Success to lookup discover fn in plugin bcmxgs
+[2000/04/11 01:44:13.269028]**ERR**[DPAL Plugin] Num devices discover fn in plugin 1
+[2000/04/11 01:44:13.546713]**ERR**[DPAL Plugin] SUCCESS in loading plugin lxk (path /usr/lib/libdpal_plugin_lxk.so), error (null)
+[2000/04/11 01:44:13.546796]**ERR**[DPAL Plugin] Success to lookup discover fn in plugin lxk
+[2000/04/11 01:44:13.546816]**ERR**[DPAL Plugin] Num devices discover fn in plugin 2
+[2000/04/11 01:44:13.551347]**ERR**[BCM PLUGIN] dpal_discover_devices init_flags:0
+[2000/04/11 01:44:13.551408]**ERR**[DPAL-TD4] Inside bcmsdk_chip_init init_flags 0
+[2000/04/11 01:44:17.809109]**ERR**[BCM PLUGIN] Unit: 0 : calling punt cbk
+[2000/04/11 01:44:18.054235]**ERR**[DPAL Worker] Replay_in_progress false
+[2000/04/11 01:44:18.054300]**ERR**[DPAL] Worker Replay in_progress false
+[2000/04/11 01:44:18.152686]**ERR**[DPAL ACC] Meta for obj_type 3402 not found
+[2000/04/11 01:44:18.155678]**ERR**[BCM PLUGIN] app : Failed to add BPDU mac, sdk : Entry exists, proto_id : 0
+[2000/04/11 01:44:18.155726]**ERR**[BCM PLUGIN] app : bpdu punt create cb failed, sdk : (null), proto_id : 0
+[2000/04/11 01:44:48.391568]**ERR**[DPAL Plugin] plugin callback failed, plugin_id: 0x2 msg-type = 3301, optype = 3, rc = -1
+[2000/04/11 01:44:48.391780]**ERR**[DPAL Plugin] plugin callback failed, plugin_id: 0x2 msg-type = 3301, optype = 3, rc = -1
+[2000/04/11 01:44:59.740495]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Failed to get port info physical port  sdk: Ok vlan_id: 0 ifindex: 1003
+[2000/04/11 01:44:59.740578]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error init acc port. sdk: (null) vlan_id: 0 ifindex: 1003
+[2000/04/11 01:44:59.740596]**ERR**[BCM PLUGIN] bcmsdk_get_iftype_from_ifindex: failed to get iftype for ifindex:15005
+[2000/04/11 01:44:59.740603]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error getting the if type sdk: (null) vlan_id: 3001 ifindex: 15005
+[2000/04/11 01:44:59.740610]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error in sdk l2 vni create programming. sdk: (null) vlan_id: 3001 ifindex: 15005
+[2000/04/11 01:44:59.741456]**ERR**[BCM PLUGIN] bcmsdk_get_iftype_from_ifindex: failed to get iftype for ifindex:15005
+[2000/04/11 01:44:59.741484]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error getting the if type sdk: (null) vlan_id: 2001 ifindex: 15005
+[2000/04/11 01:44:59.741493]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error in sdk l2 vni create programming. sdk: (null) vlan_id: 2001 ifindex: 15005
+[2000/04/11 01:45:00.380031]**ERR**[BCM PLUGIN] bcmsdk_get_iftype_from_ifindex: failed to get iftype for ifindex:15005
+[2000/04/11 01:45:00.380139]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error getting the if type sdk: (null) vlan_id: 2001 ifindex: 15005
+[2000/04/11 01:45:00.380163]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error in sdk update programming. sdk: (null) vlan_id: 2001 ifindex: 15005
+[2000/04/11 01:45:00.380763]**ERR**[BCM PLUGIN] bcmsdk_get_iftype_from_ifindex: failed to get iftype for ifindex:15005
+[2000/04/11 01:45:00.380795]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error getting the if type sdk: (null) vlan_id: 3001 ifindex: 15005
+[2000/04/11 01:45:00.380812]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error in sdk update programming. sdk: (null) vlan_id: 3001 ifindex: 15005
+[2000/04/11 01:45:00.406162]**ERR**[BCM PLUGIN] bcmsdk_get_iftype_from_ifindex: failed to get iftype for ifindex:15005
+[2000/04/11 01:45:00.406256]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error getting the if type sdk: (null) vlan_id: 2001 ifindex: 15005
+[2000/04/11 01:45:00.406280]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error in sdk update programming. sdk: (null) vlan_id: 2001 ifindex: 15005
+[2000/04/11 02:50:25.125372]**ERR**[CONFDPROXY] OPER socket closed, sock=892
+[2000/04/11 02:50:25.225950]**ERR**[CONFDPROXY] Failed to re-connect Oper connections to Confd, retry again later ... !
+[2000/04/11 02:50:32.051757]**ERR**[CONFDPROXY] Failed to re-connect Oper connections to Confd, retry again later ... !
+[2000/04/11 02:50:39.081136]**ERR**[CONFDPROXY] Failed to re-connect Oper connections to Confd, retry again later ... !
+[2000/04/11 02:50:39.165985]**ERR**[BCM PLUGIN] bcmsdk_get_iftype_from_ifindex: failed to get iftype for ifindex:15005
+[2000/04/11 02:50:39.166050]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error getting the if type sdk: (null) vlan_id: 3001 ifindex: 15005
+[2000/04/11 02:50:39.166080]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error in sdk update programming. sdk: (null) vlan_id: 3001 ifindex: 15005
+[2000/04/11 02:50:39.295364]**ERR**[BCM PLUGIN] bcmsdk_get_iftype_from_ifindex: failed to get iftype for ifindex:15005
+[2000/04/11 02:50:39.295431]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error getting the if type sdk: (null) vlan_id: 2001 ifindex: 15005
+[2000/04/11 02:50:39.295455]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error in sdk update programming. sdk: (null) vlan_id: 2001 ifindex: 15005
+[2000/04/11 02:50:39.563074]**ERR**[BCM PLUGIN] bcmsdk_get_iftype_from_ifindex: failed to get iftype for ifindex:15005
+[2000/04/11 02:50:39.563154]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error getting the if type sdk: (null) vlan_id: 3001 ifindex: 15005
+[2000/04/11 02:50:39.563179]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error in sdk update programming. sdk: (null) vlan_id: 3001 ifindex: 15005
+[2000/04/11 02:50:39.826293]**ERR**[BCM PLUGIN] bcmsdk_get_iftype_from_ifindex: failed to get iftype for ifindex:15005
+[2000/04/11 02:50:39.826359]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error getting the if type sdk: (null) vlan_id: 2001 ifindex: 15005
+[2000/04/11 02:50:39.826383]**ERR**[BCM PLUGIN] VXLAN_ACC_VP: Unit: 0 Error in sdk update programming. sdk: (null) vlan_id: 2001 ifindex: 15005
+[2000/04/11 02:50:46.006767]**ERR**[CONFDPROXY] Failed to re-connect Oper connections to Confd, retry again later ... !
+[2000/04/11 02:50:53.078808]**ERR**[CONFDPROXY] Failed to re-connect Oper connections to Confd, retry again later ... !
+
