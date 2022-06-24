@@ -1046,3 +1046,23 @@ debug bcmlt +
 estat clear trace
 estat clear drop
 clear c
+
+lt traverse TM_THD_UC_Q -l
+
+int unit = 0;
+int args = 0;
+bcm_port_t port = 120;
+bcm_gport_t gport;
+int index = 0;
+print bcm_port_gport_get(0,port,&gport);
+
+bcm_cosq_control_set(unit, gport, index, bcmCosqControlDropLimitAlpha, bcmCosqControlDropLimitAlpha_2);
+
+
+int val=2000;
+
+bcm_cosq_control_set(unit, gport, index, bcmCosqControlEgressUCQueueMinLimitBytes, val);
+bcm_cosq_control_get(unit, gport, index, bcmCosqControlEgressUCQueueMinLimitBytes, &args);
+
+bcm_cosq_control_get(unit, gport, index, bcmCosqControlDropLimitAlpha, &args);
+debug bcmlt - 
