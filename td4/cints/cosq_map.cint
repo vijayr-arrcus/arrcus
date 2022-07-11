@@ -1,0 +1,55 @@
+cint_reset();
+// Mapping is for the ingress but queueing is for egress.
+// bcm_cosq_gport_mapping_set ( int  unit, bcm_port_t  ing_port, bcm_cos_t  int_pri, uint32  flags, bcm_gport_t  gport, bcm_cos_queue_t  cosq );
+print bcm_cosq_gport_mapping_set(0, 43, 5, BCM_COSQ_GPORT_UCAST_QUEUE_GROUP, -1, 1);
+print bcm_cosq_gport_mapping_set(0, 43, 5, BCM_COSQ_GPORT_MCAST_QUEUE_GROUP, -1, 1);
+print bcm_cosq_gport_mapping_set(0, 41, 6, BCM_COSQ_GPORT_UCAST_QUEUE_GROUP, -1, 1);
+print bcm_cosq_gport_mapping_set(0, 41, 6, BCM_COSQ_GPORT_MCAST_QUEUE_GROUP, -1, 1);
+
+int unit = 0;
+int port = 43;
+int queue_idx = 5;
+uint64 val64;
+int i = 0;
+
+while (i < 8) {
+	print bcm_cosq_stat_get(unit, port, i, bcmCosqStatEgressUCQueueBytesCurrent, &val64);
+	print val64;
+	i++;
+}
+
+print bcm_cosq_stat_get(unit, port, queue_idx, bcmCosqStatEgressUCQueueBytesCurrent, &val64);
+BCM.0>
+BCM.0> bsh
+bsh
+lt port_policy lookup port_id=43
+lt port_policy lookup port_id=43
+
+Table PORT_POLICY:
+  lookup PORT_ID=0x2b
+    PORT_COS_Q_MAP_ID=1
+    PORT_ID=0x2b(43)
+lt PORT_COS_Q_MAP lookup PORT_COS_Q_MAP_ID=1 INT_PRI=5
+lt PORT_COS_Q_MAP lookup PORT_COS_Q_MAP_ID=1 INT_PRI=5
+
+Table PORT_COS_Q_MAP:
+  lookup PORT_COS_Q_MAP_ID=1 INT_PRI=5
+    CPU_COS=0
+    RQE_COS=3
+    MC_COS=1
+    UC_COS=1
+    INT_PRI=5
+    PORT_COS_Q_MAP_ID=1
+
+
+bcm_ltsw_cosq_mapping_set(int unit, bcm_cos_t priority, bcm_cos_queue_t cosq)
+
+print bcm_cosq_mapping_set(0, 0, 5);
+print bcm_cosq_mapping_set(0, 1, 5);
+print bcm_cosq_mapping_set(0, 2, 5);
+print bcm_cosq_mapping_set(0, 3, 5);
+print bcm_cosq_mapping_set(0, 4, 5);
+print bcm_cosq_mapping_set(0, 5, 5);
+print bcm_cosq_mapping_set(0, 6, 5);
+print bcm_cosq_mapping_set(0, 7, 5);
+
