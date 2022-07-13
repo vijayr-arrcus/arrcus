@@ -53,3 +53,27 @@ print bcm_cosq_mapping_set(0, 5, 5);
 print bcm_cosq_mapping_set(0, 6, 5);
 print bcm_cosq_mapping_set(0, 7, 5);
 
+uint32 mmu_egr_queue_stat_get_mcast(uint32 unit, uint32 port)
+{
+  uint64 value1;
+  uint32 cosq = 0;
+  bcm_gport_t gport;
+  print bcm_port_gport_get(unit, port, &gport);
+  for (cosq = 0; cosq < 12; cosq++) {
+    print cosq;
+//    print bcm_cosq_bst_stat_get(unit, gport, cosq, 8, 0, &value1);
+//    print value1;
+//    print bcm_cosq_bst_stat_get(unit, gport, cosq, 11, 0, &value1);
+//    print value1;
+    print bcm_cosq_bst_stat_get(unit, gport, cosq,
+                                bcmBstStatIdEgrPortPoolSharedMcast,
+                                0, &value1);
+    print value1;
+  }
+  return 0;
+
+}
+
+lt traverse -l FLEX_QOS_ING_PHB -- cos, DSCP to internal priority mapping.
+lt traverse -l TM_ING_UC_ING_PRI_MAP -- internal priority to priority group mapping.
+lt traverse -l TM_PRI_GRP_POOL_MAP -- priority group to service pool mapping.
