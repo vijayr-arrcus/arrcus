@@ -59,16 +59,12 @@ uint32 mmu_egr_queue_stat_get_mcast(uint32 unit, uint32 port)
   uint32 cosq = 0;
   bcm_gport_t gport;
   print bcm_port_gport_get(unit, port, &gport);
-  for (cosq = 0; cosq < 12; cosq++) {
-    print cosq;
-//    print bcm_cosq_bst_stat_get(unit, gport, cosq, 8, 0, &value1);
-//    print value1;
-//    print bcm_cosq_bst_stat_get(unit, gport, cosq, 11, 0, &value1);
-//    print value1;
-    print bcm_cosq_bst_stat_get(unit, gport, cosq,
-                                bcmBstStatIdEgrPortPoolSharedMcast,
+  for (cosq = 0; cosq < 16; cosq++) {
+    printf("Cosq == %d \n", cosq);
+    print bcm_cosq_bst_stat_get(unit, 0, cosq,
+                                bcmBstStatIdEgrPool,
                                 0, &value1);
-    print value1;
+		print value1;
   }
   return 0;
 
@@ -77,3 +73,105 @@ uint32 mmu_egr_queue_stat_get_mcast(uint32 unit, uint32 port)
 lt traverse -l FLEX_QOS_ING_PHB -- cos, DSCP to internal priority mapping.
 lt traverse -l TM_ING_UC_ING_PRI_MAP -- internal priority to priority group mapping.
 lt traverse -l TM_PRI_GRP_POOL_MAP -- priority group to service pool mapping.
+lt traverse -l TM_ING_PORT -- mapping of port to PG mapping and SP mapping.
+lt traverse -l TM_ING_PORT_PRI_GRP -- lossless or lossy PG.
+lt traverse -l 
+
+// Get the cosq to multicast mapping.
+
+uint32 mmu_get_cosq_to_mc(int unit, int port, uint32 type)
+{
+  int tc = 0, rv =0;
+  int cosq = -1;
+  int queue_gport = 0;
+
+  for(tc = 0; tc < 17 ; tc ++) {
+    rv = bcm_cosq_gport_mapping_get(unit, port, tc,
+                                    type,
+                                    &queue_gport, &cosq);
+    if (rv != BCM_E_NONE) {
+      printf("Multicast: Unable to retrieve the cosq of map TC %d of port %d\n",
+             tc, port, bcm_errmsg(rv));
+      return rv;
+    }
+    printf("%s: TC %d of port %d was mapped to Egress queue %d\n",
+           type == BCM_COSQ_GPORT_UCAST_QUEUE_GROUP ? "Unicast":"multicast",
+           tc, port, cosq, bcm_errmsg(rv));
+  }
+}
+
+mmu_get_cosq_to_mc(0, 40, BCM_COSQ_GPORT_UCAST_QUEUE_GROUP);
+mmu_get_cosq_to_mc(0, 40, BCM_COSQ_GPORT_MCAST_QUEUE_GROUP);
+
+
+uint32 mmu_set_min_buffer (int unit, int port, int queue_idx, int reserved_buffers)
+{
+  int queue_gport = 0;
+  int cosq = -1;
+  int val = 0;
+
+
+    print bcm_cosq_gport_mapping_get(unit, port, queue_idx,
+                                    BCM_COSQ_GPORT_UCAST_QUEUE_GROUP,
+                                    &queue_gport, &cosq);
+
+    print bcm_cosq_control_get(unit, queue_gport, queue_idx,
+                               bcmCosqControlEgressUCQueueMinLimitBytes,
+                               &val);
+
+    print val;
+
+    print bcm_cosq_control_set(unit, queue_gport, queue_idx,
+                               bcmCosqControlEgressUCQueueMinLimitBytes,
+                               reserved_buffers);
+
+    print bcm_cosq_control_get(unit, queue_gport, queue_idx,
+                               bcmCosqControlEgressUCQueueMinLimitBytes,
+                               &val);
+
+    print val;
+
+}
+
+print mmu_set_min_buffer(0, 41, 3, 5555);
+
+
+uint32 mmu_get_min_buffer (int unit, int port, int queue_idx)
+{
+  int queue_gport = 0;
+  int cosq = -1;
+  int val = 0;
+
+
+    print bcm_cosq_gport_mapping_get(unit, port, queue_idx,
+                                    BCM_COSQ_GPORT_UCAST_QUEUE_GROUP,
+                                    &queue_gport, &cosq);
+
+    print bcm_cosq_control_get(unit, queue_gport, queue_idx,
+                               bcmCosqControlEgressUCQueueMinLimitBytes,
+                               &val);
+    print val;
+    val = 0;
+    print bcm_cosq_control_get(unit, queue_gport, queue_idx,
+                               bcmCosqControlDropLimitAlpha, &val);
+
+    print val;
+}
+
+print mmu_get_min_buffer(0, 2, 0);
+print mmu_get_min_buffer(0, 3, 0);
+print mmu_get_min_buffer(0, 4, 0);
+print mmu_get_min_buffer(0, 5, 0);
+print mmu_get_min_buffer(0, 6, 0);
+print mmu_get_min_buffer(0, 7, 0);
+print mmu_get_min_buffer(0, 8, 0);
+print mmu_get_min_buffer(0, 9, 0);
+print mmu_get_min_buffer(0, 10, 0);
+print mmu_get_min_buffer(0, 11, 0);
+print mmu_get_min_buffer(0, 12, 0);
+print mmu_get_min_buffer(0, 13, 0);
+print mmu_get_min_buffer(0, 14, 0);
+print mmu_get_min_buffer(0, 15, 0);
+print mmu_get_min_buffer(0, 16, 0);
+print mmu_get_min_buffer(0, 17, 0);
+print mmu_get_min_buffer(0, 18, 0);
