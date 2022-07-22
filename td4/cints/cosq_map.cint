@@ -75,7 +75,9 @@ lt traverse -l TM_ING_UC_ING_PRI_MAP -- internal priority to priority group mapp
 lt traverse -l TM_PRI_GRP_POOL_MAP -- priority group to service pool mapping.
 lt traverse -l TM_ING_PORT -- mapping of port to PG mapping and SP mapping.
 lt traverse -l TM_ING_PORT_PRI_GRP -- lossless or lossy PG.
-lt traverse -l 
+lt traverse -l
+lt CTR_EGR_TM_BST_SERVICE_POOL traverse -l
+pt dump MMU_THDO_UC_POOL_BST_COUNT
 
 // Get the cosq to multicast mapping.
 
@@ -175,3 +177,30 @@ print mmu_get_min_buffer(0, 15, 0);
 print mmu_get_min_buffer(0, 16, 0);
 print mmu_get_min_buffer(0, 17, 0);
 print mmu_get_min_buffer(0, 18, 0);
+
+uint32 mmu_get_port_queue_sp (int unit, int port)
+{
+  int queue_gport = 0;
+  int cosq = -1;
+  int val = 0;
+  int i = 0;
+
+
+  while (i < 11) {
+    print bcm_cosq_gport_mapping_get(unit, port, i,
+                                     BCM_COSQ_GPORT_UCAST_QUEUE_GROUP,
+                                     &queue_gport, &cosq);
+
+    print bcm_cosq_control_get(unit, queue_gport, i,
+                               bcmCosqControlEgressPool,
+                               &val);
+    print val;
+    i++;
+
+
+  }
+}
+
+mmu_get_port_queue_sp(0, 43);
+mmu_get_port_queue_sp(0, 18);
+
