@@ -11,4 +11,9 @@ sudo docker ps -a
 sudo docker commit <container-id> arcos:latest
 
 
-  /usr/share/arcos/ui/
+/usr/share/arcos/ui/
+
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
+docker system prune
+docker system prune -a
