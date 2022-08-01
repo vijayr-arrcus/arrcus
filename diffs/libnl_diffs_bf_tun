@@ -1,0 +1,64 @@
+commit 9a433997ee479e08e325dea6b1a2403a97df8f62
+Author: Vijay Rajamani <vijayr@arrcus.com>
+Date:   Mon Aug 1 09:06:53 2022 +0000
+
+    bond slave parsing for tofino
+
+diff --git a/lib/route/link/bonding.c b/lib/route/link/bonding.c
+index 90c141a..875ef15 100644
+--- a/lib/route/link/bonding.c
++++ b/lib/route/link/bonding.c
+@@ -296,9 +296,13 @@ static int bonding_slave_parse(struct rtnl_link *link, struct nlattr *data,
+ 	int err = 0;
+         char *type = NULL;
+ 
+-        if ((type = rtnl_link_get_type(link))) {
+-            goto errout;
+-        }
++        /*
++         *  if ((type = rtnl_link_get_type(link))) {
++         *     goto errout;
++         *  }
++         * The link for tunnel devices is bf_tun, eventhough we dont have to parse
++         * bf-tun device information, we need the bond slave information, let it fall through.
++         */
+ 	if ((err = nla_parse_nested(tb, IFLA_BOND_SLAVE_MAX, data, bonding_slave_lacp_policy)) < 0) {
+ 		goto errout;
+         }
+@@ -328,10 +332,12 @@ static void bonding_slave_free(struct rtnl_link *link)
+         if (!vi) {
+             return;
+         }
++        /*
+         type = rtnl_link_get_type(link);
+         if (type) {
+             return;
+         }
++        */
+ 	free(vi);
+ 	link->l_slave_info = NULL;
+ }
+@@ -350,9 +356,11 @@ static int bonding_slave_compare(struct rtnl_link *link_a, struct rtnl_link *lin
+             }
+             return 0;
+         }
++        /*
+         if ((type = rtnl_link_get_type(link_a))) {
+             return 0;
+         }
++        */
+         diff = (a->actor_oper_state != b->actor_oper_state) ? 1 : 0;
+         diff |= (a->partner_oper_state != b->partner_oper_state) ? 1 : 0;
+         diff |= (a->slave_state != b->slave_state) ? 1 : 0;
+@@ -365,9 +373,11 @@ static int bonding_slave_clone(struct rtnl_link *dst, struct rtnl_link *src)
+         char *type = NULL;
+ 
+ 	dst->l_slave_info = NULL;
++        /*
+         if ((type = rtnl_link_get_type(src))) {
+             return 0;
+         }
++        */
+ 	if (bond_lacp_alloc(dst) < 0)
+ 		return -NLE_NOMEM;
+ 
