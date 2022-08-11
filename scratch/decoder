@@ -118,3 +118,36 @@ sh: 1: cannot create /sys/class/net/bond10/bonding/carrier_state: Permission den
 
 Not Working
 ==========
+
+---------------------------  END NETLINK MESSAGE   ---------------------------
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache_mngr.c:86   event_input: Cache manager 0x55de0c8f0780, handling new message 0x55de0d5728f0 as event
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache_mngr.c:108  event_input: Associated message 0x55de0d5728f0 to cache 0x55de0c8ee240
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link.c:675  link_msg_parser: link_msg_parser kind bf_tun
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link.c:693  link_msg_parser:  bf_tun lookup ops 0x7fdca449dda0
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link.c:696  link_msg_parser:  bf_tun lookup ops 0x7fdca449dda0 calling io_parse io parse 0x7fdca424b850 li[IFLA_INFO_DATA] 223707004 li[IFLA_INFO_XSTATS] 0
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link.c:699  link_msg_parser:  bf_tun lookup ops 0x7fdca449dda0 calling io_parse
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link.c:714  link_msg_parser: bond rtnl kind bond
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link/bonding.c:339  bonding_slave_parse: bond slave parse-1
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link/bonding.c:345  bonding_slave_parse: bond slave parse-2 type bf_tun/0x55de0ceca7b0
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link/bonding.c:349  bonding_slave_parse: bond slave parse-3
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link/bonding.c:352  bonding_slave_parse: bond slave parse-4
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link/bonding.c:356  bonding_slave_parse: bond slave parse-5
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link/bonding.c:360  bonding_slave_parse: bond slave parse-6
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link/bonding.c:364  bonding_slave_parse: bond slave parse-7
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link/bonding.c:369  bonding_slave_parse: bond slave parse-8 slave state 1 actor 15 partner 1
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/route/link/bonding.c:371  bonding_slave_parse: bond slave parse error 0
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache_mngr.c:51   include_cb: Including object 0x55de0d558870 into cache 0x55de0c8ee240
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:793  cache_include: cache_include - 1
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:797  cache_include: cache_include - 1-2
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:800  cache_include: cache_include - 2
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:802  cache_include: cache_include - 3
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:828  cache_include: cache_include - 9
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:572  nl_cache_remove: Deleted object 0x55de0c8ff920 from cache 0x55de0c8ee240 <route/link>.
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:849  cache_include: cache_include - 14
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:851  cache_include: cache_include - 15
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:863  cache_include: cache_include - 19
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:867  cache_include: cache_include - 20
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:877  cache_include: cache_include - 22
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache.c:887  cache_include: cache_include - 24
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/msg.c:576  nlmsg_free: msg 0x55de0d5728f0: Freed
+DBG<2>/build/libnl3-3.3.0.arcos1/./lib/cache_mngr.c:544  nl_cache_mngr_data_ready: Cache manager 0x55de0c8f0780, recvmsgs read1 messages

@@ -7,13 +7,13 @@ print bcm_cosq_gport_mapping_set(0, 41, 6, BCM_COSQ_GPORT_UCAST_QUEUE_GROUP, -1,
 print bcm_cosq_gport_mapping_set(0, 41, 6, BCM_COSQ_GPORT_MCAST_QUEUE_GROUP, -1, 1);
 
 int unit = 0;
-int port = 43;
+int port = 103;
 int queue_idx = 5;
 uint64 val64;
 int i = 0;
 
 while (i < 8) {
-	print bcm_cosq_stat_get(unit, port, i, bcmCosqStatEgressUCQueueBytesCurrent, &val64);
+	print bcm_cosq_stat_get(unit, port, i, bcmBstStatIdPortPool, &val64);
 	print val64;
 	i++;
 }
@@ -62,7 +62,7 @@ uint32 mmu_egr_queue_stat_get_mcast(uint32 unit, uint32 port)
   for (cosq = 0; cosq < 16; cosq++) {
     printf("Cosq == %d \n", cosq);
     print bcm_cosq_bst_stat_get(unit, 0, cosq,
-                                bcmBstStatIdEgrPool,
+                                bcmBstStatIdPortPool,
                                 0, &value1);
 		print value1;
   }
