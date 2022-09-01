@@ -1,0 +1,276 @@
+app/bcm_sdk_l3_replica_nh.c:167:bcmsdk_l3_ltsw_interface_set (int unit,
+app/bcm_sdk_l3_replica_nh.c:198:bcm_sdk_ltsw_l3_replica_nh_cfg (dpal_switch_unit_t unit, dpal_optype_e optype,
+app/bcm_sdk_l3_replica_nh.c:276:        if (RET_CODE_SUCCESS != bcmsdk_l3_ltsw_interface_set(unit, l3egr.intf, &ul_intf)) {
+app/bcm_sdk_l3_replica_nh.c:352:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_sdk_l3_replica_nh.c:353:    return bcm_sdk_ltsw_l3_replica_nh_cfg (unit, optype, sdk_obj);
+app/bcm_stp.h:40:bcmsdk_vxlan_flow_sdk_ltsw_vpn_stp_action(dpal_switch_unit_t unit,
+app/bcm_fp_common_group.c:11:#include "bcm_xgs_ltsw_flexctr.h"
+app/bcm_fp_common_group.c:32:bcmsdk_tcam_efp_ltsw_common_group_create (dpal_switch_unit_t unit,
+app/bcm_fp_common_group.c:62:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_fp_common_group.c:63:    return bcmsdk_tcam_efp_ltsw_common_group_create (unit, efp_common_group_info);
+app/bcm_fp_common_group.c:71:bcmsdk_tcam_vfp_ltsw_common_group_create (dpal_switch_unit_t unit,
+app/bcm_fp_common_group.c:103:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_fp_common_group.c:104:    return bcmsdk_tcam_vfp_ltsw_common_group_create (unit, vfp_common_group_info);
+app/bcm_fp_common_group.c:117:bcmsdk_tcam_efp_ltsw_common_group_delete (dpal_switch_unit_t unit,
+app/bcm_fp_common_group.c:137:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_fp_common_group.c:138:    return bcmsdk_tcam_efp_ltsw_common_group_delete(unit, efp_common_group_info);
+app/bcm_fp_common_group.c:146:bcmsdk_tcam_vfp_ltsw_common_group_delete (dpal_switch_unit_t unit,
+app/bcm_fp_common_group.c:166:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_fp_common_group.c:167:    return bcmsdk_tcam_vfp_ltsw_common_group_delete(unit, vfp_common_group_info);
+app/bcm_vxlan_flow_sdk_common.c:19:#include "bcm_xgs_ltsw_flexctr.h"
+app/bcm_vxlan_flow_sdk_common.c:241:bcmsdk_vxlan_flow_sdk_ltsw_cgw_ipv4_arp_enable(dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:296:bcmsdk_vxlan_flow_sdk_ltsw_cgw_ipv6_nd_enable (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:357:bcmsdk_vxlan_flow_sdk_ltsw_protocol_control_set (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:363:  rv = bcmsdk_vxlan_flow_sdk_ltsw_cgw_ipv4_arp_enable(unit, optype, vpn_id);
+app/bcm_vxlan_flow_sdk_common.c:370:  rv = bcmsdk_vxlan_flow_sdk_ltsw_cgw_ipv6_nd_enable(unit, optype, vpn_id);
+app/bcm_vxlan_flow_sdk_common.c:380:bcmsdk_vxlan_flow_sdk_ltsw_vpn_create_internal(dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:416:    rv = bcmsdk_vxlan_flow_sdk_ltsw_protocol_control_set(unit, DPAL_OBJ_CREATE, vpn_id);
+app/bcm_vxlan_flow_sdk_common.c:434:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:435:    return bcmsdk_vxlan_flow_sdk_ltsw_vpn_create_internal(unit, mcid, centralized_gw, vpn);
+app/bcm_vxlan_flow_sdk_common.c:476:bcmsdk_vxlan_flow_sdk_ltsw_vpn_encap_add_del(dpal_switch_unit_t unit, uint32_t vpn,
+app/bcm_vxlan_flow_sdk_common.c:508:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:509:    return bcmsdk_vxlan_flow_sdk_ltsw_vpn_encap_add_del(unit, vpn, vni_id, flow_hdl, del);
+app/bcm_vxlan_flow_sdk_common.c:545:bcmsdk_vxlan_flow_sdk_ltsw_vpn_match_add_del(dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:579:   if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:580:    return bcmsdk_vxlan_flow_sdk_ltsw_vpn_match_add_del(unit, vpn, vni_id, flow_hdl, del);
+app/bcm_vxlan_flow_sdk_common.c:606:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:755:bcmsdk_vxlan_flow_sdk_ltsw_vpn_delete_internal(dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:764:    rv = bcmsdk_vxlan_flow_sdk_ltsw_protocol_control_set(unit, DPAL_OBJ_DELETE, vpn_id);
+app/bcm_vxlan_flow_sdk_common.c:786:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:787:    return bcmsdk_vxlan_flow_sdk_ltsw_vpn_delete_internal(unit, centralized_gw, vpn);
+app/bcm_vxlan_flow_sdk_common.c:892:bcmsdk_vxlan_flow_sdk_ltsw_net_vp_set (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:925:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:926:    return bcmsdk_vxlan_flow_sdk_ltsw_net_vp_set(unit, vpn, net_grp_id, vp);
+app/bcm_vxlan_flow_sdk_common.c:993:bcmsdk_vxlan_flow_sdk_ltsw_net_vp_encap_set (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:1039:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:1040:    return bcmsdk_vxlan_flow_sdk_ltsw_net_vp_encap_set(unit, flow_handle, net_grp_id,
+app/bcm_vxlan_flow_sdk_common.c:1085:bcmsdk_vxlan_flow_sdk_ltsw_net_vp_match_set (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:1125:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:1126:    return bcmsdk_vxlan_flow_sdk_ltsw_net_vp_match_set(unit, flow_handle, optype, sdk_vp);
+app/bcm_vxlan_flow_sdk_common.c:1182:bcmsdk_vxlan_flow_sdk_ltsw_net_vp_init (dpal_switch_unit_t unit, uint32_t hwid)
+app/bcm_vxlan_flow_sdk_common.c:1210:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:1211:    return  bcmsdk_vxlan_flow_sdk_ltsw_net_vp_init(unit, hwid);
+app/bcm_vxlan_flow_sdk_common.c:1554:bcmsdk_vxlan_flow_sdk_ltsw_nw_dgpp_port_init (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:1705:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:1706:    return bcmsdk_vxlan_flow_sdk_ltsw_nw_dgpp_port_init(unit, optype, sdk_obj);
+app/bcm_vxlan_flow_sdk_common.c:1715:bcmsdk_vxlan_flow_sdk_ltsw_nw_ul_ecmp_port_init (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:1869:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:1870:    return bcmsdk_vxlan_flow_sdk_ltsw_nw_ul_ecmp_port_init(unit, optype, sdk_obj);
+app/bcm_vxlan_flow_sdk_common.c:2135:bcmsdk_vxlan_flow_sdk_ltsw_stats_get_counter(dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:2182:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:2183:    return bcmsdk_vxlan_flow_sdk_ltsw_stats_get_counter(unit, sdk_stats);
+app/bcm_vxlan_flow_sdk_common.c:2257:bcmsdk_vxlan_flow_sdk_ltsw_shg_info_stats_get_counter (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:2293:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:2294:    return bcmsdk_vxlan_flow_sdk_ltsw_shg_info_stats_get_counter(unit, stats_hwid, flexctr_hwid, shg_pkt_stats);
+app/bcm_vxlan_flow_sdk_common.c:2302:bcmsdk_vxlan_flow_sdk_ltsw_icmp6_nd_enable(dpal_switch_unit_t unit)
+app/bcm_vxlan_flow_sdk_common.c:2439:bcmsdk_vxlan_flow_sdk_ltsw_ecmp_flexdigest_config(dpal_switch_unit_t unit)
+app/bcm_vxlan_flow_sdk_common.c:2621:bcmsdk_vxlan_flow_sdk_ltsw_entropy_enable (dpal_switch_unit_t unit)
+app/bcm_vxlan_flow_sdk_common.c:2662:bcmsdk_vxlan_flow_sdk_ltsw_init (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:2682:  rv = bcmsdk_vxlan_flow_sdk_ltsw_icmp6_nd_enable(unit);
+app/bcm_vxlan_flow_sdk_common.c:2691:  rv = bcmsdk_vxlan_flow_sdk_ltsw_ecmp_flexdigest_config(unit);
+app/bcm_vxlan_flow_sdk_common.c:2700:  rv = bcmsdk_vxlan_flow_sdk_ltsw_entropy_enable(unit);
+app/bcm_vxlan_flow_sdk_common.c:2762:  rc = bcmsdk_vxlan_flow_sdk_ltsw_net_vp_set(unit, ctx->vpnid,
+app/bcm_vxlan_flow_sdk_common.c:2772:  rv = bcmsdk_vxlan_flow_sdk_ltsw_flex_stat_init(unit);
+app/bcm_vxlan_flow_sdk_common.c:2804:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:2805:    return bcmsdk_vxlan_flow_sdk_ltsw_init(unit, sdk_ctxt);
+app/bcm_vxlan_flow_sdk_common.c:2837:bcmsdk_vxlan_flow_sdk_ltsw_stp_set (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:2866:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:2867:    return bcmsdk_vxlan_flow_sdk_ltsw_stp_set(unit, vlan_id, vpn_id);
+app/bcm_vxlan_flow_sdk_common.c:2875:bcmsdk_vxlan_flow_sdk_ltsw_l2_table_create (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:2901:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:2902:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_table_create(unit, mac_addr, vpn_id);
+app/bcm_vxlan_flow_sdk_common.c:2908:bcmsdk_vxlan_flow_sdk_ltsw_l2_table_delete (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_common.c:2937:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_common.c:2938:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_table_delete(unit, mac_addr, vpn_id);
+app/bcm_stp.c:14:bcmsdk_vxlan_flow_sdk_ltsw_l2_learn_vp (dpal_switch_unit_t unit,
+app/bcm_stp.c:55:bcmsdk_vxlan_flow_sdk_ltsw_l2_flush_vp (dpal_switch_unit_t unit,
+app/bcm_stp.c:77:bcmsdk_vxlan_flow_sdk_ltsw_vlan_action_vp (dpal_switch_unit_t unit, int acc_port_class,
+app/bcm_stp.c:109:bcmsdk_vxlan_flow_sdk_ltsw_vpn_stp_action (dpal_switch_unit_t unit,
+app/bcm_stp.c:114:  rv = bcmsdk_vxlan_flow_sdk_ltsw_l2_learn_vp (unit, stp_act->acc_port_class,
+app/bcm_stp.c:122:  rv = bcmsdk_vxlan_flow_sdk_ltsw_l2_flush_vp(unit, stp_act->vfi, stp_act->vp);
+app/bcm_stp.c:129:  rv = bcmsdk_vxlan_flow_sdk_ltsw_vlan_action_vp(unit, stp_act->acc_port_class,
+app/bcm_stp.c:138:    rv = bcmsdk_vxlan_flow_sdk_ltsw_l2_flush_vp(unit, stp_act->vfi, stp_act->vp);
+app/bcm_stp.c:230:        if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_stp.c:238:              bcmsdk_vxlan_flow_sdk_ltsw_acc_port_class_get(unit, iftype, gport, &stp_act.acc_port_class)) {
+app/bcm_stp.c:243:          rv = bcmsdk_vxlan_flow_sdk_ltsw_vpn_stp_action(unit, &stp_act);
+app/bcm_stp.c:493:bcmsdk_ltsw_stp_portvlan_flush_api(dpal_worker_h wh,
+app/bcm_stp.c:566:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_stp.c:567:    return bcmsdk_ltsw_stp_portvlan_flush_api(wh, obj, optype, unit);
+app/bcm_vxlan_flow_sdk_l2.c:25:bcmsdk_vxlan_flow_sdk_ltsw_flow_match_is_valid (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:31:bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_match (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:38:bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_encape (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:44:bcmsdk_vxlan_flow_sdk_ltsw_vlan_port_action (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:114:bcmsdk_vxlan_flow_sdk_ltsw_l2_cache_init(dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:349:bcmsdk_ltsw_disable_learning_flush_mac(dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:415:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:416:    return bcmsdk_ltsw_disable_learning_flush_mac(unit, gp, virtual, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:650:bcmsdk_vxlan_flow_sdk_ltsw_l2_acc_vp_update (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:686:  rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_port_class_get(unit, iftype, gport, &acc_port_class);
+app/bcm_vxlan_flow_sdk_l2.c:697:    if (bcmsdk_vxlan_flow_sdk_ltsw_flow_match_is_valid(unit, gport, acc_port_class, acc_vp)) {
+app/bcm_vxlan_flow_sdk_l2.c:698:      rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_match(unit, DPAL_OBJ_DELETE, gport, acc_port_class, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:707:    rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_match(unit, DPAL_OBJ_CREATE, gport, acc_port_class, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:740:    if (bcmsdk_vxlan_flow_sdk_ltsw_flow_match_is_valid(unit, gport, acc_port_class, acc_vp)) {
+app/bcm_vxlan_flow_sdk_l2.c:780:	    rc = bcmsdk_vxlan_flow_sdk_ltsw_vlan_port_action(unit, mem_gport, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:789:      rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_match(unit, DPAL_OBJ_UPDATE, gport, acc_port_class, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:831:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:832:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_acc_vp_update(unit, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1035:bcmsdk_vxlan_flow_sdk_ltsw_acc_port_class_get (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1056:bcmsdk_vxlan_flow_sdk_ltsw_vlan_port_action (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1095:bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_create (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1118:bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_tagged_match (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1161:bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_untag_match (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1171:    if (g_asic_global_ctxt.xgs_cb.vxlan_ltsw_svp_fp_entry_delete_cb) {
+app/bcm_vxlan_flow_sdk_l2.c:1176:      rc = g_asic_global_ctxt.xgs_cb.vxlan_ltsw_svp_fp_entry_delete_cb(unit, &bcmsdk_svp_vfp);
+app/bcm_vxlan_flow_sdk_l2.c:1187:    if (g_asic_global_ctxt.xgs_cb.vxlan_ltsw_svp_fp_entry_create_cb) {
+app/bcm_vxlan_flow_sdk_l2.c:1191:      rc = g_asic_global_ctxt.xgs_cb.vxlan_ltsw_svp_fp_entry_create_cb(unit, gport,
+app/bcm_vxlan_flow_sdk_l2.c:1211:bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_match (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1218:    return bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_tagged_match(unit, optype, gport,
+app/bcm_vxlan_flow_sdk_l2.c:1221:    return bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_untag_match(unit, optype, gport, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1227:bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_encape (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1259:bcmsdk_vxlan_flow_sdk_ltsw_mc_egress (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1291:bcmsdk_vxlan_flow_sdk_ltsw_tag_action (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1338:bcmsdk_vxlan_flow_sdk_ltsw_vpn_l3intf_bind (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1373:bcmsdk_vxlan_flow_sdk_ltsw_vpn_stp_update (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1386:  rv = bcmsdk_vxlan_flow_sdk_ltsw_vpn_stp_action(unit, stp_act);
+app/bcm_vxlan_flow_sdk_l2.c:1396:bcmsdk_vxlan_flow_sdk_ltsw_port_learning_update (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1420:bcmsdk_vxlan_flow_sdk_ltsw_l2_acc_vp_create(dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1463:  rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_port_class_get(unit, iftype, gport, &acc_port_class);
+app/bcm_vxlan_flow_sdk_l2.c:1502:        rc = bcmsdk_vxlan_flow_sdk_ltsw_vlan_port_action(unit, mem_gport, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1519:    rc = bcmsdk_vxlan_flow_sdk_ltsw_vlan_port_action(unit, gport, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1527:  rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_create(unit, ctxt, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1534:  rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_match(unit, DPAL_OBJ_CREATE, gport, acc_port_class, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1541:  rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_encape(unit, DPAL_OBJ_CREATE, gport, acc_vp->hwid, ctxt);
+app/bcm_vxlan_flow_sdk_l2.c:1548:  rc = bcmsdk_vxlan_flow_sdk_ltsw_mc_egress(unit, gport, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1555:  rc = bcmsdk_vxlan_flow_sdk_ltsw_tag_action (unit, gport, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1562:  rc = bcmsdk_vxlan_flow_sdk_ltsw_vpn_l3intf_bind(unit, acc_vp->vlanid, acc_vp->vpn);
+app/bcm_vxlan_flow_sdk_l2.c:1574:  rc = bcmsdk_vxlan_flow_sdk_ltsw_vpn_stp_update(unit, acc_vp->stp_state, &stp_act);
+app/bcm_vxlan_flow_sdk_l2.c:1581:  rc = bcmsdk_vxlan_flow_sdk_ltsw_port_learning_update(unit, act_gport, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1594:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:1595:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_acc_vp_create(unit, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1693:bcmsdk_vxlan_flow_sdk_ltsw_flow_match_is_valid (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1729:bcmsdk_vxlan_flow_sdk_ltsw_l2_acc_vp_delete (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:1761:  rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_port_class_get(unit, iftype, gport, &acc_port_class);
+app/bcm_vxlan_flow_sdk_l2.c:1773:  rc = bcmsdk_vxlan_flow_sdk_ltsw_vpn_stp_update(unit, acc_vp->stp_state, &stp_act);
+app/bcm_vxlan_flow_sdk_l2.c:1796:  rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_encape(unit, DPAL_OBJ_DELETE, gport, acc_vp->hwid, ctxt);
+app/bcm_vxlan_flow_sdk_l2.c:1804:    if (bcmsdk_vxlan_flow_sdk_ltsw_flow_match_is_valid(unit, gport, acc_port_class, acc_vp)) {
+app/bcm_vxlan_flow_sdk_l2.c:1805:      rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_match(unit, DPAL_OBJ_DELETE, gport, acc_port_class, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1813:    rc = bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_match(unit, DPAL_OBJ_DELETE, gport, acc_port_class, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:1843:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:1844:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_acc_vp_delete(unit, acc_vp);
+app/bcm_vxlan_flow_sdk_l2.c:2046:bcmsdk_vxlan_flow_sdk_ltsw_l2_ir_mbr_create(dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:2111:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:2112:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_ir_mbr_create(unit, ir_mbr);
+app/bcm_vxlan_flow_sdk_l2.c:2144:bcmsdk_vxlan_flow_sdk_ltsw_l2_ir_mbr_delete(dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:2192:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:2193:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_ir_mbr_delete(unit, ir_mbr);
+app/bcm_vxlan_flow_sdk_l2.c:2255:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:2256:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_cache_init(unit, ctx);
+app/bcm_vxlan_flow_sdk_l2.c:2368:bcmsdk_vxlan_flow_sdk_ltsw_set_l3classid_for_vlan (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:2427:  rc = bcmsdk_vxlan_flow_sdk_ltsw_vpn_l3intf_bind(unit, vlan, vpn);
+app/bcm_vxlan_flow_sdk_l2.c:2445:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:2446:    return bcmsdk_vxlan_flow_sdk_ltsw_set_l3classid_for_vlan (unit, vlan, vpn, class_id, set);
+app/bcm_vxlan_flow_sdk_l2.c:2490:bcmsdk_vxlan_flow_sdk_ltsw_set_classid_for_vlan (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:2527:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:2528:    return bcmsdk_vxlan_flow_sdk_ltsw_set_classid_for_vlan (unit, vlan, class_id, set);
+app/bcm_vxlan_flow_sdk_l2.c:2547:  if (!g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:2596:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:2874:bcmsdk_vxlan_flow_sdk_ltsw_l2_shg_info_api (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:2895:    if (g_asic_global_ctxt.xgs_cb.vxlan_ltsw_shg_fp_entry_delete_cb) {
+app/bcm_vxlan_flow_sdk_l2.c:2899:      rc = g_asic_global_ctxt.xgs_cb.vxlan_ltsw_shg_fp_entry_delete_cb(unit, &bcmsdk_shg_efp);
+app/bcm_vxlan_flow_sdk_l2.c:2910:    if (g_asic_global_ctxt.xgs_cb.vxlan_ltsw_shg_fp_entry_create_cb) {
+app/bcm_vxlan_flow_sdk_l2.c:2914:      rc = g_asic_global_ctxt.xgs_cb.vxlan_ltsw_shg_fp_entry_create_cb(unit,
+app/bcm_vxlan_flow_sdk_l2.c:2939:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:2940:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_shg_info_api (unit, optype, bcmsdk_shg_info);
+app/bcm_vxlan_flow_sdk_l2.c:3001:bcmsdk_vxlan_flow_sdk_ltsw_l2_shg_info_efp_create (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:3024:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:3025:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_shg_info_efp_create(unit, bcmsdk_shg_efp);
+app/bcm_vxlan_flow_sdk_l2.c:3053:bcmsdk_vxlan_flow_sdk_ltsw_l2_shg_info_efp_delete (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:3070:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:3071:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_shg_info_efp_delete(unit, bcmsdk_shg_efp);
+app/bcm_vxlan_flow_sdk_l2.c:3101:bcmsdk_vxlan_flow_sdk_ltsw_l2_svp_vfp_create (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:3123:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:3124:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_svp_vfp_create(unit, bcmsdk_svp_vfp);
+app/bcm_vxlan_flow_sdk_l2.c:3130:bcmsdk_vxlan_flow_sdk_ltsw_l2_svp_vfp_delete (dpal_switch_unit_t unit,
+app/bcm_vxlan_flow_sdk_l2.c:3147:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_sdk_l2.c:3148:    return bcmsdk_vxlan_flow_sdk_ltsw_l2_svp_vfp_delete(unit, bcmsdk_svp_vfp);
+app/bcm_vrrp.c:62:      if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_init.h:48:#include "bcm_xgs_ltsw_flexctr.h"
+app/bcm_rtr_mac.c:62:          if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_rtr_mac.c:90:          if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_rtr_mac.c:124:          if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_xlate_common.c:1022:   * From ltsw onward, proper l3 underlay ecmp flow is supported.
+app/bcm_vxlan_flow_xlate_common.c:1024:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_xlate_copp_target.c:15:#include "bcm_xgs_ltsw_flexctr.h"
+app/bcm_init.c:26:#include <appl/diag/sysconf_ltsw.h>
+app/bcm_init.c:56:#define BCM_LTSW_SOC_FILE             "/etc/arcos/bcm/ltsw.soc"
+app/bcm_init.c:61:#define BCM_LTSW_RELOAD_FILE          "/etc/arcos/bcm/reload_ltsw.soc"
+app/bcm_init.c:463:bcmsdk_ltsw_ov_nh_config_update (dpal_plugin_init_cfg_t *cfg)
+app/bcm_init.c:493:bcmsdk_ltsw_config_update (dpal_plugin_init_cfg_t *cfg)
+app/bcm_init.c:495:  bcmsdk_ltsw_ov_nh_config_update(cfg);
+app/bcm_init.c:563:bcmsdk_ltsw_load_yaml_cfg(bool warm_boot)
+app/bcm_init.c:569:    cli_out("Failed to core init ltsw \n");
+app/bcm_init.c:575:    cli_out("Failed to core core config load ltsw port config yaml file\n");
+app/bcm_init.c:581:    cli_out("Failed to core core config load ltsw lane map yaml file\n");
+app/bcm_init.c:587:    cli_out("Failed to core start ltsw\n");
+app/bcm_init.c:600:bcmsdk_xgs_ltsw_extended_init (uint32_t init_flags,
+app/bcm_init.c:622:  if (RET_CODE_SUCCESS != bcmsdk_ltsw_config_update(cfg)) {
+app/bcm_init.c:633:  rv = sysconf_ltsw_probe();
+app/bcm_init.c:643:  sysconf_ltsw_warmboot_set(0);
+app/bcm_init.c:645:    sysconf_ltsw_emulation_set(1);
+app/bcm_init.c:649:    sysconf_ltsw_warmboot_set(1);
+app/bcm_init.c:652:  if ((sysconf_ltsw_ha_init()) < 0) {
+app/bcm_init.c:656:  if ((sysconf_ltsw_ha_issu_start()) < 0) {
+app/bcm_init.c:660:  if ((sysconf_ltsw_config_init()) < 0) {
+app/bcm_init.c:664:  rv = bcmsdk_ltsw_load_yaml_cfg(false);
+app/bcm_init.c:669:  if ((sysconf_ltsw_keep_netif_set(1)) < 0) {
+app/bcm_init.c:670:    cli_out("ERROR: ltsw keep netif set failed\n");
+app/bcm_init.c:702:  if ((sysconf_ltsw_ha_state_comp()) < 0) {
+app/bcm_init.c:1039:bcmsdk_xgs_ltsw_chip_init (uint32_t init_flags, dpal_plugin_init_cfg_t *cfg)
+app/bcm_init.c:1042:  rv = bcmsdk_xgs_ltsw_extended_init(init_flags, cfg);
+app/bcm_init.c:1044:    cli_out("Failed to implement bcm ltsw extended init\n");
+app/bcm_init.c:1047:    cli_out("succeeded to implement bcm ltsw extended init\n");
+app/bcm_init.c:1168:      rc = bcmsdk_xgs_ltsw_chip_init(init_flags, cfg);
+app/bcm_fp.c:468:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan) && (type == FP_GROUP_TYPE_EFP_COMMON)) {
+app/bcm_sdk_vplag.c:136:bcmsdk_ltsw_vplag_cfg (dpal_switch_unit_t unit,
+app/bcm_sdk_vplag.c:211:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_sdk_vplag.c:212:    return bcmsdk_ltsw_vplag_cfg(unit, optype, sdk_obj, ctxt);
+app/bcm_common.h:340:typedef struct bcmsdk_xgs_ltsw_vxlan_t_ {
+app/bcm_common.h:344:} bcmsdk_xgs_ltsw_vxlan_t;
+app/bcm_common.h:445:  bcmsdk_xgs_ltsw_vxlan_t vxlan_ltsw_info;
+app/bcm_sdk_mac_route.c:282:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_xlate_l2.c:2013:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_vxlan_flow_xlate_l2.c:2052:  if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_l3.c:834:        if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_l3.c:850:        if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_l3.c:1018:        if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_l3.c:1034:        if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_l3.c:3171:    if (g_asic_global_ctxt.xgs_cb.is_feature_supported(DEFAULT_UNIT, xgs_feature_ltsw_vxlan)) {
+app/bcm_flex_stat.c:157:    if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_flex_stat.c:168:    if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_flex_stat.c:181:bcmsdk_vxlan_ltsw_flex_stat_action_set (int unit,
+app/bcm_flex_stat.c:208:bcmsdk_vxlan_flow_sdk_ltsw_flex_stat_init(dpal_switch_unit_t unit)
+app/bcm_flex_stat.c:215:  if (g_asic_global_ctxt.vxlan_ltsw_info.flex_stat_enable) {
+app/bcm_flex_stat.c:224:    bcmsdk_vxlan_ltsw_flex_stat_action_set(unit, bcmFlexctrCounterModeNormal, 8,
+app/bcm_flex_stat.c:237:      g_asic_global_ctxt.vxlan_ltsw_info.action.vp_stat_id[ing] = stat_id;
+app/bcm_flex_stat.c:243:    bcmsdk_vxlan_ltsw_flex_stat_action_set(unit, bcmFlexctrCounterModeNormal, 7,
+app/bcm_flex_stat.c:256:      g_asic_global_ctxt.vxlan_ltsw_info.action.vpn_stat_id[ing] = stat_id;
+app/bcm_flex_stat.c:262:  g_asic_global_ctxt.vxlan_ltsw_info.flex_stat_enable = 1;
+app/bcm_flex_stat.c:326:bcmsdk_vxlan_flow_sdk_ltsw_stat_create (dpal_switch_unit_t unit,
+app/bcm_flex_stat.c:345:      stat_id = g_asic_global_ctxt.vxlan_ltsw_info.action.vp_stat_id[ing];
+app/bcm_flex_stat.c:347:      stat_id = g_asic_global_ctxt.vxlan_ltsw_info.action.vpn_stat_id[ing];
+app/bcm_flex_stat.c:388:   if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_flex_stat.c:389:     return bcmsdk_vxlan_flow_sdk_ltsw_stat_create(unit, vp, vpn, stat, action);
+app/bcm_flex_stat.c:446:bcmsdk_vxlan_flow_sdk_ltsw_stat_delete (dpal_switch_unit_t unit,
+app/bcm_flex_stat.c:492:   if (g_asic_global_ctxt.xgs_cb.is_feature_supported(unit, xgs_feature_ltsw_vxlan)) {
+app/bcm_flex_stat.c:493:     return bcmsdk_vxlan_flow_sdk_ltsw_stat_delete(unit, vp, vpn, stat, action);
+app/bcm_vxlan_flow_sdk_l2.h:272:bcmsdk_vxlan_flow_sdk_ltsw_acc_port_class_get (dpal_switch_unit_t unit,
+app/bcm_flex_stat.h:20:bcmsdk_vxlan_flow_sdk_ltsw_flex_stat_init(dpal_switch_unit_t unit);
+include/bcm_xgs_plugin_api.h:57:  xgs_feature_ltsw_vxlan,
+include/bcm_xgs_plugin_api.h:222:typedef ret_code_e (*bcmsdk_xgs_ltsw_vxlan_shg_fp_entry_create_cb) (
+include/bcm_xgs_plugin_api.h:228:typedef ret_code_e (*bcmsdk_xgs_ltsw_vxlan_shg_fp_entry_delete_cb) (
+include/bcm_xgs_plugin_api.h:232:typedef ret_code_e (*bcmsdk_xgs_ltsw_vxlan_svp_fp_entry_create_cb) (
+include/bcm_xgs_plugin_api.h:238:typedef ret_code_e (*bcmsdk_xgs_ltsw_vxlan_svp_fp_entry_delete_cb) (
+include/bcm_xgs_plugin_api.h:722:  bcmsdk_xgs_ltsw_vxlan_shg_fp_entry_create_cb  vxlan_ltsw_shg_fp_entry_create_cb;
+include/bcm_xgs_plugin_api.h:723:  bcmsdk_xgs_ltsw_vxlan_shg_fp_entry_delete_cb  vxlan_ltsw_shg_fp_entry_delete_cb;
+include/bcm_xgs_plugin_api.h:724:  bcmsdk_xgs_ltsw_vxlan_svp_fp_entry_create_cb  vxlan_ltsw_svp_fp_entry_create_cb;
+include/bcm_xgs_plugin_api.h:725:  bcmsdk_xgs_ltsw_vxlan_svp_fp_entry_delete_cb  vxlan_ltsw_svp_fp_entry_delete_cb;
