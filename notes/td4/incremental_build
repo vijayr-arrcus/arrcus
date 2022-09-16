@@ -8,11 +8,18 @@ export KERNDIR=/usr/src/linux-headers-4.19.84-arrcus
 
 export LINUX_UAPI_SPLIT=1
 
-export PHYMOD_EPDM_LIB_PATH=$PWD/pkgs/epdm_3_3_0
+export PHYMOD_EPDM_LIB_PATH=$PWD/pkgs/epdm_4_0_7
 
 export PHYMOD_EPIL_LIB_PATH=$PWD/pkgs/MILN_5_1
 
+export PHYMOD_MILB_LIB_PATH=$PWD/pkgs/MILB_5_2
+export PHYMOD_BARC_LIB_PATH=$PWD/pkgs/BARC_3_4
+
 export ELFUTILS_DIR=/usr/lib/x86_64-linux-gnu/
+
+export KBP_KERNEL_DRIVER_PATH=$PWD/pkgs/sdk/src/soc/kbp/alg_kbp/xpt/pcie/device_driver
+
+
 
 sudo apt-get install -y linux-headers-amd64
 
@@ -34,7 +41,7 @@ wget http://ftp.us.debian.org/debian/pool/main/e/elfutils/elfutils_0.168-1_amd64
 
 sudo dpkg -i *.deb
 
-debian/rules prepare build-stash build-phymod build-yaml
+debian/rules prepare prepare-pkgs build-stash build-phymod build-yaml
 
 make -f $PWD/systems/linux/user/x86-smp_generic_64-2_6/Makefile -j32 MAKE_LOCAL=$PWD/make/Make.local.xgs
 
