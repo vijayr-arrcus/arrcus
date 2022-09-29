@@ -1,7 +1,3 @@
-lttng snapshot record
-cd /root/lttng-traces
-babeltrace * > trace
-
 
 lttng destroy
 cat /dev/null > /var/log/arcos/adjmgr.bin_logfile.txt
@@ -15,6 +11,13 @@ cat /dev/null > /var/log/arcos/dpal.bin_logfile.txt
 cat /dev/null > /var/log/arcos/sysmgr.bin_logfile.txt
 cat /dev/null > /var/log/syslog
 python /usr/share/arcos/trace_init.py
+
+<< repro the problem >>
+
+lttng snapshot record
+cd /root/lttng-traces
+babeltrace * > trace
+
 
 LTTNG tracing If process has enabled tracing properly:lttng snapshot record will dump the logs into /root/lttng-traces folder in a directory with timestamp when traces were collected.then run babeltrace on
 the directory nameIf we need to enable tracing for a specific process

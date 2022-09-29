@@ -1,0 +1,2 @@
+t@az1-spine2:/var/confd/cdb# confd_cmd -c "get /platform/asic"
+arc-platform:BROADCOM_TRIDENT3
