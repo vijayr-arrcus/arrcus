@@ -1,0 +1,240 @@
+
+
+1. Everytime we add/del BCM_XGS_VXLAN_FLOW_ACC_VP need to notifs sflow.  -- bcmsdk_vxlan_flow_sdk_l2_acc_vp_cfg
+  - define dstore objects
+  - send flow_port_id/VP to ifindex mapping.
+  - martial/unmartial of objects in dpal and sflow respectively.
+2. flow port id is 32 bits, so planning not to overwride existing interface messages.
+3. Define new message type and send to hsflowd.
+4. martial/unmartial this information in sflow and hsflowd respectively.
+5. maintain a seperate table in the sflow plugin for VP to ifindex mapping.
+6. Alternatively it should be possible to send this mapping from dpal to hsflowd linux socket as well. But prefer the above for consistency of implementation.
+7. When the packet arrives to hsflowd and we decode the packet dcb..
+  - in port - SVP code already exists and we can use that to get the ifindex based on the new mapping.
+  - out port -- does the packet metadata contain this DVP information ?
+  - need to check other attributes.
+  - pkt len
+  - hdr len
+  - vlan id
+  - sample flags
+
+-- Auto publish and its not required to explicitly publish the information.
+
+8. out_port 0 means unknown or multicast ?
+   out port is optional for now, however current implementation assumes that we have only single egress port..
+  // set the ingress and egress ifIndex numbers.
+    // Can be "INTERNAL" (0x3FFFFFFF) or "UNKNOWN" (0).
+    fs->input = ad_in ? ad_in->ifIndex : (internal_in ? SFL_INTERNAL_INTERFACE : 0);
+		fs->output = ad_out ? ad_out->ifIndex : (internal_out ? SFL_INTERNAL_INTERFACE : 0);
+Need to take care of this case...
+
+ uint32_t output;               /* SNMP ifIndex of output interface,
+             0 if interface is not known.
+             Set most significant bit to indicate
+             multiple destination interfaces
+             (i.e. in case of broadcast or multicast)
+             and set lower order bits to indicate
+             number of destination interfaces.
+             Examples:
+             0x00000002  indicates ifIndex = 2
+             0x00000000  ifIndex unknown.
+             0x80000007  indicates a packet sent
+             to 7 interfaces.
+             0x80000000  indicates a packet sent to
+             an unknown number of
+             interfaces greater than 1.*/
+
+open items
+
+9. bond + sflow -- for DNX ifmgr creates the bond id and bond id to ifindex mapping is sent to hsflowd.
+  -- in XGS its not clear to me for bond interfaces what will the packet metadata contain.
+10. bond + vxlan + sflow -- again not clear what will the packet metadata contain...
+11. Need to spend a bit more time in the vxlan code..
+
+<< VXLAN packet capture in sflow interface >>
+03:56:37.679729 e8:c5:7a:b1:2b:ec (oui Unknown) > b4:a9:fc:59:72:f0 (oui Unknown), ethertype Unknown (0xde08), length 736:
+        0x0000:  b770 1004 0280 0000 0000 0000 0000 0000  .p..............
+        0x0010:  0000 fb10 5009 0021 0002 9c05 0000 0006  ....P..!........
+        0x0020:  0400 0000 0000 0000 0008 00c2 8421 0000  .............!..
+        0x0030:  0000 0000 0000 0000 0000 0000 0002 0003  ................
+        0x0040:  0000 4c84 2904 002c 1001 0000 0000 8003  ..L.)..,........
+        0x0050:  02c4 b4a9 fc59 72f0 e8c5 7ab1 2bec 8100  .....Yr...z.+...
+        0x0060:  0000 0800 4500 026e 0000 0000 3f11 a6c7  ....E..n....?...
+        0x0070:  5a5a 1402 5a5a 0a02 c385 12b5 025a 0000  ZZ..ZZ.......Z..
+        0x0080:  0a00 0000 0000 6300 ffff ffff ffff 0002  ......c.........
+        0x0090:  23e2 9afe 0800 4500 023c 0000 0000 403d  #.....E..<....@=
+        0x00a0:  31dc 6401 9d1e 6401 e188 f99f afe7 139d  1.d...d.........
+        0x00b0:  e79c 4978 6961 8000 0000 1011 1213 fac7  ..Ixia..........
+        0x00c0:  c67f 020c 1a1b 1c1d 1e1f 2021 2223 2425  ...........!"#$%
+        0x00d0:  2627 2829 2a2b 2c2d 2e2f 3031 3233 3435  &'()*+,-./012345
+        0x00e0:  3637 3839 3a3b 3c3d 3e3f 4041 4243 4445  6789:;<=>?@ABCDE
+        0x00f0:  4647 4849 4a4b 4c4d 4e4f 5051 5253 5455  FGHIJKLMNOPQRSTU
+        0x0100:  5657 5859 5a5b 5c5d 5e5f 6061 6263 6465  VWXYZ[\]^_`abcde
+        0x0110:  6667 6869 6a6b 6c6d 6e6f 7071 7273 7475  fghijklmnopqrstu
+        0x0120:  7677 7879 7a7b 7c7d 7e7f 8081 8283 8485  vwxyz{|}~.......
+        0x0130:  8687 8889 8a8b 8c8d 8e8f 9091 9293 9495  ................
+        0x0140:  9697 9899 9a9b 9c9d 9e9f a0a1 a2a3 a4a5  ................
+        0x0150:  a6a7 a8a9 aaab acad aeaf b0b1 b2b3 b4b5  ................
+        0x0160:  b6b7 b8b9 babb bcbd bebf c0c1 c2c3 c4c5  ................
+        0x0170:  c6c7 c8c9 cacb cccd cecf d0d1 d2d3 d4d5  ................
+        0x0180:  d6d7 d8d9 dadb dcdd dedf e0e1 e2e3 e4e5  ................
+        0x0190:  e6e7 e8e9 eaeb eced eeef f0f1 f2f3 f4f5  ................
+        0x01a0:  f6f7 f8f9 fafb fcfd feff 0001 0203 0405  ................
+        0x01b0:  0607 0809 0a0b 0c0d 0e0f 1011 1213 1415  ................
+        0x01c0:  1617 1819 1a1b 1c1d 1e1f 2021 2223 2425  ...........!"#$%
+        0x01d0:  2627 2829 2a2b 2c2d 2e2f 3031 3233 3435  &'()*+,-./012345
+        0x01e0:  3637 3839 3a3b 3c3d 3e3f 4041 4243 4445  6789:;<=>?@ABCDE
+        0x01f0:  4647 4849 4a4b 4c4d 4e4f 5051 5253 5455  FGHIJKLMNOPQRSTU
+        0x0200:  5657 5859 5a5b 5c5d 5e5f 6061 6263 6465  VWXYZ[\]^_`abcde
+        0x0210:  6667 6869 6a6b 6c6d 6e6f 7071 7273 7475  fghijklmnopqrstu
+        0x0220:  7677 7879 7a7b 7c7d 7e7f 8081 8283 8485  vwxyz{|}~.......
+        0x0230:  8687 8889 8a8b 8c8d 8e8f 9091 9293 9495  ................
+        0x0240:  9697 9899 9a9b 9c9d 9e9f a0a1 a2a3 a4a5  ................
+        0x0250:  a6a7 a8a9 aaab acad aeaf b0b1 b2b3 b4b5  ................
+        0x0260:  b6b7 b8b9 babb bcbd bebf c0c1 c2c3 c4c5  ................
+        0x0270:  c6c7 c8c9 cacb cccd cecf d0d1 d2d3 d4d5  ................
+        0x0280:  d6d7 d8d9 dadb dcdd dedf e0e1 e2e3 e4e5  ................
+        0x0290:  e6e7 e8e9 eaeb eced eeef f0f1 f2f3 f4f5  ................
+        0x02a0:  f6f7 f8f9 fafb fcfd feff 0001 0203 0405  ................
+        0x02b0:  0607 0809 0a0b 0c0d 0e0f 1011 1213 1415  ................
+        0x02c0:  1617 1819 1a1b 1c1d 1e1f 2021 2223 2425  ...........!"#$%
+        0x02d0:  0282                                     ..
+
+
+
+03:56:37.680610 e8:c5:7a:b1:2b:ec (oui Unknown) > b4:a9:fc:59:72:f0 (oui Unknown), ethertype Unknown (0xde08), length 736:
+        0x0000:  b770 1004 0280 0000 0000 0000 0000 0000  .p..............
+        0x0010:  0000 fb10 5009 0021 0002 9c05 0000 0006  ....P..!........
+        0x0020:  0400 0000 0000 0000 0008 00c2 8421 0000  .............!..
+        0x0030:  0000 0000 0000 0000 0000 0000 0002 0003  ................
+        0x0040:  0000 4c84 2904 002c 1001 0000 0000 8003  ..L.)..,........
+        0x0050:  02c4 b4a9 fc59 72f0 e8c5 7ab1 2bec 8100  .....Yr...z.+...
+        0x0060:  0000 0800 4500 026e 0000 0000 3f11 a6c7  ....E..n....?...
+        0x0070:  5a5a 1402 5a5a 0a02 cefb 12b5 025a 0000  ZZ..ZZ.......Z..
+        0x0080:  0a00 0000 0000 6300 ffff ffff ffff 0002  ......c.........
+        0x0090:  23e9 e5ca 0800 4500 023c 0000 0000 403d  #.....E..<....@=
+        0x00a0:  0024 6401 fd6a 6401 b2f4 f99f afe7 139d  .$d..jd.........
+        0x00b0:  e79c 4978 6961 2000 0000 1011 1213 fac8  ..Ixia..........
+        0x00c0:  726f 020c 1a1b 1c1d 1e1f 2021 2223 2425  ro.........!"#$%
+        0x00d0:  2627 2829 2a2b 2c2d 2e2f 3031 3233 3435  &'()*+,-./012345
+        0x00e0:  3637 3839 3a3b 3c3d 3e3f 4041 4243 4445  6789:;<=>?@ABCDE
+        0x00f0:  4647 4849 4a4b 4c4d 4e4f 5051 5253 5455  FGHIJKLMNOPQRSTU
+        0x0100:  5657 5859 5a5b 5c5d 5e5f 6061 6263 6465  VWXYZ[\]^_`abcde
+        0x0110:  6667 6869 6a6b 6c6d 6e6f 7071 7273 7475  fghijklmnopqrstu
+        0x0120:  7677 7879 7a7b 7c7d 7e7f 8081 8283 8485  vwxyz{|}~.......
+        0x0130:  8687 8889 8a8b 8c8d 8e8f 9091 9293 9495  ................
+        0x0140:  9697 9899 9a9b 9c9d 9e9f a0a1 a2a3 a4a5  ................
+        0x0150:  a6a7 a8a9 aaab acad aeaf b0b1 b2b3 b4b5  ................
+        0x0160:  b6b7 b8b9 babb bcbd bebf c0c1 c2c3 c4c5  ................
+        0x0170:  c6c7 c8c9 cacb cccd cecf d0d1 d2d3 d4d5  ................
+        0x0180:  d6d7 d8d9 dadb dcdd dedf e0e1 e2e3 e4e5  ................
+        0x0190:  e6e7 e8e9 eaeb eced eeef f0f1 f2f3 f4f5  ................
+        0x01a0:  f6f7 f8f9 fafb fcfd feff 0001 0203 0405  ................
+        0x01b0:  0607 0809 0a0b 0c0d 0e0f 1011 1213 1415  ................
+        0x01c0:  1617 1819 1a1b 1c1d 1e1f 2021 2223 2425  ...........!"#$%
+        0x01d0:  2627 2829 2a2b 2c2d 2e2f 3031 3233 3435  &'()*+,-./012345
+        0x01e0:  3637 3839 3a3b 3c3d 3e3f 4041 4243 4445  6789:;<=>?@ABCDE
+        0x01f0:  4647 4849 4a4b 4c4d 4e4f 5051 5253 5455  FGHIJKLMNOPQRSTU
+        0x0200:  5657 5859 5a5b 5c5d 5e5f 6061 6263 6465  VWXYZ[\]^_`abcde
+        0x0210:  6667 6869 6a6b 6c6d 6e6f 7071 7273 7475  fghijklmnopqrstu
+        0x0220:  7677 7879 7a7b 7c7d 7e7f 8081 8283 8485  vwxyz{|}~.......
+        0x0230:  8687 8889 8a8b 8c8d 8e8f 9091 9293 9495  ................
+        0x0240:  9697 9899 9a9b 9c9d 9e9f a0a1 a2a3 a4a5  ................
+        0x0250:  a6a7 a8a9 aaab acad aeaf b0b1 b2b3 b4b5  ................
+        0x0260:  b6b7 b8b9 babb bcbd bebf c0c1 c2c3 c4c5  ................
+        0x0270:  c6c7 c8c9 cacb cccd cecf d0d1 d2d3 d4d5  ................
+        0x0280:  d6d7 d8d9 dadb dcdd dedf e0e1 e2e3 e4e5  ................
+        0x0290:  e6e7 e8e9 eaeb eced eeef f0f1 f2f3 f4f5  ................
+        0x02a0:  f6f7 f8f9 fafb fcfd feff 0001 0203 0405  ................
+        0x02b0:  0607 0809 0a0b 0c0d 0e0f 1011 1213 1415  ................
+        0x02c0:  1617 1819 1a1b 1c1d 1e1f 2021 2223 2425  ...........!"#$%
+        0x02d0:  0282                                     ..
+
+<< sflow capture for above >>
+
+startSample ----------------------
+sampleType_tag 0:1
+sampleType FLOWSAMPLE
+sampleSequenceNo 105287
+sourceId 0:1049
+meanSkipCount 1000
+samplePool 105287000
+dropEvents 0
+inputPort 1049
+outputPort 1009
+flowBlock_tag 0:1
+flowSampleType HEADER
+headerProtocol 1
+sampledPacketSize 648
+strippedBytes 4
+headerLen 128
+headerBytes B4-A9-FC-59-72-F0-E8-C5-7A-B1-2B-EC-81-00-00-00-08-00-45-00-02-6E-00-00-00-00-3F-11-A6-C7-5A-5A-14-02-5A-5A-$A-02-F3-1F-12-B5-02-5A-00-00-0A-00-00-00-00-00-63-00-FF-FF-FF-FF-FF-FF-00-02-23-ED-F3-1E-08-00-45-00-02-3C-00-00-00-00-4$-3D-C4-18-64-01-A2-DE-64-01-49-8C-F9-9F-AF-E7-13-9D-E7-9C-49-78-69-61-60-00-00-00-10-11-12-13-00-6C-A6-AD-02-0C-1A-1B-1C$1D-1E-1F-20-21-22-23-24-25-26-27
+dstMAC b4a9fc5972f0
+srcMAC e8c57ab12bec
+decodedVLAN 0
+decodedPriority 0
+IPSize 626
+ip.tot_len 622
+srcIP 90.90.20.2
+dstIP 90.90.10.2
+IPProtocol 17
+IPTOS 0
+IPTTL 63
+UDPSrcPort 62239
+UDPDstPort 4789
+UDPBytes 602
+endSample   ----------------------
+
+<< Arista sflow dump >>
+startSample ----------------------
+sampleType_tag 0:1
+sampleType FLOWSAMPLE
+sampleSequenceNo 6
+sourceId 0:1049
+meanSkipCount 10
+samplePool 60
+dropEvents 0
+inputPort 1049
+outputPort 0
+flowBlock_tag 0:1001
+extendedType SWITCH
+in_vlan 3967
+in_priority 0
+out_vlan 0
+out_priority 0
+flowBlock_tag 0:1
+flowSampleType HEADER
+headerProtocol 1
+sampledPacketSize 1572
+strippedBytes 4
+headerLen 128
+headerBytes B4-A9-FC-59-72-F0-E8-C5-7A-B1-2B-EC-81-00-0F-7F-08-00-45-00-06-0A-00-00-00-00-3F-11-A3-2B-5A-5A-14-02-5A-5A-0A-02-F5-93-12-B5-05-F6-00-00-0A-00-00-00-00-00-63-00-FF-FF-FF-FF-FF-FF-00-02-23-E5-D2-A6-08-00-45-00-05-D8-00-00-00-00-40-3D-C4-C8-64-01-2E-C6-64-01-B9-58-F9-9F-AF-E7-13-9D-E7-9C-49-78-69-60-C0-00-00-00-10-11-12-13-31-03-F6-BF-05-A8-1A-1B-1C-1D-1E-1F-20-21-22-23-24-25-26-27
+dstMAC b4a9fc5972f0
+srcMAC e8c57ab12bec
+decodedVLAN 3967
+decodedPriority 0
+IPSize 1550
+ip.tot_len 1546
+srcIP 90.90.20.2
+dstIP 90.90.10.2
+IPProtocol 17
+IPTOS 0
+IPTTL 63
+UDPSrcPort 62867
+UDPDstPort 4789
+UDPBytes 1526
+endSample   ----------------------
+
+
+
+BCM.0>
+BCM.0> trunk show
+trunk show
+Device supports 2112 trunk groups:
+  2048 front panel trunks (0..2047), 256 ports/trunk
+    64 fabric trunks (2048..2111), 64 ports/trunk
+    trunk 0: (front panel, 7 ports)=xe17,xe11,xe12,xe13,xe14,xe15,xe16 dlf=any mc=any ipmc=any psc=unknown (0xf)
+    BCM.0>
+
+
+

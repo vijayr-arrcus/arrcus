@@ -1,0 +1,11 @@
+Linux implementation: 
+         3 member links --- min links 2
+
+         2 member link are out sync..., 3rd member link is kept up.
+         and bond interface is brought down.
+
+
+Cisco implmentation:
+        3 member link -- min links 2
+        2 member links are out sync... 3rd member link ?
+        and bind interface is brought down.
