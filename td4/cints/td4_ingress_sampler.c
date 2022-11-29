@@ -50,7 +50,7 @@ set_ingress_sflow (int unit, int port, int rate)
   print bcm_port_control_set(unit, port, bcmPortControlIngressSampleProfile, profile_id);
 }
 
-set_ingress_sflow(0, 40, 1);
+set_ingress_sflow(0, 43, 1);
 
 
 [bcmPWN.0]
