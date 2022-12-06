@@ -1,5 +1,20 @@
 bcm_ltsw_pktio_pmd_field_get(unit, pkt_ptr, bcmPktioPmdTypeRxFlex,
 														BCM_PKTIO_RXPMD_FLEX_SVP_15_0, &val);
+#define PKTIO_RXPMD_SIZE    (96)
+#define PKTIO_TX_MH_SIZE    (32)
+
+					void
+					bcm_pktio_pmd_t_init(bcm_pktio_pmd_t *pmd)
+					{
+							if (pmd != NULL) {
+									pmd->rxpmd = pmd->data;
+									pmd->txpmd = pmd->rxpmd + PKTIO_RXPMD_SIZE / 4;
+									pmd->higig = pmd->txpmd + PKTIO_TX_MH_SIZE / 4;
+									pmd->lbhdr = pmd->higig + PKTIO_TX_MH_SIZE / 4;
+							}
+					}
+
+
   mbcm_ltsw_pktio_fid_info_get(unit, &hdr_info, &fid_info)
       bcm56880_a0_dna_4_8_7_0_rxpmd_flex_db
           {
