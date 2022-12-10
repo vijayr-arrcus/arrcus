@@ -1,0 +1,195 @@
+bcm_error_t
+add_trace_reason(int unit, bcm_pkt_trace_event_t trace_reason, int cos)
+{
+    const uint32    options = 0;
+    bcm_error_t     rval;
+    bcm_rx_pkt_trace_reasons_t rx_reasons;
+    bcm_rx_cosq_mapping_t rx_cos_mapping;
+
+    BCM_RX_PKT_TRACE_REASON_CLEAR_ALL(rx_reasons);
+    BCM_RX_PKT_TRACE_REASON_SET(rx_reasons, trace_reason);
+
+    bcm_rx_cosq_mapping_t_init(&rx_cos_mapping);
+    rx_cos_mapping.trace_reasons = rx_reasons;
+    rx_cos_mapping.trace_reasons_mask = rx_reasons;
+    rx_cos_mapping.index = -1;
+    rx_cos_mapping.priority = 48 - cos;
+    rx_cos_mapping.cosq = cos;  /*cosq value */
+    if (BCM_FAILURE
+        (rval =
+         bcm_rx_cosq_mapping_extended_add(unit, options, &rx_cos_mapping))) {
+        printf("bcm_rx_cosq_mapping_extended_add(REASON) failed: %s\n",
+               bcm_errmsg(rval));
+        return rval;
+    }
+    return BCM_E_NONE;
+}
+bcm_error_t
+add_trace_reason_old_1(int unit, bcm_pkt_trace_event_t trace_reason, int cos)
+{
+    const uint32    options = 0;
+    bcm_error_t     rval;
+    bcm_rx_pkt_trace_reasons_t rx_reasons;
+    bcm_rx_cosq_mapping_t rx_cos_mapping;
+
+    BCM_RX_PKT_TRACE_REASON_CLEAR_ALL(rx_reasons);
+    BCM_RX_PKT_TRACE_REASON_SET(rx_reasons, trace_reason);
+
+    bcm_rx_cosq_mapping_t_init(&rx_cos_mapping);
+    rx_cos_mapping.trace_reasons = rx_reasons;
+    rx_cos_mapping.trace_reasons_mask = rx_reasons;
+    rx_cos_mapping.index = 6;
+    rx_cos_mapping.priority = 0;
+    rx_cos_mapping.cosq = cos;  /*cosq value */
+    rx_cos_mapping.flags = 0;
+
+    if (BCM_FAILURE
+        (rval =
+         bcm_rx_cosq_mapping_extended_add(unit, options, &rx_cos_mapping))) {
+        printf("bcm_rx_cosq_mapping_extended_add(REASON) failed: %s\n",
+               bcm_errmsg(rval));
+        return rval;
+    }
+    return BCM_E_NONE;
+}
+bcm_error_t
+delete_trace_reason(int unit, bcm_pkt_trace_event_t trace_reason, int cos)
+{
+    const uint32    options = 0;
+    bcm_error_t     rval;
+    bcm_rx_pkt_trace_reasons_t rx_reasons;
+    bcm_rx_cosq_mapping_t rx_cos_mapping;
+
+    BCM_RX_PKT_TRACE_REASON_CLEAR_ALL(rx_reasons);
+    BCM_RX_PKT_TRACE_REASON_SET(rx_reasons, trace_reason);
+
+    bcm_rx_cosq_mapping_t_init(&rx_cos_mapping);
+    rx_cos_mapping.trace_reasons = rx_reasons;
+    rx_cos_mapping.trace_reasons_mask = rx_reasons;
+    rx_cos_mapping.index = -1;
+    rx_cos_mapping.priority = 48 - cos;
+    rx_cos_mapping.cosq = cos;  /*cosq value */
+    if (BCM_FAILURE
+        (rval =
+         bcm_rx_cosq_mapping_extended_delete(unit, &rx_cos_mapping))) {
+        printf("bcm_rx_cosq_mapping_extended_add(REASON) failed: %s\n",
+               bcm_errmsg(rval));
+        return rval;
+    }
+    return BCM_E_NONE;
+}
+
+bcm_error_t
+get_trace_reason(int unit, bcm_pkt_trace_event_t trace_reason)
+{
+    bcm_error_t     rval;
+    bcm_rx_pkt_trace_reasons_t rx_reasons;
+    bcm_rx_cosq_mapping_t rx_cos_mapping;
+
+    BCM_RX_PKT_TRACE_REASON_CLEAR_ALL(rx_reasons);
+    BCM_RX_PKT_TRACE_REASON_SET(rx_reasons, trace_reason);
+
+    bcm_rx_cosq_mapping_t_init(&rx_cos_mapping);
+    rx_cos_mapping.trace_reasons = rx_reasons;
+    rx_cos_mapping.trace_reasons_mask = rx_reasons;
+    rx_cos_mapping.index = -1;
+    rx_cos_mapping.priority = -1;
+    rx_cos_mapping.cosq = -1;   /*cosq value */
+    if (BCM_FAILURE
+        (rval = bcm_rx_cosq_mapping_extended_get(unit, &rx_cos_mapping))) {
+        printf("bcm_rx_cosq_mapping_extended_get(REASON) failed: %s\n",
+               bcm_errmsg(rval));
+        return rval;
+    }
+    printf("Priority: %d; COSQ: %d\n",
+           rx_cos_mapping.priority, rx_cos_mapping.cosq);
+    print rx_cos_mapping;
+    return BCM_E_NONE;
+}
+int unit = 0, cos=3;
+print delete_trace_reason(unit, bcmPktTraceEventIngressMirrorSamplerSampled, cos);
+
+print get_trace_reason(unit, bcmPktTraceEventIngressMirrorSamplerSampled);
+
+print add_trace_reason_old_1(unit, bcmPktTraceEventIngressMirrorSamplerSampled, cos);
+print get_trace_reason(unit, bcmPktTraceEventIngressMirrorSamplerSampled);
+
+
+
+bcm_error_t
+add_drop_event(int unit, bcm_pkt_drop_event_t drop_event, int cos)
+{
+    const uint32    options = 0;
+    bcm_error_t     rval;
+    bcm_rx_cosq_mapping_t rx_cos_mapping;
+
+    rx_cos_mapping.drop_event = drop_event;
+    rx_cos_mapping.drop_event_mask = drop_event;
+    rx_cos_mapping.index = -1;
+    rx_cos_mapping.priority = 48 - cos;
+    rx_cos_mapping.cosq = cos;  /*cosq value */
+    if (BCM_FAILURE
+        (rval =
+         bcm_rx_cosq_mapping_extended_add(unit, options, &rx_cos_mapping))) {
+        printf("bcm_rx_cosq_mapping_extended_add(DROP) failed: %s\n",
+               bcm_errmsg(rval));
+        return rval;
+    }
+    return BCM_E_NONE;
+}
+
+bcm_error_t
+testcase(int unit)
+{
+    const int       trace_count = 5;
+    const bcm_pkt_trace_event_t trace_list[trace_count] = {
+        bcmPktTraceEventIngressCmlFlags,
+        bcmPktTraceEventIngressL3TtlError,
+        bcmPktTraceEventIngressProtocolPkt,
+        bcmPktTraceEventIngressMatchedRuleBit0,
+        bcmPktTraceEventIngressMatchedRuleBit1,
+    };
+
+    const int       drop_count = 5;
+    bcm_pkt_drop_event_t drop_list[drop_count] = {
+        bcmPktDropEventIngressL3MtuCheckFailed,
+        bcmPktDropEventIngressL5HdrError,
+        bcmPktDropEventIngressPvlanDrop,
+        bcmPktDropEventIngressMplsTtlError,
+        bcmPktDropEventIngressIfpMeter
+    };
+
+    int             idx;
+
+    printf("Add %d trace events\n", trace_count);
+    for (idx = 0; idx < trace_count; idx++) {
+        const int       trace_int = (auto) trace_list[idx];
+        printf("Add trace event %2d at %2d\n", trace_int, idx);
+        BCM_IF_ERROR_RETURN(add_trace_reason(unit, trace_list[idx], idx));
+    }
+
+    printf("\nAdd %d drop events\n", drop_count);
+    for (idx = 0; idx < drop_count; idx++) {
+        const int       drop_int = (auto) drop_list[idx];
+        printf("Add drop event %2d at %2d\n", drop_int, idx);
+        BCM_IF_ERROR_RETURN(add_drop_event
+                            (unit, drop_list[idx], idx + trace_count));
+    }
+
+    printf("\nDump logical table\n");
+    bshell(unit, "bsh -c \"lt traverse -l TM_COS_Q_CPU_MAP\"");
+
+    printf("Get %d trace events\n", trace_count);
+    for (idx = 0; idx < trace_count; idx++) {
+        const int       trace_int = (auto) trace_list[idx];
+        printf("Get trace event %2d\n", trace_int);
+        BCM_IF_ERROR_RETURN(get_trace_reason(unit, trace_list[idx]));
+    }
+
+    return BCM_E_NONE;
+}
+
+bcm_error_t     rv;
+if (BCM_FAILURE(rv = testcase(0))) {
+    printf("Test Failed: %s\n", bcm_errmsg(rv));
+}

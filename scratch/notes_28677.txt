@@ -1,0 +1,10 @@
+1. control plane to DPAL --> control plane object definition would be in the dstore/objects of the control plane features/component....aminor/arrcus_sw/infra/ifmgr/dstore/objects/ifmgr.if.json
+2. DPAL to SDK --> 
+
+control plane --> ifindex --> dpal ---> fetch sdk specific info for that ifindex and then perform the required operation.
+
+1. So ifindex to sdk specific hw_ids (trunk id) has to be maintained in DPAL --> AOM objects dstore. (PD objects dstore).
+2. aminor/arrcus_sw/dpal/dstore/objects/bcm.port.json contains the definition of pd objects table.
+
+
+      cp ---> (pmy key) dpal(secy key) <----- sdk
