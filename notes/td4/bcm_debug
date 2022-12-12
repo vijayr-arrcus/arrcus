@@ -661,12 +661,16 @@ Table ING_L2_IIF_ATTRIBUTES_TABLE:
     USE_OTAG_DOT1P_CFI_FOR_PHB=1
     L2_IIF=3
 BCM.0>
-VFI (key)                                                                                                                                                                                                                               BCM.0>
-BCM.0> bsh -c 'lt ING_VFI_TABLE lookup vfi=10'                                                                                                                                                                                              bsh -c 'lt ING_VFI_TABLE lookup vfi=10'
-Table ING_VFI_TABLE:                                                                                                                                                                                                                          lookup VFI=0xa
+VFI (key)
+BCM.0>
+BCM.0> bsh -c 'lt ING_VFI_TABLE lookup vfi=10'
+bsh -c 'lt ING_VFI_TABLE lookup vfi=10'
+Table ING_VFI_TABLE:
+lookup VFI=0xa
 L2_HOST_NARROW_LOOKUP_ENABLE=0
 DO_NOT_LEARN=0
-L2UC_MISS_ACTION=FLOOD                                                                                                                                                                                                                      L2MC_MISS_ACTION=FLOOD
+L2UC_MISS_ACTION=FLOOD
+L2MC_MISS_ACTION=FLOOD
 IPV6MC_L2_ENABLE=1
 IPV4MC_L2_ENABLE=1
 SRC_PVLAN_PORT_TYPE=PROMISCUOUS
