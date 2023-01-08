@@ -15,7 +15,7 @@ storm_control_disable (bcm_port_t port)
 }
 
 storm_control_disable(port);
-
+port = 60;
 print bcm_rate_bandwidth_set(0, port, BCM_RATE_BCAST, 1800000, 5500);
 print bcm_rate_bandwidth_get(0, port, BCM_RATE_BCAST, &kbits_sec, &kbits_burst);
 print kbits_sec;

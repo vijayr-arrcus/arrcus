@@ -1,0 +1,64 @@
+
+
+
+[2000/02/01 19:09:54.627793][DEBUG][L2FM] l2f_read_storm_ctl_cfg
+[2000/02/01 19:09:54.628681][DEBUG][L2FM] l2f_storm_control_cfg_set: kpath /interfaces/interface{swp19}/storm-control/broadcast-level
+[2000/02/01 19:09:54.628760][DEBUG][L2FM] STORM-CTL-CFG-UPD: if:swp19 bcast: 1.0 mcast: 0.0 uucast: 0.0
+[2000/02/01 19:09:54.628802][DEBUG][L2FM] INTF-PORT-OPER-UPD: if:swp19 old_oper:0 new_oper:0
+[2000/02/01 19:09:54.629985]--INFO--[mpsc_lib] [mpsc_get_msg] tbl[/default/oper/infra/ifmgr/ifs/][30] key[3]
+[2000/02/01 19:09:54.630289]--INFO--[mpsc_lib] [s_mpsc_recv_sync_get_msg] msg op 0 pub[/infra/ifmgr/publisher] tbl[/default/oper/infra/ifmgr/ifs/] seq 0
+[2000/02/01 19:09:54.630404][DEBUG][L2FM] DS-PORT-SPD-LKUP: idx:1020 spd:10
+[2000/02/01 19:09:54.630439][DEBUG][L2FM] l2f_intf_lookup_create: Speed 400000000 read from MPS for swp19
+[2000/02/01 19:09:54.630459][DEBUG][L2FM] l2f_bond_member_state_update: Interface swp19 is not a member of a bond
+[2000/02/01 19:09:54.630474][DEBUG][L2FM] INTF-ADD swp19 idx:1020 kbps:400000000 flags:0x0
+[2000/02/01 19:09:54.630489][DEBUG][L2FM] INTF-READY: swp19 idx:1020 kbps:400000000
+[2000/02/01 19:09:54.630509][DEBUG][L2FM] L2F-STRM-CTL-CREATE swp19 
+[2000/02/01 19:09:54.630525][DEBUG][L2FM] INTF-FEAT-BIND: intf:swp19 feat:1 
+[2000/02/01 19:09:54.630538][DEBUG][L2FM] STORM-CTL-CREATE-READY: if:swp19 bcast: 1.0 mcast: 0.0 uucast: 0.0 flags:1
+[2000/02/01 19:09:54.630562][DEBUG][L2FM] STORM-CTL-SET-KBPS: if:swp19 idx:1020 b: 1.0 m: 0.0 u: 0.0 bkbps:4000000 mkbps:0 ukbps:0
+[2000/02/01 19:09:54.630636][DEBUG][L2FM] l2f_mpsc_publish_storm_control_obj: Successfull publish if:swp19 idx:1020 b: 1.0 m: 0.0 u: 0.0 bkbps:4000000 mkbps:0 ukbps:0
+[2000/02/01 19:09:54.630980][DEBUG][CONFDPROXY] Called Config Handler, read socket=590, result=0
+[2000/02/01 19:09:54.631109][DEBUG][L2FM] l2f_mpsc_ifmgr_if_tbl_rx_cb: if:swp19 kbps:400000000
+[2000/02/01 19:09:54.631133][DEBUG][L2FM] l2f_mpsc_ifmgr_if_tbl_rx_cb: speed didn't change: swp19 spd:400000000
+[2000/02/01 19:10:50.861255][DEBUG][L2FM] l2f_read_storm_ctl_cfg
+[2000/02/01 19:10:50.862879][DEBUG][L2FM] l2f_storm_control_cfg_set: kpath /interfaces/interface{bond100}/storm-control/broadcast-level
+[2000/02/01 19:10:50.862909][DEBUG][L2FM] STORM-CTL-CFG-UPD: if:bond100 bcast: 1.0 mcast: 0.0 uucast: 0.0
+[2000/02/01 19:10:50.862935][DEBUG][L2FM] INTF-PORT-OPER-UPD: if:bond100 old_oper:0 new_oper:1
+[2000/02/01 19:10:50.863658][DEBUG][L2FM] l2f_intf_lacp_update: if:bond100 old_lacp:0 new_lacp:0 walk:false
+[2000/02/01 19:10:50.863682][DEBUG][L2FM] INTF-ADD bond100 idx:15003 kbps:0 flags:0x16
+[2000/02/01 19:10:50.863692][DEBUG][L2FM] INTF-NOT-READY: bond100 idx:15003 kbps:0
+[2000/02/01 19:10:50.863700][DEBUG][L2FM] L2F-STRM-CTL-CREATE bond100 
+[2000/02/01 19:10:50.863710][DEBUG][L2FM] INTF-FEAT-BIND: intf:bond100 feat:1 
+[2000/02/01 19:10:50.863722][DEBUG][L2FM] STORM-CTL-CREATE-NOT-READY: if:bond100 bcast: 1.0 mcast: 0.0 uucast: 0.0 flags:1
+[2000/02/01 19:10:50.863742][DEBUG][L2FM] BOND-STMCTL-CFG-UPD-MEMBERS: count:2 b:bond100 b_idx:15003
+[2000/02/01 19:10:50.863761][DEBUG][L2FM] BOND-STMCTL-CFG-UPD-MEM: b_idx:15003 m:swp13s1
+[2000/02/01 19:10:50.863774][DEBUG][L2FM] STORM-CTL-CFG-UPD: if:swp13s1 bcast: 1.0 mcast: 0.0 uucast: 0.0
+[2000/02/01 19:10:50.863795][DEBUG][L2FM] INTF-PORT-OPER-UPD: if:swp13s1 old_oper:0 new_oper:1
+[2000/02/01 19:10:50.864556]--INFO--[mpsc_lib] [mpsc_get_msg] tbl[/default/oper/infra/ifmgr/ifs/][30] key[3]
+[2000/02/01 19:10:50.864820]--INFO--[mpsc_lib] [s_mpsc_recv_sync_get_msg] msg op 0 pub[/infra/ifmgr/publisher] tbl[/default/oper/infra/ifmgr/ifs/] seq 1
+[2000/02/01 19:10:50.864893][DEBUG][L2FM] DS-PORT-SPD-LKUP: idx:1035 spd:8
+[2000/02/01 19:10:50.864923][DEBUG][L2FM] l2f_intf_lookup_create: Speed 100000000 read from MPS for swp13s1
+[2000/02/01 19:10:50.864946][DEBUG][L2FM] l2f_bond_member_state_update: Interface swp13s1 is a member of bond bond100
+[2000/02/01 19:10:50.864963][DEBUG][L2FM] INTF-ADD swp13s1 idx:1035 kbps:100000000 flags:0x44
+[2000/02/01 19:10:50.864977][DEBUG][L2FM] INTF-READY: swp13s1 idx:1035 kbps:100000000
+[2000/02/01 19:10:50.864993][DEBUG][L2FM] L2F-STRM-CTL-CREATE swp13s1 
+[2000/02/01 19:10:50.865010][DEBUG][L2FM] INTF-FEAT-BIND: intf:swp13s1 feat:1 
+[2000/02/01 19:10:50.865040][DEBUG][L2FM] STORM-CTL-CREATE-READY: if:swp13s1 bcast: 1.0 mcast: 0.0 uucast: 0.0 flags:1
+[2000/02/01 19:10:50.865059][DEBUG][L2FM] STORM-CTL-SET-KBPS: if:swp13s1 idx:1035 b: 1.0 m: 0.0 u: 0.0 bkbps:1000000 mkbps:0 ukbps:0
+[2000/02/01 19:10:50.865095][DEBUG][L2FM] l2f_mpsc_publish_storm_control_obj: Successfull publish if:swp13s1 idx:1035 b: 1.0 m: 0.0 u: 0.0 bkbps:1000000 mkbps:0 ukbps:0
+[2000/02/01 19:10:50.865119][DEBUG][L2FM] BOND-STMCTL-CFG-UPD-MEM: b_idx:15003 m:swp12s1
+[2000/02/01 19:10:50.865131][DEBUG][L2FM] STORM-CTL-CFG-UPD: if:swp12s1 bcast: 1.0 mcast: 0.0 uucast: 0.0
+[2000/02/01 19:10:50.865151][DEBUG][L2FM] INTF-PORT-OPER-UPD: if:swp12s1 old_oper:0 new_oper:1
+[2000/02/01 19:10:50.865720]--INFO--[mpsc_lib] [mpsc_get_msg] tbl[/default/oper/infra/ifmgr/ifs/][30] key[3]
+[2000/02/01 19:10:50.865942]--INFO--[mpsc_lib] [s_mpsc_recv_sync_get_msg] msg op 0 pub[/infra/ifmgr/publisher] tbl[/default/oper/infra/ifmgr/ifs/] seq 2
+[2000/02/01 19:10:50.866003][DEBUG][L2FM] DS-PORT-SPD-LKUP: idx:1033 spd:8
+[2000/02/01 19:10:50.866053][DEBUG][L2FM] l2f_intf_lookup_create: Speed 100000000 read from MPS for swp12s1
+[2000/02/01 19:10:50.866081][DEBUG][L2FM] l2f_bond_member_state_update: Interface swp12s1 is a member of bond bond100
+[2000/02/01 19:10:50.866103][DEBUG][L2FM] INTF-ADD swp12s1 idx:1033 kbps:100000000 flags:0x44
+[2000/02/01 19:10:50.866124][DEBUG][L2FM] INTF-READY: swp12s1 idx:1033 kbps:100000000
+[2000/02/01 19:10:50.866152][DEBUG][L2FM] L2F-STRM-CTL-CREATE swp12s1 
+[2000/02/01 19:10:50.866178][DEBUG][L2FM] INTF-FEAT-BIND: intf:swp12s1 feat:1 
+[2000/02/01 19:10:50.866202][DEBUG][L2FM] STORM-CTL-CREATE-READY: if:swp12s1 bcast: 1.0 mcast: 0.0 uucast: 0.0 flags:1
+[2000/02/01 19:10:50.866232][DEBUG][L2FM] STORM-CTL-SET-KBPS: if:swp12s1 idx:1033 b: 1.0 m: 0.0 u: 0.0 bkbps:1000000 mkbps:0 ukbps:0
+[2000/02/01 19:10:50.866272][DEBUG][L2FM] l2f_mpsc_publish_storm_control_obj: Successfull publish if:swp12s1 idx:1033 b: 1.0 m: 0.0 u: 0.0 bkbps:1000000 mkbps:0 ukbps:0
+[2000/02/01 19:10:50.867053][DEBUG][CONFDPROXY] Called Config Handler, read socket=590, result=0

@@ -1,0 +1,65 @@
+
+acl_cdb_search_or_alloc_serv_msg_in_batch
+	if (if_indextoname(serv_msg->target_id, ifname) != NULL) {
+		if (0 == strncmp(ifname, "bond", strlen("bond"))) {
+			ifmgr_bond_members_get(target_index, &serv_msg->is_bond,
+														 serv_msg->member_id, &serv_msg->member_count);
+		}
+		}
+
+void
+acl_bond_member_notification (uint64_t bond_ifindex, uint64_t member_ifindex,
+                              bool delete)
+{
+  acl_msg_t          *acl_msg;
+  acl_service_msg_t  *serv_msg;
+
+  acl_msg = acl_dstore_alloc_acl_msg();
+  if (!acl_msg) {
+    return;
+  }
+
+  acl_msg->msg_type = ACL_MSG_TYPE_SERVICE;
+  acl_main_ctxt.acl_msg = acl_msg;
+
+  serv_msg = (acl_service_msg_t *)acl_msg->msg_details + acl_msg->upd_count;
+  acl_msg->upd_count++;
+
+  memset(serv_msg, 0, sizeof(acl_service_msg_t));
+  if (delete) {
+    serv_msg->event = ACL_MSG_EVENT_DELETE;
+  } else {
+    serv_msg->event = ACL_MSG_EVENT_ADD;
+  }
+
+  serv_msg->target_type  = POLICY_TARGET_INTERFACE;
+  serv_msg->target_id    = bond_ifindex;
+  serv_msg->via_member   = true;
+  serv_msg->member_count = 1;
+  serv_msg->member_id[0] = member_ifindex;
+
+  acl_process_produced_msg(acl_msg);
+  acl_main_ctxt.acl_msg = NULL;
+  return;
+}
+
+acl_process_service_message
+    switch (service_msg->event) {
+      case ACL_MSG_EVENT_ADD:
+      case ACL_MSG_EVENT_UPDATE:
+        acl_tracepoint_serv_msg("Add/Update", service_msg);
+        if (service_msg->via_member) {
+          retval = acl_service_update_bond_member(service_msg,
+                              service_msg->member_id[0]);
+        } else {
+          retval = acl_service_update(service_msg);
+          for (i = 0; i < service_msg->member_count; i++) {
+            retval = acl_service_update_bond_member(service_msg,
+                                                    service_msg->member_id[i]);
+            if (retval == false) {
+              return(retval);
+            }
+          }
+        }
+    }
+
