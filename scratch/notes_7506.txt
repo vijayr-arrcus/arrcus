@@ -1,0 +1,8 @@
+1. by default the policer rate configured is 0 -- policer rate for a particular BUM traffic type, I checked for Broadcast.
+   I am assuming that 0 here indicates that its disabled.
+   I see the DISABLE rate macro defined in sdk as #define BCM_RATE_DISABLE         0
+2. BCM API accepts 0 as input rate and this is valid, and as indicated above means we are diabling storm control/rate limiting.
+3. BCM api accepts a large kbps value however when I get the value set, kbps and burst values are 0,
+   the API doesnt return an error however accepts some degree greater than port bandwidth. However for very large values the rates are set to 0 indicating storm control is diabled.
+4. Now looking at SDK code how large a value is acceptable.
+5. If its disarable to enforce rate limit value to 0, indicating absolutely drop all BUM traffic I can check with BCM support on how to achieve this.
