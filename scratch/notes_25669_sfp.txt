@@ -1,0 +1,7 @@
+pltf_server_confd_component_get_object
+    pltf_server_get_component_info
+        COMPONENT_TYPE_SFP
+
+
+pltf_server_get_all_property_info
+    pltf_server_get_all_sfp_property
