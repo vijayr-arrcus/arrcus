@@ -1,3 +1,5 @@
+packages/base/any/onlp/src/onlp/module/src/onlp_main.c --- onlpdump
+
 pltf_server_confd_component_get_object
     pltf_server_get_component_info
         COMPONENT_TYPE_SFP
@@ -5,3 +7,109 @@ pltf_server_confd_component_get_object
 
 pltf_server_get_all_property_info
     pltf_server_get_all_sfp_property
+
+pltf_server_mpsc_sfp_tbl_rx_cb -- populate pltf_server_sfp_info_t
+  pltf_agent_convert_sfp_info_to_ds_obj --> pulblis sfp info to dstore. -- pltf_agent_sfp_info_t
+
+pltf_agent_onlp_sfp_info_get read and parse sff eeprom
+   onlp_sfp_eeprom_read
+      onlp_sfpi_eeprom_read -- per platform implementation.
+          /sys/bus/i2c/devices/%d-0050/eeprom
+							root@td4-3:/# find -name eeprom
+						./lib/modules/4.19.84-arrcus/kernel/drivers/misc/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-10/i2c-30/30-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-10/i2c-29/29-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-10/i2c-27/27-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-10/i2c-25/25-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-10/i2c-31/31-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-10/i2c-28/28-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-10/i2c-26/26-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-10/i2c-32/32-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/0-0057/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-15/15-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-13/13-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-11/i2c-39/39-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-11/i2c-37/37-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-11/i2c-35/35-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-11/i2c-33/33-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-11/i2c-38/38-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-11/i2c-36/36-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-11/i2c-34/34-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-11/i2c-40/40-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-9/i2c-20/20-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-9/i2c-19/19-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-9/i2c-17/17-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-9/i2c-23/23-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-9/i2c-21/21-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-9/i2c-18/18-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-9/i2c-24/24-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-9/i2c-22/22-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-16/16-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-14/14-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-12/i2c-47/47-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-12/i2c-45/45-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-12/i2c-43/43-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-12/i2c-41/41-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-12/i2c-48/48-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-12/i2c-46/46-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-12/i2c-44/44-0050/eeprom
+						./sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-12/i2c-42/42-0050/eeprom
+
+      sff_eeprom_parse
+
+03h 100GBASE-LR4 or 25GBASE-L -- #define SFF8636_CC192_100GE_LR4          0x03
+27h 100G-LR or 100GBASE-LR1 (Clause 140), CAUI-4 (no FEC on host interface ---
+
+52  100GBASE-LR4    Fiber                  Arista Networks   QSFP-100G-LR4     XHT203501557
+Port 52: Present, Status = 0x00000000
+eeprom:
+  0000: 11 07 00 f0 00 f0 00 00 00 00 00 00 00 00 00 00
+  0010: 00 00 00 00 00 00 2e 0e 00 00 7e ef 00 00 00 00
+  0020: 00 00 25 24 26 6e 28 0e 29 f3 54 82 4f a6 4f a6
+  0030: 4f a6 52 0b 4c bf 4b 2e 43 3c 00 00 00 00 00 00
+  0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0050: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0080: 11 cd 07 80 00 00 00 00 00 00 00 05 ff 00 0a 00
+  0090: 00 00 00 44 41 72 69 73 74 61 20 4e 65 74 77 6f
+  00a0: 72 6b 73 20 00 00 1c 73 51 53 46 50 2d 31 30 30
+  00b0: 47 2d 4c 52 34 20 20 20 32 31 66 58 00 c8 46 14
+  00c0: 03 07 3f 9a 58 48 54 32 30 33 35 30 31 35 35 37
+  00d0: 20 20 20 20 32 30 30 38 32 39 20 20 0c 10 67 1b
+  00e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00f0: 00 00 00 00 00 00 00 00 00 00 00 00 9e d1 ca 8f
+
+#define SFF8636_IDENT_QSFP28             0x11
+idprom[0] == SFF8636_IDENT_QSFP28
+
+Port 55: Present, Status = 0x00000000
+eeprom:
+  0000: 11 08 00 f0 00 f0 00 00 00 00 00 50 00 50 00 00
+  0010: 00 00 00 00 00 00 29 7c 00 00 80 b1 00 00 36 fe
+  0020: 00 00 50 33 00 00 00 00 00 00 00 00 00 00 00 00
+  0030: 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00
+  0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0050: 00 00 00 00 00 00 00 aa aa 00 00 00 00 00 00 00
+  0060: 00 00 ff 00 00 00 00 00 00 00 00 2d 00 00 00 00
+  0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0080: 11 ce 07 80 00 00 00 00 00 00 00 05 ff 00 0a 00
+  0090: 00 00 00 64 41 72 69 73 74 61 20 4e 65 74 77 6f
+  00a0: 72 6b 73 20 00 00 1c 73 51 53 46 50 2d 31 30 30
+  00b0: 47 2d 4c 52 20 20 20 20 32 31 66 6c 05 14 00 40
+  00c0: 27 6b 3f df 58 4b 54 32 30 34 30 30 30 30 33 39
+  00d0: 20 20 20 20 32 30 30 39 32 37 20 20 3c 13 67 13
+  00e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00f0: 00 00 00 00 00 00 00 00 00 00 00 00 dc 61 9f 46
+
+
+  ✔ 10:35:localhost [~/OpenNetworkLinux/docker/tools] [master|✚ 1…2]
+  513 => ./onlbuilder -9
+
+  [ ok  ] Enabling additional executable binary formats:
+
+  binfmt-support.bash: warning: setlocale: LC_ALL: cannot change locale
+  (en_US.UTF-8): No such file or directorybash: warning: setlocale: LC_A
+  LL: cannot change locale (en_US.UTF-8)✘-1 10:35:localhost [~/OpenNet
+  workLinux/docker/tools] [master|✚ 1…2]
+
