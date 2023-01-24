@@ -1,0 +1,1 @@
+echo "check-certificate = off" >> ~/.wgetrc
