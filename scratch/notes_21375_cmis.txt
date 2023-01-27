@@ -1,0 +1,33 @@
+http://www.qsfp-dd.com/wp-content/uploads/2019/05/QSFP-DD-CMIS-rev4p0.pdf
+CMIS -- Common Management Interface Specification
+Application -- a specific combination of an industry standard host electrical interface and industry standard module media interface
+Flat Memory -- single 256 byte memory implementation without paging.
+Host interface -- interface between high speed electrical interface between the module and the host system.
+Lower Memory -- The 128 bytes addressed by byte addresses 00h through 7fh.
+Module -- Pluggable transceivers and active or passive cable assembly terminations that plug into the host receptacle such as, but not limited to those of QSFP-DD, OSFP, COBO, QSFP, and SFP-DD form factors.
+Media interface -- a high speed interface between the module and the interconnect medium, such as wires or optical fibres.
+Lower Memory -- the 128 bytes addressed by byte addresses 00h through 7fh.
+Upper Memory -- the 128 bytes addressed by byte addresses 80h through ffh.
+Lane -- A generic term for the elements associated with transport of one of the high speed signals in one of the module interfaces.
+
+Host -- master,
+module -- slave
+
+TWI -- two wire serial interface.
+Application -- a specific combination of an industry standard host electrical interface and industry standard module media interface
+1. A module may support multiple different applications and/or multiple instances of the same application.
+2.
+
+
+CMIS parser details. CMIS version 4.
+
+1. Table 8-2 eprm[0] --> type of serial module Table 4-1 of SFF-8024.
+2. Table 8-2 eprm[1] --> CMIS version in this case should 4.0.
+3. Table 8-12 eprm[15] --> value used to distinguish MMF, SMF, active and passive cables.
+4. Table 8-13 eprm[87] --> module media interface id Table 4-6 to table 4-10 of SFF-8024.
+5.
+
+8024 Table references.
+
+1. Table 4-1 Identifier Values. ---->
+
