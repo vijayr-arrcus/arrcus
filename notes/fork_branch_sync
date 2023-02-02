@@ -1,3 +1,5 @@
+fork sync
+
 git clone git@github.com:vijayr-arrcus/arrcus_sw.git
 cd arrcus_sw/
 git remote add Arrcus/arrcus_sw git@github.com:Arrcus/arrcus_sw.git

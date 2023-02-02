@@ -15,6 +15,9 @@ DMA pools:
 root@td4-5:/proc#
 root@td4-5:/proc#
 
+  >>> bcm shell <<<
+  show unit
+
 
 root@td4-6:~# cat /proc/linux_ngbde
 Broadcom Device Enumerator (linux_ngbde)
