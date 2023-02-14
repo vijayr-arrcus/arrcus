@@ -113,7 +113,7 @@ interface bond20
   state last-change 2023-01-12T20:58:02.966344-00:00
   state counters in-unicast-pkts 1234        -----|
   state counters in-broadcast-pkts 1234           |
-  state counters in-multicast-pkts 1234           | ====== New counters applicable for l2 subinterfaces.
+  state counters in-multicast-pkts 1234           | ====== counters applicable for l2 subinterfaces, we can choose to hide other stats or show them as zero, I have choosen to hide them here and only show what is relevant.
   state counters out-unicast-pkts 5678            |
   state counters out-broadcast-pkts 5678          |
   state counters out-multicast-pkts 5678     -----|
