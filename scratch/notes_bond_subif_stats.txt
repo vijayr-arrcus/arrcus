@@ -22,7 +22,7 @@ design choices
   f. polling will be  done periodically in dpal and mps message posted to ifmgr. -- key is Parent ifindex + vlan.
   g. need a way to get subinterface ifindex from Parent ifindex+vlan.
   h. Problem is we ignore notifications for the L3 interface, so seems like there is no dpal object for subinterface ifindex.
-  i. if we can post stats message directly for a subinterface ifindex then very little change in ifmgr and no new table needs to be defined.
+  i. if we can post stats message directly for a subinterface ifindex then very little change in ifmgr and no new table needs to be defined. On the other hand, the configuration from PI/ifmgr has always been Parent ifindex + vlan, so we publish interface + vlan stats to ifmgr with a new table and can be extened to support port vlan as well. Better to go the later approach.
 7.  there seems to be a restriction on memberlinks in the bond.
   a. the member links are part of a multicast group to replicate traffic on the egress of the access vp.
   b. there is a limit on the number of members of the multicast group which seems to be 256.
