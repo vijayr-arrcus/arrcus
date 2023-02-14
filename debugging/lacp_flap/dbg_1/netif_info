@@ -1,0 +1,1010 @@
+
+dev_no:         0
+id:             0
+next:           1
+type:           0
+flags:          0x0
+vlan:           1
+mac:            00:bc:00:00:00:00
+mtu:            1500
+chan:           0
+name:           bcm0
+meta_off:       0
+meta_len:       0
+meta_data:      
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     6
+tx_errors:      0
+
+dev_no:         0
+id:             1
+next:           2
+type:           0
+flags:          0x1
+vlan:           0
+mac:            00:01:00:00:00:00
+mtu:            9600
+chan:           0
+name:           bcm0_0
+meta_off:       0
+meta_len:       0
+meta_data:      
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     6
+tx_errors:      0
+
+dev_no:         0
+id:             2
+next:           3
+type:           0
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            9000
+chan:           0
+name:           acl_log_all
+meta_off:       0
+meta_len:       0
+meta_data:      
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             3
+next:           4
+type:           0
+flags:          0x1
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            9128
+chan:           0
+name:           sflow
+meta_off:       0
+meta_len:       0
+meta_data:      
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             4
+next:           5
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp0
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 01 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             5
+next:           6
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp1
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 02 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             6
+next:           7
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp2
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 03 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             7
+next:           8
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp3
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 04 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             8
+next:           9
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp4
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 14 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             9
+next:           10
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp5
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 15 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             10
+next:           11
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp6
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 16 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             11
+next:           12
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp7
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 17 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             12
+next:           13
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp8
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 28 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             13
+next:           14
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp9s4
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 31 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             14
+next:           15
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp10s4
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 2e 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             15
+next:           16
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp11
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 2b 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             16
+next:           17
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp12
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 3c 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             17
+next:           18
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp13
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 3d 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             18
+next:           19
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp14
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 3e 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             19
+next:           20
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp15
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 3f 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             20
+next:           21
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp16
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 50 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             21
+next:           22
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp17
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 51 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             22
+next:           23
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp18
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 52 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             23
+next:           24
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp19
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 53 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             24
+next:           25
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp20
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 64 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             25
+next:           26
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp21
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 65 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             26
+next:           27
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp22
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 66 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             27
+next:           28
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp23
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 67 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             28
+next:           29
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp24
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 78 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             29
+next:           30
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp25
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 79 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             30
+next:           31
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp26
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 7a 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             31
+next:           32
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp27
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 7b 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             32
+next:           33
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp28
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 ffffff8c 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             33
+next:           34
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp29
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 ffffff8d 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             34
+next:           35
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp30
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 ffffff8e 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             35
+next:           36
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp31
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 ffffff8f 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             36
+next:           37
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp10s3
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 2d 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             37
+next:           38
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp10s2
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 2c 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             38
+next:           39
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp10s1
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 2a 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     416451
+rx_bytes:       13344398
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     358
+tx_bytes:       44538
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             39
+next:           40
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp9s3
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 30 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             40
+next:           41
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp9s2
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 2f 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     0
+rx_bytes:       0
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     0
+tx_bytes:       0
+tx_dropped:     0
+tx_errors:      0
+
+dev_no:         0
+id:             41
+next:           0
+type:           1
+flags:          0x0
+vlan:           0
+mac:            e8:c5:7a:8f:91:3f
+mtu:            8974
+chan:           0
+name:           swp9s1
+meta_off:       0
+meta_len:       16
+meta_data:      00 00 00 ffffff81 29 00 00 00 ffffff80 63 00 00 00 00 00 00 
+user_data:      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+rx_packets:     1452308
+rx_bytes:       104592464
+rx_dropped:     0
+rx_errors:      0
+tx_packets:     322
+tx_bytes:       39840
+tx_dropped:     0
+tx_errors:      0
+--------------------------------
+Total 1 devices, 42 netifs

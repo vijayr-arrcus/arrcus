@@ -1,0 +1,79 @@
+BCM.0>
+BCM.0> show c
+show c
+XLMIB_TBYT.ce1                        :                   134                +134
+XLMIB_TPOK.ce1                        :                     1                  +1
+XLMIB_TMCA.ce1                        :                     1                  +1
+XLMIB_TPKT.ce1                        :                     1                  +1
+XLMIB_T255.ce1                        :                     1                  +1
+BCM.0>
+BCM.0> show c
+show c
+MC_PERQ_PKT(6).cpu0                   :                     2                  +2
+MC_PERQ_PKT(7).cpu0                   :                     6                  +6
+MC_PERQ_BYTE(6).cpu0                  :                   416                +416
+MC_PERQ_BYTE(7).cpu0                  :                 1,224              +1,224
+XLMIB_TBYT.ce0                        :                   132                +132
+XLMIB_RBYT.ce0                        :                   132                +132
+XLMIB_TPOK.ce0                        :                     1                  +1
+XLMIB_RPOK.ce0                        :                     1                  +1
+XLMIB_TMCA.ce0                        :                     1                  +1
+XLMIB_RMCA.ce0                        :                     1                  +1
+XLMIB_TPKT.ce0                        :                     1                  +1
+XLMIB_RPKT.ce0                        :                     1                  +1
+XLMIB_T255.ce0                        :                     1                  +1
+XLMIB_R255.ce0                        :                     1                  +1
+XLMIB_TBYT.ce1                        :                   262                +128
+XLMIB_RBYT.ce1                        :                   900                +900
+XLMIB_TPOK.ce1                        :                     2                  +1
+XLMIB_RPOK.ce1                        :                     7                  +7
+XLMIB_TMCA.ce1                        :                     2                  +1
+XLMIB_RMCA.ce1                        :                     7                  +7
+XLMIB_TPKT.ce1                        :                     2                  +1
+XLMIB_RPKT.ce1                        :                     7                  +7
+XLMIB_T255.ce1                        :                     2                  +1
+XLMIB_R255.ce1                        :                     7                  +7                                                                                                                                                                    BCM.0>
+BCM.0>
+BCM.0> ps
+ps
+              ena/        speed/ link auto    STP                  lrn             max    cut            loop
+        port  link  Lns   duplex scan neg?   state   pause  discrd ops   medium  frame   thru       FEC  back
+    cd0(  1)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+    cd1(  2)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+    cd2(  3)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+    cd3(  4)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+    cd4( 20)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+    cd5( 21)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+    cd6( 22)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+    cd7( 23)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+    cd8( 40)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN                                                                                                                                                  ce0( 41)  up     2  100G  FD   SW  No   Forward          None   FA Backplane  9000    No       NONE
+    ce1( 42)  up     2  100G  FD   SW  No   Forward          None   FA Backplane  9000    No       NONE
+    cd9( 43)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+    ce2( 44)  !ena   2  100G  FD   SW  No   Forward          None   FA Backplane  9000    No       NONE
+    ce3( 45)  !ena   2  100G  FD   SW  No   Forward          None   FA Backplane  9000    No       NONE
+    ce4( 46)  !ena   2  100G  FD   SW  No   Forward          None   FA Backplane  9000    No       NONE
+    ce5( 47)  !ena   2  100G  FD   SW  No   Forward          None   FA Backplane  9000    No       NONE
+    ce6( 48)  !ena   2  100G  FD   SW  No   Forward          None   FA Backplane  9000    No       NONE
+    ce7( 49)  !ena   2  100G  FD   SW  No   Forward          None   FA Backplane  9000    No       NONE
+   cd10( 60)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd11( 61)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd12( 62)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd13( 63)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd14( 80)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd15( 81)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd16( 82)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd17( 83)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd18(100)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd19(101)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd20(102)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd21(103)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd22(120)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd23(121)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd24(122)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd25(123)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd26(140)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd27(141)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd28(142)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+   cd29(143)  !ena   8  400G  FD   SW  No   Forward          None   FA Backplane  9000    No  RS544-2xN
+BCM.0>
+

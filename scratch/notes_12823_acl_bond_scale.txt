@@ -1,0 +1,6 @@
+1. bond interfaces each with single member link.
+2. we have acls attached to the bond interfaces.
+3. 2-7 bond interfaces.
+4. add acl to 4-7 
+5. lacp out sync in bond2.
+6. add device non responsive.

@@ -1,0 +1,192 @@
+bcmsdk_intf_api
+  bcmsdk_xlate_sub_intf_update
+    bcmsdk_sub_intf_update
+      bcmsdk_vxlan_flow_sdk_l2_acc_vp_cfg
+
+static ret_code_e
+bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_create (dpal_switch_unit_t unit,
+                                          bcmsdk_vxlan_flow_sdk_cmn_ctxt_t *ctxt,
+                                          bcmsdk_vxlan_flow_sdk_l2_acc_vp_t *acc_vp)
+{
+  int rv;
+  bcm_flow_port_t flow_port;
+
+  /* Create Access Flow Port */
+  bcm_flow_port_t_init(&flow_port);
+  flow_port.network_group_id = ctxt->acc_vp_net_grp;
+  rv = bcm_flow_port_create(unit, acc_vp->vpn, &flow_port);
+  if (BCM_FAILURE(rv)) {
+      bcmsdk_trace_vxlan_acc_vp_error("[Access VP Create] - Error creating vxlan acc flow port",
+                                      bcm_errmsg(rv), unit, acc_vp->vlanid, acc_vp->ifindex);
+      return RET_CODE_FAILURE;
+  }
+  acc_vp->hwid = flow_port.flow_port_id;
+
+  return RET_CODE_SUCCESS;
+}
+
+      /* Add as VxLAN access port */
+      LOG_DEBUG_MSG(BCM_PLUGIN_STR, "Creating VxLAN access port in l2_vni %u\n", vni_id);
+      rc = bcm_xlate_flow_vport_construct_vxlan_acc_vp(ctxt, vni_id, false,
+                                                       flow_port, old_flow_port,
+                                                       &acc_vp, &df_mc);
+      if(RET_CODE_SUCCESS != rc) {
+        return rc;
+      }
+      rc = bcmsdk_vxlan_flow_sdk_l2_acc_vp_cfg(unit, DPAL_OBJ_CREATE, &acc_vp);
+      if(RET_CODE_SUCCESS != rc) {
+        LOG_ERR_MSG(BCM_PLUGIN_STR, "Error in creating VxLAN access port in l2_vni %u\n", vni_id);
+        return rc;
+      }
+      ds_bcm_xgs_flow_vport_hwid_set(flow_port, acc_vp.hwid);
+      ds_bcm_xgs_flow_vport_l3egr_hwid_set(flow_port, acc_vp.egress_if);
+      ds_bcm_xgs_flow_vport_mc_encapid_set(flow_port, acc_vp.mc_encapid);
+
+
+bcmsdk_vxlan_flow_sdk_net_vp_create
+		bcmsdk_vxlan_flow_sdk_stat_attach
+				bcmsdk_vxlan_flow_sdk_stat_create
+						bcmsdk_vxlan_flow_sdk_esw_stat_create
+								bcmsdk_vxlan_flow_flex_stat_info_set
+
+
+bcm_sdk/src/examples/xgs/trident4_x9/dna_2_6_11_0/flow/vxlan/td4x9_hsdk_vxlan_ipv4_AtoN_Flex_Ctr.c
+			config_vxlan_access
+          rv = create_vxlan_vp(unit, vxlan_cfg->vxlan_vpn, 0, acc_flow_port);
+          create_vxlan_vp(int unit, bcm_vpn_t vpn, uint32 flags, bcm_gport_t *vp)
+						{
+								bcm_error_t rv = BCM_E_NONE;
+								printf("Create Flow VP.\n");
+								bcm_flow_port_t  flow_port;
+								bcm_flow_port_t_init(&flow_port);
+								flow_port.flags = flags;
+								rv = bcm_flow_port_create(unit, vpn, &flow_port);
+								if (BCM_FAILURE(rv)) {
+										printf("\nbcm_flow_port_create() failed: %s\n", bcm_errmsg(rv));
+										return rv;
+								}
+								*vp = flow_port.flow_port_id;
+								return BCM_E_NONE;
+						}
+          vxlan_acc->acc_gport=(*acc_flow_port);
+          vxlan_flow_counter_attach(unit, vxlan_acc->acc_gport,
+                                    &vxlan_acc->ing_flow_stat_id,
+																	  &vxlan_acc->egr_flow_stat_id);
+							vxlan_flow_counter_attach(int unit,
+																			  bcm_gport_t flow_port_id,
+																				uint32 *ing_flow_stat_id,
+																				uint32 *egr_flow_stat_id)
+							{
+									/* Configuration to Attach Flex Counters */
+									bcm_flow_stat_info_t flow_stat_info;
+									bcm_flexctr_action_t action;
+									uint32_t             stat_counter_id;
+									uint32               num_entries = 1;
+									uint32               counter_index = 0;
+									int                  options;
+
+									/* Configure Flex Counter to count on ING SVP Table using bcmFlexctrSourceSvp */
+									sal_memset(&action, 0, sizeof(action));
+									action.source = bcmFlexctrSourceSvp;
+									action.mode = bcmFlexctrCounterModeNormal;
+									action.index_operation.object[0] = bcmFlexctrObjectConstZero;
+									action.index_operation.mask_size[0] = 16;
+									action.index_operation.mask_size[1] = 1;
+
+									action.operation_a.select = bcmFlexctrValueSelectCounterValue;
+									action.operation_a.object[0] = bcmFlexctrObjectConstOne;
+									action.operation_a.type = bcmFlexctrValueOperationTypeInc;
+									action.operation_a.mask_size[0] = 16;
+									action.operation_a.mask_size[1] = 1;
+
+									action.operation_b.select = bcmFlexctrValueSelectPacketLength;
+									action.operation_b.type = bcmFlexctrValueOperationTypeInc;
+									action.operation_b.mask_size[0] = 16;
+									action.operation_b.mask_size[1] = 1;
+									action.index_num = 1;
+
+									options = 0;
+									/* Create Flex Counter Action based on the above Criteria */
+									BCM_IF_ERROR_RETURN(bcm_flexctr_action_create(unit, options, &action, &stat_counter_id));
+									printf("Ingress Flow Flex Counter Stat ID : 0x%x\n",stat_counter_id);
+
+									/* Attach created Flex Counter to  net_flow_port for counting per ING SVP*/
+									bcm_flow_stat_info_t_init(&flow_stat_info);
+									flow_stat_info.valid_elements = BCM_FLOW_STAT_FLOW_PORT_VALID;
+									flow_stat_info.flow_port = flow_port_id;
+									BCM_IF_ERROR_RETURN(bcm_flow_stat_attach(unit, &flow_stat_info, 0, NULL, stat_counter_id));
+
+									*ing_flow_stat_id = stat_counter_id;
+
+									/* per DVP Counter */
+									sal_memset(&action, 0, sizeof(action));
+									action.source = bcmFlexctrSourceDvp;
+									action.mode = bcmFlexctrCounterModeNormal;
+									action.index_operation.object[0] = bcmFlexctrObjectConstZero;
+									action.index_operation.mask_size[0] = 16;
+									action.index_operation.mask_size[1] = 1;
+
+									action.operation_a.select = bcmFlexctrValueSelectCounterValue;
+									action.operation_a.object[0] = bcmFlexctrObjectConstOne;
+									action.operation_a.type = bcmFlexctrValueOperationTypeInc;
+									action.operation_a.mask_size[0] = 16;
+									action.operation_a.mask_size[1] = 1;
+
+									action.operation_b.select = bcmFlexctrValueSelectPacketLength;
+									action.operation_b.type = bcmFlexctrValueOperationTypeInc;
+									action.operation_b.mask_size[0] = 16;
+									action.operation_b.mask_size[1] = 1;
+									action.index_num = 1;
+
+									options = 0;
+									/* Create Flex Counter Action based on the above Criteria */
+									BCM_IF_ERROR_RETURN(bcm_flexctr_action_create(unit, options, &action, &stat_counter_id));
+									printf("Egress Flow Flex Counter Stat ID : 0x%x\n",stat_counter_id);
+
+									/* Attach created Flex Counter to  net_flow_port for counting per ING SVP*/
+									bcm_flow_stat_info_t_init(&flow_stat_info);
+									flow_stat_info.valid_elements = BCM_FLOW_STAT_FLOW_PORT_VALID;
+									flow_stat_info.flow_port = flow_port_id;
+									BCM_IF_ERROR_RETURN(bcm_flow_stat_attach(unit, &flow_stat_info, 0, NULL, stat_counter_id));
+
+									*egr_flow_stat_id = stat_counter_id;
+
+									return BCM_E_NONE;
+							}
+      app_vxlan_acc_port.flow_gport = acc_flow_port;
+			app_vxlan_acc_port.ing_flow_stat_id = vxlan_acc.ing_flow_stat_id;
+			app_vxlan_acc_port.egr_flow_stat_id = vxlan_acc.egr_flow_stat_id;
+      flexctr_flow_stat_get(unit, app_vxlan_acc_port.flow_gport, app_vxlan_acc_port.ing_flow_stat_id, "Ingress Flow");
+				flexctr_flow_stat_get (int unit, bcm_gport_t flow_port_id,
+                               uint32 flow_counter_id, char *flow_direction)
+				{
+						bcm_flexctr_counter_value_t counter_value;
+						int                            rv;
+						uint32 num_entries = 1;
+						uint32 counter_indexes = 0;
+
+						/* Get counter value. */
+						sal_memset(&counter_value, 0, sizeof(counter_value));
+						rv = bcm_flexctr_stat_get(unit, flow_counter_id, num_entries,
+																			&counter_indexes, &counter_value);
+						if (BCM_FAILURE(rv)) {
+								printf("bcm_flexctr_stat_get %s\n", bcm_errmsg(rv));
+								return rv;
+						}
+						/* Print counter value. */
+						printf("*** Flex Counters collected on %s 0x%x (stat_id=0x%x)  Packets / Bytes  : 0x%08x / 0x%08x \n",
+										flow_direction, flow_port_id, flow_counter_id, COMPILER_64_LO(counter_value.value[0]),
+										COMPILER_64_LO(counter_value.value[1]));
+
+						return BCM_E_NONE;
+				}
+
+
+acc_vp to subinterface ifindex ?
+       parent ifindex and vlan.
+
+bond to acc_vp no member links
+
+ifmgr l2/l3
+    IF_SUB_TYPE_L3/IF_SUB_TYPE_L2
+
