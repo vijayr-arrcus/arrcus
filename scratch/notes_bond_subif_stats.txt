@@ -18,7 +18,7 @@ design choices
   b. there is no actual resource restriction that imposes this scale.
   c. for now we can claim we qualify for max 1000 subinterfaces per box.
   d. implementation challenges should be considered when we try to scale to large values.
-	e. for now the implementation would go with polling stats in dpal for subinterfaces on which stats is enabled.
+  e. for now the implementation would go with polling stats in dpal for subinterfaces on which stats is enabled.
   f. polling will be  done periodically in dpal and mps message posted to ifmgr. -- key is Parent ifindex + vlan.
   g. need a way to get subinterface ifindex from Parent ifindex+vlan.
   h. Problem is we ignore notifications for the L3 interface, so seems like there is no dpal object for subinterface ifindex.
@@ -26,14 +26,14 @@ design choices
 7.  there seems to be a restriction on memberlinks in the bond.
   a. the member links are part of a multicast group to replicate traffic on the egress of the access vp.
   b. there is a limit on the number of members of the multicast group which seems to be 256.
-		 i. This seems to be a restriction for TD4 alone. (both x9 and x11)
-     ii. No such restriction exists for TD3.
+    i. This seems to be a restriction for TD4 alone. (both x9 and x11)
+    ii. No such restriction exists for TD3.
   c. for normal physical interface such a multicast group doesnt exists.
   d. we create an access vp per parent ifindex + vlan, the access vps are not replicated per member link.
 8.  there is a limitation on the number of multicast groups we can create on the box.
   a. the number of multicast groups is limited to about 1000.
   b. this restriction imposes max bond interfaces we can have to about 1000 each with a single member link per box.
-	c. this restriction seems to be specific to TD4.
+  c. this restriction seems to be specific to TD4.
 
 
 commands
