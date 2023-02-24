@@ -1,0 +1,47 @@
+td43 swp9s1  -------- td44 swp9s1
+td43 swp14s1 -------- td44 swp14s1
+
+root@td4-4:~#
+root@td4-4:~# ip addr show swp14s1
+1053: swp14s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 8974 qdisc mq state UP group default qlen 1000
+    link/ether e8:c5:7a:b1:28:56 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::eac5:7aff:feb1:2856/64 scope link dadfailed tentative
+       valid_lft forever preferred_lft forever
+root@td4-4:~# ip addr show swp9s1
+1049: swp9s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 8974 qdisc mq state UP group default qlen 1000
+    link/ether e8:c5:7a:b1:28:56 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::eac5:7aff:feb1:2856/64 scope link
+       valid_lft forever preferred_lft forever
+root@td4-4:~#
+
+root@td4-3:~# ip addr show swp9s1
+1041: swp9s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 8974 qdisc mq state UP group default qlen 1000
+    link/ether e8:c5:7a:8f:91:3f brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::eac5:7aff:fe8f:913f/64 scope link
+       valid_lft forever preferred_lft forever
+root@td4-3:~# ip addr show swp14s1
+1049: swp14s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 8974 qdisc mq state UP group default qlen 1000
+    link/ether e8:c5:7a:8f:91:3f brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::eac5:7aff:fe8f:913f/64 scope link dadfailed tentative
+       valid_lft forever preferred_lft forever
+root@td4-3:~#
+
+td43 swp9s1 -- receiving NS messages sent by td44 swp9s1.
+td44 swp14s1 -- receiving NS messages because td43 swp9s1 is flooding.
+so NS message could be sent by td44 swp9s1 or td43 swp14s1
+
+on td43 swp9s1 -Qin
+16:12:26.580980 IP6 :: > ff02::1:ff8f:913f: ICMP6, neighbor solicitation, who has fe80::eac5:7aff:fe8f:913f, length 32
+on td43 swp14s1 -Qin
+16:12:26.586434 IP6 fe80::eac5:7aff:fe8f:913f > ff02::1: ICMP6, neighbor advertisement, tgt is fe80::eac5:7aff:fe8f:913f, length 32
+
+eventhough we see duplicate addresses, from tcpdump we can safely conclude that NS message was sent from td44 swp9s1 and NA message is sent from td43 swp9s1
+
+
+Question:
+---------
+1. v6 address link local address on non l3 interfaces.
+2. same v6 link local addresss on non l3 interfaces.
+3. flooding of these messages on default vlan which is not protected by STP.
+4. should we keep learning and flooding enabled on these default vlans ?, if we received a ARP request the same flooding could be seen.
+5. we should not be punting these packets to CPU when there is no L3 on the vlan.
