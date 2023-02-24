@@ -7,7 +7,7 @@ src_ip = "33.33.33.3"
 dst_ip = "33.33.33.1"
 dport = 3323
 sport = 3333
-vlan =50
+vlan =77
 #p = Ether(src=src_mac, dst=dst_mac) / IP(src=src_ip, dst=dst_ip) / UDP(sport=sport, dport=dport)/data
 p = Ether(src=src_mac, dst=dst_mac) / Dot1Q(vlan=vlan)/IP(src=src_ip, dst=dst_ip) / UDP(sport=sport, dport=dport)/data
 #p = Ether(src=src_mac, dst=dst_mac) /IP(src=src_ip, dst=dst_ip) / UDP(sport=sport, dport=dport)/data
