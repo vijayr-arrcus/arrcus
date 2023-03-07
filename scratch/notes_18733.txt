@@ -1,0 +1,8 @@
+1. Creating a git fork.
+2. work flow with using git.
+3. keep your git fork updated.
+4. pull a new branch from parent fork.
+5. pull a PR.
+6. how to track your changes.
+7. reverting a commit
+8. stash commits + recover from mistakes.
