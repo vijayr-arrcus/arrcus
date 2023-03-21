@@ -1,0 +1,20 @@
+✘-INT 14:55:localhost [~]
+502 => ./a.out
+10.010073
+done with sleep
+25.000281
+done with sleep
+25.010215
+done with sleep
+25.010216
+done with sleep
+25.010273
+done with sleep
+25.010223
+done with sleep
+25.010248
+
+
+
+gcc libevent_timer2.c -L/usr/local/lib -levent  -levent_openssl
+

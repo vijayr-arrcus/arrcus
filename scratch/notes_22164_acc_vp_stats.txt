@@ -190,3 +190,11 @@ bond to acc_vp no member links
 ifmgr l2/l3
     IF_SUB_TYPE_L3/IF_SUB_TYPE_L2
 
+Network VP creation
+====================
+bcmsdk_vxlan_flow_sdk_net_vp_create
+bcmsdk_vxlan_flow_sdk_esw_l2_acc_vp_create
+bcmsdk_vxlan_flow_sdk_ltsw_acc_vp_create
+        bcm_flow_port_create
+
+bcmsdk_vxlan_flow_sdk_stats_get_counter
