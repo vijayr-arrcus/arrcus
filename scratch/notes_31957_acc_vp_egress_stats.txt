@@ -1,0 +1,7 @@
+bcmsdk_vxlan_flow_sdk_esw_l2_acc_vp_create
+      acc_vp->egress_if = egress_if;
+
+
+      ds_bcm_xgs_flow_vport_hwid_set(flow_port, acc_vp.hwid);
+      ds_bcm_xgs_flow_vport_l3egr_hwid_set(flow_port, acc_vp.egress_if);
+

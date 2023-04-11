@@ -1,0 +1,664 @@
+[2022/11/16 18:21:31.688068]**ERR**[DBF_STATS] dpal_stats_register_types: vijay 
+[2022/11/16 18:21:43.263103]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3e9
+[2022/11/16 18:21:43.650066]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3ec
+[2022/11/16 18:21:43.924278]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3ed
+[2022/11/16 18:21:44.252486]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3ee
+[2022/11/16 18:21:44.554419]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3ef
+[2022/11/16 18:21:44.975673]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3f0
+[2022/11/16 18:21:45.304076]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3f4
+[2022/11/16 18:21:45.587691]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3f5
+[2022/11/16 18:21:45.927518]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3f6
+[2022/11/16 18:21:46.243106]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3f9
+[2022/11/16 18:21:46.547521]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3fa
+[2022/11/16 18:21:46.936761]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3fb
+[2022/11/16 18:21:47.267498]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3fc
+[2022/11/16 18:21:47.580571]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3fd
+[2022/11/16 18:21:48.024094]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3fe
+[2022/11/16 18:21:48.372233]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3ff
+[2022/11/16 18:21:48.713289]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 400
+[2022/11/16 18:21:49.117741]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 401
+[2022/11/16 18:21:49.460640]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 402
+[2022/11/16 18:21:49.768769]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 403
+[2022/11/16 18:21:50.066435]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 404
+[2022/11/16 18:21:50.452240]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 405
+[2022/11/16 18:21:50.782386]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 406
+[2022/11/16 18:21:51.157195]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 407
+[2022/11/16 18:21:51.591169]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 408
+[2022/11/16 18:21:51.939558]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 409
+[2022/11/16 18:21:52.245274]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 40a
+[2022/11/16 18:21:52.539674]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 40b
+[2022/11/16 18:21:52.806368]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 40c
+[2022/11/16 18:21:52.806799]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3aa1
+[2022/11/16 18:21:53.184642]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 40d
+[2022/11/16 18:21:53.583558]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 40e
+[2022/11/16 18:21:53.917504]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 40f
+[2022/11/16 18:21:54.207986]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 410
+[2022/11/16 18:21:54.715924]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 411
+[2022/11/16 18:21:55.014831]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 412
+[2022/11/16 18:21:55.292881]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 413
+[2022/11/16 18:21:55.561796]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 414
+[2022/11/16 18:21:55.935668]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 415
+[2022/11/16 18:21:56.259777]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 416
+[2022/11/16 18:21:56.306402]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 3aa2
+[2022/11/16 18:21:56.753331]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 417
+[2022/11/16 18:21:57.142055]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 418
+[2022/11/16 18:21:57.461797]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 419
+[2022/11/16 18:21:57.717664]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 41a
+[2022/11/16 18:21:58.066663]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 41b
+[2022/11/16 18:21:58.377180]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 41c
+[2022/11/16 18:21:58.656819]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 41d
+[2022/11/16 18:21:58.960397]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 41e
+[2022/11/16 18:21:59.343595]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 41f
+[2022/11/16 18:21:59.608272]**ERR**[DBF_STATS] dpal_stats_register_instance: vijay 420
+[2022/11/16 18:21:59.692059]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 400
+[2022/11/16 18:21:59.697211]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.697253]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.697318]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 400
+[2022/11/16 18:21:59.698074]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 401
+[2022/11/16 18:21:59.702619]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.702654]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.702686]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 401
+[2022/11/16 18:21:59.704326]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 402
+[2022/11/16 18:21:59.708779]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.708812]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.708843]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 402
+[2022/11/16 18:21:59.718922]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 403
+[2022/11/16 18:21:59.723637]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.723676]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.723712]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 403
+[2022/11/16 18:21:59.725652]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 404
+[2022/11/16 18:21:59.730400]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.730438]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.730475]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 404
+[2022/11/16 18:21:59.731871]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 405
+[2022/11/16 18:21:59.736542]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.736580]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.736617]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 405
+[2022/11/16 18:21:59.738201]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 406
+[2022/11/16 18:21:59.742223]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.742257]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.742288]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 406
+[2022/11/16 18:21:59.859947]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 407
+[2022/11/16 18:21:59.864700]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.864746]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.864787]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 407
+[2022/11/16 18:21:59.864819]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 408
+[2022/11/16 18:21:59.869357]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.869387]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.869415]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 408
+[2022/11/16 18:21:59.869430]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 409
+[2022/11/16 18:21:59.872865]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.872895]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.872921]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 409
+[2022/11/16 18:21:59.872956]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40a
+[2022/11/16 18:21:59.876250]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.876279]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.876310]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40a
+[2022/11/16 18:21:59.876341]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40b
+[2022/11/16 18:21:59.879403]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.879424]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.879443]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40b
+[2022/11/16 18:21:59.880569]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40c
+[2022/11/16 18:21:59.883075]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.883103]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.883127]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40c
+[2022/11/16 18:21:59.883169]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40d
+[2022/11/16 18:21:59.885589]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.885614]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.885635]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40d
+[2022/11/16 18:21:59.907457]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40e
+[2022/11/16 18:21:59.911275]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.911327]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.911366]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40e
+[2022/11/16 18:21:59.913363]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40f
+[2022/11/16 18:21:59.917550]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.917589]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.917627]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40f
+[2022/11/16 18:21:59.918737]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 410
+[2022/11/16 18:21:59.922436]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.922481]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.922512]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 410
+[2022/11/16 18:21:59.929588]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 411
+[2022/11/16 18:21:59.933898]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.933937]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.933975]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 411
+[2022/11/16 18:21:59.947572]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 412
+[2022/11/16 18:21:59.951804]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.951843]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.951880]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 412
+[2022/11/16 18:21:59.953878]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 413
+[2022/11/16 18:21:59.958092]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.958132]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.958169]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 413
+[2022/11/16 18:21:59.959412]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 414
+[2022/11/16 18:21:59.963149]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.963181]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.963210]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 414
+[2022/11/16 18:21:59.972496]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 415
+[2022/11/16 18:21:59.976817]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.976860]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.976899]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 415
+[2022/11/16 18:21:59.982083]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 416
+[2022/11/16 18:21:59.986399]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.986441]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.986481]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 416
+[2022/11/16 18:21:59.988046]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 417
+[2022/11/16 18:21:59.992200]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:21:59.992235]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:21:59.992278]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 417
+[2022/11/16 18:21:59.998697]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 418
+[2022/11/16 18:22:00.002980]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.003035]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.003071]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 418
+[2022/11/16 18:22:00.016236]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 419
+[2022/11/16 18:22:00.031611]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.031719]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.031790]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 419
+[2022/11/16 18:22:00.034036]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41a
+[2022/11/16 18:22:00.038668]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.038710]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.038751]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41a
+[2022/11/16 18:22:00.040803]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41b
+[2022/11/16 18:22:00.044932]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.044970]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.045006]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41b
+[2022/11/16 18:22:00.048824]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41c
+[2022/11/16 18:22:00.053199]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.053240]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.053278]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41c
+[2022/11/16 18:22:00.055485]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41d
+[2022/11/16 18:22:00.059897]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.059932]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.059964]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41d
+[2022/11/16 18:22:00.075896]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41e
+[2022/11/16 18:22:00.080342]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.080383]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.080420]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41e
+[2022/11/16 18:22:00.089792]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41f
+[2022/11/16 18:22:00.094328]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.094371]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.094409]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41f
+[2022/11/16 18:22:00.159319]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 420
+[2022/11/16 18:22:00.188279]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.188338]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.188388]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 420
+[2022/11/16 18:22:00.204737]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3aa1
+[2022/11/16 18:22:00.204979]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.205007]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.205104]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3aa1
+[2022/11/16 18:22:00.205727]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3aa2
+[2022/11/16 18:22:00.205763]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.205779]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.205829]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3aa2
+[2022/11/16 18:22:00.209460]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3e9
+[2022/11/16 18:22:00.214456]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.214499]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.214546]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3e9
+[2022/11/16 18:22:00.217742]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ec
+[2022/11/16 18:22:00.222602]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.222645]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.222686]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ec
+[2022/11/16 18:22:00.228879]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ed
+[2022/11/16 18:22:00.233586]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.233636]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.233679]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ed
+[2022/11/16 18:22:00.236816]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ee
+[2022/11/16 18:22:00.241425]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.241466]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.241505]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ee
+[2022/11/16 18:22:00.244663]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ef
+[2022/11/16 18:22:00.249361]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.249401]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.249437]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ef
+[2022/11/16 18:22:00.260074]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f0
+[2022/11/16 18:22:00.264724]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.264765]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.264802]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f0
+[2022/11/16 18:22:00.271221]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f4
+[2022/11/16 18:22:00.275724]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.275764]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.275800]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f4
+[2022/11/16 18:22:00.277411]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f5
+[2022/11/16 18:22:00.281796]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.281835]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.281869]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f5
+[2022/11/16 18:22:00.283476]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f6
+[2022/11/16 18:22:00.287629]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.287667]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.287702]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f6
+[2022/11/16 18:22:00.287718]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f9
+[2022/11/16 18:22:00.291502]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.291532]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.291556]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f9
+[2022/11/16 18:22:00.291568]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fa
+[2022/11/16 18:22:00.294821]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.294851]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.294874]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fa
+[2022/11/16 18:22:00.294886]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fb
+[2022/11/16 18:22:00.298166]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.298193]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.298215]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fb
+[2022/11/16 18:22:00.298226]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fc
+[2022/11/16 18:22:00.301202]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.301223]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.301240]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fc
+[2022/11/16 18:22:00.301247]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fd
+[2022/11/16 18:22:00.303526]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.303546]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.303562]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fd
+[2022/11/16 18:22:00.303570]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fe
+[2022/11/16 18:22:00.305839]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.305859]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.305875]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fe
+[2022/11/16 18:22:00.305883]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ff
+[2022/11/16 18:22:00.308171]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:00.308191]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:00.308207]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ff
+[2022/11/16 18:22:04.762681]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 400
+[2022/11/16 18:22:04.767681]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.767727]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.767775]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 400
+[2022/11/16 18:22:04.767804]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 401
+[2022/11/16 18:22:04.772256]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.772296]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.772345]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 401
+[2022/11/16 18:22:04.772379]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 402
+[2022/11/16 18:22:04.776838]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.776877]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.776916]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 402
+[2022/11/16 18:22:04.776959]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 403
+[2022/11/16 18:22:04.780954]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.780981]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.781018]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 403
+[2022/11/16 18:22:04.781034]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 404
+[2022/11/16 18:22:04.784046]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.784073]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.784098]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 404
+[2022/11/16 18:22:04.784115]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 405
+[2022/11/16 18:22:04.787042]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.787069]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.787093]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 405
+[2022/11/16 18:22:04.787109]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 406
+[2022/11/16 18:22:04.789898]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.789917]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.789942]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 406
+[2022/11/16 18:22:04.789953]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 407
+[2022/11/16 18:22:04.792081]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.792100]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.792118]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 407
+[2022/11/16 18:22:04.792129]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 408
+[2022/11/16 18:22:04.794261]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.794281]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.794299]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 408
+[2022/11/16 18:22:04.794339]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 409
+[2022/11/16 18:22:04.796194]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.796213]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.796231]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 409
+[2022/11/16 18:22:04.796241]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40a
+[2022/11/16 18:22:04.798056]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.798075]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.798093]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40a
+[2022/11/16 18:22:04.798104]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40b
+[2022/11/16 18:22:04.799883]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.799902]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.799919]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40b
+[2022/11/16 18:22:04.799929]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40c
+[2022/11/16 18:22:04.801654]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.801672]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.801688]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40c
+[2022/11/16 18:22:04.801698]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40d
+[2022/11/16 18:22:04.803464]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.803481]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.803497]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40d
+[2022/11/16 18:22:04.803507]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40e
+[2022/11/16 18:22:04.805269]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.805288]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.805310]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40e
+[2022/11/16 18:22:04.805323]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40f
+[2022/11/16 18:22:04.807063]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.807081]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.807097]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40f
+[2022/11/16 18:22:04.807108]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 410
+[2022/11/16 18:22:04.808879]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.808897]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.808914]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 410
+[2022/11/16 18:22:04.808925]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 411
+[2022/11/16 18:22:04.810807]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.810832]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.810850]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 411
+[2022/11/16 18:22:04.810860]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 412
+[2022/11/16 18:22:04.812675]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.812693]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.812726]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 412
+[2022/11/16 18:22:04.812737]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 413
+[2022/11/16 18:22:04.814514]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.814533]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.814550]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 413
+[2022/11/16 18:22:04.814562]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 414
+[2022/11/16 18:22:04.816375]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.816394]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.816412]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 414
+[2022/11/16 18:22:04.816424]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 415
+[2022/11/16 18:22:04.818201]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.818219]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.818251]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 415
+[2022/11/16 18:22:04.818261]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 416
+[2022/11/16 18:22:04.820049]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.820066]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.820099]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 416
+[2022/11/16 18:22:04.820109]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 417
+[2022/11/16 18:22:04.821959]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.821978]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.821995]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 417
+[2022/11/16 18:22:04.822005]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 418
+[2022/11/16 18:22:04.823823]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.823842]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.823876]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 418
+[2022/11/16 18:22:04.823886]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 419
+[2022/11/16 18:22:04.825676]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.825694]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.825729]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 419
+[2022/11/16 18:22:04.825739]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41a
+[2022/11/16 18:22:04.827573]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.827591]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.827606]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41a
+[2022/11/16 18:22:04.827618]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41b
+[2022/11/16 18:22:04.829431]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.829448]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.829464]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41b
+[2022/11/16 18:22:04.829473]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41c
+[2022/11/16 18:22:04.831299]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.831337]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.831355]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41c
+[2022/11/16 18:22:04.831365]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41d
+[2022/11/16 18:22:04.833169]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.833188]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.833206]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41d
+[2022/11/16 18:22:04.833218]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41e
+[2022/11/16 18:22:04.835015]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.835037]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.835071]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41e
+[2022/11/16 18:22:04.835081]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41f
+[2022/11/16 18:22:04.836980]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.836998]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.837014]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41f
+[2022/11/16 18:22:04.837024]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 420
+[2022/11/16 18:22:04.838883]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.838902]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.838919]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 420
+[2022/11/16 18:22:04.838931]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3aa1
+[2022/11/16 18:22:04.838947]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.838957]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.838971]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3aa1
+[2022/11/16 18:22:04.838980]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3aa2
+[2022/11/16 18:22:04.838991]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.838999]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.839014]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3aa2
+[2022/11/16 18:22:04.839024]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3e9
+[2022/11/16 18:22:04.840904]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.840922]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.840954]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3e9
+[2022/11/16 18:22:04.840964]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ec
+[2022/11/16 18:22:04.842878]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.842894]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.842927]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ec
+[2022/11/16 18:22:04.842936]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ed
+[2022/11/16 18:22:04.844857]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.844876]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.844893]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ed
+[2022/11/16 18:22:04.844903]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ee
+[2022/11/16 18:22:04.846800]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.846819]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.846837]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ee
+[2022/11/16 18:22:04.846850]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ef
+[2022/11/16 18:22:04.848804]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.848823]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.848839]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ef
+[2022/11/16 18:22:04.848849]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f0
+[2022/11/16 18:22:04.850784]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.850802]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.850818]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f0
+[2022/11/16 18:22:04.850829]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f4
+[2022/11/16 18:22:04.852794]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.852812]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.852828]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f4
+[2022/11/16 18:22:04.852841]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f5
+[2022/11/16 18:22:04.854797]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.854815]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.854831]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f5
+[2022/11/16 18:22:04.854842]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f6
+[2022/11/16 18:22:04.856825]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.856842]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.856864]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f6
+[2022/11/16 18:22:04.856892]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f9
+[2022/11/16 18:22:04.858869]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.858887]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.858903]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f9
+[2022/11/16 18:22:04.858913]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fa
+[2022/11/16 18:22:04.860926]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.860946]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.860963]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fa
+[2022/11/16 18:22:04.860974]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fb
+[2022/11/16 18:22:04.862974]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.862991]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.863024]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fb
+[2022/11/16 18:22:04.863033]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fc
+[2022/11/16 18:22:04.865047]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.865065]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.865099]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fc
+[2022/11/16 18:22:04.865109]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fd
+[2022/11/16 18:22:04.867092]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.867110]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.867126]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fd
+[2022/11/16 18:22:04.867134]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fe
+[2022/11/16 18:22:04.869157]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.869176]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.869193]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fe
+[2022/11/16 18:22:04.869203]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ff
+[2022/11/16 18:22:04.871235]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:04.871254]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:04.871271]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ff
+[2022/11/16 18:22:09.804658]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 400
+[2022/11/16 18:22:09.809772]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.809821]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.809869]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 400
+[2022/11/16 18:22:09.809896]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 401
+[2022/11/16 18:22:09.814565]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.814607]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.814649]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 401
+[2022/11/16 18:22:09.814673]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 402
+[2022/11/16 18:22:09.819207]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.819246]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.819287]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 402
+[2022/11/16 18:22:09.819320]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 403
+[2022/11/16 18:22:09.822591]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.822621]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.822649]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 403
+[2022/11/16 18:22:09.822665]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 404
+[2022/11/16 18:22:09.825729]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.825758]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.825793]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 404
+[2022/11/16 18:22:09.825810]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 405
+[2022/11/16 18:22:09.828861]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.828890]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.828917]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 405
+[2022/11/16 18:22:09.828947]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 406
+[2022/11/16 18:22:09.831368]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.831390]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.831410]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 406
+[2022/11/16 18:22:09.831421]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 407
+[2022/11/16 18:22:09.833657]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.833679]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.833698]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 407
+[2022/11/16 18:22:09.833709]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 408
+[2022/11/16 18:22:09.835959]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.835981]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.836001]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 408
+[2022/11/16 18:22:09.836011]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 409
+[2022/11/16 18:22:09.837963]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.837985]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.838005]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 409
+[2022/11/16 18:22:09.838014]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40a
+[2022/11/16 18:22:09.839903]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.839923]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.839940]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40a
+[2022/11/16 18:22:09.839949]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40b
+[2022/11/16 18:22:09.841806]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.841826]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.841843]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40b
+[2022/11/16 18:22:09.841852]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40c
+[2022/11/16 18:22:09.843688]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.843708]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.843725]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40c
+[2022/11/16 18:22:09.843734]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40d
+[2022/11/16 18:22:09.845562]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.845581]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.845616]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40d
+[2022/11/16 18:22:09.845626]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40e
+[2022/11/16 18:22:09.847454]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.847473]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.847490]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40e
+[2022/11/16 18:22:09.847499]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 40f
+[2022/11/16 18:22:09.849382]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.849402]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.849420]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 40f
+[2022/11/16 18:22:09.849429]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 410
+[2022/11/16 18:22:09.851293]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.851317]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.851345]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 410
+[2022/11/16 18:22:09.851354]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 411
+[2022/11/16 18:22:09.853299]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.853320]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.853336]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 411
+[2022/11/16 18:22:09.853345]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 412
+[2022/11/16 18:22:09.855210]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.855229]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.855247]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 412
+[2022/11/16 18:22:09.855265]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 413
+[2022/11/16 18:22:09.857113]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.857131]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.857147]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 413
+[2022/11/16 18:22:09.857155]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 414
+[2022/11/16 18:22:09.858998]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.859017]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.859033]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 414
+[2022/11/16 18:22:09.859042]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 415
+[2022/11/16 18:22:09.860903]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.860921]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.860937]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 415
+[2022/11/16 18:22:09.860945]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 416
+[2022/11/16 18:22:09.862781]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.862800]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.862818]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 416
+[2022/11/16 18:22:09.862828]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 417
+[2022/11/16 18:22:09.864674]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.864691]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.864707]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 417
+[2022/11/16 18:22:09.864716]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 418
+[2022/11/16 18:22:09.866592]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.866610]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.866625]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 418
+[2022/11/16 18:22:09.866634]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 419
+[2022/11/16 18:22:09.868470]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.868502]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.868529]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 419
+[2022/11/16 18:22:09.868537]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41a
+[2022/11/16 18:22:09.870394]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.870411]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.870426]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41a
+[2022/11/16 18:22:09.870435]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41b
+[2022/11/16 18:22:09.872299]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.872332]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.872348]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41b
+[2022/11/16 18:22:09.872356]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41c
+[2022/11/16 18:22:09.874230]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.874248]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.874263]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41c
+[2022/11/16 18:22:09.874272]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41d
+[2022/11/16 18:22:09.876130]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.876148]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.876175]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41d
+[2022/11/16 18:22:09.876183]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41e
+[2022/11/16 18:22:09.878060]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.878078]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.878093]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41e
+[2022/11/16 18:22:09.878102]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 41f
+[2022/11/16 18:22:09.880063]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.880080]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.880095]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 41f
+[2022/11/16 18:22:09.880104]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 420
+[2022/11/16 18:22:09.882031]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.882048]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.882064]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 420
+[2022/11/16 18:22:09.882073]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3aa1
+[2022/11/16 18:22:09.882099]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.882107]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.882118]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3aa1
+[2022/11/16 18:22:09.882125]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3aa2
+[2022/11/16 18:22:09.882132]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.882139]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.882151]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3aa2
+[2022/11/16 18:22:09.882159]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3e9
+[2022/11/16 18:22:09.884084]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.884103]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.884120]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3e9
+[2022/11/16 18:22:09.884129]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ec
+[2022/11/16 18:22:09.886076]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.886093]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.886108]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ec
+[2022/11/16 18:22:09.886116]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ed
+[2022/11/16 18:22:09.888064]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.888081]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.888097]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ed
+[2022/11/16 18:22:09.888106]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ee
+[2022/11/16 18:22:09.890043]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.890060]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.890074]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ee
+[2022/11/16 18:22:09.890083]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ef
+[2022/11/16 18:22:09.892050]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.892067]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.892083]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ef
+[2022/11/16 18:22:09.892092]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f0
+[2022/11/16 18:22:09.894077]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.894094]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.894110]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f0
+[2022/11/16 18:22:09.894118]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f4
+[2022/11/16 18:22:09.896078]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.896095]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.896109]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f4
+[2022/11/16 18:22:09.896118]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f5
+[2022/11/16 18:22:09.898080]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.898097]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.898112]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f5
+[2022/11/16 18:22:09.898121]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f6
+[2022/11/16 18:22:09.900077]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.900093]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.900108]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f6
+[2022/11/16 18:22:09.900116]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3f9
+[2022/11/16 18:22:09.902108]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.902124]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.902139]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3f9
+[2022/11/16 18:22:09.902147]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fa
+[2022/11/16 18:22:09.904149]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.904170]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.904186]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fa
+[2022/11/16 18:22:09.904194]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fb
+[2022/11/16 18:22:09.906177]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.906193]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.906207]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fb
+[2022/11/16 18:22:09.906215]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fc
+[2022/11/16 18:22:09.908280]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.908298]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.908320]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fc
+[2022/11/16 18:22:09.908331]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fd
+[2022/11/16 18:22:09.910329]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.910346]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.910361]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fd
+[2022/11/16 18:22:09.910370]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3fe
+[2022/11/16 18:22:09.912402]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.912418]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.912433]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3fe
+[2022/11/16 18:22:09.912441]**ERR**[DBF_STATS] bcmsdk_port_stats_api: vijay 3ff
+[2022/11/16 18:22:09.914480]**ERR**[DBF_STATS] dpal_stats_publish: vijay 
+[2022/11/16 18:22:09.914496]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 
+[2022/11/16 18:22:09.914510]**ERR**[DBF_STATS] dpal_stats_publish_if: vijay 3ff
