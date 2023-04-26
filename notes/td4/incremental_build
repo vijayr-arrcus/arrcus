@@ -2,6 +2,7 @@ sudo apt-get install elfutils
 sudo apt-get install libdata-compare-perl
 sudo apt-get install libmoose-perl
 sudo apt-get install -y libnamespace-autoclean-perl
+sudo apt-get install -y libconfig-yaml-perl
 
 export KERNDIR=/usr/src/linux-headers-4.19.84-arrcus
 export LINUX_UAPI_SPLIT=1
