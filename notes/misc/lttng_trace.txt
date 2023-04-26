@@ -32,3 +32,28 @@ d:*'lttng start radtraces<do stuff>lttng stop radtracesbabeltrace ~
 
 tech-support adj-debug ipv4 debug control op on
 tech-support adj-debug ipv6 debug control op on
+
+
+2023/04/22 15:59:33.901380][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp1) state change
+[2023/04/22 15:59:33.901394][DEBUG][IFMGR] ifmgr_handle_if_create_event: interface swp1 old_op_state DOWN, new_op_state UP
+[2023/04/22 15:59:33.901409][DEBUG][IFMGR] Existing interface : 1002, swp1 old data->link_state link_down(1)
+[2023/04/22 15:59:33.901421][DEBUG][IFMGR] Existing For ifindex: 1002, swp1 new data->link_state link_up(2)
+[2023/04/22 15:59:33.901639][DEBUG][IFMGR] DEBUG: Adding INTF swp1 obj to the txlist for add event
+[2023/04/22 15:59:33.901661][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/04/22 15:59:33.901674][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp1..
+[2023/04/22 15:59:33.901684][DEBUG][IFMGR] Vijay ifmgr_l3_process_intf_event - swp1
+[2023/04/22 15:59:33.901748][DEBUG][IFMGR] VRF - default DS v4 I/F swp1 indx 1002 Route 20.20.20.2/24 Admin state:2 Link state:2 force:1 Updated
+[2023/04/22 15:59:33.901933][DEBUG][IFMGR] VRF - default DS v4 I/F swp1 indx 1002 Route 20.20.20.2/32 Admin state:2 Link state:2 force:1 Updated
+[2023/04/22 15:59:33.901973][DEBUG][IFMGR] L3 update ipv4 enable 1 index 1002 l3_info->curr_v4_cfg.enabled 1
+[2023/04/22 15:59:33.901991][DEBUG][IFMGR] L3 update ipv6 enable 1 index 1002 l3_info->curr_v6_cfg.enabled 1
+[2023/04/22 15:59:33.902003][DEBUG][IFMGR] No subinterface config exists for interface swp1
+[2023/04/22 15:59:33.902017][DEBUG][IFMGR] DEBUG1: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU:8974, ipv6_enabled: 1, parent_ifindex: 1002
+[2023/04/22 15:59:33.902032][DEBUG][IFMGR] DEBUG2: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU:8974, ipv6_enabled: 1, parent_ifindex: 1002
+[2023/04/22 15:59:33.902070][DEBUG][IFMGR] No V6 addresses have been configured on interface swp1
+[2023/04/22 15:59:33.902105][DEBUG][IFMGR] MPSC L3 TBL add/update publish succeeded for ifindex 1002, v4 mtu 8974
+[2023/04/22 15:59:33.902118][DEBUG][IFMGR] handle_netlink_up : swp1 modified ifindex1002
+[2023/04/22 15:59:33.902157][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/04/22 15:59:33.902170][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp1
+[2023/04/22 15:59:33.902183][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp1 ifmgr_main_ctxt.restarted: 0,initial_config_done:1, restart_handled:1
+[2023/04/22 15:59:33.902195][DEBUG][IFMGR] IFMGR publishing ifindex 1002 to lnx index 1002 mapping
+
