@@ -16,6 +16,8 @@ export KBP_KERNEL_DRIVER_PATH=$PWD/pkgs/sdk/src/soc/kbp/alg_kbp/xpt/pcie/device_
 export HSDK_YAML_LIB_PATH=$PWD/pkgs/YAML_0_1_7
 export YAML=${HSDK_YAML_LIB_PATH}/build/
 export ELFUTILS_DIR=/usr/include/elfutils/
+export SDK_OVERRIDE_LOCK=0
+export SDK_LOCK=0
 
 
 
@@ -51,8 +53,6 @@ debian/rules override_dh_auto_build
 
 make -f $PWD/systems/linux/user/x86-smp_generic_64-2_6/Makefile MAKE_LOCAL=$PWD/make/Make.local.xgs
 
-export SDK_OVERRIDE_LOCK=0
-export SDK_LOCK=0
 
 cp $PWD/build/linux/user/common/libsdk.so libbcm_sdk_xgs.so
 
