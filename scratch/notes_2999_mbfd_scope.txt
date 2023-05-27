@@ -1,0 +1,12 @@
+1. ifmgr -- some changes fixed in equinix-upf have to be cherry picked. --1 day.
+2. will start off with static bond, will bring in LACP later.
+3. update bfd hardware sdk drivers -- 1 day
+4. adding multicast mac to my station tcam. -- 1-2 days
+5. bcm config file changes to enable mbfd -- 1 day
+6. creating encap and associating it with each of member link sessions. -- 2-3 days/
+7. callback to handle state changes.. [already in place]
+8. FP entried to map Your Discriminator to EPID and cosq 46 -- [Already in place]
+9. stats for in/out pkts -- [ Already in place ]
+10. handling sessions states in ifmgr including min-links. [Already in place but need to verify since few changes have gone in this area]
+11. incorporating lacp and validating.. 1-2 days
+12. Unit testing.. 2-3 days.

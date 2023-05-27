@@ -36,6 +36,7 @@ int unit=0;
 int rv = 0;
 host_t.l3a_ip_addr = 0xc8010426;
 host_t.l3a_vrf = 0;
+host_t.l3a_intf = egr_obj_if;
 rv = bcm_l3_host_add(unit, &host_t);
 if (BCM_FAILURE(rv)) {
     printf(“Error in bcm_l3_route_add: %s\n”, bcm_errmsg(rv));

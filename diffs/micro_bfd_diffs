@@ -1,0 +1,574 @@
+diff --git a/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c b/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c
+index 63aa2a0833..25d373a057 100644
+--- a/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c
++++ b/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c
+@@ -13,6 +13,7 @@
+ #include "bcm_l3.h"
+ #include "bcm_vrf.h"
+ #include "bcm_fp.h"
++#include "bcm_bond.h"
+ #include <bcm/bfd.h>
+ #include <libutils/ret_code_api.h>
+ #include <dpal_plugin_helper.h>
+@@ -55,6 +56,7 @@ typedef struct bcmsdk_bfd_simple_password_object_t_ {
+ } bcmsdk_bfd_simple_password_object_t;
+ 
+ typedef struct bcmsdk_bfd_hal_session_cfg_object_t_ {
++  uint64_t parent_ifindex;
+   uint64_t session_id;
+   uint8_t session_type;
+   uint32_t vrf_id;
+@@ -170,6 +172,9 @@ bcmsdk_bfd_hal_session_cfg_object_decode(ds_bfd_hal_session_cfg_object_t *obj,
+ 
+   switch (ret_obj->session_type) {
+     case BFD_SESSION_TYPE_MICRO_UDP_IPV4:
++      ds_bfd_hal_session_cfg_object_parent_if_index_get(obj,
++                                                        &ret_obj->parent_ifindex);
++      // Deliberate fall through.
+     case BFD_SESSION_TYPE_UDP_IPV4:
+       rc = ds_bfd_hal_session_cfg_object_ipv4_params_get(obj,
+                                                         &ipv4_obj);
+@@ -193,6 +198,9 @@ bcmsdk_bfd_hal_session_cfg_object_decode(ds_bfd_hal_session_cfg_object_t *obj,
+       }
+       break;
+     case BFD_SESSION_TYPE_MICRO_UDP_IPV6:
++      ds_bfd_hal_session_cfg_object_parent_if_index_get(obj,
++                                                        &ret_obj->parent_ifindex);
++      // Deliberate fall through.
+     case BFD_SESSION_TYPE_UDP_IPV6:
+       rc = ds_bfd_hal_session_cfg_object_ipv6_params_get(obj,
+                                                         &ipv6_obj);
+@@ -295,6 +303,90 @@ bfd_session_cfg_decode_fail:
+   return false;
+ }
+ 
++static void
++bcmsdk_dump_parent_info (int unit, uint64_t parent_ifindex)
++{
++  bcm_trunk_t lid;
++  if (!bcmsdk_get_lid_from_ifindex(parent_ifindex, &lid)) {
++    LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: failed to get lid for parent ifindex %"PRId64"\n",
++                __FUNCTION__, parent_ifindex);
++    return;
++  }
++  bcmsdk_bond_memberlink_attr_dump(unit, lid);
++}
++
++static void
++bcmsdk_dump_port_info (int unit, bcm_gport_t gport)
++{
++  int rv = BCM_E_NONE;
++  bcm_port_t port = BCM_GPORT_LOCAL_GET(gport);
++  bcm_port_resource_t port_info;
++  bcm_port_resource_t_init(&port_info);
++  rv = bcm_port_resource_get(unit, port, &port_info);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: resource get returned %d \n",
++              __FUNCTION__, rv);
++  if (rv == BCM_E_NONE) {
++    LOG_DEBUG_MSG(BCM_PLUGIN_STR, "%s:port 0x%x phy_port %d\n ",
++                  __FUNCTION__,
++                  port_info.port, port_info.physical_port);
++
++  }
++}
++
++static void
++bcmsdk_dump_egress_info (int unit, bcm_if_t l3_egress_id)
++{
++  bcm_l3_egress_t egress_info;
++  int rv = BCM_E_NONE;
++  char mac_str[32];
++
++
++  bcm_l3_egress_t_init(&egress_info);
++  rv = bcm_l3_egress_get(unit, l3_egress_id, &egress_info);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s; egress get returned %d \n",
++              __FUNCTION__, rv);
++  if (rv == BCM_E_NONE) {
++    macaddr_to_str(egress_info.mac_addr, mac_str, sizeof(mac_str)-1);
++    LOG_DEBUG_MSG(BCM_PLUGIN_STR, "%s: flags %d, trunk %d mac %s intf %d\n",
++                  __FUNCTION__, egress_info.flags, egress_info.trunk, mac_str,
++                  egress_info.intf);
++  }
++}
++
++void
++bcmsdk_dump_ep_info (int unit, bcm_bfd_endpoint_info_t *ep)
++{
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: type %d\n", __FUNCTION__, ep->type);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: vrf_id %d\n", __FUNCTION__, ep->vrf_id);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: flags %d\n", __FUNCTION__, ep->flags);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: udp_src_port %d\n", __FUNCTION__, ep->udp_src_port);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: local_discr %d\n", __FUNCTION__, ep->local_discr);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: ip_ttl %d\n", __FUNCTION__, ep->ip_ttl);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: int_pri %d\n", __FUNCTION__, ep->int_pri);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: auth %d\n", __FUNCTION__, ep->auth);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: local_min_rx %d\n", __FUNCTION__, ep->local_min_rx);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: local_min_tx %d\n", __FUNCTION__, ep->local_min_tx);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: local_min_echo %d\n", __FUNCTION__, ep->local_min_echo);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: local_detect_mult %d\n", __FUNCTION__, ep->local_detect_mult);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: rx_pkt_vlan_id %d\n", __FUNCTION__, ep->rx_pkt_vlan_id);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: gport %d\n", __FUNCTION__, ep->gport);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: egress_if %d\n", __FUNCTION__, ep->egress_if);
++  if (ep->flags & BCM_BFD_ENDPOINT_IPV6) {
++    int idx = 0;
++    for (idx = 0; idx < 16; idx++) {
++      LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: src_ip6_addr[%d] 0x%x\n", __FUNCTION__,
++                  idx, ep->src_ip6_addr[idx]);
++    }
++    for (idx = 0; idx < 16; idx++) {
++      LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: dst_ip6_addr[%d] 0x%x\n", __FUNCTION__,
++                  idx, ep->dst_ip6_addr[idx]);
++    }
++  } else {
++    LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: src_ip_addr 0x%x\n", __FUNCTION__, ep->src_ip_addr);
++    LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: dst_ip_addr 0x%x\n", __FUNCTION__, ep->dst_ip_addr);
++  }
++}
++
+ static bool
+ bcmsdk_bfd_hal_session_hw_cfg_create(dpal_switch_unit_t unit,
+                               bcmsdk_bfd_hal_session_cfg_object_t *obj,
+@@ -308,7 +400,8 @@ bcmsdk_bfd_hal_session_hw_cfg_create(dpal_switch_unit_t unit,
+ 
+   if (RET_CODE_SUCCESS !=
+       bcmsdk_vrf_get(g_asic_global_ctxt.wh, obj->vrf_id, &hw_vrf_id)) {
+-    LOG_ERR_MSG(BCM_PLUGIN_STR, "%s() Unable to get the hw_vrf_id for vrf_id: %u\n", __FUNCTION__, obj->vrf_id);
++    LOG_ERR_MSG(BCM_PLUGIN_STR, "%s() Unable to get the hw_vrf_id for vrf_id: %u\n",
++                __FUNCTION__, obj->vrf_id);
+     return false;
+   }
+ 
+@@ -321,6 +414,8 @@ bcmsdk_bfd_hal_session_hw_cfg_create(dpal_switch_unit_t unit,
+     case BFD_SESSION_TYPE_MICRO_UDP_IPV4:
+       ep_info.src_ip_addr = ntohl(obj->ipv4_params.ipv4_src);
+       ep_info.dst_ip_addr = ntohl(obj->ipv4_params.ipv4_dest);
++      LOG_DEBUG_MSG(BCM_PLUGIN_STR, "%s: v4 session creation \n",
++                    __FUNCTION__);
+       break;
+     case BFD_SESSION_TYPE_UDP_IPV6:
+     case BFD_SESSION_TYPE_MICRO_UDP_IPV6:
+@@ -331,6 +426,8 @@ bcmsdk_bfd_hal_session_hw_cfg_create(dpal_switch_unit_t unit,
+                         obj->ipv6_params.ipv6_dest.s6_addr[idx];
+       }
+       ep_info.flags |= BCM_BFD_ENDPOINT_IPV6;
++      LOG_DEBUG_MSG(BCM_PLUGIN_STR, "%s: v6 session creation \n",
++                    __FUNCTION__);
+       break;
+     default:
+       return false;
+@@ -357,7 +454,7 @@ bcmsdk_bfd_hal_session_hw_cfg_create(dpal_switch_unit_t unit,
+     ep_info.local_min_tx = obj->desired_min_tx * 1000;
+   }
+   if (obj->reqd_min_rx != INVALID_BFD_REQUIRED_MIN_RX) {
+-    ep_info.local_min_rx = obj->reqd_min_rx * 1000;
++    ep_info.local_min_tx = obj->desired_min_tx * 1000;
+   }
+   if (obj->local_min_echo != INVALID_BFD_LOCAL_MIN_ECHO) {
+     ep_info.local_min_echo = obj->local_min_echo * 1000;
+@@ -369,6 +466,13 @@ bcmsdk_bfd_hal_session_hw_cfg_create(dpal_switch_unit_t unit,
+   ep_info.gport = obj->gport;
+   ep_info.egress_if = obj->l3_egress_id;
+ 
++  if (BFD_SESSION_TYPE_IS_MICRO(obj->session_type)) {
++    bcmsdk_dump_parent_info(unit, obj->parent_ifindex);
++    bcmsdk_dump_egress_info(unit, obj->l3_egress_id);
++    bcmsdk_dump_port_info(unit, obj->gport);
++    bcmsdk_dump_ep_info(unit, &ep_info);
++  }
++
+   rv = bcm_bfd_endpoint_create(unit, &ep_info);
+   LOG_DEBUG_MSG(BCM_PLUGIN_STR, "%s: bfd end point rv %d ep_id %d\n",
+                 __FUNCTION__, rv, ep_info.id);
+@@ -499,6 +603,8 @@ bcmsdk_bfd_hal_session_hw_cfg_delete(dpal_switch_unit_t unit,
+   bcm_error_t rv;
+ 
+   rv = bcm_bfd_endpoint_destroy(unit, ep);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: end point %d destroy returned %d\n",
++              __FUNCTION__, ep, rv);
+   if (BCM_FAILURE(rv)) {
+     LOG_ERR_MSG(BCM_PLUGIN_STR, "Error destroying BFD endpoint %u\n", ep);
+     return false;
+@@ -838,12 +944,15 @@ bcm_bfd_session_cfg_main_delete_cb(dpal_obj_t *obj, void *ctxt)
+ 
+   unit = dpal_plugin_get_dev_id(dh);
+   rc = ds_bcm_xgs_bfd_session_info_session_id_get(bfd_session_info_obj, &session_id);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: session id %"PRId64" \n", __FUNCTION__, session_id);
+   if (RET_CODE_SUCCESS != rc) {
+     LOG_ERR_MSG(BCM_PLUGIN_STR, "Unable to get the session id\n");
+     return RET_CODE_FAILURE;
+   }
+ 
+   ds_bcm_xgs_bfd_session_info_hw_prog_get(bfd_session_info_obj, &hw_prog);
++  LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: session id %"PRId64" hw_prog %d\n",
++              __FUNCTION__, session_id, hw_prog);
+   if (hw_prog) {
+     ds_bcm_xgs_bfd_session_info_endpoint_id_get(bfd_session_info_obj,
+                                                 (int32_t *)&endpoint_id);
+@@ -1230,6 +1339,10 @@ bcmsdk_bfd_session_cfg_object_api(dpal_obj_t *obj, dpal_obj_t *obj_old,
+ 
+   ds_bfd_hal_session_cfg_object_session_id_get(cp_bfd, &session_id);
+   ds_bfd_hal_session_cfg_object_session_type_get(cp_bfd, &session_type);
++  ds_bfd_hal_session_cfg_object_parent_if_index_get(cp_bfd,
++                                                    &l3_intf_ifindex);
++  ds_bfd_hal_session_cfg_object_if_index_get(cp_bfd,
++                                             &mem_ifindex);
+   if (optype != DPAL_OBJ_DELETE) {
+     if (BFD_SESSION_TYPE_IS_MICRO(session_type)) {
+       ds_bfd_hal_session_cfg_object_parent_if_index_get(cp_bfd,
+@@ -1261,12 +1374,20 @@ bcmsdk_bfd_session_cfg_object_api(dpal_obj_t *obj, dpal_obj_t *obj_old,
+ 
+   ds_bcm_xgs_bfd_session_info_init(&bfd_session_info);
+   ds_bcm_xgs_bfd_session_info_session_id_set(&bfd_session_info, session_id);
++  LOG_ERR_MSG(BCM_PLUGIN_STR,
++                  "%s: %sBFD bond sesionid %"PRId64" ifindex %"PRId64" member ifindex %"PRId64" session_type %s optype %d \n",
++                  __FUNCTION__, BFD_SESSION_TYPE_IS_MICRO(session_type) ? "micro ":"",
++                  session_id,
++                  l3_intf_ifindex, mem_ifindex,
++                  BFD_SESSION_TYPE_IPV4_CHECK(session_type) ? "V4": "V6", optype);
+   if (!del) {
+     ds_bcm_xgs_bfd_session_info_endpoint_id_set(&bfd_session_info, -1);
+     if (BFD_SESSION_TYPE_IS_MICRO(session_type)) {
+       // setting these to have dependancies kick in.
+-      LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: Micro BFD bond ifindex %"PRId64" member ifindex %"PRId64" \n",
+-                  __FUNCTION__, l3_intf_ifindex, mem_ifindex);
++      LOG_ERR_MSG(BCM_PLUGIN_STR,
++                  "%s: micro BFD bond ifindex %"PRId64" member ifindex %"PRId64" session_type %s \n",
++                  __FUNCTION__, l3_intf_ifindex, mem_ifindex,
++                  BFD_SESSION_TYPE_IPV4_CHECK(session_type) ? "V4": "V6");
+       ds_bcm_xgs_bfd_session_info_mac_addr_set(&bfd_session_info, &bfd_multicast_mac);
+       ds_bcm_xgs_bfd_session_info_l3intf_ifindex_set(&bfd_session_info, l3_intf_ifindex);
+       ds_bcm_xgs_bfd_session_info_if_index_set(&bfd_session_info, mem_ifindex);
+diff --git a/dpal/plugin/bcm/xgs/common/app/bcm_bond.c b/dpal/plugin/bcm/xgs/common/app/bcm_bond.c
+index 0ea99f2212..3b77e1cee8 100644
+--- a/dpal/plugin/bcm/xgs/common/app/bcm_bond.c
++++ b/dpal/plugin/bcm/xgs/common/app/bcm_bond.c
+@@ -39,7 +39,7 @@ bcmsdk_add_port_to_active_member_table (int unit, dpal_dev_h dh,
+   if (rc != RET_CODE_SUCCESS) {
+     LOG_ERR_MSG(BCM_PLUGIN_STR,
+                 "%s: failed to add active member %"PRId64" bond %"PRId64" tid %d rc %d\n",
+-                __FUNCTION__, bond_ifindex, memb_ifindex, tid, rc);
++                __FUNCTION__, memb_ifindex, bond_ifindex, tid, rc);
+     return rc;
+   }
+ 
+@@ -119,11 +119,9 @@ bcmsdk_bond_memberlink_info_get (int unit,
+   }
+   return RET_CODE_NOT_FOUND;
+ }
+-static void
++void
+ bcmsdk_bond_memberlink_attr_dump (int unit,
+-                                  uint32_t lid,
+-                                  bcm_pbmp_t active_bitmap,
+-                                  ds_bcm_xgs_bond_t *bond_pd_obj)
++                                  uint32_t lid)
+ {
+   bcm_port_t port;
+   int i = 0;
+@@ -142,9 +140,8 @@ bcmsdk_bond_memberlink_attr_dump (int unit,
+   for (i = 0; i < trunk_members_count; i++) {
+     port = trunk_members[i].gport & ~BCM_PORT_GPORT_BIT;
+     LOG_DEBUG_MSG(BCM_PLUGIN_STR,
+-                  "%s: lid %d port %d is_in_active_bmp %s egress_disabled %s\n",
++                  "%s: lid %d port %d egress_disabled %s\n",
+                   __FUNCTION__, lid, port,
+-                  BCM_PBMP_MEMBER(active_bitmap, port) ? "Yes":"No",
+                   trunk_members[i].flags & BCM_TRUNK_MEMBER_EGRESS_DISABLE ? "Yes":"No");
+   }
+ }
+@@ -536,7 +533,7 @@ bcmsdk_bond_update_handler (void *ctxt, ds_ifmgr_if_t *cp_obj,
+   }
+   LOG_DEBUG_MSG(BCM_PLUGIN_STR, "%s: success update trunk lid %d \n",
+                 __FUNCTION__, lid);
+-  bcmsdk_bond_memberlink_attr_dump(unit, lid, active_bitmap, bond_pd_obj);
++  bcmsdk_bond_memberlink_attr_dump(unit, lid);
+   return (RET_CODE_SUCCESS);
+ }
+ 
+@@ -706,7 +703,7 @@ bcmsdk_bond_create_handler (void *ctxt, ds_ifmgr_if_t *cp_obj,
+   }
+   LOG_DEBUG_MSG(BCM_PLUGIN_STR, "%s: success create trunk lid %d \n",
+                 __FUNCTION__, lid);
+-  bcmsdk_bond_memberlink_attr_dump(unit, lid, active_bitmap, bond_pd_obj);
++  bcmsdk_bond_memberlink_attr_dump(unit, lid);
+   return (RET_CODE_SUCCESS);
+ }
+ 
+diff --git a/dpal/plugin/bcm/xgs/common/app/bcm_bond.h b/dpal/plugin/bcm/xgs/common/app/bcm_bond.h
+index 7afc9ddcf6..b14a3cb85b 100644
+--- a/dpal/plugin/bcm/xgs/common/app/bcm_bond.h
++++ b/dpal/plugin/bcm/xgs/common/app/bcm_bond.h
+@@ -30,4 +30,5 @@ bcmsdk_bond_intf_api (dpal_worker_h wh,
+                       dpal_obj_t *obj_old,
+                       dpal_optype_e optype,
+                       void *ctxt);
++void bcmsdk_bond_memberlink_attr_dump(int unit, uint32_t lid);
+ #endif /* _BCM_BOND_H_ */
+diff --git a/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c b/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c
+index 8332ad1b26..3a940ae5fa 100644
+--- a/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c
++++ b/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c
+@@ -18,11 +18,180 @@
+ #include <bcm_xlate_bond.h>
+ #include <bcm_xlate_ptp.h>
+ 
++
+ extern bool bcmsdk_spawn_dev_shell();
+ extern ret_code_e bcmsdk_warmboot_shutdown(dpal_worker_h wh);
+ 
+ bcm_global_ctxt_t g_asic_global_ctxt;
+ 
++static const char* bcmsdk_cfg_get_obj_name(uint32_t obj_type)
++{
++  switch (obj_type) {
++    case DPAL_V4_ROUTE:
++      return "DPAL_V4_ROUTE";
++    case DPAL_V6_ROUTE:
++      return "DPAL_V6_ROUTE";
++    case DPAL_LABEL:
++      return "DPAL_LABEL";
++    case DPAL_NEXTHOP:
++      return "DPAL_NEXTHOP";
++
++    case DPAL_NEXTHOP_GROUP:
++      return "DPAL_NEXTHOP_GROUP";
++
++    case DPAL_IPV4_NHT_RESPS:
++      return "DPAL_IPV4_NHT_RESPS";
++    case DPAL_IPV6_NHT_RESPS:
++      return "DPAL_IPV6_NHT_RESPS";
++
++    case DPAL_INTF:
++      return "DPAL_INTF";
++
++    case DPAL_PORT_IFINDEX:
++      return "DPAL_PORT_IFINDEX";
++
++    case DPAL_VLAN:
++      return "DPAL_VLAN";
++
++    case DPAL_L3_INTF:
++      return "DPAL_L3_INTF";
++
++    case DPAL_QOS_CLASSIFIER_FILTER:
++      return "DPAL_QOS_CLASSIFIER_FILTER";
++
++    case DPAL_QOS_QUEUE:
++      return "DPAL_QOS_QUEUE";
++
++    case DPAL_QOS_MAPPING:
++      return "DPAL_QOS_MAPPING";
++
++    case DPAL_QOS_SERVICE_MAPPING:
++      return "DPAL_QOS_SERVICE_MAPPING";
++
++    case DPAL_QOS_WRED:
++      return "DPAL_QOS_WRED";
++
++    case DPAL_COPP_CLASSIFIER_FILTER:
++      return "DPAL_COPP_CLASSIFIER_FILTER";
++
++    case DPAL_QOS_POLICE:
++      return "DPAL_QOS_POLICE";
++    case DPAL_COPP_POLICE:
++      return "DPAL_COPP_POLICE";
++
++      /* SUBIF_QOS:  qos service policy should be treated same as copp */
++    case DPAL_QOS_SERVICE_POLICY:
++      return "DPAL_QOS_SERVICE_POLICY";
++    case DPAL_COPP_SERVICE_POLICY:
++      return "DPAL_COPP_SERVICE_POLICY";
++
++    case DPAL_ACL_ACE:
++      return "DPAL_ACL_ACE";
++
++    case DPAL_ACL_LIST:
++      return "DPAL_ACL_LIST";
++
++    case DPAL_ACL_TARGET:
++      return "DPAL_ACL_TARGET";
++
++    case DPAL_SFLOW_TARGET:
++      return "DPAL_SFLOW_TARGET";
++
++    case DPAL_MIRROR:
++      return "DPAL_MIRROR";
++
++    case DPAL_BFD_SESSION_CFG:
++      return "DPAL_BFD_SESSION_CFG";
++
++    case DPAL_SFP_BREAKOUT:
++      return "DPAL_SFP_BREAKOUT";
++
++    case DPAL_PLTF_SFP:
++      return "DPAL_PLTF_SFP";
++
++    case DPAL_L2F_STORM_CONTROL:
++      return "DPAL_L2F_STORM_CONTROL";
++
++    case DPAL_STP_STG:
++      return "DPAL_STP_STG";
++
++    case DPAL_STP_INTF_STATE:
++      return "DPAL_STP_INTF_STATE";
++
++    case DPAL_STP_PORTVLAN_FLUSH:
++      return "DPAL_STP_PORTVLAN_FLUSH";
++
++    case DPAL_BPDU_PUNT:
++      return "DPAL_BPDU_PUNT";
++
++    case DPAL_PORTSEC_IF:
++      return "DPAL_PORTSEC_IF";
++
++    case DPAL_HWCFG:
++      return "DPAL_HWCFG";
++    case DPAL_MMU_Q_PROF:
++      return "DPAL_MMU_Q_PROF";
++
++    case DPAL_MMU_Q_INTF_BINDING:
++      return "DPAL_MMU_Q_INTF_BINDING";
++
++    case DPAL_MMU_BST_CFG:
++      return "DPAL_MMU_BST_CFG";
++
++    case DPAL_MMU_BST_STATS_CLEAR:
++      return "DPAL_MMU_BST_STATS_CLEAR";
++
++    case DPAL_L2RIB_PORTVLAN_FLUSH:
++      return "DPAL_L2RIB_PORTVLAN_FLUSH";
++
++    case DPAL_MAC_ROUTE:
++      return "DPAL_MAC_ROUTE";
++
++    case DPAL_EVPN_NHID:
++      return "DPAL_EVPN_NHID";
++
++    case DPAL_L2NI_GLOBAL:
++      return "DPAL_L2NI_GLOBAL";
++
++    case DPAL_VMAC:
++      return "DPAL_VMAC";
++
++    case DPAL_VRF:
++      return "DPAL_VRF";
++
++    case DPAL_VXLAN_VNI:
++      return "DPAL_VXLAN_VNI";
++
++    case DPAL_TUNNELS:
++        return "DPAL_TUNNELS";
++
++    case DPAL_VXLAN_PATH:
++      return "DPAL_VXLAN_PATH";
++
++    case DPAL_IR_MBRS:
++      return "DPAL_IR_MBRS";
++
++    case DPAL_VXLAN_ACC_VP_DF:
++      return "DPAL_VXLAN_ACC_VP_DF";
++
++    case DPAL_SHG_INFO:
++      return "DPAL_SHG_INFO";
++
++    case DPAL_SYSMGR_RESTART:
++      return "DPAL_SYSMGR_RESTART";
++
++    case DPAL_REPLAY_STATUS_TABLE:
++      return "DPAL_REPLAY_STATUS_TABLE";
++
++    case DPAL_PTP_TRANSPARENT_CLOCK:
++      return "DPAL_PTP_TRANSPARENT_CLOCK";
++
++    default:
++      return "default";
++  }
++  return "invalid";
++}
++
+ static ret_code_e bcmsdk_cfg_obj(dpal_worker_h wh, dpal_obj_t *obj_new,
+ 				 dpal_obj_t *obj_old,
+ 				 dpal_optype_e optype)
+@@ -40,8 +209,8 @@ static ret_code_e bcmsdk_cfg_obj(dpal_worker_h wh, dpal_obj_t *obj_new,
+     return RET_CODE_FAILURE;
+   }
+ 
+-  LOG_DEBUG_MSG(BCM_PLUGIN_STR, "%s: Objtype id %d Optype %d\n", __func__,
+-                obj->obj_type, optype);
++  LOG_DEBUG_MSG(BCM_PLUGIN_STR, "%s: Objtype id %d(%s) Optype %d\n", __func__,
++                obj->obj_type, bcmsdk_cfg_get_obj_name(obj->obj_type), optype);
+ 
+   switch (obj->obj_type) {
+   case DPAL_V4_ROUTE:
+diff --git a/dpal/plugin/bcm/xgs/common/app/bcm_l3.c b/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+index bac9a69d90..6a4df68ec9 100644
+--- a/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
++++ b/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+@@ -853,6 +853,8 @@ retry_host_route_in_lpm:
+           }
+         }
+         sdk_host_info.l3a_vrf = vrf_hwid;
++        rc = BCM_E_NONE;
++        LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: v4 host_add \n", __FUNCTION__);
+         rc = bcm_l3_host_add(unit, &sdk_host_info);
+         /* Note on conditions handled below :
+          * - The host table is a hashtable. On a hash collision,
+@@ -893,7 +895,8 @@ retry_host_route_in_lpm:
+         }
+       } else {
+         sdk_host_info.l3a_vrf = vrf_hwid;
+-        rc = bcm_l3_host_delete(unit, &sdk_host_info);
++        rc = BCM_E_NONE;
++//        rc = bcm_l3_host_delete(unit, &sdk_host_info);
+         if (BCM_E_NONE != rc) {
+           /* Entry may have been inserted in lpm table */
+           host_route = false;
+@@ -1044,6 +1047,8 @@ retry_host_route_in_lpm:
+          *   a host table entry pointing to an ECMP group. Retry
+          *   in the LPM table in such cases as well */
+         rc = bcm_l3_host_add(unit, &sdk_host_info);
++        LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: v6 host_add \n", __FUNCTION__);
++        rc = BCM_E_NONE;
+         if (((BCM_E_FULL == rc) && (DPAL_OBJ_CREATE == optype)) ||
+             ((BCM_E_NONE != rc) && (DPAL_OBJ_UPDATE == optype)) ||
+             ((BCM_E_UNAVAIL == rc))) {
+@@ -1075,7 +1080,8 @@ retry_host_route_in_lpm:
+                                     IPV6_ALLOC_RATIO(v6_prefix.v6_pfx_len));
+         }
+       } else {
+-        rc = bcm_l3_host_delete(unit, &sdk_host_info);
++        rc = BCM_E_NONE;
++//        rc = bcm_l3_host_delete(unit, &sdk_host_info);
+         if (BCM_E_NONE != rc) {
+           /* Entry may have been inserted in lpm table */
+           host_route = false;
+diff --git a/dpal/plugin/bcm/xgs/common/app/bcm_l3_intf_mac_encap.c b/dpal/plugin/bcm/xgs/common/app/bcm_l3_intf_mac_encap.c
+index 1a2ececfc7..06836cdbbe 100644
+--- a/dpal/plugin/bcm/xgs/common/app/bcm_l3_intf_mac_encap.c
++++ b/dpal/plugin/bcm/xgs/common/app/bcm_l3_intf_mac_encap.c
+@@ -146,11 +146,14 @@ bcmsdk_xgs_l3_intf_mac_encap_create (dpal_dev_h dh, dpal_obj_t *obj)
+       return RET_CODE_FAILURE;
+   }
+ 
++  l3_egress_hwid = 100105;
++  flags |= BCM_L3_WITH_ID;
++
+   rv = bcm_l3_egress_create(unit, flags, &egr_obj, &l3_egress_hwid);
+   if (rv != BCM_E_NONE) {
+     LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: failed to create l3 egress object - %s\n",
+                 __FUNCTION__, bcm_errmsg(rv));
+-    return RET_CODE_FAILURE;
++  //  return RET_CODE_FAILURE;
+   }
+   ds_bcm_xgs_l3intf_mac_encap_hwid_set(encap_obj, l3_egress_hwid);
+ 
+@@ -179,7 +182,7 @@ bcmsdk_xgs_l3_intf_mac_encap_main_cb (dpal_obj_t *obj, dpal_obj_t *old_obj,
+       break;
+ 
+     case DPAL_OBJ_DELETE:
+-      rc = bcmsdk_xgs_l3_intf_mac_encap_delete(dh, p_obj);
++//      rc = bcmsdk_xgs_l3_intf_mac_encap_delete(dh, p_obj);
+       if (rc != RET_CODE_SUCCESS) {
+         LOG_ERR_MSG(BCM_PLUGIN_STR, "%s: failed to destroy mac encap \n",
+                     __FUNCTION__);
