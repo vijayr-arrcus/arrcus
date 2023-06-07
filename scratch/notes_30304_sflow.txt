@@ -292,3 +292,21 @@ collector=10.9.208.51 6343
 collector=127.0.0.1 6343
 rev_end=1
 
+
+sflowtool
+=========
+
+  /* get the agent address */
+  getAddress(sample, &sample->agent_addr);
+
+  /* version 5 has an agent sub-id as well */
+  if(sample->datagramVersion >= 5) {
+    sample->agentSubId = getData32(sample);
+    sf_logf_U32(sample, "agentSubId", sample->agentSubId);
+  }
+
+  sample->sequenceNo = getData32(sample);  /* this is the packet sequence number */
+  sample->sysUpTime = getData32(sample);
+  samplesInPacket = getData32(sample);
+  sf_logf(sample, "agent", printAddress(&sample->agent_addr, &buf));
+
