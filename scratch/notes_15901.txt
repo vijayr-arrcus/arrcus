@@ -1,0 +1,104 @@
+fp stat get statid=83 t=p
+fp stat get statid=84 t=p
+fp stat get statid=91 t=p
+fp stat get statid=92 t=p
+fp stat get statid=93 t=p
+fp stat get statid=95 t=p
+fp stat get statid=96 t=p
+fp stat get statid=97 t=p
+
+cint
+bcm_bfd_endpoint_stat_t ctr_info_1;
+int unit = 0;
+print bcm_bfd_endpoint_stat_get(unit, 1, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 2, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 3, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 4, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 5, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 6, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+exit;
+
+
+bcm_bfd_endpoint_info_t ep_info;
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 1, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 2, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 3, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 4, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 5, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 6, &ep_info);
+print ep_info;
+
+
+
+fp stat get statid=43 t=p
+fp stat get statid=44 t=p
+fp stat get statid=55 t=p
+fp stat get statid=56 t=p
+fp stat get statid=59 t=p
+fp stat get statid=60 t=p
+fp stat get statid=61 t=p
+fp stat get statid=62 t=p
+
+cint
+int unit = 0;
+bcm_bfd_endpoint_stat_t ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 9, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 10, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 11, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 12, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 13, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 14, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+
+
+bcm_bfd_endpoint_info_t ep_info;
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 9, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 10, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 11, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 12, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 13, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 14, &ep_info);
+print ep_info;
