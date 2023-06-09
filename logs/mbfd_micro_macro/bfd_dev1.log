@@ -1615,4 +1615,242 @@ bcm_bfd_endpoint_info_t ep_info = {
     unsigned char injected_core_id = 0 (0x00)
 }
 cint>
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0> l3 egress show
+l3 egress show
+Entry  Mac                 Vlan INTF PORT MOD MPLS_LABEL ToCpu Drop RefCount L3MC
+100002  00:00:00:00:00:00    0 16383     0    0        -1   no   no   14   no
+100003  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100004  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100005  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100006  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100007  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100008  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100009  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    2   no
+100010  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100011  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100012  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100013  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100014  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100015  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100016  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100017  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100018  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100019  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100020  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100021  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100022  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100023  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100024  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100025  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100026  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100027  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100028  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100029  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100030  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100031  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100032  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100033  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100034  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100035  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100036  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100037  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100038  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100039  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100040  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100041  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100042  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100043  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100044  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100045  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100046  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100047  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100048  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100049  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100050  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100051  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100052  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100053  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100054  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100055  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100056  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100057  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100058  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100096  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100160  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    2   no
+100161  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100162  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100163  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100164  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100165  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100166  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100167  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100168  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100169  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100170  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100171  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100172  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100173  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100174  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100175  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100176  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100177  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100178  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100179  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100180  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100181  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100182  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100183  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100184  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100185  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100186  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100187  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100188  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100189  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100190  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100191  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100192  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100193  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100194  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100195  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100196  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100197  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100198  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100199  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100200  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100201  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100202  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100203  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100204  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100205  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100206  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100207  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100208  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100209  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100411  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100412  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100413  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100414  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100415  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100416  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100417  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100418  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100419  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100420  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100421  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100422  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100423  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100424  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100425  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100426  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100427  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100428  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100429  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100430  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100431  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100432  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100433  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100434  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100435  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100436  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100437  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100438  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100439  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100440  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100441  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100442  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100443  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100444  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100445  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100446  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100447  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100448  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100449  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100450  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100451  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100452  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100453  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100454  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100455  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100456  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100457  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100458  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100459  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100460  00:00:00:00:00:00    0   -1     1t   0        -1   no   no    1   no
+100461  01:00:5e:90:00:01    0    1     2t   0        -1   no   no    0   no
+100462  00:00:00:00:00:00    0   -1   107    0        -1   no   no    2   no
+100463  d8:c4:97:d1:bb:2c    1    1     2t   0        -1   no   no    0   no
+100464  d8:c4:97:d1:bb:2c    1    1     2t   0        -1   no   no    1   no
+100465  d8:c4:97:d1:bb:2c    1    1     2t   0        -1   no   no    0   no
+BCM.0>
+BCM.0> l3 intf show
+l3 intf show
+Free L3INTF entries: 16374
+Unit  Intf  VRF Group VLAN    Source Mac     MTU TTL Tunnel InnerVlan  NATRealm
+------------------------------------------------------------------
+0     1     0     0     3966 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     2     0     0     3967 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     3     0     0     3968 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     4     0     0     3969 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     5     0     0     3970 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     6     2     0     3971 b4:a9:fc:09:f4:4f  1497 0    0     0     0
+0     7     2     0     3972 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     8     0     0     3973 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+BCM.0>
+BCM.0> trunk show
+trunk show
+Device supports 2112 trunk groups:
+  2048 front panel trunks (0..2047), 256 ports/trunk
+  64 fabric trunks (2048..2111), 64 ports/trunk
+trunk 1: (front panel, 0 ports)
+trunk 2: (front panel, 2 ports)=ce0,ce16 dlf=any mc=any ipmc=any psc=resilient (0xf)
+trunk 3: (front panel, 0 ports)
+trunk 4: (front panel, 0 ports)
+BCM.0>
+BCM.0> ps
+ps
+                 ena/        speed/ link auto    STP                  lrn  inter   max   cut   loop
+           port  link  Lns   duplex scan neg?   state   pause  discrd ops   face frame  thru?  back   encap
+       ce0( 29)  up     4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+       xe0( 33)  down   1   25G  FD   SW  No   Forward          None   FA     CR  9000    No          IEEE
+       xe1( 41)  !ena   1   25G  FD   SW  Yes  Forward          None   FA     CR  9000    No          IEEE
+       ce1( 45)  !ena   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+       ce2(  1)  down   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+       ce3(  5)  !ena   4   25G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+       ce4(  9)  !ena   4   25G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+       ce5( 13)  !ena   4   25G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+       ce6( 17)  up     4  100G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+       ce7( 21)  !ena   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+       ce8( 25)  !ena   4   25G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+       ce9( 37)  !ena   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+      ce10( 49)  !ena   4   25G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+      ce11( 53)  !ena   4  100G  FD   SW  No   Forward          None   FA    CR4  1523    No          IEEE
+      ce12( 57)  !ena   4   25G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+      ce13( 61)  down   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+      ce14( 67)  !ena   4   25G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+      ce15( 71)  !ena   4   25G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+      ce16( 75)  up     4  100G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+      ce17( 79)  down   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+      ce18( 95)  up     4  100G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+      ce19(103)  down   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+      ce20(107)  down   4   25G  FD   SW  Yes  Forward          None    A    CR4  9000    No          IEEE
+      ce21(111)  !ena   4   25G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+      ce22(115)  !ena   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+      ce23(119)  !ena   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+      ce24(123)  !ena   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+      ce25(127)  !ena   4   25G  FD   SW  Yes  Forward          None   FA    CR4  9000    No          IEEE
+      ce26( 83)  up     4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+      ce27( 87)  !ena   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+      ce28( 91)  !ena   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+      ce29( 99)  down   4  100G  FD   SW  No   Forward          None   FA    CR4  9000    No          IEEE
+       xe2( 34)  !ena   1   25G  FD   SW  No   Forward          None   FA     CR  9000    No          IEEE
+       xe3( 35)  !ena   1   25G  FD   SW  No   Forward          None   FA     CR  9000    No          IEEE
+       xe4( 36)  !ena   1   25G  FD   SW  No   Forward          None   FA     CR  9000    No          IEEE
+       xe5( 42)  !ena   1   25G  FD   SW  Yes  Forward          None   FA     CR  9000    No          IEEE
+       xe6( 43)  !ena   1   25G  FD   SW  Yes  Forward          None   FA     CR  9000    No          IEEE
+       xe7( 44)  !ena   1   25G  FD   SW  Yes  Forward          None   FA     CR  9000    No          IEEE
+BCM.0>
 

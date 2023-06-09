@@ -1868,3 +1868,43 @@ File logging to bfd_dev2_2.log stopped.
 BCM.0>
 BCM.0>
 
+BCM.0>
+BCM.0> l3 egress show
+l3 egress show
+Entry  Mac                 Vlan INTF PORT MOD MPLS_LABEL ToCpu Drop RefCount L3MC
+100002  00:00:00:00:00:00    0 16383     0    0        -1   no   no   10   no
+100003  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100004  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100009  01:00:5e:90:00:01    0    3     3t   0        -1   no   no    0   no
+100010  b4:a9:fc:09:f4:4f    3    3     3t   0        -1   no   no    0   no
+100011  b4:a9:fc:09:f4:4f    3    3     3t   0        -1   no   no    0   no
+100012  b4:a9:fc:09:f4:4f    3    3     3t   0        -1   no   no    1   no
+BCM.0>
+BCM.0> l3 intf show
+l3 intf show
+Free L3INTF entries: 16375
+Unit  Intf  VRF Group VLAN    Source Mac     MTU TTL Tunnel InnerVlan  NATRealm
+------------------------------------------------------------------
+0     1     0     0     3966 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     2     0     0     3967 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     3     0     0     3968 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     4     0     0     3969 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     5     0     0     3970 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     6     0     0     3971 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     7     0     0     3972 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+BCM.0>
+BCM.0> trunk show
+trunk show
+Device supports 2112 trunk groups:
+  2048 front panel trunks (0..2047), 256 ports/trunk
+    64 fabric trunks (2048..2111), 64 ports/trunk
+    trunk 1: (front panel, 0 ports)
+    trunk 2: (front panel, 0 ports)
+    trunk 3: (front panel, 2 ports)=ce18,ce9 dlf=any mc=any ipmc=any psc=resilient (0xf)
+    trunk 4: (front panel, 0 ports)
+    trunk 5: (front panel, 0 ports)
+    trunk 6: (front panel, 0 ports)
+    trunk 7: (front panel, 0 ports)
+    trunk 8: (front panel, 0 ports)
+    BCM.0>
+
