@@ -1,0 +1,2 @@
+1. to influence the fwding state.. BFD has to go UP... so we are tracking BFD UP to DOWN state..
+2. 
