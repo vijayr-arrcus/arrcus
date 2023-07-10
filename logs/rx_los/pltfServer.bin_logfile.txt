@@ -1,0 +1,716 @@
+###########################################################
+# Begin Logging -- Process ID: 4806
+###########################################################
+[2023/07/05 11:03:24.245497]--INFO--[msglib] ml_client_new(): created client control_conn
+[2023/07/05 11:03:24.245661]--INFO--[msglib] get_zuri: service[/system/ipc/arcos_mps_ctrl] zuri[tcp://127.0.0.1:30108] is_server[0]
+[2023/07/05 11:03:24.245800]--INFO--[msglib] do_connecting(): client: control_conn, rc = 0, errno = 11
+[2023/07/05 11:03:24.245838]--INFO--[msglib] ml_peer_signal_resolve(): client: control_conn, rc = 0
+[2023/07/05 11:03:24.245854]--INFO--[msglib] ml_peer_signal_start(): client: control_conn, rc = 0
+[2023/07/05 11:03:24.245868]--INFO--[msglib] ml_client_connect(): client control_conn, service /system/ipc/arcos_mps_ctrl ok
+[2023/07/05 11:03:24.245882]--INFO--[mpsc_lib] mpsc client[control_conn] connected of mps [/system/ipc/arcos_mps_ctrl]
+[2023/07/05 11:03:24.245941]--INFO--[mpsc_lib] [s_mpsc_ctrl_client_reg] client_id[/dist_pltfmgr/pltf_server][25] is_reg[1] rt[0] errno[11] data_uri[NULL]
+[2023/07/05 11:03:24.246203]--INFO--[mpsc_lib] [mpsc_ctrl_init] mpsc[/dist_pltfmgr/pltf_server] ctrl init to mps[/system/ipc/arcos_mps_ctrl] done!!
+[2023/07/05 11:03:28.237652]--INFO--[msglib] send_holding_queue(): client: control_conn, count = 1
+[2023/07/05 11:03:28.237879]--INFO--[mpsc_lib] [mpsc_ctrl_client_control_cb] ctrl client[system-mps_ctrl_ep][19] connection is UP
+[2023/07/05 11:03:28.237920]--INFO--[msglib] do_connected(): client: control_conn
+[2023/07/05 11:03:28.238100]--INFO--[msglib] ml_peer_signal_hello_ok(): client: control_conn, rc = 0
+[2023/07/05 11:03:28.248859]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_client_reg_ack] client_id[/dist_pltfmgr/pltf_server][25] data_uri[/system/ipc/arcos_mps_data_2]
+[2023/07/05 11:03:28.248959]--INFO--[mpsc_lib] [mpsc_data_init] mpsc [/dist_pltfmgr/pltf_server] data tepool_created[2]
+[2023/07/05 11:03:28.248992]--INFO--[mpsc_lib] [mpsc_data_init] mpsc [/dist_pltfmgr/pltf_server] cb tepool_created
+[2023/07/05 11:03:28.254989]--INFO--[msglib] ml_client_new(): created client /dist_pltfmgr/pltf_server
+[2023/07/05 11:03:28.260615]--INFO--[msglib] get_zuri: service[/system/ipc/arcos_mps_data_2] zuri[tcp://127.0.0.1:30110] is_server[0]
+[2023/07/05 11:03:28.260953]--INFO--[msglib] do_connecting(): client: /dist_pltfmgr/pltf_server, rc = 0, errno = 11
+[2023/07/05 11:03:28.261260]--INFO--[msglib] ml_peer_signal_resolve(): client: /dist_pltfmgr/pltf_server, rc = 0
+[2023/07/05 11:03:28.261284]--INFO--[msglib] ml_peer_signal_start(): client: /dist_pltfmgr/pltf_server, rc = 0
+[2023/07/05 11:03:28.263962]--INFO--[msglib] ml_client_connect(): client /dist_pltfmgr/pltf_server, service /system/ipc/arcos_mps_data_2 ok
+[2023/07/05 11:03:28.263992]--INFO--[mpsc_lib] mpsc client[/dist_pltfmgr/pltf_server] connected of mps [/system/ipc/arcos_mps_data_2]
+[2023/07/05 11:03:28.264131]--INFO--[mpsc_lib] worker data conn [/dist_pltfmgr/pltf_server] created
+[2023/07/05 11:03:28.264532]--INFO--[mpsc_lib] [mpsc_sub_register] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.264857][DEBUG][PLTF_SERVER] pltf_server_mpsc_init: Successfully initialized mps client lib
+[2023/07/05 11:03:28.264908]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-sub-reg] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[][0]
+[2023/07/05 11:03:28.265196][DEBUG][CONFDPROXY] Confd IP: 127.0.0.1
+[2023/07/05 11:03:28.265984]--INFO--[msglib] send_holding_queue(): client: /dist_pltfmgr/pltf_server, count = 0
+[2023/07/05 11:03:28.266243]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[][0] type[mps-ctrl-msg-sub-reg]
+[2023/07/05 11:03:28.269805]--INFO--[mpsc_lib] [s_mpsc_ctrl_sub_reg] client_id[/dist_pltfmgr/pltf_server][25] sequence[0] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] is_reg[1] rt[0] errno[11]
+[2023/07/05 11:03:28.269941]--INFO--[mpsc_lib] [mpsc_data_control_cb] mpsc client[/system/ipc/arcos_mps_data_2] UP, mps_reset flag[0] mpsc_p[0x55f3511038a0]
+[2023/07/05 11:03:28.271582]--INFO--[msglib] do_connected(): client: /dist_pltfmgr/pltf_server
+[2023/07/05 11:03:28.271629]--INFO--[msglib] ml_peer_signal_hello_ok(): client: /dist_pltfmgr/pltf_server, rc = 0
+[2023/07/05 11:03:28.278280]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-sub-reg] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[][0] sequence[0] status[SUCCESS]
+[2023/07/05 11:03:28.278324]--INFO--[mpsc_lib] [s_mpsc_process_sub_register] sub[/dist_pltfmgr/pltf_server/subscriber][36] registration processed
+[2023/07/05 11:03:28.278342][DEBUG][PLTF_SERVER] pltf_server_mpsc_sub_init_cb: successfully registered subscriber with mpsc lib
+[2023/07/05 11:03:28.278381]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54]
+[2023/07/05 11:03:28.278420]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] app_ctx[0x7f29fc00f8f0]
+[2023/07/05 11:03:28.278444]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.278463][DEBUG][PLTF_SERVER] pltf_server_mpsc_fan_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*
+[2023/07/05 11:03:28.278479]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54]
+[2023/07/05 11:03:28.278496]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] app_ctx[0x7f29fc010810]
+[2023/07/05 11:03:28.278804]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.278833][DEBUG][PLTF_SERVER] pltf_server_mpsc_psu_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*
+[2023/07/05 11:03:28.278900]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54]
+[2023/07/05 11:03:28.279056]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] app_ctx[0x7f29fc010f20]
+[2023/07/05 11:03:28.279083]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.279119][DEBUG][PLTF_SERVER] pltf_server_mpsc_led_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_led_tbl/standalone/*
+[2023/07/05 11:03:28.279214]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58]
+[2023/07/05 11:03:28.279520]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] app_ctx[0x7f29fc011640]
+[2023/07/05 11:03:28.279728]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.279752][DEBUG][PLTF_SERVER] pltf_server_mpsc_thermal_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*
+[2023/07/05 11:03:28.279772]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57]
+[2023/07/05 11:03:28.279830]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] app_ctx[0x7f29fc011cc0]
+[2023/07/05 11:03:28.279861]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.279882][DEBUG][PLTF_SERVER] pltf_server_mpsc_sys_eeprom_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_system_tbl/standalone/*
+[2023/07/05 11:03:28.280019]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58]
+[2023/07/05 11:03:28.280041]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] app_ctx[0x7f29fc012260]
+[2023/07/05 11:03:28.280061]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.280078][DEBUG][PLTF_SERVER] pltf_server_mpsc_sfp_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*
+[2023/07/05 11:03:28.280093]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58]
+[2023/07/05 11:03:28.280111]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] app_ctx[0x7f29fc012720]
+[2023/07/05 11:03:28.280128]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.280144][DEBUG][PLTF_SERVER] pltf_server_mpsc_sfp_dom_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*
+[2023/07/05 11:03:28.280190]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58]
+[2023/07/05 11:03:28.282252]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] app_ctx[0x7f29fc012be0]
+[2023/07/05 11:03:28.282283]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.282300][DEBUG][PLTF_SERVER] pltf_server_mpsc_host_cpu_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*
+[2023/07/05 11:03:28.284235]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61]
+[2023/07/05 11:03:28.284276]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] app_ctx[0x7f29fc0130a0]
+[2023/07/05 11:03:28.284295]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.284313][DEBUG][PLTF_SERVER] pltf_server_mpsc_host_sys_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*
+[2023/07/05 11:03:28.284807]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55]
+[2023/07/05 11:03:28.285062]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] app_ctx[0x7f29fc013560]
+[2023/07/05 11:03:28.285087]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:03:28.285120][DEBUG][PLTF_SERVER] pltf_server_mpsc_proc_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*
+[2023/07/05 11:03:28.285143][DEBUG][PLTF_SERVER] Added chassis slot with name standalone
+[2023/07/05 11:03:28.285187]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-sub-reg] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[][0]
+[2023/07/05 11:03:28.285235]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54]
+[2023/07/05 11:03:28.285254]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.285300]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[1] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.285323]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54]
+[2023/07/05 11:03:28.285342]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.285366]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[2] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.285387]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54]
+[2023/07/05 11:03:28.285403]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.285425]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[3] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.285445]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58]
+[2023/07/05 11:03:28.285461]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.285484]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[4] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.285504]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57]
+[2023/07/05 11:03:28.285673]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.286152]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[5] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.286189]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58]
+[2023/07/05 11:03:28.286210]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.286233]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[6] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.286254]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58]
+[2023/07/05 11:03:28.286270]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.286295]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[7] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.286317]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58]
+[2023/07/05 11:03:28.286333]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.286354]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[8] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.286375]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61]
+[2023/07/05 11:03:28.286390]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.286412]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[9] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.286432]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55]
+[2023/07/05 11:03:28.286979]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.287054]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[10] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.297260]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] sequence[1] status[SUCCESS]
+[2023/07/05 11:03:28.300113]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] wildcard tbl subscribe processed
+[2023/07/05 11:03:28.300166]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54]
+[2023/07/05 11:03:28.305730]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe ] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] created
+[2023/07/05 11:03:28.305782]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_server] rx datapath created
+[2023/07/05 11:03:28.305802]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_server/subscriber][36] for table[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53]
+[2023/07/05 11:03:28.305830]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.305848]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_table_subscribe_ack_recv] client_id[/dist_pltfmgr/pltf_server][25] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] wc_tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] is_subscribe[1]
+[2023/07/05 11:03:28.305879]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.305897]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.305932]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_server][25] sequence[11] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] rt[0] errno[11]
+[2023/07/05 11:03:28.307973]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] sequence[2] status[SUCCESS]
+[2023/07/05 11:03:28.308065]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] wildcard tbl subscribe processed
+[2023/07/05 11:03:28.308090]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54]
+[2023/07/05 11:03:28.308205]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe ] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] created
+[2023/07/05 11:03:28.308251]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_server] rx datapath created
+[2023/07/05 11:03:28.308311]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_server/subscriber][36] for table[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53]
+[2023/07/05 11:03:28.308375]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.308437]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_table_subscribe_ack_recv] client_id[/dist_pltfmgr/pltf_server][25] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] wc_tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] is_subscribe[1]
+[2023/07/05 11:03:28.308479]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.308497]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.308576]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_server][25] sequence[12] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] rt[0] errno[11]
+[2023/07/05 11:03:28.315158]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] sequence[3] status[SUCCESS]
+[2023/07/05 11:03:28.315206]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] wildcard tbl subscribe processed
+[2023/07/05 11:03:28.315230]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54]
+[2023/07/05 11:03:28.315650]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe ] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] created
+[2023/07/05 11:03:28.315690]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_server] rx datapath created
+[2023/07/05 11:03:28.315713]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_server/subscriber][36] for table[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53]
+[2023/07/05 11:03:28.315732]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.315746]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_table_subscribe_ack_recv] client_id[/dist_pltfmgr/pltf_server][25] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] wc_tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] is_subscribe[1]
+[2023/07/05 11:03:28.315773]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.315794]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.315828]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_server][25] sequence[13] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] rt[0] errno[11]
+[2023/07/05 11:03:28.329195]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] sequence[4] status[SUCCESS]
+[2023/07/05 11:03:28.329240]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] wildcard tbl subscribe processed
+[2023/07/05 11:03:28.329261]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58]
+[2023/07/05 11:03:28.329288]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe ] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] created
+[2023/07/05 11:03:28.329329]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_server] rx datapath created
+[2023/07/05 11:03:28.329353]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_server/subscriber][36] for table[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57]
+[2023/07/05 11:03:28.329372]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.329386]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_table_subscribe_ack_recv] client_id[/dist_pltfmgr/pltf_server][25] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] wc_tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] is_subscribe[1]
+[2023/07/05 11:03:28.329421]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.329439]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.329465]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_server][25] sequence[14] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] rt[0] errno[11]
+[2023/07/05 11:03:28.331911]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] sequence[5] status[SUCCESS]
+[2023/07/05 11:03:28.331950]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] wildcard tbl subscribe processed
+[2023/07/05 11:03:28.331970]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57]
+[2023/07/05 11:03:28.339003]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] sequence[6] status[SUCCESS]
+[2023/07/05 11:03:28.339045]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] wildcard tbl subscribe processed
+[2023/07/05 11:03:28.339067]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58]
+[2023/07/05 11:03:28.339094]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe ] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] created
+[2023/07/05 11:03:28.339131]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_server] rx datapath created
+[2023/07/05 11:03:28.339154]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_server/subscriber][36] for table[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57]
+[2023/07/05 11:03:28.339173]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.339188]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_table_subscribe_ack_recv] client_id[/dist_pltfmgr/pltf_server][25] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] wc_tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] is_subscribe[1]
+[2023/07/05 11:03:28.339214]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.339232]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.339260]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_server][25] sequence[15] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] rt[0] errno[11]
+[2023/07/05 11:03:28.342398]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] sequence[7] status[SUCCESS]
+[2023/07/05 11:03:28.342441]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] wildcard tbl subscribe processed
+[2023/07/05 11:03:28.342472]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58]
+[2023/07/05 11:03:28.343054]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe ] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] created
+[2023/07/05 11:03:28.343095]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_server] rx datapath created
+[2023/07/05 11:03:28.343114]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_server/subscriber][36] for table[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57]
+[2023/07/05 11:03:28.343137]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.343153]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_table_subscribe_ack_recv] client_id[/dist_pltfmgr/pltf_server][25] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] wc_tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] is_subscribe[1]
+[2023/07/05 11:03:28.343183]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.343199]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.343226]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_server][25] sequence[16] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] rt[0] errno[11]
+[2023/07/05 11:03:28.345915]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe ] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] created
+[2023/07/05 11:03:28.345961]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_server] rx datapath created
+[2023/07/05 11:03:28.345984]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_server/subscriber][36] for table[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56]
+[2023/07/05 11:03:28.346003]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.346018]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_table_subscribe_ack_recv] client_id[/dist_pltfmgr/pltf_server][25] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] wc_tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] is_subscribe[1]
+[2023/07/05 11:03:28.346043]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.346061]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.346086]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_server][25] sequence[17] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] rt[0] errno[11]
+[2023/07/05 11:03:28.348277]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] sequence[8] status[SUCCESS]
+[2023/07/05 11:03:28.348315]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] wildcard tbl subscribe processed
+[2023/07/05 11:03:28.348336]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58]
+[2023/07/05 11:03:28.348601]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe ] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] created
+[2023/07/05 11:03:28.348637]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_server] rx datapath created
+[2023/07/05 11:03:28.348660]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_server/subscriber][36] for table[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57]
+[2023/07/05 11:03:28.348678]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.348693]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_table_subscribe_ack_recv] client_id[/dist_pltfmgr/pltf_server][25] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] wc_tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] is_subscribe[1]
+[2023/07/05 11:03:28.348722]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.348740]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.348765]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_server][25] sequence[18] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] rt[0] errno[11]
+[2023/07/05 11:03:28.352603]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] sequence[9] status[SUCCESS]
+[2023/07/05 11:03:28.352648]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] wildcard tbl subscribe processed
+[2023/07/05 11:03:28.352669]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61]
+[2023/07/05 11:03:28.352943]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe ] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] created
+[2023/07/05 11:03:28.352986]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_server] rx datapath created
+[2023/07/05 11:03:28.353010]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_server/subscriber][36] for table[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60]
+[2023/07/05 11:03:28.353029]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.353044]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_table_subscribe_ack_recv] client_id[/dist_pltfmgr/pltf_server][25] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] wc_tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] is_subscribe[1]
+[2023/07/05 11:03:28.353070]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.353087]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.353113]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_server][25] sequence[19] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] rt[0] errno[11]
+[2023/07/05 11:03:28.359632]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] sequence[10] status[SUCCESS]
+[2023/07/05 11:03:28.359675]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] wildcard tbl subscribe processed
+[2023/07/05 11:03:28.359700]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55]
+[2023/07/05 11:03:28.359976]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe ] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] created
+[2023/07/05 11:03:28.360019]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_server] rx datapath created
+[2023/07/05 11:03:28.360039]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_server/subscriber][36] for table[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54]
+[2023/07/05 11:03:28.360062]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.360077]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_table_subscribe_ack_recv] client_id[/dist_pltfmgr/pltf_server][25] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] wc_tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] is_subscribe[1]
+[2023/07/05 11:03:28.360108]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.360125]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.360151]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_server][25] sequence[20] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] rt[0] errno[11]
+[2023/07/05 11:03:28.364011]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] sequence[11] status[SUCCESS]
+[2023/07/05 11:03:28.368194]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] sequence[12] status[SUCCESS]
+[2023/07/05 11:03:28.371688]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] sequence[13] status[SUCCESS]
+[2023/07/05 11:03:28.376890]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] sequence[14] status[SUCCESS]
+[2023/07/05 11:03:28.382496]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] sequence[15] status[SUCCESS]
+[2023/07/05 11:03:28.386157]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] sequence[16] status[SUCCESS]
+[2023/07/05 11:03:28.386479]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] sequence[17] status[SUCCESS]
+[2023/07/05 11:03:28.388377]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] sequence[18] status[SUCCESS]
+[2023/07/05 11:03:28.390537]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] sequence[19] status[SUCCESS]
+[2023/07/05 11:03:28.393665]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] sequence[20] status[SUCCESS]
+[2023/07/05 11:03:28.859051][DEBUG][CONFDPROXY] Successfully created and connected maapi socket 187 
+[2023/07/05 11:03:34.023775][DEBUG][CONFDPROXY] Created SPOINT Hash 
+[2023/07/05 11:03:34.023909][DEBUG][CONFDPROXY] Added reconnect timer for Subsock
+[2023/07/05 11:03:34.023931][DEBUG][CONFDPROXY] Added reconnect timer for oper sock
+[2023/07/05 11:03:34.024240][DEBUG][DEBUG-CLI] Starting debug thread
+[2023/07/05 11:03:34.024339][DEBUG][CONFDPROXY] Added reconnect timer for oper sock
+[2023/07/05 11:03:35.990162][DEBUG][CONFDPROXY] Successfully created Oper context, dctx=0x7f29e8001c00, oper_ctl=202, oper_data=203 maapi_sock 204 
+[2023/07/05 11:03:35.990230]--INFO--[CONFDPROXY] Successful OPER connection to Confd
+[2023/07/05 11:03:35.990258][DEBUG][DEBUG-CLI] debug_confd_init_cb(): called
+[2023/07/05 11:03:36.346005][DEBUG][CONFDPROXY] Successfully created Oper context, dctx=0x55f351ec5fe0, oper_ctl=201, oper_data=205 maapi_sock 206 
+[2023/07/05 11:03:36.346133]--INFO--[CONFDPROXY] Successful OPER connection to Confd
+[2023/07/05 11:03:36.350852][DEBUG][PLTF_SERVER] Added sfp 1 with name sfp1 in avl 
+[2023/07/05 11:03:36.351034]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:1 status:1 (ABSENT) buf:sfp1
+[2023/07/05 11:03:36.351210][DEBUG][PLTF_SERVER] Added sfp 2 with name sfp2 in avl 
+[2023/07/05 11:03:36.351265]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:2 status:1 (ABSENT) buf:sfp2
+[2023/07/05 11:03:36.351291][DEBUG][PLTF_SERVER] Added sfp 3 with name sfp3 in avl 
+[2023/07/05 11:03:36.351328]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:3 status:1 (ABSENT) buf:sfp3
+[2023/07/05 11:03:36.351353][DEBUG][PLTF_SERVER] Added sfp 4 with name sfp4 in avl 
+[2023/07/05 11:03:36.351473]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:4 status:1 (ABSENT) buf:sfp4
+[2023/07/05 11:03:36.351500][DEBUG][PLTF_SERVER] Added sfp 5 with name sfp5 in avl 
+[2023/07/05 11:03:36.351536]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:5 status:1 (ABSENT) buf:sfp5
+[2023/07/05 11:03:36.351561][DEBUG][PLTF_SERVER] Added sfp 6 with name sfp6 in avl 
+[2023/07/05 11:03:36.351749]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:6 status:1 (ABSENT) buf:sfp6
+[2023/07/05 11:03:36.351776][DEBUG][PLTF_SERVER] Added sfp 7 with name sfp7 in avl 
+[2023/07/05 11:03:36.351811]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:7 status:1 (ABSENT) buf:sfp7
+[2023/07/05 11:03:36.351847][DEBUG][PLTF_SERVER] Added sfp 8 with name sfp8 in avl 
+[2023/07/05 11:03:36.351888]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:8 status:1 (ABSENT) buf:sfp8
+[2023/07/05 11:03:36.351929][DEBUG][PLTF_SERVER] Added sfp 9 with name sfp9 in avl 
+[2023/07/05 11:03:36.351964]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:9 status:1 (ABSENT) buf:sfp9
+[2023/07/05 11:03:36.351989][DEBUG][PLTF_SERVER] Added sfp 10 with name sfp10 in avl 
+[2023/07/05 11:03:36.352023]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:10 status:1 (ABSENT) buf:sfp10
+[2023/07/05 11:03:36.352047][DEBUG][PLTF_SERVER] Added sfp 11 with name sfp11 in avl 
+[2023/07/05 11:03:36.352081]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:11 status:1 (ABSENT) buf:sfp11
+[2023/07/05 11:03:36.352162][DEBUG][PLTF_SERVER] Added sfp 12 with name sfp12 in avl 
+[2023/07/05 11:03:36.352207]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:12 status:1 (ABSENT) buf:sfp12
+[2023/07/05 11:03:36.352232][DEBUG][PLTF_SERVER] Added sfp 13 with name sfp13 in avl 
+[2023/07/05 11:03:36.352329]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:13 status:1 (ABSENT) buf:sfp13
+[2023/07/05 11:03:36.352356][DEBUG][PLTF_SERVER] Added sfp 14 with name sfp14 in avl 
+[2023/07/05 11:03:36.352390]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:14 status:1 (ABSENT) buf:sfp14
+[2023/07/05 11:03:36.352561][DEBUG][PLTF_SERVER] Added sfp 15 with name sfp15 in avl 
+[2023/07/05 11:03:36.352600]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:15 status:1 (ABSENT) buf:sfp15
+[2023/07/05 11:03:36.352624][DEBUG][PLTF_SERVER] Added sfp 16 with name sfp16 in avl 
+[2023/07/05 11:03:36.352665]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:16 status:1 (ABSENT) buf:sfp16
+[2023/07/05 11:03:36.352690][DEBUG][PLTF_SERVER] Added sfp 17 with name sfp17 in avl 
+[2023/07/05 11:03:36.352728]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:17 status:1 (ABSENT) buf:sfp17
+[2023/07/05 11:03:36.352753][DEBUG][PLTF_SERVER] Added sfp 18 with name sfp18 in avl 
+[2023/07/05 11:03:36.352788]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:18 status:1 (ABSENT) buf:sfp18
+[2023/07/05 11:03:36.352812][DEBUG][PLTF_SERVER] Added sfp 19 with name sfp19 in avl 
+[2023/07/05 11:03:36.352881]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:19 status:1 (ABSENT) buf:sfp19
+[2023/07/05 11:03:36.352906][DEBUG][PLTF_SERVER] Added sfp 20 with name sfp20 in avl 
+[2023/07/05 11:03:36.353097]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:20 status:1 (ABSENT) buf:sfp20
+[2023/07/05 11:03:36.353125][DEBUG][PLTF_SERVER] Added sfp 21 with name sfp21 in avl 
+[2023/07/05 11:03:36.353161]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:21 status:1 (ABSENT) buf:sfp21
+[2023/07/05 11:03:36.353186][DEBUG][PLTF_SERVER] Added sfp 22 with name sfp22 in avl 
+[2023/07/05 11:03:36.353221]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:22 status:1 (ABSENT) buf:sfp22
+[2023/07/05 11:03:36.353245][DEBUG][PLTF_SERVER] Added sfp 23 with name sfp23 in avl 
+[2023/07/05 11:03:36.353280]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:23 status:0 (PRESENT) buf:sfp23
+[2023/07/05 11:03:36.353305][DEBUG][PLTF_SERVER] Added sfp 24 with name sfp24 in avl 
+[2023/07/05 11:03:36.353344]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:24 status:0 (PRESENT) buf:sfp24
+[2023/07/05 11:03:36.353377][DEBUG][PLTF_SERVER] Added sfp 25 with name sfp25 in avl 
+[2023/07/05 11:03:36.353413]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:25 status:1 (ABSENT) buf:sfp25
+[2023/07/05 11:03:36.353562][DEBUG][PLTF_SERVER] Added sfp 26 with name sfp26 in avl 
+[2023/07/05 11:03:36.353601]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:26 status:1 (ABSENT) buf:sfp26
+[2023/07/05 11:03:36.353626][DEBUG][PLTF_SERVER] Added sfp 27 with name sfp27 in avl 
+[2023/07/05 11:03:36.353661]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:27 status:1 (ABSENT) buf:sfp27
+[2023/07/05 11:03:36.353686][DEBUG][PLTF_SERVER] Added sfp 28 with name sfp28 in avl 
+[2023/07/05 11:03:36.353726]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:28 status:1 (ABSENT) buf:sfp28
+[2023/07/05 11:03:36.353751][DEBUG][PLTF_SERVER] Added sfp 29 with name sfp29 in avl 
+[2023/07/05 11:03:36.353790]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:29 status:1 (ABSENT) buf:sfp29
+[2023/07/05 11:03:36.353815][DEBUG][PLTF_SERVER] Added sfp 30 with name sfp30 in avl 
+[2023/07/05 11:03:36.353858]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:30 status:1 (ABSENT) buf:sfp30
+[2023/07/05 11:03:36.353882][DEBUG][PLTF_SERVER] Added sfp 31 with name sfp31 in avl 
+[2023/07/05 11:03:36.354067]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:31 status:0 (PRESENT) buf:sfp31
+[2023/07/05 11:03:36.354095][DEBUG][PLTF_SERVER] Added sfp 32 with name sfp32 in avl 
+[2023/07/05 11:03:36.354141]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:32 status:0 (PRESENT) buf:sfp32
+[2023/07/05 11:03:36.354166][DEBUG][PLTF_SERVER] Added sfp 33 with name sfp33 in avl 
+[2023/07/05 11:03:36.354202]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:33 status:0 (PRESENT) buf:sfp33
+[2023/07/05 11:03:36.354227][DEBUG][PLTF_SERVER] Added sfp 34 with name sfp34 in avl 
+[2023/07/05 11:03:36.354260]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:34 status:1 (ABSENT) buf:sfp34
+[2023/07/05 11:03:36.354285][DEBUG][PLTF_SERVER] Added sfp 35 with name sfp35 in avl 
+[2023/07/05 11:03:36.354320]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:35 status:1 (ABSENT) buf:sfp35
+[2023/07/05 11:03:36.354344][DEBUG][PLTF_SERVER] Added sfp 36 with name sfp36 in avl 
+[2023/07/05 11:03:36.354385]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:36 status:1 (ABSENT) buf:sfp36
+[2023/07/05 11:03:36.354458][DEBUG][PLTF_SERVER] Added sfp 37 with name sfp37 in avl 
+[2023/07/05 11:03:36.354496]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:37 status:1 (ABSENT) buf:sfp37
+[2023/07/05 11:03:36.354521][DEBUG][PLTF_SERVER] Added sfp 38 with name sfp38 in avl 
+[2023/07/05 11:03:36.354653]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:38 status:1 (ABSENT) buf:sfp38
+[2023/07/05 11:03:36.428797][DEBUG][PLTF_SERVER] Added sfp 39 with name sfp39 in avl 
+[2023/07/05 11:03:36.428870]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:39 status:0 (PRESENT) buf:sfp39
+[2023/07/05 11:03:36.428901][DEBUG][PLTF_SERVER] Added sfp 40 with name sfp40 in avl 
+[2023/07/05 11:03:36.428937]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:40 status:1 (ABSENT) buf:sfp40
+[2023/07/05 11:03:36.428967][DEBUG][PLTF_SERVER] Added sfp 41 with name sfp41 in avl 
+[2023/07/05 11:03:36.429002]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:41 status:1 (ABSENT) buf:sfp41
+[2023/07/05 11:03:36.429043][DEBUG][PLTF_SERVER] Added sfp 42 with name sfp42 in avl 
+[2023/07/05 11:03:36.429086]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:42 status:1 (ABSENT) buf:sfp42
+[2023/07/05 11:03:36.429111][DEBUG][PLTF_SERVER] Added sfp 43 with name sfp43 in avl 
+[2023/07/05 11:03:36.429147]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:43 status:1 (ABSENT) buf:sfp43
+[2023/07/05 11:03:36.429172][DEBUG][PLTF_SERVER] Added sfp 44 with name sfp44 in avl 
+[2023/07/05 11:03:36.429206]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:44 status:1 (ABSENT) buf:sfp44
+[2023/07/05 11:03:36.429386][DEBUG][PLTF_SERVER] Added sfp 45 with name sfp45 in avl 
+[2023/07/05 11:03:36.429426]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:45 status:1 (ABSENT) buf:sfp45
+[2023/07/05 11:03:36.429451][DEBUG][PLTF_SERVER] Added sfp 46 with name sfp46 in avl 
+[2023/07/05 11:03:36.429493]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:46 status:1 (ABSENT) buf:sfp46
+[2023/07/05 11:03:36.429518][DEBUG][PLTF_SERVER] Added sfp 47 with name sfp47 in avl 
+[2023/07/05 11:03:36.429557]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:47 status:1 (ABSENT) buf:sfp47
+[2023/07/05 11:03:36.429583][DEBUG][PLTF_SERVER] Added sfp 48 with name sfp48 in avl 
+[2023/07/05 11:03:36.429618]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:48 status:1 (ABSENT) buf:sfp48
+[2023/07/05 11:03:36.430571][DEBUG][PLTF_SERVER] Added sfp 49 with name sfp49 in avl 
+[2023/07/05 11:03:36.430632]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:49 status:0 (PRESENT) buf:sfp49
+[2023/07/05 11:03:36.483700][DEBUG][PLTF_SERVER] Added sfp 50 with name sfp50 in avl 
+[2023/07/05 11:03:36.483807]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:50 status:0 (PRESENT) buf:sfp50
+[2023/07/05 11:03:36.539143][DEBUG][PLTF_SERVER] Added sfp 51 with name sfp51 in avl 
+[2023/07/05 11:03:36.539246]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:51 status:0 (PRESENT) buf:sfp51
+[2023/07/05 11:03:36.594423][DEBUG][PLTF_SERVER] Added sfp 52 with name sfp52 in avl 
+[2023/07/05 11:03:36.594506]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:52 status:0 (PRESENT) buf:sfp52
+[2023/07/05 11:03:36.594538][DEBUG][PLTF_SERVER] Added sfp 53 with name sfp53 in avl 
+[2023/07/05 11:03:36.594580]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:53 status:1 (ABSENT) buf:sfp53
+[2023/07/05 11:03:36.594607][DEBUG][PLTF_SERVER] Added sfp 54 with name sfp54 in avl 
+[2023/07/05 11:03:36.594649]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:54 status:1 (ABSENT) buf:sfp54
+[2023/07/05 11:03:36.647474][DEBUG][PLTF_SERVER] Added sfp 55 with name sfp55 in avl 
+[2023/07/05 11:03:36.647551]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:55 status:0 (PRESENT) buf:sfp55
+[2023/07/05 11:03:36.703284][DEBUG][PLTF_SERVER] Added sfp 56 with name sfp56 in avl 
+[2023/07/05 11:03:36.703359]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:56 status:0 (PRESENT) buf:sfp56
+[2023/07/05 11:03:38.632720][DEBUG][CONFDPROXY] Successfully created Config connections to CONFD, cfg_sub=207,  cfg_data=208
+[2023/07/05 11:03:38.632771]--INFO--[CONFDPROXY] Successful CFG connection to Confd
+[2023/07/05 11:03:38.764253][DEBUG][CONFDPROXY] Registered SPOINT list, spoint=21, key=21
+[2023/07/05 11:03:38.764327][DEBUG][CONFDPROXY] Registered SPOINT list, spoint=26, key=26
+[2023/07/05 11:03:38.764344][DEBUG][CONFDPROXY] Registered SPOINT list, spoint=32, key=32
+[2023/07/05 11:03:38.764360][DEBUG][CONFDPROXY] Registered SPOINT list, spoint=40, key=40
+[2023/07/05 11:03:38.767388][DEBUG][CONFDPROXY] Succeeded to launch full config trigger thread
+[2023/07/05 11:03:38.768416][DEBUG][CONFDPROXY] Start trigger subscription.
+[2023/07/05 11:03:38.938569][DEBUG][PLTF_SERVER] Added sfp dom 49 in avl 
+[2023/07/05 11:03:38.938649][DEBUG][PLTF_SERVER] Added sfp dom 50 in avl 
+[2023/07/05 11:03:38.938677][DEBUG][PLTF_SERVER] Added sfp dom 51 in avl 
+[2023/07/05 11:03:38.938701][DEBUG][PLTF_SERVER] Added sfp dom 52 in avl 
+[2023/07/05 11:03:38.938725][DEBUG][PLTF_SERVER] Added sfp dom 55 in avl 
+[2023/07/05 11:03:38.938748][DEBUG][PLTF_SERVER] Added sfp dom 56 in avl 
+[2023/07/05 11:03:39.977087]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp1 status: 1 
+[2023/07/05 11:03:39.977224]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:1 status:1 (ABSENT) buf:sfp1
+[2023/07/05 11:03:39.977255]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp2 status: 1 
+[2023/07/05 11:03:39.977299]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:2 status:1 (ABSENT) buf:sfp2
+[2023/07/05 11:03:39.977319]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp3 status: 1 
+[2023/07/05 11:03:39.977359]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:3 status:1 (ABSENT) buf:sfp3
+[2023/07/05 11:03:39.977380]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp4 status: 1 
+[2023/07/05 11:03:39.977419]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:4 status:1 (ABSENT) buf:sfp4
+[2023/07/05 11:03:39.977440]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp5 status: 1 
+[2023/07/05 11:03:39.977479]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:5 status:1 (ABSENT) buf:sfp5
+[2023/07/05 11:03:39.977499]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp6 status: 1 
+[2023/07/05 11:03:39.977540]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:6 status:1 (ABSENT) buf:sfp6
+[2023/07/05 11:03:39.977560]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp7 status: 1 
+[2023/07/05 11:03:39.977600]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:7 status:1 (ABSENT) buf:sfp7
+[2023/07/05 11:03:39.977620]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp8 status: 1 
+[2023/07/05 11:03:39.977660]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:8 status:1 (ABSENT) buf:sfp8
+[2023/07/05 11:03:39.977680]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp9 status: 1 
+[2023/07/05 11:03:39.977719]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:9 status:1 (ABSENT) buf:sfp9
+[2023/07/05 11:03:39.977739]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp10 status: 1 
+[2023/07/05 11:03:39.977778]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:10 status:1 (ABSENT) buf:sfp10
+[2023/07/05 11:03:39.977799]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp11 status: 1 
+[2023/07/05 11:03:39.977847]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:11 status:1 (ABSENT) buf:sfp11
+[2023/07/05 11:03:39.977868]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp12 status: 1 
+[2023/07/05 11:03:39.977908]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:12 status:1 (ABSENT) buf:sfp12
+[2023/07/05 11:03:39.977946]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp13 status: 1 
+[2023/07/05 11:03:39.977986]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:13 status:1 (ABSENT) buf:sfp13
+[2023/07/05 11:03:39.978006]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp14 status: 1 
+[2023/07/05 11:03:39.978046]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:14 status:1 (ABSENT) buf:sfp14
+[2023/07/05 11:03:39.978066]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp15 status: 1 
+[2023/07/05 11:03:39.978105]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:15 status:1 (ABSENT) buf:sfp15
+[2023/07/05 11:03:39.978125]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp16 status: 1 
+[2023/07/05 11:03:39.978164]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:16 status:1 (ABSENT) buf:sfp16
+[2023/07/05 11:03:39.978185]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp17 status: 1 
+[2023/07/05 11:03:39.978224]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:17 status:1 (ABSENT) buf:sfp17
+[2023/07/05 11:03:39.978244]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp18 status: 1 
+[2023/07/05 11:03:39.978284]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:18 status:1 (ABSENT) buf:sfp18
+[2023/07/05 11:03:39.978304]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp19 status: 1 
+[2023/07/05 11:03:39.978343]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:19 status:1 (ABSENT) buf:sfp19
+[2023/07/05 11:03:39.978363]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp20 status: 1 
+[2023/07/05 11:03:39.978402]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:20 status:1 (ABSENT) buf:sfp20
+[2023/07/05 11:03:39.978422]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp21 status: 1 
+[2023/07/05 11:03:39.978462]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:21 status:1 (ABSENT) buf:sfp21
+[2023/07/05 11:03:39.978482]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp22 status: 1 
+[2023/07/05 11:03:39.978522]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:22 status:1 (ABSENT) buf:sfp22
+[2023/07/05 11:03:39.978542]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp23 status: 0 
+[2023/07/05 11:03:39.978581]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:23 status:0 (PRESENT) buf:sfp23
+[2023/07/05 11:03:39.978602]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp24 status: 0 
+[2023/07/05 11:03:39.978641]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:24 status:0 (PRESENT) buf:sfp24
+[2023/07/05 11:03:39.978662]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp25 status: 1 
+[2023/07/05 11:03:39.978701]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:25 status:1 (ABSENT) buf:sfp25
+[2023/07/05 11:03:39.978721]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp26 status: 1 
+[2023/07/05 11:03:39.978761]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:26 status:1 (ABSENT) buf:sfp26
+[2023/07/05 11:03:39.978781]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp27 status: 1 
+[2023/07/05 11:03:39.978826]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:27 status:1 (ABSENT) buf:sfp27
+[2023/07/05 11:03:39.978854]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp28 status: 1 
+[2023/07/05 11:03:39.978894]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:28 status:1 (ABSENT) buf:sfp28
+[2023/07/05 11:03:39.978915]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp29 status: 1 
+[2023/07/05 11:03:39.978954]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:29 status:1 (ABSENT) buf:sfp29
+[2023/07/05 11:03:39.978974]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp30 status: 1 
+[2023/07/05 11:03:39.979013]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:30 status:1 (ABSENT) buf:sfp30
+[2023/07/05 11:03:39.979034]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp31 status: 0 
+[2023/07/05 11:03:39.979073]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:31 status:0 (PRESENT) buf:sfp31
+[2023/07/05 11:03:39.979093]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp32 status: 0 
+[2023/07/05 11:03:39.979133]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:32 status:0 (PRESENT) buf:sfp32
+[2023/07/05 11:03:39.979153]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp33 status: 0 
+[2023/07/05 11:03:39.979193]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:33 status:0 (PRESENT) buf:sfp33
+[2023/07/05 11:03:39.979213]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp34 status: 1 
+[2023/07/05 11:03:39.979253]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:34 status:1 (ABSENT) buf:sfp34
+[2023/07/05 11:03:39.979273]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp35 status: 1 
+[2023/07/05 11:03:39.979312]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:35 status:1 (ABSENT) buf:sfp35
+[2023/07/05 11:03:39.979332]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp36 status: 1 
+[2023/07/05 11:03:39.979372]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:36 status:1 (ABSENT) buf:sfp36
+[2023/07/05 11:03:39.979392]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp37 status: 1 
+[2023/07/05 11:03:39.979432]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:37 status:1 (ABSENT) buf:sfp37
+[2023/07/05 11:03:39.979452]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp38 status: 1 
+[2023/07/05 11:03:39.979492]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:38 status:1 (ABSENT) buf:sfp38
+[2023/07/05 11:03:39.979512]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp39 status: 0 
+[2023/07/05 11:03:39.979552]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:39 status:0 (PRESENT) buf:sfp39
+[2023/07/05 11:03:39.979572]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp40 status: 1 
+[2023/07/05 11:03:39.979612]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:40 status:1 (ABSENT) buf:sfp40
+[2023/07/05 11:03:39.979632]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp41 status: 1 
+[2023/07/05 11:03:39.979672]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:41 status:1 (ABSENT) buf:sfp41
+[2023/07/05 11:03:39.979693]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp42 status: 1 
+[2023/07/05 11:03:39.979741]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:42 status:1 (ABSENT) buf:sfp42
+[2023/07/05 11:03:39.979761]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp43 status: 1 
+[2023/07/05 11:03:39.979801]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:43 status:1 (ABSENT) buf:sfp43
+[2023/07/05 11:03:39.979827]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp44 status: 1 
+[2023/07/05 11:03:39.979868]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:44 status:1 (ABSENT) buf:sfp44
+[2023/07/05 11:03:39.979889]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp45 status: 1 
+[2023/07/05 11:03:39.979928]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:45 status:1 (ABSENT) buf:sfp45
+[2023/07/05 11:03:39.979948]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp46 status: 1 
+[2023/07/05 11:03:39.979987]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:46 status:1 (ABSENT) buf:sfp46
+[2023/07/05 11:03:39.980007]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp47 status: 1 
+[2023/07/05 11:03:39.980046]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:47 status:1 (ABSENT) buf:sfp47
+[2023/07/05 11:03:39.980066]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp48 status: 1 
+[2023/07/05 11:03:39.980106]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:48 status:1 (ABSENT) buf:sfp48
+[2023/07/05 11:03:39.980126]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp49 status: 0 
+[2023/07/05 11:03:39.980165]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:49 status:0 (PRESENT) buf:sfp49
+[2023/07/05 11:03:39.980185]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp50 status: 0 
+[2023/07/05 11:03:39.980224]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:50 status:0 (PRESENT) buf:sfp50
+[2023/07/05 11:03:39.980244]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp51 status: 0 
+[2023/07/05 11:03:39.980283]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:51 status:0 (PRESENT) buf:sfp51
+[2023/07/05 11:03:39.980303]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp52 status: 0 
+[2023/07/05 11:03:39.980343]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:52 status:0 (PRESENT) buf:sfp52
+[2023/07/05 11:03:39.980363]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp53 status: 1 
+[2023/07/05 11:03:39.980402]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:53 status:1 (ABSENT) buf:sfp53
+[2023/07/05 11:03:39.980423]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp54 status: 1 
+[2023/07/05 11:03:39.980462]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:54 status:1 (ABSENT) buf:sfp54
+[2023/07/05 11:03:39.980482]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp55 status: 0 
+[2023/07/05 11:03:39.980521]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:55 status:0 (PRESENT) buf:sfp55
+[2023/07/05 11:03:39.980541]--INFO--[PLTF_SERVER] pltf_server_generate_all_traps() SFP trap : sfp56 status: 0 
+[2023/07/05 11:03:39.980581]--INFO--[PLTF_SERVER] pltf_server_generate_sfp_trap arrcusEntitySFPNotification sent with rc = 0 for id:56 status:0 (PRESENT) buf:sfp56
+[2023/07/05 11:03:39.981404][DEBUG][CONFDPROXY] Called Config Handler, read socket=208, result=0
+[2023/07/05 11:03:39.989864][DEBUG][CONFDPROXY] Called Config Handler, read socket=208, result=0
+[2023/07/05 11:03:39.997850][DEBUG][CONFDPROXY] Called Config Handler, read socket=208, result=0
+[2023/07/05 11:03:40.005274][DEBUG][CONFDPROXY] Called Config Handler, read socket=208, result=0
+[2023/07/05 11:03:40.008039][DEBUG][CONFDPROXY] Done trigger subscription.
+[2023/07/05 11:03:58.282312]--INFO--[mpsc_lib] [s_mpsc_timer_cb] client_id[/dist_pltfmgr/pltf_server][25] eof sent [rt[0] errno[11]]
+[2023/07/05 11:04:00.973927][DEBUG][PLTF_SERVER] Added eeprom 0 with name eeprom0 in avl 
+[2023/07/05 11:04:01.010994][DEBUG][PLTF_SERVER] Added cpu 0 with name cpu0 in avl 
+[2023/07/05 11:04:01.077093][DEBUG][PLTF_SERVER] Added fan 0 with name fan0 in avl 
+[2023/07/05 11:04:01.077213]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:0 status:0 (PRESENT) desc:fan1_inlet buf:fan0
+[2023/07/05 11:04:01.078949][DEBUG][PLTF_SERVER] Added fan 1 with name fan1 in avl 
+[2023/07/05 11:04:01.078998]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:1 status:0 (PRESENT) desc:fan1_outlet buf:fan1
+[2023/07/05 11:04:01.080714][DEBUG][PLTF_SERVER] Added fan 2 with name fan2 in avl 
+[2023/07/05 11:04:01.080761]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:2 status:0 (PRESENT) desc:fan2_inlet buf:fan2
+[2023/07/05 11:04:01.082466][DEBUG][PLTF_SERVER] Added fan 3 with name fan3 in avl 
+[2023/07/05 11:04:01.082513]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:3 status:0 (PRESENT) desc:fan2_outlet buf:fan3
+[2023/07/05 11:04:01.084217][DEBUG][PLTF_SERVER] Added fan 4 with name fan4 in avl 
+[2023/07/05 11:04:01.084264]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:4 status:0 (PRESENT) desc:fan3_inlet buf:fan4
+[2023/07/05 11:04:01.085968][DEBUG][PLTF_SERVER] Added fan 5 with name fan5 in avl 
+[2023/07/05 11:04:01.086015]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:5 status:0 (PRESENT) desc:fan3_outlet buf:fan5
+[2023/07/05 11:04:01.087717][DEBUG][PLTF_SERVER] Added fan 6 with name fan6 in avl 
+[2023/07/05 11:04:01.087764]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:6 status:0 (PRESENT) desc:fan4_inlet buf:fan6
+[2023/07/05 11:04:01.089466][DEBUG][PLTF_SERVER] Added fan 7 with name fan7 in avl 
+[2023/07/05 11:04:01.089512]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:7 status:0 (PRESENT) desc:fan4_outlet buf:fan7
+[2023/07/05 11:04:01.091214][DEBUG][PLTF_SERVER] Added fan 8 with name fan8 in avl 
+[2023/07/05 11:04:01.091261]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:8 status:0 (PRESENT) desc:fan5_inlet buf:fan8
+[2023/07/05 11:04:01.092963][DEBUG][PLTF_SERVER] Added fan 9 with name fan9 in avl 
+[2023/07/05 11:04:01.093009]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:9 status:0 (PRESENT) desc:fan5_outlet buf:fan9
+[2023/07/05 11:04:01.094705][DEBUG][PLTF_SERVER] Added fan 10 with name fan10 in avl 
+[2023/07/05 11:04:01.094755]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:10 status:0 (PRESENT) desc:fan6_inlet buf:fan10
+[2023/07/05 11:04:01.097924][DEBUG][PLTF_SERVER] Added fan 11 with name fan11 in avl 
+[2023/07/05 11:04:01.097974]--INFO--[PLTF_SERVER] pltf_server_generate_fan_trap arrcusEntityFanNotification sent with rc = 0 for id:11 status:0 (PRESENT) desc:fan6_outlet buf:fan11
+[2023/07/05 11:04:01.098990][DEBUG][PLTF_SERVER] Added thermal 0 with name thermal0 in avl cur_temp:26500
+[2023/07/05 11:04:01.099980][DEBUG][PLTF_SERVER] Added thermal 1 with name thermal1 in avl cur_temp:28500
+[2023/07/05 11:04:01.102174][DEBUG][PLTF_SERVER] Added thermal 2 with name thermal2 in avl cur_temp:25000
+[2023/07/05 11:04:01.104383][DEBUG][PLTF_SERVER] Added thermal 3 with name thermal3 in avl cur_temp:24500
+[2023/07/05 11:04:01.106602][DEBUG][PLTF_SERVER] Added thermal 4 with name thermal4 in avl cur_temp:25500
+[2023/07/05 11:04:01.108796][DEBUG][PLTF_SERVER] Added thermal 5 with name thermal5 in avl cur_temp:25000
+[2023/07/05 11:04:01.110999][DEBUG][PLTF_SERVER] Added thermal 6 with name thermal6 in avl cur_temp:22500
+[2023/07/05 11:04:01.120126]--INFO--[PLTF_SERVER] Added psu 0 with name psu0 desc Quanta IX8A RPSU-1 status 1 in avl 
+[2023/07/05 11:04:01.120186]--INFO--[PLTF_SERVER] pltf_server_generate_psu_trap arrcusEntityPSUNotification sent with rc = 0 for id:0 status:1 (ABSENT) desc:Quanta IX8A RPSU-1 buf:psu0
+[2023/07/05 11:04:01.129438][DEBUG][PLTF_SERVER] Added led 0 with name led0 in avl 
+[2023/07/05 11:04:01.129475]--INFO--[PLTF_SERVER] Added psu 1 with name psu1 desc Quanta IX8A RPSU-2 status 0 in avl 
+[2023/07/05 11:04:01.129523]--INFO--[PLTF_SERVER] pltf_server_generate_psu_trap arrcusEntityPSUNotification sent with rc = 0 for id:1 status:0 (PRESENT) desc:Quanta IX8A RPSU-2 buf:psu1
+[2023/07/05 11:04:03.341562][DEBUG][PLTF_SERVER] Added proc 0 with name process0 in avl 
+[2023/07/05 11:04:03.374445][DEBUG][PLTF_SERVER] Added proc 1 with name process1 in avl 
+[2023/07/05 11:04:03.407351][DEBUG][PLTF_SERVER] Added proc 2 with name process2 in avl 
+[2023/07/05 11:04:03.440422][DEBUG][PLTF_SERVER] Added proc 3 with name process3 in avl 
+[2023/07/05 11:04:03.473496][DEBUG][PLTF_SERVER] Added proc 4 with name process4 in avl 
+[2023/07/05 11:04:03.506917][DEBUG][PLTF_SERVER] Added proc 5 with name process5 in avl 
+[2023/07/05 11:04:03.543009][DEBUG][PLTF_SERVER] Added proc 6 with name process6 in avl 
+[2023/07/05 11:04:03.576312][DEBUG][PLTF_SERVER] Added proc 7 with name process7 in avl 
+[2023/07/05 11:04:03.609627][DEBUG][PLTF_SERVER] Added proc 8 with name process8 in avl 
+[2023/07/05 11:04:03.642877][DEBUG][PLTF_SERVER] Added proc 9 with name process9 in avl 
+[2023/07/05 11:04:03.676031][DEBUG][PLTF_SERVER] Added proc 10 with name process10 in avl 
+[2023/07/05 11:04:03.708990][DEBUG][PLTF_SERVER] Added proc 11 with name process11 in avl 
+[2023/07/05 11:04:03.743491][DEBUG][PLTF_SERVER] Added proc 12 with name process12 in avl 
+[2023/07/05 11:04:03.776977][DEBUG][PLTF_SERVER] Added proc 13 with name process13 in avl 
+[2023/07/05 11:04:03.810480][DEBUG][PLTF_SERVER] Added proc 14 with name process14 in avl 
+[2023/07/05 11:04:03.843386][DEBUG][PLTF_SERVER] Added proc 15 with name process15 in avl 
+[2023/07/05 11:04:03.876705][DEBUG][PLTF_SERVER] Added proc 16 with name process16 in avl 
+[2023/07/05 11:04:03.909842][DEBUG][PLTF_SERVER] Added proc 17 with name process17 in avl 
+[2023/07/05 11:04:03.919114][DEBUG][PLTF_SERVER] Added proc 18 with name process18 in avl 
+[2023/07/05 11:04:03.928698][DEBUG][PLTF_SERVER] Added proc 19 with name process19 in avl 
+[2023/07/05 11:04:03.962018][DEBUG][PLTF_SERVER] Added proc 20 with name process20 in avl 
+[2023/07/05 11:04:03.996359][DEBUG][PLTF_SERVER] Added proc 21 with name process21 in avl 
+[2023/07/05 11:04:04.029594][DEBUG][PLTF_SERVER] Added proc 22 with name process22 in avl 
+[2023/07/05 11:04:05.033899][DEBUG][PLTF_SERVER] Added hostsys 0 with name system0 in avl 
+[2023/07/05 11:18:56.066901][DEBUG][PLTF_SERVER] pltf_server_main_sigint_handler events:8
+[2023/07/05 11:18:56.067755][DEBUG][CONFDPROXY] Exited full config trigger thread
+###########################################################
+# Begin Logging -- Process ID: 19453
+###########################################################
+[2023/07/05 11:22:19.366096]--INFO--[msglib] ml_client_new(): created client control_conn
+[2023/07/05 11:22:19.366245]--INFO--[msglib] get_zuri: service[/system/ipc/arcos_mps_ctrl] zuri[tcp://127.0.0.1:30108] is_server[0]
+[2023/07/05 11:22:19.366537]--INFO--[msglib] do_connecting(): client: control_conn, rc = 0, errno = 11
+[2023/07/05 11:22:19.366564]--INFO--[msglib] ml_peer_signal_resolve(): client: control_conn, rc = 0
+[2023/07/05 11:22:19.366652]--INFO--[msglib] ml_peer_signal_start(): client: control_conn, rc = 0
+[2023/07/05 11:22:19.366667]--INFO--[msglib] ml_client_connect(): client control_conn, service /system/ipc/arcos_mps_ctrl ok
+[2023/07/05 11:22:19.366769]--INFO--[mpsc_lib] mpsc client[control_conn] connected of mps [/system/ipc/arcos_mps_ctrl]
+[2023/07/05 11:22:19.366923]--INFO--[mpsc_lib] [s_mpsc_ctrl_client_reg] client_id[/dist_pltfmgr/pltf_server][25] is_reg[1] rt[0] errno[11] data_uri[NULL]
+[2023/07/05 11:22:19.367199]--INFO--[mpsc_lib] [mpsc_ctrl_init] mpsc[/dist_pltfmgr/pltf_server] ctrl init to mps[/system/ipc/arcos_mps_ctrl] done!!
+[2023/07/05 11:22:22.951122]--INFO--[msglib] send_holding_queue(): client: control_conn, count = 1
+[2023/07/05 11:22:22.952290]--INFO--[mpsc_lib] [mpsc_ctrl_client_control_cb] ctrl client[system-mps_ctrl_ep][19] connection is UP
+[2023/07/05 11:22:22.952918]--INFO--[msglib] do_connected(): client: control_conn
+[2023/07/05 11:22:22.953018]--INFO--[msglib] ml_peer_signal_hello_ok(): client: control_conn, rc = 0
+[2023/07/05 11:22:22.962649]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_client_reg_ack] client_id[/dist_pltfmgr/pltf_server][25] data_uri[/system/ipc/arcos_mps_data_1]
+[2023/07/05 11:22:22.963297]--INFO--[mpsc_lib] [mpsc_data_init] mpsc [/dist_pltfmgr/pltf_server] data tepool_created[2]
+[2023/07/05 11:22:22.963516]--INFO--[mpsc_lib] [mpsc_data_init] mpsc [/dist_pltfmgr/pltf_server] cb tepool_created
+[2023/07/05 11:22:22.965089]--INFO--[msglib] ml_client_new(): created client /dist_pltfmgr/pltf_server
+[2023/07/05 11:22:22.979885]--INFO--[msglib] get_zuri: service[/system/ipc/arcos_mps_data_1] zuri[tcp://127.0.0.1:30109] is_server[0]
+[2023/07/05 11:22:22.980169]--INFO--[msglib] do_connecting(): client: /dist_pltfmgr/pltf_server, rc = 0, errno = 11
+[2023/07/05 11:22:22.980466]--INFO--[msglib] ml_peer_signal_resolve(): client: /dist_pltfmgr/pltf_server, rc = 0
+[2023/07/05 11:22:22.980516]--INFO--[msglib] ml_peer_signal_start(): client: /dist_pltfmgr/pltf_server, rc = 0
+[2023/07/05 11:22:22.980610]--INFO--[msglib] ml_client_connect(): client /dist_pltfmgr/pltf_server, service /system/ipc/arcos_mps_data_1 ok
+[2023/07/05 11:22:22.980791]--INFO--[mpsc_lib] mpsc client[/dist_pltfmgr/pltf_server] connected of mps [/system/ipc/arcos_mps_data_1]
+[2023/07/05 11:22:22.980844]--INFO--[mpsc_lib] worker data conn [/dist_pltfmgr/pltf_server] created
+[2023/07/05 11:22:22.980897]--INFO--[msglib] send_holding_queue(): client: /dist_pltfmgr/pltf_server, count = 0
+[2023/07/05 11:22:22.981023]--INFO--[mpsc_lib] [mpsc_sub_register] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.981141]--INFO--[mpsc_lib] [mpsc_data_control_cb] mpsc client[/system/ipc/arcos_mps_data_1] UP, mps_reset flag[0] mpsc_p[0x55d1d6b838a0]
+[2023/07/05 11:22:22.981218][DEBUG][PLTF_SERVER] pltf_server_mpsc_init: Successfully initialized mps client lib
+[2023/07/05 11:22:22.981259]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-sub-reg] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[][0]
+[2023/07/05 11:22:22.981310][DEBUG][CONFDPROXY] Confd IP: 127.0.0.1
+[2023/07/05 11:22:22.981426]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[][0] type[mps-ctrl-msg-sub-reg]
+[2023/07/05 11:22:22.981542]--INFO--[mpsc_lib] [s_mpsc_ctrl_sub_reg] client_id[/dist_pltfmgr/pltf_server][25] sequence[0] sub_id[/dist_pltfmgr/pltf_server/subscriber][36] is_reg[1] rt[0] errno[11]
+[2023/07/05 11:22:22.982226]--INFO--[msglib] do_connected(): client: /dist_pltfmgr/pltf_server
+[2023/07/05 11:22:22.982252]--INFO--[msglib] ml_peer_signal_hello_ok(): client: /dist_pltfmgr/pltf_server, rc = 0
+[2023/07/05 11:22:22.987216]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-sub-reg] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[][0] sequence[0] status[SUCCESS]
+[2023/07/05 11:22:22.987262]--INFO--[mpsc_lib] [s_mpsc_process_sub_register] sub[/dist_pltfmgr/pltf_server/subscriber][36] registration processed
+[2023/07/05 11:22:22.987334][DEBUG][PLTF_SERVER] pltf_server_mpsc_sub_init_cb: successfully registered subscriber with mpsc lib
+[2023/07/05 11:22:22.987739]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54]
+[2023/07/05 11:22:22.987860]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] app_ctx[0x7f5ac800f8f0]
+[2023/07/05 11:22:22.987937]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.987989][DEBUG][PLTF_SERVER] pltf_server_mpsc_fan_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*
+[2023/07/05 11:22:22.988007]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54]
+[2023/07/05 11:22:22.988025]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] app_ctx[0x7f5ac8010810]
+[2023/07/05 11:22:22.988082]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.988164][DEBUG][PLTF_SERVER] pltf_server_mpsc_psu_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*
+[2023/07/05 11:22:22.988218]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54]
+[2023/07/05 11:22:22.988341]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] app_ctx[0x7f5ac8010f20]
+[2023/07/05 11:22:22.988429]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.988473][DEBUG][PLTF_SERVER] pltf_server_mpsc_led_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_led_tbl/standalone/*
+[2023/07/05 11:22:22.988494]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58]
+[2023/07/05 11:22:22.988556]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] app_ctx[0x7f5ac8011640]
+[2023/07/05 11:22:22.988639]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.988659][DEBUG][PLTF_SERVER] pltf_server_mpsc_thermal_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*
+[2023/07/05 11:22:22.988674]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57]
+[2023/07/05 11:22:22.988701]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] app_ctx[0x7f5ac8011cc0]
+[2023/07/05 11:22:22.988768]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.988848][DEBUG][PLTF_SERVER] pltf_server_mpsc_sys_eeprom_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_system_tbl/standalone/*
+[2023/07/05 11:22:22.988869]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58]
+[2023/07/05 11:22:22.988895]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] app_ctx[0x7f5ac8012260]
+[2023/07/05 11:22:22.988912]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.988928][DEBUG][PLTF_SERVER] pltf_server_mpsc_sfp_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*
+[2023/07/05 11:22:22.988943]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58]
+[2023/07/05 11:22:22.989017]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] app_ctx[0x7f5ac8012720]
+[2023/07/05 11:22:22.989093]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.989193][DEBUG][PLTF_SERVER] pltf_server_mpsc_sfp_dom_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*
+[2023/07/05 11:22:22.989305]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58]
+[2023/07/05 11:22:22.989415]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] app_ctx[0x7f5ac8012be0]
+[2023/07/05 11:22:22.989933]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.990039][DEBUG][PLTF_SERVER] pltf_server_mpsc_host_cpu_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*
+[2023/07/05 11:22:22.990195]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61]
+[2023/07/05 11:22:22.990220]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] app_ctx[0x7f5ac80130a0]
+[2023/07/05 11:22:22.990297]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.990413][DEBUG][PLTF_SERVER] pltf_server_mpsc_host_sys_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*
+[2023/07/05 11:22:22.990432]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_server/subscriber][36] does not have tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55]
+[2023/07/05 11:22:22.990450]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] app_ctx[0x7f5ac8013560]
+[2023/07/05 11:22:22.990528]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] sub[/dist_pltfmgr/pltf_server/subscriber][36] registered
+[2023/07/05 11:22:22.990610][DEBUG][PLTF_SERVER] pltf_server_mpsc_proc_tbl_sub: subs success to table /default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*
+[2023/07/05 11:22:22.990631][DEBUG][PLTF_SERVER] Added chassis slot with name standalone
+[2023/07/05 11:22:22.990738]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-sub-reg] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[][0]
+[2023/07/05 11:22:22.990914]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54]
+[2023/07/05 11:22:22.990944]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:22:22.991355]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[1] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:22:22.991381]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54]
+[2023/07/05 11:22:22.991405]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:22:22.991426]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[2] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:22:22.991451]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54]
+[2023/07/05 11:22:22.991467]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:22:22.991640]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[3] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:22:22.991665]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58]
+[2023/07/05 11:22:22.991727]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:22:22.991827]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[4] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:22:22.991968]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57]
+[2023/07/05 11:22:22.992127]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:22:22.992217]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[5] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:22:22.992510]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58]
+[2023/07/05 11:22:22.992534]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:22:22.992557]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[6] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:22:22.992761]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58]
+[2023/07/05 11:22:22.992979]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:22:22.993338]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[7] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:22:22.994903]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58]
+[2023/07/05 11:22:22.995047]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:22:22.995161]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[8] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:22:22.995309]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61]
+[2023/07/05 11:22:22.995447]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:22:22.995671]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[9] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:22:22.995775]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55]
+[2023/07/05 11:22:22.995922]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_server/subscriber][36] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:22:22.996053]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_server][25] sequence[10] sub_id[/dist_pltfmgr/pltf_server/subscriber][36]    tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:22:23.001259]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] sequence[1] status[SUCCESS]
+[2023/07/05 11:22:23.001852]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54] wildcard tbl subscribe processed
+[2023/07/05 11:22:23.001876]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/*][54]
+[2023/07/05 11:22:23.016315]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] sequence[2] status[SUCCESS]
+[2023/07/05 11:22:23.017774]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54] wildcard tbl subscribe processed
+[2023/07/05 11:22:23.017829]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/*][54]
+[2023/07/05 11:22:23.025922]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] sequence[3] status[SUCCESS]
+[2023/07/05 11:22:23.025970]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54] wildcard tbl subscribe processed
+[2023/07/05 11:22:23.025990]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/*][54]
+[2023/07/05 11:22:23.028161]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] sequence[4] status[SUCCESS]
+[2023/07/05 11:22:23.028221]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58] wildcard tbl subscribe processed
+[2023/07/05 11:22:23.028242]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/*][58]
+[2023/07/05 11:22:23.035882]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] sequence[5] status[SUCCESS]
+[2023/07/05 11:22:23.035924]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57] wildcard tbl subscribe processed
+[2023/07/05 11:22:23.035944]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/*][57]
+[2023/07/05 11:22:23.044252]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] sequence[6] status[SUCCESS]
+[2023/07/05 11:22:23.044340]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58] wildcard tbl subscribe processed
+[2023/07/05 11:22:23.044377]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/*][58]
+[2023/07/05 11:22:23.052000]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] sequence[7] status[SUCCESS]
+[2023/07/05 11:22:23.052049]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58] wildcard tbl subscribe processed
+[2023/07/05 11:22:23.052071]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/*][58]
+[2023/07/05 11:22:23.065432]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] sequence[8] status[SUCCESS]
+[2023/07/05 11:22:23.065502]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58] wildcard tbl subscribe processed
+[2023/07/05 11:22:23.065525]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/*][58]
+[2023/07/05 11:22:23.069675]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] sequence[9] status[SUCCESS]
+[2023/07/05 11:22:23.069718]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61] wildcard tbl subscribe processed
+[2023/07/05 11:22:23.069740]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/*][61]
+[2023/07/05 11:22:23.076864]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_server][25] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] sequence[10] status[SUCCESS]
+[2023/07/05 11:22:23.076957]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55] wildcard tbl subscribe processed
+[2023/07/05 11:22:23.076980]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_server/subscriber][36] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/*][55]
+[2023/07/05 11:22:23.513690][DEBUG][CONFDPROXY] Successfully created and connected maapi socket 187 
+[2023/07/05 11:22:23.545920][DEBUG][CONFDPROXY] Created SPOINT Hash 
+[2023/07/05 11:22:30.545861][DEBUG][DEBUG-CLI] Starting debug thread
+[2023/07/05 11:22:30.546030][DEBUG][CONFDPROXY] Added reconnect timer for Subsock
+[2023/07/05 11:22:30.546078][DEBUG][CONFDPROXY] Added reconnect timer for oper sock
+[2023/07/05 11:22:30.546481][DEBUG][CONFDPROXY] Added reconnect timer for oper sock
+[2023/07/05 11:22:30.650104][DEBUG][CONFDPROXY] Successfully created Oper context, dctx=0x7f5ab8001c00, oper_ctl=192, oper_data=193 maapi_sock 195 
+[2023/07/05 11:22:30.650187]--INFO--[CONFDPROXY] Successful OPER connection to Confd
+[2023/07/05 11:22:30.650216][DEBUG][DEBUG-CLI] debug_confd_init_cb(): called
+[2023/07/05 11:22:30.651020][DEBUG][CONFDPROXY] Successfully created Oper context, dctx=0x55d1d7935980, oper_ctl=191, oper_data=194 maapi_sock 196 
+[2023/07/05 11:22:30.651127]--INFO--[CONFDPROXY] Successful OPER connection to Confd
+[2023/07/05 11:22:32.531208][DEBUG][CONFDPROXY] Successfully created Config connections to CONFD, cfg_sub=197,  cfg_data=198
+[2023/07/05 11:22:32.531275]--INFO--[CONFDPROXY] Successful CFG connection to Confd
+[2023/07/05 11:22:32.562279][DEBUG][CONFDPROXY] Registered SPOINT list, spoint=63, key=63
+[2023/07/05 11:22:32.562324][DEBUG][CONFDPROXY] Registered SPOINT list, spoint=83, key=83
+[2023/07/05 11:22:32.562341][DEBUG][CONFDPROXY] Registered SPOINT list, spoint=97, key=97
+[2023/07/05 11:22:32.569961][DEBUG][CONFDPROXY] Succeeded to launch full config trigger thread
+[2023/07/05 11:22:32.570652][DEBUG][CONFDPROXY] Start trigger subscription.
+[2023/07/05 11:22:33.281189][DEBUG][CONFDPROXY] Called Config Handler, read socket=198, result=0
+[2023/07/05 11:22:33.289453][DEBUG][CONFDPROXY] Called Config Handler, read socket=198, result=0
+[2023/07/05 11:22:33.296947][DEBUG][CONFDPROXY] Called Config Handler, read socket=198, result=0
+[2023/07/05 11:22:33.297184][DEBUG][CONFDPROXY] Done trigger subscription.
+[2023/07/05 11:22:52.982694]--INFO--[mpsc_lib] [s_mpsc_timer_cb] client_id[/dist_pltfmgr/pltf_server][25] eof sent [rt[0] errno[11]]

@@ -1,0 +1,448 @@
+###########################################################
+# Begin Logging -- Process ID: 4749
+###########################################################
+[2023/07/05 11:03:23.754069][DEBUG][PLTF_AGENT] Polling Interval: 30
+[2023/07/05 11:03:23.754145][DEBUG][PLTF_AGENT] Plugin Name : onlp
+[2023/07/05 11:03:23.754160][DEBUG][PLTF_AGENT] Sfp Port Offset : 0
+[2023/07/05 11:03:23.754174][DEBUG][PLTF_AGENT] Port LED config : 0
+[2023/07/05 11:03:23.754189][DEBUG][PLTF_AGENT] Pltf Agent Port Config: 1
+[2023/07/05 11:03:23.754202][DEBUG][PLTF_AGENT] Port tx_disbale config : 1
+[2023/07/05 11:03:23.754218][DEBUG][PLTF_AGENT] Port cmis_4_support config : 0
+[2023/07/05 11:03:23.754231][DEBUG][PLTF_AGENT] Port high_power_class_support config : 1
+[2023/07/05 11:03:23.754245][DEBUG][PLTF_AGENT] Port qsfp_to_sfp_adapter_support config : 1
+[2023/07/05 11:03:23.754258][DEBUG][PLTF_AGENT] [pltf_agent_sfp_init_brkout]Initializing the brkout arr
+[2023/07/05 11:03:23.754679][DEBUG][PLTF_AGENT] main: Successfully read port cfg
+[2023/07/05 11:03:23.754708][DEBUG][PLTF_AGENT] cfg->num_ports: 56
+[2023/07/05 11:03:23.754722][DEBUG][PLTF_AGENT] port_num: 1	[2023/07/05 11:03:23.754737][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.754751][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.754764][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.754777][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.754792][DEBUG][PLTF_AGENT] port_num: 2	[2023/07/05 11:03:23.754805][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.754892][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.754909][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.754952][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.754967][DEBUG][PLTF_AGENT] port_num: 3	[2023/07/05 11:03:23.755008][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.755022][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.755064][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.755078][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.755119][DEBUG][PLTF_AGENT] port_num: 4	[2023/07/05 11:03:23.755132][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.755173][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.755187][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.755227][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.755241][DEBUG][PLTF_AGENT] port_num: 5	[2023/07/05 11:03:23.755283][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.755296][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.755337][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.755351][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.755400][DEBUG][PLTF_AGENT] port_num: 6	[2023/07/05 11:03:23.755414][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.755454][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.755468][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.755509][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.755523][DEBUG][PLTF_AGENT] port_num: 7	[2023/07/05 11:03:23.755563][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.755577][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.755617][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.755632][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.755672][DEBUG][PLTF_AGENT] port_num: 8	[2023/07/05 11:03:23.755687][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.755728][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.755741][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.755782][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.755796][DEBUG][PLTF_AGENT] port_num: 9	[2023/07/05 11:03:23.755844][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.755858][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.755900][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.755914][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.755954][DEBUG][PLTF_AGENT] port_num: 10	[2023/07/05 11:03:23.755968][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.756011][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.756026][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.759533][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.759549][DEBUG][PLTF_AGENT] port_num: 11	[2023/07/05 11:03:23.759562][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.759576][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.759589][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.759602][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.759615][DEBUG][PLTF_AGENT] port_num: 12	[2023/07/05 11:03:23.759628][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.759641][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.759654][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.759667][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.761013][DEBUG][PLTF_AGENT] port_num: 13	[2023/07/05 11:03:23.761065][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.761080][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.761122][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.761136][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.761177][DEBUG][PLTF_AGENT] port_num: 14	[2023/07/05 11:03:23.761192][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.761233][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.761247][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.761288][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.761302][DEBUG][PLTF_AGENT] port_num: 15	[2023/07/05 11:03:23.761342][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.761357][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.761397][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.761411][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.761452][DEBUG][PLTF_AGENT] port_num: 16	[2023/07/05 11:03:23.761466][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.761506][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.761520][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.761562][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.761576][DEBUG][PLTF_AGENT] port_num: 17	[2023/07/05 11:03:23.761616][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.761630][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.761670][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.761684][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.761725][DEBUG][PLTF_AGENT] port_num: 18	[2023/07/05 11:03:23.761738][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.761778][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.761793][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.761862][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.761876][DEBUG][PLTF_AGENT] port_num: 19	[2023/07/05 11:03:23.761917][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.761931][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.761971][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.761985][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.762026][DEBUG][PLTF_AGENT] port_num: 20	[2023/07/05 11:03:23.762040][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.762081][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.762095][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.762136][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.762150][DEBUG][PLTF_AGENT] port_num: 21	[2023/07/05 11:03:23.762190][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.762204][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.762244][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.762259][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.762300][DEBUG][PLTF_AGENT] port_num: 22	[2023/07/05 11:03:23.762313][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.762354][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.762368][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.762409][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.762423][DEBUG][PLTF_AGENT] port_num: 23	[2023/07/05 11:03:23.762463][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.762477][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.762518][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.762533][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.762580][DEBUG][PLTF_AGENT] port_num: 24	[2023/07/05 11:03:23.762594][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.762635][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.762650][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.762691][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.762705][DEBUG][PLTF_AGENT] port_num: 25	[2023/07/05 11:03:23.762745][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.762759][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.762800][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.762814][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.762861][DEBUG][PLTF_AGENT] port_num: 26	[2023/07/05 11:03:23.762875][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.762916][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.762930][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.762970][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.762984][DEBUG][PLTF_AGENT] port_num: 27	[2023/07/05 11:03:23.763025][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.763039][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.763080][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.763094][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.763134][DEBUG][PLTF_AGENT] port_num: 28	[2023/07/05 11:03:23.763148][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.763188][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.763202][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.763243][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.763257][DEBUG][PLTF_AGENT] port_num: 29	[2023/07/05 11:03:23.763298][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.763312][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.763352][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.763367][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.763407][DEBUG][PLTF_AGENT] port_num: 30	[2023/07/05 11:03:23.763421][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.763462][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.763475][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.763516][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.763530][DEBUG][PLTF_AGENT] port_num: 31	[2023/07/05 11:03:23.763577][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.763592][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.763636][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.763651][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.763692][DEBUG][PLTF_AGENT] port_num: 32	[2023/07/05 11:03:23.763706][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.763747][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.763761][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.763801][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.763815][DEBUG][PLTF_AGENT] port_num: 33	[2023/07/05 11:03:23.763864][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.763878][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.763919][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.763933][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.763975][DEBUG][PLTF_AGENT] port_num: 34	[2023/07/05 11:03:23.763989][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.764030][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.764044][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.764085][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.764099][DEBUG][PLTF_AGENT] port_num: 35	[2023/07/05 11:03:23.764140][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.764154][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.764195][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.764209][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.764250][DEBUG][PLTF_AGENT] port_num: 36	[2023/07/05 11:03:23.764265][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.764305][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.764319][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.764361][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.764375][DEBUG][PLTF_AGENT] port_num: 37	[2023/07/05 11:03:23.764422][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.764436][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.764477][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.764491][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.764532][DEBUG][PLTF_AGENT] port_num: 38	[2023/07/05 11:03:23.764546][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.764586][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.764600][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.764641][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.764655][DEBUG][PLTF_AGENT] port_num: 39	[2023/07/05 11:03:23.764697][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.764710][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.764751][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.764765][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.764806][DEBUG][PLTF_AGENT] port_num: 40	[2023/07/05 11:03:23.764825][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.764869][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.764883][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.764924][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.764939][DEBUG][PLTF_AGENT] port_num: 41	[2023/07/05 11:03:23.764980][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.764993][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.765034][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.765049][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.765090][DEBUG][PLTF_AGENT] port_num: 42	[2023/07/05 11:03:23.765104][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.765145][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.765159][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.765199][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.765214][DEBUG][PLTF_AGENT] port_num: 43	[2023/07/05 11:03:23.765255][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.765268][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.765309][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.765324][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.765371][DEBUG][PLTF_AGENT] port_num: 44	[2023/07/05 11:03:23.765385][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.765425][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.765439][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.765480][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.765494][DEBUG][PLTF_AGENT] port_num: 45	[2023/07/05 11:03:23.765535][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.765550][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.765590][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.765605][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.765646][DEBUG][PLTF_AGENT] port_num: 46	[2023/07/05 11:03:23.765660][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.765701][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.765715][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.765757][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.765771][DEBUG][PLTF_AGENT] port_num: 47	[2023/07/05 11:03:23.765812][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.765856][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.765897][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.765913][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.765927][DEBUG][PLTF_AGENT] port_num: 48	[2023/07/05 11:03:23.765967][DEBUG][PLTF_AGENT] Eeprom File: 
+[2023/07/05 11:03:23.765981][DEBUG][PLTF_AGENT] dev class File: 
+[2023/07/05 11:03:23.766022][DEBUG][PLTF_AGENT] NumChannels: 1	[2023/07/05 11:03:23.766036][DEBUG][PLTF_AGENT] PortType: 1
+[2023/07/05 11:03:23.766077][DEBUG][PLTF_AGENT] port_num: 49	[2023/07/05 11:03:23.766091][DEBUG][PLTF_AGENT] Eeprom File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-80/80-0050/eeprom
+[2023/07/05 11:03:23.766132][DEBUG][PLTF_AGENT] dev class File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-80/80-0050/dev_class
+[2023/07/05 11:03:23.766146][DEBUG][PLTF_AGENT] NumChannels: 4	[2023/07/05 11:03:23.766194][DEBUG][PLTF_AGENT] PortType: 2
+[2023/07/05 11:03:23.766208][DEBUG][PLTF_AGENT] port_num: 50	[2023/07/05 11:03:23.766249][DEBUG][PLTF_AGENT] Eeprom File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-81/81-0050/eeprom
+[2023/07/05 11:03:23.766263][DEBUG][PLTF_AGENT] dev class File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-81/81-0050/dev_class
+[2023/07/05 11:03:23.766304][DEBUG][PLTF_AGENT] NumChannels: 4	[2023/07/05 11:03:23.766318][DEBUG][PLTF_AGENT] PortType: 2
+[2023/07/05 11:03:23.766359][DEBUG][PLTF_AGENT] port_num: 51	[2023/07/05 11:03:23.766372][DEBUG][PLTF_AGENT] Eeprom File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-82/82-0050/eeprom
+[2023/07/05 11:03:23.766413][DEBUG][PLTF_AGENT] dev class File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-82/82-0050/dev_class
+[2023/07/05 11:03:23.766427][DEBUG][PLTF_AGENT] NumChannels: 4	[2023/07/05 11:03:23.766468][DEBUG][PLTF_AGENT] PortType: 2
+[2023/07/05 11:03:23.766482][DEBUG][PLTF_AGENT] port_num: 52	[2023/07/05 11:03:23.766522][DEBUG][PLTF_AGENT] Eeprom File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-83/83-0050/eeprom
+[2023/07/05 11:03:23.766537][DEBUG][PLTF_AGENT] dev class File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-83/83-0050/dev_class
+[2023/07/05 11:03:23.766578][DEBUG][PLTF_AGENT] NumChannels: 4	[2023/07/05 11:03:23.766592][DEBUG][PLTF_AGENT] PortType: 2
+[2023/07/05 11:03:23.766633][DEBUG][PLTF_AGENT] port_num: 53	[2023/07/05 11:03:23.766647][DEBUG][PLTF_AGENT] Eeprom File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-84/84-0050/eeprom
+[2023/07/05 11:03:23.766688][DEBUG][PLTF_AGENT] dev class File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-84/84-0050/dev_class
+[2023/07/05 11:03:23.766702][DEBUG][PLTF_AGENT] NumChannels: 4	[2023/07/05 11:03:23.766743][DEBUG][PLTF_AGENT] PortType: 2
+[2023/07/05 11:03:23.766757][DEBUG][PLTF_AGENT] port_num: 54	[2023/07/05 11:03:23.766804][DEBUG][PLTF_AGENT] Eeprom File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-85/85-0050/eeprom
+[2023/07/05 11:03:23.766823][DEBUG][PLTF_AGENT] dev class File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-85/85-0050/dev_class
+[2023/07/05 11:03:23.766867][DEBUG][PLTF_AGENT] NumChannels: 4	[2023/07/05 11:03:23.766881][DEBUG][PLTF_AGENT] PortType: 2
+[2023/07/05 11:03:23.766922][DEBUG][PLTF_AGENT] port_num: 55	[2023/07/05 11:03:23.766936][DEBUG][PLTF_AGENT] Eeprom File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-86/86-0050/eeprom
+[2023/07/05 11:03:23.766977][DEBUG][PLTF_AGENT] dev class File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-86/86-0050/dev_class
+[2023/07/05 11:03:23.766991][DEBUG][PLTF_AGENT] NumChannels: 4	[2023/07/05 11:03:23.767032][DEBUG][PLTF_AGENT] PortType: 2
+[2023/07/05 11:03:23.767045][DEBUG][PLTF_AGENT] port_num: 56	[2023/07/05 11:03:23.767086][DEBUG][PLTF_AGENT] Eeprom File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-87/87-0050/eeprom
+[2023/07/05 11:03:23.767100][DEBUG][PLTF_AGENT] dev class File: /sys/devices/pci0000:00/0000:00:1f.4/i2c-0/i2c-26/i2c-87/87-0050/dev_class
+[2023/07/05 11:03:23.767141][DEBUG][PLTF_AGENT] NumChannels: 4	[2023/07/05 11:03:23.767155][DEBUG][PLTF_AGENT] PortType: 2
+[2023/07/05 11:03:23.774045]--INFO--[msglib] ml_client_new(): created client control_conn
+[2023/07/05 11:03:23.774224]--INFO--[msglib] get_zuri: service[/system/ipc/arcos_mps_ctrl] zuri[tcp://127.0.0.1:30108] is_server[0]
+[2023/07/05 11:03:23.774353]--INFO--[msglib] do_connecting(): client: control_conn, rc = 0, errno = 11
+[2023/07/05 11:03:23.774379]--INFO--[msglib] ml_peer_signal_resolve(): client: control_conn, rc = 0
+[2023/07/05 11:03:23.774394]--INFO--[msglib] ml_peer_signal_start(): client: control_conn, rc = 0
+[2023/07/05 11:03:23.774408]--INFO--[msglib] ml_client_connect(): client control_conn, service /system/ipc/arcos_mps_ctrl ok
+[2023/07/05 11:03:23.774424]--INFO--[mpsc_lib] mpsc client[control_conn] connected of mps [/system/ipc/arcos_mps_ctrl]
+[2023/07/05 11:03:23.774481]--INFO--[mpsc_lib] [s_mpsc_ctrl_client_reg] client_id[/dist_pltfmgr/pltf_agent/standalone][35] is_reg[1] rt[0] errno[11] data_uri[NULL]
+[2023/07/05 11:03:23.774652]--INFO--[mpsc_lib] [mpsc_ctrl_init] mpsc[/dist_pltfmgr/pltf_agent/standalone] ctrl init to mps[/system/ipc/arcos_mps_ctrl] done!!
+[2023/07/05 11:03:28.194591]--INFO--[msglib] send_holding_queue(): client: control_conn, count = 1
+[2023/07/05 11:03:28.194665]--INFO--[mpsc_lib] [mpsc_ctrl_client_control_cb] ctrl client[system-mps_ctrl_ep][19] connection is UP
+[2023/07/05 11:03:28.194883]--INFO--[msglib] do_connected(): client: control_conn
+[2023/07/05 11:03:28.194903]--INFO--[msglib] ml_peer_signal_hello_ok(): client: control_conn, rc = 0
+[2023/07/05 11:03:28.222931]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_client_reg_ack] client_id[/dist_pltfmgr/pltf_agent/standalone][35] data_uri[/system/ipc/arcos_mps_data_2]
+[2023/07/05 11:03:28.223856]--INFO--[mpsc_lib] [mpsc_data_init] mpsc [/dist_pltfmgr/pltf_agent/standalone] data tepool_created[2]
+[2023/07/05 11:03:28.225897]--INFO--[mpsc_lib] [mpsc_data_init] mpsc [/dist_pltfmgr/pltf_agent/standalone] cb tepool_created
+[2023/07/05 11:03:28.232006]--INFO--[msglib] ml_client_new(): created client /dist_pltfmgr/pltf_agent/standalone
+[2023/07/05 11:03:28.235652]--INFO--[msglib] get_zuri: service[/system/ipc/arcos_mps_data_2] zuri[tcp://127.0.0.1:30110] is_server[0]
+[2023/07/05 11:03:28.236935]--INFO--[msglib] do_connecting(): client: /dist_pltfmgr/pltf_agent/standalone, rc = 0, errno = 11
+[2023/07/05 11:03:28.237502]--INFO--[msglib] ml_peer_signal_resolve(): client: /dist_pltfmgr/pltf_agent/standalone, rc = 0
+[2023/07/05 11:03:28.237855]--INFO--[msglib] ml_peer_signal_start(): client: /dist_pltfmgr/pltf_agent/standalone, rc = 0
+[2023/07/05 11:03:28.237952]--INFO--[msglib] ml_client_connect(): client /dist_pltfmgr/pltf_agent/standalone, service /system/ipc/arcos_mps_data_2 ok
+[2023/07/05 11:03:28.238144]--INFO--[mpsc_lib] mpsc client[/dist_pltfmgr/pltf_agent/standalone] connected of mps [/system/ipc/arcos_mps_data_2]
+[2023/07/05 11:03:28.238256]--INFO--[mpsc_lib] worker data conn [/dist_pltfmgr/pltf_agent/standalone] created
+[2023/07/05 11:03:28.238375]--INFO--[msglib] send_holding_queue(): client: /dist_pltfmgr/pltf_agent/standalone, count = 0
+[2023/07/05 11:03:28.238463][DEBUG][PLTF_AGENT] pltf_agent_mpsc_lib_init: Successfully intialise with mpsc client lib
+[2023/07/05 11:03:28.240002]--INFO--[mpsc_lib] [mpsc_data_control_cb] mpsc client[/system/ipc/arcos_mps_data_2] UP, mps_reset flag[0] mpsc_p[0x55d107a55960]
+[2023/07/05 11:03:28.240092]--INFO--[mpsc_lib] [mpsc_pub_register] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.240353]--INFO--[msglib] do_connected(): client: /dist_pltfmgr/pltf_agent/standalone
+[2023/07/05 11:03:28.240504]--INFO--[msglib] ml_peer_signal_hello_ok(): client: /dist_pltfmgr/pltf_agent/standalone, rc = 0
+[2023/07/05 11:03:28.240506]--INFO--[mpsc_lib] [mpsc_sub_register] sub[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] registered
+[2023/07/05 11:03:28.240600][DEBUG][PLTF_AGENT] pltf_agent_mpsc_init: Successfully initialized mps client lib
+[2023/07/05 11:03:28.241471]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-pub-reg] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[][0]
+[2023/07/05 11:03:28.242620]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[][0] type[mps-ctrl-msg-pub-reg]
+[2023/07/05 11:03:28.242765]--INFO--[mpsc_lib] [s_mpsc_ctrl_pub_reg] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[0] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] is_reg[1] rt[0] errno[11]
+[2023/07/05 11:03:28.242796]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-sub-reg] ep_id[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl_id[][0]
+[2023/07/05 11:03:28.242942]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl[][0] type[mps-ctrl-msg-sub-reg]
+[2023/07/05 11:03:28.243260]--INFO--[mpsc_lib] [s_mpsc_ctrl_sub_reg] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[1] sub_id[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] is_reg[1] rt[0] errno[11]
+[2023/07/05 11:03:28.260145]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-pub-reg] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[][0] sequence[0] status[SUCCESS]
+[2023/07/05 11:03:28.260881]--INFO--[mpsc_lib] [s_mpsc_process_pub_register] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registration processed
+[2023/07/05 11:03:28.260904][DEBUG][PLTF_AGENT] pltf_agent_mpsc_ctrl_cb successfully registered pub with mpsc lib
+[2023/07/05 11:03:28.261504]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53]
+[2023/07/05 11:03:28.261775]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] app_ctx[0x7f941800feb0]
+[2023/07/05 11:03:28.261799]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.262141]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.262170][DEBUG][PLTF_AGENT] pltf_agent_mpsc_fan_tbl_create successfully created fan tbl
+[2023/07/05 11:03:28.262190]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53]
+[2023/07/05 11:03:28.262209]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] app_ctx[0x7f9418010af0]
+[2023/07/05 11:03:28.262227]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.262242]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.262262][DEBUG][PLTF_AGENT] pltf_agent_mpsc_psu_tbl_create successfully created psu tbl
+[2023/07/05 11:03:28.262278]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53]
+[2023/07/05 11:03:28.263896]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] app_ctx[0x7f94180112e0]
+[2023/07/05 11:03:28.263926]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.264020]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.264163][DEBUG][PLTF_AGENT] pltf_agent_mpsc_led_tbl_create successfully created led tbl
+[2023/07/05 11:03:28.264303]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57]
+[2023/07/05 11:03:28.264327]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] app_ctx[0x7f9418011920]
+[2023/07/05 11:03:28.264600]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.264940]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.264983][DEBUG][PLTF_AGENT] pltf_agent_mpsc_thermal_tbl_create successfully created thermal tbl
+[2023/07/05 11:03:28.265001]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57]
+[2023/07/05 11:03:28.266397]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] app_ctx[0x7f9418011f90]
+[2023/07/05 11:03:28.266428]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.266977]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.267325][DEBUG][PLTF_AGENT] pltf_agent_mpsc_sfp_tbl_create successfully created sfp tbl
+[2023/07/05 11:03:28.268607]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57]
+[2023/07/05 11:03:28.269278]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] app_ctx[0x7f9418012530]
+[2023/07/05 11:03:28.271670]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.271697]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.271717][DEBUG][PLTF_AGENT] pltf_agent_mpsc_sfp_dom_tbl_create successfully created sfp_dom tbl
+[2023/07/05 11:03:28.271738]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57]
+[2023/07/05 11:03:28.271759]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] app_ctx[0x7f9418012b40]
+[2023/07/05 11:03:28.271777]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.271792]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.271808][DEBUG][PLTF_AGENT] pltf_agent_mpsc_host_cpu_tbl_create successfully created host_cpu tbl
+[2023/07/05 11:03:28.271854]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56]
+[2023/07/05 11:03:28.271897]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] app_ctx[0x7f9418013100]
+[2023/07/05 11:03:28.271916]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.271931]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.272023][DEBUG][PLTF_AGENT] pltf_agent_mpsc_sys_eeprom_tbl_create successfully created sys_eeprom tbl
+[2023/07/05 11:03:28.272343]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60]
+[2023/07/05 11:03:28.272376]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] app_ctx[0x7f94180135d0]
+[2023/07/05 11:03:28.272407]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.272479]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.272660][DEBUG][PLTF_AGENT] pltf_agent_mpsc_host_sys_tbl_create successfully created host_sys tbl
+[2023/07/05 11:03:28.273934]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54]
+[2023/07/05 11:03:28.273967]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] app_ctx[0x7f9418013ae0]
+[2023/07/05 11:03:28.273985]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.274347]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.274413][DEBUG][PLTF_AGENT] pltf_agent_mpsc_proc_tbl_create successfully created proc tbl
+[2023/07/05 11:03:28.274522]**ERR**[mpsc_lib] mpsc_pub_tbl_get_context invalid arg pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] does not have tbl[/default/oper/pltf/common/pltfmgr_version_tbl/standalone/][57]
+[2023/07/05 11:03:28.274668]--INFO--[mpsc_lib] [mpsc_pub_tbl_set_context] set pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_version_tbl/standalone/][57] app_ctx[0x7f9418013b40]
+[2023/07/05 11:03:28.274690]--INFO--[mpsc_lib] [s_mpsc_tbl_create] table[/default/oper/pltf/common/pltfmgr_version_tbl/standalone/][57] tbl created, replay_pending = 0
+[2023/07/05 11:03:28.274706]--INFO--[mpsc_lib] [mpsc_pub_tbl_create] tbl[/default/oper/pltf/common/pltfmgr_version_tbl/standalone/][57] pub[/dist_pltfmgr/pltf_agent/standalone/publisher][45] registered
+[2023/07/05 11:03:28.274722][DEBUG][PLTF_AGENT] pltf_agent_mpsc_version_tbl_create successfully created version tbl
+[2023/07/05 11:03:28.274760]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-pub-reg] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[][0]
+[2023/07/05 11:03:28.274814]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53]
+[2023/07/05 11:03:28.274846]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.274886]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[2] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.274908]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53]
+[2023/07/05 11:03:28.274924]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.274943]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[3] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.275016]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53]
+[2023/07/05 11:03:28.275275]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.275532]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[4] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.275594]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57]
+[2023/07/05 11:03:28.275635]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.275675]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[5] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.275799]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57]
+[2023/07/05 11:03:28.275824]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.275848]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[6] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.275869]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57]
+[2023/07/05 11:03:28.275955]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.275978]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[7] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.275999]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57]
+[2023/07/05 11:03:28.276015]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.276138]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[8] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.276200]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56]
+[2023/07/05 11:03:28.276229]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.276296]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[9] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.277180]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60]
+[2023/07/05 11:03:28.277200]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.277224]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[10] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.277279]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54]
+[2023/07/05 11:03:28.277301]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.277323]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[11] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.277456]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_version_tbl/standalone/][57]
+[2023/07/05 11:03:28.277475]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl[/default/oper/pltf/common/pltfmgr_version_tbl/standalone/][57] type[mps-ctrl-msg-table-create]
+[2023/07/05 11:03:28.277496]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_create] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[12] pub_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45]     tbl_id[/default/oper/pltf/common/pltfmgr_version_tbl/standalone/][57] is_create[1] rt[0] errno[11]
+[2023/07/05 11:03:28.287334]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-sub-reg] ep_id[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl_id[][0] sequence[1] status[SUCCESS]
+[2023/07/05 11:03:28.287369]--INFO--[mpsc_lib] [s_mpsc_process_sub_register] sub[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] registration processed
+[2023/07/05 11:03:28.287387][DEBUG][PLTF_AGENT] pltf_agent_mpsc_sub_init_cb: successfully registered subscriber with mpsc lib
+[2023/07/05 11:03:28.287428]**ERR**[mpsc_lib] mpsc_sub_tbl_get_context invalid arg sub[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] does not have tbl[/default/oper/infra/ifmgr/ifs/][30]
+[2023/07/05 11:03:28.288065]--INFO--[mpsc_lib] [mpsc_sub_tbl_set_context] set sub[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl[/default/oper/infra/ifmgr/ifs/][30] app_ctx[0x7f9418013f90]
+[2023/07/05 11:03:28.288093]--INFO--[mpsc_lib] [mpsc_sub_tbl_subscribe] tbl[/default/oper/infra/ifmgr/ifs/][30] sub[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] registered
+[2023/07/05 11:03:28.288116][DEBUG][PLTF_AGENT] pltf_agent_mpsc_ifmgr_ifs_tbl_sub: subscription successful for table ifmgr/ifs/!
+[2023/07/05 11:03:28.288286][DEBUG][PLTF_AGENT] pltf_agent_mpsc_ifmgr_ifs_tbl_sub: subscription successful for table /default/oper/infra/ifmgr/ifs/!
+[2023/07/05 11:03:28.288324]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-sub-reg] ep_id[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl_id[][0]
+[2023/07/05 11:03:28.291848]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb add - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl_id[/default/oper/infra/ifmgr/ifs/][30]
+[2023/07/05 11:03:28.291928]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl[/default/oper/infra/ifmgr/ifs/][30] type[mps-ctrl-msg-table-subscribe]
+[2023/07/05 11:03:28.291998]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[13] sub_id[/dist_pltfmgr/pltf_agent/standalone/subscriber][46]    tbl_id[/default/oper/infra/ifmgr/ifs/][30] rt[0] is_subscribe[1] errno[11]
+[2023/07/05 11:03:28.305447]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] sequence[2] status[SUCCESS]
+[2023/07/05 11:03:28.305570]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.305598]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.305616][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_fan_tbl/standalone/
+[2023/07/05 11:03:28.305636]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_fan_tbl/standalone/][53]
+[2023/07/05 11:03:28.306340]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] sequence[3] status[SUCCESS]
+[2023/07/05 11:03:28.306398]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.306425]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.306442][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_psu_tbl/standalone/
+[2023/07/05 11:03:28.306458]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_psu_tbl/standalone/][53]
+[2023/07/05 11:03:28.312696]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] sequence[4] status[SUCCESS]
+[2023/07/05 11:03:28.312791]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.312825]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.312845][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_led_tbl/standalone/
+[2023/07/05 11:03:28.313316]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_led_tbl/standalone/][53]
+[2023/07/05 11:03:28.317419]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] sequence[5] status[SUCCESS]
+[2023/07/05 11:03:28.317500]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.317525]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.317542][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/
+[2023/07/05 11:03:28.317561]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_thermal_tbl/standalone/][57]
+[2023/07/05 11:03:28.330940]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] sequence[6] status[SUCCESS]
+[2023/07/05 11:03:28.331009]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.331036]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.331053][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/
+[2023/07/05 11:03:28.331074]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_tbl_tbl/standalone/][57]
+[2023/07/05 11:03:28.336121]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] sequence[7] status[SUCCESS]
+[2023/07/05 11:03:28.336200]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.336226]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.336244][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/
+[2023/07/05 11:03:28.336263]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_sfp_dom_tbl/standalone/][57]
+[2023/07/05 11:03:28.340998]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] sequence[8] status[SUCCESS]
+[2023/07/05 11:03:28.341073]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.341101]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.341120][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/
+[2023/07/05 11:03:28.341141]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_hostcpu_tbl/standalone/][57]
+[2023/07/05 11:03:28.346328]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] sequence[9] status[SUCCESS]
+[2023/07/05 11:03:28.346414]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.346443]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.346461][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_system_tbl/standalone/
+[2023/07/05 11:03:28.346480]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_system_tbl/standalone/][56]
+[2023/07/05 11:03:28.350832]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] sequence[10] status[SUCCESS]
+[2023/07/05 11:03:28.350905]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.350931]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.350947][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/
+[2023/07/05 11:03:28.350970]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_hostsystem_tbl/standalone/][60]
+[2023/07/05 11:03:28.356507]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] sequence[11] status[SUCCESS]
+[2023/07/05 11:03:28.356576]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.356605]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.356622][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_proc_tbl/standalone/
+[2023/07/05 11:03:28.356641]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_proc_tbl/standalone/][54]
+[2023/07/05 11:03:28.361646]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_version_tbl/standalone/][57] sequence[12] status[SUCCESS]
+[2023/07/05 11:03:28.361717]--INFO--[mpsc_lib] mpsc_dp_tbl_tx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] tx datapath created
+[2023/07/05 11:03:28.361742]--INFO--[mpsc_lib] [s_mpsc_process_table_create] table[/default/oper/pltf/common/pltfmgr_version_tbl/standalone/][57] tbl created processed, replay_pending = 0
+[2023/07/05 11:03:28.361764][DEBUG][PLTF_AGENT] pltf_agent_mpsc_tbl_create_cb successfully registered tbl /default/oper/pltf/common/pltfmgr_version_tbl/standalone/
+[2023/07/05 11:03:28.361784]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-create] ep_id[/dist_pltfmgr/pltf_agent/standalone/publisher][45] tbl_id[/default/oper/pltf/common/pltfmgr_version_tbl/standalone/][57]
+[2023/07/05 11:03:28.365243]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl_id[/default/oper/infra/ifmgr/ifs/][30] sequence[13] status[SUCCESS]
+[2023/07/05 11:03:28.365298]--INFO--[mpsc_lib] mpsc_dp_tbl_rx_init: mpsc[/dist_pltfmgr/pltf_agent/standalone] rx datapath created
+[2023/07/05 11:03:28.365330]--INFO--[mpsc_lib] [s_mpsc_sub_dp_ready] sub[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] for table[/default/oper/infra/ifmgr/ifs/][30]
+[2023/07/05 11:03:28.365351]--INFO--[mpsc_lib] [s_mpsc_process_table_subscribe] tbl[/default/oper/infra/ifmgr/ifs/][30] tbl subscribe processed/dp ready sent
+[2023/07/05 11:03:28.365368]--INFO--[mpsc_lib] [mpsc_metadb_update] metadb updated - type[mps-ctrl-msg-table-subscribe] ep_id[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl_id[/default/oper/infra/ifmgr/ifs/][30]
+[2023/07/05 11:03:28.365393]--INFO--[mpsc_lib] [mpsc_metadb_update] ignoring msg type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.365410]--INFO--[mpsc_lib] [mpsc_tx_ctrl_msg] ep[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl[/default/oper/infra/ifmgr/ifs/][30] type[mps-ctrl-msg-table-subscribe-dp-ready]
+[2023/07/05 11:03:28.365456]--INFO--[mpsc_lib] [s_mpsc_ctrl_tbl_subscribe_dp_ready] client_id[/dist_pltfmgr/pltf_agent/standalone][35] sequence[14] sub_id[/dist_pltfmgr/pltf_agent/standalone/subscriber][46]    tbl_id[/default/oper/infra/ifmgr/ifs/][30] rt[0] errno[11]
+[2023/07/05 11:03:28.369441]--INFO--[mpsc_lib] [s_mpsc_ctrl_msg_ack_recv] client[/dist_pltfmgr/pltf_agent/standalone][35] type[mps-ctrl-msg-table-subscribe-dp-ready] ep_id[/dist_pltfmgr/pltf_agent/standalone/subscriber][46] tbl_id[/default/oper/infra/ifmgr/ifs/][30] sequence[14] status[SUCCESS]
+[2023/07/05 11:03:29.464191]--INFO--[PLTF_AGENT] Success get fan info: 0 50331648 fan1_inlet
+[2023/07/05 11:03:29.465997]--INFO--[PLTF_AGENT] Success get fan info: 1 50331649 fan1_outlet
+[2023/07/05 11:03:29.467765]--INFO--[PLTF_AGENT] Success get fan info: 2 50331650 fan2_inlet
+[2023/07/05 11:03:29.470376]--INFO--[PLTF_AGENT] Success get fan info: 3 50331651 fan2_outlet
+[2023/07/05 11:03:29.472502]--INFO--[PLTF_AGENT] Success get fan info: 4 50331652 fan3_inlet
+[2023/07/05 11:03:29.474339]--INFO--[PLTF_AGENT] Success get fan info: 5 50331653 fan3_outlet
+[2023/07/05 11:03:29.476078]--INFO--[PLTF_AGENT] Success get fan info: 6 50331654 fan4_inlet
+[2023/07/05 11:03:29.478835]--INFO--[PLTF_AGENT] Success get fan info: 7 50331655 fan4_outlet
+[2023/07/05 11:03:29.480614]--INFO--[PLTF_AGENT] Success get fan info: 8 50331656 fan5_inlet
+[2023/07/05 11:03:29.482367]--INFO--[PLTF_AGENT] Success get fan info: 9 50331657 fan5_outlet
+[2023/07/05 11:03:29.485098]--INFO--[PLTF_AGENT] Success get fan info: 10 50331658 fan6_inlet
+[2023/07/05 11:03:29.489379]--INFO--[PLTF_AGENT] Success get fan info: 11 50331659 fan6_outlet
+[2023/07/05 11:03:29.561610]--INFO--[PLTF_AGENT] Success get led info: 0 83886081 System LED
+[2023/07/05 11:03:29.645305]--INFO--[PLTF_AGENT] Success get psu info: 0 67108864 Quanta IX8A RPSU-1
+[2023/07/05 11:03:29.655979]--INFO--[PLTF_AGENT] Success get psu info: 1 67108865 Quanta IX8A RPSU-2
+[2023/07/05 11:03:29.728306][DEBUG][PLTF_AGENT] HW sensor reporting correct value CPU Board - Thermal 0 26500
+[2023/07/05 11:03:29.728381]--INFO--[PLTF_AGENT] Success get thermal info: 0 33554432 CPU Board - Thermal 0
+[2023/07/05 11:03:29.729355][DEBUG][PLTF_AGENT] HW sensor reporting correct value CPU Board - Thermal 1 28500
+[2023/07/05 11:03:29.729382]--INFO--[PLTF_AGENT] Success get thermal info: 1 33554433 CPU Board - Thermal 1
+[2023/07/05 11:03:29.731640][DEBUG][PLTF_AGENT] HW sensor reporting correct value Lan Board - Thermal 2 25000
+[2023/07/05 11:03:29.731700]--INFO--[PLTF_AGENT] Success get thermal info: 2 33554434 Lan Board - Thermal 2
+[2023/07/05 11:03:29.735082][DEBUG][PLTF_AGENT] HW sensor reporting correct value Mother Board - Thermal 3 24500
+[2023/07/05 11:03:29.735170]--INFO--[PLTF_AGENT] Success get thermal info: 3 33554435 Mother Board - Thermal 3
+[2023/07/05 11:03:29.737439][DEBUG][PLTF_AGENT] HW sensor reporting correct value Mother Board - Thermal 4 26000
+[2023/07/05 11:03:29.737484]--INFO--[PLTF_AGENT] Success get thermal info: 4 33554436 Mother Board - Thermal 4
+[2023/07/05 11:03:29.739732][DEBUG][PLTF_AGENT] HW sensor reporting correct value Mother Board - Thermal 5 25000
+[2023/07/05 11:03:29.739774]--INFO--[PLTF_AGENT] Success get thermal info: 5 33554437 Mother Board - Thermal 5
+[2023/07/05 11:03:29.742780][DEBUG][PLTF_AGENT] HW sensor reporting correct value Mother Board - Thermal 6 22500
+[2023/07/05 11:03:29.742835]--INFO--[PLTF_AGENT] Success get thermal info: 6 33554438 Mother Board - Thermal 6
+[2023/07/05 11:03:58.239466]--INFO--[mpsc_lib] [s_mpsc_timer_cb] client_id[/dist_pltfmgr/pltf_agent/standalone][35] eof sent [rt[0] errno[11]]
+[2023/07/05 11:04:05.331112]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_set] Error setting the TX_DISABLE for port: 54 rv: -11
+[2023/07/05 11:04:05.362964]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:05.362991]**ERR**[PLTF_AGENT] [pltf_agent_sfp_process_tx_disable_control] Error in getting value to be set for control: 5
+[2023/07/05 11:04:05.364079]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:05.364104]**ERR**[PLTF_AGENT] [pltf_agent_sfp_process_tx_disable_control] Error in getting value to be set for control: 5
+[2023/07/05 11:04:05.365284]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:05.365305]**ERR**[PLTF_AGENT] [pltf_agent_sfp_process_tx_disable_control] Error in getting value to be set for control: 5
+[2023/07/05 11:04:05.366487]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:05.366508]**ERR**[PLTF_AGENT] [pltf_agent_sfp_process_tx_disable_control] Error in getting value to be set for control: 5
+[2023/07/05 11:04:22.595578]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_set] Error setting the TX_DISABLE for port: 54 rv: -11
+[2023/07/05 11:04:22.628013]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:22.629153]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_set] Error setting the TX_DISABLE for port: 53 rv: -11
+[2023/07/05 11:04:22.630275]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:22.630308]**ERR**[PLTF_AGENT] [pltf_agent_sfp_process_tx_disable_control] Error in getting value to be set for control: 5
+[2023/07/05 11:04:22.631416]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:22.631445]**ERR**[PLTF_AGENT] [pltf_agent_sfp_process_tx_disable_control] Error in getting value to be set for control: 5
+[2023/07/05 11:04:22.632552]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:22.632582]**ERR**[PLTF_AGENT] [pltf_agent_sfp_process_tx_disable_control] Error in getting value to be set for control: 5
+[2023/07/05 11:04:35.330166]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_set] Error setting the TX_DISABLE for port: 54 rv: -11
+[2023/07/05 11:04:35.365711]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:35.409715]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_set] Error setting the TX_DISABLE for port: 53 rv: -11
+[2023/07/05 11:04:35.410915]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:35.411041]**ERR**[PLTF_AGENT] [pltf_agent_sfp_process_tx_disable_control] Error in getting value to be set for control: 5
+[2023/07/05 11:04:35.412199]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:35.412292]**ERR**[PLTF_AGENT] [pltf_agent_sfp_process_tx_disable_control] Error in getting value to be set for control: 5
+[2023/07/05 11:04:35.413448]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_get] Error getting the TX_DISABLE value for port: 53 rv: -11
+[2023/07/05 11:04:35.413541]**ERR**[PLTF_AGENT] [pltf_agent_sfp_process_tx_disable_control] Error in getting value to be set for control: 5
+[2023/07/05 11:18:56.499007]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_set] Error setting the TX_DISABLE for port: 53 rv: -11
+[2023/07/05 11:18:56.500292]**ERR**[PLTF_AGENT] [pltf_agent_onlp_sfp_tx_disable_control_set] Error setting the TX_DISABLE for port: 54 rv: -11

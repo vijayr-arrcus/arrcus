@@ -1,0 +1,145 @@
+ *    Outbound flow - packet routing  from private IP domain to Public IP Domain
+ *    Inbound flow - packet routing  from Public IP domain to Private IP Domain
+
+
+ *    Outbound:
+ *      {src_ip=10.0.0.1, dst_ip=200.0.0.1, tcp, src_tcp_port=2000, dst_tcp_port=2828} --> {src_ip=100.0.0.1,
+dst_ip=200.0.0.1, tcp, src_tcp_port=5000, dst_tcp_port=2828}
+ *
+ *    Inbound:
+ *      {src_ip=200.0.0.1, dst_ip=100.0.0.1, tcp, src_tcp_port=2828, dst_tcp_port=5000} --> {src_ip=200.0.0.1,
+dst_ip=10.0.0.1, tcp, src_tcp_port=2828, dst_tcp_port=2000}
+
+
+0x64000001 -- 100.0.0.1
+0x0a000001 -- 10.0.0.1
+
+
+add outbound IPs to address pool
+
+int napt = TRUE;
+rv = nat_config(0, 0x64000001, napt);
+
+rv = nat_inbound_create(0, 3, napt,
+												6, egr_obj_1,
+												0x0a000001 /* priv_ip */, 2000,
+												0x64000001 /* pub_ip */, 5000);
+
+rv = nat_outbound_create(0, 4, napt, 6,
+												 0x0a000001 /* priv_ip */, 2000,
+												 0x64000001 /* pub_ip */, 5000) ;
+
+
+
+int nat_config(int unit, bcm_ip_t ip, int napt)
+{
+    /*
+    * Populate the address pool
+    * Addresses in the pool are publically available addresses. These addresses
+    * are destined to this device and are not used for forwarding.
+    * The pool address is looked up in the NAT resolution logic during ingress.
+    */
+    bcm_l3_nat_ingress_t_init(&ing_nat);
+    ing_nat.flags   = BCM_L3_NAT_INGRESS_DNAT | BCM_L3_NAT_INGRESS_DNAT_POOL;
+    if (napt) {
+        ing_nat.flags |= BCM_L3_NAT_INGRESS_TYPE_NAPT;
+    }
+
+    ing_nat.ip_addr = ip;
+
+    BCM_IF_ERROR_RETURN(bcm_l3_nat_ingress_add(unit, &ing_nat));
+
+}
+
+
+
+int nat_inbound_create(int unit, bcm_l3_nat_id_t id, int napt,
+    uint8 proto, bcm_if_t egr_obj,
+    bcm_ip_t priv_ip, uint16 priv_l4_port,
+    bcm_ip_t pub_ip, uint16 pub_l4_port)
+{
+  bcm_l3_nat_egress_t         egr_nat;
+  bcm_l3_nat_ingress_t        ing_nat;
+    int                         rv = 0;
+
+  /*
+   * egr_nat is used for NAT packet modification in the egresss
+   * - dip_addr becomes the DIP in the packet
+   * - if NAPT, dst_port becomes the L4 destination port in the packet
+   */
+  bcm_l3_nat_egress_t_init(&egr_nat);
+  egr_nat.flags               = BCM_L3_NAT_EGRESS_DNAT | BCM_L3_NAT_EGRESS_WITH_ID;
+  egr_nat.nat_id              = id;
+  egr_nat.dip_addr            = priv_ip;
+  egr_nat.dip_addr_mask       = 0xffffffff;
+  if (napt) {
+    egr_nat.flags          |= BCM_L3_NAT_EGRESS_NAPT;
+    egr_nat.dst_port        = priv_l4_port;
+  }
+  BCM_IF_ERROR_RETURN(bcm_l3_nat_egress_add(0, &egr_nat));
+
+  /*
+   * ing_nat is used for NAT packet resolution in the ingress
+   * - pub_ip is the address compared against the packet DIP to trigger DIP translation
+   * - if NAPT, ip_proto is the IP protocol compared against the packet IP protocol and
+   *   if matched, then the l4 port is compared against the destination port in the
+   *   packet L4 header
+   */
+  bcm_l3_nat_ingress_t_init(&ing_nat);
+  ing_nat.flags               = BCM_L3_NAT_INGRESS_DNAT;
+  ing_nat.nat_id              = id;
+  ing_nat.ip_addr             = pub_ip;
+  ing_nat.nexthop             = egr_obj;
+  if (napt) {
+    ing_nat.flags          |= BCM_L3_NAT_INGRESS_TYPE_NAPT;
+    ing_nat.l4_port         = pub_l4_port;
+    ing_nat.ip_proto        = proto;
+  }
+  BCM_IF_ERROR_RETURN(bcm_l3_nat_ingress_add(0, &ing_nat));
+  return BCM_E_NONE;
+}
+
+int nat_outbound_create(int unit, bcm_l3_nat_id_t id,  int napt, uint8 proto,
+    bcm_ip_t priv_ip, uint16 priv_l4_port,
+    bcm_ip_t pub_ip, uint16 pub_l4_port)
+{
+  bcm_l3_nat_egress_t         egr_nat;
+  bcm_l3_nat_ingress_t        ing_nat;
+    int                         rv=0;
+  /*
+   * egr_nat is used for NAT packet modification in the egresss
+   * - sip_addr becomes the SIP in the packet
+   * - if NAPT, src_port becomes the L4 source port in the packet
+   */
+  bcm_l3_nat_egress_t_init(&egr_nat);
+  egr_nat.flags               = BCM_L3_NAT_EGRESS_SNAT | BCM_L3_NAT_EGRESS_WITH_ID;
+  egr_nat.nat_id              = id;
+  egr_nat.sip_addr            = pub_ip;
+  egr_nat.sip_addr_mask       = 0xffffffff;
+  if (napt) {
+    egr_nat.flags          |= BCM_L3_NAT_EGRESS_NAPT;
+    egr_nat.src_port        = pub_l4_port;
+  }
+  BCM_IF_ERROR_RETURN(bcm_l3_nat_egress_add(unit, &egr_nat));
+
+  /*
+   * ing_nat is used for NAT packet resolution in the ingress
+   * - pub_ip is the address compared against the packet SIP to trigger SIP translation
+   * - if NAPT, ip_proto is the IP protocol compared against the packet IP protocol and
+   *   if matched, then the l4 port is compared against the source port in the
+   *   packet L4 header. In this example, IP proto is 6 (TCP).
+   */
+  bcm_l3_nat_ingress_t_init(&ing_nat);
+  ing_nat.flags               = 0;
+  ing_nat.ip_addr             = priv_ip;
+  ing_nat.nat_id              = id;
+  if (napt) {
+    ing_nat.flags          |= BCM_L3_NAT_INGRESS_TYPE_NAPT;
+    ing_nat.l4_port         = priv_l4_port;
+    ing_nat.ip_proto        = proto;
+  }
+  BCM_IF_ERROR_RETURN(bcm_l3_nat_ingress_add(unit, &ing_nat));
+  return BCM_E_NONE;
+}
+
+

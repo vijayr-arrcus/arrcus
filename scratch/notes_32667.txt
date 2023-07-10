@@ -1,0 +1,10 @@
+LCO --> up, LC1 --> down,
+    LC0 --> down , LC1 --> up.
+PI  --> up, down(timer start), up.
+
+
+
+
+LCO --> up, LC1 --> down,
+    LC1 --> up, LC0 --> down.
+PI --> up, up, down(timer start)
