@@ -1,0 +1,165 @@
+0x7f641c5586ca 693        0x7f641c5586ca 28142             -  27,142       -     bcm_xgs_obj_alloc
+0x7f6449abb7be 1647       0x7f6449abb7be 6854              -  5207         -     /usr/lib/libdpal_core.so:[0x7f6449abb7be]
+0x7f6449addf92 1649       0x7f6449addf92 6845              -  5196         -     dpal_plugin_msg_alloc
+0x7f6449b2806a 4990       0x7f6449b2806a 1887              -  3103         -     cplane_obj_alloc_from_ml_buf
+0x7f64495a14af 4993       0x7f64495a14af 1893              -  3100         -     bwq_push
+0x5630ac5fa56d 6948       0x5630ac5fa56d 59065             -  52,117       -     dpal_post_msg_to_workqueue
+0x7f6449b07b8a 7624       0x7f6449b07b8a 87161             -  79,519       -     cplane_obj_alloc
+0x7f6449abaa65 11929      0x7f6449abaa65 60973             -  49,044       -     dpal_msg_alloc
+0x7f641c4eaebc 13771      0x7f641c4eaebc 22653             -  882          -     bcmsdk_l2_entry_event_handle
+0x7f6449276adc 15031      0x7f6449276adc 124346            -  1,09,315     -     protobuf
+0x7f6449277f7c 27667      0x7f6449277f7c 211807            -  1,84,140     -     protobuf
+
+
+ASAN:
+
+
+typedef struct ds_l2rib_mac_t_ {
+  L2rib__L2ribMac __obj;
+} ds_l2rib_mac_t;
+
+L2rib__L2ribMac *
+l2rib__l2rib_mac__unpack (ProtobufCAllocator  *allocator,
+													size_t               len,
+													const uint8_t       *data)
+{
+  return (L2rib__L2ribMac *)
+     protobuf_c_message_unpack (&l2rib__l2rib_mac__descriptor,
+                                allocator, len, data);
+}
+
+
+static void
+dpal_mpsc_obj_rx_cb (mps_msg_t *msg, const mps_key_t sub_id, void *ctxt)
+{
+  ret_code_e rc;
+  uint32_t tblcode = 0;
+  dpal_obj_t *obj = NULL;
+  dpal_mpsc_ctxt_t *mpsc_p = (dpal_mpsc_ctxt_t*)dpal_get_mpsc_ctxt();
+
+  tblcode = *((uint32_t*)mpsc_sub_tbl_get_context(mpsc_p->c_h, sub_id, msg->tbl_id));
+
+  //FIXME : Remove once MPSC debug is complete
+  // DPAL_MPSC_INFO("MPSC RX CB invoked for tblcode %d\n", tblcode);
+  rc = cplane_obj_alloc_from_mps_msg(&obj, tblcode, msg, NULL);
+  if (!obj || (rc != RET_CODE_SUCCESS)) {
+    LOG_ERR_MSG("DPAL MPSC", "Failed to alloc dpal obj from mps msg "
+                "for table : %d\n", tblcode);
+    return;
+  } else {
+    dpal_mpsc_trace_obj(obj, msg->optype);
+    (void)dpal_post_to_worker_threads(obj, msg->optype);
+  }
+  return;
+}
+
+bool
+dpal_post_to_worker_threads (dpal_obj_t *obj,
+                             ml_optype_e notify_type)
+{
+  uint8_t i;
+  bool ret, clone_reqd = false;
+  dpal_main_ctxt_t *dpal_ctxt = dpal_get_main_ctxt();
+  dpal_worker_ctxt_t *worker_ctxt = dpal_ctxt->workers_ctxt;
+
+  for (i = 0; i < dpal_ctxt->num_workers; i++) {
+    ret = dpal_post_to_worker_thread_int(obj, notify_type, worker_ctxt,
+                                         clone_reqd, worker_ctxt->worker_thread_wq);
+    if (ret == false) {
+      DPAL_TRACE_VA(dpal_infra, dstore_err,
+      "DPAL msg post to %d worker failed\n", i);
+    }
+    worker_ctxt++;
+    /* Clone dpal obj if > 1 worker is spawned */
+    clone_reqd = true;
+  }
+  return (true);
+}
+
+
+
+dpal_post_rc
+dpal_post_to_worker_thread_int (dpal_obj_t *obj,
+                                ml_optype_e notify_type,
+                                dpal_worker_ctxt_t *worker_ctxt,
+                                bool clone_reqd,
+                                bwq_h wq)
+{
+  ret_code_e rc ;
+  bwq_rc wq_rc;
+  dpal_optype_e optype;
+  dpal_obj_t *dpal_obj = NULL;
+  dpal_msg_t *dpal_msg = NULL;
+  uint32_t count = 0;
+
+  if (notify_type == ML_DEL) {
+    optype = DPAL_OBJ_DELETE;
+  } else {
+    optype = DPAL_OBJ_UPDATE;
+  }
+
+  if (clone_reqd) {
+    rc = cplane_obj_alloc(&dpal_obj, obj->obj_type, obj->obj_info,
+                          obj->opaque, worker_ctxt);
+    if (rc != RET_CODE_SUCCESS || !dpal_obj) {
+      DPAL_TRACE_VA(dpal_infra, dstore_err,
+                    "DPAL obj alloc failure for optype %d msg_type %d",
+                    optype, obj->obj_type);
+      return (DPAL_POST_ERROR);
+    }
+  } else {
+    dpal_obj = obj;
+  }
+
+  rc = dpal_msg_alloc(&dpal_msg, dpal_obj, optype, worker_ctxt);
+  if (rc != RET_CODE_SUCCESS || !dpal_msg) {
+    DPAL_TRACE_VA(dpal_infra, dstore_err,
+      "DPAL msg alloc failure for optype %d msg_type %d",
+      optype, obj->obj_type);
+    return (DPAL_POST_ERROR);
+  }
+  wq_rc = bwq_push(wq, dpal_msg);
+  if (wq_rc != BWQ_SUCCESS && wq_rc != BWQ_HWM_CROSSED) {
+    DPAL_TRACE_VA(dpal_infra, dstore_err,
+      "DPAL msg post to workqueue failure for optype %d msg_type %d"
+                  " rc %d",
+      optype, obj->obj_type, wq_rc);
+    return DPAL_POST_ERROR;
+  }
+
+
+
+
+static void
+dpal_aom_handoff(dpal_worker_ctxt_t *worker_ctxt, dpal_msg_t *msg)
+{
+  if(is_cplane_obj(msg->obj->obj_type)) {
+    if (msg->obj->obj_type == DPAL_FORWOBJ_STATS) {
+      pthread_mutex_lock(&worker_ctxt->dpal_mutex);
+    }
+    if (msg->optype == DPAL_OBJ_DELETE) {
+      cplane_obj_del(msg->obj, worker_ctxt);
+    } else {
+      cplane_obj_add(msg->obj, worker_ctxt);
+    }
+    if (msg->obj->obj_type == DPAL_FORWOBJ_STATS) {
+      pthread_mutex_unlock(&worker_ctxt->dpal_mutex);
+    }
+    /*
+     * Free the enqueue object.
+     * TODO: avoid clone above
+     */
+    cplane_obj_free(msg->obj, worker_ctxt);
+  } else {
+    /* If this is PD obj that may have been replayed back then call the appropriate
+     * plugin specific handler function
+     */
+    if(msg->optype == DPAL_OBJ_DELETE) {
+      dpal_plugin_invoke_del_obj_cb_locked(msg->obj, worker_ctxt);
+    } else {
+      dpal_plugin_invoke_add_obj_cb_locked(msg->obj, worker_ctxt);
+    }
+    dpal_plugin_invoke_free_obj_cb_locked(msg->obj, worker_ctxt);
+  }
+  dpal_msg_free(msg, false);
+}
