@@ -1,0 +1,1391 @@
+==19776==AddressSanitizer: failed to intercept '__isoc99_printf'
+==19776==AddressSanitizer: failed to intercept '__isoc99_sprintf'
+==19776==AddressSanitizer: failed to intercept '__isoc99_snprintf'
+==19776==AddressSanitizer: failed to intercept '__isoc99_fprintf'
+==19776==AddressSanitizer: failed to intercept '__isoc99_vprintf'
+==19776==AddressSanitizer: failed to intercept '__isoc99_vsprintf'
+==19776==AddressSanitizer: failed to intercept '__isoc99_vsnprintf'
+==19776==AddressSanitizer: failed to intercept '__isoc99_vfprintf'
+==19776==AddressSanitizer: libc interceptors initialized
+|| `[0x10007fff8000, 0x7fffffffffff]` || HighMem    ||
+|| `[0x02008fff7000, 0x10007fff7fff]` || HighShadow ||
+|| `[0x00008fff7000, 0x02008fff6fff]` || ShadowGap  ||
+|| `[0x00007fff8000, 0x00008fff6fff]` || LowShadow  ||
+|| `[0x000000000000, 0x00007fff7fff]` || LowMem     ||
+MemToShadow(shadow): 0x00008fff7000 0x000091ff6dff 0x004091ff6e00 0x02008fff6fff
+redzone=16
+max_redzone=2048
+quarantine_size_mb=256M
+thread_local_quarantine_size_kb=1024K
+malloc_context_size=30
+SHADOW_SCALE: 3
+SHADOW_GRANULARITY: 8
+SHADOW_OFFSET: 0x7fff8000
+==19776==Installed the sigaction for signal 11
+==19776==Installed the sigaction for signal 7
+==19776==Installed the sigaction for signal 8
+==19776==T0: stack [0x7ffe75ec1000,0x7ffe766c1000) size 0x800000; local=0x7ffe766c0a6c
+==19776==AddressSanitizer Init done
+==19776==T1: stack [0x7f3281700000,0x7f3281efe9c0) size 0x7fe9c0; local=0x7f3281efe8cc
+==19776==T2: stack [0x7f3280eff000,0x7f32816fd9c0) size 0x7fe9c0; local=0x7f32816fd8cc
+==19776==T3: stack [0x7f325d364000,0x7f325db629c0) size 0x7fe9c0; local=0x7f325db628cc
+==19776==T4: stack [0x7f325cb63000,0x7f325d3619c0) size 0x7fe9c0; local=0x7f325d3618cc
+==19776==T5: stack [0x7f325c362000,0x7f325cb609c0) size 0x7fe9c0; local=0x7f325cb608cc
+==19776==T6: stack [0x7f325bb61000,0x7f325c35f9c0) size 0x7fe9c0; local=0x7f325c35f8cc
+==19776==T7: stack [0x7f325b360000,0x7f325bb5e9c0) size 0x7fe9c0; local=0x7f325bb5e8cc
+==19776==T8: stack [0x7f325a5c3000,0x7f325adc19c0) size 0x7fe9c0; local=0x7f325adc18cc
+==19776==T9: stack [0x7f323b097000,0x7f323b8959c0) size 0x7fe9c0; local=0x7f323b8958cc
+==19776==T10: stack [0x7f323a880000,0x7f323b07e9c0) size 0x7fe9c0; local=0x7f323b07e8cc
+==19776==T11: stack [0x7f323a069000,0x7f323a8679c0) size 0x7fe9c0; local=0x7f323a8678cc
+==19776==T12: stack [0x7f3239852000,0x7f323a0509c0) size 0x7fe9c0; local=0x7f323a0508cc
+==19776==T13: stack [0x7f32397fb000,0x7f32398299c0) size 0x2e9c0; local=0x7f32398298cc
+==19776==T14: stack [0x7f3233fa5000,0x7f3233fa9940) size 0x4940; local=0x7f3233fa984c
+==19776==T15: stack [0x7f3233f5e000,0x7f3233f8c9c0) size 0x2e9c0; local=0x7f3233f8c8cc
+==19776==T16: stack [0x7f3232884000,0x7f32328b29c0) size 0x2e9c0; local=0x7f32328b28cc
+==19776==T15 TSDDtor
+==19776==T15 exited
+==19776==T17: stack [0x7f323283d000,0x7f323286b9c0) size 0x2e9c0; local=0x7f323286b8cc
+==19776==T18: stack [0x7f3282702000,0x7f32827049c0) size 0x29c0; local=0x7f32827048cc
+==19776==T19: stack [0x7f3233f5e000,0x7f3233f8c9c0) size 0x2e9c0; local=0x7f3233f8c8cc
+==19776==T20: stack [0x7f32324fc000,0x7f323252a9c0) size 0x2e9c0; local=0x7f323252a8cc
+==19776==T21: stack [0x7f32324b5000,0x7f32324e39c0) size 0x2e9c0; local=0x7f32324e38cc
+==19776==T22: stack [0x7f322e1b0000,0x7f322e1de9c0) size 0x2e9c0; local=0x7f322e1de8cc
+==19776==T23: stack [0x7f322e169000,0x7f322e1979c0) size 0x2e9c0; local=0x7f322e1978cc
+==19776==T24: stack [0x7f322d5c1000,0x7f322d5ef9c0) size 0x2e9c0; local=0x7f322d5ef8cc
+==19776==T24 TSDDtor
+==19776==T24 exited
+==19776==T25: stack [0x7f322d57a000,0x7f322d5a89c0) size 0x2e9c0; local=0x7f322d5a88cc
+==19776==T25 TSDDtor
+==19776==T25 exited
+==19776==T26: stack [0x7f322d5c1000,0x7f322d5ef9c0) size 0x2e9c0; local=0x7f322d5ef8cc
+==19776==T27: stack [0x7f322d57a000,0x7f322d5a89c0) size 0x2e9c0; local=0x7f322d5a88cc
+==19776==T28: stack [0x7f322d533000,0x7f322d5619c0) size 0x2e9c0; local=0x7f322d5618cc
+==19776==T29: stack [0x7f322cff3000,0x7f322d0219c0) size 0x2e9c0; local=0x7f322d0218cc
+==19776==T30: stack [0x7f322cfac000,0x7f322cfda9c0) size 0x2e9c0; local=0x7f322cfda8cc
+==19776==T31: stack [0x7f322cb15000,0x7f322cb439c0) size 0x2e9c0; local=0x7f322cb438cc
+==19776==T32: stack [0x7f322ca9a000,0x7f322cac89c0) size 0x2e9c0; local=0x7f322cac88cc
+==19776==T33: stack [0x7f322ca43000,0x7f322ca719c0) size 0x2e9c0; local=0x7f322ca718cc
+==19776==T34: stack [0x7f322c1e0000,0x7f322c9de9c0) size 0x7fe9c0; local=0x7f322c9de8cc
+==19776==T35: stack [0x7f322b9d1000,0x7f322c1cf9c0) size 0x7fe9c0; local=0x7f322c1cf8cc
+==19776==T36: stack [0x7f322b1ba000,0x7f322b9b89c0) size 0x7fe9c0; local=0x7f322b9b88cc
+==19776==T37: stack [0x7f322a391000,0x7f322ab8f9c0) size 0x7fe9c0; local=0x7f322ab8f8cc
+==19776==T38: stack [0x7f3229b7a000,0x7f322a3789c0) size 0x7fe9c0; local=0x7f322a3788cc
+==19776==T39: stack [0x7f3229363000,0x7f3229b619c0) size 0x7fe9c0; local=0x7f3229b618cc
+==19776==T40: stack [0x7f3228b4c000,0x7f322934a9c0) size 0x7fe9c0; local=0x7f322934a8cc
+==19776==T8 TSDDtor
+==19776==T8 exited
+==19776==T41: stack [0x7f3228325000,0x7f3228b239c0) size 0x7fe9c0; local=0x7f3228b238cc
+==19776==T42: stack [0x7f322ad05000,0x7f322ad339c0) size 0x2e9c0; local=0x7f322ad338cc
+==19776==T40 TSDDtor
+==19776==T40 exited
+==19776==T41 TSDDtor
+==19776==T41 exited
+
+=================================================================
+==19776==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 7168 byte(s) in 56 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32864aca17 in dpal_stats_register_instance /home/ramya/531/arrcus_sw/dpal/common/app/dpal_stats.c:1127
+    #2 0x7f3286523aa6 in dpal_register_stats /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:754
+    #3 0x7f3286525684 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:817
+    #4 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #5 0x7f3285f4ecf1  (/usr/lib/libaom.so+0xacf1)
+    #6 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #7 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #8 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #9 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #10 0x7f32864d9f07 in dpal_intf_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:12026
+    #11 0x7f32864f856c in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43251
+    #12 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #13 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #14 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #15 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 184 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286719d30 in operator new(unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xead30)
+    #1 0x7f328617abc7 in mpsc_confd_init (/usr/lib/libmpsc.so+0x1cbc7)
+    #2 0x7f3286521b14 in dpal_confd_plugin_cfg_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_confd_plugin.c:844
+    #3 0x55c7f5650246 in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1129
+    #4 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Direct leak of 48 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f325a39e4c9 in bcm_xgs_obj_alloc /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:176
+    #2 0x7f325a3c98b7 in bcm_xgs_nh_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:5538
+    #3 0x7f325a3c98b7 in bcm_xgs_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:38371
+    #4 0x7f325a3155a6 in bcmsdk_l3_nexthop_api /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_nh.c:1024
+    #5 0x7f32864b39be in dpal_plugin_invoke_cb_internal /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1332
+    #6 0x7f32864b39be in dpal_plugin_invoke_cb_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1360
+    #7 0x7f3286525649 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:793
+    #8 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #9 0x7f3285f4e40d  (/usr/lib/libaom.so+0xa40d)
+    #10 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #11 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #12 0x7f3285f48550  (/usr/lib/libaom.so+0x4550)
+    #13 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #14 0x7f3285f48603  (/usr/lib/libaom.so+0x4603)
+    #15 0x7f3285f486ca  (/usr/lib/libaom.so+0x46ca)
+    #16 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #17 0x7f3285f4856c  (/usr/lib/libaom.so+0x456c)
+    #18 0x7f3285f494f2  (/usr/lib/libaom.so+0x54f2)
+    #19 0x7f3285f4a181  (/usr/lib/libaom.so+0x6181)
+    #20 0x7f3285f4a2bc  (/usr/lib/libaom.so+0x62bc)
+    #21 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #22 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #23 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #24 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #25 0x7f32864f0e14 in dpal_v4_route_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:4628
+    #26 0x7f32864f6d6a in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43203
+    #27 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #28 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #29 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #30 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 40 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dec7 in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4ec7)
+
+Direct leak of 27 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b98 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:41
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32864d8719 in cplane_obj_alloc /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:76
+    #2 0x7f32864967b7 in dpal_hwcfg_bst_update /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:877
+    #3 0x7f32864967b7 in dpalcfg_read_bst_cfg /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:934
+    #4 0x7f32864967b7 in dpalcfg_hw_config_val_set /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:1126
+    #5 0x7f3285dbbbb4 in _confd_iterate (/usr/lib/libconfd.so+0x87bb4)
+    #6 0x7f3285d7878c in cdb_diff_iterate (/usr/lib/libconfd.so+0x4478c)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b1e in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:37
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32861ae621 in mpsc_ctrl_init(mpsc_s*) (/usr/lib/libmpsc.so+0x50621)
+    #2 0x7f3286179df6 in mpsc_init (/usr/lib/libmpsc.so+0x1bdf6)
+    #3 0x7f32864a3bc6 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:43
+    #4 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #5 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Indirect leak of 3053 byte(s) in 50 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18af8  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3af8)
+
+Indirect leak of 1792 byte(s) in 14 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1889c  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x389c)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 1080 byte(s) in 15 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d49a in json_object (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x849a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 960 byte(s) in 30 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d42e  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x842e)
+
+Indirect leak of 824 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba472 in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x3472)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 529 byte(s) in 23 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007b7f  (<unknown module>)
+
+Indirect leak of 512 byte(s) in 4 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9b97  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2b97)
+
+Indirect leak of 256 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18971  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3971)
+
+Indirect leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba42a in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x342a)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 128 byte(s) in 3 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dadb in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4adb)
+
+Indirect leak of 128 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d3d2  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x83d2)
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d6ca in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x86ca)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 128 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007e7f  (<unknown module>)
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 11 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000005a7f  (<unknown module>)
+
+Indirect leak of 7 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x61600000697f  (<unknown module>)
+
+Indirect leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9588  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2588)
+
+SUMMARY: AddressSanitizer: 17352 byte(s) leaked in 224 allocation(s).
+
+=================================================================
+==19776==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 7168 byte(s) in 56 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32864aca17 in dpal_stats_register_instance /home/ramya/531/arrcus_sw/dpal/common/app/dpal_stats.c:1127
+    #2 0x7f3286523aa6 in dpal_register_stats /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:754
+    #3 0x7f3286525684 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:817
+    #4 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #5 0x7f3285f4ecf1  (/usr/lib/libaom.so+0xacf1)
+    #6 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #7 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #8 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #9 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #10 0x7f32864d9f07 in dpal_intf_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:12026
+    #11 0x7f32864f856c in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43251
+    #12 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #13 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #14 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #15 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 184 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286719d30 in operator new(unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xead30)
+    #1 0x7f328617abc7 in mpsc_confd_init (/usr/lib/libmpsc.so+0x1cbc7)
+    #2 0x7f3286521b14 in dpal_confd_plugin_cfg_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_confd_plugin.c:844
+    #3 0x55c7f5650246 in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1129
+    #4 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Direct leak of 48 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f325a39e4c9 in bcm_xgs_obj_alloc /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:176
+    #2 0x7f325a3c98b7 in bcm_xgs_nh_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:5538
+    #3 0x7f325a3c98b7 in bcm_xgs_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:38371
+    #4 0x7f325a3155a6 in bcmsdk_l3_nexthop_api /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_nh.c:1024
+    #5 0x7f32864b39be in dpal_plugin_invoke_cb_internal /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1332
+    #6 0x7f32864b39be in dpal_plugin_invoke_cb_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1360
+    #7 0x7f3286525649 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:793
+    #8 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #9 0x7f3285f4e40d  (/usr/lib/libaom.so+0xa40d)
+    #10 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #11 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #12 0x7f3285f48550  (/usr/lib/libaom.so+0x4550)
+    #13 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #14 0x7f3285f48603  (/usr/lib/libaom.so+0x4603)
+    #15 0x7f3285f486ca  (/usr/lib/libaom.so+0x46ca)
+    #16 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #17 0x7f3285f4856c  (/usr/lib/libaom.so+0x456c)
+    #18 0x7f3285f494f2  (/usr/lib/libaom.so+0x54f2)
+    #19 0x7f3285f4a181  (/usr/lib/libaom.so+0x6181)
+    #20 0x7f3285f4a2bc  (/usr/lib/libaom.so+0x62bc)
+    #21 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #22 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #23 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #24 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #25 0x7f32864f0e14 in dpal_v4_route_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:4628
+    #26 0x7f32864f6d6a in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43203
+    #27 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #28 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #29 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #30 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 40 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dec7 in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4ec7)
+
+Direct leak of 27 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b98 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:41
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32864d8719 in cplane_obj_alloc /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:76
+    #2 0x7f32864967b7 in dpal_hwcfg_bst_update /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:877
+    #3 0x7f32864967b7 in dpalcfg_read_bst_cfg /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:934
+    #4 0x7f32864967b7 in dpalcfg_hw_config_val_set /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:1126
+    #5 0x7f3285dbbbb4 in _confd_iterate (/usr/lib/libconfd.so+0x87bb4)
+    #6 0x7f3285d7878c in cdb_diff_iterate (/usr/lib/libconfd.so+0x4478c)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b1e in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:37
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32861ae621 in mpsc_ctrl_init(mpsc_s*) (/usr/lib/libmpsc.so+0x50621)
+    #2 0x7f3286179df6 in mpsc_init (/usr/lib/libmpsc.so+0x1bdf6)
+    #3 0x7f32864a3bc6 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:43
+    #4 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #5 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Indirect leak of 3053 byte(s) in 50 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18af8  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3af8)
+
+Indirect leak of 1792 byte(s) in 14 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1889c  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x389c)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 1080 byte(s) in 15 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d49a in json_object (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x849a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 960 byte(s) in 30 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d42e  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x842e)
+
+Indirect leak of 824 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba472 in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x3472)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 529 byte(s) in 23 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007b7f  (<unknown module>)
+
+Indirect leak of 512 byte(s) in 4 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9b97  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2b97)
+
+Indirect leak of 256 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18971  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3971)
+
+Indirect leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba42a in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x342a)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 128 byte(s) in 3 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dadb in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4adb)
+
+Indirect leak of 128 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d3d2  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x83d2)
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d6ca in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x86ca)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 128 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007e7f  (<unknown module>)
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 11 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000005a7f  (<unknown module>)
+
+Indirect leak of 7 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x61600000697f  (<unknown module>)
+
+Indirect leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9588  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2588)
+
+SUMMARY: AddressSanitizer: 17352 byte(s) leaked in 224 allocation(s).
+
+=================================================================
+==19776==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 7168 byte(s) in 56 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32864aca17 in dpal_stats_register_instance /home/ramya/531/arrcus_sw/dpal/common/app/dpal_stats.c:1127
+    #2 0x7f3286523aa6 in dpal_register_stats /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:754
+    #3 0x7f3286525684 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:817
+    #4 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #5 0x7f3285f4ecf1  (/usr/lib/libaom.so+0xacf1)
+    #6 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #7 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #8 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #9 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #10 0x7f32864d9f07 in dpal_intf_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:12026
+    #11 0x7f32864f856c in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43251
+    #12 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #13 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #14 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #15 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 184 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286719d30 in operator new(unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xead30)
+    #1 0x7f328617abc7 in mpsc_confd_init (/usr/lib/libmpsc.so+0x1cbc7)
+    #2 0x7f3286521b14 in dpal_confd_plugin_cfg_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_confd_plugin.c:844
+    #3 0x55c7f5650246 in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1129
+    #4 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Direct leak of 48 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f325a39e4c9 in bcm_xgs_obj_alloc /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:176
+    #2 0x7f325a3c98b7 in bcm_xgs_nh_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:5538
+    #3 0x7f325a3c98b7 in bcm_xgs_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:38371
+    #4 0x7f325a3155a6 in bcmsdk_l3_nexthop_api /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_nh.c:1024
+    #5 0x7f32864b39be in dpal_plugin_invoke_cb_internal /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1332
+    #6 0x7f32864b39be in dpal_plugin_invoke_cb_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1360
+    #7 0x7f3286525649 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:793
+    #8 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #9 0x7f3285f4e40d  (/usr/lib/libaom.so+0xa40d)
+    #10 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #11 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #12 0x7f3285f48550  (/usr/lib/libaom.so+0x4550)
+    #13 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #14 0x7f3285f48603  (/usr/lib/libaom.so+0x4603)
+    #15 0x7f3285f486ca  (/usr/lib/libaom.so+0x46ca)
+    #16 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #17 0x7f3285f4856c  (/usr/lib/libaom.so+0x456c)
+    #18 0x7f3285f494f2  (/usr/lib/libaom.so+0x54f2)
+    #19 0x7f3285f4a181  (/usr/lib/libaom.so+0x6181)
+    #20 0x7f3285f4a2bc  (/usr/lib/libaom.so+0x62bc)
+    #21 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #22 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #23 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #24 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #25 0x7f32864f0e14 in dpal_v4_route_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:4628
+    #26 0x7f32864f6d6a in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43203
+    #27 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #28 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #29 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #30 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 40 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dec7 in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4ec7)
+
+Direct leak of 27 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b98 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:41
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32864d8719 in cplane_obj_alloc /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:76
+    #2 0x7f32864967b7 in dpal_hwcfg_bst_update /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:877
+    #3 0x7f32864967b7 in dpalcfg_read_bst_cfg /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:934
+    #4 0x7f32864967b7 in dpalcfg_hw_config_val_set /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:1126
+    #5 0x7f3285dbbbb4 in _confd_iterate (/usr/lib/libconfd.so+0x87bb4)
+    #6 0x7f3285d7878c in cdb_diff_iterate (/usr/lib/libconfd.so+0x4478c)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b1e in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:37
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32861ae621 in mpsc_ctrl_init(mpsc_s*) (/usr/lib/libmpsc.so+0x50621)
+    #2 0x7f3286179df6 in mpsc_init (/usr/lib/libmpsc.so+0x1bdf6)
+    #3 0x7f32864a3bc6 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:43
+    #4 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #5 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Indirect leak of 3053 byte(s) in 50 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18af8  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3af8)
+
+Indirect leak of 1792 byte(s) in 14 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1889c  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x389c)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 1080 byte(s) in 15 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d49a in json_object (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x849a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 960 byte(s) in 30 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d42e  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x842e)
+
+Indirect leak of 824 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba472 in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x3472)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 529 byte(s) in 23 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007b7f  (<unknown module>)
+
+Indirect leak of 512 byte(s) in 4 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9b97  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2b97)
+
+Indirect leak of 256 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18971  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3971)
+
+Indirect leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba42a in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x342a)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 128 byte(s) in 3 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dadb in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4adb)
+
+Indirect leak of 128 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d3d2  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x83d2)
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d6ca in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x86ca)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 128 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007e7f  (<unknown module>)
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 11 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000005a7f  (<unknown module>)
+
+Indirect leak of 7 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x61600000697f  (<unknown module>)
+
+Indirect leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9588  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2588)
+
+SUMMARY: AddressSanitizer: 17352 byte(s) leaked in 224 allocation(s).
+
+=================================================================
+==19776==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 7168 byte(s) in 56 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32864aca17 in dpal_stats_register_instance /home/ramya/531/arrcus_sw/dpal/common/app/dpal_stats.c:1127
+    #2 0x7f3286523aa6 in dpal_register_stats /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:754
+    #3 0x7f3286525684 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:817
+    #4 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #5 0x7f3285f4ecf1  (/usr/lib/libaom.so+0xacf1)
+    #6 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #7 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #8 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #9 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #10 0x7f32864d9f07 in dpal_intf_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:12026
+    #11 0x7f32864f856c in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43251
+    #12 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #13 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #14 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #15 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 184 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286719d30 in operator new(unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xead30)
+    #1 0x7f328617abc7 in mpsc_confd_init (/usr/lib/libmpsc.so+0x1cbc7)
+    #2 0x7f3286521b14 in dpal_confd_plugin_cfg_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_confd_plugin.c:844
+    #3 0x55c7f5650246 in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1129
+    #4 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Direct leak of 48 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f325a39e4c9 in bcm_xgs_obj_alloc /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:176
+    #2 0x7f325a3c98b7 in bcm_xgs_nh_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:5538
+    #3 0x7f325a3c98b7 in bcm_xgs_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:38371
+    #4 0x7f325a3155a6 in bcmsdk_l3_nexthop_api /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_nh.c:1024
+    #5 0x7f32864b39be in dpal_plugin_invoke_cb_internal /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1332
+    #6 0x7f32864b39be in dpal_plugin_invoke_cb_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1360
+    #7 0x7f3286525649 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:793
+    #8 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #9 0x7f3285f4e40d  (/usr/lib/libaom.so+0xa40d)
+    #10 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #11 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #12 0x7f3285f48550  (/usr/lib/libaom.so+0x4550)
+    #13 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #14 0x7f3285f48603  (/usr/lib/libaom.so+0x4603)
+    #15 0x7f3285f486ca  (/usr/lib/libaom.so+0x46ca)
+    #16 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #17 0x7f3285f4856c  (/usr/lib/libaom.so+0x456c)
+    #18 0x7f3285f494f2  (/usr/lib/libaom.so+0x54f2)
+    #19 0x7f3285f4a181  (/usr/lib/libaom.so+0x6181)
+    #20 0x7f3285f4a2bc  (/usr/lib/libaom.so+0x62bc)
+    #21 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #22 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #23 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #24 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #25 0x7f32864f0e14 in dpal_v4_route_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:4628
+    #26 0x7f32864f6d6a in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43203
+    #27 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #28 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #29 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #30 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 40 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dec7 in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4ec7)
+
+Direct leak of 27 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b98 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:41
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32864d8719 in cplane_obj_alloc /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:76
+    #2 0x7f32864967b7 in dpal_hwcfg_bst_update /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:877
+    #3 0x7f32864967b7 in dpalcfg_read_bst_cfg /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:934
+    #4 0x7f32864967b7 in dpalcfg_hw_config_val_set /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:1126
+    #5 0x7f3285dbbbb4 in _confd_iterate (/usr/lib/libconfd.so+0x87bb4)
+    #6 0x7f3285d7878c in cdb_diff_iterate (/usr/lib/libconfd.so+0x4478c)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b1e in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:37
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32861ae621 in mpsc_ctrl_init(mpsc_s*) (/usr/lib/libmpsc.so+0x50621)
+    #2 0x7f3286179df6 in mpsc_init (/usr/lib/libmpsc.so+0x1bdf6)
+    #3 0x7f32864a3bc6 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:43
+    #4 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #5 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Indirect leak of 3053 byte(s) in 50 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18af8  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3af8)
+
+Indirect leak of 1792 byte(s) in 14 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1889c  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x389c)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 1080 byte(s) in 15 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d49a in json_object (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x849a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 960 byte(s) in 30 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d42e  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x842e)
+
+Indirect leak of 824 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba472 in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x3472)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 529 byte(s) in 23 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007b7f  (<unknown module>)
+
+Indirect leak of 512 byte(s) in 4 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9b97  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2b97)
+
+Indirect leak of 256 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18971  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3971)
+
+Indirect leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba42a in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x342a)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 128 byte(s) in 3 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dadb in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4adb)
+
+Indirect leak of 128 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d3d2  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x83d2)
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d6ca in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x86ca)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 128 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007e7f  (<unknown module>)
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 11 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000005a7f  (<unknown module>)
+
+Indirect leak of 7 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x61600000697f  (<unknown module>)
+
+Indirect leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9588  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2588)
+
+SUMMARY: AddressSanitizer: 17352 byte(s) leaked in 224 allocation(s).
+
+=================================================================
+==19776==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 7168 byte(s) in 56 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32864aca17 in dpal_stats_register_instance /home/ramya/531/arrcus_sw/dpal/common/app/dpal_stats.c:1127
+    #2 0x7f3286523aa6 in dpal_register_stats /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:754
+    #3 0x7f3286525684 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:817
+    #4 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #5 0x7f3285f4ecf1  (/usr/lib/libaom.so+0xacf1)
+    #6 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #7 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #8 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #9 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #10 0x7f32864d9f07 in dpal_intf_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:12026
+    #11 0x7f32864f856c in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43251
+    #12 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #13 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #14 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #15 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 184 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286719d30 in operator new(unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xead30)
+    #1 0x7f328617abc7 in mpsc_confd_init (/usr/lib/libmpsc.so+0x1cbc7)
+    #2 0x7f3286521b14 in dpal_confd_plugin_cfg_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_confd_plugin.c:844
+    #3 0x55c7f5650246 in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1129
+    #4 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Direct leak of 48 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f325a39e4c9 in bcm_xgs_obj_alloc /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:176
+    #2 0x7f325a3c98b7 in bcm_xgs_nh_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:5538
+    #3 0x7f325a3c98b7 in bcm_xgs_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:38371
+    #4 0x7f325a3155a6 in bcmsdk_l3_nexthop_api /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_nh.c:1024
+    #5 0x7f32864b39be in dpal_plugin_invoke_cb_internal /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1332
+    #6 0x7f32864b39be in dpal_plugin_invoke_cb_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1360
+    #7 0x7f3286525649 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:793
+    #8 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #9 0x7f3285f4e40d  (/usr/lib/libaom.so+0xa40d)
+    #10 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #11 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #12 0x7f3285f48550  (/usr/lib/libaom.so+0x4550)
+    #13 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #14 0x7f3285f48603  (/usr/lib/libaom.so+0x4603)
+    #15 0x7f3285f486ca  (/usr/lib/libaom.so+0x46ca)
+    #16 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #17 0x7f3285f4856c  (/usr/lib/libaom.so+0x456c)
+    #18 0x7f3285f494f2  (/usr/lib/libaom.so+0x54f2)
+    #19 0x7f3285f4a181  (/usr/lib/libaom.so+0x6181)
+    #20 0x7f3285f4a2bc  (/usr/lib/libaom.so+0x62bc)
+    #21 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #22 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #23 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #24 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #25 0x7f32864f0e14 in dpal_v4_route_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:4628
+    #26 0x7f32864f6d6a in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43203
+    #27 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #28 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #29 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #30 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 40 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dec7 in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4ec7)
+
+Direct leak of 27 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b98 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:41
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32864d8719 in cplane_obj_alloc /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:76
+    #2 0x7f32864967b7 in dpal_hwcfg_bst_update /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:877
+    #3 0x7f32864967b7 in dpalcfg_read_bst_cfg /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:934
+    #4 0x7f32864967b7 in dpalcfg_hw_config_val_set /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:1126
+    #5 0x7f3285dbbbb4 in _confd_iterate (/usr/lib/libconfd.so+0x87bb4)
+    #6 0x7f3285d7878c in cdb_diff_iterate (/usr/lib/libconfd.so+0x4478c)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b1e in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:37
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32861ae621 in mpsc_ctrl_init(mpsc_s*) (/usr/lib/libmpsc.so+0x50621)
+    #2 0x7f3286179df6 in mpsc_init (/usr/lib/libmpsc.so+0x1bdf6)
+    #3 0x7f32864a3bc6 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:43
+    #4 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #5 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Indirect leak of 3053 byte(s) in 50 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18af8  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3af8)
+
+Indirect leak of 1792 byte(s) in 14 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1889c  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x389c)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 1080 byte(s) in 15 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d49a in json_object (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x849a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 960 byte(s) in 30 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d42e  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x842e)
+
+Indirect leak of 824 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba472 in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x3472)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 529 byte(s) in 23 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007b7f  (<unknown module>)
+
+Indirect leak of 512 byte(s) in 4 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9b97  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2b97)
+
+Indirect leak of 256 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18971  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3971)
+
+Indirect leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba42a in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x342a)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 128 byte(s) in 3 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dadb in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4adb)
+
+Indirect leak of 128 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d3d2  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x83d2)
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d6ca in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x86ca)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 128 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007e7f  (<unknown module>)
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 11 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000005a7f  (<unknown module>)
+
+Indirect leak of 7 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x61600000697f  (<unknown module>)
+
+Indirect leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9588  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2588)
+
+SUMMARY: AddressSanitizer: 17352 byte(s) leaked in 224 allocation(s).
+
+=================================================================
+==19776==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 7168 byte(s) in 56 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32864aca17 in dpal_stats_register_instance /home/ramya/531/arrcus_sw/dpal/common/app/dpal_stats.c:1127
+    #2 0x7f3286523aa6 in dpal_register_stats /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:754
+    #3 0x7f3286525684 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:817
+    #4 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #5 0x7f3285f4ecf1  (/usr/lib/libaom.so+0xacf1)
+    #6 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #7 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #8 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #9 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #10 0x7f32864d9f07 in dpal_intf_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:12026
+    #11 0x7f32864f856c in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43251
+    #12 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #13 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #14 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #15 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 184 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286719d30 in operator new(unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xead30)
+    #1 0x7f328617abc7 in mpsc_confd_init (/usr/lib/libmpsc.so+0x1cbc7)
+    #2 0x7f3286521b14 in dpal_confd_plugin_cfg_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_confd_plugin.c:844
+    #3 0x55c7f5650246 in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1129
+    #4 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Direct leak of 48 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f325a39e4c9 in bcm_xgs_obj_alloc /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:176
+    #2 0x7f325a3c98b7 in bcm_xgs_nh_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:5538
+    #3 0x7f325a3c98b7 in bcm_xgs_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:38371
+    #4 0x7f325a3155a6 in bcmsdk_l3_nexthop_api /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_nh.c:1024
+    #5 0x7f32864b39be in dpal_plugin_invoke_cb_internal /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1332
+    #6 0x7f32864b39be in dpal_plugin_invoke_cb_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1360
+    #7 0x7f3286525649 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:793
+    #8 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #9 0x7f3285f4e40d  (/usr/lib/libaom.so+0xa40d)
+    #10 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #11 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #12 0x7f3285f48550  (/usr/lib/libaom.so+0x4550)
+    #13 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #14 0x7f3285f48603  (/usr/lib/libaom.so+0x4603)
+    #15 0x7f3285f486ca  (/usr/lib/libaom.so+0x46ca)
+    #16 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #17 0x7f3285f4856c  (/usr/lib/libaom.so+0x456c)
+    #18 0x7f3285f494f2  (/usr/lib/libaom.so+0x54f2)
+    #19 0x7f3285f4a181  (/usr/lib/libaom.so+0x6181)
+    #20 0x7f3285f4a2bc  (/usr/lib/libaom.so+0x62bc)
+    #21 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #22 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #23 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #24 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #25 0x7f32864f0e14 in dpal_v4_route_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:4628
+    #26 0x7f32864f6d6a in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43203
+    #27 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #28 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #29 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #30 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 40 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dec7 in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4ec7)
+
+Direct leak of 27 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b98 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:41
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32864d8719 in cplane_obj_alloc /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:76
+    #2 0x7f32864967b7 in dpal_hwcfg_bst_update /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:877
+    #3 0x7f32864967b7 in dpalcfg_read_bst_cfg /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:934
+    #4 0x7f32864967b7 in dpalcfg_hw_config_val_set /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:1126
+    #5 0x7f3285dbbbb4 in _confd_iterate (/usr/lib/libconfd.so+0x87bb4)
+    #6 0x7f3285d7878c in cdb_diff_iterate (/usr/lib/libconfd.so+0x4478c)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b1e in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:37
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32861ae621 in mpsc_ctrl_init(mpsc_s*) (/usr/lib/libmpsc.so+0x50621)
+    #2 0x7f3286179df6 in mpsc_init (/usr/lib/libmpsc.so+0x1bdf6)
+    #3 0x7f32864a3bc6 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:43
+    #4 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #5 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Indirect leak of 3053 byte(s) in 50 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18af8  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3af8)
+
+Indirect leak of 1792 byte(s) in 14 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1889c  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x389c)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 1080 byte(s) in 15 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d49a in json_object (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x849a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 960 byte(s) in 30 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d42e  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x842e)
+
+Indirect leak of 824 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba472 in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x3472)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 529 byte(s) in 23 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007b7f  (<unknown module>)
+
+Indirect leak of 512 byte(s) in 4 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9b97  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2b97)
+
+Indirect leak of 256 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18971  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3971)
+
+Indirect leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba42a in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x342a)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 128 byte(s) in 3 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dadb in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4adb)
+
+Indirect leak of 128 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d3d2  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x83d2)
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d6ca in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x86ca)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 128 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007e7f  (<unknown module>)
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 11 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000005a7f  (<unknown module>)
+
+Indirect leak of 7 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x61600000697f  (<unknown module>)
+
+Indirect leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9588  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2588)
+
+SUMMARY: AddressSanitizer: 17352 byte(s) leaked in 224 allocation(s).
+
+=================================================================
+==19776==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 7168 byte(s) in 56 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32864aca17 in dpal_stats_register_instance /home/ramya/531/arrcus_sw/dpal/common/app/dpal_stats.c:1127
+    #2 0x7f3286523aa6 in dpal_register_stats /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:754
+    #3 0x7f3286525684 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:817
+    #4 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #5 0x7f3285f4ecf1  (/usr/lib/libaom.so+0xacf1)
+    #6 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #7 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #8 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #9 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #10 0x7f32864d9f07 in dpal_intf_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:12026
+    #11 0x7f32864f856c in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43251
+    #12 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #13 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #14 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #15 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 184 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286719d30 in operator new(unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xead30)
+    #1 0x7f328617abc7 in mpsc_confd_init (/usr/lib/libmpsc.so+0x1cbc7)
+    #2 0x7f3286521b14 in dpal_confd_plugin_cfg_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_confd_plugin.c:844
+    #3 0x55c7f5650246 in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1129
+    #4 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Direct leak of 48 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f325a39e4c9 in bcm_xgs_obj_alloc /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:176
+    #2 0x7f325a3c98b7 in bcm_xgs_nh_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:5538
+    #3 0x7f325a3c98b7 in bcm_xgs_obj_del /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:38371
+    #4 0x7f325a3155a6 in bcmsdk_l3_nexthop_api /home/ramya/531/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_nh.c:1024
+    #5 0x7f32864b39be in dpal_plugin_invoke_cb_internal /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1332
+    #6 0x7f32864b39be in dpal_plugin_invoke_cb_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_plugin.c:1360
+    #7 0x7f3286525649 in dpal_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:793
+    #8 0x7f32864c306b in cplane_obj_aom_cb /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:47976
+    #9 0x7f3285f4e40d  (/usr/lib/libaom.so+0xa40d)
+    #10 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #11 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #12 0x7f3285f48550  (/usr/lib/libaom.so+0x4550)
+    #13 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #14 0x7f3285f48603  (/usr/lib/libaom.so+0x4603)
+    #15 0x7f3285f486ca  (/usr/lib/libaom.so+0x46ca)
+    #16 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #17 0x7f3285f4856c  (/usr/lib/libaom.so+0x456c)
+    #18 0x7f3285f494f2  (/usr/lib/libaom.so+0x54f2)
+    #19 0x7f3285f4a181  (/usr/lib/libaom.so+0x6181)
+    #20 0x7f3285f4a2bc  (/usr/lib/libaom.so+0x62bc)
+    #21 0x7f3285f48045  (/usr/lib/libaom.so+0x4045)
+    #22 0x7f3285f48478  (/usr/lib/libaom.so+0x4478)
+    #23 0x7f3285f49f1f  (/usr/lib/libaom.so+0x5f1f)
+    #24 0x7f3285f51e43 in aom_obj_add (/usr/lib/libaom.so+0xde43)
+    #25 0x7f32864f0e14 in dpal_v4_route_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:4628
+    #26 0x7f32864f6d6a in cplane_obj_add /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:43203
+    #27 0x7f328652222d in dpal_aom_handoff /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:839
+    #28 0x7f328652280d in dpal_worker_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_worker.c:956
+    #29 0x7f3285f78255  (/usr/lib/libbwq.so+0x1255)
+    #30 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Direct leak of 40 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dec7 in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4ec7)
+
+Direct leak of 27 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b98 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:41
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32864d8719 in cplane_obj_alloc /home/ramya/531/arrcus_sw/dpal/common/app/gen_cplane_obj.c:76
+    #2 0x7f32864967b7 in dpal_hwcfg_bst_update /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:877
+    #3 0x7f32864967b7 in dpalcfg_read_bst_cfg /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:934
+    #4 0x7f32864967b7 in dpalcfg_hw_config_val_set /home/ramya/531/arrcus_sw/dpal/common/app/dpal_hw_cfg.c:1126
+    #5 0x7f3285dbbbb4 in _confd_iterate (/usr/lib/libconfd.so+0x87bb4)
+    #6 0x7f3285d7878c in cdb_diff_iterate (/usr/lib/libconfd.so+0x4478c)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32864a3b1e in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:37
+    #2 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #3 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Direct leak of 22 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286669810 in strdup (/usr/lib/x86_64-linux-gnu/libasan.so.5+0x3a810)
+    #1 0x7f32861ae621 in mpsc_ctrl_init(mpsc_s*) (/usr/lib/libmpsc.so+0x50621)
+    #2 0x7f3286179df6 in mpsc_init (/usr/lib/libmpsc.so+0x1bdf6)
+    #3 0x7f32864a3bc6 in dpal_mpsc_init /home/ramya/531/arrcus_sw/dpal/common/app/dpal_mpsc.c:43
+    #4 0x55c7f564ef0e in main /home/ramya/531/arrcus_sw/dpal/common/app/dpal_main.c:1102
+    #5 0x7f328561b09a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+Indirect leak of 3053 byte(s) in 50 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18af8  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3af8)
+
+Indirect leak of 1792 byte(s) in 14 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1889c  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x389c)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 1080 byte(s) in 15 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d49a in json_object (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x849a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 960 byte(s) in 30 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d42e  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x842e)
+
+Indirect leak of 824 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba472 in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x3472)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 529 byte(s) in 23 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007b7f  (<unknown module>)
+
+Indirect leak of 512 byte(s) in 4 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9b97  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2b97)
+
+Indirect leak of 256 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e18971  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x3971)
+
+Indirect leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f32857ba42a in iptc_init (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x342a)
+    #2 0x7f323b8e1b35 in lxkernel_init_api /home/ramya/531/arrcus_sw/dpal/plugin/lxkernel/app/lxkernel_init.c:124
+    #3 0x7f328648ae55 in dpal_sec_plugin_dispatch /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:95
+    #4 0x7f328648ae55 in dpal_sec_plugin_dispatch_locked /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:133
+    #5 0x7f328648ae55 in dpal_sec_plugin_cb /home/ramya/531/arrcus_sw/dpal/common/app/dpal_sec_plugin.c:170
+    #6 0x7f328621b9b9  (/usr/lib/x86_64-linux-gnu/libevent-2.1.so.6+0x229b9)
+
+Indirect leak of 128 byte(s) in 3 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285c4dadb in protobuf_c_message_unpack (/usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1+0x4adb)
+
+Indirect leak of 128 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d3d2  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x83d2)
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d6ca in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x86ca)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 128 byte(s) in 5 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000007e7f  (<unknown module>)
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e1d69a in json_array (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x869a)
+    #2 0x7274733bffffffff  (<unknown module>)
+
+Indirect leak of 11 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x616000005a7f  (<unknown module>)
+
+Indirect leak of 7 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x7f3285e19bdc  (/usr/lib/x86_64-linux-gnu/libjansson.so.4+0x4bdc)
+    #2 0x61600000697f  (<unknown module>)
+
+Indirect leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3286718518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x7f32857b9588  (/usr/lib/x86_64-linux-gnu/libip4tc.so.0+0x2588)
+
+SUMMARY: AddressSanitizer: 17352 byte(s) leaked in 224 allocation(s).
