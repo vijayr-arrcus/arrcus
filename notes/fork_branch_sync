@@ -1,6 +1,6 @@
 fork sync
 
-BRANCH=
+BRANCH=v5.3.1A
 
 git clone git@github.com:vijayr-arrcus/arrcus_sw.git
 cd arrcus_sw/
