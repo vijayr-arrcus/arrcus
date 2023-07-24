@@ -1,6 +1,6 @@
 fork sync
 
-BRANCH=v5.3.1A
+BRANCH=v5.4.1.EFT1
 
 git clone git@github.com:vijayr-arrcus/arrcus_sw.git
 cd arrcus_sw/
@@ -8,3 +8,6 @@ git remote add Arrcus/arrcus_sw git@github.com:Arrcus/arrcus_sw.git
 git fetch Arrcus/arrcus_sw
 git checkout -b $BRANCH Arrcus/arrcus_sw/$BRANCH
 git push origin $BRANCH
+cd ../
+rm -rf arrcus_sw
+git clone git@github.com:vijayr-arrcus/arrcus_sw.git -b $BRANCH
