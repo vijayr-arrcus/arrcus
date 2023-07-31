@@ -1,8 +1,11 @@
-fork sync
+#!/bin/bash
+#fork sync
 
-BRANCH=v5.4.1.EFT1
+export BRANCH=$1
+echo "Branch - $BRANCH"
+echo "User - $USER"
 
-git clone git@github.com:vijayr-arrcus/arrcus_sw.git
+git clone git@github.com:$USER-arrcus/arrcus_sw.git
 cd arrcus_sw/
 git remote add Arrcus/arrcus_sw git@github.com:Arrcus/arrcus_sw.git
 git fetch Arrcus/arrcus_sw
@@ -10,4 +13,4 @@ git checkout -b $BRANCH Arrcus/arrcus_sw/$BRANCH
 git push origin $BRANCH
 cd ../
 rm -rf arrcus_sw
-git clone git@github.com:vijayr-arrcus/arrcus_sw.git -b $BRANCH
+git clone git@github.com:$USER-arrcus/arrcus_sw.git -b $BRANCH

@@ -26,9 +26,13 @@ exit;
 
 
 bcm_bfd_endpoint_info_t ep_info;
+int i =0;
+while (i < 10) {
 bcm_bfd_endpoint_info_t_init(&ep_info);
-print bcm_bfd_endpoint_get(0, 1, &ep_info);
+print bcm_bfd_endpoint_get(0, i, &ep_info);
 print ep_info;
+i++;
+}
 
 bcm_bfd_endpoint_info_t_init(&ep_info);
 print bcm_bfd_endpoint_get(0, 2, &ep_info);
