@@ -1,0 +1,50 @@
+1. loaded fresh image.
+Mon 07 Aug 2023 12:17:31 AM UTC
+3:Mon 07 Aug 2023 12:17:38 AM UTC
+4: 4767 root      20   0 1299312  29316  10524 S   0.0   0.4   0:00.67 qos.bin
+6:Mon 07 Aug 2023 12:22:39 AM UTC
+7: 4767 root      20   0 1299312  29316  10524 S   0.0   0.4   0:00.79 qos.bin
+
+5 mins..
+
+9:Mon 07 Aug 2023 12:27:40 AM UTC
+84: 4767 root      20   0 1299312  29416  10596 S   0.0   0.4   0:03.96 qos.bin
+86:Mon 07 Aug 2023 02:33:02 AM UTC
+87: 4767 root      20   0 1299312  29416  10596 S   0.0   0.4   0:04.07 qos.bin
+89:Mon 07 Aug 2023 02:38:03 AM UTC
+230:Mon 07 Aug 2023 06:33:46 AM UTC
+231: 4767 root      20   0 1299312  29416  10596 S   0.0   0.4   0:09.85 qos.bin
+
+
+
+
+2. no change in qos, but aggressive counters.
+Mon 07 Aug 2023 06:43:09 AM UTC
+Mon 07 Aug 2023 06:43:09 AM UTC
+ 3941 root      20   0 1223204  26584  10104 S   0.0   0.3   0:00.30 qos.bin
+Mon 07 Aug 2023 06:48:10 AM UTC
+ 3941 root      20   0 1299836  29952  10580 S   0.0   0.4   0:01.44 qos.bin
+
+10 mins...
+
+Mon 07 Aug 2023 06:53:11 AM UTC
+ 3941 root      20   0 1299836  30216  10580 S   0.0   0.4   0:02.47 qos.bin
+
+33 mins...
+
+Mon 07 Aug 2023 07:23:16 AM UTC
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:08.69 qos.bin
+
+Mon 07 Aug 2023 09:13:37 AM UTC
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:31.73 qos.bin
+
+3. aggressive counters, comment all of counters.
+
+Absolutely no change...
+Mon 07 Aug 2023 10:14:45 AM UTC
+  999 root      20   0 1299268  29164  10364 S   0.0   0.4   0:00.77 qos.bin
+
+
+Mon 07 Aug 2023 10:44:51 AM UTC
+  999 root      20   0 1299268  29164  10364 S   0.0   0.4   0:00.89 qos.bin
+

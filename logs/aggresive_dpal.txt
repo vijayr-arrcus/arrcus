@@ -1,0 +1,506 @@
+root@node-11:~#
+root@node-11:~#
+root@node-11:~#
+root@node-11:~# vi track.sh
+root@node-11:~# ./track.sh  qos.bin
+1. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 06:43:09 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 06:43:09 up  6:30,  1 user,  load average: 2.91, 0.90, 0.50
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 50.8 us,  9.8 sy,  0.0 ni, 37.7 id,  0.0 wa,  0.0 hi,  1.6 si,  0.0 st
+MiB Mem :   7948.2 total,   4282.9 free,   1342.3 used,   2323.0 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5279.7 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1223204  26584  10104 S   0.0   0.3   0:00.30 qos.bin
+1. *********************************************** END
+Mon 07 Aug 2023 06:48:10 AM UTC          - wait 1
+
+
+2. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 06:48:10 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 06:48:10 up  6:35,  1 user,  load average: 0.36, 0.76, 0.58
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  8.6 us,  6.9 sy,  0.0 ni, 82.8 id,  0.0 wa,  0.0 hi,  1.7 si,  0.0 st
+MiB Mem :   7948.2 total,   4250.3 free,   1913.4 used,   1784.4 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5272.1 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  29952  10580 S   0.0   0.4   0:01.44 qos.bin
+2. *********************************************** END
+Mon 07 Aug 2023 06:53:11 AM UTC          - wait 1
+
+
+3. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 06:53:11 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 06:53:11 up  6:40,  1 user,  load average: 0.31, 0.52, 0.52
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  4.8 us,  1.6 sy,  0.0 ni, 93.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4246.8 free,   1914.3 used,   1787.1 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5271.3 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30216  10580 S   0.0   0.4   0:02.47 qos.bin
+3. *********************************************** END
+Mon 07 Aug 2023 06:58:12 AM UTC          - wait 1
+
+
+4. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 06:58:12 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 06:58:12 up  6:45,  1 user,  load average: 0.34, 0.41, 0.47
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 98.3 id,  1.7 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4242.5 free,   1915.8 used,   1789.8 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5269.7 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30216  10580 S   0.0   0.4   0:03.53 qos.bin
+4. *********************************************** END
+Mon 07 Aug 2023 07:03:13 AM UTC          - wait 1
+
+
+5. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:03:13 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:03:13 up  6:50,  1 user,  load average: 0.28, 0.32, 0.41
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4238.8 free,   1916.8 used,   1792.6 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5268.8 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30216  10580 S   0.0   0.4   0:04.59 qos.bin
+5. *********************************************** END
+Mon 07 Aug 2023 07:08:14 AM UTC          - wait 1
+
+
+6. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:08:14 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:08:14 up  6:55,  1 user,  load average: 0.26, 0.33, 0.39
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4231.2 free,   1921.7 used,   1795.3 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5263.9 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30216  10580 S   0.0   0.4   0:05.56 qos.bin
+6. *********************************************** END
+Mon 07 Aug 2023 07:13:14 AM UTC          - wait 1
+
+
+7. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:13:14 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:13:15 up  7:00,  1 user,  load average: 2.75, 1.34, 0.75
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  3.1 us,  7.7 sy,  0.0 ni, 89.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4232.0 free,   1918.1 used,   1798.0 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5267.4 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30216  10580 S   0.0   0.4   0:06.63 qos.bin
+7. *********************************************** END
+Mon 07 Aug 2023 07:18:15 AM UTC          - wait 1
+
+
+8. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:18:15 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:18:16 up  7:05,  1 user,  load average: 0.26, 0.86, 0.73
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4228.2 free,   1919.1 used,   1800.8 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5266.4 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30216  10580 S   0.0   0.4   0:07.63 qos.bin
+8. *********************************************** END
+Mon 07 Aug 2023 07:23:16 AM UTC          - wait 1
+
+
+9. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:23:16 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:23:17 up  7:10,  1 user,  load average: 0.67, 0.68, 0.67
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4224.8 free,   1919.9 used,   1803.5 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5265.7 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:08.69 qos.bin
+9. *********************************************** END
+Mon 07 Aug 2023 07:28:17 AM UTC          - wait 1
+
+
+10. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:28:17 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:28:17 up  7:15,  1 user,  load average: 0.37, 0.45, 0.57
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  5.0 us,  1.7 sy,  0.0 ni, 93.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4221.4 free,   1920.5 used,   1806.2 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5265.0 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:09.72 qos.bin
+10. *********************************************** END
+Mon 07 Aug 2023 07:33:18 AM UTC          - wait 1
+
+
+11. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:33:18 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:33:18 up  7:20,  1 user,  load average: 0.92, 0.72, 0.64
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4215.6 free,   1923.6 used,   1809.0 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5262.0 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:10.75 qos.bin
+11. *********************************************** END
+Mon 07 Aug 2023 07:38:19 AM UTC          - wait 1
+
+
+12. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:38:19 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:38:19 up  7:25,  1 user,  load average: 0.06, 0.31, 0.48
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  5.1 us,  3.4 sy,  0.0 ni, 91.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4216.5 free,   1919.9 used,   1811.7 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5265.6 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:11.80 qos.bin
+12. *********************************************** END
+Mon 07 Aug 2023 07:43:20 AM UTC          - wait 1
+
+
+13. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:43:20 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:43:20 up  7:30,  1 user,  load average: 0.16, 0.28, 0.42
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  0.0 sy,  0.0 ni, 98.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4213.4 free,   1920.2 used,   1814.5 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5265.3 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:12.89 qos.bin
+13. *********************************************** END
+Mon 07 Aug 2023 07:48:21 AM UTC          - wait 1
+
+
+14. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:48:21 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:48:21 up  7:35,  1 user,  load average: 0.16, 0.18, 0.33
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 98.3 id,  0.0 wa,  0.0 hi,  1.7 si,  0.0 st
+MiB Mem :   7948.2 total,   4210.7 free,   1920.1 used,   1817.3 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5265.4 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:13.93 qos.bin
+14. *********************************************** END
+Mon 07 Aug 2023 07:53:22 AM UTC          - wait 1
+
+
+15. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:53:22 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:53:22 up  7:40,  1 user,  load average: 0.10, 0.15, 0.27
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  1.7 sy,  0.0 ni, 96.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4207.4 free,   1920.6 used,   1820.1 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5264.9 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:14.99 qos.bin
+15. *********************************************** END
+Mon 07 Aug 2023 07:58:23 AM UTC          - wait 1
+
+
+16. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 07:58:23 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 07:58:23 up  7:45,  1 user,  load average: 0.12, 0.17, 0.25
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 12.1 us,  5.2 sy,  0.0 ni, 81.0 id,  0.0 wa,  0.0 hi,  1.7 si,  0.0 st
+MiB Mem :   7948.2 total,   4204.4 free,   1921.0 used,   1822.8 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5264.6 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:16.06 qos.bin
+16. *********************************************** END
+Mon 07 Aug 2023 08:03:24 AM UTC          - wait 1
+
+
+17. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:03:24 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:03:24 up  7:50,  1 user,  load average: 0.10, 0.14, 0.21
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 10.0 us,  5.0 sy,  0.0 ni, 85.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4196.7 free,   1925.9 used,   1825.6 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5259.7 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:17.13 qos.bin
+17. *********************************************** END
+Mon 07 Aug 2023 08:08:25 AM UTC          - wait 1
+
+
+18. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:08:25 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:08:25 up  7:55,  1 user,  load average: 0.21, 0.18, 0.19
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.6 us,  1.6 sy,  0.0 ni, 96.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4198.5 free,   1921.3 used,   1828.4 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5264.2 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:18.16 qos.bin
+18. *********************************************** END
+Mon 07 Aug 2023 08:13:26 AM UTC          - wait 1
+
+
+19. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:13:26 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:13:26 up  8:00,  1 user,  load average: 0.20, 0.17, 0.18
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  3.3 us,  5.0 sy,  0.0 ni, 91.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4195.6 free,   1921.4 used,   1831.1 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5264.1 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:19.21 qos.bin
+19. *********************************************** END
+Mon 07 Aug 2023 08:18:27 AM UTC          - wait 1
+
+
+20. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:18:27 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:18:27 up  8:05,  1 user,  load average: 0.18, 0.15, 0.17
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  1.7 sy,  0.0 ni, 98.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4192.0 free,   1922.3 used,   1833.9 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5265.6 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:20.31 qos.bin
+20. *********************************************** END
+Mon 07 Aug 2023 08:23:28 AM UTC          - wait 1
+
+
+21. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:23:28 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:23:28 up  8:10,  1 user,  load average: 0.12, 0.16, 0.17
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  1.7 sy,  0.0 ni, 96.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4188.5 free,   1923.0 used,   1836.7 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5265.0 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:21.35 qos.bin
+21. *********************************************** END
+Mon 07 Aug 2023 08:28:28 AM UTC          - wait 1
+
+
+22. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:28:28 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:28:29 up  8:15,  1 user,  load average: 0.20, 0.14, 0.16
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  0.0 sy,  0.0 ni, 98.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4180.8 free,   1927.9 used,   1839.5 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5260.2 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:22.41 qos.bin
+22. *********************************************** END
+Mon 07 Aug 2023 08:33:29 AM UTC          - wait 1
+
+
+23. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:33:29 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:33:30 up  8:20,  1 user,  load average: 0.26, 0.27, 0.20
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  1.7 sy,  0.0 ni, 96.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4182.2 free,   1923.7 used,   1842.3 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5264.5 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:23.42 qos.bin
+23. *********************************************** END
+Mon 07 Aug 2023 08:38:30 AM UTC          - wait 1
+
+
+24. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:38:30 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:38:30 up  8:25,  1 user,  load average: 2.72, 1.30, 0.60
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4179.7 free,   1923.3 used,   1845.1 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5264.9 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:24.49 qos.bin
+24. *********************************************** END
+Mon 07 Aug 2023 08:43:31 AM UTC          - wait 1
+
+
+25. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:43:31 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:43:31 up  8:30,  1 user,  load average: 0.12, 0.73, 0.57
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  4.7 us,  1.6 sy,  0.0 ni, 92.2 id,  0.0 wa,  0.0 hi,  1.6 si,  0.0 st
+MiB Mem :   7948.2 total,   4176.1 free,   1924.1 used,   1847.9 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5264.2 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:25.48 qos.bin
+25. *********************************************** END
+Mon 07 Aug 2023 08:48:32 AM UTC          - wait 1
+
+
+26. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:48:32 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:48:32 up  8:35,  1 user,  load average: 0.10, 0.39, 0.47
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  3.3 us,  1.6 sy,  0.0 ni, 95.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4172.9 free,   1924.5 used,   1850.8 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5263.9 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:26.51 qos.bin
+26. *********************************************** END
+Mon 07 Aug 2023 08:53:33 AM UTC          - wait 1
+
+
+27. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:53:33 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:53:33 up  8:40,  1 user,  load average: 0.29, 0.29, 0.39
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  4.9 us,  4.9 sy,  0.0 ni, 88.5 id,  0.0 wa,  0.0 hi,  1.6 si,  0.0 st
+MiB Mem :   7948.2 total,   4165.7 free,   1928.8 used,   1853.6 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5259.6 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:27.52 qos.bin
+27. *********************************************** END
+Mon 07 Aug 2023 08:58:34 AM UTC          - wait 1
+
+
+28. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 08:58:34 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 08:58:34 up  8:45,  1 user,  load average: 0.22, 0.23, 0.34
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  1.7 sy,  0.0 ni, 98.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4162.5 free,   1929.2 used,   1856.4 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5259.2 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:28.57 qos.bin
+28. *********************************************** END
+Mon 07 Aug 2023 09:03:35 AM UTC          - wait 1
+
+
+29. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 09:03:35 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 09:03:35 up  8:50,  1 user,  load average: 0.06, 0.14, 0.26
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  5.1 sy,  0.0 ni, 94.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4160.6 free,   1928.4 used,   1859.2 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5260.1 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:29.60 qos.bin
+29. *********************************************** END
+Mon 07 Aug 2023 09:08:36 AM UTC          - wait 1
+
+
+30. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 09:08:36 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 09:08:36 up  8:55,  1 user,  load average: 0.22, 0.19, 0.25
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  3.3 sy,  0.0 ni, 95.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   4157.5 free,   1928.5 used,   1862.2 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5260.0 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:30.66 qos.bin
+30. *********************************************** END
+Mon 07 Aug 2023 09:13:37 AM UTC          - wait 1
+
+
+31. ***********************************************
+Fresh image dpal agrressive
+Mon 07 Aug 2023 09:13:37 AM UTC
+./track.sh: line 8: ./ram.py: No such file or directory
+top - 09:13:37 up  9:00,  1 user,  load average: 1.24, 0.80, 0.50
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 16.9 us, 23.7 sy,  0.0 ni, 57.6 id,  0.0 wa,  0.0 hi,  1.7 si,  0.0 st
+MiB Mem :   7948.2 total,   4157.8 free,   1925.3 used,   1865.1 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5263.2 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 3941 root      20   0 1299836  30480  10580 S   0.0   0.4   0:31.73 qos.bin
+31. *********************************************** END
+Mon 07 Aug 2023 09:16:44 AM UTC          - wait 114
+
+
+
+
+Mon 07 Aug 2023 09:16:45 AM UTC          - wait 113
+Mon 07 Aug 2023 09:17:06 AM UTC          - wait 93
+

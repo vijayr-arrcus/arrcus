@@ -1,0 +1,19 @@
+arcos_libnl_link_cache_init
+         libnl->nl_sock = arcos_nl_socket_alloc();
+         arcos_nl_cache_mngr_alloc(libnl->nl_sock, NETLINK_ROUTE,
+                                   NL_AUTO_PROVIDE, &libnl->mngr);
+         arcos_nl_cache_alloc_name("route/link", &libnl->link_cache);
+         arcos_nl_cache_set_flags(libnl->link_cache, NL_CACHE_AF_ITER);
+         arcos_nl_cache_mngr_add_cache(libnl->mngr, libnl->link_cache,
+                                       cache_change_cb, cache_args);
+        libnl->ev = event_new(evbase, nl_cache_mngr_get_fd(libnl->mngr),
+                              EV_PERSIST|EV_READ, read_link_event, event_args);
+        event_add(libnl->ev, NULL);
+
+
+
+cache_include
+
+arcos_nl_cache_mngr_data_ready(qos_main_ctxt.libnl.mngr);
+
+

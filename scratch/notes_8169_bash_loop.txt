@@ -1,0 +1,27 @@
+root@node-11:~# for (( ; ; ));
+> do
+> sleep 300
+> ./ram.py -p $(pidof qos.bin)
+> done
+
+
+
+ Private  +   Shared  =  RAM used       Program
+
+ 19.7 MiB + 347.5 KiB =  20.0 MiB       qos.bin
+---------------------------------
+                         20.0 MiB
+=================================
+^C
+root@node-11:~# for (( ; ; ));  do date; sleep 300; ./ram.py -p $(pidof qos.bin); done
+Tue 01 Aug 2023 11:26:50 AM UTC
+^C
+root@node-11:~# for (( ; ; ));  sleep 300; date; ./ram.py -p $(pidof qos.bin); done
+bash: syntax error near unexpected token `sleep'
+root@node-11:~# for (( ; ; ));  sleep 300;; ./ram.py -p $(pidof qos.bin); done
+bash: syntax error near unexpected token `sleep'
+root@node-11:~# for (( ; ; ));  sleep 300; ; ./ram.py -p $(pidof qos.bin); done
+bash: syntax error near unexpected token `sleep'
+root@node-11:~# for (( ; ; ));sleep 300; ; ./ram.py -p $(pidof qos.bin); done
+bash: syntax error near unexpected token `sleep'
+root@node-11:~# for (( ; ; ));do sleep 300; date; ./ram.py -p $(pidof qos.bin); done
