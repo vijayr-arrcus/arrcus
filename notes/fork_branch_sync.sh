@@ -4,6 +4,7 @@
 export BRANCH=$1
 echo "Branch - $BRANCH"
 echo "User - $USER"
+export USER=vijayr
 
 git clone git@github.com:$USER-arrcus/arrcus_sw.git
 cd arrcus_sw/

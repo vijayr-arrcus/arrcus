@@ -1,0 +1,648 @@
+1> Between  S6301—IX8A.
+10.27.206.3 (S6301) —-- 10.27.206.42 (IX8A)
+
+                        FS
+10.27.206.3 (1G) sfp-49 ----------- sfp29 (1G) 10.27.206.42
+
+                        FINISAR
+10.27.206.3 (1G) sfp-50 ----------- sfp30 (1G) 10.27.206.42
+
+                         AVAGO
+10.27.206.3 (1G) sfp-51 ----------- sfp31 (1G) 10.27.206.42
+
+                         Arista
+10.27.206.3 (1G) sfp-52 ----------- sfp32 (1G) 10.27.206.42
+
+                        CISCO
+10.27.206.3 (1G) sfp-54 ----------- sfp34 (1G) 10.27.206.42
+
+
+2> Between  S6301—S6301
+10.27.206.3 (S6301) —-- 10.27.206.4 (S6301)
+
+
+                       Reflash FS
+10.27.206.3 (1G) sfp-53 ----------- sfp53 (1G) 10.27.206.4
+
+                        FINISAR
+10.27.206.3 (1G) sfp-56 ----------- sfp56 (1G) 10.27.206.4
+
+
+============================================================================================
+Leaf3-206-42 -- IX8A (TD3_X5)
+Apple-OOB1-206-3 -- S6301-56ST-1 (TD3_X2)
+Apple-OOB2-206-4 -- S6301-56ST-1 (TD3_X2)
+
+
+                        FINISAR
+(Apple-OOB1-206-3)10.27.206.3 (1G) sfp-50 ----------- sfp30 (1G) 10.27.206.42(Leaf3-206-42) -- Working as expected.
+
+
+
+
+                       Reflash FS
+(Apple-OOB1-206-3)10.27.206.3 (1G) sfp-53 ----------- sfp53 (1G) 10.27.206.4(Apple-OOB2-206-4) -- Not working as expected.
+
+Apple-OOB1-206-3 - sfp-50 onlpdump:
+Port 50: Present, Status = 0x00000000
+eeprom:
+  0000: 03 04 22 00 00 00 08 00 00 00 00 01 0c 00 00 00
+  0010: 00 00 64 00 46 49 4e 49 53 41 52 20 43 4f 52 50
+  0020: 2e 20 20 20 00 00 90 65 46 43 4c 46 38 35 32 32
+  0030: 50 32 42 54 4c 20 20 20 41 20 20 20 00 00 00 d6
+  0040: 00 12 00 00 4e 39 35 42 50 47 33 20 20 20 20 20
+  0050: 20 20 20 20 32 33 30 32 30 39 20 20 00 00 00 6a
+  0060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0080: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  0090: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00a0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00b0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00c0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00d0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00e0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00f0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+
+Apple-OOB1-206-3 - sfp-53 onlpdump:
+Port 53: Present, Status = 0x00000000
+eeprom:
+  0000: 03 04 00 00 00 00 08 00 00 00 00 01 0d 00 00 00
+  0010: 00 00 64 00 46 53 20 20 20 20 20 20 20 20 20 20
+  0020: 20 20 20 20 00 64 9d 99 53 46 50 2d 47 42 2d 47
+  0030: 45 2d 54 20 20 20 20 20 41 20 20 20 00 00 00 8e
+  0040: 00 12 00 00 43 32 33 30 36 32 35 39 35 36 33 20
+  0050: 20 20 20 20 32 33 30 37 31 31 20 20 08 00 00 74
+  0060: 00 00 00 00 00 00 00 00 4a 38 31 37 37 43 20 31
+  0070: 39 39 30 2d 33 36 35 37 b9 40 1a b0 99 a3 4e a6
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0090: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+
+Leaf3-206-42 - sfp-30
+
+Port 30: Present, Status = 0x00000006 [ RESET_STATE,RX_LOS ]
+eeprom:
+  0000: 03 04 22 00 00 00 08 00 00 00 00 01 0c 00 00 00
+  0010: 00 00 64 00 46 49 4e 49 53 41 52 20 43 4f 52 50
+  0020: 2e 20 20 20 00 00 90 65 46 43 4c 46 38 35 32 32
+  0030: 50 32 42 54 4c 20 20 20 41 20 20 20 00 00 00 d6
+  0040: 00 12 00 00 4e 39 35 42 50 42 36 20 20 20 20 20
+  0050: 20 20 20 20 32 33 30 32 30 39 20 20 00 00 00 68
+  0060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0080: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  0090: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00a0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00b0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00c0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00d0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00e0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+  00f0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+
+Apple-OOB2-206-4 - sfp-53
+
+Port 53: Present, Status = 0x00000000
+eeprom:
+  0000: 03 04 00 00 00 00 08 00 00 00 00 01 0d 00 00 00
+  0010: 00 00 64 00 46 53 20 20 20 20 20 20 20 20 20 20
+  0020: 20 20 20 20 00 64 9d 99 53 46 50 2d 47 42 2d 47
+  0030: 45 2d 54 20 20 20 20 20 41 20 20 20 00 00 00 8e
+  0040: 00 12 00 00 43 32 33 30 36 32 35 39 35 36 32 20
+  0050: 20 20 20 20 32 33 30 37 31 31 20 20 08 00 00 73
+  0060: 00 00 00 00 00 00 00 00 4a 38 31 37 37 43 20 31
+  0070: 39 39 30 2d 33 36 35 37 b9 40 1a b0 99 a3 4e a6
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0090: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+
+Test case working with (Apple-OOB1-206-3) sfp-50 --- swp30 (Leaf3-206-42) :
+TS1. Shutting down port on (Leaf3-206-42):
+root@Leaf3-206-42:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-quanta-ix8a-dnv-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+   1  25GBASE-CR      Copper          1m     FS                S28-PC01          G1910042129-1
+   2  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101425-2
+   3  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101396-2
+   4  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101394-1
+   5  10GBASE-LR      Fiber   R              Arista Networks   SFP-10G-LR        AHN1928003TB
+   6  NONE
+   7  10GBASE-SR      Fiber                  FS                SFP-10GSR-85      S2208758467
+   8  NONE
+   9  NONE
+  10  NONE
+  11  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554811-2
+  12  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030384000-1
+  13  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554812-1
+  14  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383997-2
+  15  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554813-1
+  16  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383996-1
+  17  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383998-1
+  18  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383999-2
+  19  NONE
+  20  NONE
+  21  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721875-2
+  22  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721895-2
+  23  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721896-1
+  24  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721899-2
+  25  NONE
+  26  NONE
+  27  NONE
+  28  NONE
+  29  1GBASE-T        Copper  XL      100m   FS                SFP-GB-GE-T       F2210207858
+  30  1GBASE-T        Copper  XL      100m   FINISAR CORP.     FCLF8522P2BTL     N95BPB6
+  31  1GBASE-T        Copper  XL      100m   AVAGO             ABCU-5740RZ       AGC1722550PN
+  32  1GBASE-T        Copper  XL      100m   Arista Networks   SFP-1G-T          XTH215300073
+  33  NONE
+  34  1GBASE-T        Copper  XL      100m   CISCO             SBCU-5740ARZ-CS1  AVC21322941
+  35  NONE
+  36  NONE
+  37  NONE
+  38  NONE
+  39  NONE
+  40  NONE
+  41  NONE
+  42  NONE
+  43  NONE
+  44  NONE
+  45  NONE
+  46  NONE
+  47  NONE
+  48  NONE
+  49  100G-ACC-LBER   Copper  X       3m     Credo             CAC43X301D4PA0HW  BQ4Q13X22400131
+  50  100GBASE-LR4    Fiber                  FINISAR CORP.     FTLC1151RDPL      UZC0E9E
+  51  100GBASE-CR4    Copper  X       1m     FS                Q28-PC01          S2202335216-2
+  52  100GBASE-LR4    Fiber   X              Arista Networks   QSFP-100G-LR4     XLB203300486
+  53  NONE
+  54  100G-ACC-LBER   Copper  X       3m     Credo             CAC43X301D4PA0HW  BQ4Q13X22400110
+  55  100GBASE-LR     Fiber   X              INNOLIGHT         TR-ZC13L-N00      INNAAA990075
+  56  NONE
+
+root@Apple-OOB1-206-3:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       F2210207850
+  50  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG3
+  51  1GBASE-T        Copper          100m   AVAGO             ABCU-5740RZ       AGC17205529W
+  52  1GBASE-T        Copper          100m   Arista Networks   SFP-1G-T          XTH215300070
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259563
+  54  1GBASE-T        Copper          100m   CISCO             SBCU-5740ARZ-CS1  AVC21322DSR
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPBA
+root@Apple-OOB1-206-3:/#
+
+root@Leaf3-206-42# config
+Entering configuration mode terminal
+root@Leaf3-206-42(config)# int swp30
+root@Leaf3-206-42(config-interface-swp30)# enable false
+root@Leaf3-206-42(config-interface-swp30)# commit
+Commit complete.
+root@Leaf3-206-42(config-interface-swp30)# end
+root@Leaf3-206-42#
+root@Leaf3-206-42:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-quanta-ix8a-dnv-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+   1  25GBASE-CR      Copper          1m     FS                S28-PC01          G1910042129-1
+   2  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101425-2
+   3  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101396-2
+   4  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101394-1
+   5  10GBASE-LR      Fiber   R              Arista Networks   SFP-10G-LR        AHN1928003TB
+   6  NONE
+   7  10GBASE-SR      Fiber                  FS                SFP-10GSR-85      S2208758467
+   8  NONE
+   9  NONE
+  10  NONE
+  11  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554811-2
+  12  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030384000-1
+  13  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554812-1
+  14  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383997-2
+  15  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554813-1
+  16  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383996-1
+  17  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383998-1
+  18  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383999-2
+  19  NONE
+  20  NONE
+  21  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721875-2
+  22  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721895-2
+  23  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721896-1
+  24  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721899-2
+  25  NONE
+  26  NONE
+  27  NONE
+  28  NONE
+  29  1GBASE-T        Copper  XL      100m   FS                SFP-GB-GE-T       F2210207858
+  30  1GBASE-T        Copper  R       100m   FINISAR CORP.     FCLF8522P2BTL     N95BPB6
+  31  1GBASE-T        Copper  XL      100m   AVAGO             ABCU-5740RZ       AGC1722550PN
+  32  1GBASE-T        Copper  XL      100m   Arista Networks   SFP-1G-T          XTH215300073
+  33  NONE
+  34  1GBASE-T        Copper  XL      100m   CISCO             SBCU-5740ARZ-CS1  AVC21322941
+  35  NONE
+  36  NONE
+  37  NONE
+  38  NONE
+  39  NONE
+  40  NONE
+  41  NONE
+  42  NONE
+  43  NONE
+  44  NONE
+  45  NONE
+  46  NONE
+  47  NONE
+  48  NONE
+  49  100G-ACC-LBER   Copper  X       3m     Credo             CAC43X301D4PA0HW  BQ4Q13X22400131
+  50  100GBASE-LR4    Fiber                  FINISAR CORP.     FTLC1151RDPL      UZC0E9E
+  51  100GBASE-CR4    Copper  X       1m     FS                Q28-PC01          S2202335216-2
+  52  100GBASE-LR4    Fiber   X              Arista Networks   QSFP-100G-LR4     XLB203300486
+  53  NONE
+  54  100G-ACC-LBER   Copper  X       3m     Credo             CAC43X301D4PA0HW  BQ4Q13X22400110
+  55  100GBASE-LR     Fiber   X              INNOLIGHT         TR-ZC13L-N00      INNAAA990075
+  56  NONE
+root@Leaf3-206-42:/#
+
+
+root@Apple-OOB1-206-3:/#
+root@Apple-OOB1-206-3:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       F2210207850
+  50  1GBASE-T        Copper  R       100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG3
+  51  1GBASE-T        Copper          100m   AVAGO             ABCU-5740RZ       AGC17205529W
+  52  1GBASE-T        Copper          100m   Arista Networks   SFP-1G-T          XTH215300070
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259563
+  54  1GBASE-T        Copper          100m   CISCO             SBCU-5740ARZ-CS1  AVC21322DSR
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPBA
+
+OBSERVATION: if we shut on the peer device Leaf3-206-42, we see the port sfp-30 indicates Rx LOSS and Apple-OOB1-206-3 sfp-50 indicates RX LOSS as well.
+This leads to the conclusion that when the port was detection of RX loss on Apple-OOB1-206-3 is fine.
+
+
+TS2: shutdown on Apple-OOB1-206-3 sfp50 and check RX loss on Leaf3-206-42 SFP30:
+root@Leaf3-206-42:/# cli
+Welcome to the ArcOS CLI
+User root last logged in 2023-08-27T05:06:16.233114+00:00, to Leaf3-206-42, from 10.9.208.51 using cli-ssh
+root connected from 10.9.208.51 using ssh on Leaf3-206-42
+root@Leaf3-206-42# config
+Entering configuration mode terminal
+root@Leaf3-206-42(config)# int swp30
+root@Leaf3-206-42(config-interface-swp30)# enable true
+root@Leaf3-206-42(config-interface-swp30)# commit
+Commit complete.
+root@Leaf3-206-42(config-interface-swp30)# end
+root@Leaf3-206-42#
+root@Leaf3-206-42:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-quanta-ix8a-dnv-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+   1  25GBASE-CR      Copper          1m     FS                S28-PC01          G1910042129-1
+   2  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101425-2
+   3  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101396-2
+   4  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101394-1
+   5  10GBASE-LR      Fiber   R              Arista Networks   SFP-10G-LR        AHN1928003TB
+   6  NONE
+   7  10GBASE-SR      Fiber                  FS                SFP-10GSR-85      S2208758467
+   8  NONE
+   9  NONE
+  10  NONE
+  11  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554811-2
+  12  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030384000-1
+  13  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554812-1
+  14  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383997-2
+  15  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554813-1
+  16  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383996-1
+  17  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383998-1
+  18  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383999-2
+  19  NONE
+  20  NONE
+  21  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721875-2
+  22  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721895-2
+  23  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721896-1
+  24  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721899-2
+  25  NONE
+  26  NONE
+  27  NONE
+  28  NONE
+  29  1GBASE-T        Copper  XL      100m   FS                SFP-GB-GE-T       F2210207858
+  30  1GBASE-T        Copper  XL      100m   FINISAR CORP.     FCLF8522P2BTL     N95BPB6
+  31  1GBASE-T        Copper  XL      100m   AVAGO             ABCU-5740RZ       AGC1722550PN
+  32  1GBASE-T        Copper  XL      100m   Arista Networks   SFP-1G-T          XTH215300073
+  33  NONE
+  34  1GBASE-T        Copper  XL      100m   CISCO             SBCU-5740ARZ-CS1  AVC21322941
+  35  NONE
+  36  NONE
+  37  NONE
+  38  NONE
+  39  NONE
+  40  NONE
+  41  NONE
+  42  NONE
+  43  NONE
+  44  NONE
+  45  NONE
+  46  NONE
+  47  NONE
+  48  NONE
+  49  100G-ACC-LBER   Copper  X       3m     Credo             CAC43X301D4PA0HW  BQ4Q13X22400131
+  50  100GBASE-LR4    Fiber                  FINISAR CORP.     FTLC1151RDPL      UZC0E9E
+  51  100GBASE-CR4    Copper  X       1m     FS                Q28-PC01          S2202335216-2
+  52  100GBASE-LR4    Fiber   X              Arista Networks   QSFP-100G-LR4     XLB203300486
+  53  NONE
+  54  100G-ACC-LBER   Copper  X       3m     Credo             CAC43X301D4PA0HW  BQ4Q13X22400110
+  55  100GBASE-LR     Fiber   X              INNOLIGHT         TR-ZC13L-N00      INNAAA990075
+  56  NONE
+root@Leaf3-206-42:/#
+
+root@Apple-OOB1-206-3:/#
+root@Apple-OOB1-206-3:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       F2210207850
+  50  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG3
+  51  1GBASE-T        Copper          100m   AVAGO             ABCU-5740RZ       AGC17205529W
+  52  1GBASE-T        Copper          100m   Arista Networks   SFP-1G-T          XTH215300070
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259563
+  54  1GBASE-T        Copper          100m   CISCO             SBCU-5740ARZ-CS1  AVC21322DSR
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPBA
+root@Apple-OOB1-206-3:/#
+
+root@Apple-OOB1-206-3:/#                                                                            [0/692]root@Apple-OOB1-206-3:/# cli
+Welcome to the ArcOS CLI
+User root last logged in 2023-08-27T04:54:14.616542+00:00, to Apple-OOB1-206-3, from 10.9.208.51 using cli-ssh
+root connected from 10.9.208.51 using ssh on Apple-OOB1-206-3
+root@Apple-OOB1-206-3# config
+Entering configuration mode terminal
+root@Apple-OOB1-206-3(config)# int swp50
+root@Apple-OOB1-206-3(config-interface-swp50)# enable false
+root@Apple-OOB1-206-3(config-interface-swp50)# commit
+Commit complete.
+root@Apple-OOB1-206-3(config-interface-swp50)# end
+root@Apple-OOB1-206-3#
+root@Apple-OOB1-206-3:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       F2210207850
+  50  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG3
+  51  1GBASE-T        Copper          100m   AVAGO             ABCU-5740RZ       AGC17205529W
+  52  1GBASE-T        Copper          100m   Arista Networks   SFP-1G-T          XTH215300070
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259563
+  54  1GBASE-T        Copper          100m   CISCO             SBCU-5740ARZ-CS1  AVC21322DSR
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPBA
+root@Apple-OOB1-206-3:/#
+
+root@Leaf3-206-42:/#
+root@Leaf3-206-42:/#
+root@Leaf3-206-42:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-quanta-ix8a-dnv-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+   1  25GBASE-CR      Copper          1m     FS                S28-PC01          G1910042129-1
+   2  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101425-2
+   3  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101396-2
+   4  25GBASE-CR      Copper          1m     FS                S28-PC01          G2130101394-1
+   5  10GBASE-LR      Fiber   R              Arista Networks   SFP-10G-LR        AHN1928003TB
+   6  NONE
+   7  10GBASE-SR      Fiber                  FS                SFP-10GSR-85      S2208758467
+   8  NONE
+   9  NONE
+  10  NONE
+  11  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554811-2
+  12  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030384000-1
+  13  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554812-1
+  14  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383997-2
+  15  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2032554813-1
+  16  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383996-1
+  17  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383998-1
+  18  10GBASE-CR      Copper          1m     FS                SFPP-PC01         F2030383999-2
+  19  NONE
+  20  NONE
+  21  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721875-2
+  22  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721895-2
+  23  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721896-1
+  24  10GBASE-CR      Copper          3m     FIBERSTORE        SFP-10G-DAC       D87B1721899-2
+  25  NONE
+  26  NONE
+  27  NONE
+  28  NONE
+  29  1GBASE-T        Copper  XL      100m   FS                SFP-GB-GE-T       F2210207858
+  30  1GBASE-T        Copper  XL      100m   FINISAR CORP.     FCLF8522P2BTL     N95BPB6
+  31  1GBASE-T        Copper  XL      100m   AVAGO             ABCU-5740RZ       AGC1722550PN
+  32  1GBASE-T        Copper  XL      100m   Arista Networks   SFP-1G-T          XTH215300073
+  33  NONE
+  34  1GBASE-T        Copper  XL      100m   CISCO             SBCU-5740ARZ-CS1  AVC21322941
+  35  NONE
+  36  NONE
+  37  NONE
+  38  NONE
+  39  NONE
+  40  NONE
+  41  NONE
+  42  NONE
+  43  NONE
+  44  NONE
+  45  NONE
+  46  NONE
+  47  NONE
+  48  NONE
+  49  100G-ACC-LBER   Copper  X       3m     Credo             CAC43X301D4PA0HW  BQ4Q13X22400131
+  50  100GBASE-LR4    Fiber                  FINISAR CORP.     FTLC1151RDPL      UZC0E9E
+  51  100GBASE-CR4    Copper  X       1m     FS                Q28-PC01          S2202335216-2
+  52  100GBASE-LR4    Fiber   X              Arista Networks   QSFP-100G-LR4     XLB203300486
+  53  NONE
+  54  100G-ACC-LBER   Copper  X       3m     Credo             CAC43X301D4PA0HW  BQ4Q13X22400110
+  55  100GBASE-LR     Fiber   X              INNOLIGHT         TR-ZC13L-N00      INNAAA990075
+  56  NONE
+root@Leaf3-206-42:/#
+root@Leaf3-206-42:/#
+root@Leaf3-206-42:/#
+
+
+Shut on Apple-OOB1-206-3 sfp50 dint generate a local RX LOSS neither was on detected on sfp30 of Leaf3-206-42.
+OBSERVATION: This leads to the conclusion that on a S6301-56ST-1 device with TD3_X2 chipset we are not turning off the power on the wire when we administratively shutdown the port. Since the power on the line is intact the peer doesnt detect a RXLOSS.
+
+
+TS3: shut down ports on Apple-OOB1-206-3 and Apple-OOB2-206-4:
+root@Apple-OOB1-206-3# show run int swp53
+interface swp53
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_1GB
+ subinterface 0
+  ipv6 address 53:53:53::1
+   prefix-length 64
+  exit
+  ipv4 address 53.53.53.1
+   prefix-length 24
+  exit
+ exit
+!
+root@Apple-OOB1-206-3# config
+Entering configuration mode terminal
+root@Apple-OOB1-206-3(config)# int swp
+root@Apple-OOB1-206-3#
+root@Apple-OOB1-206-3:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       F2210207850
+  50  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG3
+  51  1GBASE-T        Copper          100m   AVAGO             ABCU-5740RZ       AGC17205529W
+  52  1GBASE-T        Copper          100m   Arista Networks   SFP-1G-T          XTH215300070
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259563
+  54  1GBASE-T        Copper          100m   CISCO             SBCU-5740ARZ-CS1  AVC21322DSR
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPBA
+root@Apple-OOB1-206-3:/# config
+bash: config: command not found
+root@Apple-OOB1-206-3:/# cli
+Welcome to the ArcOS CLI
+User root last logged in 2023-08-27T05:15:41.400623+00:00, to Apple-OOB1-206-3, from 10.9.208.51 using cli-ssh
+root connected from 10.9.208.51 using ssh on Apple-OOB1-206-3
+root@Apple-OOB1-206-3# config
+Entering configuration mode terminal
+root@Apple-OOB1-206-3(config)# int swp53
+root@Apple-OOB1-206-3(config-interface-swp53)# enable false
+root@Apple-OOB1-206-3(config-interface-swp53)# commit
+Commit complete.
+root@Apple-OOB1-206-3(config-interface-swp53)# end
+root@Apple-OOB1-206-3# exit
+root@Apple-OOB1-206-3:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       F2210207850
+  50  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG3
+  51  1GBASE-T        Copper          100m   AVAGO             ABCU-5740RZ       AGC17205529W
+  52  1GBASE-T        Copper          100m   Arista Networks   SFP-1G-T          XTH215300070
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259563
+  54  1GBASE-T        Copper          100m   CISCO             SBCU-5740ARZ-CS1  AVC21322DSR
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPBA
+root@Apple-OOB1-206-3:/#
+root@Apple-OOB1-206-3:/#
+
+
+root@Apple-OOB2-206-4:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  NONE
+  50  NONE
+  51  NONE
+  52  NONE
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259562
+  54  NONE
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG7
+root@Apple-OOB2-206-4:/#
+
+root@Apple-OOB1-206-3:/# cli
+Welcome to the ArcOS CLI
+User root last logged in 2023-08-27T05:15:41.400623+00:00, to Apple-OOB1-206-3, from 10.9.208.51 using cli-ssh
+root connected from 10.9.208.51 using ssh on Apple-OOB1-206-3
+root@Apple-OOB1-206-3# config
+Entering configuration mode terminal
+root@Apple-OOB1-206-3(config)# int swp53
+root@Apple-OOB1-206-3(config-interface-swp53)# enable false
+root@Apple-OOB1-206-3(config-interface-swp53)# commit
+Commit complete.
+root@Apple-OOB1-206-3(config-interface-swp53)# end
+root@Apple-OOB1-206-3# exit
+root@Apple-OOB1-206-3:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       F2210207850
+  50  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG3
+  51  1GBASE-T        Copper          100m   AVAGO             ABCU-5740RZ       AGC17205529W
+  52  1GBASE-T        Copper          100m   Arista Networks   SFP-1G-T          XTH215300070
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259563
+  54  1GBASE-T        Copper          100m   CISCO             SBCU-5740ARZ-CS1  AVC21322DSR
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPBA
+root@Apple-OOB1-206-3:/#
+root@Apple-OOB1-206-3:/#
+root@Apple-OOB1-206-3:/# cli
+Welcome to the ArcOS CLI
+User root last logged in 2023-08-27T05:18:37.32151+00:00, to Apple-OOB1-206-3, from 10.9.208.51 using cli-ssh
+root connected from 10.9.208.51 using ssh on Apple-OOB1-206-3
+root@Apple-OOB1-206-3# config
+Entering configuration mode terminal
+root@Apple-OOB1-206-3(config)# int swp52
+root@Apple-OOB1-206-3(config-interface-swp52)# int swp53
+root@Apple-OOB1-206-3(config-interface-swp53)# enable true
+root@Apple-OOB1-206-3(config-interface-swp53)# commit
+Commit complete.
+root@Apple-OOB1-206-3(config-interface-swp53)# end
+root@Apple-OOB1-206-3# exit
+root@Apple-OOB1-206-3:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       F2210207850
+  50  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG3
+  51  1GBASE-T        Copper          100m   AVAGO             ABCU-5740RZ       AGC17205529W
+  52  1GBASE-T        Copper          100m   Arista Networks   SFP-1G-T          XTH215300070
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259563
+  54  1GBASE-T        Copper          100m   CISCO             SBCU-5740ARZ-CS1  AVC21322DSR
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPBA
+root@Apple-OOB1-206-3:/#
+
+
+root@Apple-OOB2-206-4#
+root@Apple-OOB2-206-4# show run int swp53
+interface swp53
+ type    ethernetCsmacd
+ enabled true
+ ethernet port-speed SPEED_1GB
+ subinterface 0
+  ipv6 address 53:53:53::2
+   prefix-length 64
+  exit
+  ipv4 address 53.53.53.2
+   prefix-length 24
+  exit
+ exit
+!
+root@Apple-OOB2-206-4# config
+Entering configuration mode terminal
+root@Apple-OOB2-206-4(config)# int swp53
+root@Apple-OOB2-206-4(config-interface-swp53)# enable false
+root@Apple-OOB2-206-4(config-interface-swp53)# commit
+Commit complete.
+root@Apple-OOB2-206-4(config-interface-swp53)# end
+root@Apple-OOB2-206-4#
+root@Apple-OOB2-206-4:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  NONE
+  50  NONE
+  51  NONE
+  52  NONE
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259562
+  54  NONE
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG7
+root@Apple-OOB2-206-4:/#
+
+root@Apple-OOB1-206-3:/#
+root@Apple-OOB1-206-3:/# ./mnt/onl/data/rootfs/upper/lib/platform-config/x86-64-ufispace-s6301-56st-r0/onl/bin/onlpdump -S
+Port  Type            Media   Status  Len    Vendor            Model             S/N
+----  --------------  ------  ------  -----  ----------------  ----------------  ----------------
+  49  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       F2210207850
+  50  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPG3
+  51  1GBASE-T        Copper          100m   AVAGO             ABCU-5740RZ       AGC17205529W
+  52  1GBASE-T        Copper          100m   Arista Networks   SFP-1G-T          XTH215300070
+  53  1GBASE-T        Copper          100m   FS                SFP-GB-GE-T       C2306259563
+  54  1GBASE-T        Copper          100m   CISCO             SBCU-5740ARZ-CS1  AVC21322DSR
+  55  NONE
+  56  1GBASE-T        Copper          100m   FINISAR CORP.     FCLF8522P2BTL     N95BPBA
+root@Apple-OOB1-206-3:/#
+

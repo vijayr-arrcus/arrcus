@@ -1,0 +1,3 @@
+env LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libtcmalloc.so" HEAPPROFILE=/tmp/abc HEAPPROFILESIGNAL=10 /usr/lib/arcos/qos.bin
+apt update && apt install -y google-perftools libgoogle-perftools-dev binutils
+google-pprof --base=/tmp/abc.0001.heap /usr/lib/arcos/qos.bin /tmp/abc.0008.heap

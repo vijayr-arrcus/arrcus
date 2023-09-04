@@ -1,0 +1,21 @@
+set pagination off
+set breakpoint pending on
+break brk
+  commands
+    shell date
+    bt
+    continue
+  end
+break mmap
+  commands
+    shell date
+    bt
+    continue
+  end
+break mremap
+  commands
+    shell date
+    bt
+    continue
+  end
+

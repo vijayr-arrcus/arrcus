@@ -59,6 +59,8 @@ Mon 14 Aug 2023 07:08:07 PM UTC
 #18 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
 [Thread 0x7f318bfff700 (LWP 17571) exited]
 
+73008 - 68248 = 4760
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:08:14 PM UTC
 #0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
@@ -104,6 +106,12 @@ Mon 14 Aug 2023 07:08:15 PM UTC
 #17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Mon 14 Aug 2023 07:08:15 PM UTC -- 73008
+Mon 14 Aug 2023 07:08:20 PM UTC -- 73536
+
+Delta - 528
+
 
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:08:16 PM UTC
@@ -157,6 +165,12 @@ Mon 14 Aug 2023 07:08:41 PM UTC
 #24 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #25 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #26 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Mon 14 Aug 2023 07:08:20 PM UTC -- 73536
+Mon 14 Aug 2023 07:08:41 PM UTC -- 73536
+Mon 14 Aug 2023 07:08:46 PM UTC -- 74064
+Delta 528
+
 
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:08:44 PM UTC
@@ -226,6 +240,13 @@ Mon 14 Aug 2023 07:08:46 PM UTC
 #17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Mon 14 Aug 2023 07:08:46 PM UTC -- 74064
+Mon 14 Aug 2023 07:08:51 PM UTC -- 74592
+Delta 528
 
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:08:47 PM UTC
@@ -336,6 +357,11 @@ Mon 14 Aug 2023 07:08:51 PM UTC
 #12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Mon 14 Aug 2023 07:08:51 PM UTC -- 74592
+Mon 14 Aug 2023 07:08:57 PM UTC -- 75120
+Delta 528
 
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:08:52 PM UTC
@@ -466,6 +492,12 @@ Mon 14 Aug 2023 07:08:57 PM UTC
 #18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Mon 14 Aug 2023 07:08:57 PM UTC -- 75120
+Mon 14 Aug 2023 07:09:02 PM UTC -- 75648
+Delta - 528
+
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:08:59 PM UTC
 #0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
@@ -507,6 +539,12 @@ Mon 14 Aug 2023 07:09:00 PM UTC
 #13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Mon 14 Aug 2023 07:09:02 PM UTC -- 75648
+Mon 14 Aug 2023 07:09:07 PM UTC -- 75648
+
+
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:09:05 PM UTC
 #0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
@@ -529,6 +567,11 @@ Mon 14 Aug 2023 07:09:05 PM UTC
 #17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Mon 14 Aug 2023 07:09:12 PM UTC -- 75648
+Mon 14 Aug 2023 07:09:18 PM UTC -- 75648
+Mon 14 Aug 2023 07:09:23 PM UTC -- 75912
+delta 264
 
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:09:22 PM UTC
@@ -565,6 +608,10 @@ Mon 14 Aug 2023 07:09:23 PM UTC
 #12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Mon 14 Aug 2023 07:09:23 PM UTC -- 75912
+Mon 14 Aug 2023 07:09:28 PM UTC -- 76704
+Delta - 792
 
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:09:24 PM UTC
@@ -660,6 +707,12 @@ Mon 14 Aug 2023 07:09:28 PM UTC
 #12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Mon 14 Aug 2023 07:09:28 PM UTC -- 76704
+Mon 14 Aug 2023 07:09:33 PM UTC -- 77232
+Delta - 528
+
 
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:09:29 PM UTC
@@ -776,6 +829,12 @@ Mon 14 Aug 2023 07:09:33 PM UTC
 #18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Mon 14 Aug 2023 07:10:05 PM UTC -- 77232
+Mon 14 Aug 2023 07:10:10 PM UTC -- 77496
+Mon 14 Aug 2023 07:10:15 PM UTC -- 77496
+Delta 264
+
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:10:10 PM UTC
 #0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
@@ -793,6 +852,15 @@ Mon 14 Aug 2023 07:10:10 PM UTC
 #12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Mon 14 Aug 2023 07:10:26 PM UTC -- 77496
+Mon 14 Aug 2023 07:10:31 PM UTC -- 77496
+Mon 14 Aug 2023 07:10:36 PM UTC -- 77496
+Mon 14 Aug 2023 07:10:47 PM UTC -- 77496
+Mon 14 Aug 2023 07:10:47 PM UTC -- 77496
+Mon 14 Aug 2023 07:10:52 PM UTC -- 77760
+Delta 264
+
 
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:10:28 PM UTC
@@ -816,6 +884,11 @@ Mon 14 Aug 2023 07:10:28 PM UTC
 #17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Mon 14 Aug 2023 07:10:52 PM UTC -- 77760
+Mon 14 Aug 2023 07:11:02 PM UTC -- 77760
+Mon 14 Aug 2023 08:06:34 PM UTC -- 77760
 
 Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
 Mon 14 Aug 2023 07:10:54 PM UTC
@@ -857,3 +930,19 @@ Mon 14 Aug 2023 07:11:05 PM UTC
 #12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
 #14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+Mon 14 Aug 2023 08:06:34 PM UTC -- 77760
+Mon 14 Aug 2023 08:06:39 PM UTC -- 78020
+Mon 14 Aug 2023 08:06:50 PM UTC -- 77944
+Mon 14 Aug 2023 09:36:39 PM UTC -- 77852
+Mon 14 Aug 2023 09:47:43 PM UTC -- 77852
+Mon 14 Aug 2023 09:47:48 PM UTC -- 78116
+Mon 14 Aug 2023 10:04:08 PM UTC -- 77908
+Mon 14 Aug 2023 10:20:44 PM UTC -- 77908
+Mon 14 Aug 2023 10:20:50 PM UTC -- 78172
+Mon 14 Aug 2023 10:21:05 PM UTC -- 78172
+Mon 14 Aug 2023 10:21:10 PM UTC -- 77812
+

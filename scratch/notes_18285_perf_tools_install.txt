@@ -1,0 +1,15 @@
+sudo apt-get install linux-perf-4.19
+
+wget http://archive.debian.org/debian-security/pool/updates/main/l/linux/linux-perf-4.9_4.9.320-2_amd64.deb
+wget https://ubuntu.repo.cure.edu.uy/mirror/pool/main/libu/libunwind/libunwind8_1.1-4.1_amd64.deb
+
+wget http://security.debian.org/pool/updates/main/l/linux/linux-perf-4.9_4.9.320-2_amd64.deb
+wget http://archive.debian.org/debian-security/pool/updates/main/l/linux/linux-perf-4.9_4.9.320-2_amd64.deb
+wget https://ubuntu.repo.cure.edu.uy/mirror/pool/main/libu/libunwind/libunwind8_1.1-4.1_amd64.deb
+wget https://debian.sipwise.com/debian-security/pool/main/p/perl/libperl5.24_5.24.1-3+deb9u5_amd64.deb
+wget https://debian.sipwise.com/debian-security/pool/main/p/perl/perl-modules-5.24_5.24.1-3+deb9u5_all.deb
+
+
+sudo perf probe -x  /lib/x86_64-linux-gnu/libc.so.6 malloc_ret='malloc%return $retval'
+sudo perf probe -x /lib/x86_64-linux-gnu/libc.so.6 'malloc%return +0($retval):string'
+
