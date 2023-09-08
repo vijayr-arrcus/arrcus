@@ -1,0 +1,17 @@
+gcc lttng_main.c lttng_tp.c -llttng-ust -ldl -lm -I.
+./a.out
+vim lttng_main.c
+gcc lttng_main.c lttng_tp.c -llttng-ust -ldl -lm -I.
+./a.out
+lttng
+lttng list
+lttng create "default" --snapshot
+lttng status
+lttng enable-channel -u lttng-test-event -s "default"
+lttng enable-channel -u lttng-test-event -s "default" --subbuf-size 4096 --num-subbuf 2
+lttng list
+lttng list default
+lttng enable-event -u lttng_trace:trace_1 -c lttng-test-event -s "default"
+lttng enable-event -u lttng_trace:trace_2 -c lttng-test-event -s "default"
+lttng start
+
