@@ -1,0 +1,1338 @@
+ enabled     true
+ ethernet port-speed SPEED_10GB
+ storm-control broadcast-level 0.1
+ storm-control multicast-level 0.1
+ storm-control unknown-unicast-level 0.1
+ subinterface 0
+  ipv6 enabled false
+  ipv4 enabled false
+ exit
+ subinterface 1939
+  ipv6 enabled false
+  ipv4 enabled false
+  vlan vlan-id 1939
+ exit
+ subinterface 1940
+  ipv6 enabled false
+  ipv4 enabled false
+  vlan vlan-id 1940
+ exit
+ qos service-policy INGRESS
+  name PMAP-OCX-User-IN
+ !
+Aborted: by user
+root@TK-LABQUANTA-01# show run
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01# show run | nomore
+version "5.3.1A.P1:Sep_06_23:10_11_PM [release] 2023-09-06 22:11:17"
+features feature ARCOS_FRONT_PANEL_ZTP
+ supported true
+!
+features feature ARCOS_PTP_TRANSPARENT_CLOCK
+ supported true
+!
+features feature ARCOS_RIOT
+ supported true
+!
+features feature ARCOS_ICMP_SRC_REWRITE
+ supported true
+!
+features feature ARCOS_SUBIF
+ supported true
+!
+features feature ARCOS_QoS
+ supported true
+!
+features feature ARCOS_MPLS
+ supported true
+!
+system hostname TK-LABQUANTA-01
+system login-banner "ArcOS (c) Arrcus, Inc."
+system clock timezone-name Asia/Tokyo
+system ssh-server enable true
+system ssh-server session-limit 15
+system ssh-server permit-root-login true
+system ssh-server sftp enable true
+system ports console-port permit-root-login true
+system ports console-port permit-non-root-login true
+system netconf-server enable false
+system netconf-server transport ssh enable false
+system restconf-server enable false
+system ntp listen-interface loopback0
+system ntp server 219.188.200.128
+!
+system logging timestamp-format PRECISION
+system logging remote-server 192.168.1.2
+ source-address    192.168.2.224
+ remote-port       514
+ network-instance  management
+ facility-override LOCAL5
+ selector LOCAL7 INFORMATIONAL
+ !
+!
+system logging remote-server 221.111.4.81
+ source-address    10.249.202.5
+ remote-port       514
+ network-instance  default
+ facility-override LOCAL5
+ selector LOCAL7 INFORMATIONAL
+ !
+!
+system aaa authentication authentication-method [ RADIUS_ALL LOCAL ]
+system aaa authentication remote-user role-override role SYSTEM_ROLE_ADMIN
+system aaa authentication admin-user admin-password $6$d9JWUWLhQwZ0N.lG$Nx/kliQXKZS1qM1ndcIfS1Fr/6h1kOi9kuu
+tLmHjEzKTcv1kSg0DuzKUK2HS0SZyZAsFTqeBndS2CLAMW1WeT/
+system aaa authentication user admin
+ password $6$n6o5koCpl49d6.Y/$3AJXO9vLNNlHaBnG9AnOTnhZC0hpanwA3aP/ro.pvL7H94S5tzs5ArUZiQO42OKlImgrYS/sQH7YN
+pIxmaX8t.
+ role     SYSTEM_ROLE_ADMIN
+!
+system aaa authentication user bbix
+ password $6$BBTBHy9c8NBZS919$7esWPpuDAFWqWKvZAaIj36V55Voo2kwkoyFQQBSjd/TElSSBASKXWcBkk5HwamEGcA8ZKVq6aUvWf
+Erfzq8rE0
+ role     SYSTEM_ROLE_ADMIN
+!
+system aaa authentication user bbix-api
+ password $6$BBTBHy9c8NBZS919$7esWPpuDAFWqWKvZAaIj36V55Voo2kwkoyFQQBSjd/TElSSBASKXWcBkk5HwamEGcA8ZKVq6aUvWf
+Erfzq8rE0
+ role     SYSTEM_ROLE_ADMIN
+!
+system aaa server-group RADIUS
+ type             RADIUS
+ source-interface loopback0
+ network-instance default
+ server 219.188.193.56
+  radius secret-key $8$erQkMjuGpkGjJ75M5PTbbRdUZPYsklB1h2jwdVqV9K4+DBYAWIPEEzw34sBrwuOz
+ !
+!
+system qos service-tablemap INGRESS
+ name tmap_ingress_DSCP_To_TC
+!
+system qos service-tablemap EGRESS
+ name tmap_egress_TC_To_DSCP
+!
+system rib IPV6
+!
+system rib IPV4
+!
+system snmp-server enable true
+system snmp-server protocol-version [ V2C ]
+system snmp-server network-instance default
+system snmp-server listen-addresses [ 10.249.202.5 ]
+system snmp-server community grugru
+system snmp-server target MGMT1
+ address 221.111.4.126
+!
+hardware platform forwarding-scale fwd-profile P4
+hardware platform sys-rsvd-vlan-min 4001
+hardware platform sys-rsvd-vlan-max 4094
+interface ma1
+ type        ethernetCsmacd
+ description mgmt
+ enabled     true
+ subinterface 0
+  ipv4 address 192.168.2.224
+   prefix-length 23
+  exit
+ exit
+!
+interface swp1
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp2
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp3
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp4
+ type        ethernetCsmacd
+ mtu         1526
+ description TK-LABCAE-01[Et31]
+ enabled     true
+ ethernet port-speed SPEED_10GB
+ storm-control broadcast-level 0.1
+ storm-control multicast-level 0.1
+ storm-control unknown-unicast-level 0.1
+ subinterface 0
+  ipv6 enabled false
+  ipv4 enabled false
+ exit
+ subinterface 1939
+  ipv6 enabled false
+  ipv4 enabled false
+  vlan vlan-id 1939
+ exit
+ subinterface 1940
+  ipv6 enabled false
+  ipv4 enabled false
+  vlan vlan-id 1940
+ exit
+ qos service-policy INGRESS
+  name PMAP-OCX-User-IN
+ !
+ qos service-policy EGRESS
+  name PMAP-OCX-User-OUT
+ !
+ qos service-tablemap EGRESS
+  name tmap_egress_TC_To_COS
+ !
+!
+interface swp5
+ type        ethernetCsmacd
+ mtu         1526
+ description TK-LABCAE-01[Et49/2]
+ enabled     true
+ debounce-interval up 30000
+ ethernet port-speed SPEED_10GB
+ ethernet aggregate-id bond2001
+!
+interface swp6
+ type        ethernetCsmacd
+ mtu         1526
+ description TK-LABCAE-01[Et49/3]
+ enabled     true
+ ethernet port-speed SPEED_10GB
+ ethernet aggregate-id bond2001
+!
+interface swp7
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp8
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp9
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp10
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp11
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp12
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp13
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp14
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp15
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp16
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp17
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp18
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp19
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp20
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp21
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp22
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp23
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp24
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp25
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp26
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp27
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp28
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp29
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp30
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp31
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp32
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp33
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp34
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp35
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp36
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp37
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp38
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp39
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp40
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp41
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp42
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp43
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp44
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp45
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp46
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp47
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp48
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp49
+ type        ethernetCsmacd
+ mtu         9114
+ description TK-LABCOR-31[Et21/1]
+ enabled     true
+ ethernet port-speed SPEED_100GB
+ ethernet aggregate-id bond101
+!
+interface swp50
+ type        ethernetCsmacd
+ mtu         9114
+ description TK-LABCOR-32[Et21/1]
+ enabled     true
+ ethernet port-speed SPEED_100GB
+ ethernet aggregate-id bond102
+!
+interface swp51
+ type        ethernetCsmacd
+ mtu         9114
+ description TK-LABCOR-31[Et22/1]
+ enabled     true
+ ethernet port-speed SPEED_100GB
+ ethernet aggregate-id bond101
+!
+interface swp52
+ type        ethernetCsmacd
+ mtu         9114
+ description TK-LABCOR-32[Et22/1]
+ enabled     true
+ ethernet port-speed SPEED_100GB
+ ethernet aggregate-id bond102
+!
+interface swp53
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp54
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp55
+ type    ethernetCsmacd
+ enabled false
+!
+interface swp56
+ type    ethernetCsmacd
+ enabled false
+!
+interface bond101
+ type        ieee8023adLag
+ mtu         9114
+ description TK-LABCOR-31[Po201]
+ enabled     true
+ bfd micro remote-address ipv4 10.249.200.6
+ bfd micro enabled true
+ subinterface 0
+  ipv4 address 10.249.200.7
+   prefix-length 31
+  exit
+ exit
+ aggregation min-links 2
+ qos service-policy EGRESS
+  name PMAP-VXLAN-OUT
+ !
+!
+interface bond102
+ type        ieee8023adLag
+ mtu         9114
+ description TK-LABCOR-32[Po201]
+ enabled     true
+ bfd micro remote-address ipv4 10.249.200.10
+ bfd micro enabled true
+ subinterface 0
+  ipv4 address 10.249.200.11
+   prefix-length 31
+  exit
+ exit
+ aggregation min-links 2
+ qos service-policy EGRESS
+  name PMAP-VXLAN-OUT
+ !
+!
+interface bond2001
+ type        ieee8023adLag
+ mtu         1526
+ description TK-LABCAE-01[Po2001]
+ enabled     true
+ storm-control broadcast-level 0.1
+ storm-control multicast-level 0.1
+ storm-control unknown-unicast-level 0.1
+ subinterface 1941
+  ipv6 enabled false
+  ipv4 enabled false
+  vlan vlan-id 1941
+ exit
+ subinterface 1942
+  ipv6 enabled false
+  ipv4 enabled false
+  vlan vlan-id 1942
+ exit
+ aggregation min-links 2
+ qos service-policy INGRESS
+  name PMAP-OCX-User-IN
+ !
+ qos service-policy EGRESS
+  name PMAP-OCX-User-OUT
+ !
+ qos service-tablemap EGRESS
+  name tmap_egress_TC_To_COS
+ !
+!
+interface loopback0
+ type        softwareLoopback
+ description TK-LABQUANTA-01[Lo0]
+ enabled     true
+ subinterface 0
+  ipv4 address 10.249.202.5
+   prefix-length 32
+  exit
+ exit
+!
+interface loopback1
+ type        softwareLoopback
+ description TK-LABQUANTA-02[Lo0]
+ enabled     true
+ subinterface 0
+  ipv4 address 10.249.202.6
+   prefix-length 32
+  exit
+ exit
+!
+network-instance default
+ protocol BGP default
+  global as 131152
+  global router-id 10.249.202.5
+  global afi-safi L2VPN_EVPN
+   use-maximum-paths ebgp maximum-paths 128
+   use-maximum-paths ibgp maximum-paths 128
+  !
+  neighbor 10.249.56.51
+   peer-group ArcOS-Reflector-Client
+   exit
+  !
+  neighbor 10.249.56.52
+   peer-group ArcOS-Reflector-Client
+   exit
+  !
+  peer-group ArcOS-Reflector-Client
+   peer-as       131152
+   auth-password $8$fcMzt2SuEUKtYOz3TvIeBlRMZFbRQn3TBJNuMyyjzdg=
+   transport local-address loopback0
+   afi-safi L2VPN_EVPN
+    add-paths send BACKUP
+    add-paths receive true
+    exit
+   !
+  !
+ !
+ protocol ISIS 100
+  global net       [ 49.0000.0102.4920.2005.00 ]
+  global level-capability LEVEL_2
+  global graceful-restart enabled true
+  global timers spf spf-hold-interval 5000
+  global timers spf spf-first-interval 50
+  global timers spf spf-second-interval 200
+  global af IPV4 UNICAST
+   enabled true
+   exit
+  !
+  level 1
+   enabled false
+   exit
+  !
+  level 2
+   enabled true
+   exit
+  !
+  interface bond101
+   enabled      true
+   network-type POINT_TO_POINT
+   authentication hello-authentication true
+   authentication key auth-password $8$L6sakk4EpbJMKuuIdVigbZLpW+s7/4cJ0hHTmDMxzoA=
+   authentication key crypto-algorithm MD5
+   af IPV4 UNICAST
+    enabled true
+   !
+   level 2
+    enabled true
+    metric  150
+    exit
+   !
+   exit
+  !
+  interface bond102
+   enabled      true
+   network-type POINT_TO_POINT
+   authentication hello-authentication true
+   authentication key auth-password $8$jpMB0D1lQkPOFeS4rvkACLQnl8luI2iXBIWvnPL3UrQ=
+   authentication key crypto-algorithm MD5
+   af IPV4 UNICAST
+    enabled true
+   !
+   level 2
+    enabled true
+    metric  150
+    exit
+   !
+   exit
+  !
+  interface loopback0
+   enabled true
+   passive true
+   af IPV4 UNICAST
+    enabled true
+   !
+   level 2
+    enabled true
+    exit
+   !
+   exit
+  !
+  interface loopback1
+   enabled true
+   passive true
+   af IPV4 UNICAST
+    enabled true
+   !
+   level 2
+    enabled true
+    exit
+   !
+   exit
+  !
+ !
+!
+network-instance management
+ interface ma1
+ !
+ protocol STATIC default-route
+  static-route 0.0.0.0/0
+   next-hop-index next-hop1
+    next-hop 192.168.2.1
+    interface ma1
+   !
+  !
+ !
+!
+network-instance vlan937
+ type                 L2VLAN
+ vlan                 937
+ advertise-mac-routes true
+ interface swp4
+ !
+ protocol BGP vlan937
+  global route-distinguisher 10.249.202.6:50937
+  route-target 131152:50937 both
+  !
+ !
+ vni 50937
+  local-tunnel-endpoint-id 0
+  arp-nd-suppression       false
+ !
+!
+network-instance vlan939
+ type                 L2VLAN
+ vlan                 939
+ advertise-mac-routes true
+ interface swp4.1939
+ !
+ protocol BGP vlan939
+  global route-distinguisher 10.249.202.6:50939
+  route-target 131152:50939 both
+  !
+ !
+ vni 50939
+  local-tunnel-endpoint-id 0
+  arp-nd-suppression       false
+ !
+!
+network-instance vlan940
+ type                 L2VLAN
+ vlan                 940
+ advertise-mac-routes true
+ interface swp4.1940
+ !
+ protocol BGP vlan940
+  global route-distinguisher 10.249.202.6:50940
+  route-target 131152:50940 both
+  !
+ !
+ vni 50940
+  local-tunnel-endpoint-id 0
+  arp-nd-suppression       false
+ !
+!
+network-instance vlan941
+ type                 L2VLAN
+ vlan                 941
+ advertise-mac-routes true
+ interface bond2001.1941
+ !
+ protocol BGP vlan941
+  global route-distinguisher 10.249.202.6:50941
+  route-target 131152:50941 both
+  !
+ !
+ vni 50941
+  local-tunnel-endpoint-id 0
+  arp-nd-suppression       false
+ !
+!
+network-instance vlan942
+ type                 L2VLAN
+ vlan                 942
+ advertise-mac-routes true
+ interface bond2001.1942
+ !
+ protocol BGP vlan942
+  global route-distinguisher 10.249.202.6:50942
+  route-target 131152:50942 both
+  !
+ !
+ vni 50942
+  local-tunnel-endpoint-id 0
+  arp-nd-suppression       false
+ !
+!
+network-instance-global fdb mac-aging-time 300
+evpn df-election-time 1
+bfd profile GLOBAL
+ enabled                     true
+ desired-minimum-tx-interval 150
+ required-minimum-receive    150
+ detection-multiplier        3
+ v4-hw-offload               true
+!
+lacp interface bond101
+ interval SLOW
+!
+lacp interface bond102
+ interval SLOW
+!
+lacp interface bond2001
+ interval FAST
+!
+lldp interface ma1
+ enabled false
+!
+lldp interface swp1
+ enabled false
+!
+lldp interface swp2
+ enabled false
+!
+lldp interface swp3
+ enabled false
+!
+lldp interface swp4
+ enabled false
+!
+lldp interface swp5
+ enabled false
+!
+lldp interface swp6
+ enabled false
+!
+lldp interface swp7
+ enabled false
+!
+lldp interface swp8
+ enabled false
+!
+lldp interface swp9
+ enabled false
+!
+lldp interface swp10
+ enabled false
+!
+lldp interface swp11
+ enabled false
+!
+lldp interface swp12
+ enabled false
+!
+lldp interface swp13
+ enabled false
+!
+lldp interface swp14
+ enabled false
+!
+lldp interface swp15
+ enabled false
+!
+lldp interface swp16
+ enabled false
+!
+lldp interface swp17
+ enabled false
+!
+lldp interface swp18
+ enabled false
+!
+lldp interface swp19
+ enabled false
+!
+lldp interface swp20
+ enabled false
+!
+lldp interface swp21
+ enabled false
+!
+lldp interface swp22
+ enabled false
+!
+lldp interface swp23
+ enabled false
+!
+lldp interface swp24
+ enabled false
+!
+lldp interface swp25
+ enabled false
+!
+lldp interface swp26
+ enabled false
+!
+lldp interface swp27
+ enabled false
+!
+lldp interface swp28
+ enabled false
+!
+lldp interface swp29
+ enabled false
+!
+lldp interface swp30
+ enabled false
+!
+lldp interface swp31
+ enabled false
+!
+lldp interface swp32
+ enabled false
+!
+lldp interface swp33
+ enabled false
+!
+lldp interface swp34
+ enabled false
+!
+lldp interface swp35
+ enabled false
+!
+lldp interface swp36
+ enabled false
+!
+lldp interface swp37
+ enabled false
+!
+lldp interface swp38
+ enabled false
+!
+lldp interface swp39
+ enabled false
+!
+lldp interface swp40
+ enabled false
+!
+lldp interface swp41
+ enabled false
+!
+lldp interface swp42
+ enabled false
+!
+lldp interface swp43
+ enabled false
+!
+lldp interface swp44
+ enabled false
+!
+lldp interface swp45
+ enabled false
+!
+lldp interface swp46
+ enabled false
+!
+lldp interface swp47
+ enabled false
+!
+lldp interface swp48
+ enabled false
+!
+lldp interface swp49
+ enabled false
+!
+lldp interface swp50
+ enabled false
+!
+lldp interface swp51
+ enabled false
+!
+lldp interface swp52
+ enabled false
+!
+lldp interface swp53
+ enabled false
+!
+lldp interface swp54
+ enabled false
+!
+lldp interface swp55
+ enabled false
+!
+lldp interface swp56
+ enabled false
+!
+stp enabled-protocol NONE
+overlay local-tunnel-endpoint 0
+ source-interface loopback1
+!
+acl acl-set ACL-ANY ACL_IPV4
+ acl-entry 10
+  ipv4 source-address 0.0.0.0/0
+ !
+!
+acl acl-set ACL-DstBGP ACL_IPV4
+ acl-entry 10
+  transport destination-port 179
+ !
+ acl-entry 20
+  transport source-port 179
+ !
+!
+acl acl-set ACL-TOS0 ACL_IPV4
+ acl-entry 10
+  ipv4 dscp 0..7
+ !
+!
+acl acl-set ACL-TOS1 ACL_IPV4
+ acl-entry 10
+  ipv4 dscp 8..15
+ !
+!
+acl acl-set ACL-TOS2 ACL_IPV4
+ acl-entry 10
+  ipv4 dscp 16..23
+ !
+!
+acl acl-set ACL-TOS3 ACL_IPV4
+ acl-entry 10
+  ipv4 dscp 24..31
+ !
+!
+acl acl-set ACL-TOS4 ACL_IPV4
+ acl-entry 10
+  ipv4 dscp 32..39
+ !
+!
+acl acl-set ACL-TOS5 ACL_IPV4
+ acl-entry 10
+  ipv4 dscp 40..47
+ !
+!
+acl acl-set ACL-TOS6 ACL_IPV4
+ acl-entry 10
+  ipv4 dscp 48..55
+ !
+!
+acl acl-set ACL-TOS7 ACL_IPV4
+ acl-entry 10
+  ipv4 dscp 56..63
+ !
+!
+acl acl-set CP_ACL_CTC ACL_IPV4
+ acl-entry 1
+  ipv4 source-address 127.0.0.1/32
+  transport destination-port 22..23
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 2
+  ipv4 source-address 10.0.0.0/8
+  transport destination-port 22..23
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 3
+  ipv4 source-address 192.168.0.0/16
+  transport destination-port 22..23
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 101
+  ipv4 source-address 127.0.0.1/32
+  transport destination-port 161..162
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 102
+  ipv4 source-address 221.111.4.126/32
+  transport destination-port 161..162
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 103
+  ipv4 source-address 221.111.4.223/32
+  transport destination-port 161..162
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 104
+  ipv4 source-address 221.111.79.85/32
+  transport destination-port 161..162
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 105
+  ipv4 source-address 10.249.11.31/32
+  transport destination-port 161..162
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 106
+  ipv4 source-address 10.249.11.32/32
+  transport destination-port 161..162
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 107
+  ipv4 source-address 192.168.0.0/16
+  transport destination-port 161..162
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 301
+  ipv4 source-address 127.0.0.1/32
+  transport destination-port 1812..1813
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 302
+  ipv4 source-address 219.188.193.56/32
+  transport destination-port 1812..1813
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 303
+  ipv4 source-address 192.168.0.0/16
+  transport destination-port 1812..1813
+  actions forwarding-action ACCEPT
+ !
+ acl-entry 1001
+  ipv4 source-address 0.0.0.0/0
+  transport destination-port 22..23
+  actions forwarding-action DROP
+ !
+ acl-entry 1002
+  ipv4 source-address 0.0.0.0/0
+  transport destination-port 161..162
+  actions forwarding-action DROP
+ !
+ acl-entry 1004
+  ipv4 source-address 0.0.0.0/0
+  transport destination-port 1812..1813
+  actions forwarding-action DROP
+ !
+ acl-entry 2000
+  ipv4 source-address 0.0.0.0/0
+  actions forwarding-action ACCEPT
+ !
+!
+control-plane acl-service-policies ingress-acl-sets
+ acl-set ACL_IPV4
+  set-name CP_ACL_CTC
+ !
+!
+qos classifier local-tc-0
+ filter LOCAL_TC
+  local-tc-value [ 0 ]
+ !
+!
+qos classifier local-tc-1
+ filter LOCAL_TC
+  local-tc-value [ 1 ]
+ !
+!
+qos classifier local-tc-2
+ filter LOCAL_TC
+  local-tc-value [ 2 ]
+ !
+!
+qos classifier local-tc-3
+ filter LOCAL_TC
+  local-tc-value [ 3 ]
+ !
+!
+qos classifier local-tc-4
+ filter LOCAL_TC
+  local-tc-value [ 4 ]
+ !
+!
+qos classifier local-tc-5
+ filter LOCAL_TC
+  local-tc-value [ 5 ]
+ !
+!
+qos classifier local-tc-6
+ filter LOCAL_TC
+  local-tc-value [ 6 ]
+ !
+!
+qos classifier local-tc-7
+ filter LOCAL_TC
+  local-tc-value [ 7 ]
+ !
+!
+qos classifier CMAP-TOS0
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name ACL-TOS0
+ !
+!
+qos classifier CMAP-TOS1
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name ACL-TOS1
+ !
+!
+qos classifier CMAP-TOS2
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name ACL-TOS2
+ !
+!
+qos classifier CMAP-TOS3
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name ACL-TOS3
+ !
+!
+qos classifier CMAP-TOS4
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name ACL-TOS4
+ !
+!
+qos classifier CMAP-TOS5
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name ACL-TOS5
+ !
+!
+qos classifier CMAP-TOS6
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name ACL-TOS6
+ !
+!
+qos classifier CMAP-TOS7
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name ACL-TOS7
+ !
+!
+qos classifier CMAP-DstBGP
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name ACL-DstBGP
+ !
+!
+qos classifier CMAP-ANY
+ filter ACL
+  acl-type ACL_IPV4
+  acl-name ACL-ANY
+ !
+!
+qos policy PMAP-OCX-User-OUT
+ classifier local-tc-7
+  action PRIORITY
+   level 1
+  !
+ !
+ classifier local-tc-6
+  action RATE_EXCESS
+   ratio 7
+  !
+ !
+ classifier local-tc-5
+  action RATE_EXCESS
+   ratio 6
+  !
+ !
+ classifier local-tc-4
+  action RATE_EXCESS
+   ratio 5
+  !
+ !
+ classifier local-tc-3
+  action RATE_EXCESS
+   ratio 4
+  !
+ !
+ classifier local-tc-2
+  action RATE_EXCESS
+   ratio 3
+  !
+ !
+ classifier local-tc-1
+  action RATE_EXCESS
+   ratio 2
+  !
+ !
+ classifier local-tc-0
+  action RATE_EXCESS
+   ratio 1
+  !
+ !
+!
+qos policy PMAP-OCX-User-IN
+ classifier CMAP-DstBGP
+  action MARK
+   local-tc 6
+  !
+ !
+ classifier CMAP-ANY
+  action MARK
+   local-tc 3
+  !
+ !
+!
+qos policy PMAP-VXLAN-OUT
+ classifier local-tc-7
+  action PRIORITY
+   level 1
+  !
+ !
+ classifier local-tc-6
+  action RATE_EXCESS
+   ratio 7
+  !
+ !
+ classifier local-tc-5
+  action RATE_EXCESS
+   ratio 6
+  !
+ !
+ classifier local-tc-4
+  action RATE_EXCESS
+   ratio 5
+  !
+ !
+ classifier local-tc-3
+  action RATE_EXCESS
+   ratio 4
+  !
+ !
+ classifier local-tc-2
+  action RATE_EXCESS
+   ratio 3
+  !
+ !
+ classifier local-tc-1
+  action RATE_EXCESS
+   ratio 2
+  !
+ !
+ classifier local-tc-0
+  action RATE_EXCESS
+   ratio 1
+  !
+ !
+!
+qos tablemap tmap_egress_TC_To_COS
+ to-type   COS
+ from-type LOCAL_TC
+ local-tc-entry 0 0
+  to-value 0
+ !
+ local-tc-entry 1 0
+  to-value 1
+ !
+ local-tc-entry 2 0
+  to-value 2
+ !
+ local-tc-entry 3 0
+  to-value 3
+ !
+ local-tc-entry 4 0
+  to-value 4
+ !
+ local-tc-entry 5 0
+  to-value 5
+ !
+ local-tc-entry 6 0
+  to-value 6
+ !
+ local-tc-entry 7 0
+  to-value 7
+ !
+!
+qos tablemap tmap_egress_TC_To_DSCP
+ to-type   DSCP
+ from-type LOCAL_TC
+ local-tc-entry 0 0
+  to-value 0
+ !
+ local-tc-entry 1 0
+  to-value 8
+ !
+ local-tc-entry 2 0
+  to-value 16
+ !
+ local-tc-entry 3 0
+  to-value 24
+ !
+ local-tc-entry 4 0
+  to-value 32
+ !
+ local-tc-entry 5 0
+  to-value 40
+ !
+ local-tc-entry 6 0
+  to-value 48
+ !
+ local-tc-entry 7 0
+  to-value 56
+ !
+!
+qos tablemap tmap_ingress_DSCP_To_TC
+ to-type   LOCAL_TC
+ from-type DSCP
+ local-tc-entry 0 0
+  from-value [ 0 1 2 3 4 5 6 7 ]
+ !
+ local-tc-entry 1 0
+  from-value [ 8 9 10 11 12 13 14 15 ]
+ !
+ local-tc-entry 2 0
+  from-value [ 16 17 18 19 20 21 22 23 ]
+ !
+ local-tc-entry 3 0
+  from-value [ 24 25 26 27 28 29 30 31 ]
+ !
+ local-tc-entry 4 0
+  from-value [ 32 33 34 35 36 37 38 39 ]
+ !
+ local-tc-entry 5 0
+  from-value [ 40 41 42 43 44 45 46 47 ]
+ !
+ local-tc-entry 6 0
+  from-value [ 48 49 50 51 52 53 54 55 ]
+ !
+ local-tc-entry 7 0
+  from-value [ 56 57 58 59 60 61 62 63 ]
+ !
+!
+vlan 937
+ vlan-id 937
+ name    ArcOS_PoC
+ exit
+!
+vlan 939
+ vlan-id 939
+ name    ArcOS_PoC
+ exit
+!
+vlan 940
+ vlan-id 940
+ name    ArcOS_PoC
+ exit
+!
+vlan 941
+ vlan-id 941
+ name    ArcOS_PoC
+ exit
+!
+vlan 942
+ vlan-id 942
+ name    ArcOS_PoC
+ exit
+!
+root@TK-LABQUANTA-01#

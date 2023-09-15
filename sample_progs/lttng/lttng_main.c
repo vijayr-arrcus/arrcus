@@ -6,19 +6,21 @@
 void main ()
 {
   uint32_t i =0;
-  int max = 5000;
-  while (getchar()) {
+  uint32_t j = 2;
+  int max;
+  max = 4096+8;
+  max = max*20;
+  char ch = 0;
+  while (ch == 'c' || (ch =getchar()) != 'q') {
     i = 0;
-    printf("\n start logging %d", max);
+    printf("\n %d >start logging %d", j++, max);
     fflush(stdout);
-    while(i<678604786) {
-      if (!(i%4294967)) {
-        printf("\n logg no %d", i);
-      }
+    while (i<max) {
       tracepoint(lttng_trace, trace_2, rand());
       i++;
     }
-    printf("\n rand %d\n", rand());
+    printf("\n new loop rand %d\n", rand());
   }
+  printf("\nexit wait");
   getchar();
 }

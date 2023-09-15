@@ -8,7 +8,8 @@ lttng list
 lttng create "default" --snapshot
 lttng status
 lttng enable-channel -u lttng-test-event -s "default"
-lttng enable-channel -u lttng-test-event -s "default" --subbuf-size 4096 --num-subbuf 2
+lttng enable-channel -u lttng-test-event -s "default" --subbuf-size 307200 --num-subbuf 4
+lttng enable-channel -u lttng-test-event -s "default" --subbuf-size 16 --num-subbuf 2
 lttng list
 lttng list default
 lttng enable-event -u lttng_trace:trace_1 -c lttng-test-event -s "default"

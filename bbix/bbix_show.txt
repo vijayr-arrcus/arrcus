@@ -1,0 +1,238 @@
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01# show network-instance default protocol BGP default global afi-safi L2VPN_EVPN
+global afi-safi L2VPN_EVPN
+ graceful-restart state enabled true
+ use-maximum-paths state ebgp maximum-paths 128
+ use-maximum-paths state ibgp maximum-paths 128
+ use-maximum-paths state eibgp maximum-paths 1
+ rtfilter enabled false
+ telemetry state neighbor-stream-enabled false
+ telemetry state prefix-stream-enabled false
+ telemetry state prefixes-streamed 0
+ telemetry state prefixes-updated 0
+ telemetry state prefixes-withdrawn 0
+ state afi-safi-name                L2VPN_EVPN
+ state enabled                      true
+ state total-paths                  182188
+ state total-prefixes               132137
+ state update-wait-data-plane       false
+ state retain-route-target-all      false
+ state pending-rib-acks             0
+ state queued-rib-acks              0
+ state versions path-version 3484945
+ state versions label-path-version 0
+ state versions best-path-version 3484938
+ state versions rib-path-version 3484938
+ state versions update-path-version 3484938
+ state total-route-reflector-clients 0
+Aborted: by user
+root@TK-LABQUANTA-01# show network-instance default protocol BGP default global afi-safi L2VPN_EVPN | nomore
+global afi-safi L2VPN_EVPN
+ graceful-restart state enabled true
+ use-maximum-paths state ebgp maximum-paths 128
+ use-maximum-paths state ibgp maximum-paths 128
+ use-maximum-paths state eibgp maximum-paths 1
+ rtfilter enabled false
+ telemetry state neighbor-stream-enabled false
+ telemetry state prefix-stream-enabled false
+ telemetry state prefixes-streamed 0
+ telemetry state prefixes-updated 0
+ telemetry state prefixes-withdrawn 0
+ state afi-safi-name                L2VPN_EVPN
+ state enabled                      true
+ state total-paths                  150711
+ state total-prefixes               111486
+ state update-wait-data-plane       false
+ state retain-route-target-all      false
+ state pending-rib-acks             0
+ state queued-rib-acks              0
+ state versions path-version 3527124
+ state versions label-path-version 0
+ state versions best-path-version 3526969
+ state versions rib-path-version 3526969
+ state versions update-path-version 3526969
+ state total-route-reflector-clients 0
+ state time-since-first-best-path   01:34:23
+ state time-since-last-best-path    0.019864
+ state first-path-received          "2023/09/11 19:20:17.835079"
+ state last-update-sent             "2023/09/11 20:54:44.434119"
+ state paths-received               78721
+ state paths-sent                   65066
+ state total-paths-received         802055
+ state total-paths-sent             821704
+ state total-paths-withdrawn        751240
+ state total-evpn-route-type-2-installs 400779
+ state total-evpn-route-type-2-updates 224973
+ state total-evpn-route-type-2-withdrawls 361331
+ state evpn-route-type-2-install-prefixes 39448
+ state total-evpn-route-type-3-installs 9
+ state total-evpn-route-type-3-updates 8
+ state total-evpn-route-type-3-withdrawls 0
+ state evpn-route-type-3-install-prefixes 9
+ state auto-inbound-soft-reconfiguration false
+ state auto-peer-group 0 iBGP
+  neighbor-count                     2
+  in-use                             true
+  route-reflector-client             false
+  route-server-client                false
+  as-type                            ASN32
+  local-as                           131152
+  add-paths                          true
+  add-paths-send                     BACKUP
+  remove-private-as                  false
+  replace-private-as                 false
+  aigp                               false
+  graceful-shutdown-enable           false
+  graceful-shutdown-local-preference false
+  graceful-shutdown-med              false
+  send-tracker-sid                   false
+  version                            3528816
+  nlri-sent                          410881
+  unreach-nlri-sent                  375620
+  neighbors                          [ 10.249.56.51 10.249.56.52 ]
+  updates-sent                       24082
+  pending-updates                    0
+  update-delays                      0
+  accu-stats-counters update-triggers 11355
+  accu-stats-counters update-runs 11313
+  accu-stats-counters update-paths-processed 3748560
+  accu-stats-counters update-paths-sent 410881
+  accu-stats-counters update-paths-wdn 375620
+  accu-stats-counters update-paths-skipped 1819084
+  accu-stats-counters update-paths-deleted 1686720
+  accu-stats-counters update-paths-relabeled 0
+  peri-stats-counters update-triggers 0
+  peri-stats-counters update-runs 0
+  peri-stats-counters update-paths-processed 0
+  peri-stats-counters update-paths-sent 0
+  peri-stats-counters update-paths-wdn 0
+  peri-stats-counters update-paths-skipped 0
+  peri-stats-counters update-paths-deleted 0
+  peri-stats-counters update-paths-relabeled 0
+ state rnhs rnh
+                                                    TOTAL              PER      PER      LOCAL                                                             SRV6   SRV6
+                 INTERFACE  RNH   PATH    NEIGHBOR  REFERENCE          NEXTHOP  NEXTHOP  NEXT   INTERFACE  LINK   RFC5549  STALE    MPLS          SRV6     OAM    OAM
+RNH ADDR         NAME       TYPE  COUNT   COUNT     COUNT      METRIC  LABEL    SID      HOP    STATUS     LOCAL  NEXTHOP  NEXTHOP  REACHABILITY  NEXTHOP  STATE  PROFILE
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10.249.56.40/32             ipv4  116753  0         116753     651     -        -        false  true       false  false    false    false         false    -      -
+10.249.56.51/32             ipv4  0       1         1          10151   -        -        false  true       false  false    false    false         false    -      -
+10.249.56.52/32             ipv4  0       1         1          10151   -        -        false  true       false  false    false    false         false    -      -
+10.249.202.6/32             ipv4  32562   0         32562      0       -        -        true   true       false  false    false    false         false    -      -
+10.249.202.8/32             ipv4  132     0         132        310     -        -        false  true       false  false    false    false         false    -      -
+
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01# show network-instance default protocol BGP default global afi-safi L2VPN_EVPN | grep paths
+ use-maximum-paths state ebgp maximum-paths 128
+ use-maximum-paths state ibgp maximum-paths 128
+ use-maximum-paths state eibgp maximum-paths 1
+ state total-paths                  156605
+ state paths-received               77368
+ state paths-sent                   81108
+ state total-paths-received         818218
+ state total-paths-sent             837746
+ state total-paths-withdrawn        751240
+  add-paths                          true
+  add-paths-send                     BACKUP
+  accu-stats-counters update-paths-processed 3821189
+  accu-stats-counters update-paths-sent 418873
+  accu-stats-counters update-paths-wdn 375620
+  accu-stats-counters update-paths-skipped 1859544
+  accu-stats-counters update-paths-deleted 1717108
+  accu-stats-counters update-paths-relabeled 0
+  peri-stats-counters update-paths-processed 12152
+  peri-stats-counters update-paths-sent 3016
+  peri-stats-counters update-paths-wdn 0
+  peri-stats-counters update-paths-skipped 6091
+  peri-stats-counters update-paths-deleted 0
+  peri-stats-counters update-paths-relabeled 0
+root@TK-LABQUANTA-01# show network-instance default protocol BGP default global afi-safi L2VPN_EVPN | grep paths
+ use-maximum-paths state ebgp maximum-paths 128
+ use-maximum-paths state ibgp maximum-paths 128
+ use-maximum-paths state eibgp maximum-paths 1
+ state total-paths                  166501
+ state paths-received               82324
+ state paths-sent                   86028
+ state total-paths-received         823174
+ state total-paths-sent             842666
+ state total-paths-withdrawn        751240
+  add-paths                          true
+  add-paths-send                     BACKUP
+  accu-stats-counters update-paths-processed 3831106
+  accu-stats-counters update-paths-sent 421333
+  accu-stats-counters update-paths-wdn 375620
+  accu-stats-counters update-paths-skipped 1864516
+  accu-stats-counters update-paths-deleted 1717109
+  accu-stats-counters update-paths-relabeled 0
+  peri-stats-counters update-paths-processed 11941
+  peri-stats-counters update-paths-sent 2963
+  peri-stats-counters update-paths-wdn 0
+  peri-stats-counters update-paths-skipped 5985
+  peri-stats-counters update-paths-deleted 0
+  peri-stats-counters update-paths-relabeled 0
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01#
+root@TK-LABQUANTA-01# show network-instance default protocol BGP default global afi-safi L2VPN_EVPN | grep prefix
+ telemetry state prefix-stream-enabled false
+ telemetry state prefixes-streamed 0
+ telemetry state prefixes-updated 0
+ telemetry state prefixes-withdrawn 0
+ state total-prefixes               125674
+ state evpn-route-type-2-install-prefixes 41322
+ state evpn-route-type-3-install-prefixes 9
+root@TK-LABQUANTA-01# show network-instance default protocol BGP default global afi-safi L2VPN_EVPN | greppaths
+ use-maximum-paths state ebgp maximum-paths 128
+ use-maximum-paths state ibgp maximum-paths 128
+ use-maximum-paths state eibgp maximum-paths 1
+ state total-paths                  181693
+ state paths-received               100100
+ state paths-sent                   63006
+ state total-paths-received         879955
+ state total-paths-sent             899256
+ state total-paths-withdrawn        830380
+  add-paths                          true
+  add-paths-send                     BACKUP
+  accu-stats-counters update-paths-processed 4066089
+  accu-stats-counters update-paths-sent 449628
+  accu-stats-counters update-paths-wdn 415190
+  accu-stats-counters update-paths-skipped 1965227
+  accu-stats-counters update-paths-deleted 1823464
+  accu-stats-counters update-paths-relabeled 0
+  peri-stats-counters update-paths-processed 0
+  peri-stats-counters update-paths-sent 0
+  peri-stats-counters update-paths-wdn 0
+  peri-stats-counters update-paths-skipped 0
+  peri-stats-counters update-paths-deleted 0
+  peri-stats-counters update-paths-relabeled 0
+root@TK-LABQUANTA-01# show network-instance default protocol BGP default global afi-safi L2VPN_EVPN | grep paths
+ use-maximum-paths state ebgp maximum-paths 128
+ use-maximum-paths state ibgp maximum-paths 128
+ use-maximum-paths state eibgp maximum-paths 1
+ state total-paths                  149466
+ state paths-received               73985
+ state paths-sent                   76876
+ state total-paths-received         892934
+ state total-paths-sent             913126
+ state total-paths-withdrawn        830380
+  add-paths                          true
+  add-paths-send                     BACKUP
+  accu-stats-counters update-paths-processed 4169281
+  accu-stats-counters update-paths-sent 456613
+  accu-stats-counters update-paths-wdn 415190
+  accu-stats-counters update-paths-skipped 2016919
+  accu-stats-counters update-paths-deleted 1887941
+  accu-stats-counters update-paths-relabeled 0
+  peri-stats-counters update-paths-processed 11938
+  peri-stats-counters update-paths-sent 2962
+  peri-stats-counters update-paths-wdn 0
+  peri-stats-counters update-paths-skipped 5985
+  peri-stats-counters update-paths-deleted 1
+  peri-stats-counters update-paths-relabeled 0
+root@TK-LABQUANTA-01#
+

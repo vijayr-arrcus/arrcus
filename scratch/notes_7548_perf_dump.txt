@@ -1,0 +1,159 @@
+root@Leaf4:/tmp/pmap/qos.bin# perf_4.19 report --stdio -g
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 29  of event 'page-faults:u'
+# Event count (approx.): 181
+#
+# Children      Self  Command  Shared Object          Symbol
+# ........  ........  .......  .....................  ....................................
+#
+    59.67%     0.00%  qos.bin  libevent-2.1.so.6.0.2  [.] event_priority_init
+            |
+            ---event_priority_init
+               s_mpsc_util_cb
+               |
+               |--46.96%--qos_mpsc_copp_stats_tbl_rx_cb
+               |          qos_dstore_alloc_msg
+               |          mgd_memory_malloc
+               |          mgd_mem_setup_slab_slots
+               |
+               |--11.60%--qos_mpsc_qos_stats_tbl_rx_cb
+               |          qos_mps_populate_qos_stats_msg
+               |
+                --1.10%--qos_mpsc_queue_stats_tbl_rx_cb
+                          qos_mps_populate_queue_stats_msg
+
+    59.67%     0.00%  qos.bin  libmpsc_util.so        [.] s_mpsc_util_cb
+            |
+            ---s_mpsc_util_cb
+               |
+               |--46.96%--qos_mpsc_copp_stats_tbl_rx_cb
+               |          qos_dstore_alloc_msg
+               |          mgd_memory_malloc
+               |          mgd_mem_setup_slab_slots
+               |
+               |--11.60%--qos_mpsc_qos_stats_tbl_rx_cb
+               |          qos_mps_populate_qos_stats_msg
+               |
+                --1.10%--qos_mpsc_queue_stats_tbl_rx_cb
+                          qos_mps_populate_queue_stats_msg
+
+    46.96%    46.96%  qos.bin  libmgd_memory.so       [.] mgd_mem_setup_slab_slots
+            |
+            ---event_priority_init
+               s_mpsc_util_cb
+               qos_mpsc_copp_stats_tbl_rx_cb
+               qos_dstore_alloc_msg
+               mgd_memory_malloc
+               mgd_mem_setup_slab_slots
+
+    46.96%     0.00%  qos.bin  qos.bin                [.] qos_mpsc_copp_stats_tbl_rx_cb
+            |
+            ---qos_mpsc_copp_stats_tbl_rx_cb
+               qos_dstore_alloc_msg
+               mgd_memory_malloc
+               mgd_mem_setup_slab_slots
+
+    46.96%     0.00%  qos.bin  qos.bin                [.] qos_dstore_alloc_msg
+            |
+            ---qos_dstore_alloc_msg
+               mgd_memory_malloc
+               mgd_mem_setup_slab_slots
+
+    46.96%     0.00%  qos.bin  libmgd_memory.so       [.] mgd_memory_malloc
+            |
+            ---mgd_memory_malloc
+               mgd_mem_setup_slab_slots
+
+    23.20%    23.20%  ZMQbg/1  libc-2.28.so           [.] sysmalloc
+            |
+            ---sysmalloc
+
+    15.47%    15.47%  ZMQbg/1  libzmq.so.5.2.1        [.] 0x00000000000395fd
+            |
+            ---0x7f2bd838b5fd
+
+    15.47%     0.00%  ZMQbg/1  libzmq.so.5.2.1        [.] 0x00007f2bd838b5fd
+            |
+            ---0x7f2bd838b5fd
+
+    11.60%    11.60%  qos.bin  qos.bin                [.] qos_mps_populate_qos_stats_msg
+            |
+            ---event_priority_init
+               s_mpsc_util_cb
+               qos_mpsc_qos_stats_tbl_rx_cb
+               qos_mps_populate_qos_stats_msg
+
+    11.60%     0.00%  qos.bin  qos.bin                [.] qos_mpsc_qos_stats_tbl_rx_cb
+            |
+            ---qos_mpsc_qos_stats_tbl_rx_cb
+               qos_mps_populate_qos_stats_msg
+
+     1.10%     1.10%  qos.bin  qos.bin                [.] qos_mps_populate_queue_stats_msg
+            |
+            ---event_priority_init
+               s_mpsc_util_cb
+               qos_mpsc_queue_stats_tbl_rx_cb
+               qos_mps_populate_queue_stats_msg
+
+     1.10%     0.00%  ZMQbg/1  [unknown]              [.] 0x2f746f6c732f6c61
+            |
+            ---0x2f746f6c732f6c61
+               |
+               |--0.55%--0xfc
+               |          0x7f2bd838b60d
+               |
+                --0.55%--0x9d
+                          0x7f2bd838b61d
+
+     1.10%     0.00%  qos.bin  qos.bin                [.] qos_mpsc_queue_stats_tbl_rx_cb
+            |
+            ---qos_mpsc_queue_stats_tbl_rx_cb
+               qos_mps_populate_queue_stats_msg
+
+     0.55%     0.55%  ZMQbg/1  libzmq.so.5.2.1        [.] 0x000000000003960d
+            |
+            ---0x2f746f6c732f6c61
+               0xfc
+               0x7f2bd838b60d
+
+     0.55%     0.55%  ZMQbg/1  libzmq.so.5.2.1        [.] 0x000000000003961d
+            |
+            ---0x2f746f6c732f6c61
+               0x9d
+               0x7f2bd838b61d
+
+     0.55%     0.00%  ZMQbg/1  [unknown]              [.] 0x000000000000009d
+            |
+            ---0x9d
+               0x7f2bd838b61d
+
+     0.55%     0.00%  ZMQbg/1  [unknown]              [.] 0x00000000000000fc
+            |
+            ---0xfc
+               0x7f2bd838b60d
+
+     0.55%     0.55%  ZMQbg/1  libzmq.so.5.2.1        [.] 0x0000000000039605
+            |
+            ---0x7f2bd838b605
+
+     0.55%     0.00%  ZMQbg/1  libzmq.so.5.2.1        [.] 0x00007f2bd838b605
+            |
+            ---0x7f2bd838b605
+
+     0.55%     0.00%  ZMQbg/1  libzmq.so.5.2.1        [.] 0x00007f2bd838b60d
+            |
+            ---0x7f2bd838b60d
+
+     0.55%     0.00%  ZMQbg/1  libzmq.so.5.2.1        [.] 0x00007f2bd838b61d
+            |
+            ---0x7f2bd838b61d
+
+
+
+#
+# (Tip: System-wide collection from all CPUs: perf record -a)
+#
