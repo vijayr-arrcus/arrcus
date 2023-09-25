@@ -1,4 +1,5 @@
 #!/bin/bash
+#ST sleep timer.
 ST=300
 PROC=$1
 mkdir -p /tmp/pmap/$PROC
@@ -11,6 +12,7 @@ date >> /tmp/pmap/$PROC/${i}_pmap.log
 pmap -XX $(pidof $PROC) >> /tmp/pmap/$PROC/${i}_pmap.log
 echo "${i}. *********************************************** END";
 #for ((j=0;$j<$ST;j++)) do sleep 1; echo -en "$(date) \t - wait $(($ST - $j)) \r"; done
+sleep $ST
 printf "\n\n\n"
 done
 

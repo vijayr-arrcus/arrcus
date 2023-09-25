@@ -21,6 +21,24 @@ EID 0x0000006f: eid=0x6f, gid=0x1,
          action = {act=RpStatGroup, param0=72(0x48), param1=0(0), param2=0(0)
          flex_counter = {flexctr_action_id=268435463(0x10000007), gp_counter_id=71(0x47), yp_counter_id=0(0), rp_counter_id=72(0x48)}
          policer = {policer id 32}
+BCM.0>
+BCM.0> flexctr stat show StatId=268435463 70-72
+flexctr stat show StatId=268435463 70-72
+Counter value: Action Id=268435463
+        index 70
+                A:                     0,  B:     0
+        index 71 >>> Greeen
+                A:                     1,  B:    64
+        index 72 >>> Red
+                A:                     0,  B:     0
+BCM.0>
+BCM.0>
+
+
+
+
+
+
 EID 0x00000070: eid=0x70, gid=0x1,
  prio=0x7fffc503, flags=0x20000002, hw_index=0x6a, Installed
  EtherType

@@ -1,3 +1,7 @@
+Tunnel Creation: DPAL_TUNNELS -- BCM_XGS_VXLAN_FLOW_TNL_INIT/bcm-vxlan-tnl-init, BCM_XGS_VXLAN_FLOW_TNL_TERM_ANC/bcm-vxlan-tnl-term-anc, BCM_XGS_VXLAN_FLOW_NW_VP/bcm-vxlan-nw-vp
+
+
+
 UL NH (DPAL_NEXTHOP -- BCM_XGS_NH/bcm-nh, BCM_XGS_PATH_INFO/bcm-xgs-path-info, BCM_XGS_HWPATH_INFO/bcm-xgs-hwpath-info) --> bcm_l3_egress_create (could be ethernet next hop or MPLS)
 OL NH (DPAL_VXLAN_PATH -- BCM_XGS_VXLAN_FLOW_OL_PATH/bcm-vxlan-path) --> bcm_l3_egress_create (egr_intf.flags2 |= BCM_L3_FLOW_ONLY;)
 
@@ -42,3 +46,14 @@ ecmpid:1073743307  created               dpal-nexthop  pathid:1480
 From the above looks like the following parent association:
 OL NH --> Tunnels ---> UL NH
 OL NH is picked based on the dst IP, and hits the tunnels, and for the tunnels based on the tunnel dst IP we pick the UL NH.
+
+
+OL NH creation:
+	egr_intf.port = net_vp;
+  egr_intf.intf = intf_id;
+  egr_intf.flags2 |= BCM_L3_FLOW_ONLY;
+  memcpy(egr_intf.mac_addr, (uint8_t *)&mac_addr[0], IEEE_MACLEN);
+  rv = bcm_l3_egress_create(unit, flags, &egr_intf, (bcm_if_t *)egr_id);
+
+
+

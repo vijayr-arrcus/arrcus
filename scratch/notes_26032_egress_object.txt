@@ -1,0 +1,22 @@
+cint_reset();
+bcm_l3_egress_t l3egr;
+bcm_l3_egress_t_init(&l3egr);
+bcm_if_t hwid = 400004;
+
+print bcm_l3_egress_get(0, hwid, &l3egr);
+print l3egr.module;
+print l3egr.port;
+print l3egr.flags2;
+print l3egr.intf;
+
+
+bcm_l3_egress_t_init(&l3egr);
+bcm_if_t hwid = 400005;
+
+print bcm_l3_egress_get(0, hwid, &l3egr);
+print l3egr.module;
+print l3egr.port;
+print l3egr.flags2;
+print l3egr.intf;
+
+bcm_l3_egress_create(unit, BCM_L3_WITH_ID | BCM_L3_REPLACE | BCM_L3_FLOW_ONLY, &l3egr, hwid);

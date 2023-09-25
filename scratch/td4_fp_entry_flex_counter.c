@@ -161,10 +161,12 @@ int ing_group_create( int presel_id, int prio) {
  }
   printf("Doing flexctr create to group 0x%08X. StatID: %d..\n",
           group_config.group, statid_used+1);
+  /*
   BCM_IF_ERROR_RETURN(flexctr_fp_stat_create(unit,
                                              group_config.group,
                                              bcmFieldStageIngress,
                                              &ctr_action_id));
+                                             */
   flexctr_cfg[statid_used].flexctr_action_id = ctr_action_id;
   flexctr_cfg[statid_used].counter_index = statid_used;
   flexctr_cfg[statid_used].color = BCM_FIELD_COUNT_ALL;

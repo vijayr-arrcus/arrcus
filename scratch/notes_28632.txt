@@ -1,0 +1,27 @@
+s RDBGC6_SELECT 0
+s RDBGC_SELECT_2(6) 0
+s RDBGC_SELECT_3(6) 0
+s RDBGC_SELECT_4(6) 0
+
+cstat set ce2 rx 6 RDROP
+
+BCM.0> cstat ce2
+cstat ce2
+
++------------------Programmable Statistics Counters[Port  ce2]------------------+
+| Type | No. |       Value       |                Enabled For                   |
++-------------------------------------------------------------------------------+
+|  RX  | 0(R)|           66038674| RIPD4 RIPD6 RPORTD PDISC                     |
+|      |     |                   | RFILDR RDROP RxVlanMismatch RxVlanMemberMismatch RxTpidMismatch
+      |
+|      |     |                   | RxPrivateVlanMismatch RxStgDrop              |
+|      | 1(R)|                  8| IMBP                                         |
+|      | 3   |                895| RxL3TtlError                                 |
+|      | 4   |                895| RIPD4 RxL3TtlError                           |
+|      | 5   |           31216183| RxStgDrop                                    |
++-------------------------------------------------------------------------------+
+|      | 4(R)|           19156973| TGIP4 TGIP6                                  |
++-------------------------------------------------------------------------------+
+
+BCM.0>
+

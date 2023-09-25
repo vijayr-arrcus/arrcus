@@ -31,3 +31,6 @@ printf("\n fp entry installed");
 
 
 bcm_field_entry_destroy(unit, fp_entry_id);
+
+bcm_flexctr_action_t_init(&action);
+bcm_flexctr_action_get(unit, counter_id, &action);
