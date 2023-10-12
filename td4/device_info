@@ -1,3 +1,23 @@
+root@TAC-T7032-IX7:/proc# lspci
+00:00.0 Host bridge: Intel Corporation Atom processor C2000 SoC Transaction Router (rev 03)
+00:01.0 PCI bridge: Intel Corporation Atom processor C2000 PCIe Root Port 1 (rev 03)
+00:03.0 PCI bridge: Intel Corporation Atom processor C2000 PCIe Root Port 3 (rev 03)
+00:04.0 PCI bridge: Intel Corporation Atom processor C2000 PCIe Root Port 4 (rev 03)
+00:0b.0 Co-processor: Intel Corporation Atom processor C2000 QAT (rev 03)
+00:0e.0 Host bridge: Intel Corporation Atom processor C2000 RAS (rev 03)
+00:0f.0 IOMMU: Intel Corporation Atom processor C2000 RCEC (rev 03)
+00:13.0 System peripheral: Intel Corporation Atom processor C2000 SMBus 2.0 (rev 03)
+00:14.0 Ethernet controller: Intel Corporation Ethernet Connection I354 (rev 03)
+00:16.0 USB controller: Intel Corporation Atom processor C2000 USB Enhanced Host Controller (rev 03)
+00:17.0 SATA controller: Intel Corporation Atom processor C2000 AHCI SATA2 Controller (rev 03)
+00:18.0 SATA controller: Intel Corporation Atom processor C2000 AHCI SATA3 Controller (rev 03)
+00:1f.0 ISA bridge: Intel Corporation Atom processor C2000 PCU (rev 03)
+00:1f.3 SMBus: Intel Corporation Atom processor C2000 PCU SMBus (rev 03)
+01:00.0 Ethernet controller: Intel Corporation 82599 10 Gigabit Dual Port Backplane Connection (rev 01)
+01:00.1 Ethernet controller: Intel Corporation 82599 10 Gigabit Dual Port Backplane Connection (rev 01)
+02:00.0 Ethernet controller: Broadcom Limited Device b870 (rev 01)
+
+
 Connection closed.
 root@td4-5:/proc# cat cat /proc/linux_ngbde
 cat: cat: No such file or directory
