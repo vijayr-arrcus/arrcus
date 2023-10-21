@@ -3,13 +3,13 @@ from scapy.all import *
 from scapy.contrib.ospf import *
 
 data="hello world 123456789123456789123456789123456789123456789"
-src_ip="140.1.1.1"
-dst_ip="140.1.1.2"
+src_ip="1.1.1.5"
+dst_ip="1.1.1.4"
 dst_ip6="1140:1::2"
 src_ip6="1140:1::1"
-dmac="00:18:23:30:e5:d7"
-smac="00:00:05:9f:66:73"
-interface="swp2"
+dmac="34:ef:B6:41:ef:95"
+smac="b4:A9:fc:70:c5:d4"
+interface="swp52"
 
 def send_packet (p, intf, t_count):
     i = 0;
@@ -139,6 +139,10 @@ def send_vrrp_v6_traffic ():
 
 def send_trace_route_v4_traffic ():
     pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=33434, sport=33434)
+    return pkt
+
+def send_trace_udp_v4_traffic ():
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=4789, sport=1646)
     return pkt
 
 def send_trace_route_v6_traffic ():
@@ -510,6 +514,7 @@ def main(argv):
         print("42. Send IPv4 traffic")
         print("43. Send TRACEROUTE v4 traffic")
         print("44. Send TRACEROUTE v6 traffic")
+        print("45. Send UDP v4 traffic")
 
         in_text = input("Enter traffic option > ")
         in_traffic_class = int(in_text)
@@ -645,6 +650,9 @@ def main(argv):
         if in_traffic_class == 44:
             tc_str = "TraceRt6"
             p = send_trace_route_v6_traffic()
+        if in_traffic_class == 45:
+            tc_str = "UDPtrafficv4"
+            p = send_trace_udp_v4_traffic()
         print"Input provided is", tc_str
 
 
