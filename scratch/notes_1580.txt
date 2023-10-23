@@ -1,6 +1,6 @@
 L3:
 ===
-BCM_L3_COPY_TO_CPU
+copy to cpu BCM_L3_COPY_TO_CPU
 
 
 if (RET_CODE_SUCCESS == ds_fib_egressid_path_flags_get(path_info, &flags)) {
