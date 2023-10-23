@@ -19,7 +19,7 @@ root@TAC-T7032-IX7:/proc# lspci
 
 
 Connection closed.
-root@td4-5:/proc# cat cat /proc/linux_ngbde
+root@td4-5:/proc# cat /proc/linux_ngbde
 cat: cat: No such file or directory
 Broadcom Device Enumerator (linux_ngbde)
 Found 1 switch device(s):
