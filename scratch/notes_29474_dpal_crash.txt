@@ -1,3 +1,5 @@
+core.0.dpal_worker.4139
+
 #0  0x00007f8fdb1d5853 in aom_find_or_create_obj (ctxt=ctxt@entry=0x7f8f80009040,
     key=key@entry=0x7f8fc1204970, is_created=is_created@entry=0x7f8fc12045d7)
     at ./infra/aom/lib/aom.c:2359
@@ -167,4 +169,58 @@ $21 = {ctx_type = DPAL_CTX_GLOBAL, meta_tree = 0x5555f27c6db0, obj_table_hash = 
 (gdb)
 
 
+
+
+(gdb) print *(dpal_cmn_ctxt_t *)0x5555f27c6ab0
+$1 = {ctx_type = DPAL_CTX_DEVICE, meta_tree = 0x5555f27c6b10, obj_table_hash = 0x0,
+  sec_trees = 0x5555f27c6b50, pub_tbl_unit_hdls = 0x5555f27c6b90}
+(gdb) print *(avl_tree_private_t *)0x5555f27c6b10
+$2 = {root = 0x7f8f81279ae0, offset = 48, size = 4, compare_fn = 0x0, cur_nodes = 47, total_inserts = 46,
+  total_deletes = 0, total_ll_rotations = 5, total_lr_rotations = 14, total_rr_rotations = 6,
+  total_rl_rotations = 1, flags = 0}
+(gdb) print *(avl_node_t *)0x7f8f81279ae0
+$3 = {height = 7, key = 0x0, data = 0x7f8f81279ae0, left = 0x7f8f8127a020, right = 0x7f8f81277080,
+  tree = 0x5555f27c6b10}
+(gdb) print *0x7f8f81279ae0
+$4 = 7
+(gdb) print *(dpal_obj_meta_ent_t *)0x7f8f81279ae0
+$5 = {avl_node = {height = 7, key = 0x0, data = 0x7f8f81279ae0, left = 0x7f8f8127a020,
+    right = 0x7f8f81277080, tree = 0x5555f27c6b10}, type = 25500, m_h = 0x7f8f812799a0}
+(gdb) print *(avl_node_t *)0x7f8f81277080
+$6 = {height = 5, key = 0x0, data = 0x7f8f81277080, left = 0x7f8f81278f40, right = 0x7f8f80d6f7a0,
+  tree = 0x5555f27c6b10}
+(gdb) print *(dpal_obj_meta_ent_t *)0x7f8f81277080
+$7 = {avl_node = {height = 5, key = 0x0, data = 0x7f8f81277080, left = 0x7f8f81278f40,
+    right = 0x7f8f80d6f7a0, tree = 0x5555f27c6b10}, type = 25511, m_h = 0x7f8f81276f40}
+(gdb) print *(avl_node_t *)0x7f8f80d6f7a0
+$8 = {height = 4, key = 0x0, data = 0x7f8f80d6f7a0, left = 0x7f8f81278a00, right = 0x7f8f8015bc30,
+  tree = 0x5555f27c6b10}
+(gdb) print *(dpal_obj_meta_ent_t *)0x7f8f80d6f7a0
+$9 = {avl_node = {height = 4, key = 0x0, data = 0x7f8f80d6f7a0, left = 0x7f8f81278a00,
+    right = 0x7f8f8015bc30, tree = 0x5555f27c6b10}, type = 166606, m_h = 0x7f8f8127cbd0}
+(gdb) print *(avl_node_t *)0x7f8f81278a00
+$10 = {height = 3, key = 0x0, data = 0x7f8f81278a00, left = 0x7f8f8129d020, right = 0x7f8f81277a90,
+  tree = 0x5555f27c6b10}
+(gdb) print *(dpal_obj_meta_ent_t *)0x7f8f81278a00
+$11 = {avl_node = {height = 3, key = 0x0, data = 0x7f8f81278a00, left = 0x7f8f8129d020,
+    right = 0x7f8f81277a90, tree = 0x5555f27c6b10}, type = 32200, m_h = 0x7f8f812788c0}
+(gdb) print *(avl_node_t *)0x7f8f81277a90
+$12 = {height = 2, key = 0x0, data = 0x7f8f81277a90, left = 0x0, right = 0x7f8f81278240,
+  tree = 0x5555f27c6b10}
+(gdb) print *(dpal_obj_meta_ent_t *)0x7f8f81277a90
+$13 = {avl_node = {height = 2, key = 0x0, data = 0x7f8f81277a90, left = 0x0, right = 0x7f8f81278240,
+    tree = 0x5555f27c6b10}, type = 32201, m_h = 0x7f8f81277950}
+(gdb) print *(avl_node_t *)0x7f8f81278240
+$14 = {height = 1, key = 0x0, data = 0x7f8f81278240, left = 0x0, right = 0x0, tree = 0x5555f27c6b10}
+(gdb) print *(dpal_obj_meta_ent_t *)0x7f8f81278240
+$15 = {avl_node = {height = 1, key = 0x0, data = 0x7f8f81278240, left = 0x0, right = 0x0,
+    tree = 0x5555f27c6b10}, type = 32202, m_h = 0x7f8f81278100}
+(gdb)
+
+
+
+root@Apple-OOB2-206-4# show dpal object-type bcm-vxlan-path ?
+                                             ^
+% Invalid input detected at '^' marker.
+root@Apple-OOB2-206-4# show dpal object-type bcm-vxlan-path
 
