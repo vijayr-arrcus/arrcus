@@ -1,11 +1,14 @@
 L3:
 ===
-copy to cpu BCM_L3_COPY_TO_CPU
+copy to cpu BCM_L3_COPY_TO_CPU ---> This might break the current copp code.
+
+"global_drop_egr_id"      : 100003,
+"global_punt_egr_id"      : 100002,
 
 
 if (RET_CODE_SUCCESS == ds_fib_egressid_path_flags_get(path_info, &flags)) {
 	if (flags & FIB_PATH_FLAG_UNRESOLVED) {
-		sdk_egress_info->flags |= BCM_L3_L2TOCPU;
+		sdk_egress_info->flags |= BCM_L3_L2TOCPU; ---> the next hop will not be g_l3punt2cpu_egrobj....
 	} else if (flags & FIB_PATH_FLAG_DROP) {
 		*use_global_nh = true;
 		*hwid = g_asic_global_ctxt.g_blackhole_egrobj;
