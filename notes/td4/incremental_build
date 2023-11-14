@@ -52,7 +52,7 @@ debian/rules prepare prepare-pkgs build-stash build-phymod build-yaml build-xgs
 
 debian/rules override_dh_auto_build
 
-make -f $PWD/systems/linux/user/x86-smp_generic_64-2_6/Makefile MAKE_LOCAL=$PWD/make/Make.local.xgs
+make -f $PWD/systems/linux/user/x86-smp_generic_64-2_6/Makefile MAKE_LOCAL=$PWD/make/Make.local.xgs 
 
 
 cp $PWD/build/linux/user/common/libsdk.so libbcm_sdk_xgs.so
