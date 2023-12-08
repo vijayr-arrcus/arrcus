@@ -1,0 +1,69 @@
+root@EVPN-ix8a# show run int bond10
+interface bond10
+ type    ieee8023adLag
+ enabled true
+ subinterface 0
+  ipv4 address 10.1.1.1
+   prefix-length 24
+  exit
+  enabled true
+ exit
+ aggregation lag-type LACP
+ aggregation min-links 2
+!
+bfd profile GLOBAL
+ enabled                     true
+ desired-minimum-tx-interval 1000
+ required-minimum-receive    1000
+ detection-multiplier        10
+ v4-hw-offload               true
+ v6-hw-offload               true
+!
+network-instance default
+ protocol ISIS 1
+  global net       [ 49.1234.0000.0000.0080.00 ]
+  global level-capability LEVEL_2
+  global max-ecmp-paths 64
+  global graceful-restart enabled true
+  global timers spf spf-hold-interval 200
+  global timers spf spf-first-interval 5
+  global timers spf spf-second-interval 50
+  global lsp-bit overload-bit set-bit-on-boot true
+  global lsp-bit overload-bit reset-trigger WAIT_FOR_BGP
+   delay 300
+   exit
+  !
+  global af IPV6 UNICAST
+   enabled true
+   exit
+  !
+  global af IPV4 UNICAST
+   enabled true
+   exit
+  !
+  level 2
+   enabled true
+   exit
+  !
+  interface bond10
+   enabled      true
+   network-type POINT_TO_POINT
+   authentication key auth-password $8$yUyTu2yK8Kw78YNW6an7w0kHVsBfCibx3NbL65H7fBI=
+   authentication key crypto-algorithm MD5
+   bfd bfd-tlv true
+   bfd profile GLOBAL
+   af IPV6 UNICAST
+    enabled true
+   !
+   af IPV4 UNICAST
+    enabled true
+   !
+   level 2
+    enabled true
+    exit
+   !
+   exit
+  !
+ !
+!
+root@EVPN-ix8a#
