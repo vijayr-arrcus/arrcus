@@ -1,0 +1,5 @@
+supported list of qset and aset.
+
+fp list actions efp
+fp list qualifiers efp
+
