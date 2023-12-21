@@ -41,6 +41,7 @@ sudo apt-get install -y libyaml-dev
 
 debian/rules prepare prepare-pkgs build-stash build-phymod build-yaml build-xgs
 
+// The above would patch and build xgs .so for subsequent builds skipping patching use below. Please note the single threaded version of the build.
 
 make -j1 -f $PWD/systems/linux/user/x86-smp_generic_64-2_6/Makefile MAKE_LOCAL=$PWD/make/Make.local.xgs 
 
