@@ -1,0 +1,61 @@
+make sure /usr/src/linux-headers-4.19.84-arrcus exists if not get the header files from infra1 @ /home/vijayr/linux-headers-4.19.84-arrcus.tar.gz
+
+
+sudo apt-get install elfutils
+sudo apt-get install libdata-compare-perl
+sudo apt-get install libmoose-perl
+sudo apt-get install -y libnamespace-autoclean-perl
+sudo apt-get install -y libconfig-yaml-perl
+
+export KERNDIR=/usr/src/linux-headers-4.19.84-arrcus
+export LINUX_UAPI_SPLIT=1
+export PHYMOD_EPDM_LIB_PATH=$PWD/pkgs/epdm_4_3_2
+export PHYMOD_BRNC_LIB_PATH=$PWD/pkgs/BRNC_2_10
+
+export PHYMOD_EPIL_LIB_PATH=$PWD/pkgs/MILN_5_2
+
+export PHYMOD_MILB_LIB_PATH=$PWD/pkgs/MILB_5_2
+export PHYMOD_BARC_LIB_PATH=$PWD/pkgs/BARC_3_4
+export KBP_KERNEL_DRIVER_PATH=$PWD/pkgs/sdk/src/soc/kbp/alg_kbp/xpt/pcie/device_driver
+export HSDK_YAML_LIB_PATH=$PWD/pkgs/YAML_0_1_7
+export YAML=${HSDK_YAML_LIB_PATH}/build/
+export ELFUTILS_DIR=/usr/include/elfutils/
+export SDK_OVERRIDE_LOCK=0
+export SDK_LOCK=0
+
+sudo apt-get install -y linux-headers-amd64
+
+sudo apt-get install -y libelf-dev
+
+sudo apt-get install -y bc
+
+sudo apt-get install -y binutils
+
+sudo apt-get install -y python
+
+sudo apt-get install -y python-yaml
+
+sudo apt-get install -y python-filelock
+
+sudo apt-get install -y libyaml-dev
+
+debian/rules prepare prepare-pkgs build-stash build-phymod build-yaml build-xgs
+
+
+make -f $PWD/systems/linux/user/x86-smp_generic_64-2_6/Makefile MAKE_LOCAL=$PWD/make/Make.local.xgs 
+
+
+cp $PWD/build/linux/user/common/libsdk.so libbcm_sdk_xgs.so
+
+dwp -v -e $PWD/libbcm_sdk_xgs.so -o libbcm_sdk_xgs.so.dwp
+
+scp libbcm_sdk_xgs* root@10.9.8.33:/usr/arcos/lib/
+
+
+
+cd $PWD/build/linux-x86-smp_generic_64-2_6/x86-smp_generic_64-2_6
+
+
+
+scp *.ko root@10.9.8.33:/lib/modules/4.19.84-arrcus/bcm/xgs/
+
