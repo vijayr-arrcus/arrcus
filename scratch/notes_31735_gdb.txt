@@ -38,3 +38,6 @@ set logging file /tmp/mem_tace/bgp_gdb.log
 set breakpoint pending on
 
 thread apply all bt
+
+
+

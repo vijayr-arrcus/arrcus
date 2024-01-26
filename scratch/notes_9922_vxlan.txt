@@ -1,0 +1,56 @@
+bcmsdk_xlate_sub_intf_update
+    BCM_XGS_FLOW_VPORT
+				bcmsdk_sub_intf_main_cb
+					bcmsdk_vlan_flow_port_create
+						{
+							bcm_vlan_port_t_init(&vlan_port);
+							if ((!match_inner_vlan) && (!match_vlan)) {
+								/*
+								 * Note: Some SDK error with MATCH_PORT so workaround to match on port and default vlan
+								 */
+								vlan_port.criteria = BCM_VLAN_PORT_MATCH_PORT_VLAN;
+								vlan_port.match_vlan = DEFAULT_VLAN_ID;
+							} else {
+								if (match_inner_vlan) {
+									vlan_port.criteria = BCM_VLAN_PORT_MATCH_PORT_VLAN_STACKED;
+									vlan_port.match_inner_vlan = match_inner_vlan;
+								} else {
+									vlan_port.criteria = BCM_VLAN_PORT_MATCH_PORT_VLAN;
+								}
+								vlan_port.match_vlan = match_vlan;
+							}
+							vlan_port.port = gport;
+							rv = bcm_vlan_port_create(unit, &vlan_port);
+						}
+
+
+
+./mpsctl -t /default/oper/infra/ifmgr/vlans/ -s Ifmgr.ifmgr_vlan
+
+
+network-instance vlan101
+ type                 L2VLAN
+ vlan                 101
+ advertise-mac-routes true
+ interface bond10.101
+ !
+ protocol BGP vlan101
+  global route-distinguisher 111.111.111.111:11010
+  route-target 1001:1010 both
+  !
+ !
+ vni 1010
+  local-tunnel-endpoint-id 0
+  arp-nd-suppression       false
+ !
+!
+
+
+
+rv = bcm_vlan_port_create(unit, &vlan_port); ---> vlan port creation (only with vlan association).
+rv = bcm_flow_port_create(unit, acc_vp->vpn, &flow_port); --> access port creation (when vni is associated). when vlan is associated with remove the forwarding vlan in vlan port, but the vlan port match continues to exist
+
+
+
+ 
+

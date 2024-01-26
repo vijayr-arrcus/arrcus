@@ -1,0 +1,19 @@
+ tailf:annotate "/arc-sflow:sflow/arc-sflow:interfaces/arc-sflow:interface" +
+                 "/arc-sflow:sampling-type" {
+    tailf:info "sampling-type;;Type of sampling to be perfomed <ingress|egress|egress-access-port>";
+    tailf:cli-completion-actionpoint sflow-sampling-type-type-completion;
+  }
+
+
+
+
+ status = cdb_subscribe(sub_sock, 3, arc_sflow__ns, &spoint, "/sflow");
+  if (status != CONFD_OK) {
+    LOG_ERR_MSG("SFLOW CONFDPROXY","%s subscription for sflow failed, err=%d\n",
+                __FUNCTION__, status);
+    return(-1);
+  }
+  spoints_list[num].spoint = spoint;
+  spoints_list[num].handler = sflow_read_config;
+  spoints_list[num++].opaque = NULL;
+
