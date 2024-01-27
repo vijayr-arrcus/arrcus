@@ -4,3 +4,4 @@
 ./mpsctl -t /default/hal/copp/copp_hal_policer/ -s Qos.qos_hal_police_object
 ./mpsctl -t /default/oper/acl/hal/ace/ -s Acl.acl_hal_ace_object
 ./mpsctl -t /default/hal/copp/copp_hal_service_policy/ -s Qos.qos_hal_service_policy_object
+./mpsctl -t /default/oper/infra/ifmgr/ifs/ -s Ifmgr.ifmgr_if
