@@ -1,0 +1,11 @@
+Dpal common
+  plugin
+    bcm
+      xgs
+        ltsw
+        esw
+      dnx
+
+
+
+

@@ -1,0 +1,7 @@
+int unit = 0;
+    	bcm_field_entry_t        ifp_entry;
+    print bcm_field_entry_create(unit, 5, &ifp_entry);
+    print bcm_field_qualify_DstTrunk(unit, ifp_entry, 10, 10);
+    print bcm_field_action_add(unit, ifp_entry, bcmFieldActionIngSampleEnable, 0, 0);
+    print bcm_field_action_add(unit, ifp_entry, bcmFieldActionCosQCpuNew, 40, 40);
+    BCM_IF_ERROR_RETURN(bcm_field_entry_install(unit, ifp_entry));

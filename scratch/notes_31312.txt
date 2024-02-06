@@ -1,0 +1,8 @@
+BCM_VRRP_VMAC --> depends on BCM_VRID.
+BCM_VMAC
+BCM_VRID
+
+
+DPAL_VMAC (old) --> BCM_VMAC (ifindex, vmac) -->  l2 station..
+DPAL_VRRP_VMAC
+
