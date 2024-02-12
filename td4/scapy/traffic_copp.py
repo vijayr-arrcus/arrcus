@@ -18,7 +18,7 @@ def send_packet (p, intf, t_count):
     a  = k.replace(", 0x", "")
     print a
     raw_input("Press key to continue")
-#    sendp(p, iface=intf, count=t_count)
+    sendp(p, iface=intf, count=t_count)
 
 def send_ip_v6_traffic ():
     # IP/IP6
