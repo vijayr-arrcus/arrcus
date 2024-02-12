@@ -1,0 +1,4 @@
+1. subinterface 0 -- no tag. --- Vxlan transport -- > no tag
+reserved VLAN will be exposed here.
+3. subinterface 10 -- 1 tag ---> tansport(n/a) --> 1 tag/no tag
+4. sutinerface 1000 -- 2 tag --> transport --> 2 tag/1 tag / no tag

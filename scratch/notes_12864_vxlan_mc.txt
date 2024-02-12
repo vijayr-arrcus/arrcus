@@ -1,0 +1,45 @@
+bcmsdk_vxlan_flow_sdk_l2_vpn_create
+  rv = bcm_multicast_create(unit, BCM_MULTICAST_TYPE_FLOW, &mcid);
+			static ret_code_e
+			bcmsdk_vxlan_flow_sdk_esw_vpn_create_internal(dpal_switch_unit_t unit,
+																										uint32_t mcid,
+																										bool centralized_gw,
+																										uint32_t *vpn)
+			{
+				bcm_error_t rv;
+				bcm_flow_vpn_config_t vpn_info;
+
+				bcm_flow_vpn_config_t_init(&vpn_info);
+				vpn_info.flags = BCM_FLOW_VPN_ELAN;
+				vpn_info.broadcast_group         = mcid;
+				vpn_info.unknown_multicast_group = mcid;
+				vpn_info.unknown_unicast_group   = mcid;
+				if (centralized_gw) {
+					vpn_info.protocol_pkt.arp_request_action = BCM_VLAN_PROTO_PKT_TOCPU_ENABLE;
+					vpn_info.protocol_pkt.arp_reply_action = BCM_VLAN_PROTO_PKT_TOCPU_ENABLE;
+					vpn_info.protocol_pkt.nd_action = BCM_VLAN_PROTO_PKT_TOCPU_ENABLE;
+				}
+				rv = bcm_flow_vpn_create(unit, (bcm_vpn_t *)vpn, &vpn_info);
+				if (BCM_FAILURE(rv)) {
+					bcmsdk_trace_vxlan_error("Error creating Vxlan Flow VPN.",
+																	 bcm_errmsg(rv));
+					return RET_CODE_FAILURE;
+				}
+
+				return RET_CODE_SUCCESS;
+			}
+
+bcmsdk_vxlan_flow_ir_mbr_main_cb_int
+     ds_bcm_xgs_vxlan_flow_l2vni_mcid_get
+					bcmsdk_vxlan_flow_sdk_l2_ir_mbr_cfg
+							  //Add encapid to mc group
+										rv = bcm_multicast_egress_add(unit, ir_mbr->mcid, ir_mbr->nw_vp_hwid,
+																									encap_id);
+
+
+bcmsdk_vxlan_flow_sdk_esw_l2_acc_vp_create
+      rv = bcm_multicast_egress_add(unit, acc_vp->mcid, gport, encap_id);
+        BCM_XGS_VXLAN_FLOW_L2VNI
+
+
+bcm.xgs.vxlan.flow.ir.mbrs.tbl.json --> ingress replication members.

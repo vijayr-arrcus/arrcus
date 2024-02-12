@@ -6,10 +6,12 @@ sudo apt-get install -y libconfig-yaml-perl
 
 export KERNDIR=/usr/src/linux-headers-4.19.84-arrcus
 export LINUX_UAPI_SPLIT=1
+
+
 export PHYMOD_EPDM_LIB_PATH=$PWD/pkgs/epdm_4_3_2
 export PHYMOD_BRNC_LIB_PATH=$PWD/pkgs/BRNC_2_10
 
-export PHYMOD_EPIL_LIB_PATH=$PWD/pkgs/MILN_5_2
+export PHYMOD_EPIL_LIB_PATH=$PWD/pkgs/MILN_5_1
 
 export PHYMOD_MILB_LIB_PATH=$PWD/pkgs/MILB_5_2
 export PHYMOD_BARC_LIB_PATH=$PWD/pkgs/BARC_3_4
