@@ -1,3 +1,7 @@
+sflow
+egress access sflow
+multicast vxlan
+
 bcmsdk_vxlan_flow_sdk_l2_vpn_create
   rv = bcm_multicast_create(unit, BCM_MULTICAST_TYPE_FLOW, &mcid);
 			static ret_code_e
