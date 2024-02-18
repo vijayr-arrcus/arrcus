@@ -1,0 +1,413 @@
+BCM.0> cint ipv4_vxlan_net_acc_mc_SinglePass_Option2.c
+execute(): Start
+~~~ #1) test_setup(): ** start **
+ingress_port_multi_setup port: 2 setup
+ingress_port_multi_setup port: 3 setup
+~~~ #1) test_setup(): ** end **
+~~~ #2) config_vxlan_ipv4_vtep(): ** start **
+Configure Vxlan Global Configuration.
+Get flow-handler for Classic_Vxlan
+Create Multicast group for UUC/MC/BC.
+Create Flow VPN.
+Configure known multicast group
+Configure Vxlan Access Port Configuration.
+Create Access Flow Port (VP)
+Create Flow VP.
+Create access L3 interface
+Create access L3 Egress object.
+Access: Add flow match (match: port,vlan criteria).
+Access: Set Encapsulation. VP=>egress-obj{Device,Port}.
+
+  acc_flow_port=-1342177279
+Configure Vxlan Network Port Configuration.
+Create Network Flow Port.
+Create Flow VP.
+Create network L3 interface
+Create network L3 Egress object.
+Network: encap add, VFI-->VNID
+Network: Configure match condition to derive VPN (Match: {VN_ID}, Derive: VFI (VPN))
+Network: Add flow match (match: SIP => network SVP)
+Network; Set Encapsulation. VP=>egress-obj{Device,Port}.
+Network: Set Egress-vlan-xlate key-type for network VP
+
+  net_flow_port=-1342177278
+Tunnel_init: Create Flow Tunnel Initiator.
+Tunnel_term: Create Flow Tunnel Terminator.
+Configure Vxlan Network Port Configuration.
+Create Network Flow Port.
+Create Flow VP.
+Create network L3 interface
+Create network L3 Egress object.
+Network: Add flow match (match: SIP => network SVP)
+Network; Set Encapsulation. VP=>egress-obj{Device,Port}.
+Network: Set Egress-vlan-xlate key-type for network VP
+
+  net_flow_port=-1342177277
+Tunnel_init: Create Flow Tunnel Initiator.
+Tunnel_term: Create Flow Tunnel Terminator.
+Network-to-Access: Add payload-src-mac Address => Access-flow-port (VP).
+~~~ #2) config_vxlan_ipv4_vtep(): ** end **
+~~~ #3) configureSFlowIFP(): ** start **
+Doing port control set for port 2
+Doing sample rate set for port 2
+Doing port control set for port 3
+Doing sample rate set for port 3
+Doing sample rate set for port 2
+Doing sample rate set for port 3
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+Doing MTP Add
+IFP 1st pass config starts
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+int $$ = 0 (0x0)
+~~~ #3) configureSFlowIFP(): ** end **
+~~~ #4) verify(): ** start **
+Current header mode for unit 0 is now Ieee (0).
+vlan 1  ports cpu,ce,xe (0x0000000000000000000000000000000000000000000000010222223e1e22223f), untagged ce,xe (0x0000000000000000000000000000000000000000000000010222223e1e22223e) MCAST_FLOOD_UNKNOWN
+vlan 21 ports xe0 (0x0000000000000000000000000000000000000000000000000000000000000002), untagged none (0x0000000000000000000000000000000000000000000000000000000000000000) MCAST_FLOOD_UNKNOWN
+vlan 22 ports xe1 (0x0000000000000000000000000000000000000000000000000000000000000004), untagged none (0x0000000000000000000000000000000000000000000000000000000000000000) MCAST_FLOOD_UNKNOWN
+vlan 23 ports xe2 (0x0000000000000000000000000000000000000000000000000000000000000008), untagged none (0x0000000000000000000000000000000000000000000000000000000000000000) MCAST_FLOOD_UNKNOWN
+mac=01:00:5e:01:01:01 vlan=28688 GPORT=0x0 modid=0 port=0/cpu0 Static CPU MCast=251658242
+
+Sending known multicast packet to ingress_port network side:2
+Packet from data=<>, length=160
+[bcmPW.0]
+[bcmPW.0]Packet[1]: dv@0x7fa40b5708 unit 0 dcbtype-36 op=RX vcnt=8 dcnt=2 cnt=160
+[bcmPW.0]Packet[1]:     chan=1 chain=(nil) flags=0x0-->notify-pkt
+[bcmPW.0]Packet[1]:     user1 0x7fa40b5828. user2 (nil). user3 (nil). user4 (nil)
+[bcmPW.0]Packet[1]: dcb[0] @0x7fb33d0e80:0xb2fc8480
+[bcmPW.0]Packet[1]:     e60dc480 10000000 00014000 800300e0
+[bcmPW.0]Packet[1]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[1]:     addr 0x7fb2fc8480 reqcount 16384 xfercount 224
+[bcmPW.0]Packet[1]:     done !error start end
+[bcmPW.0]Packet[1]: dcb[1] @0x7fb33d0e90:0xb2fcc500
+[bcmPW.0]Packet[1]:     e60e0500 10000000 00014000 800300aa
+[bcmPW.0]Packet[1]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[1]:     addr 0x7fb2fcc500 reqcount 16384 xfercount 170
+[bcmPW.0]Packet[1]:     done !error start end
+[bcmPW.0]Packet[1]: dcb[2] @0x7fb33d0ea0:0xb2fd0580
+[bcmPW.0]Packet[1]:     e60e4580 10000000 00014000 00000000
+[bcmPW.0]Packet[1]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[1]:     addr 0x7fb2fd0580 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[1]:     !done !error !start !end
+[bcmPW.0]Packet[1]: dcb[3] @0x7fb33d0eb0:0xb2fd4600
+[bcmPW.0]Packet[1]:     e60e8600 10000000 00014000 00000000
+[bcmPW.0]Packet[1]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[1]:     addr 0x7fb2fd4600 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[1]:     !done !error !start !end
+[bcmPW.0]Packet[1]: dcb[4] @0x7fb33d0ec0:0xb2fd8680
+[bcmPW.0]Packet[1]:     e60ec680 10000000 00014000 00000000
+[bcmPW.0]Packet[1]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[1]:     addr 0x7fb2fd8680 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[1]:     !done !error !start !end
+[bcmPW.0]Packet[1]: dcb[5] @0x7fb33d0ed0:0xb2fdc700
+[bcmPW.0]Packet[1]:     e60f0700 10000000 00014000 00000000
+[bcmPW.0]Packet[1]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[1]:     addr 0x7fb2fdc700 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[1]:     !done !error !start !end
+[bcmPW.0]Packet[1]: dcb[6] @0x7fb33d0ee0:0xb2fe0780
+[bcmPW.0]Packet[1]:     e60f4780 10000000 00014000 00000000
+[bcmPW.0]Packet[1]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[1]:     addr 0x7fb2fe0780 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[1]:     !done !error !start !end
+[bcmPW.0]Packet[1]: dcb[7] @0x7fb33d0ef0:0xb2fe4800
+[bcmPW.0]Packet[1]:     e60f8800 10000000 00004000 00000000
+[bcmPW.0]Packet[1]:     type 36 !chain !sg !reload !hg !purge
+[bcmPW.0]Packet[1]:     addr 0x7fb2fe4800 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[1]:     !done !error !start !end
+[bcmPW.0]Packet[1]: HIGIG2 Frame: len=16 (header=16 payload=0)
+[bcmPW.0]Packet[1]: 0xfb105002 <START=0xfb MCST=0x1 TC=0 DST_MOD=80 DST_PORT=2
+[bcmPW.0]Packet[1]:             OVERLAY: MGID=20482>
+[bcmPW.0]Packet[1]: 0x00020002 <SRC_MOD=0 SRC_PORT=2 LBID=0 DP=0 EHV=0 PPD_TYPE=2>
+[bcmPW.0]Packet[1]: 0x90100000 <MULTIPOINT=1 FWD_TYPE=0x4 VNI=0x10 DST_VP=0x0>
+[bcmPW.0]Packet[1]: 0x00020400 <SRC_VP=0x2 MIRROR=0 DONOT_MODIFY=0 DONOT_LEARN=0
+[bcmPW.0]Packet[1]:              LAG_FAILOVER=0 OPCODE=4 PRESERVE_DSCP=0
+[bcmPW.0]Packet[1]:              REPLICATION_ID=0x0 PROTECTION_STATUS=0
+[bcmPW.0]Packet[1]:              PRESERVE_DOT1P=0 DST_TYPE=0 SRC_TYPE=0>
+[bcmPW.0]Packet[1]: 802.3 Ether-II VLAN-Tagged Payload (0 bytes)
+[bcmPW.0]Packet[1]:     !chg_tos !chg_ecn
+[bcmPW.0]Packet[1]:     !service_tag switch_pkt !uc_switch_drop !src_hg
+[bcmPW.0]Packet[1]:     !l3only replicated !do_not_change_ttl !bpdu
+[bcmPW.0]Packet[1]:     Higig2 Extension type 0: queue_tag=0x0000 tag_type=0 seg_sel=0
+[bcmPW.0]Packet[1]:     reason=00000000_00000008
+[bcmPW.0]Packet[1]:     ts_type=3 timestamp=fffffff2
+[bcmPW.0]Packet[1]:     srcport=2 cpu_cos=0 pkt_len=160 forwarding_type=0 ucq=00000
+[bcmPW.0]Packet[1]:     outer_vid=0 outer_cfi=0 outer_pri=0 otag_action=0 vntag_action=0
+[bcmPW.0]Packet[1]:     inner_vid=0 inner_cfi=0 inner_pri=0 decap = 0 itag_action=0
+[bcmPW.0]Packet[1]:     dscp=0 ecn=0 decap_tunnel_type=0 match_rule=0 mtp_ind=0 forwarding_zone_id=3
+[bcmPW.0]Packet[1]: data[0000]: {01005e020202} {000000000002} 8100 0016
+[bcmPW.0]Packet[1]: data[0010]: 0800 4500 0086 0000 0000 3f11 8458 0a0a
+[bcmPW.0]Packet[1]: data[0020]: 0a01 e102 0202 ffff 2118 0072 0000 0000
+[bcmPW.0]Packet[1]: data[0030]: 0000 0123 4500 0100 5e01 0101 0000 0000
+[bcmPW.0]Packet[1]: data[0040]: bbbb 8100 0015 0800 4500 0050 0000 4000
+[bcmPW.0]Packet[1]: data[0050]: 4011 5699 0101 0101 e101 0101 0035 0035
+[bcmPW.0]Packet[1]: data[0060]: 003c 54f7 7465 7374 7465 7374 7465 7374
+[bcmPW.0]Packet[1]: data[0070]: 7465 7374 7465 7374 7465 7374 7465 7374
+[bcmPW.0]Packet[1]: data[0080]: 7465 7374 7465 7374 7465 7374 7465 7374
+[bcmPW.0]Packet[1]: data[0090]: 7465 7374 7465 7374 5fe8 d7f4 90ad d589
+[bcmPW.0]Packet[1]: length 160 (160). rx-port 2. cos 0. prio_int 0. vlan 28688. reason 0x8. Outer tagged.
+[bcmPW.0]Packet[1]: dest-port 2. dest-mod 80. src-gport -1342177278. opcode 4.  matched 0. classification-tag 0.
+[bcmPW.0]Packet[1]: reasons: SampleSource
+[bcmPW.0]Packet[1]:
+Packet[1]:   Ethernet: dst<01:00:5e:02:02:02> src<00:00:00:00:00:02> Tagged Packet ProtID<0x8100> Ctrl<0x0016> Internet Protocol (IP)
+Packet[1]:   IP: V(4) src<10.10.10.1> dst<225.2.2.2> hl<5> service-type<0> tl<134> id<0> frg-off<0> ttl<63> > chk-sum<0x8458>
+[bcmPW.0]Packet[1]: CPU Pkt Rx Timestamp: 1487.643978
+[bcmPW.0]
+[bcmPW.0]Packet[2]: dv@0x7fa40b5708 unit 0 dcbtype-36 op=RX vcnt=8 dcnt=2 cnt=160
+[bcmPW.0]Packet[2]:     chan=1 chain=(nil) flags=0x0-->notify-pkt
+[bcmPW.0]Packet[2]:     user1 0x7fa40b5828. user2 (nil). user3 (nil). user4 (nil)
+[bcmPW.0]Packet[2]: dcb[0] @0x7fb33d0e80:0xb2fc8480
+[bcmPW.0]Packet[2]:     e60dc480 10000000 00014000 800300e0
+[bcmPW.0]Packet[2]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[2]:     addr 0x7fb2fc8480 reqcount 16384 xfercount 224
+[bcmPW.0]Packet[2]:     done !error start end
+[bcmPW.0]Packet[2]: dcb[1] @0x7fb33d0e90:0xb2fcc500
+[bcmPW.0]Packet[2]:     e60e0500 10000000 00014000 800300aa
+[bcmPW.0]Packet[2]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[2]:     addr 0x7fb2fcc500 reqcount 16384 xfercount 170
+[bcmPW.0]Packet[2]:     done !error start end
+[bcmPW.0]Packet[2]: dcb[2] @0x7fb33d0ea0:0xb2fd0580
+[bcmPW.0]Packet[2]:     e60e4580 10000000 00014000 00000000
+[bcmPW.0]Packet[2]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[2]:     addr 0x7fb2fd0580 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[2]:     !done !error !start !end
+[bcmPW.0]Packet[2]: dcb[3] @0x7fb33d0eb0:0xb2fd4600
+[bcmPW.0]Packet[2]:     e60e8600 10000000 00014000 00000000
+[bcmPW.0]Packet[2]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[2]:     addr 0x7fb2fd4600 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[2]:     !done !error !start !end
+[bcmPW.0]Packet[2]: dcb[4] @0x7fb33d0ec0:0xb2fd8680
+[bcmPW.0]Packet[2]:     e60ec680 10000000 00014000 00000000
+[bcmPW.0]Packet[2]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[2]:     addr 0x7fb2fd8680 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[2]:     !done !error !start !end
+[bcmPW.0]Packet[2]: dcb[5] @0x7fb33d0ed0:0xb2fdc700
+[bcmPW.0]Packet[2]:     e60f0700 10000000 00014000 00000000
+[bcmPW.0]Packet[2]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[2]:     addr 0x7fb2fdc700 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[2]:     !done !error !start !end
+[bcmPW.0]Packet[2]: dcb[6] @0x7fb33d0ee0:0xb2fe0780
+[bcmPW.0]Packet[2]:     e60f4780 10000000 00014000 00000000
+[bcmPW.0]Packet[2]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[2]:     addr 0x7fb2fe0780 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[2]:     !done !error !start !end
+[bcmPW.0]Packet[2]: dcb[7] @0x7fb33d0ef0:0xb2fe4800
+[bcmPW.0]Packet[2]:     e60f8800 10000000 00004000 00000000
+[bcmPW.0]Packet[2]:     type 36 !chain !sg !reload !hg !purge
+[bcmPW.0]Packet[2]:     addr 0x7fb2fe4800 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[2]:     !done !error !start !end
+[bcmPW.0]Packet[2]: HIGIG2 Frame: len=16 (header=16 payload=0)
+[bcmPW.0]Packet[2]: 0xfb000000 <START=0xfb MCST=0x0 TC=0 DST_MOD=0 DST_PORT=0
+[bcmPW.0]Packet[2]:             OVERLAY: MGID=0>
+[bcmPW.0]Packet[2]: 0x00000002 <SRC_MOD=0 SRC_PORT=0 LBID=0 DP=0 EHV=0 PPD_TYPE=2>
+[bcmPW.0]Packet[2]: 0x10100000 <MULTIPOINT=0 FWD_TYPE=0x4 VNI=0x10 DST_VP=0x0>
+[bcmPW.0]Packet[2]: 0x0002a104 <SRC_VP=0x2 MIRROR=1 DONOT_MODIFY=0 DONOT_LEARN=1
+[bcmPW.0]Packet[2]:              LAG_FAILOVER=0 OPCODE=1 PRESERVE_DSCP=0
+[bcmPW.0]Packet[2]:              REPLICATION_ID=0x10000 PROTECTION_STATUS=0
+[bcmPW.0]Packet[2]:              PRESERVE_DOT1P=1 DST_TYPE=0 SRC_TYPE=0>
+[bcmPW.0]Packet[2]: 802.3 Ether-II VLAN-Tagged Payload (0 bytes)
+[bcmPW.0]Packet[2]:     !chg_tos !chg_ecn
+[bcmPW.0]Packet[2]:     !service_tag !switch_pkt !uc_switch_drop !src_hg
+[bcmPW.0]Packet[2]:     !l3only replicated !do_not_change_ttl !bpdu
+[bcmPW.0]Packet[2]:     Higig2 Extension type 0: queue_tag=0x0000 tag_type=0 seg_sel=0
+[bcmPW.0]Packet[2]:     reason=00000000_00000008
+[bcmPW.0]Packet[2]:     ts_type=3 timestamp=fffffff2
+[bcmPW.0]Packet[2]:     srcport=2 cpu_cos=0 pkt_len=106 forwarding_type=0 ucq=00000
+[bcmPW.0]Packet[2]:     outer_vid=21 outer_cfi=0 outer_pri=0 otag_action=0 vntag_action=0
+[bcmPW.0]Packet[2]:     inner_vid=0 inner_cfi=0 inner_pri=0 decap = 7 itag_action=0
+[bcmPW.0]Packet[2]:     dscp=0 ecn=0 decap_tunnel_type=7 match_rule=0 mtp_ind=0 forwarding_zone_id=3
+[bcmPW.0]Packet[2]: data[0000]: {01005e010101} {00000000bbbb} 8100 0015
+[bcmPW.0]Packet[2]: data[0010]: 0800 4500 0050 0000 4000 4011 5699 0101
+[bcmPW.0]Packet[2]: data[0020]: 0101 e101 0101 0035 0035 003c 54f7 7465
+[bcmPW.0]Packet[2]: data[0030]: 7374 7465 7374 7465 7374 7465 7374 7465
+[bcmPW.0]Packet[2]: data[0040]: 7374 7465 7374 7465 7374 7465 7374 7465
+[bcmPW.0]Packet[2]: data[0050]: 7374 7465 7374 7465 7374 7465 7374 7465
+[bcmPW.0]Packet[2]: data[0060]: 7374 5fe8 d7f4 90ad d589
+[bcmPW.0]Packet[2]: length 106 (106). rx-port 2. cos 0. prio_int 0. vlan 28688. reason 0x0. Outer tagged.
+[bcmPW.0]Packet[2]: dest-port 0. dest-mod 0. src-gport -1342177278. opcode 1.  matched 0. classification-tag 0.
+[bcmPW.0]Packet[2]:
+Packet[2]:   Ethernet: dst<01:00:5e:01:01:01> src<00:00:00:00:bb:bb> Tagged Packet ProtID<0x8100> Ctrl<0x0015> Internet Protocol (IP)
+Packet[2]:   IP: V(4) src<1.1.1.1> dst<225.1.1.1> hl<5> service-type<0> tl<80> id<0> frg-off<16384> ttl<64> > chk-sum<0x5699>
+[bcmPW.0]Packet[2]: CPU Pkt Rx Timestamp: 1487.643982
+Sleeping for 1 second
+MC_PERQ_PKT(0).cpu0         :                     2                  +2
+MC_PERQ_BYTE(0).cpu0        :                   266                +266
+RDBGC0_64.xe0               :                     1                  +1               1/s
+ING_NIV_RX_FRAMES_VL.xe0    :                     1                  +1               1/s
+CLMIB_R127.xe0              :                     1                  +1               1/s
+CLMIB_RPKT.xe0              :                     1                  +1               1/s
+CLMIB_RMCA.xe0              :                     1                  +1               1/s
+CLMIB_RVLN.xe0              :                     1                  +1               1/s
+CLMIB_RPOK.xe0              :                     1                  +1               1/s
+CLMIB_RBYT.xe0              :                   106                +106             105/s
+CLMIB_T127.xe0              :                     1                  +1               1/s
+CLMIB_TPOK.xe0              :                     1                  +1               1/s
+CLMIB_TPKT.xe0              :                     1                  +1               1/s
+CLMIB_TMCA.xe0              :                     1                  +1               1/s
+CLMIB_TVLN.xe0              :                     1                  +1               1/s
+CLMIB_TBYT.xe0              :                   106                +106             105/s
+CLMIB_RPROG2.xe0            :                     1                  +1               1/s
+MC_PERQ_PKT(0).xe0          :                     1                  +1
+MC_PERQ_BYTE(0).xe0         :                   106                +106
+IMRP4_64.xe1                :                     1                  +1               1/s
+RTUN.xe1                    :                     1                  +1               1/s
+ING_NIV_RX_FRAMES_VL.xe1    :                     1                  +1               1/s
+TDBGC3_64.xe1               :                     1                  +1               1/s
+CLMIB_R255.xe1              :                     1                  +1               1/s
+CLMIB_RPKT.xe1              :                     1                  +1               1/s
+CLMIB_RMCA.xe1              :                     1                  +1               1/s
+CLMIB_RVLN.xe1              :                     1                  +1               1/s
+CLMIB_RPOK.xe1              :                     1                  +1               1/s
+CLMIB_RBYT.xe1              :                   160                +160             158/s
+CLMIB_T255.xe1              :                     1                  +1               1/s
+CLMIB_TPOK.xe1              :                     1                  +1               1/s
+CLMIB_TPKT.xe1              :                     1                  +1               1/s
+CLMIB_TMCA.xe1              :                     1                  +1               1/s
+CLMIB_TVLN.xe1              :                     1                  +1               1/s
+CLMIB_TBYT.xe1              :                   160                +160             158/s
+UC_PERQ_PKT(0).xe1          :                     1                  +1
+UC_PERQ_BYTE(0).xe1         :                   160                +160
+
+Sending broadcast packet to ingress_port network side:3
+Packet from data=<>, length=160
+[bcmPW.0]
+[bcmPW.0]Packet[3]: dv@0x7fa40b5708 unit 0 dcbtype-36 op=RX vcnt=8 dcnt=3 cnt=160
+[bcmPW.0]Packet[3]:     chan=1 chain=(nil) flags=0x0-->notify-pkt
+[bcmPW.0]Packet[3]:     user1 0x7fa40b5828. user2 (nil). user3 (nil). user4 (nil)
+[bcmPW.0]Packet[3]: dcb[0] @0x7fb33d0e80:0xb2fc8480
+[bcmPW.0]Packet[3]:     e60dc480 10000000 00014000 800300e0
+[bcmPW.0]Packet[3]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[3]:     addr 0x7fb2fc8480 reqcount 16384 xfercount 224
+[bcmPW.0]Packet[3]:     done !error start end
+[bcmPW.0]Packet[3]: dcb[1] @0x7fb33d0e90:0xb2fcc500
+[bcmPW.0]Packet[3]:     e60e0500 10000000 00014000 800300aa
+[bcmPW.0]Packet[3]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[3]:     addr 0x7fb2fcc500 reqcount 16384 xfercount 170
+[bcmPW.0]Packet[3]:     done !error start end
+[bcmPW.0]Packet[3]: dcb[2] @0x7fb33d0ea0:0xb2fd0580
+[bcmPW.0]Packet[3]:     e60e4580 10000000 00014000 800300aa
+[bcmPW.0]Packet[3]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[3]:     addr 0x7fb2fd0580 reqcount 16384 xfercount 170
+[bcmPW.0]Packet[3]:     done !error start end
+[bcmPW.0]Packet[3]: dcb[3] @0x7fb33d0eb0:0xb2fd4600
+[bcmPW.0]Packet[3]:     e60e8600 10000000 00014000 00000000
+[bcmPW.0]Packet[3]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[3]:     addr 0x7fb2fd4600 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[3]:     !done !error !start !end
+[bcmPW.0]Packet[3]: dcb[4] @0x7fb33d0ec0:0xb2fd8680
+[bcmPW.0]Packet[3]:     e60ec680 10000000 00014000 00000000
+[bcmPW.0]Packet[3]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[3]:     addr 0x7fb2fd8680 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[3]:     !done !error !start !end
+[bcmPW.0]Packet[3]: dcb[5] @0x7fb33d0ed0:0xb2fdc700
+[bcmPW.0]Packet[3]:     e60f0700 10000000 00014000 00000000
+[bcmPW.0]Packet[3]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[3]:     addr 0x7fb2fdc700 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[3]:     !done !error !start !end
+[bcmPW.0]Packet[3]: dcb[6] @0x7fb33d0ee0:0xb2fe0780
+[bcmPW.0]Packet[3]:     e60f4780 10000000 00014000 00000000
+[bcmPW.0]Packet[3]:     type 36 chain !sg !reload !hg !purge
+[bcmPW.0]Packet[3]:     addr 0x7fb2fe0780 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[3]:     !done !error !start !end
+[bcmPW.0]Packet[3]: dcb[7] @0x7fb33d0ef0:0xb2fe4800
+[bcmPW.0]Packet[3]:     e60f8800 10000000 00004000 00000000
+[bcmPW.0]Packet[3]:     type 36 !chain !sg !reload !hg !purge
+[bcmPW.0]Packet[3]:     addr 0x7fb2fe4800 reqcount 16384 xfercount 0
+[bcmPW.0]Packet[3]:     !done !error !start !end
+[bcmPW.0]Packet[3]: HIGIG2 Frame: len=16 (header=16 payload=0)
+[bcmPW.0]Packet[3]: 0xfb000000 <START=0xfb MCST=0x0 TC=0 DST_MOD=0 DST_PORT=0
+[bcmPW.0]Packet[3]:             OVERLAY: MGID=0>
+[bcmPW.0]Packet[3]: 0x00000002 <SRC_MOD=0 SRC_PORT=0 LBID=0 DP=0 EHV=0 PPD_TYPE=2>
+[bcmPW.0]Packet[3]: 0x1c100000 <MULTIPOINT=0 FWD_TYPE=0x7 VNI=0x10 DST_VP=0x0>
+[bcmPW.0]Packet[3]: 0x0003a104 <SRC_VP=0x3 MIRROR=1 DONOT_MODIFY=0 DONOT_LEARN=1
+[bcmPW.0]Packet[3]:              LAG_FAILOVER=0 OPCODE=1 PRESERVE_DSCP=0
+[bcmPW.0]Packet[3]:              REPLICATION_ID=0x10000 PROTECTION_STATUS=0
+[bcmPW.0]Packet[3]:              PRESERVE_DOT1P=1 DST_TYPE=0 SRC_TYPE=0>
+[bcmPW.0]Packet[3]: 802.3 Ether-II VLAN-Tagged Payload (0 bytes)
+[bcmPW.0]Packet[3]:     !chg_tos !chg_ecn
+[bcmPW.0]Packet[3]:     !service_tag !switch_pkt !uc_switch_drop !src_hg
+[bcmPW.0]Packet[3]:     !l3only replicated !do_not_change_ttl !bpdu
+[bcmPW.0]Packet[3]:     Higig2 Extension type 0: queue_tag=0x0000 tag_type=0 seg_sel=0
+[bcmPW.0]Packet[3]:     reason=00000000_00000000
+[bcmPW.0]Packet[3]:     ts_type=3 timestamp=fffffff2
+[bcmPW.0]Packet[3]:     srcport=3 cpu_cos=0 pkt_len=106 forwarding_type=0 ucq=00000
+[bcmPW.0]Packet[3]:     outer_vid=21 outer_cfi=0 outer_pri=0 otag_action=0 vntag_action=0
+[bcmPW.0]Packet[3]:     inner_vid=0 inner_cfi=0 inner_pri=0 decap = 7 itag_action=0
+[bcmPW.0]Packet[3]:     dscp=0 ecn=0 decap_tunnel_type=7 match_rule=0 mtp_ind=0 forwarding_zone_id=3
+[bcmPW.0]Packet[3]: data[0000]: {ffffffffffff} {000000000001} 8100 0015
+[bcmPW.0]Packet[3]: data[0010]: 0800 4500 0050 0000 4000 4011 5699 0101
+[bcmPW.0]Packet[3]: data[0020]: 0101 e101 0101 0035 0035 003c 54f7 7465
+[bcmPW.0]Packet[3]: data[0030]: 7374 7465 7374 7465 7374 7465 7374 7465
+[bcmPW.0]Packet[3]: data[0040]: 7374 7465 7374 7465 7374 7465 7374 7465
+[bcmPW.0]Packet[3]: data[0050]: 7374 7465 7374 7465 7374 7465 7374 7465
+[bcmPW.0]Packet[3]: data[0060]: 7374 43e0 74ac 3ac8 061f
+[bcmPW.0]Packet[3]: length 106 (106). rx-port 3. cos 0. prio_int 0. vlan 28688. reason 0x0. Outer tagged.
+[bcmPW.0]Packet[3]: dest-port 0. dest-mod 0. src-gport -1342177277. opcode 1.  matched 0. classification-tag 0.
+[bcmPW.0]Packet[3]:
+Packet[3]:   Ethernet: dst<ff:ff:ff:ff:ff:ff> src<00:00:00:00:00:01> Tagged Packet ProtID<0x8100> Ctrl<0x0015> Internet Protocol (IP)
+Packet[3]:   IP: V(4) src<1.1.1.1> dst<225.1.1.1> hl<5> service-type<0> tl<80> id<0> frg-off<16384> ttl<64> > chk-sum<0x5699>
+[bcmPW.0]Packet[3]: CPU Pkt Rx Timestamp: 1489.776835
+Sleeping for 1 second
+MC_PERQ_PKT(0).cpu0         :                     3                  +1
+MC_PERQ_BYTE(0).cpu0        :                   372                +106
+RDBGC0_64.xe0               :                     2                  +1
+ING_NIV_RX_FRAMES_VL.xe0    :                     2                  +1
+CLMIB_R127.xe0              :                     2                  +1
+CLMIB_RPKT.xe0              :                     2                  +1
+CLMIB_RBCA.xe0              :                     1                  +1
+CLMIB_RVLN.xe0              :                     2                  +1
+CLMIB_RPOK.xe0              :                     2                  +1
+CLMIB_RBYT.xe0              :                   212                +106
+CLMIB_T127.xe0              :                     2                  +1
+CLMIB_TPOK.xe0              :                     2                  +1
+CLMIB_TPKT.xe0              :                     2                  +1
+CLMIB_TBCA.xe0              :                     1                  +1
+CLMIB_TVLN.xe0              :                     2                  +1
+CLMIB_TBYT.xe0              :                   212                +106
+CLMIB_RPROG2.xe0            :                     2                  +1
+MC_PERQ_PKT(0).xe0          :                     2                  +1
+MC_PERQ_BYTE(0).xe0         :                   212                +106
+IMRP4_64.xe2                :                     1                  +1
+ING_NIV_RX_FRAMES_VL.xe2    :                     1                  +1
+TDBGC3_64.xe2               :                     1                  +1
+CLMIB_R255.xe2              :                     1                  +1
+CLMIB_RPKT.xe2              :                     1                  +1
+CLMIB_RMCA.xe2              :                     1                  +1
+CLMIB_RVLN.xe2              :                     1                  +1
+CLMIB_RPOK.xe2              :                     1                  +1
+CLMIB_RBYT.xe2              :                   160                +160
+CLMIB_T255.xe2              :                     1                  +1
+CLMIB_TPOK.xe2              :                     1                  +1
+CLMIB_TPKT.xe2              :                     1                  +1
+CLMIB_TMCA.xe2              :                     1                  +1
+CLMIB_TVLN.xe2              :                     1                  +1
+CLMIB_TBYT.xe2              :                   160                +160
+UC_PERQ_PKT(0).xe2          :                     1                  +1
+UC_PERQ_BYTE(0).xe2         :                   160                +160
+
+First PASS StatId:
+The value is: 0x000000000
+The value is: 0x000000001
+The value is: 0x000000001
+
+SFLOW_ING_DATA_SOURCE.ipipe0[2]: <THRESHOLD=0x1999999,SAMPLE_POOL_SNAPSHOT=1,SAMPLE_POOL=1,SAMPLE_COUNT=1,PARITY_1=1,ENABLE=1,ECC_1=0x46,ECC_0=0x24,ECCP_1=0xc6,ECCP_0=0x24,CPU=1>
+SFLOW_ING_DATA_SOURCE.ipipe0[3]: <THRESHOLD=0x1999999,SAMPLE_POOL=1,PARITY_1=1,ENABLE=1,ECC_1=0x46,ECCP_1=0xc6,CPU=1>
+SFLOW_ING_FLEX_DATA_SOURCE.ipipe0[2]: <THRESHOLD=0xfffffff,MIRROR=1,ENABLE=1,>
+SFLOW_ING_FLEX_DATA_SOURCE.ipipe0[3]: <THRESHOLD=0xfffffff,MIRROR=1,ENABLE=1,>
+~~~ #4) verify(): ** end **
+bcm_error_t $$ = BCM_E_NONE (0)
+execute(): End
+BCM.0>
