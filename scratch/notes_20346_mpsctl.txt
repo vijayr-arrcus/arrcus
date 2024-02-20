@@ -6,4 +6,5 @@
 ./mpsctl -t /default/hal/copp/copp_hal_service_policy/ -s Qos.qos_hal_service_policy_object
 ./mpsctl -t /default/oper/infra/ifmgr/ifs/ -s Ifmgr.ifmgr_if
 ./mpsctl -t /default/hal/sflow/sflow_target/ -s Sflow.sflow_hal_target_config_object
+./mpsctl -t /default/oper/dpal/common/dpal_bfd_session_stats_tbl/ -s Dpal.dpal_bfd_session_stats_object
 
