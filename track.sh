@@ -1,5 +1,9 @@
 #!/bin/bash
 #ST sleep timer.
+proc_list = (
+"dpal.bin"
+"ifmgr.bin"
+)
 ST=300
 PROC=$1
 mkdir -p /tmp/pmap/$PROC

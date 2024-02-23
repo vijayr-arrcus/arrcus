@@ -1,0 +1,13 @@
+Two issues were higlighted in our discussion.
+
+a. Continous flap of the link connecting the leaf and the server:
+
+We see continous link flap messages in ifmgr logs and likely because of a faulty cable connecting the leaf node and the server.
+Upon replacing the cable we dont see the flap and the link remains stable. 
+We need to look into the logs to ascertain if this was indeed because of a faulty cable connection.
+
+a. Sporadic connectivity loss between two servers:
+it was reported once for some period of time that connection between server4 and server5 was lost.
+Both the servers are multihomed. Sandeep confirmed that the mac's of the remote server was learnt by the directly connected leaf.
+however we dont know what caused the intermittent loss in connectivity. We dont know if the failure was local to the servers or because of the network.
+We
