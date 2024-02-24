@@ -18,6 +18,7 @@ def setup_proc_list ():
         proc_details['pid'] = i['pid']
         if i['pid']:
             spyder_proc_details_list.append(proc_details)
+    f.close()
 
 def setup_pmap_folder():
     now = datetime.now()
@@ -26,7 +27,7 @@ def setup_pmap_folder():
     pmap_folder_name = "/tmp/pmap_"+dt_string
     os.system("mkdir "+pmap_folder_name)
     for i in spyder_proc_details_list:
-        proc_folder = pmap_folder_name+"/"+i['name']+"_"+str(i['pid'])
+        proc_folder = "{}/{}_{}/".format(pmap_folder_name, i['name'], i['pid'])
         os.system("mkdir "+proc_folder)
 
 def main (argv):
@@ -65,7 +66,6 @@ def main (argv):
             os.system(cmd)
 
         i += 1
-        print("Goind to sleep "+str(i))
         time.sleep(st)
 
 if __name__ == "__main__":
