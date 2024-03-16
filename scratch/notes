@@ -1,5 +1,4 @@
-uint32 mmu_egr_queue_stat_get_mcast(uint32 unit, uint32 port)
-{
+uint32 mmu_egr_queue_stat_get_mcast(uint32 unit, uint32 port) {
  uint64 value1;
  uint32 cosq = 0;
  bcm_gport_t gport;
