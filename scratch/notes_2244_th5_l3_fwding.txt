@@ -1,0 +1,11 @@
+nh_set
+L3_UC_HIERARCHICAL_NHOPs
+bcm78900_b0_l3_egress.c
+static const bcmint_ltsw_l3_egress_tbl_t l3_egress_tbls[] = {
+
+bcm_l3_egress_t l3_egress;
+bcm_l3_egress_get(0, 10009, &l3_egress);
+print l3_egress;
+
+
+

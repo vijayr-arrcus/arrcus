@@ -62,3 +62,10 @@ g TDBGC15_SELECT
 g TDBGC_SELECT_2(15)
 g TDBGC_SELECT_3(15)
 g TDBGC_SELECT_4(15)
+
+
+s RDBGC_SELECT_2(5) 0
+
+
+scratch/notes_13293_bcm_bl5.txt
+notes_15082.txt
