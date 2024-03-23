@@ -1,0 +1,8 @@
+print bcm_rx_start(unit, NULL);
+
+static bcm_rx_t rx_call_back_thread95(int unit, bcm_pkt_t *pkt, void *cookie)
+{
+   printf ("\n 95 pkt_len=%d,  vlan=%x , rx_reason=%d  \n", pkt->pkt_len, pkt->vlan, pkt->rx_reason);
+   return BCM_RX_HANDLED ;    //BCM_RX_HANDLED_OWNED
+}
+print bcm_rx_register (unit, "rx95", rx_call_back_thread95, 95, &coockie, BCM_RCO_F_ALL_COS | BCM_RCO_F_INTR);

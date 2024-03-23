@@ -1,5 +1,7 @@
 sudo apt-get install linux-perf-4.19
 
+http://ftp.de.debian.org/debian/pool/main/l/linux-latest/linux-perf_4.19+105+deb10u16_all.deb
+
 wget http://archive.debian.org/debian-security/pool/updates/main/l/linux/linux-perf-4.9_4.9.320-2_amd64.deb
 wget https://ubuntu.repo.cure.edu.uy/mirror/pool/main/libu/libunwind/libunwind8_1.1-4.1_amd64.deb
 
