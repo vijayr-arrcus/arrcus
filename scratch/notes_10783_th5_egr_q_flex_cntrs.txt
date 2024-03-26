@@ -1,0 +1,69 @@
+typedef struct queue_counter_t {
+    /* Keep track of which ports have been attached to the flex counter */
+    bcm_pbmp_t          attached_ports;
+    /* One flex counter for all ports */
+    uint32              stat_counter_id;
+};
+
+/* Even though there are only 12 queues, flex counters allocate 16 */
+const uint32        RESERVE_QUEUES_PER_PORT = 16;
+
+/*
+ * The TH5 supports a total of 12 queues, the default configuration
+ * is 8 unicast queues (0..7) and 4 multicast queues (8..11).
+ */
+const uint32        EGR_QUEUES_PER_PORT = 12;
+
+/* Need to reserve flex counter resources across logical port space */
+const int           MAX_LOGICAL_PORT = 352;
+
+
+bcm_error_t
+egr_port_and_queue_num(int unit, uint32 * stat_counter_id)
+{
+    const int           options = 0;
+
+    bcm_flexctr_action_t action;
+    bcm_flexctr_index_operation_t *index_op;
+    bcm_flexctr_value_operation_t *value_a_op;
+    bcm_flexctr_value_operation_t *value_b_op;
+
+    bcm_flexctr_action_t_init(&action);
+    action.flags = 0;
+    action.source = bcmFlexctrSourceEgrPort;
+    action.mode = bcmFlexctrCounterModeNormal;
+    /* reserve resources */
+    action.index_num = (MAX_LOGICAL_PORT + 1) * RESERVE_QUEUES_PER_PORT;
+
+    index_op = &action.index_operation;
+    index_op->object[0] = bcmFlexctrObjectStaticEgrQueueNum;
+    index_op->mask_size[0] = 4;
+    index_op->shift[0] = 0;
+    index_op->object[1] = bcmFlexctrObjectStaticEgrEgressPort;
+    index_op->mask_size[1] = 9;
+    index_op->shift[1] = 4;
+
+    /* Increase counter per packet. */
+    value_a_op = &action.operation_a;
+    value_a_op->select = bcmFlexctrValueSelectCounterValue;
+    value_a_op->object[0] = bcmFlexctrObjectConstOne;
+    value_a_op->mask_size[0] = 1;
+    value_a_op->shift[0] = 0;
+    value_a_op->object[1] = bcmFlexctrObjectConstZero;
+    value_a_op->mask_size[1] = 1;
+    value_a_op->shift[1] = 0;
+    value_a_op->type = bcmFlexctrValueOperationTypeInc;
+
+    /* Increase counter per packet bytes. */
+    value_b_op = &action.operation_b;
+    value_b_op->select = bcmFlexctrValueSelectPacketLength;
+    value_b_op->type = bcmFlexctrValueOperationTypeInc;
+
+    /* Create an ingress action with a time-based trigger */
+    BCM_IF_ERROR_RETURN(bcm_flexctr_action_create
+                        (unit, options, &action, stat_counter_id));
+
+    printf("Created Flex Counter Action: ID=0x%X\n", *stat_counter_id);
+    return BCM_E_NONE;
+}
+

@@ -40,4 +40,15 @@ set breakpoint pending on
 thread apply all bt
 
 
+In GDB with a C program, you can do `watch *0x40020000` to set a watchpoint on a memory address, but this fails in Rust programs with a mysterious error. With a hint from @sheevink I found the solution: `watch *(0x40020000 as *const u32)`! gdb has a Rust parser!
 
+watch *(uint64_t *) (address)
+
+show can-use-hw-watchpoints
+
+Set the Watchpoint on Memory Address: Once the program is halted at the breakpoint, you can set a watchpoint on a memory address using the watch command.
+
+For example:watch *(int*)0xaddress
+
+Replace 0xaddress with the memory address you want to watch.
+You need to cast the address appropriately based on the data type you want to watch (int in this example).
