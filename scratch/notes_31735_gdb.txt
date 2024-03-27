@@ -52,3 +52,5 @@ For example:watch *(int*)0xaddress
 
 Replace 0xaddress with the memory address you want to watch.
 You need to cast the address appropriately based on the data type you want to watch (int in this example).
+
+set print repeats 0
