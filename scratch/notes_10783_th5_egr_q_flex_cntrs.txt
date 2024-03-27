@@ -67,3 +67,67 @@ egr_port_and_queue_num(int unit, uint32 * stat_counter_id)
     return BCM_E_NONE;
 }
 
+
+bcm_error_t
+flexctr_egr_cpu_queue_stat_create(int unit, int pool_id, int base_index, int index_num,
+                                      uint32_t *flexctr_act_id)
+{
+    bcm_flexctr_action_t action = {0};
+    bcm_flexctr_index_operation_t *index_op = &action.index_operation;
+    bcm_flexctr_value_operation_t *value_a_op = &action.operation_a;
+    bcm_flexctr_value_operation_t *value_b_op = &action.operation_b;
+    uint32_t stat_counter_id;
+    int options = 0;
+
+    action.source = bcmFlexctrSourceEgrPort;
+    action.mode = bcmFlexctrCounterModeNormal;
+    action.drop_count_mode = bcmFlexctrDropCountModeAll;
+    action.index_num = index_num; //cpu_q_max;
+
+    if( pool_id != -1 ) {
+        action.flags = BCM_FLEXCTR_ACTION_FLAGS_POOL_ID;
+        action.base_pool_id = pool_id;
+        action.base_index = base_index;
+    }
+
+    index_op->object[0] = bcmFlexctrObjectStaticEgrQueueNum;    /* 'Static' for non-npl device */
+    index_op->mask_size[0] = cpu_q_max_bits;     // Max 64 queues; Actual 48 queues. One page=64 entries
+    index_op->shift[0] = 0;
+    index_op->object[1] = bcmFlexctrObjectConstZero;
+    index_op->mask_size[1] = 1;     // For CPU port, port is known =0
+    index_op->shift[1] = 0;
+
+    /* Increase counter per packet. */
+    value_a_op->select = bcmFlexctrValueSelectCounterValue;
+    value_a_op->object[0] = bcmFlexctrObjectConstOne;
+    value_a_op->mask_size[0] = 1;
+    value_a_op->shift[0] = 0;
+    value_a_op->object[1] = bcmFlexctrObjectConstZero;
+    value_a_op->mask_size[1] = 1;
+    value_a_op->shift[1] = 0;
+    value_a_op->type = bcmFlexctrValueOperationTypeInc;
+
+    /* Increase counter per packet bytes. */
+    value_b_op->select = bcmFlexctrValueSelectPacketLength;
+    value_b_op->type = bcmFlexctrValueOperationTypeInc;
+
+    //if( opt_UsePipeUnique ) {
+    if( 1 ) {
+        bcm_port_config_t pc;
+        bcm_port_config_t_init(&pc);
+        bcm_port_config_get(unit, &pc);
+        BCM_PBMP_ASSIGN(action.ports, pc.per_pp_pipe[0]);   // CPU is in pipe # 0
+    }
+
+    printf("Doing flex ctr action create for cpu queue...\n");
+    BCM_IF_ERROR_RETURN(bcm_flexctr_action_create(unit, options, &action, &stat_counter_id));
+
+    print stat_counter_id;
+
+    *flexctr_act_id = stat_counter_id;
+
+    return BCM_E_NONE;
+}
+
+
+
