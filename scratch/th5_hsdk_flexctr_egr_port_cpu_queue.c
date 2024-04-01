@@ -465,18 +465,19 @@ void PrintStatCpuQueue(int unit)
   for (q_num = 0; q_num < cpu_q_max; ++q_num) {
     //        if ((COMPILER_64_HI(counter_value[q_num].value[0]) != 0) ||
     //            (COMPILER_64_LO(counter_value[q_num].value[0]) != 0) ) {
-    printf("CPU QUEUE %d Ctr:0x%08X-0x%08X port:%d -     0x%08X    0x%08X  (val0_low / val1_low)\n",
+    printf("CPU QUEUE %d Ctr:0x%08X-0x%08X port:%d -     0x%08d    0x%08d  (val0_low / val1_low)\n",
            q_num, flex_cpu_ctr_id, cid[q_num], port,
            COMPILER_64_LO(counter_value[q_num].value[0]),
            COMPILER_64_LO(counter_value[q_num].value[1]));
     //        }
   }
   // Clear counter
-  if (opt_ClearCounterOnRead) {
-    sal_memset(counter_value, 0x00, cpu_q_max * sizeof(counter_value[0]));
-    bcm_flexctr_stat_set(unit, flex_cpu_ctr_id, cpu_q_max,
-                         &cid, &counter_value);
-  }
+
+//  if (opt_ClearCounterOnRead) {
+//    sal_memset(counter_value, 0x00, cpu_q_max * sizeof(counter_value[0]));
+//    bcm_flexctr_stat_set(unit, flex_cpu_ctr_id, cpu_q_max,
+//                         &cid, &counter_value);
+//  }
 
   printf("~~~~~~~~~~~~~~~~~~~~~~~\n");
   return;
@@ -505,75 +506,10 @@ verify(int unit, int *port_list, int num_ports, queue_counter_t * queue_counter)
   bcm_port_t          port_idx;
   int                 test_failed = 0;
 
-#if 0
-  /* Start the packet watched, traffic ends up at CPU */
-  bshell(unit, "pw start quiet");
-
-  /* reset tx command */
-  bshell(unit, "tx clear");
-
-  /* Send traffic on each test port */
-  for (port_idx = 0; port_idx < num_ports; port_idx++) {
-    do_tx(unit, port_idx);
-    sal_sleep(2);
-  }
-#endif
-
   sal_sleep(20);
   bshell(unit, "show c");
   PrintStatCpuQueue(unit);
-
-#if 0
-  /* Get per queue stats for each port and confirm expected counts */
-  for (port_idx = 0; port_idx < num_ports; port_idx++) {
-    /* Counts should match those from "do_tx()" */
-    const int           expected_queue = port_idx % 8;
-    const int           expected_packets = port_idx + 1;
-    const int           expected_bytes = expected_packets * (100 + (port_idx * 4));
-
-    per_queue_counts_t  per_queue_counts;   /* Counts go here */
-    int                 queue;
-    int                 need_header;
-    int                 fail = 0;
-
-    /* Get current per queue counts for next port */
-    BCM_IF_ERROR_RETURN(get_port_queue_counts
-                        (unit, port_list[port_idx], queue_counter,
-                         &per_queue_counts));
-    need_header = 1;
-    for (queue = 0; queue < EGR_QUEUES_PER_PORT; queue++) {
-      const uint32        packets =
-        COMPILER_64_LO(per_queue_counts.counter_values[queue].value[0]);
-      const uint32        bytes =
-        COMPILER_64_LO(per_queue_counts.counter_values[queue].value[1]);
-
-      /* Compare actual counts against expected values */
-      fail = ((queue == expected_queue)
-              && ((packets != expected_packets) || (bytes != expected_bytes)))
-        || ((queue != expected_queue)
-            && ((packets != 0) || (bytes != 0)));
-
-      /* Print non-zero and mismatched counts */
-      if ((packets != 0) || (bytes != 0) || fail) {
-        if (need_header) {
-          printf("Port: %3d (cd%d)\n", port_list[port_idx], port_idx);
-          need_header = 0;
-        }
-        printf("  %s%1d: %3u packets; %4u bytes; %s\n",
-               queue < 8 ? "UC" : "MC", queue < 8 ? queue : queue - 8,
-               packets, bytes, fail ? "FAIL" : "OK");
-      }
-      /* Update test status */
-      test_failed = test_failed || fail;
-    }
-    if (need_header) {
-      printf("Port: %3d: None\n", port_list[port_idx]);
-    }
-  }
-#endif
-  /* Return status of test */
-  printf("Per Queue Test %s\n", test_failed ? "FAILED" : "PASSED");
-  return test_failed ? BCM_E_FAIL : BCM_E_NONE;
+  return BCM_E_NONE;
 }
 
 bcm_error_t
@@ -651,7 +587,7 @@ execute()
   queue_counter_t     queue_counter;
 
   /* Get test port list and configure per queue counters */
-  BCM_IF_ERROR_RETURN(test_setup(unit, port_list, num_ports, &queue_counter));
+//  BCM_IF_ERROR_RETURN(test_setup(unit, port_list, num_ports, &queue_counter));
 
   BCM_IF_ERROR_RETURN(setup_cpu_counter(unit, 0, &flex_cpu_ctr_id));
 
