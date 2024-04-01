@@ -1,6 +1,6 @@
 cint_reset();
 bcm_field_group_config_t fp_group_config;
-
+uint32_t stat_counter_id;
 
 
 /*
@@ -23,72 +23,73 @@ BCM.0>
  */
 /* Create IFP flex counter action */
 bcm_error_t
-flexCounterSetup (int unit, int group)
+flexCounterSetup(int unit, int group)
 {
-	int options = 0;
-	bcm_error_t  rv;
-	bcm_flexctr_action_t action;
-	bcm_flexctr_index_operation_t *index_op = NULL;
-	bcm_flexctr_value_operation_t *value_a_op = NULL;
-	bcm_flexctr_value_operation_t *value_b_op = NULL;
+  int options = 0;
+  bcm_error_t  rv;
+  bcm_flexctr_action_t action;
+  bcm_flexctr_index_operation_t *index_op = NULL;
+  bcm_flexctr_value_operation_t *value_a_op = NULL;
+  bcm_flexctr_value_operation_t *value_b_op = NULL;
 
-	print bcm_flexctr_action_t_init(&action);
-	action.flags = 0;
-	/* Group ID passed as hint and IFP as source */
-	action.hint = group;
-	action.hint_type = bcmFlexctrHintFieldGroupId;
-	action.source = bcmFlexctrSourceIfp;
-	action.mode = bcmFlexctrCounterModeNormal;
-	action.index_num = 2;
-	action.drop_count_mode=bcmFlexctrDropCountModeAll;
+  print bcm_flexctr_action_t_init(&action);
+  action.flags = 0;
+  /* Group ID passed as hint and IFP as source */
+  action.hint = group;
+  action.hint_type = bcmFlexctrHintFieldGroupId;
+  action.source = bcmFlexctrSourceIfp;
+  action.mode = bcmFlexctrCounterModeNormal;
+  action.index_num = 4098;
+  action.drop_count_mode=bcmFlexctrDropCountModeAll;
 
-	/* Counter index is IFP. */
-	index_op = &action.index_operation;
-	index_op->object[0] = bcmFlexctrObjectStaticIngFieldStageIngress;
-	index_op->object_id[0] = 0;
-	index_op->mask_size[0] = 8;
-	index_op->shift[0] = 0;
-	index_op->object[1] = bcmFlexctrObjectConstZero;
-	index_op->mask_size[1] = 1;
-	index_op->shift[1] = 0;
+  /* Counter index is IFP. */
+  index_op = &action.index_operation;
+  index_op->object[0] = bcmFlexctrObjectStaticIngFieldStageIngress;
+  index_op->object_id[0] = 0;
+  index_op->mask_size[0] = 15;
+  index_op->shift[0] = 0;
+  index_op->object[1] = bcmFlexctrObjectConstZero;
+  index_op->mask_size[1] = 1;
+  index_op->shift[1] = 0;
 
-	/* Increase counter per packet. */
-	value_a_op = &action.operation_a;
-	value_a_op->select = bcmFlexctrValueSelectCounterValue;
-	value_a_op->object[0] = bcmFlexctrObjectConstOne;
-	value_a_op->mask_size[0] = 16;
-	value_a_op->shift[0] = 0;
-	value_a_op->object[1] = bcmFlexctrObjectConstZero;
-	value_a_op->mask_size[1] = 1;
-	value_a_op->shift[1] = 0;
-	value_a_op->type = bcmFlexctrValueOperationTypeInc;
+  /* Increase counter per packet. */
+  value_a_op = &action.operation_a;
+  value_a_op->select = bcmFlexctrValueSelectCounterValue;
+  value_a_op->object[0] = bcmFlexctrObjectConstOne;
+  value_a_op->mask_size[0] = 15;
+  value_a_op->shift[0] = 0;
+  value_a_op->object[1] = bcmFlexctrObjectConstZero;
+  value_a_op->mask_size[1] = 1;
+  value_a_op->shift[1] = 0;
+  value_a_op->type = bcmFlexctrValueOperationTypeInc;
 
-	/* Increase counter per packet bytes. */
-	value_b_op = &action.operation_b;
-	value_b_op->select = bcmFlexctrValueSelectPacketLength;
-	value_b_op->type = bcmFlexctrValueOperationTypeInc;
-	/* Create an ingress action */
-	rv = bcm_flexctr_action_create(unit, options, &action, &stat_counter_id);
-	if (BCM_FAILURE(rv)) {
-		printf("bcm_flexctr_action_create() FAILED: %s\n", bcm_errmsg(rv));
-		return rv;
-	}
-	printf("stat_counter_id == %d \r\n", stat_counter_id);
+  /* Increase counter per packet bytes. */
+  value_b_op = &action.operation_b;
+  value_b_op->select = bcmFlexctrValueSelectPacketLength;
+  value_b_op->type = bcmFlexctrValueOperationTypeInc;
+  /* Create an ingress action */
+  rv = bcm_flexctr_action_create(unit, options, &action, &stat_counter_id);
+  if (BCM_FAILURE(rv)) {
+    printf("bcm_flexctr_action_create() FAILED: %s\n", bcm_errmsg(rv));
+    return rv;
+  }
+  printf("stat_counter_id == %d \r\n", stat_counter_id);
 
-	return BCM_E_NONE;
+  return BCM_E_NONE;
 }
 
-int stat_index = 0;
+uint32_t stat_index = 0;
 
 int
-flex_counter_attach (int unit, int eid, int stat_counter_id, int *stats_id)
+flex_counter_attach (int unit, int eid, uint32_t stat_counter_id, uint32_t *entry_index)
 {
 	bcm_field_flexctr_config_t flexctr_cfg;
 	int rv = 0;
 
 	flexctr_cfg.flexctr_action_id = stat_counter_id;
-  *stats_id = ++stat_index;
-	flexctr_cfg.counter_index = stat_index;
+  flexctr_cfg.counter_index = stat_index * 2; // give space for red and green
+  ++stat_index;
+  entry_index = flexctr_cfg.counter_index;
 	rv = bcm_field_entry_flexctr_attach(unit, eid, &flexctr_cfg);
 	if (BCM_FAILURE(rv)) {
 		printf("bcm_field_entry_flexctr_attach() FAILED: %s\n", bcm_errmsg(rv));
@@ -96,9 +97,8 @@ flex_counter_attach (int unit, int eid, int stat_counter_id, int *stats_id)
 	}
 	return rv;
 }
-
 void
-my_bcm_create_fp_group (int unit)
+_my_bcm_create_fp_group (int unit)
 {
   int priority;
   bcm_field_qset_t qset;
@@ -114,7 +114,7 @@ my_bcm_create_fp_group (int unit)
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyDstMac);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyEtherType);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyTtl);
-  BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyIp6HopLimit);
+//  BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyIp6HopLimit);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyL4SrcPort);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyL4DstPort);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyIpType);
@@ -129,7 +129,7 @@ my_bcm_create_fp_group (int unit)
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyIpFrag);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyL2SrcStatic);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyL2SrcHit);
-  BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyL2StationMove);
+ // BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyL2StationMove);
 
   /*
    * Create ASET
@@ -155,6 +155,54 @@ my_bcm_create_fp_group (int unit)
 //  sal_memcpy(&fp_group_config.aset, &aset, sizeof(bcm_field_aset_t));
   print bcm_field_group_config_create(unit, &fp_group_config);
   print fp_group_config;
+}
+
+void
+my_bcm_create_fp_group (int unit)
+{
+  int priority;
+  bcm_field_qset_t qset;
+  bcm_field_aset_t aset;
+
+  bcm_field_group_config_t_init(&fp_group_config);
+  BCM_FIELD_QSET_INIT(fp_group_config.qset);
+  BCM_FIELD_ASET_INIT(fp_group_config.aset);
+
+  BCM_FIELD_QSET_INIT(qset);
+  BCM_FIELD_ASET_INIT(aset);
+
+  BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyL4DstPort);
+  BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyIpType);
+  BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyStageIngress);
+  BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyDstPort);
+ // BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyL2StationMove);
+
+  /*
+   * Create ASET
+   */
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionDrop);
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionDropCancel);
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionCopyToCpu);
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionCopyToCpuCancel);
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionL3Switch);
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionRpDrop);
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionCosQCpuNew);
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionMirrorIngress);
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionGpStatGroup);
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionRpStatGroup);
+  BCM_FIELD_ASET_ADD(aset, bcmFieldActionRedirectEgrNextHop);
+
+  fp_group_config.flags |= BCM_FIELD_GROUP_CREATE_SINGLE;
+  priority = 3; // Group priority.
+  priority = 17; // Group priority.
+  fp_group_config.priority = priority;
+  fp_group_config.qset = qset;
+  fp_group_config.aset = aset;
+//  sal_memcpy(&fp_group_config.qset, &qset, sizeof(bcm_field_qset_t));
+//  sal_memcpy(&fp_group_config.aset, &aset, sizeof(bcm_field_aset_t));
+  print bcm_field_group_config_create(unit, &fp_group_config);
+  print fp_group_config.group;
+  print flexCounterSetup(unit, fp_group_config.group);
 }
 bcm_field_entry_t v4_any_dst_fp_entry_id;
 bcm_field_entry_t v4_any_dst_range_fp_entry_id;
@@ -235,13 +283,49 @@ EID 0x0000013f: gid=0x2,
          Extended statistics=NULL
 BCM.0>
 
+BCM.0> fctr stat show statid=268435457 0-10
+Counter value: Action Id=268435457
+        index 0
+                A:                     0,  B:
+   0
+        index 1
+                A:                     0,  B:
+   0
+        index 2
+                A:                     0,  B:
+   0
+        index 3
+                A:                     0,  B:
+   0
+        index 4
+                A:                     0,  B:
+   0
+        index 5
+                A:                     0,  B:
+   0
+        index 6
+                A:                     0,  B:
+   0
+        index 7
+                A:                     0,  B:
+   0
+        index 8
+                A:                     0,  B:
+   0
+        index 9
+                A:                     0,  B:
+   0
+        index 10
+                A:                     0,  B:
+   0
+BCM.0>
 
  */
 void
 bcm_ipv4_entry_create_dst_any (int unit)
 {
+  uint32_t entry_stats_id = 0;
   bcm_policer_config_t pol_cfg;
-  bcm_field_stat_t stats[2] = {bcmFieldStatPackets, bcmFieldStatBytes};
   print bcm_field_entry_create(unit, fp_group_config.group, &v4_any_dst_fp_entry_id);
   print v4_any_dst_fp_entry_id;
   print bcm_field_qualify_clear(unit, v4_any_dst_fp_entry_id);
@@ -250,12 +334,14 @@ bcm_ipv4_entry_create_dst_any (int unit)
   print bcm_field_qualify_DstPort(unit, v4_any_dst_fp_entry_id, 0, 0xFFFFFFFF, 0, 0xFFFFFFFF);
   print bcm_field_entry_prio_set(unit, v4_any_dst_fp_entry_id, (1000-23));
 
-  print 
-  print bcm_field_stat_create(unit, fp_group_config.group,
-                               2,stats , &v4_any_dst_fp_stats_id);
-  print bcm_field_entry_stat_attach(unit, v4_any_dst_fp_entry_id, v4_any_dst_fp_stats_id);
+  print flex_counter_attach(unit, v4_any_dst_fp_entry_id, stat_counter_id, &entry_stats_id);
+  printf("%s: stats id attached to entry %d is %d\n",
+         __FUNCTION__,  v4_any_dst_fp_entry_id, entry_stats_id);
+
   print bcm_field_action_add(unit, v4_any_dst_fp_entry_id, bcmFieldActionCosQCpuNew, local_tc, local_tc++);
   print bcm_field_action_add(unit, v4_any_dst_fp_entry_id, bcmFieldActionRpDrop, 0, 0);
+  print bcm_field_action_add(unit, entry, bcmFieldActionGpStatGroup, 0, 0);
+  print bcm_field_action_add(unit, entry, bcmFieldActionRpStatGroup, 1, 0);
   bcm_policer_config_t_init(&pol_cfg);
   pol_cfg.mode = bcmPolicerModeSrTcm;
   pol_cfg.ckbits_sec = 1000;
@@ -867,3 +953,4 @@ bcm_ipv6_entry_create_src_opt (int unit)
 }
 
 my_bcm_create_fp_group(0);
+bcm_ipv4_entry_create_dst_any(0);
