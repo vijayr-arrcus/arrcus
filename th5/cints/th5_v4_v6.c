@@ -23,7 +23,7 @@ BCM.0>
  */
 /* Create IFP flex counter action */
 bcm_error_t
-flexCounterSetup(int unit, int group)
+validated_flexCounterSetup(int unit, int group)
 {
   int options = 0;
   bcm_error_t  rv;
@@ -78,6 +78,63 @@ flexCounterSetup(int unit, int group)
   return BCM_E_NONE;
 }
 
+bcm_error_t
+flexCounterSetup (int unit, int group)
+{
+  int options = 0;
+  bcm_error_t  rv;
+  bcm_flexctr_action_t action;
+  bcm_flexctr_index_operation_t *index_op = NULL;
+  bcm_flexctr_value_operation_t *value_a_op = NULL;
+  bcm_flexctr_value_operation_t *value_b_op = NULL;
+
+  print bcm_flexctr_action_t_init(&action);
+  action.flags = 0;
+  /* Group ID passed as hint and IFP as source */
+  action.hint = group;
+  action.hint_type = bcmFlexctrHintFieldGroupId;
+  action.source = bcmFlexctrSourceIfp;
+  action.mode = bcmFlexctrCounterModeNormal;
+  action.index_num = 4098;
+  action.drop_count_mode=bcmFlexctrDropCountModeAll;
+
+  /* Counter index is IFP. */
+  index_op = &action.index_operation;
+  index_op->object[0] = bcmFlexctrObjectStaticIngFieldStageIngress;
+//  index_op->object[0] = bcmFlexctrObjectIngIfpOpaqueObj0;
+  index_op->object_id[0] = 0;
+  index_op->mask_size[0] = 15;
+  index_op->shift[0] = 0;
+  index_op->object[1] = bcmFlexctrObjectConstZero;
+  index_op->mask_size[1] = 1;
+  index_op->shift[1] = 0;
+
+  /* Increase counter per packet. */
+  value_a_op = &action.operation_a;
+  value_a_op->select = bcmFlexctrValueSelectCounterValue;
+  value_a_op->object[0] = bcmFlexctrObjectConstOne;
+  value_a_op->mask_size[0] = 15;
+  value_a_op->shift[0] = 0;
+  value_a_op->object[1] = bcmFlexctrObjectConstZero;
+  value_a_op->mask_size[1] = 1;
+  value_a_op->shift[1] = 0;
+  value_a_op->type = bcmFlexctrValueOperationTypeInc;
+
+  /* Increase counter per packet bytes. */
+  value_b_op = &action.operation_b;
+  value_b_op->select = bcmFlexctrValueSelectPacketLength;
+  value_b_op->type = bcmFlexctrValueOperationTypeInc;
+  /* Create an ingress action */
+  rv = bcm_flexctr_action_create(unit, options, &action, &stat_counter_id);
+  if (BCM_FAILURE(rv)) {
+    printf("bcm_flexctr_action_create() FAILED: %s\n", bcm_errmsg(rv));
+    return rv;
+  }
+  printf("stat_counter_id == %d \r\n", stat_counter_id);
+
+  return BCM_E_NONE;
+}
+
 uint32_t stat_index = 0;
 
 int
@@ -89,7 +146,25 @@ flex_counter_attach (int unit, int eid, uint32_t stat_counter_id, uint32_t *entr
 	flexctr_cfg.flexctr_action_id = stat_counter_id;
   flexctr_cfg.counter_index = stat_index * 2; // give space for red and green
   ++stat_index;
-  entry_index = flexctr_cfg.counter_index;
+  *entry_index = flexctr_cfg.counter_index;
+	rv = bcm_field_entry_flexctr_attach(unit, eid, &flexctr_cfg);
+	if (BCM_FAILURE(rv)) {
+		printf("bcm_field_entry_flexctr_attach() FAILED: %s\n", bcm_errmsg(rv));
+		return rv;
+	}
+	return rv;
+}
+int
+invalid_flex_counter_attach (int unit, int eid, uint32_t stat_counter_id, uint32_t *entry_index, int color)
+{
+	bcm_field_flexctr_config_t flexctr_cfg;
+	int rv = 0;
+
+	flexctr_cfg.flexctr_action_id = stat_counter_id;
+  flexctr_cfg.counter_index = stat_index; // give space for red and green
+  ++stat_index;
+//  flexctr_cfg.color = color;
+  *entry_index = flexctr_cfg.counter_index;
 	rv = bcm_field_entry_flexctr_attach(unit, eid, &flexctr_cfg);
 	if (BCM_FAILURE(rv)) {
 		printf("bcm_field_entry_flexctr_attach() FAILED: %s\n", bcm_errmsg(rv));
@@ -122,7 +197,7 @@ _my_bcm_create_fp_group (int unit)
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyIcmpTypeCode);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyTcpControl);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyStageIngress);
-  BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyDstPort);
+//  BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyDstPort);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyPacketRes);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyDstClassL3);
   BCM_FIELD_QSET_ADD(qset, bcmFieldQualifyRangeCheck);
@@ -324,6 +399,42 @@ BCM.0>
 void
 bcm_ipv4_entry_create_dst_any (int unit)
 {
+  uint32_t red_entry_stats_id = 0;
+  uint32_t green_entry_stats_id = 0;
+  bcm_policer_config_t pol_cfg;
+  print bcm_field_entry_create(unit, fp_group_config.group, &v4_any_dst_fp_entry_id);
+  print v4_any_dst_fp_entry_id;
+  print bcm_field_qualify_clear(unit, v4_any_dst_fp_entry_id);
+  print bcm_field_qualify_IpType(unit, v4_any_dst_fp_entry_id, bcmFieldIpTypeIpv4Any);
+  print bcm_field_qualify_L4DstPort(unit, v4_any_dst_fp_entry_id,v4_port_dst, 0xFFFF);
+//  print bcm_field_qualify_DstPort(unit, v4_any_dst_fp_entry_id, 0, 0xFFFFFFFF, 0, 0xFFFFFFFF);
+  print bcm_field_entry_prio_set(unit, v4_any_dst_fp_entry_id, (1000-23));
+
+  print flex_counter_attach(unit, v4_any_dst_fp_entry_id,
+                            stat_counter_id, &green_entry_stats_id);
+  printf("bcm_ipv4_entry_create_dst_any: stats id attached to entry %d is %d\n",
+        v4_any_dst_fp_entry_id, entry_stats_id);
+
+  print bcm_field_action_add(unit, v4_any_dst_fp_entry_id, bcmFieldActionCosQCpuNew, local_tc, local_tc++);
+  print bcm_field_action_add(unit, v4_any_dst_fp_entry_id, bcmFieldActionRpDrop, 0, 0);
+  print bcm_field_action_add(unit, v4_any_dst_fp_entry_id, bcmFieldActionGpStatGroup, 0, 0); // only the offsets and not the actual indices.
+  print bcm_field_action_add(unit, v4_any_dst_fp_entry_id, bcmFieldActionRpStatGroup, 1, 0);
+  bcm_policer_config_t_init(&pol_cfg);
+  pol_cfg.mode = bcmPolicerModeSrTcm;
+  pol_cfg.ckbits_sec = 1000;
+  pol_cfg.ckbits_burst = 200;
+  pol_cfg.flags = BCM_POLICER_MODE_PACKETS;
+  pol_cfg.flags |= BCM_POLICER_COLOR_BLIND;
+  print bcm_policer_create(unit, &pol_cfg, &v4_any_dst_policer_id);
+
+  print bcm_field_entry_policer_attach(unit, v4_any_dst_fp_entry_id,
+                                       0, v4_any_dst_policer_id);
+  print bcm_field_entry_install(unit, v4_any_dst_fp_entry_id);
+}
+
+void
+validated_bcm_ipv4_entry_create_dst_any (int unit)
+{
   uint32_t entry_stats_id = 0;
   bcm_policer_config_t pol_cfg;
   print bcm_field_entry_create(unit, fp_group_config.group, &v4_any_dst_fp_entry_id);
@@ -334,13 +445,13 @@ bcm_ipv4_entry_create_dst_any (int unit)
   print bcm_field_qualify_DstPort(unit, v4_any_dst_fp_entry_id, 0, 0xFFFFFFFF, 0, 0xFFFFFFFF);
   print bcm_field_entry_prio_set(unit, v4_any_dst_fp_entry_id, (1000-23));
 
-  print flex_counter_attach(unit, v4_any_dst_fp_entry_id, stat_counter_id, &entry_stats_id);
+  print validated_flex_counter_attach(unit, v4_any_dst_fp_entry_id, stat_counter_id, &entry_stats_id);
   printf("%s: stats id attached to entry %d is %d\n",
          __FUNCTION__,  v4_any_dst_fp_entry_id, entry_stats_id);
 
   print bcm_field_action_add(unit, v4_any_dst_fp_entry_id, bcmFieldActionCosQCpuNew, local_tc, local_tc++);
   print bcm_field_action_add(unit, v4_any_dst_fp_entry_id, bcmFieldActionRpDrop, 0, 0);
-  print bcm_field_action_add(unit, entry, bcmFieldActionGpStatGroup, 0, 0);
+  print bcm_field_action_add(unit, entry, bcmFieldActionGpStatGroup, 0, 0); // only the offsets and not the actual indices.
   print bcm_field_action_add(unit, entry, bcmFieldActionRpStatGroup, 1, 0);
   bcm_policer_config_t_init(&pol_cfg);
   pol_cfg.mode = bcmPolicerModeSrTcm;
