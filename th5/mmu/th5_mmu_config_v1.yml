@@ -547,4 +547,34 @@ device:
        TM_ING_SERVICE_POOL_ID: 3
        TM_HEADROOM_POOL_ID: 3
 # Attaching ING_PRI_PG-1 and ING_PG_SP-1 to port 1
- 
+   TM_ING_PORT:
+       ?
+       PORT_ID:1
+       :
+       ING_PRI_MAP_ID:1
+       PRI_GRP_MAP_ID:1
+       ?
+       PORT_ID:2
+       ING_PRI_MAP_ID:2
+       PRI_GRP_MAP_ID:2
+# Per port PG threshold configurations.
+   TM_ING_THD_PORT_PRI_GRP:
+       ?
+       PORT_ID: 1
+      # lossy PG
+       TM_PRI_GRP_ID: [[0, 3]]
+       :
+       MIN_GUARANTEE_CELLS: 7
+       DYNAMIC_SHARED_LIMITS: 1
+       SHARED_LIMIT_DYNAMIC: ALPHA_1_128
+       HEADROOM_LIMIT_CELLS: 0
+       ?
+       PORT_ID: 1
+      # Lossless PG’s
+       TM_PRI_GRP_ID: [[4, 7]]
+       :
+       MIN_GUARANTEE_CELLS: 335
+       DYNAMIC_SHARED_LIMITS: 0
+       SHARED_LIMIT_CELLS_STATIC: 1350
+       HEADROOM_LIMIT_CELLS: 1889
+...
