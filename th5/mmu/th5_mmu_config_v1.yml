@@ -555,6 +555,7 @@ device:
        PRI_GRP_MAP_ID:1
        ?
        PORT_ID:2
+       :
        ING_PRI_MAP_ID:2
        PRI_GRP_MAP_ID:2
 # Per port PG threshold configurations.
