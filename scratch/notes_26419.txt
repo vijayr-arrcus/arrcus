@@ -1,0 +1,5 @@
+l2 mod fifo... learning of mac.
+Lport - logical port.
+mcast port bitmap is 128 bits ?
+use VFI to assign SVP and then VFI.
+
