@@ -1,0 +1,3 @@
+ds_acl_hal_target_object_target_type_member_if_set(ds_target, is_member_iface);
+
+POLICY_TARGET_INTERFACE
