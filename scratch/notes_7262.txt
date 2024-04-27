@@ -18,10 +18,10 @@ tm_ltsw_cosq_thd_hdrm_pool_limit_set(
     int num_lossless_class,
     int arr_size,
     bcm_cosq_pkt_size_dist_t *pkt_dist_array)
-    if ((arr_size > MMU_NUM_MAX_PACKET_SIZE) || (hdrm_pool > MMU_NUM_POOL)
-        || (num_lossless_class > MMU_NUM_PG) || (pkt_dist_array == NULL) ) {
-        SHR_IF_ERR_VERBOSE_EXIT(SHR_E_PARAM);
-    }
+if ((arr_size > MMU_NUM_MAX_PACKET_SIZE) || (hdrm_pool > MMU_NUM_POOL)
+		|| (num_lossless_class > MMU_NUM_PG) || (pkt_dist_array == NULL) ) {
+	SHR_IF_ERR_VERBOSE_EXIT(SHR_E_PARAM);
+}
 
 
 

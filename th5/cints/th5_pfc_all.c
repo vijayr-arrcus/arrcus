@@ -19,6 +19,10 @@
 *	BCMLT.0>
 */
 
+    bcmCosqControlIngressPool = 100,    /* Associate an Ingress Cos to a
+                                           specific service pool */
+
+
 /*
  * Setup Port PriorityGroup headroom value based on cable length and
  * packet distribution.
