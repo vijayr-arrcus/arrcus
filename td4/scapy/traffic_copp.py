@@ -3,13 +3,13 @@ from scapy.all import *
 from scapy.contrib.ospf import *
 
 data="hello world 123456789123456789123456789123456789123456789"
-src_ip="1.1.1.5"
-dst_ip="1.1.1.4"
+src_ip="10.10.10.3"
+dst_ip="10.10.10.2"
 dst_ip6="1140:1::2"
 src_ip6="1140:1::1"
-dmac="34:ef:B6:41:ef:95"
-smac="b4:A9:fc:70:c5:d4"
-interface="swp52"
+dmac="b4:a9:fc:70:c3:d6"
+smac="5c:07:58:a4:e0:03"
+interface="vlan100"
 
 def send_packet (p, intf, t_count):
     i = 0;
@@ -142,7 +142,7 @@ def send_trace_route_v4_traffic ():
     return pkt
 
 def send_trace_udp_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)/UDP(dport=4789, sport=1646)
+    pkt = Ether(src=smac, dst=dmac)/Dot1Q(vlan=100)/IP(src=src_ip, dst=dst_ip)/UDP(dport=4789, sport=1646)/data
     return pkt
 
 def send_trace_route_v6_traffic ():

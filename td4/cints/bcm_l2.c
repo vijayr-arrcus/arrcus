@@ -1,0 +1,12 @@
+uint8 mac[6] = {0x00, 0x11, 0x11, 0x11, 0x00, 0x02};
+uint8 mac2[6] = {0x00, 0x22, 0x22, 0x22, 0x00, 0x02};
+uint8 mac1[6] = {0x00, 0x22, 0x22, 0x22, 0x00, 0x01};
+int vlan = 32775;
+int unit = 0;
+bcm_l2_addr_t l2addr;
+int rv = 0;
+bcm_l2_addr_get(unit, mac, vlan, &l2addr);
+l2addr.mac[6] = 0x03;
+bcm_l2_addr_add(unit, &l2addr);
+
+timeout and check for deletion.
