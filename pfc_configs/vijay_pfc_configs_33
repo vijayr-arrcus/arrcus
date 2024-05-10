@@ -1,0 +1,454 @@
+version "Tomahawk5-dev:May_10_24:7_2_AM [release] 2024-05-10 07:02:41"
+features feature ARCOS_RIOT
+ supported true
+!
+features feature ARCOS_ICMP_SRC_REWRITE
+ supported true
+!
+features feature ARCOS_QoS
+ supported true
+!
+features feature ARCOS_MPLS
+ supported true
+!
+system login-banner "ArcOS (c) Arrcus, Inc."
+system ssh-server enable true
+system ssh-server permit-root-login true
+system netconf-server enable false
+system netconf-server transport ssh enable false
+system restconf-server enable false
+system logging confd developer-log-level trace
+system aaa authentication admin-user admin-password $6$kkM6wHkCUYPuid2H$4I1yV0aZIPXkqcKh0DAV8Kg6uOu10u.aDcUDqXSCGacX0g6smTXmo/nFEGLHaoG4EuOGKC/uPdLwa9nkaJarw0
+system rib IPV6
+!
+system rib IPV4
+!
+break-out slot 0
+ ports 7
+  mode 100gx2
+ !
+ ports 12
+  mode 100gx2
+ !
+ ports 13
+  mode 100gx2
+ !
+!
+interface ma1
+ type    ethernetCsmacd
+ enabled true
+ subinterface 0
+ exit
+!
+interface swp0
+ type ethernetCsmacd
+!
+interface swp1
+ type ethernetCsmacd
+!
+interface swp2
+ type ethernetCsmacd
+!
+interface swp3
+ type ethernetCsmacd
+!
+interface swp4
+ type ethernetCsmacd
+!
+interface swp5
+ type ethernetCsmacd
+!
+interface swp6
+ type ethernetCsmacd
+!
+interface swp8
+ type ethernetCsmacd
+!
+interface swp9
+ type ethernetCsmacd
+!
+interface swp10
+ type ethernetCsmacd
+!
+interface swp11
+ type ethernetCsmacd
+!
+interface swp14
+ type ethernetCsmacd
+!
+interface swp15
+ type ethernetCsmacd
+!
+interface swp16
+ type ethernetCsmacd
+!
+interface swp17
+ type ethernetCsmacd
+!
+interface swp18
+ type ethernetCsmacd
+!
+interface swp19
+ type ethernetCsmacd
+!
+interface swp20
+ type ethernetCsmacd
+!
+interface swp21
+ type ethernetCsmacd
+!
+interface swp22
+ type ethernetCsmacd
+!
+interface swp23
+ type ethernetCsmacd
+!
+interface swp24
+ type ethernetCsmacd
+!
+interface swp25
+ type ethernetCsmacd
+!
+interface swp26
+ type ethernetCsmacd
+!
+interface swp27
+ type ethernetCsmacd
+!
+interface swp28
+ type ethernetCsmacd
+!
+interface swp29
+ type ethernetCsmacd
+!
+interface swp30
+ type ethernetCsmacd
+!
+interface swp31
+ type ethernetCsmacd
+!
+interface swp32
+ type ethernetCsmacd
+!
+interface swp33
+ type ethernetCsmacd
+!
+interface swp34
+ type ethernetCsmacd
+!
+interface swp35
+ type ethernetCsmacd
+!
+interface swp36
+ type ethernetCsmacd
+!
+interface swp37
+ type ethernetCsmacd
+!
+interface swp38
+ type ethernetCsmacd
+!
+interface swp39
+ type ethernetCsmacd
+!
+interface swp40
+ type ethernetCsmacd
+!
+interface swp41
+ type ethernetCsmacd
+!
+interface swp42
+ type ethernetCsmacd
+!
+interface swp43
+ type ethernetCsmacd
+!
+interface swp44
+ type ethernetCsmacd
+!
+interface swp45
+ type ethernetCsmacd
+!
+interface swp46
+ type ethernetCsmacd
+!
+interface swp47
+ type ethernetCsmacd
+!
+interface swp48
+ type ethernetCsmacd
+!
+interface swp49
+ type ethernetCsmacd
+!
+interface swp50
+ type ethernetCsmacd
+!
+interface swp51
+ type ethernetCsmacd
+!
+interface swp52
+ type ethernetCsmacd
+!
+interface swp53
+ type ethernetCsmacd
+!
+interface swp54
+ type ethernetCsmacd
+!
+interface swp55
+ type ethernetCsmacd
+!
+interface swp56
+ type ethernetCsmacd
+!
+interface swp57
+ type ethernetCsmacd
+!
+interface swp58
+ type ethernetCsmacd
+!
+interface swp59
+ type ethernetCsmacd
+!
+interface swp60
+ type ethernetCsmacd
+!
+interface swp61
+ type ethernetCsmacd
+!
+interface swp62
+ type ethernetCsmacd
+!
+interface swp63
+ type ethernetCsmacd
+!
+interface swp7s1
+ type    ethernetCsmacd
+ enabled true
+ fec     fec-none
+ ethernet switched-vlan interface-mode TRUNK
+ ethernet switched-vlan trunk-vlans [ 100 ]
+!
+interface swp7s2
+ type ethernetCsmacd
+!
+interface swp12s1
+ type    ethernetCsmacd
+ enabled true
+ ethernet switched-vlan interface-mode TRUNK
+ ethernet switched-vlan trunk-vlans [ 100 200 ]
+!
+interface swp12s2
+ type ethernetCsmacd
+!
+interface swp13s1
+ type    ethernetCsmacd
+ enabled true
+ fec     fec-none
+ ethernet switched-vlan interface-mode TRUNK
+ ethernet switched-vlan trunk-vlans [ 200 ]
+!
+interface swp13s2
+ type ethernetCsmacd
+!
+interface vlan100
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 10.10.10.3
+   prefix-length 24
+  exit
+ exit
+!
+interface vlan200
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 20.20.20.3
+   prefix-length 24
+  exit
+ exit
+!
+network-instance default
+!
+network-instance management
+ interface ma1
+ !
+!
+network-instance vlan100
+ type L2VLAN
+ vlan 100
+!
+network-instance vlan200
+ type L2VLAN
+ vlan 200
+!
+lldp interface ma1
+!
+lldp interface swp0
+!
+lldp interface swp1
+!
+lldp interface swp2
+!
+lldp interface swp3
+!
+lldp interface swp4
+!
+lldp interface swp5
+!
+lldp interface swp6
+!
+lldp interface swp8
+!
+lldp interface swp9
+!
+lldp interface swp10
+!
+lldp interface swp11
+!
+lldp interface swp14
+!
+lldp interface swp15
+!
+lldp interface swp16
+!
+lldp interface swp17
+!
+lldp interface swp18
+!
+lldp interface swp19
+!
+lldp interface swp20
+!
+lldp interface swp21
+!
+lldp interface swp22
+!
+lldp interface swp23
+!
+lldp interface swp24
+!
+lldp interface swp25
+!
+lldp interface swp26
+!
+lldp interface swp27
+!
+lldp interface swp28
+!
+lldp interface swp29
+!
+lldp interface swp30
+!
+lldp interface swp31
+!
+lldp interface swp32
+!
+lldp interface swp33
+!
+lldp interface swp34
+!
+lldp interface swp35
+!
+lldp interface swp36
+!
+lldp interface swp37
+!
+lldp interface swp38
+!
+lldp interface swp39
+!
+lldp interface swp40
+!
+lldp interface swp41
+!
+lldp interface swp42
+!
+lldp interface swp43
+!
+lldp interface swp44
+!
+lldp interface swp45
+!
+lldp interface swp46
+!
+lldp interface swp47
+!
+lldp interface swp48
+!
+lldp interface swp49
+!
+lldp interface swp50
+!
+lldp interface swp51
+!
+lldp interface swp52
+!
+lldp interface swp53
+!
+lldp interface swp54
+!
+lldp interface swp55
+!
+lldp interface swp56
+!
+lldp interface swp57
+!
+lldp interface swp58
+!
+lldp interface swp59
+!
+lldp interface swp60
+!
+lldp interface swp61
+!
+lldp interface swp62
+!
+lldp interface swp63
+!
+lldp interface swp7s1
+!
+lldp interface swp7s2
+!
+lldp interface swp12s1
+!
+lldp interface swp12s2
+!
+lldp interface swp13s1
+!
+lldp interface swp13s2
+!
+routing-policy defined-sets prefix-set __IPV4_MARTIAN_PREFIX_SET__
+ prefix 0.0.0.0/8 8..32
+ !
+ prefix 127.0.0.0/8 8..32
+ !
+ prefix 192.0.0.0/24 24..32
+ !
+ prefix 224.0.0.0/4 exact
+ !
+ prefix 224.0.0.0/24 exact
+ !
+ prefix 240.0.0.0/4 4..32
+ !
+!
+routing-policy defined-sets prefix-set __IPV6_MARTIAN_PREFIX_SET__
+ prefix ::/128 exact
+ !
+ prefix ::1/128 exact
+ !
+ prefix ff00::/8 exact
+ !
+ prefix ff02::/16 exact
+ !
+!
+vlan 100
+ vlan-id 100
+ exit
+!
+vlan 200
+ vlan-id 200
+ exit
+!

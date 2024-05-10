@@ -543,7 +543,6 @@ decode_pkt_trace_data(int unit, bcm_pktio_trace_data_t *trace_data)
 {
   bcm_error_t rv = BCM_E_NONE;
   int idx;
-  return BCM_E_NONE;
 
   if ((!trace_data->len) || (NULL == trace_data->buf)){
     printf("Invalid trace data\n");
