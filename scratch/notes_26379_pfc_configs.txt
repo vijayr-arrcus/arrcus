@@ -1,7 +1,7 @@
 config
 hardware pfc profile pfc-test
-   traffic-class 2 xoff 4096 xon 2048 hdrm 1024
-   traffic-class 3 xoff 4096 xon 2048 hdrm 1024
+   traffic-class 2 lossless xoff 4096 xon 2048 hdrm 1024
+   traffic-class 3 lossless
 exit
 
 
