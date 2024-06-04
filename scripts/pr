@@ -27,7 +27,7 @@ def main (argv):
     base = data["base"]["ref"]
     base_clone_url = data["base"]["repo"]["ssh_url"]
 #    print("PR head {}-{} base {}-{}".format(head, head_clone_url, base, base_clone_url))
-#    cmd = "git clone "+base_clone_url+" -b "+base
+    cmd = "git clone "+base_clone_url+" -b "+base
     os.system(cmd)
 #    print(cmd)
     os.chdir(repos)
