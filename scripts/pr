@@ -1,0 +1,42 @@
+#!/usr/bin/python3
+import json
+import os
+import sys
+import tempfile
+
+def main (argv):
+    diffs_file = tempfile.NamedTemporaryFile(suffix=".diffs", delete=False)
+    json_output = tempfile.NamedTemporaryFile(suffix=".json", delete=False)
+    pr = argv
+#    print("PR link received {}".format(pr))
+    pr_token = pr.split('/')
+    pr_id = pr_token[-1]
+    repos = pr_token[-3]
+    owner = pr_token[-4]
+#    print("PR Id {} repos {} owner {}".format(pr_id, repos, owner))
+#    print("diff file name {}".format(diffs_file.name))
+    cmd = "gh api -H \"Accept: application/vnd.github.v3.diff\" https://api.github.com/repos/"+owner+"/"+repos+"/pulls/"+pr_id+" > "+diffs_file.name
+    os.system(cmd)
+    cmd = "gh api https://api.github.com/repos/"+owner+"/"+repos+"/pulls/"+pr_id+" | python3 -m json.tool > "+json_output.name
+    os.system(cmd)
+#    print(cmd)
+    f = open(json_output.name)
+    data = json.load(f)
+    head = data["head"]["ref"]
+    head_clone_url = data["head"]["repo"]["ssh_url"]
+    base = data["base"]["ref"]
+    base_clone_url = data["base"]["repo"]["ssh_url"]
+#    print("PR head {}-{} base {}-{}".format(head, head_clone_url, base, base_clone_url))
+#    cmd = "git clone "+base_clone_url+" -b "+base
+    os.system(cmd)
+#    print(cmd)
+    os.chdir(repos)
+    cmd = "git stash;git fetch;git pull"
+    os.system(cmd)
+    cmd = "git apply "+diffs_file.name
+    os.system(cmd)
+    print("cd "+os.getcwd())
+    print("vim -c \"Git difftool\" -c \"set scl=auto\"")
+
+if __name__ == "__main__":
+    main(sys.argv[1])
