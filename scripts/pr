@@ -16,6 +16,7 @@ def main (argv):
 #    print("PR Id {} repos {} owner {}".format(pr_id, repos, owner))
 #    print("diff file name {}".format(diffs_file.name))
     cmd = "gh api -H \"Accept: application/vnd.github.v3.diff\" https://api.github.com/repos/"+owner+"/"+repos+"/pulls/"+pr_id+" > "+diffs_file.name
+    print(cmd)
     os.system(cmd)
     cmd = "gh api https://api.github.com/repos/"+owner+"/"+repos+"/pulls/"+pr_id+" | python3 -m json.tool > "+json_output.name
     os.system(cmd)
@@ -27,10 +28,11 @@ def main (argv):
     base = data["base"]["ref"]
     base_clone_url = data["base"]["repo"]["ssh_url"]
 #    print("PR head {}-{} base {}-{}".format(head, head_clone_url, base, base_clone_url))
-    cmd = "git clone "+base_clone_url+" -b "+base
+#    cmd = "git clone "+base_clone_url+" -b "+base
+    cmd = "git stash; git fetch; git checkout "+base
     os.system(cmd)
 #    print(cmd)
-    os.chdir(repos)
+#    os.chdir(repos)
     cmd = "git stash;git fetch;git pull"
     os.system(cmd)
     cmd = "git apply "+diffs_file.name
