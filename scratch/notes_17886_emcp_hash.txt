@@ -151,10 +151,14 @@ while (i < 10) {
 }
 bcm_l3_egress_ecmp_t_init(&ecmp_info);
 
-ecmp_info.ecmp_intf = 203970;
+ecmp_info.ecmp_intf = 203968;
 
 rv = bcm_l3_ecmp_get(unit, &ecmp_info, 10,
 										 ecmp_member_array, &ecmp_member_count);
+
+  uint32_t options = 0;
+  options = BCM_L3_ECMP_O_CREATE_WITH_ID | BCM_L3_ECMP_O_REPLACE;
+  bcm_l3_ecmp_create(unit, options, &ecmp_info, ecmp_member_count, ecmp_member_array);
 
 if (BCM_FAILURE(rv)) {
 	printf("Error in bcm_l3_ecmp_get(): %s.\n", bcm_errmsg(rv));

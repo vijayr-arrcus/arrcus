@@ -1,0 +1,31 @@
+{
+    int hash_control;
+
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchHashSeed0, seed));
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchHashField0Config,
+                                                        hash_computation));
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchHashIP4TcpUdpField0,
+                                                        ipv4_select_fields));
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchHashIP4TcpUdpPortsEqualField0,
+                                                        ipv4_select_fields));
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchHashIP4Field0,
+                                                        ipv4_select_fields));
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchHashField0PreProcessEnable,
+                                                        pre_process_enable));
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchHashUseFlowSelEcmp,
+                                                        use_flow_based_hash_ecmp));
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchHashUseFlowSelEcmpDynamic,
+                                                        use_flow_based_hash_ecmp));
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchECMPHashSet0Offset,
+                                                        block_n_offset_select));
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchEcmpDynamicHashOffset,
+                                                        block_n_offset_select));
+
+    /*Enable RTAG7 for ECMP */
+    BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchHashControl,
+                                                        &hash_control));
+    hash_control  |= BCM_HASH_CONTROL_ECMP_ENHANCE;
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchHashControl,
+                                                        hash_control));
+}
+
