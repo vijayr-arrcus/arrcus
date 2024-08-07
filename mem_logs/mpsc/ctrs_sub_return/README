@@ -1,0 +1,4 @@
+1. Changes involve returning from counter handling, had the counters in MPSC counters but returned from everywhere.
+2. The counters from MPSC dint help much.
+3. the break points stop in stable state.
+4. there are multiple 264KB increases but no clues why.

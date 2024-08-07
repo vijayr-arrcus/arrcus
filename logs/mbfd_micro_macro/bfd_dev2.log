@@ -1,0 +1,1910 @@
+root@spine1#
+root@spine1#
+root@spine1# show bfd | tab
+bfd profile
+                         DESIRED                                                                                                                                                                            REMOTE
+                         MINIMUM   REQUIRED                                                                                                                          REMOTE                                 MINIMUM                          HW                             HW
+                         TX        MINIMUM   DETECTION   V4 HW    V6 HW    LOCAL                                                                SUBSCRIBED  SESSION  SESSION  LOCAL          REMOTE         RECEIVE   TRANSMITTED  RECEIVED  OFFLOAD             PARENT     ENDPOINT  NETWORK
+ID      ID      ENABLED  INTERVAL  RECEIVE   MULTIPLIER  OFFLOAD  OFFLOAD  DISCRIMINATOR  LOCAL ADDRESS              REMOTE ADDRESS             PROTOCOLS   STATE    STATE    DISCRIMINATOR  DISCRIMINATOR  INTERVAL  PACKETS      PACKETS   STATUS   INTERFACE  INTERFACE  ID        INSTANCE
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+GLOBAL  GLOBAL  true     150       150       3           true     true     11             62.1.1.6                   62.1.1.2                   [ LAG ]     UP       UP       11             0              0         4238         3501      true     swp19      bond12     11        default
+                                                                           12             62:1:1::6                  62:1:1::1                  [ LAG ]     UP       UP       12             33             1000      4236         4134      true     swp19      bond12     12        default
+                                                                           15             62.1.1.6                   62.1.1.2                   [ LAG ]     UP       UP       15             29             1000      1275         1258      true     swp10      bond12     10        default
+                                                                           16             62:1:1::6                  62:1:1::1                  [ LAG ]     UP       UP       16             31             1000      1276         1256      true     swp10      bond12     9         default
+                                                                           17             62.1.1.6                   62.1.1.2                   [ ISIS ]    UP       UP       17             0              0         1280         1         true     bond12     -          14        default
+                                                                           18             fe80::dac4:97ff:fed1:bb2c  fe80::b6a9:fcff:fe09:f44f  [ ISIS ]    UP       UP       18             34             1000      1277         1241      true     bond12     -          13        default
+
+root@spine1#
+
+BCM.0>                                                                                                                                                                                                                          [109/7207]BCM.0> fp show group 4
+fp show group 4
+GID          4: gid=0x4, instance=0 mode=Double, stage=Ingress lookup=Enabled, ActionResId={-1}, pbmp={0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000088888888888888882222222222222223}
+         qset={DstMac, EtherType, Stage, StageIngress, InterfaceClassL2, InterfaceClassL3, IcmpTypeCode, MyStationHit, InterfaceClassVPort, BfdYourDiscriminator, PktType},
+         aset={CosQCpuNew, CopyToCpu, Drop, PolicerGroup, StatGroup, BFDSessionIdNew},
+         Qualifiers in Part-0: {EtherType->InterfaceClassL2->InterfaceClassVPort->BfdYourDiscriminator->PktType},
+         Qualifiers in Part-1: {DstMac->InterfaceClassL3->IcmpTypeCode->MyStationHit},
+
+         group_priority= 20
+         slice_primary =  {slice_number=3, Entry count=768(0x300), Entry free=760(0x2f8)},
+         slice_secondary = {slice_number=4}
+         group_status={prio_min=0, prio_max=0, entries_total=2304, entries_free=2296,
+                       counters_total=83968, counters_free=82424, meters_total=6144, meters_free=5376}
+EID 0x00000080: gid=0x4,
+ slice=3, slice_idx=0, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000000
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2047(0x7ff), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 43  slice = 9 idx=3 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x00000081: gid=0x4,
+ slice=3, slice_idx=0x1, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x1, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000000
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2047(0x7ff), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 44  slice = 9 idx=2 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x0000008c: gid=0x4,
+ slice=3, slice_idx=0xc, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xc, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x0000000b
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=11(0xb), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 55  slice = 9 idx=9 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x0000008d: gid=0x4,
+ slice=3, slice_idx=0xd, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xd, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x0000000c
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=12(0xc), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 56  slice = 9 idx=8 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x00000090: gid=0x4,
+ slice=3, slice_idx=0xa, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xa, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000010
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=9(0x9), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 59  slice = 9 idx=11 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x00000091: gid=0x4,
+ slice=3, slice_idx=0xb, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xb, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x0000000f
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=10(0xa), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 60  slice = 9 idx=10 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x00000092: gid=0x4,
+ slice=3, slice_idx=0xe, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xe, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000012
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=13(0xd), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 61  slice = 9 idx=31 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x00000093: gid=0x4,
+ slice=3, slice_idx=0xf, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xf, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000011
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=14(0xe), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 62  slice = 9 idx=30 entries=1}{Packets}
+         Extended statistics=NULL
+BCM.0>
+BCM.0>
+BCM.0> fp stat get statid=43 t=p
+fp stat get statid=44 t=p
+fp stat get statid=55 t=p
+fp stat get statid=56 t=p
+fp stat get statid=59 t=p
+fp stat get statid=60 t=p
+fp stat get statid=61 t=p
+fp stat get statid=62 t=p
+fp stat get statid=43 t=p
+The value is: 0x000001405
+BCM.0>
+BCM.0> fp stat get statid=44 t=p
+The value is: 0x00000138c
+BCM.0>
+BCM.0> fp stat get statid=55 t=p
+The value is: 0x000000e2b
+BCM.0>
+BCM.0> fp stat get statid=56 t=p
+The value is: 0x000001147
+BCM.0>
+BCM.0> fp stat get statid=59 t=p
+The value is: 0x00000060a
+BCM.0>
+BCM.0> fp stat get statid=60 t=p
+The value is: 0x000000456
+BCM.0>
+BCM.0> fp stat get statid=61 t=p
+The value is: 0x000000000
+BCM.0>
+BCM.0> fp stat get statid=62 t=p
+The value is: 0x000000312
+BCM.0>
+BCM.0> cint
+int unit = 0;
+bcm_bfd_endpoint_stat_t ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 9, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 10, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 11, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 12, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 13, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print bcm_bfd_endpoint_stat_get(unit, 14, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+
+cint
+int unit = 0;
+
+bcm_bfd_endpoint_stat_t ctr_info_1;
+
+print bcm_bfd_endpoint_stat_get(unit, 9, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+
+print ctr_info_1;
+
+print bcm_bfd_endpoint_stat_get(unit, 10, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+
+print ctr_info_1;
+
+print bcm_bfd_endpoint_stat_get(unit, 11, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+
+print ctr_info_1;
+
+print bcm_bfd_endpoint_stat_get(unit, 12, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+
+print ctr_info_1;
+
+print bcm_bfd_endpoint_stat_get(unit, 13, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+
+print ctr_info_1;
+
+print bcm_bfd_endpoint_stat_get(unit, 14, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+
+print ctr_info_1;
+
+
+
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint>
+cint> int unit = 0;
+cint>
+cint> bcm_bfd_endpoint_stat_t ctr_info_1;
+cint>
+cint> print bcm_bfd_endpoint_stat_get(unit, 9, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+int $$ = 0 (0x0)
+cint>
+cint> print ctr_info_1;
+bcm_bfd_endpoint_stat_t ctr_info_1 = {
+    unsigned int packets_in = 0 (0x0)
+    unsigned int packets_out = 0 (0x0)
+    unsigned int packets_drop = 0 (0x0)
+    unsigned int packets_auth_drop = 0 (0x0)
+    uint64 packets_in_64 = {0x00000000 0x0000061B}
+    uint64 packets_out_64 = {0x00000000 0x0000062D}
+    uint64 packets_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_auth_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_echo_reply = {0x00000000 0x00000000}
+}
+cint>
+cint> print bcm_bfd_endpoint_stat_get(unit, 10, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+int $$ = 0 (0x0)
+cint>
+cint> print ctr_info_1;
+bcm_bfd_endpoint_stat_t ctr_info_1 = {
+    unsigned int packets_in = 0 (0x0)
+    unsigned int packets_out = 0 (0x0)
+    unsigned int packets_drop = 0 (0x0)
+    unsigned int packets_auth_drop = 0 (0x0)
+    uint64 packets_in_64 = {0x00000000 0x0000061D}
+    uint64 packets_out_64 = {0x00000000 0x0000062C}
+    uint64 packets_drop_64 = {0x00000000 0x0000060C}
+    uint64 packets_auth_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_echo_reply = {0x00000000 0x00000000}
+}
+cint>
+cint> print bcm_bfd_endpoint_stat_get(unit, 11, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+int $$ = 0 (0x0)
+cint>
+cint> print ctr_info_1;
+bcm_bfd_endpoint_stat_t ctr_info_1 = {
+    unsigned int packets_in = 0 (0x0)
+    unsigned int packets_out = 0 (0x0)
+    unsigned int packets_drop = 0 (0x0)
+    unsigned int packets_auth_drop = 0 (0x0)
+    uint64 packets_in_64 = {0x00000000 0x00000E34}
+    uint64 packets_out_64 = {0x00000000 0x000011C0}
+    uint64 packets_drop_64 = {0x00000000 0x00000001}
+    uint64 packets_auth_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_echo_reply = {0x00000000 0x00000000}
+}
+cint>
+cint> print bcm_bfd_endpoint_stat_get(unit, 12, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+int $$ = 0 (0x0)
+cint>
+cint> print ctr_info_1;
+bcm_bfd_endpoint_stat_t ctr_info_1 = {
+    unsigned int packets_in = 0 (0x0)
+    unsigned int packets_out = 0 (0x0)
+    unsigned int packets_drop = 0 (0x0)
+    unsigned int packets_auth_drop = 0 (0x0)
+    uint64 packets_in_64 = {0x00000000 0x00001159}
+    uint64 packets_out_64 = {0x00000000 0x000011BC}
+    uint64 packets_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_auth_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_echo_reply = {0x00000000 0x00000000}
+}
+cint>
+cint> print bcm_bfd_endpoint_stat_get(unit, 13, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+int $$ = 0 (0x0)
+cint>
+cint> print ctr_info_1;
+bcm_bfd_endpoint_stat_t ctr_info_1 = {
+    unsigned int packets_in = 0 (0x0)
+    unsigned int packets_out = 0 (0x0)
+    unsigned int packets_drop = 0 (0x0)
+    unsigned int packets_auth_drop = 0 (0x0)
+    uint64 packets_in_64 = {0x00000000 0x0000060D}
+    uint64 packets_out_64 = {0x00000000 0x0000062E}
+    uint64 packets_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_auth_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_echo_reply = {0x00000000 0x00000000}
+}
+cint>
+cint> print bcm_bfd_endpoint_stat_get(unit, 14, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+int $$ = 0 (0x0)
+cint>
+cint> print ctr_info_1;
+bcm_bfd_endpoint_stat_t ctr_info_1 = {
+    unsigned int packets_in = 0 (0x0)
+    unsigned int packets_out = 0 (0x0)
+    unsigned int packets_drop = 0 (0x0)
+    unsigned int packets_auth_drop = 0 (0x0)
+    uint64 packets_in_64 = {0x00000000 0x00000001}
+    uint64 packets_out_64 = {0x00000000 0x00000634}
+    uint64 packets_drop_64 = {0x00000000 0x00000319}
+    uint64 packets_auth_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_echo_reply = {0x00000000 0x00000000}
+}
+cint>
+cint>
+cint>
+cint> bcm_bfd_endpoint_info_t ep_info;
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 9, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 10, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 11, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 12, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 13, &ep_info);
+print ep_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(0, 14, &ep_info);
+print ep_info;
+bcm_bfd_endpoint_info_t ep_info;
+cint>
+cint> bcm_bfd_endpoint_info_t_init(&ep_info);
+cint>
+cint> print bcm_bfd_endpoint_get(0, 9, &ep_info);
+int $$ = 0 (0x0)
+cint>
+cint> print ep_info;
+bcm_bfd_endpoint_info_t ep_info = {
+    unsigned int flags = 128 (0x80)
+    int id = 9 (0x9)
+    int remote_id = 0 (0x0)
+    bcm_bfd_tunnel_type_t type = bcmBFDTunnelTypeUdp (0)
+    int gport = 67108885 (0x4000015)
+    int tx_gport = -1 (0xffffffff)
+    int remote_gport = -1 (0xffffffff)
+    int bfd_period = 0 (0x0)
+    bcm_vlan_t vpn = 0 (0x0000)
+    unsigned char vlan_pri = 0 (0x00)
+    unsigned char inner_vlan_pri = 0 (0x00)
+    int vrf_id = 0 (0x0)
+    uint8[6] dst_mac = 00:00:00:00:00:00
+    uint8[6] src_mac = 00:00:00:00:00:00
+    uint16 pkt_inner_vlan_id = 0 (0x0000)
+    uint32 dst_ip_addr = 0.0.0.0
+    uint8[16] dst_ip6_addr = 0062:0001:0001:0000:0000:0000:0000:0001
+    uint32 src_ip_addr = 0.0.0.0
+    uint8[16] src_ip6_addr = 0062:0001:0001:0000:0000:0000:0000:0006
+    unsigned char ip_tos = 0 (0x00)
+    unsigned char ip_ttl = 255 (0xff)
+    uint32 inner_dst_ip_addr = 0.0.0.0
+    uint8[16] inner_dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 inner_src_ip_addr = 0.0.0.0
+    uint8[16] inner_src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char inner_ip_tos = 0 (0x00)
+    unsigned char inner_ip_ttl = 0 (0x00)
+    unsigned int udp_src_port = 49167 (0xc00f)
+    uint32 label = 0 (0x0)
+    uint32 mpls_hdr = 0 (0x0)
+    bcm_mpls_egress_label_t egress_label = {
+        unsigned int flags = 0 (0x0)
+        unsigned int flags2 = 0 (0x0)
+        uint32 label = 4294967295 (0xffffffff)
+        int qos_map_id = 0 (0x0)
+        unsigned char exp = 255 (0xff)
+        unsigned char ttl = 0 (0x00)
+        unsigned char pkt_pri = 0 (0x00)
+        unsigned char pkt_cfi = 0 (0x00)
+        int tunnel_id = 0 (0x0)
+        int l3_intf_id = 0 (0x0)
+        bcm_mpls_egress_action_t action = BCM_MPLS_EGRESS_ACTION_SWAP (0)
+        int ecn_map_id = 0 (0x0)
+        int int_cn_map_id = 0 (0x0)
+        int egress_failover_id = 0 (0x0)
+        int egress_failover_if_id = 0 (0x0)
+        int outlif_counting_profile = -1 (0xffffffff)
+        bcm_mpls_special_label_push_type_t spl_label_push_type = bcmMplsSpecialLabelPushNone (0)
+        bcm_encap_access_t encap_access = bcmEncapAccessInvalid (0)
+        bcm_qos_egress_model_t egress_qos_model = {
+            bcm_qos_egress_model_type_t egress_qos = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_model_type_t egress_ttl = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_ecn_model_type_t egress_ecn = bcmQosEgressEcnModelInvalid (0)
+        }
+        int estimated_encap_size = 0 (0x0)
+    }
+    int egress_if = 100009 (0x186a9)
+    unsigned char[32] mep_id = {
+        unsigned char mep_id[0] = 0 (0x00)
+        unsigned char mep_id[1] = 0 (0x00)
+        unsigned char mep_id[2] = 0 (0x00)
+        unsigned char mep_id[3] = 0 (0x00)
+        unsigned char mep_id[4] = 0 (0x00)
+        unsigned char mep_id[5] = 0 (0x00)
+        unsigned char mep_id[6] = 0 (0x00)
+        unsigned char mep_id[7] = 0 (0x00)
+        unsigned char mep_id[8] = 0 (0x00)
+        unsigned char mep_id[9] = 0 (0x00)
+        unsigned char mep_id[10] = 0 (0x00)
+        unsigned char mep_id[11] = 0 (0x00)
+        unsigned char mep_id[12] = 0 (0x00)
+        unsigned char mep_id[13] = 0 (0x00)
+        unsigned char mep_id[14] = 0 (0x00)
+        unsigned char mep_id[15] = 0 (0x00)
+        unsigned char mep_id[16] = 0 (0x00)
+        unsigned char mep_id[17] = 0 (0x00)
+        unsigned char mep_id[18] = 0 (0x00)
+        unsigned char mep_id[19] = 0 (0x00)
+        unsigned char mep_id[20] = 0 (0x00)
+        unsigned char mep_id[21] = 0 (0x00)
+        unsigned char mep_id[22] = 0 (0x00)
+        unsigned char mep_id[23] = 0 (0x00)
+        unsigned char mep_id[24] = 0 (0x00)
+        unsigned char mep_id[25] = 0 (0x00)
+        unsigned char mep_id[26] = 0 (0x00)
+        unsigned char mep_id[27] = 0 (0x00)
+        unsigned char mep_id[28] = 0 (0x00)
+        unsigned char mep_id[29] = 0 (0x00)
+        unsigned char mep_id[30] = 0 (0x00)
+        unsigned char mep_id[31] = 0 (0x00)
+    }
+    unsigned char mep_id_length = 0 (0x00)
+    int int_pri = 7 (0x7)
+    unsigned char cpu_qid = 0 (0x00)
+    bcm_bfd_state_t local_state = bcmBFDStateUp (3)
+    unsigned int local_discr = 16 (0x10)
+    bcm_bfd_diag_code_t local_diag = bcmBFDDiagCodeNone (0)
+    unsigned int local_flags = 0 (0x0)
+    unsigned int local_min_tx = 150000 (0x249f0)
+    unsigned int local_min_rx = 150000 (0x249f0)
+    unsigned int local_min_echo = 0 (0x0)
+    unsigned char local_detect_mult = 3 (0x03)
+    bcm_bfd_auth_type_t auth = bcmBFDAuthTypeNone (0)
+    unsigned int auth_index = 0 (0x0)
+    unsigned int tx_auth_seq = 2078818125 (0x7be83f4d)
+    unsigned int rx_auth_seq = 0 (0x0)
+    unsigned int remote_flags = 0 (0x0)
+    bcm_bfd_state_t remote_state = bcmBFDStateUp (3)
+    unsigned int remote_discr = 31 (0x1f)
+    bcm_bfd_diag_code_t remote_diag = bcmBFDDiagCodeNone (0)
+    unsigned int remote_min_tx = 1000000 (0xf4240)
+    unsigned int remote_min_rx = 1000000 (0xf4240)
+    unsigned int remote_min_echo = 0 (0x0)
+    unsigned char remote_detect_mult = 3 (0x03)
+    int sampling_ratio = 0 (0x0)
+    unsigned char loc_clear_threshold = 0 (0x00)
+    unsigned int ip_subnet_length = 0 (0x0)
+    unsigned char[32] remote_mep_id = {
+        unsigned char remote_mep_id[0] = 0 (0x00)
+        unsigned char remote_mep_id[1] = 0 (0x00)
+        unsigned char remote_mep_id[2] = 0 (0x00)
+        unsigned char remote_mep_id[3] = 0 (0x00)
+        unsigned char remote_mep_id[4] = 0 (0x00)
+        unsigned char remote_mep_id[5] = 0 (0x00)
+        unsigned char remote_mep_id[6] = 0 (0x00)
+        unsigned char remote_mep_id[7] = 0 (0x00)
+        unsigned char remote_mep_id[8] = 0 (0x00)
+        unsigned char remote_mep_id[9] = 0 (0x00)
+        unsigned char remote_mep_id[10] = 0 (0x00)
+        unsigned char remote_mep_id[11] = 0 (0x00)
+        unsigned char remote_mep_id[12] = 0 (0x00)
+        unsigned char remote_mep_id[13] = 0 (0x00)
+        unsigned char remote_mep_id[14] = 0 (0x00)
+        unsigned char remote_mep_id[15] = 0 (0x00)
+        unsigned char remote_mep_id[16] = 0 (0x00)
+        unsigned char remote_mep_id[17] = 0 (0x00)
+        unsigned char remote_mep_id[18] = 0 (0x00)
+        unsigned char remote_mep_id[19] = 0 (0x00)
+        unsigned char remote_mep_id[20] = 0 (0x00)
+        unsigned char remote_mep_id[21] = 0 (0x00)
+        unsigned char remote_mep_id[22] = 0 (0x00)
+        unsigned char remote_mep_id[23] = 0 (0x00)
+        unsigned char remote_mep_id[24] = 0 (0x00)
+        unsigned char remote_mep_id[25] = 0 (0x00)
+        unsigned char remote_mep_id[26] = 0 (0x00)
+        unsigned char remote_mep_id[27] = 0 (0x00)
+        unsigned char remote_mep_id[28] = 0 (0x00)
+        unsigned char remote_mep_id[29] = 0 (0x00)
+        unsigned char remote_mep_id[30] = 0 (0x00)
+        unsigned char remote_mep_id[31] = 0 (0x00)
+    }
+    unsigned char remote_mep_id_length = 0 (0x00)
+    unsigned char[32] mis_conn_mep_id = {
+        unsigned char mis_conn_mep_id[0] = 0 (0x00)
+        unsigned char mis_conn_mep_id[1] = 0 (0x00)
+        unsigned char mis_conn_mep_id[2] = 0 (0x00)
+        unsigned char mis_conn_mep_id[3] = 0 (0x00)
+        unsigned char mis_conn_mep_id[4] = 0 (0x00)
+        unsigned char mis_conn_mep_id[5] = 0 (0x00)
+        unsigned char mis_conn_mep_id[6] = 0 (0x00)
+        unsigned char mis_conn_mep_id[7] = 0 (0x00)
+        unsigned char mis_conn_mep_id[8] = 0 (0x00)
+        unsigned char mis_conn_mep_id[9] = 0 (0x00)
+        unsigned char mis_conn_mep_id[10] = 0 (0x00)
+        unsigned char mis_conn_mep_id[11] = 0 (0x00)
+        unsigned char mis_conn_mep_id[12] = 0 (0x00)
+        unsigned char mis_conn_mep_id[13] = 0 (0x00)
+        unsigned char mis_conn_mep_id[14] = 0 (0x00)
+        unsigned char mis_conn_mep_id[15] = 0 (0x00)
+        unsigned char mis_conn_mep_id[16] = 0 (0x00)
+        unsigned char mis_conn_mep_id[17] = 0 (0x00)
+        unsigned char mis_conn_mep_id[18] = 0 (0x00)
+        unsigned char mis_conn_mep_id[19] = 0 (0x00)
+        unsigned char mis_conn_mep_id[20] = 0 (0x00)
+        unsigned char mis_conn_mep_id[21] = 0 (0x00)
+        unsigned char mis_conn_mep_id[22] = 0 (0x00)
+        unsigned char mis_conn_mep_id[23] = 0 (0x00)
+        unsigned char mis_conn_mep_id[24] = 0 (0x00)
+        unsigned char mis_conn_mep_id[25] = 0 (0x00)
+        unsigned char mis_conn_mep_id[26] = 0 (0x00)
+        unsigned char mis_conn_mep_id[27] = 0 (0x00)
+        unsigned char mis_conn_mep_id[28] = 0 (0x00)
+        unsigned char mis_conn_mep_id[29] = 0 (0x00)
+        unsigned char mis_conn_mep_id[30] = 0 (0x00)
+        unsigned char mis_conn_mep_id[31] = 0 (0x00)
+    }
+    unsigned char mis_conn_mep_id_length = 0 (0x00)
+    unsigned int bfd_detection_time = 0 (0x0)
+    uint16 pkt_vlan_id = 0 (0x0000)
+    uint16 rx_pkt_vlan_id = 0 (0x0000)
+    uint32 gal_label = 0 (0x0)
+    unsigned int faults = 0 (0x0)
+    unsigned int flags2 = 0 (0x0)
+    int ipv6_extra_data_index = 0 (0x0)
+    int punt_good_packet_period = 0 (0x0)
+    unsigned char bfd_period_cluster = 0 (0x00)
+    unsigned int vxlan_vnid = 0 (0x0)
+    unsigned short vlan_tpid = 0 (0x0000)
+    unsigned short inner_vlan_tpid = 0 (0x0000)
+    int injected_network_qos = 0 (0x0)
+    int profile_id = 0 (0x0)
+    unsigned char injected_core_id = 0 (0x00)
+}
+cint>
+cint>
+cint>
+cint> bcm_bfd_endpoint_info_t_init(&ep_info);
+cint>
+cint> print bcm_bfd_endpoint_get(0, 10, &ep_info);
+int $$ = 0 (0x0)
+cint>
+cint> print ep_info;
+bcm_bfd_endpoint_info_t ep_info = {
+    unsigned int flags = 0 (0x0)
+    int id = 10 (0xa)
+    int remote_id = 0 (0x0)
+    bcm_bfd_tunnel_type_t type = bcmBFDTunnelTypeUdp (0)
+    int gport = 67108885 (0x4000015)
+    int tx_gport = -1 (0xffffffff)
+    int remote_gport = -1 (0xffffffff)
+    int bfd_period = 0 (0x0)
+    bcm_vlan_t vpn = 0 (0x0000)
+    unsigned char vlan_pri = 0 (0x00)
+    unsigned char inner_vlan_pri = 0 (0x00)
+    int vrf_id = 0 (0x0)
+    uint8[6] dst_mac = 00:00:00:00:00:00
+    uint8[6] src_mac = 00:00:00:00:00:00
+    uint16 pkt_inner_vlan_id = 0 (0x0000)
+    uint32 dst_ip_addr = 62.1.1.2
+    uint8[16] dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 src_ip_addr = 62.1.1.6
+    uint8[16] src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char ip_tos = 0 (0x00)
+    unsigned char ip_ttl = 255 (0xff)
+    uint32 inner_dst_ip_addr = 0.0.0.0
+    uint8[16] inner_dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 inner_src_ip_addr = 0.0.0.0
+    uint8[16] inner_src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char inner_ip_tos = 0 (0x00)
+    unsigned char inner_ip_ttl = 0 (0x00)
+    unsigned int udp_src_port = 49166 (0xc00e)
+    uint32 label = 0 (0x0)
+    uint32 mpls_hdr = 0 (0x0)
+    bcm_mpls_egress_label_t egress_label = {
+        unsigned int flags = 0 (0x0)
+        unsigned int flags2 = 0 (0x0)
+        uint32 label = 4294967295 (0xffffffff)
+        int qos_map_id = 0 (0x0)
+        unsigned char exp = 255 (0xff)
+        unsigned char ttl = 0 (0x00)
+        unsigned char pkt_pri = 0 (0x00)
+        unsigned char pkt_cfi = 0 (0x00)
+        int tunnel_id = 0 (0x0)
+        int l3_intf_id = 0 (0x0)
+        bcm_mpls_egress_action_t action = BCM_MPLS_EGRESS_ACTION_SWAP (0)
+        int ecn_map_id = 0 (0x0)
+        int int_cn_map_id = 0 (0x0)
+        int egress_failover_id = 0 (0x0)
+        int egress_failover_if_id = 0 (0x0)
+        int outlif_counting_profile = -1 (0xffffffff)
+        bcm_mpls_special_label_push_type_t spl_label_push_type = bcmMplsSpecialLabelPushNone (0)
+        bcm_encap_access_t encap_access = bcmEncapAccessInvalid (0)
+        bcm_qos_egress_model_t egress_qos_model = {
+            bcm_qos_egress_model_type_t egress_qos = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_model_type_t egress_ttl = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_ecn_model_type_t egress_ecn = bcmQosEgressEcnModelInvalid (0)
+        }
+        int estimated_encap_size = 0 (0x0)
+    }
+    int egress_if = 100009 (0x186a9)
+    unsigned char[32] mep_id = {
+        unsigned char mep_id[0] = 0 (0x00)
+        unsigned char mep_id[1] = 0 (0x00)
+        unsigned char mep_id[2] = 0 (0x00)
+        unsigned char mep_id[3] = 0 (0x00)
+        unsigned char mep_id[4] = 0 (0x00)
+        unsigned char mep_id[5] = 0 (0x00)
+        unsigned char mep_id[6] = 0 (0x00)
+        unsigned char mep_id[7] = 0 (0x00)
+        unsigned char mep_id[8] = 0 (0x00)
+        unsigned char mep_id[9] = 0 (0x00)
+        unsigned char mep_id[10] = 0 (0x00)
+        unsigned char mep_id[11] = 0 (0x00)
+        unsigned char mep_id[12] = 0 (0x00)
+        unsigned char mep_id[13] = 0 (0x00)
+        unsigned char mep_id[14] = 0 (0x00)
+        unsigned char mep_id[15] = 0 (0x00)
+        unsigned char mep_id[16] = 0 (0x00)
+        unsigned char mep_id[17] = 0 (0x00)
+        unsigned char mep_id[18] = 0 (0x00)
+        unsigned char mep_id[19] = 0 (0x00)
+        unsigned char mep_id[20] = 0 (0x00)
+        unsigned char mep_id[21] = 0 (0x00)
+        unsigned char mep_id[22] = 0 (0x00)
+        unsigned char mep_id[23] = 0 (0x00)
+        unsigned char mep_id[24] = 0 (0x00)
+        unsigned char mep_id[25] = 0 (0x00)
+        unsigned char mep_id[26] = 0 (0x00)
+        unsigned char mep_id[27] = 0 (0x00)
+        unsigned char mep_id[28] = 0 (0x00)
+        unsigned char mep_id[29] = 0 (0x00)
+        unsigned char mep_id[30] = 0 (0x00)
+        unsigned char mep_id[31] = 0 (0x00)
+    }
+    unsigned char mep_id_length = 0 (0x00)
+    int int_pri = 7 (0x7)
+    unsigned char cpu_qid = 0 (0x00)
+    bcm_bfd_state_t local_state = bcmBFDStateUp (3)
+    unsigned int local_discr = 15 (0xf)
+    bcm_bfd_diag_code_t local_diag = bcmBFDDiagCodeNone (0)
+    unsigned int local_flags = 0 (0x0)
+    unsigned int local_min_tx = 150000 (0x249f0)
+    unsigned int local_min_rx = 150000 (0x249f0)
+    unsigned int local_min_echo = 0 (0x0)
+    unsigned char local_detect_mult = 3 (0x03)
+    bcm_bfd_auth_type_t auth = bcmBFDAuthTypeNone (0)
+    unsigned int auth_index = 0 (0x0)
+    unsigned int tx_auth_seq = 326699783 (0x13790b07)
+    unsigned int rx_auth_seq = 0 (0x0)
+    unsigned int remote_flags = 0 (0x0)
+    bcm_bfd_state_t remote_state = bcmBFDStateUp (3)
+    unsigned int remote_discr = 29 (0x1d)
+    bcm_bfd_diag_code_t remote_diag = bcmBFDDiagCodeNone (0)
+    unsigned int remote_min_tx = 1000000 (0xf4240)
+    unsigned int remote_min_rx = 1000000 (0xf4240)
+    unsigned int remote_min_echo = 0 (0x0)
+    unsigned char remote_detect_mult = 3 (0x03)
+    int sampling_ratio = 0 (0x0)
+    unsigned char loc_clear_threshold = 0 (0x00)
+    unsigned int ip_subnet_length = 0 (0x0)
+    unsigned char[32] remote_mep_id = {
+        unsigned char remote_mep_id[0] = 0 (0x00)
+        unsigned char remote_mep_id[1] = 0 (0x00)
+        unsigned char remote_mep_id[2] = 0 (0x00)
+        unsigned char remote_mep_id[3] = 0 (0x00)
+        unsigned char remote_mep_id[4] = 0 (0x00)
+        unsigned char remote_mep_id[5] = 0 (0x00)
+        unsigned char remote_mep_id[6] = 0 (0x00)
+        unsigned char remote_mep_id[7] = 0 (0x00)
+        unsigned char remote_mep_id[8] = 0 (0x00)
+        unsigned char remote_mep_id[9] = 0 (0x00)
+        unsigned char remote_mep_id[10] = 0 (0x00)
+        unsigned char remote_mep_id[11] = 0 (0x00)
+        unsigned char remote_mep_id[12] = 0 (0x00)
+        unsigned char remote_mep_id[13] = 0 (0x00)
+        unsigned char remote_mep_id[14] = 0 (0x00)
+        unsigned char remote_mep_id[15] = 0 (0x00)
+        unsigned char remote_mep_id[16] = 0 (0x00)
+        unsigned char remote_mep_id[17] = 0 (0x00)
+        unsigned char remote_mep_id[18] = 0 (0x00)
+        unsigned char remote_mep_id[19] = 0 (0x00)
+        unsigned char remote_mep_id[20] = 0 (0x00)
+        unsigned char remote_mep_id[21] = 0 (0x00)
+        unsigned char remote_mep_id[22] = 0 (0x00)
+        unsigned char remote_mep_id[23] = 0 (0x00)
+        unsigned char remote_mep_id[24] = 0 (0x00)
+        unsigned char remote_mep_id[25] = 0 (0x00)
+        unsigned char remote_mep_id[26] = 0 (0x00)
+        unsigned char remote_mep_id[27] = 0 (0x00)
+        unsigned char remote_mep_id[28] = 0 (0x00)
+        unsigned char remote_mep_id[29] = 0 (0x00)
+        unsigned char remote_mep_id[30] = 0 (0x00)
+        unsigned char remote_mep_id[31] = 0 (0x00)
+    }
+    unsigned char remote_mep_id_length = 0 (0x00)
+    unsigned char[32] mis_conn_mep_id = {
+        unsigned char mis_conn_mep_id[0] = 0 (0x00)
+        unsigned char mis_conn_mep_id[1] = 0 (0x00)
+        unsigned char mis_conn_mep_id[2] = 0 (0x00)
+        unsigned char mis_conn_mep_id[3] = 0 (0x00)
+        unsigned char mis_conn_mep_id[4] = 0 (0x00)
+        unsigned char mis_conn_mep_id[5] = 0 (0x00)
+        unsigned char mis_conn_mep_id[6] = 0 (0x00)
+        unsigned char mis_conn_mep_id[7] = 0 (0x00)
+        unsigned char mis_conn_mep_id[8] = 0 (0x00)
+        unsigned char mis_conn_mep_id[9] = 0 (0x00)
+        unsigned char mis_conn_mep_id[10] = 0 (0x00)
+        unsigned char mis_conn_mep_id[11] = 0 (0x00)
+        unsigned char mis_conn_mep_id[12] = 0 (0x00)
+        unsigned char mis_conn_mep_id[13] = 0 (0x00)
+        unsigned char mis_conn_mep_id[14] = 0 (0x00)
+        unsigned char mis_conn_mep_id[15] = 0 (0x00)
+        unsigned char mis_conn_mep_id[16] = 0 (0x00)
+        unsigned char mis_conn_mep_id[17] = 0 (0x00)
+        unsigned char mis_conn_mep_id[18] = 0 (0x00)
+        unsigned char mis_conn_mep_id[19] = 0 (0x00)
+        unsigned char mis_conn_mep_id[20] = 0 (0x00)
+        unsigned char mis_conn_mep_id[21] = 0 (0x00)
+        unsigned char mis_conn_mep_id[22] = 0 (0x00)
+        unsigned char mis_conn_mep_id[23] = 0 (0x00)
+        unsigned char mis_conn_mep_id[24] = 0 (0x00)
+        unsigned char mis_conn_mep_id[25] = 0 (0x00)
+        unsigned char mis_conn_mep_id[26] = 0 (0x00)
+        unsigned char mis_conn_mep_id[27] = 0 (0x00)
+        unsigned char mis_conn_mep_id[28] = 0 (0x00)
+        unsigned char mis_conn_mep_id[29] = 0 (0x00)
+        unsigned char mis_conn_mep_id[30] = 0 (0x00)
+        unsigned char mis_conn_mep_id[31] = 0 (0x00)
+    }
+    unsigned char mis_conn_mep_id_length = 0 (0x00)
+    unsigned int bfd_detection_time = 0 (0x0)
+    uint16 pkt_vlan_id = 0 (0x0000)
+    uint16 rx_pkt_vlan_id = 0 (0x0000)
+    uint32 gal_label = 0 (0x0)
+    unsigned int faults = 0 (0x0)
+    unsigned int flags2 = 0 (0x0)
+    int ipv6_extra_data_index = 0 (0x0)
+    int punt_good_packet_period = 0 (0x0)
+    unsigned char bfd_period_cluster = 0 (0x00)
+    unsigned int vxlan_vnid = 0 (0x0)
+    unsigned short vlan_tpid = 0 (0x0000)
+    unsigned short inner_vlan_tpid = 0 (0x0000)
+    int injected_network_qos = 0 (0x0)
+    int profile_id = 0 (0x0)
+    unsigned char injected_core_id = 0 (0x00)
+}
+cint>
+cint>
+cint>
+cint> bcm_bfd_endpoint_info_t_init(&ep_info);
+cint>
+cint> print bcm_bfd_endpoint_get(0, 11, &ep_info);
+int $$ = 0 (0x0)
+cint>
+cint> print ep_info;
+bcm_bfd_endpoint_info_t ep_info = {
+    unsigned int flags = 0 (0x0)
+    int id = 11 (0xb)
+    int remote_id = 0 (0x0)
+    bcm_bfd_tunnel_type_t type = bcmBFDTunnelTypeUdp (0)
+    int gport = 67108939 (0x400004b)
+    int tx_gport = -1 (0xffffffff)
+    int remote_gport = -1 (0xffffffff)
+    int bfd_period = 0 (0x0)
+    bcm_vlan_t vpn = 0 (0x0000)
+    unsigned char vlan_pri = 0 (0x00)
+    unsigned char inner_vlan_pri = 0 (0x00)
+    int vrf_id = 0 (0x0)
+    uint8[6] dst_mac = 00:00:00:00:00:00
+    uint8[6] src_mac = 00:00:00:00:00:00
+    uint16 pkt_inner_vlan_id = 0 (0x0000)
+    uint32 dst_ip_addr = 62.1.1.2
+    uint8[16] dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 src_ip_addr = 62.1.1.6
+    uint8[16] src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char ip_tos = 0 (0x00)
+    unsigned char ip_ttl = 255 (0xff)
+    uint32 inner_dst_ip_addr = 0.0.0.0
+    uint8[16] inner_dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 inner_src_ip_addr = 0.0.0.0
+    uint8[16] inner_src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char inner_ip_tos = 0 (0x00)
+    unsigned char inner_ip_ttl = 0 (0x00)
+    unsigned int udp_src_port = 49162 (0xc00a)
+    uint32 label = 0 (0x0)
+    uint32 mpls_hdr = 0 (0x0)
+    bcm_mpls_egress_label_t egress_label = {
+        unsigned int flags = 0 (0x0)
+        unsigned int flags2 = 0 (0x0)
+        uint32 label = 4294967295 (0xffffffff)
+        int qos_map_id = 0 (0x0)
+        unsigned char exp = 255 (0xff)
+        unsigned char ttl = 0 (0x00)
+        unsigned char pkt_pri = 0 (0x00)
+        unsigned char pkt_cfi = 0 (0x00)
+        int tunnel_id = 0 (0x0)
+        int l3_intf_id = 0 (0x0)
+        bcm_mpls_egress_action_t action = BCM_MPLS_EGRESS_ACTION_SWAP (0)
+        int ecn_map_id = 0 (0x0)
+        int int_cn_map_id = 0 (0x0)
+        int egress_failover_id = 0 (0x0)
+        int egress_failover_if_id = 0 (0x0)
+        int outlif_counting_profile = -1 (0xffffffff)
+        bcm_mpls_special_label_push_type_t spl_label_push_type = bcmMplsSpecialLabelPushNone (0)
+        bcm_encap_access_t encap_access = bcmEncapAccessInvalid (0)
+        bcm_qos_egress_model_t egress_qos_model = {
+            bcm_qos_egress_model_type_t egress_qos = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_model_type_t egress_ttl = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_ecn_model_type_t egress_ecn = bcmQosEgressEcnModelInvalid (0)
+        }
+        int estimated_encap_size = 0 (0x0)
+    }
+    int egress_if = 100009 (0x186a9)
+    unsigned char[32] mep_id = {
+        unsigned char mep_id[0] = 0 (0x00)
+        unsigned char mep_id[1] = 0 (0x00)
+        unsigned char mep_id[2] = 0 (0x00)
+        unsigned char mep_id[3] = 0 (0x00)
+        unsigned char mep_id[4] = 0 (0x00)
+        unsigned char mep_id[5] = 0 (0x00)
+        unsigned char mep_id[6] = 0 (0x00)
+        unsigned char mep_id[7] = 0 (0x00)
+        unsigned char mep_id[8] = 0 (0x00)
+        unsigned char mep_id[9] = 0 (0x00)
+        unsigned char mep_id[10] = 0 (0x00)
+        unsigned char mep_id[11] = 0 (0x00)
+        unsigned char mep_id[12] = 0 (0x00)
+        unsigned char mep_id[13] = 0 (0x00)
+        unsigned char mep_id[14] = 0 (0x00)
+        unsigned char mep_id[15] = 0 (0x00)
+        unsigned char mep_id[16] = 0 (0x00)
+        unsigned char mep_id[17] = 0 (0x00)
+        unsigned char mep_id[18] = 0 (0x00)
+        unsigned char mep_id[19] = 0 (0x00)
+        unsigned char mep_id[20] = 0 (0x00)
+        unsigned char mep_id[21] = 0 (0x00)
+        unsigned char mep_id[22] = 0 (0x00)
+        unsigned char mep_id[23] = 0 (0x00)
+        unsigned char mep_id[24] = 0 (0x00)
+        unsigned char mep_id[25] = 0 (0x00)
+        unsigned char mep_id[26] = 0 (0x00)
+        unsigned char mep_id[27] = 0 (0x00)
+        unsigned char mep_id[28] = 0 (0x00)
+        unsigned char mep_id[29] = 0 (0x00)
+        unsigned char mep_id[30] = 0 (0x00)
+        unsigned char mep_id[31] = 0 (0x00)
+    }
+    unsigned char mep_id_length = 0 (0x00)
+    int int_pri = 7 (0x7)
+    unsigned char cpu_qid = 0 (0x00)
+    bcm_bfd_state_t local_state = bcmBFDStateDown (1)
+    unsigned int local_discr = 11 (0xb)
+    bcm_bfd_diag_code_t local_diag = bcmBFDDiagCodeCtrlDetectTimeExpired (1)
+    unsigned int local_flags = 0 (0x0)
+    unsigned int local_min_tx = 150000 (0x249f0)
+    unsigned int local_min_rx = 150000 (0x249f0)
+    unsigned int local_min_echo = 0 (0x0)
+    unsigned char local_detect_mult = 3 (0x03)
+    bcm_bfd_auth_type_t auth = bcmBFDAuthTypeNone (0)
+    unsigned int auth_index = 0 (0x0)
+    unsigned int tx_auth_seq = 1585922636 (0x5e87424c)
+    unsigned int rx_auth_seq = 0 (0x0)
+    unsigned int remote_flags = 0 (0x0)
+    bcm_bfd_state_t remote_state = bcmBFDStateUp (3)
+    unsigned int remote_discr = 0 (0x0)
+    bcm_bfd_diag_code_t remote_diag = bcmBFDDiagCodeNone (0)
+    unsigned int remote_min_tx = 1000000 (0xf4240)
+    unsigned int remote_min_rx = 1 (0x1)
+    unsigned int remote_min_echo = 0 (0x0)
+    unsigned char remote_detect_mult = 3 (0x03)
+    int sampling_ratio = 0 (0x0)
+    unsigned char loc_clear_threshold = 0 (0x00)
+    unsigned int ip_subnet_length = 0 (0x0)
+    unsigned char[32] remote_mep_id = {
+        unsigned char remote_mep_id[0] = 0 (0x00)
+        unsigned char remote_mep_id[1] = 0 (0x00)
+        unsigned char remote_mep_id[2] = 0 (0x00)
+        unsigned char remote_mep_id[3] = 0 (0x00)
+        unsigned char remote_mep_id[4] = 0 (0x00)
+        unsigned char remote_mep_id[5] = 0 (0x00)
+        unsigned char remote_mep_id[6] = 0 (0x00)
+        unsigned char remote_mep_id[7] = 0 (0x00)
+        unsigned char remote_mep_id[8] = 0 (0x00)
+        unsigned char remote_mep_id[9] = 0 (0x00)
+        unsigned char remote_mep_id[10] = 0 (0x00)
+        unsigned char remote_mep_id[11] = 0 (0x00)
+        unsigned char remote_mep_id[12] = 0 (0x00)
+        unsigned char remote_mep_id[13] = 0 (0x00)
+        unsigned char remote_mep_id[14] = 0 (0x00)
+        unsigned char remote_mep_id[15] = 0 (0x00)
+        unsigned char remote_mep_id[16] = 0 (0x00)
+        unsigned char remote_mep_id[17] = 0 (0x00)
+        unsigned char remote_mep_id[18] = 0 (0x00)
+        unsigned char remote_mep_id[19] = 0 (0x00)
+        unsigned char remote_mep_id[20] = 0 (0x00)
+        unsigned char remote_mep_id[21] = 0 (0x00)
+        unsigned char remote_mep_id[22] = 0 (0x00)
+        unsigned char remote_mep_id[23] = 0 (0x00)
+        unsigned char remote_mep_id[24] = 0 (0x00)
+        unsigned char remote_mep_id[25] = 0 (0x00)
+        unsigned char remote_mep_id[26] = 0 (0x00)
+        unsigned char remote_mep_id[27] = 0 (0x00)
+        unsigned char remote_mep_id[28] = 0 (0x00)
+        unsigned char remote_mep_id[29] = 0 (0x00)
+        unsigned char remote_mep_id[30] = 0 (0x00)
+        unsigned char remote_mep_id[31] = 0 (0x00)
+    }
+    unsigned char remote_mep_id_length = 0 (0x00)
+    unsigned char[32] mis_conn_mep_id = {
+        unsigned char mis_conn_mep_id[0] = 0 (0x00)
+        unsigned char mis_conn_mep_id[1] = 0 (0x00)
+        unsigned char mis_conn_mep_id[2] = 0 (0x00)
+        unsigned char mis_conn_mep_id[3] = 0 (0x00)
+        unsigned char mis_conn_mep_id[4] = 0 (0x00)
+        unsigned char mis_conn_mep_id[5] = 0 (0x00)
+        unsigned char mis_conn_mep_id[6] = 0 (0x00)
+        unsigned char mis_conn_mep_id[7] = 0 (0x00)
+        unsigned char mis_conn_mep_id[8] = 0 (0x00)
+        unsigned char mis_conn_mep_id[9] = 0 (0x00)
+        unsigned char mis_conn_mep_id[10] = 0 (0x00)
+        unsigned char mis_conn_mep_id[11] = 0 (0x00)
+        unsigned char mis_conn_mep_id[12] = 0 (0x00)
+        unsigned char mis_conn_mep_id[13] = 0 (0x00)
+        unsigned char mis_conn_mep_id[14] = 0 (0x00)
+        unsigned char mis_conn_mep_id[15] = 0 (0x00)
+        unsigned char mis_conn_mep_id[16] = 0 (0x00)
+        unsigned char mis_conn_mep_id[17] = 0 (0x00)
+        unsigned char mis_conn_mep_id[18] = 0 (0x00)
+        unsigned char mis_conn_mep_id[19] = 0 (0x00)
+        unsigned char mis_conn_mep_id[20] = 0 (0x00)
+        unsigned char mis_conn_mep_id[21] = 0 (0x00)
+        unsigned char mis_conn_mep_id[22] = 0 (0x00)
+        unsigned char mis_conn_mep_id[23] = 0 (0x00)
+        unsigned char mis_conn_mep_id[24] = 0 (0x00)
+        unsigned char mis_conn_mep_id[25] = 0 (0x00)
+        unsigned char mis_conn_mep_id[26] = 0 (0x00)
+        unsigned char mis_conn_mep_id[27] = 0 (0x00)
+        unsigned char mis_conn_mep_id[28] = 0 (0x00)
+        unsigned char mis_conn_mep_id[29] = 0 (0x00)
+        unsigned char mis_conn_mep_id[30] = 0 (0x00)
+        unsigned char mis_conn_mep_id[31] = 0 (0x00)
+    }
+    unsigned char mis_conn_mep_id_length = 0 (0x00)
+    unsigned int bfd_detection_time = 0 (0x0)
+    uint16 pkt_vlan_id = 0 (0x0000)
+    uint16 rx_pkt_vlan_id = 0 (0x0000)
+    uint32 gal_label = 0 (0x0)
+    unsigned int faults = 0 (0x0)
+    unsigned int flags2 = 0 (0x0)
+    int ipv6_extra_data_index = 0 (0x0)
+    int punt_good_packet_period = 0 (0x0)
+    unsigned char bfd_period_cluster = 0 (0x00)
+    unsigned int vxlan_vnid = 0 (0x0)
+    unsigned short vlan_tpid = 0 (0x0000)
+    unsigned short inner_vlan_tpid = 0 (0x0000)
+    int injected_network_qos = 0 (0x0)
+    int profile_id = 0 (0x0)
+    unsigned char injected_core_id = 0 (0x00)
+}
+cint>
+cint>
+cint>
+cint> bcm_bfd_endpoint_info_t_init(&ep_info);
+cint>
+cint> print bcm_bfd_endpoint_get(0, 12, &ep_info);
+int $$ = 0 (0x0)
+cint>
+cint> print ep_info;
+bcm_bfd_endpoint_info_t ep_info = {
+    unsigned int flags = 128 (0x80)
+    int id = 12 (0xc)
+    int remote_id = 0 (0x0)
+    bcm_bfd_tunnel_type_t type = bcmBFDTunnelTypeUdp (0)
+    int gport = 67108939 (0x400004b)
+    int tx_gport = -1 (0xffffffff)
+    int remote_gport = -1 (0xffffffff)
+    int bfd_period = 0 (0x0)
+    bcm_vlan_t vpn = 0 (0x0000)
+    unsigned char vlan_pri = 0 (0x00)
+    unsigned char inner_vlan_pri = 0 (0x00)
+    int vrf_id = 0 (0x0)
+    uint8[6] dst_mac = 00:00:00:00:00:00
+    uint8[6] src_mac = 00:00:00:00:00:00
+    uint16 pkt_inner_vlan_id = 0 (0x0000)
+    uint32 dst_ip_addr = 0.0.0.0
+    uint8[16] dst_ip6_addr = 0062:0001:0001:0000:0000:0000:0000:0001
+    uint32 src_ip_addr = 0.0.0.0
+    uint8[16] src_ip6_addr = 0062:0001:0001:0000:0000:0000:0000:0006
+    unsigned char ip_tos = 0 (0x00)
+    unsigned char ip_ttl = 255 (0xff)
+    uint32 inner_dst_ip_addr = 0.0.0.0
+    uint8[16] inner_dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 inner_src_ip_addr = 0.0.0.0
+    uint8[16] inner_src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char inner_ip_tos = 0 (0x00)
+    unsigned char inner_ip_ttl = 0 (0x00)
+    unsigned int udp_src_port = 49163 (0xc00b)
+    uint32 label = 0 (0x0)
+    uint32 mpls_hdr = 0 (0x0)
+    bcm_mpls_egress_label_t egress_label = {
+        unsigned int flags = 0 (0x0)
+        unsigned int flags2 = 0 (0x0)
+        uint32 label = 4294967295 (0xffffffff)
+        int qos_map_id = 0 (0x0)
+        unsigned char exp = 255 (0xff)
+        unsigned char ttl = 0 (0x00)
+        unsigned char pkt_pri = 0 (0x00)
+        unsigned char pkt_cfi = 0 (0x00)
+        int tunnel_id = 0 (0x0)
+        int l3_intf_id = 0 (0x0)
+        bcm_mpls_egress_action_t action = BCM_MPLS_EGRESS_ACTION_SWAP (0)
+        int ecn_map_id = 0 (0x0)
+        int int_cn_map_id = 0 (0x0)
+        int egress_failover_id = 0 (0x0)
+        int egress_failover_if_id = 0 (0x0)
+        int outlif_counting_profile = -1 (0xffffffff)
+        bcm_mpls_special_label_push_type_t spl_label_push_type = bcmMplsSpecialLabelPushNone (0)
+        bcm_encap_access_t encap_access = bcmEncapAccessInvalid (0)
+        bcm_qos_egress_model_t egress_qos_model = {
+            bcm_qos_egress_model_type_t egress_qos = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_model_type_t egress_ttl = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_ecn_model_type_t egress_ecn = bcmQosEgressEcnModelInvalid (0)
+        }
+        int estimated_encap_size = 0 (0x0)
+    }
+    int egress_if = 100009 (0x186a9)
+    unsigned char[32] mep_id = {
+        unsigned char mep_id[0] = 0 (0x00)
+        unsigned char mep_id[1] = 0 (0x00)
+        unsigned char mep_id[2] = 0 (0x00)
+        unsigned char mep_id[3] = 0 (0x00)
+        unsigned char mep_id[4] = 0 (0x00)
+        unsigned char mep_id[5] = 0 (0x00)
+        unsigned char mep_id[6] = 0 (0x00)
+        unsigned char mep_id[7] = 0 (0x00)
+        unsigned char mep_id[8] = 0 (0x00)
+        unsigned char mep_id[9] = 0 (0x00)
+        unsigned char mep_id[10] = 0 (0x00)
+        unsigned char mep_id[11] = 0 (0x00)
+        unsigned char mep_id[12] = 0 (0x00)
+        unsigned char mep_id[13] = 0 (0x00)
+        unsigned char mep_id[14] = 0 (0x00)
+        unsigned char mep_id[15] = 0 (0x00)
+        unsigned char mep_id[16] = 0 (0x00)
+        unsigned char mep_id[17] = 0 (0x00)
+        unsigned char mep_id[18] = 0 (0x00)
+        unsigned char mep_id[19] = 0 (0x00)
+        unsigned char mep_id[20] = 0 (0x00)
+        unsigned char mep_id[21] = 0 (0x00)
+        unsigned char mep_id[22] = 0 (0x00)
+        unsigned char mep_id[23] = 0 (0x00)
+        unsigned char mep_id[24] = 0 (0x00)
+        unsigned char mep_id[25] = 0 (0x00)
+        unsigned char mep_id[26] = 0 (0x00)
+        unsigned char mep_id[27] = 0 (0x00)
+        unsigned char mep_id[28] = 0 (0x00)
+        unsigned char mep_id[29] = 0 (0x00)
+        unsigned char mep_id[30] = 0 (0x00)
+        unsigned char mep_id[31] = 0 (0x00)
+    }
+    unsigned char mep_id_length = 0 (0x00)
+    int int_pri = 7 (0x7)
+    unsigned char cpu_qid = 0 (0x00)
+    bcm_bfd_state_t local_state = bcmBFDStateUp (3)
+    unsigned int local_discr = 12 (0xc)
+    bcm_bfd_diag_code_t local_diag = bcmBFDDiagCodeNone (0)
+    unsigned int local_flags = 0 (0x0)
+    unsigned int local_min_tx = 150000 (0x249f0)
+    unsigned int local_min_rx = 150000 (0x249f0)
+    unsigned int local_min_echo = 0 (0x0)
+    unsigned char local_detect_mult = 3 (0x03)
+    bcm_bfd_auth_type_t auth = bcmBFDAuthTypeNone (0)
+    unsigned int auth_index = 0 (0x0)
+    unsigned int tx_auth_seq = 1291582441 (0x4cfbfbe9)
+    unsigned int rx_auth_seq = 0 (0x0)
+    unsigned int remote_flags = 0 (0x0)
+    bcm_bfd_state_t remote_state = bcmBFDStateUp (3)
+    unsigned int remote_discr = 33 (0x21)
+    bcm_bfd_diag_code_t remote_diag = bcmBFDDiagCodeNone (0)
+    unsigned int remote_min_tx = 1000000 (0xf4240)
+    unsigned int remote_min_rx = 1000000 (0xf4240)
+    unsigned int remote_min_echo = 0 (0x0)
+    unsigned char remote_detect_mult = 3 (0x03)
+    int sampling_ratio = 0 (0x0)
+    unsigned char loc_clear_threshold = 0 (0x00)
+    unsigned int ip_subnet_length = 0 (0x0)
+    unsigned char[32] remote_mep_id = {
+        unsigned char remote_mep_id[0] = 0 (0x00)
+        unsigned char remote_mep_id[1] = 0 (0x00)
+        unsigned char remote_mep_id[2] = 0 (0x00)
+        unsigned char remote_mep_id[3] = 0 (0x00)
+        unsigned char remote_mep_id[4] = 0 (0x00)
+        unsigned char remote_mep_id[5] = 0 (0x00)
+        unsigned char remote_mep_id[6] = 0 (0x00)
+        unsigned char remote_mep_id[7] = 0 (0x00)
+        unsigned char remote_mep_id[8] = 0 (0x00)
+        unsigned char remote_mep_id[9] = 0 (0x00)
+        unsigned char remote_mep_id[10] = 0 (0x00)
+        unsigned char remote_mep_id[11] = 0 (0x00)
+        unsigned char remote_mep_id[12] = 0 (0x00)
+        unsigned char remote_mep_id[13] = 0 (0x00)
+        unsigned char remote_mep_id[14] = 0 (0x00)
+        unsigned char remote_mep_id[15] = 0 (0x00)
+        unsigned char remote_mep_id[16] = 0 (0x00)
+        unsigned char remote_mep_id[17] = 0 (0x00)
+        unsigned char remote_mep_id[18] = 0 (0x00)
+        unsigned char remote_mep_id[19] = 0 (0x00)
+        unsigned char remote_mep_id[20] = 0 (0x00)
+        unsigned char remote_mep_id[21] = 0 (0x00)
+        unsigned char remote_mep_id[22] = 0 (0x00)
+        unsigned char remote_mep_id[23] = 0 (0x00)
+        unsigned char remote_mep_id[24] = 0 (0x00)
+        unsigned char remote_mep_id[25] = 0 (0x00)
+        unsigned char remote_mep_id[26] = 0 (0x00)
+        unsigned char remote_mep_id[27] = 0 (0x00)
+        unsigned char remote_mep_id[28] = 0 (0x00)
+        unsigned char remote_mep_id[29] = 0 (0x00)
+        unsigned char remote_mep_id[30] = 0 (0x00)
+        unsigned char remote_mep_id[31] = 0 (0x00)
+    }
+    unsigned char remote_mep_id_length = 0 (0x00)
+    unsigned char[32] mis_conn_mep_id = {
+        unsigned char mis_conn_mep_id[0] = 0 (0x00)
+        unsigned char mis_conn_mep_id[1] = 0 (0x00)
+        unsigned char mis_conn_mep_id[2] = 0 (0x00)
+        unsigned char mis_conn_mep_id[3] = 0 (0x00)
+        unsigned char mis_conn_mep_id[4] = 0 (0x00)
+        unsigned char mis_conn_mep_id[5] = 0 (0x00)
+        unsigned char mis_conn_mep_id[6] = 0 (0x00)
+        unsigned char mis_conn_mep_id[7] = 0 (0x00)
+        unsigned char mis_conn_mep_id[8] = 0 (0x00)
+        unsigned char mis_conn_mep_id[9] = 0 (0x00)
+        unsigned char mis_conn_mep_id[10] = 0 (0x00)
+        unsigned char mis_conn_mep_id[11] = 0 (0x00)
+        unsigned char mis_conn_mep_id[12] = 0 (0x00)
+        unsigned char mis_conn_mep_id[13] = 0 (0x00)
+        unsigned char mis_conn_mep_id[14] = 0 (0x00)
+        unsigned char mis_conn_mep_id[15] = 0 (0x00)
+        unsigned char mis_conn_mep_id[16] = 0 (0x00)
+        unsigned char mis_conn_mep_id[17] = 0 (0x00)
+        unsigned char mis_conn_mep_id[18] = 0 (0x00)
+        unsigned char mis_conn_mep_id[19] = 0 (0x00)
+        unsigned char mis_conn_mep_id[20] = 0 (0x00)
+        unsigned char mis_conn_mep_id[21] = 0 (0x00)
+        unsigned char mis_conn_mep_id[22] = 0 (0x00)
+        unsigned char mis_conn_mep_id[23] = 0 (0x00)
+        unsigned char mis_conn_mep_id[24] = 0 (0x00)
+        unsigned char mis_conn_mep_id[25] = 0 (0x00)
+        unsigned char mis_conn_mep_id[26] = 0 (0x00)
+        unsigned char mis_conn_mep_id[27] = 0 (0x00)
+        unsigned char mis_conn_mep_id[28] = 0 (0x00)
+        unsigned char mis_conn_mep_id[29] = 0 (0x00)
+        unsigned char mis_conn_mep_id[30] = 0 (0x00)
+        unsigned char mis_conn_mep_id[31] = 0 (0x00)
+    }
+    unsigned char mis_conn_mep_id_length = 0 (0x00)
+    unsigned int bfd_detection_time = 0 (0x0)
+    uint16 pkt_vlan_id = 0 (0x0000)
+    uint16 rx_pkt_vlan_id = 0 (0x0000)
+    uint32 gal_label = 0 (0x0)
+    unsigned int faults = 0 (0x0)
+    unsigned int flags2 = 0 (0x0)
+    int ipv6_extra_data_index = 0 (0x0)
+    int punt_good_packet_period = 0 (0x0)
+    unsigned char bfd_period_cluster = 0 (0x00)
+    unsigned int vxlan_vnid = 0 (0x0)
+    unsigned short vlan_tpid = 0 (0x0000)
+    unsigned short inner_vlan_tpid = 0 (0x0000)
+    int injected_network_qos = 0 (0x0)
+    int profile_id = 0 (0x0)
+    unsigned char injected_core_id = 0 (0x00)
+}
+cint>
+cint>
+cint>
+cint> bcm_bfd_endpoint_info_t_init(&ep_info);
+cint>
+cint> print bcm_bfd_endpoint_get(0, 13, &ep_info);
+int $$ = 0 (0x0)
+cint>
+cint> print ep_info;
+bcm_bfd_endpoint_info_t ep_info = {
+    unsigned int flags = 128 (0x80)
+    int id = 13 (0xd)
+    int remote_id = 0 (0x0)
+    bcm_bfd_tunnel_type_t type = bcmBFDTunnelTypeUdp (0)
+    int gport = 201326595 (0xc000003)
+    int tx_gport = -1 (0xffffffff)
+    int remote_gport = -1 (0xffffffff)
+    int bfd_period = 0 (0x0)
+    bcm_vlan_t vpn = 0 (0x0000)
+    unsigned char vlan_pri = 0 (0x00)
+    unsigned char inner_vlan_pri = 0 (0x00)
+    int vrf_id = 0 (0x0)
+    uint8[6] dst_mac = 00:00:00:00:00:00
+    uint8[6] src_mac = 00:00:00:00:00:00
+    uint16 pkt_inner_vlan_id = 0 (0x0000)
+    uint32 dst_ip_addr = 0.0.0.0
+    uint8[16] dst_ip6_addr = fe80:0000:0000:0000:b6a9:fcff:fe09:f44f
+    uint32 src_ip_addr = 0.0.0.0
+    uint8[16] src_ip6_addr = fe80:0000:0000:0000:dac4:97ff:fed1:bb2c
+    unsigned char ip_tos = 0 (0x00)
+    unsigned char ip_ttl = 255 (0xff)
+    uint32 inner_dst_ip_addr = 0.0.0.0
+    uint8[16] inner_dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 inner_src_ip_addr = 0.0.0.0
+    uint8[16] inner_src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char inner_ip_tos = 0 (0x00)
+    unsigned char inner_ip_ttl = 0 (0x00)
+    unsigned int udp_src_port = 49169 (0xc011)
+    uint32 label = 0 (0x0)
+    uint32 mpls_hdr = 0 (0x0)
+    bcm_mpls_egress_label_t egress_label = {
+        unsigned int flags = 0 (0x0)
+        unsigned int flags2 = 0 (0x0)
+        uint32 label = 4294967295 (0xffffffff)
+        int qos_map_id = 0 (0x0)
+        unsigned char exp = 255 (0xff)
+        unsigned char ttl = 0 (0x00)
+        unsigned char pkt_pri = 0 (0x00)
+        unsigned char pkt_cfi = 0 (0x00)
+        int tunnel_id = 0 (0x0)
+        int l3_intf_id = 0 (0x0)
+        bcm_mpls_egress_action_t action = BCM_MPLS_EGRESS_ACTION_SWAP (0)
+        int ecn_map_id = 0 (0x0)
+        int int_cn_map_id = 0 (0x0)
+        int egress_failover_id = 0 (0x0)
+        int egress_failover_if_id = 0 (0x0)
+        int outlif_counting_profile = -1 (0xffffffff)
+        bcm_mpls_special_label_push_type_t spl_label_push_type = bcmMplsSpecialLabelPushNone (0)
+        bcm_encap_access_t encap_access = bcmEncapAccessInvalid (0)
+        bcm_qos_egress_model_t egress_qos_model = {
+            bcm_qos_egress_model_type_t egress_qos = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_model_type_t egress_ttl = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_ecn_model_type_t egress_ecn = bcmQosEgressEcnModelInvalid (0)
+        }
+        int estimated_encap_size = 0 (0x0)
+    }
+    int egress_if = 100010 (0x186aa)
+    unsigned char[32] mep_id = {
+        unsigned char mep_id[0] = 0 (0x00)
+        unsigned char mep_id[1] = 0 (0x00)
+        unsigned char mep_id[2] = 0 (0x00)
+        unsigned char mep_id[3] = 0 (0x00)
+        unsigned char mep_id[4] = 0 (0x00)
+        unsigned char mep_id[5] = 0 (0x00)
+        unsigned char mep_id[6] = 0 (0x00)
+        unsigned char mep_id[7] = 0 (0x00)
+        unsigned char mep_id[8] = 0 (0x00)
+        unsigned char mep_id[9] = 0 (0x00)
+        unsigned char mep_id[10] = 0 (0x00)
+        unsigned char mep_id[11] = 0 (0x00)
+        unsigned char mep_id[12] = 0 (0x00)
+        unsigned char mep_id[13] = 0 (0x00)
+        unsigned char mep_id[14] = 0 (0x00)
+        unsigned char mep_id[15] = 0 (0x00)
+        unsigned char mep_id[16] = 0 (0x00)
+        unsigned char mep_id[17] = 0 (0x00)
+        unsigned char mep_id[18] = 0 (0x00)
+        unsigned char mep_id[19] = 0 (0x00)
+        unsigned char mep_id[20] = 0 (0x00)
+        unsigned char mep_id[21] = 0 (0x00)
+        unsigned char mep_id[22] = 0 (0x00)
+        unsigned char mep_id[23] = 0 (0x00)
+        unsigned char mep_id[24] = 0 (0x00)
+        unsigned char mep_id[25] = 0 (0x00)
+        unsigned char mep_id[26] = 0 (0x00)
+        unsigned char mep_id[27] = 0 (0x00)
+        unsigned char mep_id[28] = 0 (0x00)
+        unsigned char mep_id[29] = 0 (0x00)
+        unsigned char mep_id[30] = 0 (0x00)
+        unsigned char mep_id[31] = 0 (0x00)
+    }
+    unsigned char mep_id_length = 0 (0x00)
+    int int_pri = 7 (0x7)
+    unsigned char cpu_qid = 0 (0x00)
+    bcm_bfd_state_t local_state = bcmBFDStateUp (3)
+    unsigned int local_discr = 18 (0x12)
+    bcm_bfd_diag_code_t local_diag = bcmBFDDiagCodeNone (0)
+    unsigned int local_flags = 0 (0x0)
+    unsigned int local_min_tx = 150000 (0x249f0)
+    unsigned int local_min_rx = 150000 (0x249f0)
+    unsigned int local_min_echo = 0 (0x0)
+    unsigned char local_detect_mult = 3 (0x03)
+    bcm_bfd_auth_type_t auth = bcmBFDAuthTypeNone (0)
+    unsigned int auth_index = 0 (0x0)
+    unsigned int tx_auth_seq = 481898209 (0x1cb92ee1)
+    unsigned int rx_auth_seq = 0 (0x0)
+    unsigned int remote_flags = 0 (0x0)
+    bcm_bfd_state_t remote_state = bcmBFDStateUp (3)
+    unsigned int remote_discr = 34 (0x22)
+    bcm_bfd_diag_code_t remote_diag = bcmBFDDiagCodeNone (0)
+    unsigned int remote_min_tx = 1000000 (0xf4240)
+    unsigned int remote_min_rx = 1000000 (0xf4240)
+    unsigned int remote_min_echo = 0 (0x0)
+    unsigned char remote_detect_mult = 3 (0x03)
+    int sampling_ratio = 0 (0x0)
+    unsigned char loc_clear_threshold = 0 (0x00)
+    unsigned int ip_subnet_length = 0 (0x0)
+    unsigned char[32] remote_mep_id = {
+        unsigned char remote_mep_id[0] = 0 (0x00)
+        unsigned char remote_mep_id[1] = 0 (0x00)
+        unsigned char remote_mep_id[2] = 0 (0x00)
+        unsigned char remote_mep_id[3] = 0 (0x00)
+        unsigned char remote_mep_id[4] = 0 (0x00)
+        unsigned char remote_mep_id[5] = 0 (0x00)
+        unsigned char remote_mep_id[6] = 0 (0x00)
+        unsigned char remote_mep_id[7] = 0 (0x00)
+        unsigned char remote_mep_id[8] = 0 (0x00)
+        unsigned char remote_mep_id[9] = 0 (0x00)
+        unsigned char remote_mep_id[10] = 0 (0x00)
+        unsigned char remote_mep_id[11] = 0 (0x00)
+        unsigned char remote_mep_id[12] = 0 (0x00)
+        unsigned char remote_mep_id[13] = 0 (0x00)
+        unsigned char remote_mep_id[14] = 0 (0x00)
+        unsigned char remote_mep_id[15] = 0 (0x00)
+        unsigned char remote_mep_id[16] = 0 (0x00)
+        unsigned char remote_mep_id[17] = 0 (0x00)
+        unsigned char remote_mep_id[18] = 0 (0x00)
+        unsigned char remote_mep_id[19] = 0 (0x00)
+        unsigned char remote_mep_id[20] = 0 (0x00)
+        unsigned char remote_mep_id[21] = 0 (0x00)
+        unsigned char remote_mep_id[22] = 0 (0x00)
+        unsigned char remote_mep_id[23] = 0 (0x00)
+        unsigned char remote_mep_id[24] = 0 (0x00)
+        unsigned char remote_mep_id[25] = 0 (0x00)
+        unsigned char remote_mep_id[26] = 0 (0x00)
+        unsigned char remote_mep_id[27] = 0 (0x00)
+        unsigned char remote_mep_id[28] = 0 (0x00)
+        unsigned char remote_mep_id[29] = 0 (0x00)
+        unsigned char remote_mep_id[30] = 0 (0x00)
+        unsigned char remote_mep_id[31] = 0 (0x00)
+    }
+    unsigned char remote_mep_id_length = 0 (0x00)
+    unsigned char[32] mis_conn_mep_id = {
+        unsigned char mis_conn_mep_id[0] = 0 (0x00)
+        unsigned char mis_conn_mep_id[1] = 0 (0x00)
+        unsigned char mis_conn_mep_id[2] = 0 (0x00)
+        unsigned char mis_conn_mep_id[3] = 0 (0x00)
+        unsigned char mis_conn_mep_id[4] = 0 (0x00)
+        unsigned char mis_conn_mep_id[5] = 0 (0x00)
+        unsigned char mis_conn_mep_id[6] = 0 (0x00)
+        unsigned char mis_conn_mep_id[7] = 0 (0x00)
+        unsigned char mis_conn_mep_id[8] = 0 (0x00)
+        unsigned char mis_conn_mep_id[9] = 0 (0x00)
+        unsigned char mis_conn_mep_id[10] = 0 (0x00)
+        unsigned char mis_conn_mep_id[11] = 0 (0x00)
+        unsigned char mis_conn_mep_id[12] = 0 (0x00)
+        unsigned char mis_conn_mep_id[13] = 0 (0x00)
+        unsigned char mis_conn_mep_id[14] = 0 (0x00)
+        unsigned char mis_conn_mep_id[15] = 0 (0x00)
+        unsigned char mis_conn_mep_id[16] = 0 (0x00)
+        unsigned char mis_conn_mep_id[17] = 0 (0x00)
+        unsigned char mis_conn_mep_id[18] = 0 (0x00)
+        unsigned char mis_conn_mep_id[19] = 0 (0x00)
+        unsigned char mis_conn_mep_id[20] = 0 (0x00)
+        unsigned char mis_conn_mep_id[21] = 0 (0x00)
+        unsigned char mis_conn_mep_id[22] = 0 (0x00)
+        unsigned char mis_conn_mep_id[23] = 0 (0x00)
+        unsigned char mis_conn_mep_id[24] = 0 (0x00)
+        unsigned char mis_conn_mep_id[25] = 0 (0x00)
+        unsigned char mis_conn_mep_id[26] = 0 (0x00)
+        unsigned char mis_conn_mep_id[27] = 0 (0x00)
+        unsigned char mis_conn_mep_id[28] = 0 (0x00)
+        unsigned char mis_conn_mep_id[29] = 0 (0x00)
+        unsigned char mis_conn_mep_id[30] = 0 (0x00)
+        unsigned char mis_conn_mep_id[31] = 0 (0x00)
+    }
+    unsigned char mis_conn_mep_id_length = 0 (0x00)
+    unsigned int bfd_detection_time = 0 (0x0)
+    uint16 pkt_vlan_id = 0 (0x0000)
+    uint16 rx_pkt_vlan_id = 3968 (0x0f80)
+    uint32 gal_label = 0 (0x0)
+    unsigned int faults = 0 (0x0)
+    unsigned int flags2 = 0 (0x0)
+    int ipv6_extra_data_index = 0 (0x0)
+    int punt_good_packet_period = 0 (0x0)
+    unsigned char bfd_period_cluster = 0 (0x00)
+    unsigned int vxlan_vnid = 0 (0x0)
+    unsigned short vlan_tpid = 0 (0x0000)
+    unsigned short inner_vlan_tpid = 0 (0x0000)
+    int injected_network_qos = 0 (0x0)
+    int profile_id = 0 (0x0)
+    unsigned char injected_core_id = 0 (0x00)
+}
+cint>
+cint>
+cint>
+cint> bcm_bfd_endpoint_info_t_init(&ep_info);
+cint>
+cint> print bcm_bfd_endpoint_get(0, 14, &ep_info);
+int $$ = 0 (0x0)
+cint>
+cint> print ep_info;
+bcm_bfd_endpoint_info_t ep_info = {
+    unsigned int flags = 0 (0x0)
+    int id = 14 (0xe)
+    int remote_id = 0 (0x0)
+    bcm_bfd_tunnel_type_t type = bcmBFDTunnelTypeUdp (0)
+    int gport = 201326595 (0xc000003)
+    int tx_gport = -1 (0xffffffff)
+    int remote_gport = -1 (0xffffffff)
+    int bfd_period = 0 (0x0)
+    bcm_vlan_t vpn = 0 (0x0000)
+    unsigned char vlan_pri = 0 (0x00)
+    unsigned char inner_vlan_pri = 0 (0x00)
+    int vrf_id = 0 (0x0)
+    uint8[6] dst_mac = 00:00:00:00:00:00
+    uint8[6] src_mac = 00:00:00:00:00:00
+    uint16 pkt_inner_vlan_id = 0 (0x0000)
+    uint32 dst_ip_addr = 62.1.1.2
+    uint8[16] dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 src_ip_addr = 62.1.1.6
+    uint8[16] src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char ip_tos = 0 (0x00)
+    unsigned char ip_ttl = 255 (0xff)
+    uint32 inner_dst_ip_addr = 0.0.0.0
+    uint8[16] inner_dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 inner_src_ip_addr = 0.0.0.0
+    uint8[16] inner_src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char inner_ip_tos = 0 (0x00)
+    unsigned char inner_ip_ttl = 0 (0x00)
+    unsigned int udp_src_port = 49168 (0xc010)
+    uint32 label = 0 (0x0)
+    uint32 mpls_hdr = 0 (0x0)
+    bcm_mpls_egress_label_t egress_label = {
+        unsigned int flags = 0 (0x0)
+        unsigned int flags2 = 0 (0x0)
+        uint32 label = 4294967295 (0xffffffff)
+        int qos_map_id = 0 (0x0)
+        unsigned char exp = 255 (0xff)
+        unsigned char ttl = 0 (0x00)
+        unsigned char pkt_pri = 0 (0x00)
+        unsigned char pkt_cfi = 0 (0x00)
+        int tunnel_id = 0 (0x0)
+        int l3_intf_id = 0 (0x0)
+        bcm_mpls_egress_action_t action = BCM_MPLS_EGRESS_ACTION_SWAP (0)
+        int ecn_map_id = 0 (0x0)
+        int int_cn_map_id = 0 (0x0)
+        int egress_failover_id = 0 (0x0)
+        int egress_failover_if_id = 0 (0x0)
+        int outlif_counting_profile = -1 (0xffffffff)
+        bcm_mpls_special_label_push_type_t spl_label_push_type = bcmMplsSpecialLabelPushNone (0)
+        bcm_encap_access_t encap_access = bcmEncapAccessInvalid (0)
+        bcm_qos_egress_model_t egress_qos_model = {
+            bcm_qos_egress_model_type_t egress_qos = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_model_type_t egress_ttl = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_ecn_model_type_t egress_ecn = bcmQosEgressEcnModelInvalid (0)
+        }
+        int estimated_encap_size = 0 (0x0)
+    }
+    int egress_if = 100012 (0x186ac)
+    unsigned char[32] mep_id = {
+        unsigned char mep_id[0] = 0 (0x00)
+        unsigned char mep_id[1] = 0 (0x00)
+        unsigned char mep_id[2] = 0 (0x00)
+        unsigned char mep_id[3] = 0 (0x00)
+        unsigned char mep_id[4] = 0 (0x00)
+        unsigned char mep_id[5] = 0 (0x00)
+        unsigned char mep_id[6] = 0 (0x00)
+        unsigned char mep_id[7] = 0 (0x00)
+        unsigned char mep_id[8] = 0 (0x00)
+        unsigned char mep_id[9] = 0 (0x00)
+        unsigned char mep_id[10] = 0 (0x00)
+        unsigned char mep_id[11] = 0 (0x00)
+        unsigned char mep_id[12] = 0 (0x00)
+        unsigned char mep_id[13] = 0 (0x00)
+        unsigned char mep_id[14] = 0 (0x00)
+        unsigned char mep_id[15] = 0 (0x00)
+        unsigned char mep_id[16] = 0 (0x00)
+        unsigned char mep_id[17] = 0 (0x00)
+        unsigned char mep_id[18] = 0 (0x00)
+        unsigned char mep_id[19] = 0 (0x00)
+        unsigned char mep_id[20] = 0 (0x00)
+        unsigned char mep_id[21] = 0 (0x00)
+        unsigned char mep_id[22] = 0 (0x00)
+        unsigned char mep_id[23] = 0 (0x00)
+        unsigned char mep_id[24] = 0 (0x00)
+        unsigned char mep_id[25] = 0 (0x00)
+        unsigned char mep_id[26] = 0 (0x00)
+        unsigned char mep_id[27] = 0 (0x00)
+        unsigned char mep_id[28] = 0 (0x00)
+        unsigned char mep_id[29] = 0 (0x00)
+        unsigned char mep_id[30] = 0 (0x00)
+        unsigned char mep_id[31] = 0 (0x00)
+    }
+    unsigned char mep_id_length = 0 (0x00)
+    int int_pri = 7 (0x7)
+    unsigned char cpu_qid = 0 (0x00)
+    bcm_bfd_state_t local_state = bcmBFDStateDown (1)
+    unsigned int local_discr = 17 (0x11)
+    bcm_bfd_diag_code_t local_diag = bcmBFDDiagCodeCtrlDetectTimeExpired (1)
+    unsigned int local_flags = 0 (0x0)
+    unsigned int local_min_tx = 150000 (0x249f0)
+    unsigned int local_min_rx = 150000 (0x249f0)
+    unsigned int local_min_echo = 0 (0x0)
+    unsigned char local_detect_mult = 3 (0x03)
+    bcm_bfd_auth_type_t auth = bcmBFDAuthTypeNone (0)
+    unsigned int auth_index = 0 (0x0)
+    unsigned int tx_auth_seq = 1225026870 (0x49046d36)
+    unsigned int rx_auth_seq = 0 (0x0)
+    unsigned int remote_flags = 0 (0x0)
+    bcm_bfd_state_t remote_state = bcmBFDStateDown (1)
+    unsigned int remote_discr = 0 (0x0)
+    bcm_bfd_diag_code_t remote_diag = bcmBFDDiagCodeNone (0)
+    unsigned int remote_min_tx = 1000000 (0xf4240)
+    unsigned int remote_min_rx = 1 (0x1)
+    unsigned int remote_min_echo = 0 (0x0)
+    unsigned char remote_detect_mult = 3 (0x03)
+    int sampling_ratio = 0 (0x0)
+    unsigned char loc_clear_threshold = 0 (0x00)
+    unsigned int ip_subnet_length = 0 (0x0)
+    unsigned char[32] remote_mep_id = {
+        unsigned char remote_mep_id[0] = 0 (0x00)
+        unsigned char remote_mep_id[1] = 0 (0x00)
+        unsigned char remote_mep_id[2] = 0 (0x00)
+        unsigned char remote_mep_id[3] = 0 (0x00)
+        unsigned char remote_mep_id[4] = 0 (0x00)
+        unsigned char remote_mep_id[5] = 0 (0x00)
+        unsigned char remote_mep_id[6] = 0 (0x00)
+        unsigned char remote_mep_id[7] = 0 (0x00)
+        unsigned char remote_mep_id[8] = 0 (0x00)
+        unsigned char remote_mep_id[9] = 0 (0x00)
+        unsigned char remote_mep_id[10] = 0 (0x00)
+        unsigned char remote_mep_id[11] = 0 (0x00)
+        unsigned char remote_mep_id[12] = 0 (0x00)
+        unsigned char remote_mep_id[13] = 0 (0x00)
+        unsigned char remote_mep_id[14] = 0 (0x00)
+        unsigned char remote_mep_id[15] = 0 (0x00)
+        unsigned char remote_mep_id[16] = 0 (0x00)
+        unsigned char remote_mep_id[17] = 0 (0x00)
+        unsigned char remote_mep_id[18] = 0 (0x00)
+        unsigned char remote_mep_id[19] = 0 (0x00)
+        unsigned char remote_mep_id[20] = 0 (0x00)
+        unsigned char remote_mep_id[21] = 0 (0x00)
+        unsigned char remote_mep_id[22] = 0 (0x00)
+        unsigned char remote_mep_id[23] = 0 (0x00)
+        unsigned char remote_mep_id[24] = 0 (0x00)
+        unsigned char remote_mep_id[25] = 0 (0x00)
+        unsigned char remote_mep_id[26] = 0 (0x00)
+        unsigned char remote_mep_id[27] = 0 (0x00)
+        unsigned char remote_mep_id[28] = 0 (0x00)
+        unsigned char remote_mep_id[29] = 0 (0x00)
+        unsigned char remote_mep_id[30] = 0 (0x00)
+        unsigned char remote_mep_id[31] = 0 (0x00)
+    }
+    unsigned char remote_mep_id_length = 0 (0x00)
+    unsigned char[32] mis_conn_mep_id = {
+        unsigned char mis_conn_mep_id[0] = 0 (0x00)
+        unsigned char mis_conn_mep_id[1] = 0 (0x00)
+        unsigned char mis_conn_mep_id[2] = 0 (0x00)
+        unsigned char mis_conn_mep_id[3] = 0 (0x00)
+        unsigned char mis_conn_mep_id[4] = 0 (0x00)
+        unsigned char mis_conn_mep_id[5] = 0 (0x00)
+        unsigned char mis_conn_mep_id[6] = 0 (0x00)
+        unsigned char mis_conn_mep_id[7] = 0 (0x00)
+        unsigned char mis_conn_mep_id[8] = 0 (0x00)
+        unsigned char mis_conn_mep_id[9] = 0 (0x00)
+        unsigned char mis_conn_mep_id[10] = 0 (0x00)
+        unsigned char mis_conn_mep_id[11] = 0 (0x00)
+        unsigned char mis_conn_mep_id[12] = 0 (0x00)
+        unsigned char mis_conn_mep_id[13] = 0 (0x00)
+        unsigned char mis_conn_mep_id[14] = 0 (0x00)
+        unsigned char mis_conn_mep_id[15] = 0 (0x00)
+        unsigned char mis_conn_mep_id[16] = 0 (0x00)
+        unsigned char mis_conn_mep_id[17] = 0 (0x00)
+        unsigned char mis_conn_mep_id[18] = 0 (0x00)
+        unsigned char mis_conn_mep_id[19] = 0 (0x00)
+        unsigned char mis_conn_mep_id[20] = 0 (0x00)
+        unsigned char mis_conn_mep_id[21] = 0 (0x00)
+        unsigned char mis_conn_mep_id[22] = 0 (0x00)
+        unsigned char mis_conn_mep_id[23] = 0 (0x00)
+        unsigned char mis_conn_mep_id[24] = 0 (0x00)
+        unsigned char mis_conn_mep_id[25] = 0 (0x00)
+        unsigned char mis_conn_mep_id[26] = 0 (0x00)
+        unsigned char mis_conn_mep_id[27] = 0 (0x00)
+        unsigned char mis_conn_mep_id[28] = 0 (0x00)
+        unsigned char mis_conn_mep_id[29] = 0 (0x00)
+        unsigned char mis_conn_mep_id[30] = 0 (0x00)
+        unsigned char mis_conn_mep_id[31] = 0 (0x00)
+    }
+    unsigned char mis_conn_mep_id_length = 0 (0x00)
+    unsigned int bfd_detection_time = 0 (0x0)
+    uint16 pkt_vlan_id = 0 (0x0000)
+    uint16 rx_pkt_vlan_id = 3968 (0x0f80)
+    uint32 gal_label = 0 (0x0)
+    unsigned int faults = 0 (0x0)
+    unsigned int flags2 = 0 (0x0)
+    int ipv6_extra_data_index = 0 (0x0)
+    int punt_good_packet_period = 0 (0x0)
+    unsigned char bfd_period_cluster = 0 (0x00)
+    unsigned int vxlan_vnid = 0 (0x0)
+    unsigned short vlan_tpid = 0 (0x0000)
+    unsigned short inner_vlan_tpid = 0 (0x0000)
+    int injected_network_qos = 0 (0x0)
+    int profile_id = 0 (0x0)
+    unsigned char injected_core_id = 0 (0x00)
+}
+cint>
+cint> exit;
+exit;
+BCM.0>
+BCM.0> log off
+log off
+File logging to bfd_dev2.log stopped.
+BCM.0>
+BCM.0> log file=bfd_dev2_2.log on
+log file=bfd_dev2_2.log on
+File logging started to bfd_dev2_2.log
+BCM.0>
+BCM.0> fp show group 4
+fp show group 4
+GID          4: gid=0x4, instance=0 mode=Double, stage=Ingress lookup=Enabled, ActionResId={-1}, pbmp={0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000088888888888888882222222222222223}
+         qset={DstMac, EtherType, Stage, StageIngress, InterfaceClassL2, InterfaceClassL3, IcmpTypeCode, MyStationHit, InterfaceClassVPort, BfdYourDiscriminator, PktType},
+         aset={CosQCpuNew, CopyToCpu, Drop, PolicerGroup, StatGroup, BFDSessionIdNew},
+         Qualifiers in Part-0: {EtherType->InterfaceClassL2->InterfaceClassVPort->BfdYourDiscriminator->PktType},
+         Qualifiers in Part-1: {DstMac->InterfaceClassL3->IcmpTypeCode->MyStationHit},
+
+         group_priority= 20
+         slice_primary =  {slice_number=3, Entry count=768(0x300), Entry free=760(0x2f8)},
+         slice_secondary = {slice_number=4}
+         group_status={prio_min=0, prio_max=0, entries_total=2304, entries_free=2296,
+                       counters_total=83968, counters_free=82424, meters_total=6144, meters_free=5376}
+EID 0x00000080: gid=0x4,
+ slice=3, slice_idx=0, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000000
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2047(0x7ff), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 43  slice = 9 idx=3 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x00000081: gid=0x4,
+ slice=3, slice_idx=0x1, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x1, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000000
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2047(0x7ff), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 44  slice = 9 idx=2 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x0000008c: gid=0x4,
+ slice=3, slice_idx=0xc, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xc, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x0000000b
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=11(0xb), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 55  slice = 9 idx=9 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x0000008d: gid=0x4,
+ slice=3, slice_idx=0xd, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xd, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x0000000c
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=12(0xc), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 56  slice = 9 idx=8 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x00000090: gid=0x4,
+ slice=3, slice_idx=0xa, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xa, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000010
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=9(0x9), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 59  slice = 9 idx=11 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x00000091: gid=0x4,
+ slice=3, slice_idx=0xb, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xb, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x0000000f
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=10(0xa), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 60  slice = 9 idx=10 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x00000092: gid=0x4,
+ slice=3, slice_idx=0xe, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xe, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000012
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=13(0xd), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 61  slice = 9 idx=31 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x00000093: gid=0x4,
+ slice=3, slice_idx=0xf, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0xf, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000011
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=14(0xe), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 62  slice = 9 idx=30 entries=1}{Packets}
+         Extended statistics=NULL
+BCM.0>
+BCM.0> log off
+log off
+File logging to bfd_dev2_2.log stopped.
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0> l3 egress show
+l3 egress show
+Entry  Mac                 Vlan INTF PORT MOD MPLS_LABEL ToCpu Drop RefCount L3MC
+100002  00:00:00:00:00:00    0 16383     0    0        -1   no   no   10   no
+100003  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100004  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100009  01:00:5e:90:00:01    0    3     3t   0        -1   no   no    0   no
+100010  b4:a9:fc:09:f4:4f    3    3     3t   0        -1   no   no    0   no
+100011  b4:a9:fc:09:f4:4f    3    3     3t   0        -1   no   no    0   no
+100012  b4:a9:fc:09:f4:4f    3    3     3t   0        -1   no   no    1   no
+BCM.0>
+BCM.0> l3 intf show
+l3 intf show
+Free L3INTF entries: 16375
+Unit  Intf  VRF Group VLAN    Source Mac     MTU TTL Tunnel InnerVlan  NATRealm
+------------------------------------------------------------------
+0     1     0     0     3966 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     2     0     0     3967 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     3     0     0     3968 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     4     0     0     3969 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     5     0     0     3970 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     6     0     0     3971 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+0     7     0     0     3972 d8:c4:97:d1:bb:2c  8974 0    0     0     0
+BCM.0>
+BCM.0> trunk show
+trunk show
+Device supports 2112 trunk groups:
+  2048 front panel trunks (0..2047), 256 ports/trunk
+    64 fabric trunks (2048..2111), 64 ports/trunk
+    trunk 1: (front panel, 0 ports)
+    trunk 2: (front panel, 0 ports)
+    trunk 3: (front panel, 2 ports)=ce18,ce9 dlf=any mc=any ipmc=any psc=resilient (0xf)
+    trunk 4: (front panel, 0 ports)
+    trunk 5: (front panel, 0 ports)
+    trunk 6: (front panel, 0 ports)
+    trunk 7: (front panel, 0 ports)
+    trunk 8: (front panel, 0 ports)
+    BCM.0>
+

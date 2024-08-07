@@ -1,0 +1,48 @@
+pt list -l DLB_ECMP_FLOWSET_INST0m
+pt list -l DLB_ECMP_FLOWSET_INST0m
+
+DLB_ECMP_FLOWSET_INST0m
+  9 fields (2 key-type fields):
+    PARITY
+        Width: 1 bit
+        Value (default, min, max): 0, 0, 1
+        Attribute: R/W
+    ECC
+        Width: 5 bits
+        Value (default, min, max): 0, 0, 0x1f
+        Attribute: R/W
+    ECCP
+        Width: 6 bits
+        Value (default, min, max): 0, 0, 0x3f
+        Attribute: R/W
+    VALID
+        Width: 1 bit
+        Value (default, min, max): 0, 0, 1
+        Attribute: R/W
+    PORT_MEMBER_ASSIGNMENT
+        Width: 9 bits
+        Value (default, min, max): 0, 0, 0x1ff
+        Attribute: R/W
+    OBSERVATION_TIMESTAMP
+        Width: 8 bits
+        Value (default, min, max): 0, 0, 0xff
+        Attribute: R/W
+    DATA
+        Width: 18 bits
+        Value (default, min, max): 0, 0, 0x3ffff
+        Attribute: R/W
+    BCMLT_PT_INSTANCE
+        Width: 31 bits
+        Value (default, min, max): 0, 0, 0x7fffffff
+        Attribute: R/W, key
+    BCMLT_PT_INDEX
+        Width: 31 bits
+        Value (default, min, max): 0, 0, 0x7fffffff
+        Attribute: R/W, key
+
+pt reset DLB_ECMP_FLOWSET_INST0m
+pt reset DLB_ECMP_FLOWSET_INST1m
+
+pt dump -d DLB_ECMP_FLOWSET_INST0m
+pt dump -d DLB_ECMP_FLOWSET_INST1m
+

@@ -1,0 +1,477 @@
+cp -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/IP-MIB.bin /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/IF-MIB.bin /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/IANAifType-MIB.bin /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/ARRCUS-IF-MIB.bin /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/HOST-RESOURCES-MIB.bin /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/INET-ADDRESS-MIB.bin /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../build/mibs
+cp -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/HOST-RESOURCES-MIB.fxs /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/INET-ADDRESS-MIB.fxs /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/IP-MIB.fxs /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/IANAifType-MIB.fxs /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/IF-MIB.fxs /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/snmp/ARRCUS-IF-MIB.fxs /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../build/ui/mib
+mkdir -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen
+python /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../infra/codegen/codegen.py -c ifmgr -i infra/ifmgr -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/dstore/objects -t /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/dstore/tables -e /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../infra/codegen/ds_types_json -o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen
+protoc-c --c_out=/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/*.proto -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -o/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/ifmgr.desc --include_imports --include_source_info
+python /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../infra/codegen/ds_codegen.py -i /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/dstore/tables -o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen
+protoc -I=/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen --python_out=/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/*.proto
+chmod 755 /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/*.py
+touch /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/.gencode_done
+cp -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/*.h /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr
+cp -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/*.py /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../build/python
+cp -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/dstore/tables/*.json /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../dstore/tables/ifmgr
+cp -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/dstore/objects/*.json /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../dstore/objects/ifmgr
+mkdir -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/dstore/desc
+cp -p -P /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/*.desc /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/dstore/desc
+cp -p -P /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/*.desc /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../dstore/desc
+cp -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../infra/codegen/Makefile.template /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/Makefile
+make -C /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen capi_lib COMPNAME=ifmgr GBL_INCLUDE_DIR=/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include VERSION=0.1.0
+make[1]: Entering directory '/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen'
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_l3_ipv4addr.pb-c.o ifmgr_l3_ipv4addr.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o adjmgr_ipv4_adj.pb-c.o adjmgr_ipv4_adj.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_vlan.o ds_ifmgr_vlan.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_vlan_print.o ds_ifmgr_vlan_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_l3.pb-c.o ifmgr_l3.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_mac_print.o ds_ifmgr_mac_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_bond.pb-c.o ifmgr_bond.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_vlanid_union_def_print.o ds_vlanid_union_def_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_l3_ipv4addr_print.o ds_ifmgr_l3_ipv4addr_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_if.pb-c.o ifmgr_if.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_if_specific_info_print.o ds_ifmgr_if_specific_info_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_port.pb-c.o ifmgr_port.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_vlanid_list_object_print.o ds_vlanid_list_object_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_vlanid_range_object_print.o ds_vlanid_range_object_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_bond_print.o ds_ifmgr_bond_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_l3_ipv6addr.pb-c.o ifmgr_l3_ipv6addr.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_vlan_info.pb-c.o ifmgr_vlan_info.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_vlan_stack_action_print.o ds_vlan_stack_action_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_adjmgr_ipv6_adj.o ds_adjmgr_ipv6_adj.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_adjmgr_ipv6_adj_print.o ds_adjmgr_ipv6_adj_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_if.o ds_ifmgr_if.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_if_print.o ds_ifmgr_if_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_port.o ds_ifmgr_port.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_port_print.o ds_ifmgr_port_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_adjmgr_ipv4_adj.o ds_adjmgr_ipv4_adj.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_adjmgr_ipv4_adj_print.o ds_adjmgr_ipv4_adj_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_l3_print.o ds_ifmgr_l3_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_l3.o ds_ifmgr_l3.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_mac.pb-c.o ifmgr_mac.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_vlan_info_print.o ds_ifmgr_vlan_info_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_if_specific_info.pb-c.o ifmgr_if_specific_info.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o vlanid_list_object.pb-c.o vlanid_list_object.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_if_stats.o ds_ifmgr_if_stats.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_if_stats_print.o ds_ifmgr_if_stats_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_if_stats.pb-c.o ifmgr_if_stats.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_mac.o ds_ifmgr_mac.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o vlanid_range_object.pb-c.o vlanid_range_object.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o vlanid_union_def.pb-c.o vlanid_union_def.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ifmgr_vlan.pb-c.o ifmgr_vlan.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o ds_ifmgr_l3_ipv6addr_print.o ds_ifmgr_l3_ipv6addr_print.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o vlan_stack_action.pb-c.o vlan_stack_action.pb-c.c
+cc -I. -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -fPIC -g -O3 -Wall -Wno-unused-variable -Wno-missing-braces -MMD   -c -o adjmgr_ipv6_adj.pb-c.o adjmgr_ipv6_adj.pb-c.c
+cc ifmgr_l3_ipv4addr.pb-c.o adjmgr_ipv4_adj.pb-c.o ds_ifmgr_vlan.o ds_ifmgr_vlan_print.o ifmgr_l3.pb-c.o ds_ifmgr_mac_print.o ifmgr_bond.pb-c.o ds_vlanid_union_def_print.o ds_ifmgr_l3_ipv4addr_print.o ifmgr_if.pb-c.o ds_ifmgr_if_specific_info_print.o ifmgr_port.pb-c.o ds_vlanid_list_object_print.o ds_vlanid_range_object_print.o ds_ifmgr_bond_print.o ifmgr_l3_ipv6addr.pb-c.o ifmgr_vlan_info.pb-c.o ds_vlan_stack_action_print.o ds_adjmgr_ipv6_adj.o ds_adjmgr_ipv6_adj_print.o ds_ifmgr_if.o ds_ifmgr_if_print.o ds_ifmgr_port.o ds_ifmgr_port_print.o ds_adjmgr_ipv4_adj.o ds_adjmgr_ipv4_adj_print.o ds_ifmgr_l3_print.o ds_ifmgr_l3.o ifmgr_mac.pb-c.o ds_ifmgr_vlan_info_print.o ifmgr_if_specific_info.pb-c.o vlanid_list_object.pb-c.o ds_ifmgr_if_stats.o ds_ifmgr_if_stats_print.o ifmgr_if_stats.pb-c.o ds_ifmgr_mac.o vlanid_range_object.pb-c.o vlanid_union_def.pb-c.o ifmgr_vlan.pb-c.o ds_ifmgr_l3_ipv6addr_print.o vlan_stack_action.pb-c.o adjmgr_ipv6_adj.pb-c.o -o libifmgr_capi.so.0.1.0 -fPIC -shared -Wl,-soname,libifmgr_capi.so -lprotobuf-c
+ln -sf libifmgr_capi.so.0.1.0 libifmgr_capi.so
+make[1]: Leaving directory '/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen'
+cp -p -P /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/.gen/libifmgr_capi.so* /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../build/lib
+cp -p /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/*.h /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr
+make -C build/lib install_libs
+make[1]: Entering directory '/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/build/lib'
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -fPIC   -c -o ifmgr_bond_state.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib/ifmgr_bond_state.c
+cc ifmgr_bond_state.o -o libifmgr.so -g -pthread -rdynamic -L/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../build/lib -L/usr/lib -Wl,-rpath,/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../build/lib:/usr/lib -fPIC -shared -Wl,-soname,libifmgr.so
+cp -p libifmgr.so /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../build/lib/libifmgr.so
+make[1]: Leaving directory '/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/build/lib'
+make -C build/bin install_bin
+make[1]: Entering directory '/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/build/bin'
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_log_msg.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_log_msg.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_debug.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_debug.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_ifhelper.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_ifhelper.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_confd_snmp.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_snmp.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_kernel_rcv.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_kernel_rcv.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_micro_bfd.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_micro_bfd.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_confd_plugin.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c: In function 'ifmgrcfg_get_v4_addr_info':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:948:35: warning: pointer targets in passing argument 2 of 'cdb_get_enum_value' differ in signedness [-Wpointer-sign] [Nilesh]
+     if (cdb_get_enum_value(rsock, &urpf_mode,
+                                   ^~~~~~~~~~
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/confdproxy/confdproxy.h:22,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:27,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/vrfmgr/vrfmgr.h:14,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:19,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:11:
+/usr/include/confd/confd_cdb.h:222:12: note: expected 'int32_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'unsigned int *'}
+ extern int cdb_get_enum_value(int sock, int32_t *rval, const char *fmt, ...);
+            ^~~~~~~~~~~~~~~~~~
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr_tp.h:10,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:15: [Nilesh]
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:952:21: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'confd_value_t *' {aka 'struct confd_value *'} [-Wformat=]
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:%x subif_num:%d\n", urpf_mode, table_key, subif_num);
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~             ~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/lttng-extensions/tracepoint-helper.h:50:26: note: in definition of macro 'tracepoint_va'
+     snprintf(__buf, 256, fmt, ##args); \
+                          ^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:952:5: note: in expansion of macro 'ifmgr_debug_msg'
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:%x subif_num:%d\n", urpf_mode, table_key, subif_num);
+     ^~~~~~~~~~~~~~~
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/vrfmgr/vrfmgr.h:14,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:19,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:11: [Nilesh]
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:41:33: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'confd_value_t *' {aka 'struct confd_value *'} [-Wformat=]
+ #define LOG_COLOR_RESET         "\x1b[0m"
+                                 ^~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:60:21: note: in definition of macro 'LOG_MESSAGE'
+                     startcolor                          \
+                     ^~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:183:21: note: in expansion of macro 'LOG_COLOR_RESET'
+         LOG_MESSAGE(LOG_COLOR_RESET, "[DEBUG]",         \
+                     ^~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_debug.h:31:9: note: in expansion of macro 'LOG_DEBUG_MSG'
+         LOG_DEBUG_MSG("IFMGR", fmt, ##args); \
+         ^~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:952:5: note: in expansion of macro 'ifmgr_debug_msg'
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:%x subif_num:%d\n", urpf_mode, table_key, subif_num);
+     ^~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:952:49: note: format string is defined here
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:%x subif_num:%d\n", urpf_mode, table_key, subif_num);
+                                                ~^
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/vrfmgr/vrfmgr.h:14,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:19,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:11:
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:183:38: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'confd_value_t *' {aka 'struct confd_value *'} [-Wformat=]
+         LOG_MESSAGE(LOG_COLOR_RESET, "[DEBUG]",         \
+                                      ^~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:66:21: note: in definition of macro 'LOG_MESSAGE'
+                     lvlstr "[" compstr "] "  fmt ,      \
+                     ^~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_debug.h:31:9: note: in expansion of macro 'LOG_DEBUG_MSG'
+         LOG_DEBUG_MSG("IFMGR", fmt, ##args); \
+         ^~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:952:5: note: in expansion of macro 'ifmgr_debug_msg'
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:%x subif_num:%d\n", urpf_mode, table_key, subif_num);
+     ^~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:952:49: note: format string is defined here
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:%x subif_num:%d\n", urpf_mode, table_key, subif_num);
+                                                ~^
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/vrfmgr/vrfmgr.h:14,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:19,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:11: [Nilesh]
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:269:21: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'confd_value_t *' {aka 'struct confd_value *'} [-Wformat=]
+   syslog(LOG_DEBUG, "[" compstr "]" fmt, ##args)
+                     ^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:187:9: note: in expansion of macro 'SYSLOG_DEBUG'
+         SYSLOG_DEBUG(compstr, fmt, ##args);             \
+         ^~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_debug.h:31:9: note: in expansion of macro 'LOG_DEBUG_MSG'
+         LOG_DEBUG_MSG("IFMGR", fmt, ##args); \
+         ^~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:952:5: note: in expansion of macro 'ifmgr_debug_msg'
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:%x subif_num:%d\n", urpf_mode, table_key, subif_num);
+     ^~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:952:49: note: format string is defined here
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:%x subif_num:%d\n", urpf_mode, table_key, subif_num);
+                                                ~^
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c: In function 'ifmgrcfg_get_v6_gb_addr_info': [Nilesh]
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:1107:35: warning: pointer targets in passing argument 2 of 'cdb_get_enum_value' differ in signedness [-Wpointer-sign]
+     if (cdb_get_enum_value(rsock, &urpf_mode,
+                                   ^~~~~~~~~~
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/confdproxy/confdproxy.h:22,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:27,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/vrfmgr/vrfmgr.h:14,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:19,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:11:
+/usr/include/confd/confd_cdb.h:222:12: note: expected 'int32_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'unsigned int *'}
+ extern int cdb_get_enum_value(int sock, int32_t *rval, const char *fmt, ...);
+            ^~~~~~~~~~~~~~~~~~
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr_tp.h:10,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:15: [Nilesh]
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:1112:21: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'confd_value_t *' {aka 'struct confd_value *'} [-Wformat=]
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:0x%x subif_num:%d\n",
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      urpf_mode, table_key, subif_num);
+                                 ~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/lttng-extensions/tracepoint-helper.h:50:26: note: in definition of macro 'tracepoint_va'
+     snprintf(__buf, 256, fmt, ##args); \
+                          ^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:1112:5: note: in expansion of macro 'ifmgr_debug_msg'
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:0x%x subif_num:%d\n",
+     ^~~~~~~~~~~~~~~
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/vrfmgr/vrfmgr.h:14,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:19,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:11: [Nilesh]
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:41:33: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'confd_value_t *' {aka 'struct confd_value *'} [-Wformat=]
+ #define LOG_COLOR_RESET         "\x1b[0m"
+                                 ^~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:60:21: note: in definition of macro 'LOG_MESSAGE'
+                     startcolor                          \
+                     ^~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:183:21: note: in expansion of macro 'LOG_COLOR_RESET'
+         LOG_MESSAGE(LOG_COLOR_RESET, "[DEBUG]",         \
+                     ^~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_debug.h:31:9: note: in expansion of macro 'LOG_DEBUG_MSG'
+         LOG_DEBUG_MSG("IFMGR", fmt, ##args); \
+         ^~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:1112:5: note: in expansion of macro 'ifmgr_debug_msg'
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:0x%x subif_num:%d\n",
+     ^~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:1112:51: note: format string is defined here
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:0x%x subif_num:%d\n",
+                                                  ~^
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/vrfmgr/vrfmgr.h:14,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:19,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:11: [Nilesh]
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:183:38: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'confd_value_t *' {aka 'struct confd_value *'} [-Wformat=]
+         LOG_MESSAGE(LOG_COLOR_RESET, "[DEBUG]",         \
+                                      ^~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:66:21: note: in definition of macro 'LOG_MESSAGE'
+                     lvlstr "[" compstr "] "  fmt ,      \
+                     ^~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_debug.h:31:9: note: in expansion of macro 'LOG_DEBUG_MSG'
+         LOG_DEBUG_MSG("IFMGR", fmt, ##args); \
+         ^~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:1112:5: note: in expansion of macro 'ifmgr_debug_msg'
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:0x%x subif_num:%d\n",
+     ^~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:1112:51: note: format string is defined here
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:0x%x subif_num:%d\n",
+                                                  ~^
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/vrfmgr/vrfmgr.h:14,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:19,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:11: [Nilesh]
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:269:21: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'confd_value_t *' {aka 'struct confd_value *'} [-Wformat=]
+   syslog(LOG_DEBUG, "[" compstr "]" fmt, ##args)
+                     ^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:187:9: note: in expansion of macro 'SYSLOG_DEBUG'
+         SYSLOG_DEBUG(compstr, fmt, ##args);             \
+         ^~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_debug.h:31:9: note: in expansion of macro 'LOG_DEBUG_MSG'
+         LOG_DEBUG_MSG("IFMGR", fmt, ##args); \
+         ^~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:1112:5: note: in expansion of macro 'ifmgr_debug_msg'
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:0x%x subif_num:%d\n",
+     ^~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_plugin.c:1112:51: note: format string is defined here
+     ifmgr_debug_msg("l3 urpf_mode:%d table_key:0x%x subif_num:%d\n",
+                                                  ~^
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_vrf.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_vrf.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_libnl.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c: In function 'ifmgr_run_cmd':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:96:17: warning: comparison of integer expressions of different signedness: 'int' and 'uint32_t' {aka 'unsigned int'} [-Wsign-compare]
+     if (cmd_len > (max_size - 6)) { [Satish]
+                 ^
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c: In function 'ifmgr_link_change_cb':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:193:20: warning: passing argument 1 of 'nl_object_dump' from incompatible pointer type [-Wincompatible-pointer-types]
+     nl_object_dump(link, &params); [Satish]
+                    ^~~~
+In file included from /usr/include/libnl3/netlink/netlink.h:35,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/arcos_libnl.h:18,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_private.h:34,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:11:
+/usr/include/libnl3/netlink/object.h:39:30: note: expected 'struct nl_object *' but argument is of type 'struct rtnl_link *'
+ extern void   nl_object_dump(struct nl_object *,
+                              ^~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:414:26: warning: declaration of 'buf' shadows a previous local [-Wshadow]
+                     char buf[64]; [Satish]
+                          ^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:182:10: note: shadowed declaration is here
+     char buf[20]; [Satish]
+          ^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:417:41: warning: declaration of 'addr' shadows a previous local [-Wshadow]
+                         v4_addr_list_t *addr; [Satish]
+                                         ^~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:175:21: note: shadowed declaration is here
+     struct nl_addr *addr; [Satish]
+                     ^~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:434:26: warning: declaration of 'buf' shadows a previous local [-Wshadow]
+                     char buf[64]; [Satish]
+                          ^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:182:10: note: shadowed declaration is here
+     char buf[20];
+          ^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:437:41: warning: declaration of 'addr' shadows a previous local [-Wshadow]
+                         v6_addr_list_t *addr; [Satish]
+                                         ^~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:175:21: note: shadowed declaration is here
+     struct nl_addr *addr;
+                     ^~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c: In function 'ifmgr_lnx_bulk_vlan_if':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:1754:35: warning: unused variable 'next' [-Wunused-variable]
+     char *start = command, *end, *next; [Satish]
+                                   ^~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c: In function 'ifmgr_get_cmd_fw_state':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_libnl.c:2912:3: warning: 'strncat' specified bound 5 equals source length [-Wstringop-overflow=]
+   strncat(new_cmd, " 2>&1",  5); [Satish]
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_ml.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_ml.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_confd_clear.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_clear.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_neighbor.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_neighbor.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_vlan.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_vlan.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_confd_validations.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c: In function 'ifmgr_validate_trunk_vlan':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c:1570:5: warning: 'strncat' specified bound 15 equals source length [-Wstringop-overflow=]
+     strncat(buf, "/../native-vlan", strlen("/../native-vlan")); [Satish]
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c: In function 'ifmgr_validate_vlan':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c:1675:9: warning: 'strncat' specified bound 15 equals source length [-Wstringop-overflow=]
+         strncat(buf, "/../trunk-vlans", strlen("/../trunk-vlans")); [Satish]
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c: In function 'ifmgr_validate_v6address':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c:920:5: warning: 'strncat' specified bound 10 equals source length [-Wstringop-overflow=]
+     strncat(buf, "/config/ip", strlen("/config/ip")); [Satish]
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c:923:5: warning: 'strncat' specified bound 21 equals source length [-Wstringop-overflow=]
+     strncat(buf, "/config/prefix-length", strlen("/config/prefix-length")); [Satish]
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c: In function 'ifmgr_validate_v4address':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c:1050:5: warning: 'strncat' specified bound 10 equals source length [-Wstringop-overflow=]
+     strncat(buf, "/config/ip", strlen("/config/ip")); [Satish]
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_validations.c:1053:5: warning: 'strncat' specified bound 21 equals source length [-Wstringop-overflow=]
+     strncat(buf, "/config/prefix-length", strlen("/config/prefix-length")); [Satish]
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_utils.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_utils.c
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_utils.c: In function 'ifmgr_set_ds_ifmgr_if_match_map_fields':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_utils.c:1016:51: warning: passing argument 2 of 'ds_vlanid_list_object_list_set' from incompatible pointer type [-Wincompatible-pointer-types]
+             ds_vlanid_list_object_list_set(&list, &match->outer_vlan_ids, match->ovid_cnt); [Nilesh]
+                                                   ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr/ds_ifmgr_if.h:10,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mpsc.h:16,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_private.h:64,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_utils.c:11:
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr/ds_vlanid_list_object.h:316:42: note: expected 'uint32_t *' {aka 'unsigned int *'} but argument is of type 'uint32_t (*)[4000]' {aka 'unsigned int (*)[4000]'}
+ (ds_vlanid_list_object_t *obj, uint32_t* val, int len)
+                                ~~~~~~~~~~^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_utils.c:1039:51: warning: passing argument 2 of 'ds_vlanid_list_object_list_set' from incompatible pointer type [-Wincompatible-pointer-types]
+             ds_vlanid_list_object_list_set(&list, &match->inner_vlan_ids, match->ivid_cnt);
+                                                   ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr/ds_ifmgr_if.h:10,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mpsc.h:16,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_private.h:64,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_utils.c:11:
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr/ds_vlanid_list_object.h:316:42: note: expected 'uint32_t *' {aka 'unsigned int *'} but argument is of type 'uint32_t (*)[4000]' {aka 'unsigned int (*)[4000]'}
+ (ds_vlanid_list_object_t *obj, uint32_t* val, int len)
+                                ~~~~~~~~~~^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_utils.c:1045:51: warning: passing argument 2 of 'ds_vlanid_list_object_list_set' from incompatible pointer type [-Wincompatible-pointer-types]
+             ds_vlanid_list_object_list_set(&list, &match->outer_vlan_ids, match->ovid_cnt);
+                                                   ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr/ds_ifmgr_if.h:10,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mpsc.h:16,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_private.h:64,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_utils.c:11:
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr/ds_vlanid_list_object.h:316:42: note: expected 'uint32_t *' {aka 'unsigned int *'} but argument is of type 'uint32_t (*)[4000]' {aka 'unsigned int (*)[4000]'}
+ (ds_vlanid_list_object_t *obj, uint32_t* val, int len)
+                                ~~~~~~~~~~^~~
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_confd_completion.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_completion.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_confd_brkout.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_brkout.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_match.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_match.c
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_match.c: In function 'ifmgr_vlan_map_cfg_delete':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_match.c:928:26: warning: 'tpid' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       action->outer_tpid = tpid; [Akshay]
+       ~~~~~~~~~~~~~~~~~~~^~~~~~
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_mpsc.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mpsc.c
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mpsc.c:8:
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h: In function 'intf_rib_make_dataUri':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:388:5: warning: 'strncat' specified bound 1 equals source length [-Wstringop-overflow=]
+     strncat(dest, "/", 1); [Akshay]
+     ^~~~~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:390:5: warning: 'strncat' specified bound 19 equals source length [-Wstringop-overflow=]
+     strncat(dest, INTF_DSTORE_ROOT_DIR, strlen(INTF_DSTORE_ROOT_DIR)); [Akshay]
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:393:7: warning: 'strncat' specified bound 1 equals source length [-Wstringop-overflow=]
+       strncat(dest, "*", 1); [Akshay]
+       ^~~~~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mpsc.c: In function 'ifmgr_mpsc_make_sub_tbl_uri':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mpsc.c:715:31: warning: 'strncat' specified bound 1 equals source length [-Wstringop-overflow=]
+     if (subscriber_subtree) { strncat(p_tbl_uri, "*", 1); } [Akshay]
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mpsc.c:8:
+In function 'intf_rib_make_dataUri',
+    inlined from 'ifmgr_mpsc_create_one_tbl' at /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mpsc.c:438:9:
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:389:5: warning: 'strncat' specified bound 7 equals source length [-Wstringop-overflow=]
+     strncat(dest, vrf, strlen(vrf)); [Akshay]
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:391:5: warning: 'strncat' specified bound 5 equals source length [-Wstringop-overflow=]
+     strncat(dest, tbl_name, strlen(tbl_name)); [Akshay]
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In function 'intf_rib_make_dataUri',
+    inlined from 'ifmgr_mpsc_create_one_tbl' at /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mpsc.c:435:9:
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:389:5: warning: 'strncat' specified bound 7 equals source length [-Wstringop-overflow=]
+     strncat(dest, vrf, strlen(vrf)); [Akshay]
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:391:5: warning: 'strncat' specified bound 5 equals source length [-Wstringop-overflow=]
+     strncat(dest, tbl_name, strlen(tbl_name)); [Akshay]
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_mm.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_mm.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_l3_mgmt.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_l3_mgmt.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr.c
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr.c: In function 'ifmgr_handle_cfg_update_msg':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr.c:1137:10: warning: 'data' may be used uninitialized in this function [-Wmaybe-uninitialized]
+      data->initial_config_done, data->if_name); [Akshay]
+          ^~
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_subif.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_subif.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_pltfm.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_pltfm.c
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_pltfm.c: In function 'ifmgr_get_mac_range':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_pltfm.c:134:16: warning: passing argument 1 of 'atoi' from incompatible pointer type [-Wincompatible-pointer-types]
+   range = atoi(&tag[2]); [Vijay]
+                ^~~~~~~
+In file included from /usr/include/features.h:424,
+                 from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdio.h:27,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:11,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_pltfm.c:11:
+/usr/include/stdlib.h:361:1: note: expected 'const char *' but argument is of type 'char (*)[10]'
+ __NTH (atoi (const char *__nptr))
+ ^~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_pltfm.c: In function 'ifmgr_init_pltfm_validation_info':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_pltfm.c:499:15: warning: declaration of 'value' shadows a previous local [-Wshadow]
+       json_t *value, *array_val; [Vijay]
+               ^~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_pltfm.c:362:11: note: shadowed declaration is here
+   json_t *value = NULL, *val_node = NULL; [Vijay]
+           ^~~~~
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_txlist.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_txlist.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_bond.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_bond.c
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_bond.c: In function 'ifmgr_process_bond_mem_cfg':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_bond.c:1518:33: warning: 'prev_memb' may be used uninitialized in this function [-Wmaybe-uninitialized]
+                 prev_memb->next = memb->next; [Vijay]
+                 ~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_bond.c:1523:9: warning: 'memb' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         free(memb); [Vijay]
+         ^~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_bond.c: In function 'ifmgr_process_bond_mem_cfg_state':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_bond.c:2678:89: warning: 'old_owner' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         ifmgr_debug_msg("DEBUG: Processing bond mem config state: bond: %s\n", old_owner->name); [Vijay]
+                                                                                         ^~
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_tp.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_tp.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_confd_slot.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_slot.c
+In file included from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/vrfmgr/vrfmgr.h:14,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include/ifmgr.h:19,
+                 from /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_slot.c:11:
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_slot.c: In function 'ifmgr_chassis_trans_hook_update_slotid':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/libutils/logging_api.h:59:21: warning: 'old_slot' may be used uninitialized in this function [-Wmaybe-uninitialized]
+             (void) (*logging_func)(                     \
+                     ^
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_slot.c:299:24: note: 'old_slot' was declared here [Vijay]
+     uint32_t new_slot, old_slot, brkout;
+                        ^~~~~~~~
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_sysmgr.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_sysmgr.c
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_sysmgr.c: In function 'ifmgr_upg_cp_container_param_init':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_sysmgr.c:63:16: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     param->pub = IFMGR_MPSC_PUB_ID; [Akshay]
+                ^
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_confd_oper.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_oper.c
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_oper.c: In function 'ifmgr_get_subif_object':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_oper.c:493:32: warning: passing argument 1 of 'ifmgr_confd_fill_map_match' from incompatible pointer type [-Wincompatible-pointer-types]
+     ifmgr_confd_fill_map_match(&tv, &n, data); [AB]
+                                ^~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_oper.c:35:53: note: expected 'confd_tag_value_t *' {aka 'struct confd_tag_value *'} but argument is of type 'confd_tag_value_t (*)[100]' {aka 'struct confd_tag_value (*)[100]'}
+ void ifmgr_confd_fill_map_match (confd_tag_value_t *tv, uint32_t *n, [AB]
+                                  ~~~~~~~~~~~~~~~~~~~^~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_oper.c: In function 'ifmgr_get_if_object':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_oper.c:1203:41: warning: passing argument 2 of 'ifmgr_consolidate_vlan_show' from incompatible pointer type [-Wincompatible-pointer-types]
+                                         &vlan_list); [AB]
+                                         ^~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_oper.c:831:54: note: expected 'confd_value_t *' {aka 'struct confd_value *'} but argument is of type 'confd_value_t (*)[4000]' {aka 'struct confd_value (*)[4000]'}
+                                       confd_value_t *vlan_list); [AB]
+                                       ~~~~~~~~~~~~~~~^~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_oper.c:1206:9: warning: assignment to 'struct confd_value *' from incompatible pointer type 'confd_value_t (*)[4000]' {aka 'struct confd_value (*)[4000]'} [-Wincompatible-pointer-types]
+         CONFD_SET_TAG_LIST(&tv[n++], oc_vlan_trunk_vlans, &vlan_list , i) [AB]
+         ^~~~~~~~~~~~~~~~~~
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_oper.c: In function 'ifmgr_consolidate_vlan_show':
+/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_oper.c:1247:7: warning: pointer targets in assignment from 'char *' to 'const unsigned char *' differ in signedness [-Wpointer-sign]
+       CONFD_SET_BUF(&vlan_list[i++], bufp, strlen(bufp));[AB]
+
+       ^~~~~~~~~~~~~
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_main.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_main.c
+cc -DPROD_ENV -Og -ggdb -fno-omit-frame-pointer -pthread -Wall -Wextra -Werror -Wcast-align -Wpointer-arith -Wformat-security -Wwrite-strings -Wshadow -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -MMD -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen -I/usr/include/libnl3/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/lib -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/codegen/ -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include -I/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../include/infra/ifmgr -I/usr/include/lttng -Wno-format-truncation -Wno-error   -c -o ifmgr_confd_debugs.o /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/app/ifmgr_confd_debugs.c
+cc ifmgr_log_msg.o ifmgr_debug.o ifmgr_ifhelper.o ifmgr_confd_snmp.o ifmgr_kernel_rcv.o ifmgr_micro_bfd.o ifmgr_confd_plugin.o ifmgr_vrf.o ifmgr_libnl.o ifmgr_ml.o ifmgr_confd_clear.o ifmgr_neighbor.o ifmgr_vlan.o ifmgr_confd_validations.o ifmgr_utils.o ifmgr_confd_completion.o ifmgr_confd_brkout.o ifmgr_match.o ifmgr_mpsc.o ifmgr_mm.o ifmgr_l3_mgmt.o ifmgr.o ifmgr_subif.o ifmgr_pltfm.o ifmgr_txlist.o ifmgr_bond.o ifmgr_tp.o ifmgr_confd_slot.o ifmgr_sysmgr.o ifmgr_confd_oper.o ifmgr_main.o ifmgr_confd_debugs.o -o ifmgr.bin -g -pthread -rdynamic -L/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../build/lib -L/usr/lib -Wl,-rpath,/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../build/lib:/usr/lib -levent -larcos_libnl -lpthread -ldl -ldstoreclient -lmpsc -llist -lmgd_memory -lbitfield -lhash -lcontainerid -llogging -lm -lavl -lpatricia -lprintutils -lconfd -lconfdproxy -llttng-ust -lnl-route-3 -lnl-3 -lmsglib -lzmq -lprotobuf-c -lcommon_capi -lrib_capi -ladjmgr_capi -lifmgr_capi -ll2rib_capi -lbfd_capi -ldpal_capi -lstp_capi -lpltfAgent_capi -lsysmgr_capi -lfeatmgr_capi -lcapi_support -ljansson -lcrypt -ltxlist -lmpsc -lmpsc_util -lsysmgrclient -ltimestamp -lindexer
+cp -p ifmgr.bin /home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/../../build/bin/ifmgr.bin
+make[1]: Leaving directory '/home/vijayr/ifmgr_wrngs/arrcus_sw/infra/ifmgr/build/bin'

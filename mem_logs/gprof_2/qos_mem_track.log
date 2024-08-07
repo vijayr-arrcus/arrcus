@@ -1,0 +1,34 @@
+Timestamp: Sat Aug 26 08:56:47 2023 332464 usec
+15264: bond10.202@bond10: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 8974 master vlan1102 state UP
+    link/ether b4:a9:fc:1a:ca:1c
+Timestamp: Mon Aug 28 04:17:54 2023 196702 usec
+1049: swp49: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 8974 qdisc pfifo_fast master bond10 state UP
+group default
+
+
+5.   Sat 26 Aug 2023 09:09:41 AM UTC - 51248
+133. Sat 26 Aug 2023 08:14:34 PM UTC - 51248
+134. Sat 26 Aug 2023 08:19:35 PM UTC - 51512
+236. Sat 26 Aug 2023 08:19:35 PM UTC - 51512
+
+root@Leaf4:/tmp# google-pprof --base=/tmp/qos_n4.0005.heap /usr/lib/arcos/qos.bin /tmp/qos_n4.0236.heap
+Using local file /usr/lib/arcos/qos.bin.
+Using local file /tmp/qos_n4.0236.heap.
+Welcome to pprof!  For help, type 'help'.
+(pprof) top
+Total: 0.0 MB
+0.0 100.0% 100.0%      0.0 100.0% zmq_version
+(pprof) quit
+root@Leaf4:/tmp#
+
+237. Sun 27 Aug 2023 04:56:15 AM UTC - 51776
+512. Mon 28 Aug 2023 03:55:43 AM UTC - 51776
+
+root@Leaf4:/tmp# google-pprof --base=/tmp/qos_n4.0005.heap /usr/lib/arcos/qos.bin /tmp/qos_n4.0512.heap
+Using local file /usr/lib/arcos/qos.bin.
+Using local file /tmp/qos_n4.0512.heap.
+Welcome to pprof!  For help, type 'help'.
+(pprof) top
+Total: 0.0 MB
+0.0 100.0% 100.0%      0.0 100.0% zmq_version
+(pprof)

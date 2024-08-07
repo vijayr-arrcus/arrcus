@@ -1,0 +1,86 @@
+Connection closed.
+root@td4-5:/proc# cat cat /proc/linux_ngbde
+cat: cat: No such file or directory
+Broadcom Device Enumerator (linux_ngbde)
+Found 1 switch device(s):
+0:14e4:b880:11,MSI(304)
+DMA pools:
+0:16MB@0x6e400000(pgmem)
+root@td4-5:/proc# cat /proc/linux_ngbde
+Broadcom Device Enumerator (linux_ngbde)
+Found 1 switch device(s):
+0:14e4:b880:11,MSI(304)
+DMA pools:
+0:16MB@0x6e400000(pgmem)
+root@td4-5:/proc#
+root@td4-5:/proc#
+
+  >>> bcm shell <<<
+  show unit
+
+
+root@td4-6:~# cat /proc/linux_ngbde
+Broadcom Device Enumerator (linux_ngbde)
+Found 1 switch device(s):
+0:14e4:b780:01,MSI(304)
+DMA pools:
+0:16MB@0x6e400000(pgmem)
+
+
+/* BCM56880 */
+#define BCM56880_VENDOR_ID                0x14e4
+#define BCM56880_DEVICE_ID                0xb880
+#define BCM56880_REV_A0                     0x01
+#define BCM56880_REV_B0                     0x11
+
+/* BCM56780 */
+#define BCM56780_VENDOR_ID                0x14e4
+#define BCM56780_DEVICE_ID                0xb780
+#define BCM56780_REV_A0                     0x01
+
+// X11
+BCM.0> bsh
+bsh
+lt DEVICE_CONFIG traverse -l
+lt DEVICE_CONFIG traverse -l
+
+Table DEVICE_CONFIG:
+  traverse
+    POLLED_IRQ_THREAD_PRIORITY=0
+    POLLED_IRQ_DELAY=0
+    POLLED_IRQ_ENABLE=0
+    PIO_BULK_COPY=0
+    PIO_BULK_WRITE=0
+    PIO_BULK_READ=0
+    CHIP_DEBUG=0
+    BS_PLL_1_CLK_SEL=CLK_INT_50MHZ
+    BS_PLL_0_CLK_SEL=CLK_INT_50MHZ
+    TS_PLL_CLK_SEL=CLK_INT_50MHZ
+    PP_CLK_FREQ=CLK_1350MHZ
+    CORE_CLK_FREQ=CLK_1350MHZ
+    VARIANT=DNA_4_8_7_0
+  1 entry traversed for lookup operation.
+
+
+// X9
+BCM.0> bsh
+bsh
+lt DEVICE_CONFIG traverse -l
+lt DEVICE_CONFIG traverse -l
+
+Table DEVICE_CONFIG:
+  traverse
+    POLLED_IRQ_THREAD_PRIORITY=0
+    POLLED_IRQ_DELAY=0
+    POLLED_IRQ_ENABLE=0
+    PIO_BULK_COPY=0
+    PIO_BULK_WRITE=0
+    PIO_BULK_READ=0
+    CHIP_DEBUG=0
+    BS_PLL_1_CLK_SEL=CLK_INT_50MHZ
+    BS_PLL_0_CLK_SEL=CLK_INT_50MHZ
+    TS_PLL_CLK_SEL=CLK_INT_50MHZ
+    PP_CLK_FREQ=CLK_1350MHZ
+    CORE_CLK_FREQ=CLK_1350MHZ
+    VARIANT=DNA_2_6_11_0
+

@@ -1,0 +1,363 @@
+BCM.0>
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0> trunk show
+trunk show
+Device supports 2112 trunk groups:
+  2048 front panel trunks (0..2047), 256 ports/trunk
+  64 fabric trunks (2048..2111), 64 ports/trunk
+trunk 1: (front panel, 3 ports)=ce6,ce7,ce5 dlf=any mc=any ipmc=any psc=resilient (0xf)
+BCM.0>
+BCM.0>
+BCM.0> ps ce5
+ps ce5
+                 ena/        speed/ link auto    STP                  lrn  inter   max   cut   loop
+           port  link  Lns   duplex scan neg?   state   pause  discrd ops   face frame  thru?  back   encap
+       ce5( 33)  up     4  100G  FD   SW  No   Forward          None   FA  CAUI4  9000    No          IEEE
+BCM.0>
+BCM.0> ps ce6
+ps ce6
+                 ena/        speed/ link auto    STP                  lrn  inter   max   cut   loop
+           port  link  Lns   duplex scan neg?   state   pause  discrd ops   face frame  thru?  back   encap
+       ce6(  5)  up     4  100G  FD   SW  No   Forward          None   FA  CAUI4  9000    No          IEEE
+BCM.0>
+BCM.0> ps ce7
+ps ce7
+                 ena/        speed/ link auto    STP                  lrn  inter   max   cut   loop
+           port  link  Lns   duplex scan neg?   state   pause  discrd ops   face frame  thru?  back   encap
+       ce7( 41)  up     4  100G  FD   SW  No   Forward          None   FA  CAUI4  9000    No          IEEE
+BCM.0>
+BCM.0> l3 egress show
+l3 egress show
+Entry  Mac                 Vlan INTF PORT MOD MPLS_LABEL ToCpu Drop RefCount L3MC
+100002  00:00:00:00:00:00    0 16383     0    0        -1   no   no    5   no
+100003  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100004  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100005  01:00:5e:90:00:01    0    1     1t   0        -1   no   no    0   no
+BCM.0>
+BCM.0> l3 intf show
+l3 intf show
+Free L3INTF entries: 16381
+Unit  Intf  VRF Group VLAN    Source Mac     MTU TTL Tunnel InnerVlan  NATRealm
+------------------------------------------------------------------
+0     1     0     0     3966 00:e0:ec:cb:37:b1  8974 0    0     0     0
+BCM.0>
+BCM.0> l3 l3table show
+l3 l3table show
+Unit 0, free L3 table entries: 16382
+Entry VRF IP address       Mac Address           INTF MOD PORT    CLASS HIT    H/W Index
+BCM.0>
+
+
+cint>
+cint> cint_reset();
+bcm_if_t l3_eo_id= 100005;
+
+int rv = BCM_E_NONE;
+bcm_bfd_endpoint_info_t  ep;
+bcm_bfd_endpoint_info_t_init(&ep);
+int unit = 0;
+bcm_port_t port = 33;
+int tid=1;
+bcm_ip_t sip_addr = 0x0a0a0a01;
+bcm_ip_t dip_addr = 0x0a0a0a02;
+
+
+
+ep.type = bcmBFDTunnelTypeUdp;
+ep.src_ip_addr = sip_addr;
+ep.dst_ip_addr = dip_addr;
+ep.udp_src_port = 50000;
+ep.egress_if = l3_eo_id;
+ep.vrf_id = 0;
+ep.ip_ttl = 255;
+ep.int_pri = 7;
+ep.auth = bcmBFDAuthTypeNone;
+BCM_GPORT_LOCAL_SET(ep.gport, port);
+ep.local_discr = 10;
+ep.auth_index = 0;
+ep.auth = bcmBFDAuthTypeNone;
+ep.local_min_tx = 1000000;
+ep.local_min_rx = 1000000;
+ep.local_detect_mult = 3;
+ep.rx_pkt_vlan_id = 0;
+rv = bcm_bfd_endpoint_create(unit, &ep);
+if (rv != BCM_E_NONE) {
+  printf("\nFailed to create end point rv = %d/%s\n", rv, bcm_errmsg(rv));
+} else {
+  printf("\nCreated an endpoint with id %d Discr:%d\n", ep.id,ep.local_discr);
+}
+cint_reset();
+bcm_if_t l3_eo_id= 100005;
+
+
+
+int rv = BCM_E_NONE;
+
+bcm_bfd_endpoint_info_t  ep;
+
+bcm_bfd_endpoint_info_t_init(&ep);
+
+int unit = 0;
+
+bcm_port_t port = 33;
+
+int tid=1;
+
+bcm_ip_t sip_addr = 0x0a0a0a01;
+
+bcm_ip_t dip_addr = 0x0a0a0a02;
+
+
+
+
+
+
+
+ep.type = bcmBFDTunnelTypeUdp;
+
+ep.src_ip_addr = sip_addr;
+
+ep.dst_ip_addr = dip_addr;
+
+ep.udp_src_port = 50000;
+
+ep.egress_if = l3_eo_id;
+
+ep.vrf_id = 0;
+
+ep.ip_ttl = 255;
+
+ep.int_pri = 7;
+
+ep.auth = bcmBFDAuthTypeNone;
+
+BCM_GPORT_LOCAL_SET(ep.gport, port);
+
+ep.local_discr = 10;
+
+ep.auth_index = 0;
+
+ep.auth = bcmBFDAuthTypeNone;
+
+ep.local_min_tx = 1000000;
+
+ep.local_min_rx = 1000000;
+
+ep.local_detect_mult = 3;
+ep.rx_pkt_vlan_id = 0;
+
+rv = bcm_bfd_endpoint_create(unit, &ep);
+
+if (rv != BCM_E_NONE) {
+
+  printf("\nFailed to create end point rv = %d/%s\n", rv, bcm_errmsg(rv));
+
+} else {
+
+  printf("\nCreated an endpoint with id %d Discr:%d\n", ep.id,ep.local_discr);
+
+}
+
+cint>
+cint> bcm_if_t l3_eo_id= 100005;
+cint>
+cint>
+cint>
+cint> int rv = BCM_E_NONE;
+cint>
+cint> bcm_bfd_endpoint_info_t  ep;
+cint>
+cint> bcm_bfd_endpoint_info_t_init(&ep);
+cint>
+cint> int unit = 0;
+cint>
+cint> bcm_port_t port = 33;
+cint>
+cint> int tid=1;
+cint>
+cint> bcm_ip_t sip_addr = 0x0a0a0a01;
+cint>
+cint> bcm_ip_t dip_addr = 0x0a0a0a02;
+cint>
+cint>
+cint>
+cint>
+cint>
+cint>
+cint>
+cint> ep.type = bcmBFDTunnelTypeUdp;
+cint>
+cint> ep.src_ip_addr = sip_addr;
+cint>
+cint> ep.dst_ip_addr = dip_addr;
+cint>
+cint> ep.udp_src_port = 50000;
+cint>
+cint> ep.egress_if = l3_eo_id;
+cint>
+cint> ep.vrf_id = 0;
+cint>
+cint> ep.ip_ttl = 255;
+cint>
+cint> ep.int_pri = 7;
+cint>
+cint> ep.auth = bcmBFDAuthTypeNone;
+cint>
+cint> BCM_GPORT_LOCAL_SET(ep.gport, port);
+cint>
+cint> ep.local_discr = 10;
+cint>
+cint> ep.auth_index = 0;
+cint>
+cint> ep.auth = bcmBFDAuthTypeNone;
+cint>
+cint> ep.local_min_tx = 1000000;
+cint>
+cint> ep.local_min_rx = 1000000;
+cint>
+cint> ep.local_detect_mult = 3;
+cint>
+cint> ep.rx_pkt_vlan_id = 0;
+cint>
+cint> rv = bcm_bfd_endpoint_create(unit, &ep);
+cint>
+cint> if (rv != BCM_E_NONE) {
+
+  printf("\nFailed to create end point rv = %d/%s\n", rv, bcm_errmsg(rv));
+
+} else {
+
+  printf("\nCreated an endpoint with id %d Discr:%d\n", ep.id,ep.local_discr);
+
+}
+
+Failed to create end point rv = -7/Entry not found
+cint>
+cint>
+
+cint>
+cint> exit;
+cint>
+cint> exit;
+exit;
+BCM.0>
+BCM.0> cint
+cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint>
+cint> bcm_if_t cpu_eo_id = 100002;
+bcm_l3_host_t host_t;
+host_t.l3a_ip_addr = 0x0a0a0a01;
+host_t.l3a_vrf = 0;
+host_t.l3a_intf = cpu_eo_id;
+rv = bcm_l3_host_add(unit, &host_t);
+if (rv != BCM_E_NONE) {
+  printf("\nFailed to add host route rv = %d/%s\n", rv, bcm_errmsg(rv));
+} else {
+  printf("\nAdd host route passed\n");
+}
+
+rv = bcm_bfd_endpoint_create(unit, &ep);
+
+if (rv != BCM_E_NONE) {
+  printf("\nRetry Failed to create end point rv = %d/%s\n", rv, bcm_errmsg(rv));
+} else {
+  printf("\nRetry Created an endpoint with id %d Discr:%d\n", ep.id,ep.local_discr);
+}
+
+bcm_if_t cpu_eo_id = 100002;
+bcm_l3_host_t host_t;
+
+host_t.l3a_ip_addr = 0x0a0a0a01;
+
+host_t.l3a_vrf = 0;
+
+host_t.l3a_intf = cpu_eo_id;
+
+rv = bcm_l3_host_add(unit, &host_t);
+
+if (rv != BCM_E_NONE) {
+
+  printf("\nFailed to add host route rv = %d/%s\n", rv, bcm_errmsg(rv));cint>
+
+} else {
+
+  printf("\nAdd host route passed\n");
+
+}
+
+
+
+rv = bcm_bfd_endpoint_create(unit, &ep);
+
+
+if (rv != BCM_E_NONE) {
+
+  printf("\nRetry Failed to create end point rv = %d/%s\n", rv, bcm_errmsg(rv));
+
+} else {
+
+  printf("\nRetry Created an endpoint with id %d Discr:%d\n", ep.id,ep.local_discr);
+
+}
+
+
+
+
+cint> bcm_l3_host_t host_t;
+cint>
+cint> host_t.l3a_ip_addr = 0x0a0a0a01;
+cint>
+cint> host_t.l3a_vrf = 0;
+cint>
+cint> host_t.l3a_intf = cpu_eo_id;
+cint>
+cint> rv = bcm_l3_host_add(unit, &host_t);
+cint>
+cint> if (rv != BCM_E_NONE) {
+
+  printf("\nFailed to add host route rv = %d/%s\n", rv, bcm_errmsg(rv));
+
+} else {
+
+  printf("\nAdd host route passed\n");
+
+}
+
+Add host route passed
+cint>
+cint>
+cint>
+cint> rv = bcm_bfd_endpoint_create(unit, &ep);
+cint>
+cint>
+cint>
+cint>
+cint> if (rv != BCM_E_NONE) {
+
+  printf("\nRetry Failed to create end point rv = %d/%s\n", rv, bcm_errmsg(rv));
+
+} else {
+
+  printf("\nRetry Created an endpoint with id %d Discr:%d\n", ep.id,ep.local_discr);
+
+}
+
+Retry Created an endpoint with id 1 Discr:10
+cint>
+cint>
+cint>
+cint> exit;
+exit;
+BCM.0>
+BCM.0> l3 l3table show
+l3 l3table show
+Unit 0, free L3 table entries: 16381
+Entry VRF IP address       Mac Address           INTF MOD PORT    CLASS HIT    H/W Index
+1     0    10.10.10.1       00:00:00:00:00:00  100002    0    0         0 n      2640       (LOCAL ROUTE)
+BCM.0>
+

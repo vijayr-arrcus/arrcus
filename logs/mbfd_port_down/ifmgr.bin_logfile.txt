@@ -1,0 +1,624 @@
+[2023/06/07 17:22:03.181993][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp29 not found on the ifmgr_global_ifname_list
+[2023/06/07 17:22:03.182097][DEBUG][IFMGR] ifmgr_read_if_cfg_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/06/07 17:22:03.184532][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp29 not found on the ifmgr_global_ifname_list
+[2023/06/07 17:22:03.184558][DEBUG][IFMGR] ifmgr_read_if_cfg_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/06/07 17:22:03.188585][DEBUG][IFMGR] ifmgrcfg_read_and_publish_if: fec cfg - 3 for swp29
+[2023/06/07 17:22:03.192834][DEBUG][IFMGR] DEBUG: Add msg received for intf swp29
+[2023/06/07 17:22:03.192872][DEBUG][IFMGR] ifmgr_handle_cfg_update_msg: swp29 set data->new_cfg->fec_type 3 data->curr_cfg->fec_type - 3 data->initial_config_done:1 
+[2023/06/07 17:22:03.192889][DEBUG][IFMGR] Interface swp29 configured as bond member, skip vlans
+[2023/06/07 17:22:03.220546][DEBUG][IFMGR] ifmgr_lnx_change_admin_state_internal: Command 'ip link set dev swp29 down 2>&1' sent to Linux for ifindex 1029
+[2023/06/07 17:22:03.220600][DEBUG][IFMGR] ifmgr_process_new_if_config(): swp29 data->new_cfg->fec_type 3 data->curr_cfg->fec_type - 3 data->initial_config_done:1 , chg:1
+[2023/06/07 17:22:03.220630][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:03.220659][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:03.220691][DEBUG][IFMGR] existing master and new master are same for memb swp29 
+[2023/06/07 17:22:03.221575][DEBUG][IFMGR] MPSC L3 TBL delete publish succeeded for ifindex 1029
+[2023/06/07 17:22:03.221595][DEBUG][IFMGR] VRF for swp29 not set, nothing to remove
+[2023/06/07 17:22:03.222421][DEBUG][CONFDPROXY] Called Config Handler, read socket=246, result=0
+[2023/06/07 17:22:03.222854][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave> group 0 
+ [2023/06/07 17:22:03.222878][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:03.222924][DEBUG][IFMGR] Interface swp29 actor flags are 63 and partner flags are 63 and slave state 0 
+[2023/06/07 17:22:03.222941][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:03.222955][DEBUG][IFMGR] ifmgr_handle_if_create_event: interface swp29 old_op_state UP, new_op_state DOWN
+[2023/06/07 17:22:03.222970][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_up(2)
+[2023/06/07 17:22:03.222984][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_down(1)
+[2023/06/07 17:22:03.223173][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:03.223190][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/06/07 17:22:03.223204][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:03.223218][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:03.223234][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:03.223248][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:03.223263][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found YES link DOWN slave UP actor UP partner UP egress disable flags 0
+[2023/06/07 17:22:03.223290][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:lacp out sync - bondif bond12 membif swp29 req_flag 2 set 0 curr_flag 0 curr_count 0
+[2023/06/07 17:22:03.223306][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bondif bond12 membif swp29 req_flag 2 set 0 new_flag 0 new_count 0
+[2023/06/07 17:22:03.223328][DEBUG][IFMGR] ifmgr_lnx_change_bond_rx_hw_prog_state: change bond member swp29 rx hw programmed state to 0
+[2023/06/07 17:22:03.223344][DEBUG][IFMGR] Executing the command : ip link set swp29 type bond_slave rx_hw_prog_done 0
+[2023/06/07 17:22:03.236911][DEBUG][IFMGR] ifmgr_update_active_memb_list:bond if bond12 del member swp29 from active list
+[2023/06/07 17:22:03.236954][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is not an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:03.236970][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:03.236989][DEBUG][IFMGR] ifmgr_micro_bfd_set_fwd_state:bond12 memb if swp29 new_fwd_state UP af v4 v4_fwd state UP v6_fwd state UP
+[2023/06/07 17:22:03.237004][DEBUG][IFMGR] ifmgr_micro_bfd_set_fwd_state: both v4 and v6 are up final UP
+[2023/06/07 17:22:03.278844][DEBUG][IFMGR] ifmgr_lnx_set_member_fwd_state fwd state of swp29 set to 1  sudo sh -c "echo 1 > /sys/class/net/swp29/bonding_slave/fwd_state" 2>&1 
+[2023/06/07 17:22:03.278884][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bfd state up - bondif bond12 membif swp29 req_flag 1 set 0 curr_flag 0 curr_count 0
+[2023/06/07 17:22:03.278900][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bondif bond12 membif swp29 req_flag 1 set 0 new_flag 0 new_count 0
+[2023/06/07 17:22:03.278916][DEBUG][IFMGR] ifmgr_micro_bfd_update_egress_disable_member_list: bond bond12 member swp29 fwd state 1 old egr cnt 0 new egr cnt 0 
+[2023/06/07 17:22:03.278936][DEBUG][IFMGR] ifmgr_micro_bfd_get_egress_disabled_count: bond12 bfd egress disabled count 0
+[2023/06/07 17:22:03.278952][DEBUG][IFMGR] ifmgr_micro_bfd_handle_min_links: bondif bond12 min links 2 act_cnt 1 egress_disabled_count 0 bfd_egress_disabled_count 0
+[2023/06/07 17:22:03.278966][DEBUG][IFMGR] ifmgr_micro_bfd_handle_min_links: bondif bond12 oper down
+[2023/06/07 17:22:03.278979][DEBUG][IFMGR] ifmgr_bfd_micro_v4_v6_disable: bond12 v4_v6 enable = TRUE
+[2023/06/07 17:22:03.279000][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: change bond bond12 oper state to DOWN requestor 1
+[2023/06/07 17:22:03.307934][DEBUG][IFMGR] ifmgr_micro_bfd_peer_object_notify_ipv4: delete TRUE
+[2023/06/07 17:22:03.307990][DEBUG][IFMGR] ifmgr_micro_bfd_peer_object_notify_ipv4: bond if bond12(15158) membif swp29(1029) BFD profile GLOBAL
+[2023/06/07 17:22:03.308050][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4: Successly sent notification
+[2023/06/07 17:22:03.308083][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6: bond intf bond12 intf swp29 
+[2023/06/07 17:22:03.308104][DEBUG][IFMGR] ifmgr_micro_bfd_set_fwd_state:bond12 memb if swp29 new_fwd_state UP af v6 v4_fwd state UP v6_fwd state UP
+[2023/06/07 17:22:03.308121][DEBUG][IFMGR] ifmgr_micro_bfd_set_fwd_state: both v4 and v6 are up final UP
+[2023/06/07 17:22:03.390423][DEBUG][IFMGR] ifmgr_lnx_set_member_fwd_state fwd state of swp29 set to 1  sudo sh -c "echo 1 > /sys/class/net/swp29/bonding_slave/fwd_state" 2>&1 
+[2023/06/07 17:22:03.390472][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bfd state up - bondif bond12 membif swp29 req_flag 1 set 0 curr_flag 0 curr_count 0
+[2023/06/07 17:22:03.390490][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bondif bond12 membif swp29 req_flag 1 set 0 new_flag 0 new_count 0
+[2023/06/07 17:22:03.390505][DEBUG][IFMGR] ifmgr_micro_bfd_update_egress_disable_member_list: bond bond12 member swp29 fwd state 1 old egr cnt 0 new egr cnt 0 
+[2023/06/07 17:22:03.390519][DEBUG][IFMGR] ifmgr_micro_bfd_get_egress_disabled_count: bond12 bfd egress disabled count 0
+[2023/06/07 17:22:03.390534][DEBUG][IFMGR] ifmgr_micro_bfd_handle_min_links: bondif bond12 min links 2 act_cnt 1 egress_disabled_count 0 bfd_egress_disabled_count 0
+[2023/06/07 17:22:03.390548][DEBUG][IFMGR] ifmgr_micro_bfd_handle_min_links: bondif bond12 oper down
+[2023/06/07 17:22:03.390561][DEBUG][IFMGR] ifmgr_bfd_micro_v4_v6_disable: bond12 v4_v6 enable = TRUE
+[2023/06/07 17:22:03.390585][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: change bond bond12 oper state to DOWN requestor 1
+[2023/06/07 17:22:03.415776][DEBUG][IFMGR] ifmgr_micro_bfd_peer_object_notify_ipv6: bond if bond12(15158) membif swp29(1029) BFD Profile GLOBAL
+[2023/06/07 17:22:03.415867][DEBUG][IFMGR] ifmgr_micro_bfd_peer_object_notify_ipv6: notify success 
+[2023/06/07 17:22:03.415906][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6: successfully sent notification
+[2023/06/07 17:22:03.415922][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_up(2)
+[2023/06/07 17:22:03.415936][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 1
+[2023/06/07 17:22:03.415949][DEBUG][IFMGR] ifmgr_update_active_memb_list() : Changed the status of bond12  to link_up
+[2023/06/07 17:22:03.415963][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: change bond bond12 oper state to UP requestor 2
+[2023/06/07 17:22:03.415983][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: waiting for last requestor to bring bond up pending 1
+[2023/06/07 17:22:03.415997][DEBUG][IFMGR] ifmgr_update_active_memb_list: active slaves updated bondif bond12 update speed 
+[2023/06/07 17:22:03.416018][DEBUG][IFMGR] ifmgr_update_bond_speed: bond bond12 oper speed updated old 2147503648, new 2147493648
+[2023/06/07 17:22:03.416045][DEBUG][IFMGR] DEBUG: Adding INTF bond12 obj to the txlist for add event
+[2023/06/07 17:22:03.416085][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:03.416114][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: bond12 ifmgr_main_ctxt.restarted: 0, initial_config_done:0, restart_handled:1
+[2023/06/07 17:22:03.416134][DEBUG][IFMGR] IFMGR sent_to_dpal: 1 and act_cnt: 1, publishing ifindex 15158 to lnx index 15158 mapping
+[2023/06/07 17:22:03.416157]**ERR**[IFMGR] Bond bond12 act cnt 1 egress disable cnt 0 min links 2
+[2023/06/07 17:22:03.416218][DEBUG][IFMGR] bond bond12 cfg mem index 1029 encoded
+[2023/06/07 17:22:03.416236][DEBUG][IFMGR] bond bond12 cfg mem index 1019 encoded
+[2023/06/07 17:22:03.416250][DEBUG][IFMGR] bond bond12 act mem index 1019 encoded
+[2023/06/07 17:22:03.416300][DEBUG][IFMGR] MPSC BOND TBL add/update publish succeeded for ifindex 15158 admin state = 2, link state = 2
+[2023/06/07 17:22:03.416318][DEBUG][IFMGR] DEBUG: Adding INTF bond12 obj to the txlist for add event
+[2023/06/07 17:22:03.416331][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/06/07 17:22:03.416344][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:03.416372][DEBUG][IFMGR] handle_netlink_down : swp29 modified ifindex1029 
+[2023/06/07 17:22:03.416502][DEBUG][IFMGR] NL_MSG received ADD bond12 ether b4:a9:fc:09:f4:4f <broadcast,multicast,master,up,running> group 0 
+ [2023/06/07 17:22:03.416524][DEBUG][IFMGR] link  updated : link bond12 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:03.416547][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (bond12) state change
+[2023/06/07 17:22:03.416564][DEBUG][IFMGR] Existing interface : 15158, bond12 old data->link_state link_up(2)
+[2023/06/07 17:22:03.416579][DEBUG][IFMGR] Existing For ifindex: 15158, bond12 new data->link_state link_up(2)
+[2023/06/07 17:22:03.416594][DEBUG][IFMGR] DEBUG: Adding INTF bond12 obj to the txlist for add event
+[2023/06/07 17:22:03.416611][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/06/07 17:22:03.416624][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:03.416637][DEBUG][IFMGR] handle_netlink_up : bond12 modified ifindex15158 
+[2023/06/07 17:22:03.416698][DEBUG][IFMGR] NL_MSG received ADD bond12 ether b4:a9:fc:09:f4:4f <broadcast,multicast,master,up> group 0 
+ [2023/06/07 17:22:03.416718][DEBUG][IFMGR] link  updated : link bond12 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:03.416737][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (bond12) state change
+[2023/06/07 17:22:03.416754][DEBUG][IFMGR] ifmgr_handle_if_create_event: interface bond12 old_op_state UP, new_op_state DOWN
+[2023/06/07 17:22:03.416769][DEBUG][IFMGR] Existing interface : 15158, bond12 old data->link_state link_up(2)
+[2023/06/07 17:22:03.416783][DEBUG][IFMGR] Existing For ifindex: 15158, bond12 new data->link_state link_down(1)
+[2023/06/07 17:22:03.417028][DEBUG][IFMGR] DEBUG: Adding INTF bond12 obj to the txlist for add event
+[2023/06/07 17:22:03.417046][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/06/07 17:22:03.417071][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:03.417141][DEBUG][IFMGR] VRF - default DS v4 I/F bond12 indx 15158 Route 62.1.1.2/24 Admin state:2 Link state:1 force:0 Deleted
+[2023/06/07 17:22:03.417225][DEBUG][IFMGR] VRF - default DS v4 I/F bond12 indx 15158 Route 62.1.1.2/32 Admin state:2 Link state:1 force:0 Deleted
+[2023/06/07 17:22:03.417245][DEBUG][IFMGR] Delete is suppressed for the bond interface bond12
+[2023/06/07 17:22:03.417264][DEBUG][IFMGR] VRF - default DS v6 bond12 indx 3b36 Route 62:1:1::1/64 Admin state:2 Link state:1 force:0 Deleted
+[2023/06/07 17:22:03.417326][DEBUG][IFMGR] VRF - default DS v6 bond12 indx 3b36 Route 62:1:1::1/128 Admin state:2 Link state:1 force:0 Deleted
+[2023/06/07 17:22:03.417341][DEBUG][IFMGR] Delete is suppressed for the bond interface bond12
+[2023/06/07 17:22:03.417357][DEBUG][IFMGR] L3 update ipv4 enable 1 index 15158 l3_info->curr_v4_cfg.enabled 1, urpf_mode 0
+[2023/06/07 17:22:03.417371][DEBUG][IFMGR] L3 update ipv6 enable 1 index 15158 l3_info->curr_v6_cfg.enabled 1
+[2023/06/07 17:22:03.417384][DEBUG][IFMGR] No subinterface config exists for interface bond12
+[2023/06/07 17:22:03.417397][DEBUG][IFMGR] DEBUG1: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU: 8974, ipv6_enabled: 1, parent_ifindex: 15158
+[2023/06/07 17:22:03.417412][DEBUG][IFMGR] DEBUG2: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU: 8974, ipv6_enabled: 1, parent_ifindex: 15158
+[2023/06/07 17:22:03.417451][DEBUG][IFMGR] MPSC L3 TBL add/update publish succeeded for ifindex 15158, v4 mtu 8974
+[2023/06/07 17:22:03.417466][DEBUG][IFMGR] handle_netlink_down : bond12 modified ifindex15158 
+[2023/06/07 17:22:03.417721][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave> group 0 
+ [2023/06/07 17:22:03.417745][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:03.417790][DEBUG][IFMGR] Interface swp29 actor flags are 63 and partner flags are 63 and slave state 1 
+[2023/06/07 17:22:03.417808][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:03.417827][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_down(1)
+[2023/06/07 17:22:03.417844][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_down(1)
+[2023/06/07 17:22:03.417860][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:03.417873][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/06/07 17:22:03.417898][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:03.417915][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:03.417931][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:03.417945][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:03.417964][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found NO link DOWN slave DOWN actor UP partner UP egress disable flags 0
+[2023/06/07 17:22:03.417980][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is not an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:03.417993][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:03.418012][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:03.418026][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:03.418040][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:03.418089][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 1
+[2023/06/07 17:22:03.418105][DEBUG][IFMGR] ifmgr_update_active_memb_list() : Changed the status of bond12  to link_up
+[2023/06/07 17:22:03.418119][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: change bond bond12 oper state to UP requestor 2
+[2023/06/07 17:22:03.418136][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: waiting for last requestor to bring bond up pending 1
+[2023/06/07 17:22:03.418150][DEBUG][IFMGR] ifmgr_update_active_memb_list: no active slaves updated bondif bond12 
+[2023/06/07 17:22:03.418164][DEBUG][IFMGR] handle_netlink_down : swp29 modified ifindex1029 
+[2023/06/07 17:22:03.418225][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:03.418243][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface bond12
+[2023/06/07 17:22:03.418258][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: bond12 ifmgr_main_ctxt.restarted: 0, initial_config_done:0, restart_handled:1
+[2023/06/07 17:22:03.418275][DEBUG][IFMGR] IFMGR sent_to_dpal: 1 and act_cnt: 1, publishing ifindex 15158 to lnx index 15158 mapping
+[2023/06/07 17:22:03.418296]**ERR**[IFMGR] Bond bond12 act cnt 1 egress disable cnt 0 min links 2
+[2023/06/07 17:22:03.418346][DEBUG][IFMGR] bond bond12 cfg mem index 1029 encoded
+[2023/06/07 17:22:03.418364][DEBUG][IFMGR] bond bond12 cfg mem index 1019 encoded
+[2023/06/07 17:22:03.418378][DEBUG][IFMGR] bond bond12 act mem index 1019 encoded
+[2023/06/07 17:22:03.418419][DEBUG][IFMGR] MPSC BOND TBL add/update publish succeeded for ifindex 15158 admin state = 2, link state = 1
+[2023/06/07 17:22:03.418437][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:03.418451][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:03.418465][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:03.418483][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 1, link state = 1, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:03.418523][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 1, link state = 1, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:03.418565][DEBUG][IFMGR] ifmgr_mpsc_micro_bfd_state_v4_sub_tbl_rx_cb MICRO bfd session received DEL notification
+[2023/06/07 17:22:03.422665][DEBUG][IFMGR] ifmgr_mpsc_micro_bfd_state_v6_sub_tbl_rx_cb: MICRO bfd session received DEL notification
+[2023/06/07 17:22:03.651093][DEBUG][IFMGR] DPAL pub IFMgr bond ifindex 15158 link status updateb
+[2023/06/07 17:22:03.651129][DEBUG][IFMGR] ifmgr_process_bond_cfg_state: bond bond12
+[2023/06/07 17:22:03.651153][DEBUG][IFMGR] DPAL pub IFMgr sub port receive cb: Successfully looked up info struct corresponding to ifindex 1029 in DPAL port sub cb
+[2023/06/07 17:22:03.651169][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:03.651185][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:03.651203][DEBUG][IFMGR] ifmgr_mpsc_dpal_pub_ports_sub_tbl_rx_cb: bond12 bond member link update speed 
+[2023/06/07 17:22:03.651218][DEBUG][IFMGR] ifmgr_update_bond_speed: bond bond12 oper speed not changed old 2147493648, new 2147493648
+[2023/06/07 17:22:03.652288][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:03.652310][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:03.652326][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:03.652341][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:03.652363][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 1, link state = 1, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:03.652419][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 1, link state = 1, fec_tytpe = 3, urpf_mode  = 0
+VIJAY enable port and disable micro bfd
+[2023/06/07 17:22:17.803402][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp29 not found on the ifmgr_global_ifname_list
+[2023/06/07 17:22:17.803502][DEBUG][IFMGR] ifmgr_read_if_cfg_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/06/07 17:22:17.803698][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): bond12 not found on the ifmgr_global_ifname_list
+[2023/06/07 17:22:17.803719][DEBUG][IFMGR] ifmgr_read_if_cfg_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/06/07 17:22:17.806244][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp29 not found on the ifmgr_global_ifname_list
+[2023/06/07 17:22:17.806285][DEBUG][IFMGR] ifmgr_read_if_cfg_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/06/07 17:22:17.810822][DEBUG][IFMGR] ifmgrcfg_read_and_publish_if: fec cfg - 3 for swp29
+[2023/06/07 17:22:17.815509][DEBUG][IFMGR] DEBUG: Add msg received for intf swp29
+[2023/06/07 17:22:17.815548][DEBUG][IFMGR] ifmgr_handle_cfg_update_msg: swp29 set data->new_cfg->fec_type 3 data->curr_cfg->fec_type - 3 data->initial_config_done:1 
+[2023/06/07 17:22:17.815566][DEBUG][IFMGR] Interface swp29 configured as bond member, skip vlans
+[2023/06/07 17:22:17.838954][DEBUG][IFMGR] ifmgr_lnx_change_admin_state_internal: Command 'ip link set dev swp29 up 2>&1' sent to Linux for ifindex 1029
+[2023/06/07 17:22:17.839010][DEBUG][IFMGR] ifmgr_process_new_if_config(): swp29 data->new_cfg->fec_type 3 data->curr_cfg->fec_type - 3 data->initial_config_done:1 , chg:1
+[2023/06/07 17:22:17.839041][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:17.839099][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:17.839127][DEBUG][IFMGR] existing master and new master are same for memb swp29 
+[2023/06/07 17:22:17.839726][DEBUG][IFMGR] MPSC L3 TBL delete publish succeeded for ifindex 1029
+[2023/06/07 17:22:17.839761][DEBUG][IFMGR] VRF for swp29 not set, nothing to remove
+[2023/06/07 17:22:17.840071][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): bond12 not found on the ifmgr_global_ifname_list
+[2023/06/07 17:22:17.840095][DEBUG][IFMGR] ifmgr_read_if_cfg_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/06/07 17:22:17.845561][DEBUG][IFMGR] ifmgrcfg_read_and_publish_if: fec cfg - 0 for bond12
+[2023/06/07 17:22:17.854169][DEBUG][IFMGR] DEBUG: Add msg received for bond intf bond12
+[2023/06/07 17:22:17.854233][DEBUG][IFMGR] DEBUG: Removing all vlans as members from bond12
+[2023/06/07 17:22:17.854254][DEBUG][IFMGR] DEBUG: Removing vlans from bond12
+[2023/06/07 17:22:17.854269][DEBUG][IFMGR] ifmgr_micro_bfd_handle_configs: interface bond12
+[2023/06/07 17:22:17.854284][DEBUG][IFMGR] ifmgr_micro_bfd_handle_update_configs: ifname bond12 
+[2023/06/07 17:22:17.854299][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:new info enabled = 0 
+[2023/06/07 17:22:17.854317][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:new info profile_name = GLOBAL 
+[2023/06/07 17:22:17.854331][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:new info flags = 15 
+[2023/06/07 17:22:17.854348][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:new info local = 62.1.1.2 
+[2023/06/07 17:22:17.854366][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:new info peer ipv4 = 62.1.1.6 
+[2023/06/07 17:22:17.854416][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:new info local ipv6 = 62:1:1::1 
+[2023/06/07 17:22:17.854432][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:new info peer ipv6 = 62:1:1::6 
+[2023/06/07 17:22:17.854448][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:old info enabled = 1 
+[2023/06/07 17:22:17.854461][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:old info profile_name = GLOBAL 
+[2023/06/07 17:22:17.854518][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:old info flags = 15 
+[2023/06/07 17:22:17.854536][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:old info local = 62.1.1.2 
+[2023/06/07 17:22:17.854554][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:old info peer ipv4 = 62.1.1.6 
+[2023/06/07 17:22:17.854569][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:old info local ipv6 = 62:1:1::1 
+[2023/06/07 17:22:17.854583][DEBUG][IFMGR] ifmgr_bond_print_micro_bfd_info:old info peer ipv6 = 62:1:1::6 
+
+
+[2023/06/07 17:22:17.854599][DEBUG][IFMGR] ifmgr_micro_bfd_handle_configs_ipv4 peer_changed NO local_changed NO profile_changed NO old flags 15 new flags 15 old enabled YES new enabled NO
+[2023/06/07 17:22:17.854617][DEBUG][IFMGR] ifmgr_micro_bfd_handle_configs_ipv4: create NO delete YES create flags 0 delete flags 3 
+[2023/06/07 17:22:17.854633][DEBUG][IFMGR] ifmgr_micro_bfd_handle_configs_ipv6 peer_changed NO local_changed NO profile_changed NO old flags 15 new flags 15 old enabled YES new enabled NO
+[2023/06/07 17:22:17.854648][DEBUG][IFMGR] ifmgr_micro_bfd_handle_configs_ipv6: create NO delete YES create flags 0 delete flags 15 
+
+
+
+[2023/06/07 17:22:17.854666][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:17.854681][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+
+
+[2023/06/07 17:22:17.854695][DEBUG][IFMGR] ifmg_micro_bfd_session_create_state_is_valid: bondif bond12 membif swp29 
+[2023/06/07 17:22:17.854711]**ERR**[IFMGR] ifmg_micro_bfd_session_create_state_is_valid: membif link state is not up 1
+[2023/06/07 17:22:17.854776][DEBUG][IFMGR] ifmgr_micro_bfd_handle_update_configs: bond if bond12 member_if swp29 not valid state to create
+
+
+[2023/06/07 17:22:17.854794][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6: bond intf bond12 intf swp19 
+[2023/06/07 17:22:17.854809][DEBUG][IFMGR] ifmgr_micro_bfd_set_fwd_state:bond12 memb if swp19 new_fwd_state UP af v6 v4_fwd state UP v6_fwd state UP
+[2023/06/07 17:22:17.854822][DEBUG][IFMGR] ifmgr_micro_bfd_set_fwd_state: both v4 and v6 are up final UP
+[2023/06/07 17:22:17.899192][DEBUG][IFMGR] ifmgr_lnx_set_member_fwd_state fwd state of swp19 set to 1  sudo sh -c "echo 1 > /sys/class/net/swp19/bonding_slave/fwd_state" 2>&1 
+[2023/06/07 17:22:17.899234][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bfd state up - bondif bond12 membif swp19 req_flag 1 set 0 curr_flag 0 curr_count 0
+[2023/06/07 17:22:17.899251][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bondif bond12 membif swp19 req_flag 1 set 0 new_flag 0 new_count 0
+[2023/06/07 17:22:17.899266][DEBUG][IFMGR] ifmgr_micro_bfd_update_egress_disable_member_list: bond bond12 member swp19 fwd state 1 old egr cnt 0 new egr cnt 0 
+[2023/06/07 17:22:17.899287][DEBUG][IFMGR] ifmgr_micro_bfd_get_egress_disabled_count: bond12 bfd egress disabled count 0
+[2023/06/07 17:22:17.899302][DEBUG][IFMGR] ifmgr_micro_bfd_handle_min_links: bondif bond12 min links 2 act_cnt 1 egress_disabled_count 0 bfd_egress_disabled_count 0
+[2023/06/07 17:22:17.899316][DEBUG][IFMGR] ifmgr_micro_bfd_handle_min_links: bondif bond12 oper down
+[2023/06/07 17:22:17.899330][DEBUG][IFMGR] ifmgr_bfd_micro_v4_v6_disable: bond12 v4_v6 enable = TRUE
+[2023/06/07 17:22:17.899351][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: change bond bond12 oper state to DOWN requestor 1
+[2023/06/07 17:22:17.925856][DEBUG][IFMGR] ifmgr_micro_bfd_peer_object_notify_ipv6: bond if bond12(15158) membif swp19(1019) BFD Profile GLOBAL
+[2023/06/07 17:22:17.925949][DEBUG][IFMGR] ifmgr_micro_bfd_peer_object_notify_ipv6: notify success 
+[2023/06/07 17:22:17.925965][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6: successfully sent notification
+[2023/06/07 17:22:17.925983][DEBUG][IFMGR] ifmgr_micro_bfd_set_fwd_state:bond12 memb if swp19 new_fwd_state UP af v4 v4_fwd state UP v6_fwd state UP
+[2023/06/07 17:22:17.925997][DEBUG][IFMGR] ifmgr_micro_bfd_set_fwd_state: both v4 and v6 are up final UP
+[2023/06/07 17:22:17.971269][DEBUG][IFMGR] ifmgr_lnx_set_member_fwd_state fwd state of swp19 set to 1  sudo sh -c "echo 1 > /sys/class/net/swp19/bonding_slave/fwd_state" 2>&1 
+[2023/06/07 17:22:17.971330][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bfd state up - bondif bond12 membif swp19 req_flag 1 set 0 curr_flag 0 curr_count 0
+[2023/06/07 17:22:17.971347][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bondif bond12 membif swp19 req_flag 1 set 0 new_flag 0 new_count 0
+[2023/06/07 17:22:17.971362][DEBUG][IFMGR] ifmgr_micro_bfd_update_egress_disable_member_list: bond bond12 member swp19 fwd state 1 old egr cnt 0 new egr cnt 0 
+[2023/06/07 17:22:17.971376][DEBUG][IFMGR] ifmgr_micro_bfd_get_egress_disabled_count: bond12 bfd egress disabled count 0
+[2023/06/07 17:22:17.971391][DEBUG][IFMGR] ifmgr_micro_bfd_handle_min_links: bondif bond12 min links 2 act_cnt 1 egress_disabled_count 0 bfd_egress_disabled_count 0
+[2023/06/07 17:22:17.971405][DEBUG][IFMGR] ifmgr_micro_bfd_handle_min_links: bondif bond12 oper down
+[2023/06/07 17:22:17.971419][DEBUG][IFMGR] ifmgr_bfd_micro_v4_v6_disable: bond12 v4_v6 enable = TRUE
+[2023/06/07 17:22:17.971440][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: change bond bond12 oper state to DOWN requestor 1
+[2023/06/07 17:22:17.996878][DEBUG][IFMGR] ifmgr_micro_bfd_peer_object_notify_ipv4: delete TRUE
+[2023/06/07 17:22:17.996933][DEBUG][IFMGR] ifmgr_micro_bfd_peer_object_notify_ipv4: bond if bond12(15158) membif swp19(1019) BFD profile GLOBAL
+[2023/06/07 17:22:17.996995][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4: Successly sent notification
+[2023/06/07 17:22:17.997014][DEBUG][IFMGR] ifmg_micro_bfd_session_create_state_is_valid: bondif bond12 membif swp19 
+[2023/06/07 17:22:17.997030][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp19 is an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:17.997044][DEBUG][IFMGR] ifmg_micro_bfd_session_create_state_is_valid: interface in valid state 
+[2023/06/07 17:22:17.997090][DEBUG][IFMGR] ifmgr_micro_bfd_handle_configs: interface update bond12
+[2023/06/07 17:22:17.997121][DEBUG][IFMGR] ifmgr_micro_bfd_start_or_stop_all_cfg_mem(): Creating BFD Session: swp29
+[2023/06/07 17:22:17.997147][DEBUG][IFMGR] ifmgr_micro_bfd_member_create_session: bond if bond12 membif swp29
+[2023/06/07 17:22:17.997161][DEBUG][IFMGR] ifmg_micro_bfd_session_create_state_is_valid: bondif bond12 membif swp29 
+[2023/06/07 17:22:17.997177]**ERR**[IFMGR] ifmg_micro_bfd_session_create_state_is_valid: membif link state is not up 1
+[2023/06/07 17:22:17.997244]**ERR**[IFMGR] ifmgr_micro_bfd_member_create_session: bond if bond12 member if swp29 not in valid state 
+[2023/06/07 17:22:17.997274][DEBUG][IFMGR] ifmgr_micro_bfd_start_or_stop_all_cfg_mem(): Creating BFD Session: swp19
+[2023/06/07 17:22:17.997288][DEBUG][IFMGR] ifmgr_micro_bfd_member_create_session: bond if bond12 membif swp19
+[2023/06/07 17:22:17.997302][DEBUG][IFMGR] ifmg_micro_bfd_session_create_state_is_valid: bondif bond12 membif swp19 
+[2023/06/07 17:22:17.997321][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp19 is an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:17.997334][DEBUG][IFMGR] ifmg_micro_bfd_session_create_state_is_valid: interface in valid state 
+[2023/06/07 17:22:17.997347][DEBUG][IFMGR] ifmgr_micro_bfd_create_session_ipv4: micro bfd not enabled on intf swp19 
+[2023/06/07 17:22:17.997365][DEBUG][IFMGR] ifmgr_micro_bfd_create_session_ipv6: micro bfd not enabled on intf swp19 
+
+
+
+
+
+
+
+
+
+
+[2023/06/07 17:22:17.997381][DEBUG][IFMGR] DEBUG: Adding all vlans as members from bond12
+[2023/06/07 17:22:18.007801][DEBUG][CONFDPROXY] Called Config Handler, read socket=246, result=0
+[2023/06/07 17:22:18.009052][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave,up> group 0 
+ [2023/06/07 17:22:18.009114][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:18.009162][DEBUG][IFMGR] Interface swp29 actor flags are 63 and partner flags are 63 and slave state 1 
+[2023/06/07 17:22:18.009184][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:18.009237][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_down(1)
+[2023/06/07 17:22:18.009256][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_down(1)
+[2023/06/07 17:22:18.009273][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:18.009293][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/06/07 17:22:18.009310][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:18.009327][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:18.009344][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:18.009358][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:18.009377][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found NO link DOWN slave DOWN actor UP partner UP egress disable flags 0
+[2023/06/07 17:22:18.009393][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is not an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:18.009407][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:18.009425][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.009448][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.009466][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:18.009479][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 1
+[2023/06/07 17:22:18.009492][DEBUG][IFMGR] ifmgr_update_active_memb_list() : Changed the status of bond12  to link_up
+[2023/06/07 17:22:18.009506][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: change bond bond12 oper state to UP requestor 2
+[2023/06/07 17:22:18.009523][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: waiting for last requestor to bring bond up pending 1
+[2023/06/07 17:22:18.009537][DEBUG][IFMGR] ifmgr_update_active_memb_list: no active slaves updated bondif bond12 
+[2023/06/07 17:22:18.009551][DEBUG][IFMGR] handle_netlink_down : swp29 modified ifindex1029 
+[2023/06/07 17:22:18.009716][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave,up> group 0 
+ [2023/06/07 17:22:18.009737][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:18.009779][DEBUG][IFMGR] Interface swp29 actor flags are 71 and partner flags are 1 and slave state 1 
+[2023/06/07 17:22:18.009797][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:18.009811][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_down(1)
+[2023/06/07 17:22:18.009825][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_down(1)
+[2023/06/07 17:22:18.009844][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:18.009858][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/06/07 17:22:18.009870][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:18.009883][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:18.009897][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:18.009915][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:18.009930][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found NO link DOWN slave DOWN actor DOWN partner DOWN egress disable flags 0
+[2023/06/07 17:22:18.009944][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is not an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:18.010084][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:18.010101][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.010115][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.010129][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:18.010142][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 1
+[2023/06/07 17:22:18.010205][DEBUG][IFMGR] ifmgr_update_active_memb_list: no active slaves updated bondif bond12 
+[2023/06/07 17:22:18.010236][DEBUG][IFMGR] handle_netlink_down : swp29 modified ifindex1029 
+[2023/06/07 17:22:18.010324][DEBUG][IFMGR] ifmgr_mpsc_micro_bfd_state_v6_sub_tbl_rx_cb: MICRO bfd session received DEL notification
+[2023/06/07 17:22:18.010359][DEBUG][IFMGR] ifmgr_mpsc_micro_bfd_state_v4_sub_tbl_rx_cb MICRO bfd session received DEL notification
+[2023/06/07 17:22:18.010382][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:18.010397][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:18.010411][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:18.010430][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:18.010448][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 2, link state = 1, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:18.010513][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 2, link state = 1, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:18.062561][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave,up> group 0 
+ [2023/06/07 17:22:18.062615][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:18.062669][DEBUG][IFMGR] Interface swp29 actor flags are 199 and partner flags are 3 and slave state 1 
+[2023/06/07 17:22:18.062686][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:18.062701][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_down(1)
+[2023/06/07 17:22:18.062715][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_down(1)
+[2023/06/07 17:22:18.062732][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:18.062749][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:18.062763][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:18.062780][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:18.062794][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:18.062824][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found NO link DOWN slave DOWN actor DOWN partner DOWN egress disable flags 0
+[2023/06/07 17:22:18.062844][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is not an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:18.062859][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:18.062874][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.062888][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.062902][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:18.062915][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 1
+[2023/06/07 17:22:18.062928][DEBUG][IFMGR] ifmgr_update_active_memb_list: no active slaves updated bondif bond12 
+[2023/06/07 17:22:18.062965][DEBUG][IFMGR] handle_netlink_down : swp29 modified ifindex1029 
+[2023/06/07 17:22:18.067367][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:18.067412][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:18.067429][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:18.067445][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:18.067465][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 2, link state = 1, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:18.067536][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 2, link state = 1, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:18.256149][DEBUG][IFMGR] DPAL pub IFMgr sub port receive cb: Successfully looked up info struct corresponding to ifindex 1029 in DPAL port sub cb
+[2023/06/07 17:22:18.256194][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:18.256212][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:18.256234][DEBUG][IFMGR] ifmgr_mpsc_dpal_pub_ports_sub_tbl_rx_cb: bond12 bond member link update speed 
+[2023/06/07 17:22:18.256249][DEBUG][IFMGR] ifmgr_update_bond_speed: bond bond12 oper speed not changed old 2147493648, new 2147493648
+[2023/06/07 17:22:18.257294][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:18.257325][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:18.257341][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:18.257356][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:18.257375][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 2, link state = 1, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:18.257436][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 2, link state = 1, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:18.267134][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave,up,running,lowerup> group 0 
+ [2023/06/07 17:22:18.267179][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:18.267237][DEBUG][IFMGR] Interface swp29 actor flags are 199 and partner flags are 3 and slave state 1 
+[2023/06/07 17:22:18.267256][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:18.267270][DEBUG][IFMGR] ifmgr_handle_if_create_event: interface swp29 old_op_state DOWN, new_op_state UP
+[2023/06/07 17:22:18.267286][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_down(1)
+[2023/06/07 17:22:18.267301][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_up(2)
+[2023/06/07 17:22:18.267536][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:18.267558][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:18.267573][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:18.267589][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:18.267603][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:18.267618][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found NO link UP slave DOWN actor DOWN partner DOWN egress disable flags 0
+[2023/06/07 17:22:18.267634][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is not an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:18.267647][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:18.267683][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.267697][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.267711][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:18.267724][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 1
+[2023/06/07 17:22:18.267737][DEBUG][IFMGR] ifmgr_update_active_memb_list: no active slaves updated bondif bond12 
+[2023/06/07 17:22:18.267763][DEBUG][IFMGR] handle_netlink_up : swp29 modified ifindex1029 
+[2023/06/07 17:22:18.269622][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:18.269659][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:18.269674][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:18.269688][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:18.269707][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:18.269767][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:18.584666][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave,up,running,lowerup> group 0 
+ [2023/06/07 17:22:18.584721][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:18.584776][DEBUG][IFMGR] Interface swp29 actor flags are 7 and partner flags are 71 and slave state 1 
+[2023/06/07 17:22:18.584793][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:18.584808][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_up(2)
+[2023/06/07 17:22:18.584821][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_up(2)
+[2023/06/07 17:22:18.584838][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:18.584855][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:18.584880][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:18.584897][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:18.584911][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:18.584926][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found NO link UP slave DOWN actor DOWN partner DOWN egress disable flags 0
+[2023/06/07 17:22:18.584942][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is not an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:18.584956][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:18.584970][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.584984][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.584997][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:18.585010][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 1
+[2023/06/07 17:22:18.585023][DEBUG][IFMGR] ifmgr_update_active_memb_list: no active slaves updated bondif bond12 
+[2023/06/07 17:22:18.585037][DEBUG][IFMGR] handle_netlink_up : swp29 modified ifindex1029 
+[2023/06/07 17:22:18.586161][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:18.586192][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:18.586230][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:18.586244][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:18.586263][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:18.586321][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:18.895911][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave,up,running,lowerup> group 0 
+ [2023/06/07 17:22:18.895952][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:18.896004][DEBUG][IFMGR] Interface swp29 actor flags are 7 and partner flags are 15 and slave state 1 
+[2023/06/07 17:22:18.896020][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:18.896035][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_up(2)
+[2023/06/07 17:22:18.896048][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_up(2)
+[2023/06/07 17:22:18.896087][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:18.896106][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:18.896120][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:18.896136][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:18.896150][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:18.896165][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found NO link UP slave DOWN actor DOWN partner DOWN egress disable flags 0
+[2023/06/07 17:22:18.896180][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is not an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:18.896194][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:18.896208][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.896222][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:18.896235][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:18.896248][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 1
+[2023/06/07 17:22:18.896261][DEBUG][IFMGR] ifmgr_update_active_memb_list: no active slaves updated bondif bond12 
+[2023/06/07 17:22:18.896275][DEBUG][IFMGR] handle_netlink_up : swp29 modified ifindex1029 
+[2023/06/07 17:22:18.897597][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:18.897629][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:18.897645][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:18.897659][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:18.897678][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:18.897735][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:20.142893][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave,up,running,lowerup> group 0 
+ [2023/06/07 17:22:20.142986][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:20.143073][DEBUG][IFMGR] Interface swp29 actor flags are 15 and partner flags are 15 and slave state 1 
+[2023/06/07 17:22:20.143094][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:20.143109][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_up(2)
+[2023/06/07 17:22:20.143123][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_up(2)
+[2023/06/07 17:22:20.143140][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:20.143157][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:20.143172][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:20.143188][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:20.143203][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:20.143219][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found NO link UP slave DOWN actor DOWN partner DOWN egress disable flags 0
+[2023/06/07 17:22:20.143235][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is not an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:20.143249][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:20.143263][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:20.143277][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:20.143291][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:20.143304][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 1
+[2023/06/07 17:22:20.143318][DEBUG][IFMGR] ifmgr_update_active_memb_list: no active slaves updated bondif bond12 
+[2023/06/07 17:22:20.143332][DEBUG][IFMGR] handle_netlink_up : swp29 modified ifindex1029 
+[2023/06/07 17:22:20.144435][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:20.144463][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:20.144479][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:20.144494][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:20.144512][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:20.144580][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:20.246520][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave,up,running,lowerup> group 0 
+ [2023/06/07 17:22:20.246569][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:20.246621][DEBUG][IFMGR] Interface swp29 actor flags are 15 and partner flags are 15 and slave state 0 
+[2023/06/07 17:22:20.246638][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:20.246653][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_up(2)
+[2023/06/07 17:22:20.246667][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_up(2)
+[2023/06/07 17:22:20.246683][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:20.246700][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:20.246714][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:20.246730][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:20.246745][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:20.246787][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found NO link UP slave UP actor DOWN partner DOWN egress disable flags 0
+[2023/06/07 17:22:20.246809][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:lacp sync - bondif bond12 membif swp29 req_flag 2 set 1 curr_flag 0 curr_count 0
+[2023/06/07 17:22:20.246825][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bondif bond12 membif swp29 req_flag 2 set 1 new_flag 2 new_count 1
+[2023/06/07 17:22:20.246839][DEBUG][IFMGR] ifmgr_lnx_change_bond_rx_hw_prog_state: change bond member swp29 rx hw programmed state to 1
+[2023/06/07 17:22:20.246853][DEBUG][IFMGR] Executing the command : ip link set swp29 type bond_slave rx_hw_prog_done 1
+[2023/06/07 17:22:20.276709][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 add member swp29 to active list
+[2023/06/07 17:22:20.276760][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is an active member of bond bond12 lacp egress disabled yes
+[2023/06/07 17:22:20.276776][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:20.276801][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:20.276817][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:20.276830][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:20.276844][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 2
+[2023/06/07 17:22:20.276857][DEBUG][IFMGR] ifmgr_update_active_memb_list: active slaves updated bondif bond12 update speed 
+[2023/06/07 17:22:20.276879][DEBUG][IFMGR] ifmgr_update_bond_speed: bond bond12 oper speed updated old 2147493648, new 2147503648
+[2023/06/07 17:22:20.276898][DEBUG][IFMGR] DEBUG: Adding INTF bond12 obj to the txlist for add event
+[2023/06/07 17:22:20.276917][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:20.276939][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: bond12 ifmgr_main_ctxt.restarted: 0, initial_config_done:0, restart_handled:1
+[2023/06/07 17:22:20.276958][DEBUG][IFMGR] IFMGR sent_to_dpal: 1 and act_cnt: 2, publishing ifindex 15158 to lnx index 15158 mapping
+[2023/06/07 17:22:20.276982]**ERR**[IFMGR] Bond bond12 act cnt 2 egress disable cnt 1 min links 2
+[2023/06/07 17:22:20.277045][DEBUG][IFMGR] bond bond12 cfg mem index 1029 encoded
+[2023/06/07 17:22:20.277071][DEBUG][IFMGR] bond bond12 act mem index 1029 encoded
+[2023/06/07 17:22:20.277087][DEBUG][IFMGR] bond bond12 egress disabled mem index 1029 encoded, flags 2
+[2023/06/07 17:22:20.277101][DEBUG][IFMGR] bond bond12 cfg mem index 1019 encoded
+[2023/06/07 17:22:20.277113][DEBUG][IFMGR] bond bond12 act mem index 1019 encoded
+[2023/06/07 17:22:20.277180][DEBUG][IFMGR] MPSC BOND TBL add/update publish succeeded for ifindex 15158 admin state = 2, link state = 1
+[2023/06/07 17:22:20.277197][DEBUG][IFMGR] DEBUG: Adding INTF bond12 obj to the txlist for add event
+[2023/06/07 17:22:20.277211][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/06/07 17:22:20.277223][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:20.277239][DEBUG][IFMGR] handle_netlink_up : swp29 modified ifindex1029 
+[2023/06/07 17:22:20.279002][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:20.279041][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:20.279072][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:20.279091][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:20.279111][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:20.279167][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:20.279194][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface bond12
+[2023/06/07 17:22:20.279208][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: bond12 ifmgr_main_ctxt.restarted: 0, initial_config_done:0, restart_handled:1
+[2023/06/07 17:22:20.279225][DEBUG][IFMGR] IFMGR sent_to_dpal: 1 and act_cnt: 2, publishing ifindex 15158 to lnx index 15158 mapping
+[2023/06/07 17:22:20.279243]**ERR**[IFMGR] Bond bond12 act cnt 2 egress disable cnt 1 min links 2
+[2023/06/07 17:22:20.279299][DEBUG][IFMGR] bond bond12 cfg mem index 1029 encoded
+[2023/06/07 17:22:20.279313][DEBUG][IFMGR] bond bond12 act mem index 1029 encoded
+[2023/06/07 17:22:20.279326][DEBUG][IFMGR] bond bond12 egress disabled mem index 1029 encoded, flags 2
+[2023/06/07 17:22:20.279339][DEBUG][IFMGR] bond bond12 cfg mem index 1019 encoded
+[2023/06/07 17:22:20.279352][DEBUG][IFMGR] bond bond12 act mem index 1019 encoded
+[2023/06/07 17:22:20.279391][DEBUG][IFMGR] MPSC BOND TBL add/update publish succeeded for ifindex 15158 admin state = 2, link state = 1
+[2023/06/07 17:22:20.286792][DEBUG][IFMGR] DPAL pub IFMgr bond ifindex 15158 link status updateb
+[2023/06/07 17:22:20.286828][DEBUG][IFMGR] ifmgr_process_bond_cfg_state: bond bond12
+[2023/06/07 17:22:20.286843][DEBUG][IFMGR] ifmgr_process_bond_cfg_state: bond bond12 active members matched, bring up bond
+[2023/06/07 17:22:20.286858][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: change bond bond12 oper state to UP requestor 2
+[2023/06/07 17:22:20.286875][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: waiting for last requestor to bring bond up pending 1
+[2023/06/07 17:22:20.353161][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave,up,running,lowerup> group 0 
+ [2023/06/07 17:22:20.353210][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:20.353266][DEBUG][IFMGR] Interface swp29 actor flags are 63 and partner flags are 15 and slave state 0 
+[2023/06/07 17:22:20.353283][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:20.353302][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_up(2)
+[2023/06/07 17:22:20.353317][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_up(2)
+[2023/06/07 17:22:20.353333][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:20.353352][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:20.353366][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:20.353382][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:20.353397][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:20.353412][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found YES link UP slave UP actor UP partner DOWN egress disable flags 2
+[2023/06/07 17:22:20.353437][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is an active member of bond bond12 lacp egress disabled yes
+[2023/06/07 17:22:20.353452][DEBUG][IFMGR] ifmgr_micro_bfd_member_delete_session: bond12 bond if 
+[2023/06/07 17:22:20.353466][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv4:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:20.353480][DEBUG][IFMGR] ifmgr_micro_bfd_delete_session_ipv6:bond12 micro bfd state flags 16 for interface swp29 ignore delete 
+[2023/06/07 17:22:20.353493][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:20.353506][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 2
+[2023/06/07 17:22:20.353519][DEBUG][IFMGR] ifmgr_update_active_memb_list: no active slaves updated bondif bond12 
+[2023/06/07 17:22:20.353533][DEBUG][IFMGR] handle_netlink_up : swp29 modified ifindex1029 
+[2023/06/07 17:22:20.354660][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:20.354692][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:20.354708][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:20.354722][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:20.354740][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:20.354808][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:20.454985][DEBUG][IFMGR] NL_MSG received ADD swp29 ether b4:a9:fc:09:f4:4f master bond12 <broadcast,multicast,slave,up,running,lowerup> group 0 
+ [2023/06/07 17:22:20.455052][DEBUG][IFMGR] link  updated : link swp29 idx 0 family 0 type 0 master 0 vlanid 0 action 5
+[2023/06/07 17:22:20.455124][DEBUG][IFMGR] Interface swp29 actor flags are 63 and partner flags are 63 and slave state 0 
+[2023/06/07 17:22:20.455141][DEBUG][IFMGR] ifmgr_handle_if_create_event: existing interface (swp29) state change
+[2023/06/07 17:22:20.455156][DEBUG][IFMGR] Existing interface : 1029, swp29 old data->link_state link_up(2)
+[2023/06/07 17:22:20.455170][DEBUG][IFMGR] Existing For ifindex: 1029, swp29 new data->link_state link_up(2)
+[2023/06/07 17:22:20.455187][DEBUG][IFMGR] DEBUG: Adding INTF swp29 obj to the txlist for add event
+[2023/06/07 17:22:20.455203][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/06/07 17:22:20.455218][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: interface swp29..
+[2023/06/07 17:22:20.455234][DEBUG][IFMGR] ifmgr_process_bond_mem_cfg_state: bond interface bond12 member swp29 delete NO
+[2023/06/07 17:22:20.455248][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29
+[2023/06/07 17:22:20.455263][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 membif swp29 found YES link UP slave UP actor UP partner UP egress disable flags 2
+[2023/06/07 17:22:20.455279][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:lacp collecting - bondif bond12 membif swp29 req_flag 2 set 0 curr_flag 2 curr_count 1
+[2023/06/07 17:22:20.455297][DEBUG][IFMGR] ifmgr_bond_egress_disabled_flag_handler:bondif bond12 membif swp29 req_flag 2 set 0 new_flag 0 new_count 0
+[2023/06/07 17:22:20.455312][DEBUG][IFMGR] ifmgr_update_active_memb_list:bondif bond12 enable egress for member swp29
+[2023/06/07 17:22:20.455326][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:20.455339][DEBUG][IFMGR] ifmgr_micro_bfd_member_create_session: bond if bond12 membif swp29
+[2023/06/07 17:22:20.455353][DEBUG][IFMGR] ifmg_micro_bfd_session_create_state_is_valid: bondif bond12 membif swp29 
+[2023/06/07 17:22:20.455366][DEBUG][IFMGR] ifmgr_bond_member_is_l2_forwarding: swp29 is an active member of bond bond12 lacp egress disabled no
+[2023/06/07 17:22:20.455379][DEBUG][IFMGR] ifmg_micro_bfd_session_create_state_is_valid: interface in valid state 
+[2023/06/07 17:22:20.455393][DEBUG][IFMGR] ifmgr_micro_bfd_create_session_ipv4: micro bfd not enabled on intf swp29 
+[2023/06/07 17:22:20.455405][DEBUG][IFMGR] ifmgr_micro_bfd_create_session_ipv6: micro bfd not enabled on intf swp29 
+[2023/06/07 17:22:20.455418][DEBUG][IFMGR] ifmgr_update_active_memb_list() : old link state of bond12 = link_down(1)
+[2023/06/07 17:22:20.455431][DEBUG][IFMGR] ifmgr_update_active_memb_list() : active member count = 2
+[2023/06/07 17:22:20.455444][DEBUG][IFMGR] ifmgr_update_active_memb_list: active slaves updated bondif bond12 update speed 
+[2023/06/07 17:22:20.455462][DEBUG][IFMGR] ifmgr_update_bond_speed: bond bond12 oper speed not changed old 2147503648, new 2147503648
+[2023/06/07 17:22:20.455478][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: bond12 ifmgr_main_ctxt.restarted: 0, initial_config_done:0, restart_handled:1
+[2023/06/07 17:22:20.455515][DEBUG][IFMGR] IFMGR sent_to_dpal: 1 and act_cnt: 2, publishing ifindex 15158 to lnx index 15158 mapping
+[2023/06/07 17:22:20.455535]**ERR**[IFMGR] Bond bond12 act cnt 2 egress disable cnt 0 min links 2
+[2023/06/07 17:22:20.455589][DEBUG][IFMGR] bond bond12 cfg mem index 1029 encoded
+[2023/06/07 17:22:20.455604][DEBUG][IFMGR] bond bond12 act mem index 1029 encoded
+[2023/06/07 17:22:20.455617][DEBUG][IFMGR] bond bond12 cfg mem index 1019 encoded
+[2023/06/07 17:22:20.455629][DEBUG][IFMGR] bond bond12 act mem index 1019 encoded
+[2023/06/07 17:22:20.455679][DEBUG][IFMGR] MPSC BOND TBL add/update publish succeeded for ifindex 15158 admin state = 2, link state = 1
+[2023/06/07 17:22:20.455693][DEBUG][IFMGR] DEBUG: Adding INTF bond12 obj to the txlist for add event
+[2023/06/07 17:22:20.455715][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/06/07 17:22:20.455732][DEBUG][IFMGR] handle_netlink_up : swp29 modified ifindex1029 
+[2023/06/07 17:22:20.457636][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/06/07 17:22:20.457676][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp29
+[2023/06/07 17:22:20.457692][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp29 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/06/07 17:22:20.457707][DEBUG][IFMGR] IFMGR publishing ifindex 1029 to lnx index 1029 mapping
+[2023/06/07 17:22:20.457726][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/06/07 17:22:20.457791][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp29 ifindex 1029, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+[2023/06/07 17:22:20.457805][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface bond12
+[2023/06/07 17:22:20.457819][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: bond12 ifmgr_main_ctxt.restarted: 0, initial_config_done:0, restart_handled:1
+[2023/06/07 17:22:20.457837][DEBUG][IFMGR] IFMGR sent_to_dpal: 1 and act_cnt: 2, publishing ifindex 15158 to lnx index 15158 mapping
+[2023/06/07 17:22:20.457855]**ERR**[IFMGR] Bond bond12 act cnt 2 egress disable cnt 0 min links 2
+[2023/06/07 17:22:20.457908][DEBUG][IFMGR] bond bond12 cfg mem index 1029 encoded
+[2023/06/07 17:22:20.457923][DEBUG][IFMGR] bond bond12 act mem index 1029 encoded
+[2023/06/07 17:22:20.457936][DEBUG][IFMGR] bond bond12 cfg mem index 1019 encoded
+[2023/06/07 17:22:20.457948][DEBUG][IFMGR] bond bond12 act mem index 1019 encoded
+[2023/06/07 17:22:20.457983][DEBUG][IFMGR] MPSC BOND TBL add/update publish succeeded for ifindex 15158 admin state = 2, link state = 1
+[2023/06/07 17:22:20.467375][DEBUG][IFMGR] DPAL pub IFMgr bond ifindex 15158 link status updateb
+[2023/06/07 17:22:20.467409][DEBUG][IFMGR] ifmgr_process_bond_cfg_state: bond bond12
+[2023/06/07 17:22:20.467424][DEBUG][IFMGR] ifmgr_process_bond_cfg_state: bond bond12 active members matched, bring up bond
+[2023/06/07 17:22:20.467440][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: change bond bond12 oper state to UP requestor 2
+[2023/06/07 17:22:20.467453][DEBUG][IFMGR] ifmgr_lnx_change_bond_oper_state: waiting for last requestor to bring bond up pending 1

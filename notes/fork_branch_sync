@@ -1,0 +1,8 @@
+fork sync
+
+git clone git@github.com:vijayr-arrcus/arrcus_sw.git
+cd arrcus_sw/
+git remote add Arrcus/arrcus_sw git@github.com:Arrcus/arrcus_sw.git
+git fetch Arrcus/arrcus_sw
+git checkout -b v5.1.1.EFT11 Arrcus/arrcus_sw/v5.1.1.EFT11
+git push origin v5.1.1.EFT11

@@ -1,0 +1,41 @@
+int unit = 0;  
+int rv;
+  int flags = 0, vxlan_flags = 0;
+
+  vxlan_flags = BCM_HASH_FIELD_SRCMOD  | BCM_HASH_FIELD_SRCPORT | BCM_HASH_FIELD_PROTOCOL |
+                BCM_HASH_FIELD_DSTMOD  | BCM_HASH_FIELD_DSTPORT | BCM_HASH_FIELD_VLAN;
+
+
+rv = bcm_switch_control_get(unit, bcmSwitchHashControl, &flags);
+print rv;
+  flags |= BCM_HASH_CONTROL_ECMP_OVERLAY_ENHANCE;
+  rv = bcm_switch_control_set(unit, bcmSwitchHashControl, flags);
+print rv;
+  rv = bcm_switch_control_set(unit, bcmSwitchHashUseFlowSelEcmp, 0);
+print rv;
+  rv = bcm_switch_control_get(unit, bcmSwitchHashIP4Field0, &flags);
+print rv;
+  rv = bcm_switch_control_set(unit, bcmSwitchHashIP4Field0, flags | vxlan_flags);
+print rv;
+  rv = bcm_switch_control_get(unit, bcmSwitchHashIP4TcpUdpField0, &flags);
+print rv;
+  rv = bcm_switch_control_set(unit, bcmSwitchHashIP4TcpUdpField0, flags | vxlan_flags);
+print rv;
+  rv = bcm_switch_control_get(unit, bcmSwitchHashIP4Field1, &flags);
+print rv;
+  rv = bcm_switch_control_set(unit, bcmSwitchHashIP4Field1, flags | vxlan_flags);
+print rv;
+  rv = bcm_switch_control_get(unit, bcmSwitchHashIP4TcpUdpField1, &flags);
+print rv;
+  rv = bcm_switch_control_set(unit, bcmSwitchHashIP4TcpUdpField1, flags | vxlan_flags);
+print rv;
+  rv = bcm_switch_control_set(unit, bcmSwitchHashField0Config,  BCM_HASH_FIELD_CONFIG_CRC32LO);
+print rv;
+  rv = bcm_switch_control_set(unit, bcmSwitchHashField0Config1, BCM_HASH_FIELD_CONFIG_CRC32HI);
+print rv;
+  rv = bcm_switch_control_set(unit, bcmSwitchHashField1Config, BCM_HASH_FIELD_CONFIG_CRC32LO);
+print rv;
+  rv = bcm_switch_control_set(unit, bcmSwitchHashField1Config1, BCM_HASH_FIELD_CONFIG_CRC32HI);
+print rv;
+  rv = bcm_switch_control_set(unit, bcmSwitchECMPVxlanHashOffset, 5);
+print rv;

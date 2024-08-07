@@ -1,0 +1,56 @@
+#1  0x00007f5509ed4f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f5509e6b009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f5509e672b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f5509e68478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f5509e6972a in malloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f550a42146e in mgd_memory_malloc_internal () from /usr/lib/libmgd_memory.so
+#7  0x00007f550a421540 in mgd_memory_malloc () from /usr/lib/libmgd_memory.so
+#8  0x00005582cce8bc3f in qos_dstore_alloc_msg (msg_type=msg_type@entry=QOS_MSG_TYPE_QUEUE_STATS) at /home/vijayr/qos_leak_mano_fix/arrcus_sw/feature/qos/app/qos.h:299
+#9  0x00005582cce8e0d4 in qos_mpsc_queue_stats_tbl_rx_cb (msg_p=0x7f54c8017d20, sub_id=..., app_ctxt_p=<optimized out>) at /home/vijayr/qos_leak_mano_fix/arrcus_sw/feature/qos/app/qos_mpsc.c:822
+#10 0x00007f550a09a466 in ?? () from /usr/lib/libmpsc_util.so
+#11 0x00007f550a45a9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#12 0x00007f550a45b537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00005582cceb3fad in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak_mano_fix/arrcus_sw/feature/qos/app/qos_main.c:1181
+(gdb) cont
+(gdb) cont
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f5509ed4ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Sun 20 Aug 2023 02:54:38 PM UTC
+#0  0x00007f5509ed4ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f5509ed4f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f5509e6b009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f5509e672b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f5509e68478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f5509e6972a in malloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f550a42146e in mgd_memory_malloc_internal () from /usr/lib/libmgd_memory.so
+#7  0x00007f550a421540 in mgd_memory_malloc () from /usr/lib/libmgd_memory.so
+#8  0x00005582cce8bc3f in qos_dstore_alloc_msg (msg_type=msg_type@entry=QOS_MSG_TYPE_QOS_STATS) at /home/vijayr/qos_leak_mano_fix/arrcus_sw/feature/qos/app/qos.h:299
+#9  0x00005582cce8edf3 in qos_mpsc_qos_stats_tbl_rx_cb (msg_p=0x7f54c801d590, sub_id=..., app_ctxt_p=<optimized out>) at /home/vijayr/qos_leak_mano_fix/arrcus_sw/feature/qos/app/qos_mpsc.c:1104
+#10 0x00007f550a09a466 in ?? () from /usr/lib/libmpsc_util.so
+#11 0x00007f550a45a9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#12 0x00007f550a45b537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00005582cceb3fad in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak_mano_fix/arrcus_sw/feature/qos/app/qos_main.c:1181
+[Switching to Thread 0x7f54dd2b9700 (LWP 8081)]
+
+Thread 11 "qos.bin" hit Breakpoint 1, 0x00007f5509ed4ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Sun 20 Aug 2023 02:54:58 PM UTC
+#0  0x00007f5509ed4ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f5509ed4f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f5509e6b009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f5509e661ca in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f5509e669f5 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f550a42170e in mgd_memory_free () from /usr/lib/libmgd_memory.so
+#6  0x00005582cce76724 in qos_free_msg (qos_msg=qos_msg@entry=0x5582ce2a1b00) at /home/vijayr/qos_leak_mano_fix/arrcus_sw/feature/qos/app/qos_consumer.c:198
+#7  0x00005582ccebbe04 in copp_consumer_msg_processing (ctxt=ctxt@entry=0x5582ccefcf20 <copp_main_ctxt>, msg=0x5582ce2a1b00) at /home/vijayr/qos_leak_mano_fix/arrcus_sw/feature/qos/app/copp_main.c:223
+#8  0x00005582ccebbf99 in copp_consumer_handler_cb (fd=151, events=<optimized out>, arg=<optimized out>) at /home/vijayr/qos_leak_mano_fix/arrcus_sw/feature/qos/app/copp_main.c:336
+#9  0x00007f550a45a9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#10 0x00007f550a45b537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#11 0x00005582ccebc418 in copp_consumer (arg=<optimized out>) at /home/vijayr/qos_leak_mano_fix/arrcus_sw/feature/qos/app/copp_main.c:434
+#12 0x00007f5509facfa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#13 0x00007f5509ede06f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+^C
+Thread 1 "qos.bin" received signal SIGINT, Interrupt.
+[Switching to Thread 0x7f5509146d00 (LWP 7628)]
+0x00007f5509ede38f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb)
+
