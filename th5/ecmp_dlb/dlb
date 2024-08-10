@@ -141,6 +141,20 @@ print_port_quality(0, 343); // swp48s2
 print_port_quality(0, 2); // swp 47s1
 print_port_quality(0, 121); // swp8
 
+int i = 0;
+
+while ( i < 500) {
+  printf("swp48s2-");
+  print_port_quality(0, 343); // swp48s2
+  printf("swp47s1-");
+  print_port_quality(0, 2); // swp 47s1
+  printf("swp8-");
+  print_port_quality(0, 121); // swp8
+  bshell(0, "sleep 3");
+  i++;
+}
+i = 0;
+
 pt reset DLB_ECMP_FLOWSET_INST0m
 pt reset DLB_ECMP_FLOWSET_INST1m
 
