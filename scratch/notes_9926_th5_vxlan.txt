@@ -1,0 +1,238 @@
+th5_hsdk_vxlan_riot_ipv4_AtoN_dest_overlay_single_nhi_and_underlay_ecmp.c
+th5_hsdk_vxlan_riot_ipv4_AtoN_dest_overlay_ecmp_and_underlay_ecmp.c
+
+   Ingress Packet's
+   ----------------             +----------------------------------+
+   DMAC = 00:00:00:00:AA:AA     |                                  +------------|
+   SMAC = 00:00:00:00:BB:BB     |                                  | Network    |
+   VLAN = 21                    |                                  | Port 1     |
+          +-------------------->+                                  |            |----->Vxlan---> VTEP2
+           Ingress Access Port  |             Tomahawk5            |            |      Tunnel
+                                |                                  |            |
+   DIP: 10.58.66.115            |                                  +------------|
+                                |                                  | Network
+                                +----------------+-----------------+ Port 2
+   SIP: 10.58.64.1,
+        10.58.64.2,
+        10.58.64.3(2 packets)
+
+vxlan_net_cfg_t vxlan_net = { /* VTEP1 */
+
+    -1,                   /* Network Gport */ // nw_gport;             /* Network VP */
+    0x8100,              /* TPID */ // tpid
+    /* Overlay Info */
+    { // ol_info
+        "00:00:00:00:00:0A",    /* Payload DMAC */ // payload_dmac
+        "00:00:00:00:AA:AA",    /* Payload SMAC */ // payload_smac
+        -1,                     /* DVP, will be updated later */ // dvp
+        -1,                     /* Overlay L3 Intf ID */ // ol_l3_intf_id
+        -1,                     /* Overlay NHID */ // ol_nh_id
+        { // tunnel_initiator_info_t tnl_info
+            0xC0A80202,          /* 192.168.2.2 remote IP*/ // remote_ip
+            0xC0A80101,          /* 192.168.1.1 local IP*/ // local_ip
+            4789,                /* L4 DST Port for VxLAN tunnel */ // udp_dp
+            55555,               /* L4 SRC port for VxLAN tunnel */ // udp_sp
+        },
+    },
+
+    2,  /* Number of underlay NHs */
+
+    /* Underlay Info */ // underlay_nh_info_t ul_info[2];
+    {
+        {   /* underlay NH1 */
+            "00:00:00:00:CC:CC", /* tunnel remote mac */ // remote_mac
+            "00:00:00:00:DD:DD", /* tunnel local mac */ // local_mac
+            egress_phy_gport_1,  /* Underlay destination port */ // dgpp_gport
+            22,                  /* Outer VLAN in Tunnel Header */ // vlan
+            -1,                  /* Underlay Nexthop ID */ // ul_l3_intf_id
+        },
+
+        {   /* underlay NH2 */
+            "00:00:00:00:CC:CD", /* tunnel remote mac */ // remote_mac
+            "00:00:00:00:DD:DD", /* tunnel local mac */ // local_mac
+            egress_phy_gport_2,  /* Underlay destination port */ // dgpp_gport
+            23,                  /* Outer VLAN in Tunnel Header */ // vlan
+            -1,                  /* Underlay Nexthop ID */ // ul_l3_intf_id
+       },
+    },
+    -1,                         /* Underlay ECMP ID for unicast flow */ // ul_ecmp_id
+};
+
+/* Ingress Access port configuration */
+vxlan_acc_cfg_t vxlan_acc = {
+    ingress_phy_gport_1, /* gPort */ // phy_Gport
+    21,                  /* vlan */// acc_vlan
+    "00:00:00:00:AA:AA", /* local router mac */ // acc_local_mac
+    "00:00:00:00:00:02", /* dummy remote mac */ // acc_remote_mac
+    0,                   /* Access VP */ // acc_gport
+    33,                  /* Port group */ // port_class
+    0,                   /* unicast egress L3 Intf ID */ // uc_l3_intf_id
+    0,                   /* nexthop ID for unicast flow */ // uc_nhop_id
+    0x8100,               /* TPID */ // tpid
+    0,                   /* Overlay unicast egress L3 interface */ // ol_uc_l3_intf_id
+    0,                   /* Overlay unicast nexthop */ // ol_uc_nhop_id
+};
+
+vxlan_cfg_t ingress_vxlan_cfg = {
+  0x8064,    /* VPN ID */
+  0x12345,   /* VNID */
+  0
+}; // Access port.
+vxlan_cfg_t egress_vxlan_cfg = {
+  0x8065,    /* VPN ID */
+  0x12345,   /* VNID */
+  0
+}; // network port
+config_vxlan_access(int unit, vxlan_cfg_t *vxlan_cfg, vxlan_acc_cfg_t *vxlan_acc, bcm_flow_handle_t flow_handle);
+vlan_create_add_port(int unit, int vid, int port)
+create_vxlan_vp(int unit, bcm_vpn_t vpn, uint32 flags, bcm_gport_t *vp)
+
+config_vxlan_ipv4_vtep
+	bcm_flow_handle_get(unit, "CLASSIC_VXLAN", &flow_handle);
+	create_vxlan_vpn(int unit, vxlan_cfg_t *vxlan_cfg);
+	create_vxlan_vpn(unit, &ingress_vxlan_cfg); // WITH_ID
+				bcm_flow_vpn_create(unit, vxlan_cfg->vxlan_vpn, &vpn_info); // WITH_ID create the VPN and also set the multicast groups.
+	create_vxlan_vpn(unit, &egress_vxlan_cfg); // WITH_ID
+				bcm_flow_vpn_create(unit, vxlan_cfg->vxlan_vpn, &vpn_info); // WITH_ID
+	configure_vnid_from_vfi(unit, egress_vxlan_cfg.vxlan_vnid, egress_vxlan_cfg.vxlan_vpn, flow_handle); // derive VNI from VFI. the flow tunnel's VN_ID can be added to the packet based on the VFI object.
+				bcm_flow_encap_config_t_init(&einfo);
+				einfo.flow_handle    = flow_handle;
+				einfo.criteria       = BCM_FLOW_ENCAP_CRITERIA_VFI;
+				einfo.vnid           = vxlan_vnid;
+				einfo.vpn            = vxlan_vpn;
+				einfo.valid_elements = BCM_FLOW_ENCAP_VNID_VALID |
+															 BCM_FLOW_ENCAP_VPN_VALID  |
+															 BCM_FLOW_ENCAP_FLAGS_VALID;
+			 /* During encapsulation remove the original payload's VLAN tag*/
+				einfo.flags          = BCM_FLOW_ENCAP_FLAG_SERVICE_TAGGED |
+															 BCM_FLOW_ENCAP_FLAG_VLAN_DELETE;
+
+				rv = bcm_flow_encap_add(unit, &einfo, 0, NULL);
+	config_vxlan_access(unit, &ingress_vxlan_cfg, &vxlan_acc, flow_handle);
+				vlan_create_add_port(unit, vxlan_acc->acc_vlan, phy_port);
+						bcm_vlan_port_add(unit, vid, pbmp, upbmp);
+				create_vxlan_vp(unit, vxlan_cfg->vxlan_vpn, 0, &vxlan_acc->acc_gport);
+						bcm_flow_port_create(unit, vpn, &flow_port);
+							*vp = flow_port.flow_port_id;
+				// match incoming packet to a VP.
+				// match_info.criteria  = BCM_FLOW_MATCH_CRITERIA_PORT;
+				// match_info.flow_port = vxlan_acc->acc_gport;
+				// match_info.port = vxlan_acc->phy_Gport;
+				vxlan_flow_match_add(unit, match_info);
+							bcm_flow_match_add(unit, &match_info, 0, NULL);
+				vxlan_access_port_config(unit, vxlan_acc);
+						bcm_port_control_set(unit, vxlan_acc->phy_Gport, bcmPortControlVxlanEnable, FALSE); // disable tunnel termination on access port.
+						bcm_port_untagged_vlan_set(unit, vxlan_acc->phy_Gport, vxlan_acc->acc_vlan);
+						bcm_port_class_set(unit, vxlan_acc->phy_Gport, bcmPortClassVlanTranslateIngress, vxlan_acc->port_class); // Set or get port classification ID to aggregate a group of ports for further processing such as VLAN translation and field processing.
+						bcm_vlan_control_port_set(unit, vxlan_acc->phy_Gport, bcmVlanPortTranslateKeyFirst, bcmVlanTranslateKeyPortGroupOuter); // Enable ingress VLAN xlate for access port and set the key as port_group + Outer VLAN to derive the VPN (VFI) if the packet ingresses this port.
+				bcm_vlan_gport_add(unit, vxlan_cfg->vxlan_vpn, vxlan_acc->phy_Gport, 0);
+        // VPN assignment, port_group + outer_VID -> VPN
+				match_info.criteria = BCM_FLOW_MATCH_CRITERIA_PORT_GROUP_VLAN;
+				match_info.port     = vxlan_acc->port_class;
+				match_info.vlan     = vxlan_acc->acc_vlan;
+				match_info.vpn      = vxlan_cfg->vxlan_vpn;
+				match_info.valid_elements = (BCM_FLOW_MATCH_PORT_VALID |
+																		BCM_FLOW_MATCH_VLAN_VALID |
+																		BCM_FLOW_MATCH_VPN_VALID);
+				vxlan_flow_match_add(unit, match_info);
+				// Create encaps for out going packet from the access port.
+				configure_l3_interface(unit, 0, vxlan_acc->acc_local_mac,
+                               vxlan_acc->acc_vlan,
+                               &vxlan_acc->uc_l3_intf_id, 0); // this is the l3 intf for packets out of the access port.
+				vxlan_create_egr_obj(unit, nhop_flags, 0, vxlan_acc->uc_l3_intf_id, vxlan_acc->acc_remote_mac,
+														 vxlan_acc->phy_Gport, vxlan_acc->acc_vlan, -1, &vxlan_acc->uc_nhop_id);
+				bcm_flow_port_encap_t_init(&peinfo);
+				peinfo.flow_handle    = flow_handle;
+				peinfo.flow_port      = vxlan_acc->acc_gport;
+				peinfo.egress_if      = vxlan_acc->uc_nhop_id;
+				peinfo.valid_elements = BCM_FLOW_PORT_ENCAP_PORT_VALID |
+						BCM_FLOW_PORT_ENCAP_EGRESS_IF_VALID;
+				/* Vlan tag action. */
+				peinfo.flags |= BCM_FLOW_PORT_ENCAP_FLAGS_VALID;
+				peinfo.valid_elements |= BCM_FLOW_PORT_ENCAP_VLAN_VALID;
+				peinfo.vlan = vxlan_acc->acc_vlan;
+				peinfo.tpid = vxlan_acc->tpid;
+				vxlan_flow_port_encap_set(unit, peinfo);
+						bcm_flow_port_encap_set(unit, &peinfo, 0, NULL);
+
+	config_vxlan_network(unit, &egress_vxlan_cfg, &vxlan_net, flow_handle);
+
+      flags = BCM_FLOW_PORT_NETWORK;
+      rv = create_vxlan_vp(unit, vxlan_cfg->vxlan_vpn,
+                           flags, &vxlan_net->nw_gport);
+          bcm_flow_port_create(unit, vpn, &flow_port);
+      vlan_create_add_port(unit, vxlan_net->ul_info[i].vlan, phy_port);
+      configure_l3_interface(unit, 0, vxlan_net->ul_info[i].local_mac, vxlan_net->ul_info[i].vlan,
+                             &vxlan_net->ul_info[i].ul_l3_intf_id,
+                             BCM_L3_INTF_UNDERLAY)
+            bcm_l3_intf_create(unit, &l3_intf);
+      vxlan_create_egr_obj(unit, 0, BCM_L3_FLAGS2_UNDERLAY,
+                           vxlan_net->ul_info[i].ul_l3_intf_id,
+                           vxlan_net->ul_info[i].remote_mac,
+                           vxlan_net->ul_info[i].dgpp_gport,
+                           vxlan_net->ul_info[i].vlan, -1,
+                           &vxlan_net->ul_info[i].ul_nh_id);
+    configure_forwarding_table(unit, &ingress_vxlan_cfg,
+                               &egress_vxlan_cfg,
+                               flow_handle);
+        configure_overlay_intf_nhop_tunnel_initiator(unit,
+                                                     egress_vxlan_cfg->vxlan_vpn,
+                                                     vxlan_net, flow_handle);
+              configure_l3_interface(unit, 0, vxlan_net->ol_info.payload_smac,
+                                     vxlan_vpn, &vxlan_net->ol_info.ol_l3_intf_id,
+                                     BCM_L3_INTF_OVERLAY);
+
+              vxlan_create_egr_obj(unit, 0, 0, vxlan_net->ol_info.ol_l3_intf_id, 
+                                  vxlan_net->ol_info.payload_dmac,
+                                  vxlan_net->nw_gport,
+                                  0, -1, &vxlan_net->ol_info.ol_nh_id);
+              config_vxlan_tunnel(unit, vxlan_net, flow_handle);
+                    bcm_flow_tunnel_initiator_t_init(&tiinfo);
+														tiinfo.flow_handle = flow_handle;
+														tiinfo.flow_port   = vxlan_net->nw_gport;
+														tiinfo.type        = bcmTunnelTypeVxlan;
+														tiinfo.sip         = vxlan_net->ol_info.tnl_info.local_ip;
+														tiinfo.dip         = vxlan_net->ol_info.tnl_info.remote_ip;
+														tiinfo.ttl         = 0x3f;
+														tiinfo.udp_dst_port = vxlan_net->ol_info.tnl_info.udp_dp;
+														tiinfo.udp_src_port = vxlan_net->ol_info.tnl_info.udp_sp;
+
+														tiinfo.l3_intf_id =  vxlan_net->ol_info.ol_l3_intf_id;
+														tiinfo.valid_elements = BCM_FLOW_TUNNEL_INIT_DIP_VALID |
+														BCM_FLOW_TUNNEL_INIT_SIP_VALID |
+														BCM_FLOW_TUNNEL_INIT_UDP_DPORT_VALID |
+														BCM_FLOW_TUNNEL_INIT_UDP_SPORT_VALID |
+														BCM_FLOW_TUNNEL_INIT_TTL_VALID;
+														rv = bcm_flow_tunnel_initiator_create(unit, &tiinfo, 0,NULL);
+														tiinfo.tunnel_id
+
+					for (i = 0; i < vxlan_net->ul_nh_count; i++) {
+								bcm_l3_ecmp_member_t_init(&member_array[i]);
+								member_array[i].egress_if = vxlan_net->ul_info[i].ul_nh_id;
+					}
+
+					rv = configure_ecmp_group(unit, 0, vxlan_net->ul_nh_count, member_array,
+																		&vxlan_net->ul_ecmp_id);
+					/* Configure Overlay ECMP group */
+					bcm_l3_ecmp_member_t_init(&member_array[0]);
+					member_array[0].egress_if   = vxlan_net->ol_info.ol_nh_id;
+					member_array[0].egress_if_2 = vxlan_net->ul_ecmp_id;
+
+					bcm_l3_ecmp_member_t_init(&member_array[1]);
+					bcm_if_t ol_ecmp_id;
+
+					rv = configure_ecmp_group(unit, 1, 1, member_array,
+																		&ol_ecmp_id);
+					if (BCM_FAILURE(rv)) {
+							printf("configure_ecmp_group for overlay failed: %s\n",
+											bcm_errmsg(rv));
+							print member_array;
+							return rv;
+					}
+
+					configure_route_entry(unit, vrf, dip, dip_mask, ol_ecmp_id);
+
+					configure_ingress_l3_interface(unit, vrf, ingress_vxlan_cfg->vxlan_vpn,
+																				&vxlan_acc->ingress_l3_intf_id);
+
+
