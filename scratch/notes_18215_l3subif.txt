@@ -1,0 +1,21 @@
+1. Bond working.
+2. vlan translation.
+3. different vlans in the ingress and egress.
+4. ECMP.
+5. remove the UL egress object creation and try.
+6. egress vlan translation.
+7. normal vlan working.
+8. VLAN translation working.
+9. can the VNIs be the same across multiple VPNs.
+10. can the same VNI be used as some dummy VNIs for all VFIs created for l3 forwarding.
+11. Working for the punt path with vlan translation.
+12. deriving the DVP and hence the vlan from the l3 intf object.
+13. Untagged traffic testing.
+  a. BCM_VXLAN_VPN_SERVICE_TAGGED, when we create the VP setting this is fine ? for untaggged traffic ?
+14. how is the VLAN derived for the OL NH, we have the access vp and VPN but no pointer to the VLAN.
+15. vxlan_port_create -- match is BCM_VXLAN_PORT_MATCH_PORT then what is the significance of
+    if (gport != BCM_GPORT_INVALID)
+        port_t.match_port = gport;
+
+    if (match_vlan != BCM_VLAN_INVALID)
+        port_t.match_vlan = match_vlan;

@@ -120,6 +120,7 @@ int vxlan_riot_system_config(int unit, uint16 udp_dst_port, int enable_hash)
   bcm_error_t rv = BCM_E_NONE;
 
   /* L4 Port for VxLAN */
+  // [Vijay] Is this required ?
   rv = bcm_switch_control_set(unit, bcmSwitchVxlanUdpDestPortSet, udp_dst_port);
   if (BCM_E_NONE != rv) {
     printf("bcm_switch_control_set bcmSwitchVxlanUdpDestPortSet failed %s\n",
@@ -127,6 +128,7 @@ int vxlan_riot_system_config(int unit, uint16 udp_dst_port, int enable_hash)
     return rv;
   }
   /* enable Hash */
+  // [Vijay] Is this required ?
   rv = bcm_switch_control_set(unit, bcmSwitchVxlanEntropyEnable, enable_hash);
   if (BCM_E_NONE != rv) {
     printf("bcm_switch_control_set bcmSwitchVxlanEntropyEnable  failed %s\n",
@@ -134,6 +136,7 @@ int vxlan_riot_system_config(int unit, uint16 udp_dst_port, int enable_hash)
     return rv;
   }
   /* Enable L3EgressMode */
+  // [VIJAY] Enable advanced egress management. what does this mean ?
   rv = bcm_switch_control_set(unit, bcmSwitchL3EgressMode, 1);
   if (BCM_E_NONE != rv) {
     printf("bcm_switch_control_set  bcmSwitchL3EgressMode failed %s\n",
@@ -141,6 +144,7 @@ int vxlan_riot_system_config(int unit, uint16 udp_dst_port, int enable_hash)
     return rv;
   }
   /* Enable L3IngressMode */
+  // [VIJAY] Enable advanced Ingress-interface management.
   rv = bcm_switch_control_set(unit, bcmSwitchL3IngressMode, 1);
   if (BCM_E_NONE != rv) {
     printf("bcm_switch_control_set  bcmSwitchL3IngressMode failed %s\n",
@@ -148,6 +152,7 @@ int vxlan_riot_system_config(int unit, uint16 udp_dst_port, int enable_hash)
     return rv;
   }
   /* Enable switch ingress intf map set */
+  // [VIJAY] Enable mode to configure ingress-mapping of Vlan and L3 Ingress Interface
   rv = bcm_switch_control_set(unit, bcmSwitchL3IngressInterfaceMapSet, 1);
   if (BCM_E_NONE != rv) {
     printf(
@@ -157,6 +162,7 @@ int vxlan_riot_system_config(int unit, uint16 udp_dst_port, int enable_hash)
   }
   /* Enable ipmc */
   rv = bcm_ipmc_enable(unit, 1);
+  // [VIJAY] Enable/disable IPMC support.
   if (BCM_E_NONE != rv) {
     printf("bcm_ipmc_enable failed %s\n", bcm_errmsg(rv));
     return rv;
@@ -174,12 +180,17 @@ int vxlan_access_port_config(int unit, bcm_port_t port)
 {
   bcm_error_t rv = BCM_E_NONE;
 
+  // [VIJAY] /* Set per port enable for VXLAN
+  //  (Value=TRUE/FALSE) */
   rv = bcm_port_control_set(unit, port, bcmPortControlVxlanEnable, 0x0);
   if (BCM_E_NONE != rv) {
     printf("bcm_port_control_set  bcmPortControlVxlanEnable failed %s\n",
            bcm_errmsg(rv));
     return rv;
   }
+
+  // [VIJAY]
+  // /* Set per port VNID lookup key (Value=TRUE/FALSE) */
   rv =
       bcm_port_control_set(unit, port, bcmPortControlVxlanTunnelbasedVnId, 0x0);
   if (BCM_E_NONE != rv) {
@@ -188,6 +199,8 @@ int vxlan_access_port_config(int unit, bcm_port_t port)
         bcm_errmsg(rv));
     return rv;
   }
+  // [VIJAY]
+  // No documentation. -- This is for the vlan translation.
   rv = bcm_vlan_control_port_set(unit, port, bcmVlanTranslateIngressEnable, 1);
   if (BCM_E_NONE != rv) {
     printf("bcm_port_control_set bcmVlanTranslateIngressEnable failed %s\n",
@@ -233,7 +246,8 @@ int vxlan_network_port_config(int unit, bcm_port_t port)
 int vxlan_vpn_group_create(int unit,
                            bcm_vpn_t *vpn,
                            bcm_multicast_t *mcast,
-                           uint32 vnid, uint32 flags,
+                           uint32 vnid,
+                           uint32 flags,
                            uint32 egress_service_tpid,
                            bcm_vlan_t egress_service_vlan)
 {
@@ -261,6 +275,7 @@ int vxlan_vpn_group_create(int unit,
     vpn_t.egress_service_vlan = egress_service_vlan;
   }
 
+  // [VIJAY] This is not supported on TD4 ?
   rv = bcm_vxlan_vpn_create(unit, &vpn_t);
   *vpn = vpn_t.vpn;
   printf("bcm_vxlan_vpn_create() %s vpn=0x%x\n", bcm_errmsg(rv), *vpn);
@@ -316,12 +331,18 @@ int l3_egress_create(int unit, uint32 flags, bcm_if_t intf, bcm_gport_t port,
          *egr_obj_id);
 }
 
-int vxlan_port_create(int unit, bcm_vpn_t vpn, bcm_port_t gport, int flags,
-                      bcm_if_t egress_if, bcm_vxlan_port_match_t criteria,
-                      bcm_vlan_t match_vlan, bcm_gport_t match_tunnel_id,
+int vxlan_port_create(int unit,
+                      bcm_vpn_t vpn,
+                      bcm_port_t gport,
+                      int flags,
+                      bcm_if_t egress_if,
+                      bcm_vxlan_port_match_t criteria,
+                      bcm_vlan_t match_vlan,
+                      bcm_gport_t match_tunnel_id,
                       bcm_gport_t egress_tunnel_id,
                       bcm_vlan_t egress_service_vlan,
-                      uint32 egress_service_tpid, bcm_gport_t *vxlan_port)
+                      uint32 egress_service_tpid,
+                      bcm_gport_t *vxlan_port)
 {
   int rv = 0;
 
@@ -350,6 +371,8 @@ int vxlan_port_create(int unit, bcm_vpn_t vpn, bcm_port_t gport, int flags,
   if (match_vlan != BCM_VLAN_INVALID)
     port_t.match_vlan = match_vlan;
 
+  // [vijay] why egress if ?
+  // Not getting this, why should a access port be associated with a UL egress if ?
   port_t.egress_if = egress_if;
 
   rv = bcm_vxlan_port_add(unit, vpn, &port_t);
@@ -797,6 +820,16 @@ bcm_error_t riot_access2access(int unit)
   printf("Access side VFI 1\n");
   bcm_vpn_t vpn_acc_1;
   bcm_multicast_t mcast_acc_1;
+  /*
+   *
+int vxlan_vpn_group_create(int unit,
+                           bcm_vpn_t *vpn,
+                           bcm_multicast_t *mcast,
+                           uint32 vnid,
+                           uint32 flags,
+                           uint32 egress_service_tpid,
+                           bcm_vlan_t egress_service_vlan)
+  */
   BCM_IF_ERROR_RETURN(
       vxlan_vpn_group_create(unit, &vpn_acc_1, &mcast_acc_1, acc_vpn_vnid_1,
                              BCM_VXLAN_VPN_SERVICE_TAGGED, 0, 0));
@@ -805,13 +838,31 @@ bcm_error_t riot_access2access(int unit)
   printf("Access side VFI 2\n");
   bcm_vpn_t vpn_acc_2;
   bcm_multicast_t mcast_acc_2;
+//  [VIJAY] what should be the flags for untagged SVP ?.
   BCM_IF_ERROR_RETURN(
       vxlan_vpn_group_create(unit, &vpn_acc_2, &mcast_acc_2, acc_vpn_vnid_2,
                              BCM_VXLAN_VPN_SERVICE_TAGGED, 0, 0));
   printf("vpn_acc_2=0x%x\n", vpn_acc_2);
 
+  /*
+   * [VIJAY]
+   *
+   * int bcm_multicast_l2_encap_get (int   unit,
+   *                                 bcm_multicast_t  group,
+   *                                 bcm_gport_t  port,
+   *                                 bcm_vlan_t   vlan,
+   *                                 bcm_if_t *   encap_id)
+   */
+
   BCM_IF_ERROR_RETURN(bcm_multicast_l2_encap_get(
       unit, mcast_acc_1, access_gport_1, acc_vid_1, &encap_id));
+  /*
+   *
+   * int bcm_multicast_egress_add(int   unit,
+   *                              bcm_multicast_t  group,
+   *                              bcm_gport_t  port,
+   *                              bcm_if_t   encap_id);
+   */
   BCM_IF_ERROR_RETURN(
       bcm_multicast_egress_add(unit, mcast_acc_1, access_gport_1, encap_id));
   /* Adding the CPU port to the VPN as well, in case of DLF */
@@ -832,8 +883,19 @@ bcm_error_t riot_access2access(int unit)
   printf("==== Create vxlan l3 egress - access UL with no UL l3 intf create "
          "required ====\n");
   bcm_if_t acc_egr_obj_ul_1;
-  BCM_IF_ERROR_RETURN(l3_egress_create(unit, BCM_L3_VXLAN_ONLY, BCM_IF_INVALID,
-                                       access_port_1, dummy_mac_addr,
+  /*
+    int l3_egress_create(int unit,
+    uint32 flags,
+    bcm_if_t intf,
+    bcm_gport_t port,
+    bcm_mac_t mac_addr,
+    bcm_if_t *egr_obj_id)
+   */
+  BCM_IF_ERROR_RETURN(l3_egress_create(unit,
+                                       BCM_L3_VXLAN_ONLY, // [VIJAY] what does L3_VXLAN_ONLY do ?
+                                       BCM_IF_INVALID,
+                                       access_port_1,
+                                       dummy_mac_addr,
                                        &acc_egr_obj_ul_1));
 
   bcm_if_t acc_egr_obj_ul_2;
@@ -845,26 +907,59 @@ bcm_error_t riot_access2access(int unit)
    * bcmVlanTranslateIngressEnable */
   printf("==== Create vxlan port - access vp 1 ====\n");
   bcm_gport_t acc_vp_1;
+  // [VIJAY] what are the below flags for ?
   flags = BCM_VXLAN_PORT_SERVICE_TAGGED | BCM_VXLAN_PORT_SERVICE_VLAN_ADD;
-  BCM_IF_ERROR_RETURN(vxlan_port_create(
-      unit, vpn_acc_1, access_gport_1, flags, acc_egr_obj_ul_1,
-      BCM_VXLAN_PORT_MATCH_NONE, /* BCM_VXLAN_PORT_MATCH_PORT */
-      acc_vid_1, BCM_GPORT_INVALID, BCM_GPORT_INVALID, acc_vid_1, 0x8100,
-      &acc_vp_1));
+  /*
+int vxlan_port_create(int unit,
+                      bcm_vpn_t vpn,
+                      bcm_port_t gport,
+                      int flags,
+                      bcm_if_t egress_if,
+                      bcm_vxlan_port_match_t criteria,
+                      bcm_vlan_t match_vlan,
+                      bcm_gport_t match_tunnel_id,
+                      bcm_gport_t egress_tunnel_id,
+                      bcm_vlan_t egress_service_vlan,
+                      uint32 egress_service_tpid,
+                      bcm_gport_t *vxlan_port)
+                      */
+  BCM_IF_ERROR_RETURN(vxlan_port_create(unit,
+                                        vpn_acc_1,
+                                        access_gport_1, // for MATCH_NONE what is the significance of port [VIJAY]
+                                        flags,
+                                        acc_egr_obj_ul_1,
+                                        BCM_VXLAN_PORT_MATCH_NONE, /* BCM_VXLAN_PORT_MATCH_PORT */
+                                        acc_vid_1, // [VIJAY] if we have a MATCH_NONE what is the significance of the vlan.
+                                        BCM_GPORT_INVALID,
+                                        BCM_GPORT_INVALID,
+                                        acc_vid_1,
+                                        0x8100,
+                                        &acc_vp_1));
   printf("vxlan_port_create()  acc_vp_1=0x%x\n", acc_vp_1);
 
   printf("==== Create vxlan port - access vp 2 ====\n");
   bcm_gport_t acc_vp_2;
   flags = BCM_VXLAN_PORT_SERVICE_TAGGED | BCM_VXLAN_PORT_SERVICE_VLAN_ADD;
-  BCM_IF_ERROR_RETURN(vxlan_port_create(
-      unit, vpn_acc_2, access_gport_2, flags, acc_egr_obj_ul_2,
-      BCM_VXLAN_PORT_MATCH_NONE, /* BCM_VXLAN_PORT_MATCH_PORT */
-      acc_vid_2, BCM_GPORT_INVALID, BCM_GPORT_INVALID, acc_vid_2, 0x8100,
-      &acc_vp_2));
+  BCM_IF_ERROR_RETURN(vxlan_port_create(unit,
+                                        vpn_acc_2,
+                                        access_gport_2,
+                                        flags,
+                                        acc_egr_obj_ul_2,
+                                        BCM_VXLAN_PORT_MATCH_NONE, /* BCM_VXLAN_PORT_MATCH_PORT */
+                                        acc_vid_2,
+                                        BCM_GPORT_INVALID,
+                                        BCM_GPORT_INVALID,
+                                        acc_vid_2,
+                                        0x8100,
+                                        &acc_vp_2));
   printf("vxlan_port_create()  acc_vp_2=0x%x\n", acc_vp_2);
 
   printf("==== Create RIOT routing L3 egress - access 1 OL ====\n");
   bcm_if_t acc_intf_ol_1;
+  // [VIJAY] The l3 intf is now pointing to VFI/VPN than vlan, why ?, how do we add the src mac + vlan
+  // may be because this OL and OL requires VNI from VPN.
+  // But this should be a dummy intf object not used anywhere.
+  // It should be always UL.
   BCM_IF_ERROR_RETURN(
       l3_intf_create(unit, acc_ol_mac_1, vpn_acc_1, &acc_intf_ol_1));
   printf("l3_intf_create() acc_intf_ol=0x%x\n", acc_intf_ol_1);
@@ -876,6 +971,14 @@ bcm_error_t riot_access2access(int unit)
   printf("l3_intf_create() acc_intf_ol_2=0x%x\n", acc_intf_ol_2);
 
   bcm_if_t acc_egr_obj_ol_1;
+  // [VIJAY ]We are creating a OL egress object with valid mac.
+  // I remember in TD4 default would always be OL NH, so it would always contain the right MACs.
+  // The only difference would be whether we are going over a NWVP or not.
+  // in other words it depends purely on what is the INTF object.
+  // But the intf object here is having VNI instead of VPN.
+  // The Overlay packet which is in the inner encap does it have tagging ?
+  // int l3_egress_create(int unit, uint32 flags, bcm_if_t intf, bcm_gport_t port,
+  //                      bcm_mac_t mac_addr, bcm_if_t *egr_obj_id)
   BCM_IF_ERROR_RETURN(l3_egress_create(unit, 0, acc_intf_ol_1, acc_vp_1,
                                        acc_ol_nh_mac_1, &acc_egr_obj_ol_1));
   printf("l3_egress_create() acc_egr_obj_ol_1=0x%x\n", acc_egr_obj_ol_1);
