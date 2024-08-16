@@ -1,0 +1,108 @@
+int
+bcmsdk_xgs_td4_speed_set_api (int unit,
+															int port, int speed,
+															int fec)
+{
+  int rv, en, mode, ct_mode;
+  bcm_port_resource_t port_info;
+  bcm_port_t phy_port;
+  bcm_vlan_t utg_vlan;
+
+  rv = bcm_port_enable_get(unit, port, &en);
+  if (BCM_E_NONE != rv) {
+		printf("return - 2 rv %d \n", rv);
+    return rv;
+  }
+  rv = bcm_port_enable_set(unit, port, 0);
+  if (BCM_E_NONE != rv) {
+		printf("return - 3 rv %d \n", rv);
+    return rv;
+  }
+
+  rv = bcm_linkscan_mode_get(unit, port, &mode);
+  if (BCM_E_NONE != rv) {
+		printf("return - 4 rv %d \n", rv);
+    return rv;
+  }
+
+  rv = bcm_linkscan_mode_set(unit, port, BCM_LINKSCAN_MODE_NONE);
+  if (BCM_E_NONE != rv) {
+		printf("return - 5 rv %d \n", rv);
+    return rv;
+  }
+
+  rv = bcm_port_untagged_vlan_get(unit, port, &utg_vlan);
+  if (BCM_E_NONE != rv) {
+		printf("return - 6 rv %d \n", rv);
+    return rv;
+  }
+
+  rv = bcm_switch_control_port_get(unit, port,
+                                   bcmSwitchAlternateStoreForward, &ct_mode);
+  if (BCM_E_NONE != rv) {
+		printf("return - 7 rv %d \n", rv);
+    return rv;
+  }
+
+  bcm_port_resource_t_init(&port_info);
+  rv = bcm_port_resource_get(unit, port, &port_info);
+  if (BCM_E_NONE != rv) {
+		printf("return - 8 rv %d \n", rv);
+    return rv;
+  }
+	printf("resource before set \n");
+	print port_info;
+  phy_port = port_info.physical_port;
+  port_info.physical_port = -1;
+  rv = bcm_port_resource_set(unit, port, &port_info);
+  if (BCM_E_NONE != rv) {
+		printf("return - 9 rv %d \n", rv);
+    return rv;
+  }
+  port_info.physical_port = phy_port;
+  port_info.speed = speed;
+  port_info.fec_type = fec;
+  rv = bcm_port_resource_set(unit, port, &port_info);
+  if (BCM_E_NONE != rv) {
+		printf("return - 10 rv %d \n", rv);
+    return rv;
+  }
+  bcm_port_resource_t_init(&port_info);
+  rv = bcm_port_resource_get(unit, port, &port_info);
+  if (BCM_E_NONE != rv) {
+		printf("return - 8 rv %d \n", rv);
+    return rv;
+  }
+	printf("resource after set \n");
+	print port_info;
+  rv = bcm_port_untagged_vlan_set(unit, port, utg_vlan);
+  if (BCM_E_NONE != rv) {
+		printf("return - 11 rv %d \n", rv);
+    return rv;
+  }
+
+  rv = bcm_switch_control_port_set(unit, port,
+                                   bcmSwitchAlternateStoreForward, ct_mode);
+  if (BCM_E_NONE != rv) {
+		printf("return - 12 rv %d \n", rv);
+    return rv;
+  }
+  rv = bcm_linkscan_mode_set(unit, port, mode);
+  if (BCM_E_NONE != rv) {
+		printf("return - 13 rv %d \n", rv);
+    return rv;
+  }
+  /* Disable tx and rx pause */
+  rv = bcm_port_pause_set(unit, port, 0, 0);
+  if (BCM_E_NONE != rv) {
+		printf("return - 14 rv %d \n", rv);
+    return rv;
+  }
+  rv = bcm_port_enable_set(unit, port, en);
+  if (BCM_E_NONE != rv) {
+		printf("return - 15 rv %d \n", rv);
+    return rv;
+  }
+  return rv;
+}
+

@@ -1,0 +1,25 @@
+cint_reset();
+int unit = 0;
+bcm_pktio_netif_t netif;
+bcm_mac_t netif_mac = {0x00, 0x00, 0x00, 0x00, 0x56, 0x34};
+char *netif_name = "knet_ifp";
+sal_memset(&netif, 0x0, sizeof(netif));
+netif.mac_addr = netif_mac;
+sal_strcpy(netif.name, netif_name);
+netif.max_frame_size = 9000;
+netif.flags = BCM_PKTIO_NETIF_F_BIND_TX_PORT;
+print bcm_pktio_netif_create(unit, netif);
+
+bcm_pktio_filter_t filter;
+filter.type = BCM_PKTIO_FILTER_T_RX_PKT;
+filter.priority = 0;
+filter.dest_type = BCM_PKTIO_DEST_T_NETIF;
+filter.dest_id = netif.id; /* above created netif id */
+
+filter.match_flags = BCM_KNET_FILTER_M_FP_RULE;
+filter.m_fp_rule = 10;          /* comes from bcmFieldActionCopyToCpu action */
+
+filter.match_flags |= BCM_PKTIO_FILTER_M_REASON;
+BCM_PKTIO_REASON_SET(&filter.m_reason, BCM_PKTIO_RX_REASON_CPU_FFP);
+
+print bcm_pktio_filter_create(unit, &filter);

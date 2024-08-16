@@ -1,0 +1,7 @@
+              
+
+
+
+                     NH ----> tunnel
+                        ----> ecmp
+                        ----> regular egress port

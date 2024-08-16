@@ -1,0 +1,14 @@
+1. same numbered GPUs across nodes are part of the same vlan.
+  a. use vlans to provide multi tenancy.
+2. can the GPUs + interfaces be mapped to different VRF to provide multi tenancy.
+3. 8 any cast gateways corresponding to each of the GPU node.
+  a. distributed gatway functionality. Each leaf should be able to route across vnis and switch within vnis.
+  b. No centralized gateway.
+4. nvswitch - can be used to send traffic from one vlan to another internally by using the nvswitch
+  https://developer.nvidia.com/blog/doubling-all2all-performance-with-nvidia-collective-communication-library-2-12/
+5. leaf0 connects to GPU0s
+  a. Leaf1 connect to GPU1s
+6. Need L3 routing for across vni and L2 switching for within vni - with distributed gateway functionaliy.
+7. No lag requirement, each GPU per vlan has its own IP address. -- No multi homing.
+8. ETS requires a module on the switch and the participation of the network.
+9. PFC and ECN is priority, ETS.

@@ -1,0 +1,27 @@
+ ds_bfd_hal_session_cfg_object_if_index_set(&cfg, info->if_index);
+  if (info->session_type == BFD_SESSION_TYPE_UDP_IPV4) {
+    ds_bfd_hal_session_cfg_object_dep_type_set(&cfg, DS_FIB_IPV4_NHTRESPS_TBL_CODE);
+  } else if (info->session_type == BFD_SESSION_TYPE_UDP_IPV6) {
+    ds_bfd_hal_session_cfg_object_dep_type_set(&cfg, DS_FIB_IPV6_NHTRESPS_TBL_CODE);
+  } else if ((info->session_type == BFD_SESSION_TYPE_MICRO_UDP_IPV4) ||
+      (info->session_type == BFD_SESSION_TYPE_MICRO_UDP_IPV6)) {
+    ds_bfd_hal_session_cfg_object_if_index_set(&cfg, info->if_index);
+    ds_bfd_hal_session_cfg_object_parent_if_index_set(&cfg, info->bond_if_index);
+  }
+
+
+bcm_dnx_sdk_encap
+		construct_mac_rif_encap
+		      ds_global_mac_rif_encap_encapid_get(encap, &temp_id);
+					BCM_L3_ITF_SET(l3eg->encap_id, BCM_L3_ITF_TYPE_LIF, temp_id);
+					ds_global_mac_rif_encap_mac_addr_get(encap, &mac);
+					memcpy(l3eg->mac_addr, mac->mac_addr_bytes,
+								 IEEE_MACLEN);
+					if (info->val.mac_rif_encap.is_mac_rif_with_ac) {
+							/* This is mandatory for SRv6 head-end */
+							l3eg->flags2 = BCM_L3_FLAGS2_VLAN_TRANSLATION;
+					}
+					l3eg->vlan = info->val.mac_rif_encap.rifid;
+					l3eg->qos_map_id = info->egr_qos_profile;
+					LOG_DEBUG_MSG("DNX-SDK", "MAC_RIF encap_id:0x%x flags2:0x%x vlan:0x%x qos:%d\n",
+												l3eg->encap_id, l3eg->flags2, l3eg->vlan, l3eg->qos_map_id);

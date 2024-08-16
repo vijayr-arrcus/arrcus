@@ -1,0 +1,77 @@
+(gdb) source ~/brk_points
+gperf/ pmap/
+(gdb) source ~/brk_points
+Function "brk" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+~/brk_points:2: Error in sourced command file:
+Argument required (one or more breakpoint numbers).
+(gdb) info break
+No breakpoints or watchpoints.
+(gdb) set breakpoint pending on
+(gdb) spirce ~/brk_points
+Undefined command: "spirce".  Try "help".
+(gdb) source ~/brk_points
+Function "brk" not defined.
+Breakpoint 1 (brk) pending.
+Function "mmap" not defined.
+Breakpoint 2 (mmap) pending.
+Function "mremap" not defined.
+Breakpoint 3 (mremap) pending.
+(gdb) info break
+Num     Type           Disp Enb Address    What
+1       breakpoint     keep y   <PENDING>  brk
+        shell date
+        bt
+        continue
+2       breakpoint     keep y   <PENDING>  mmap
+        shell date
+        bt
+        continue
+3       breakpoint     keep y   <PENDING>  mremap
+        shell date
+        bt
+        continue
+set pagination off
+set logging on
+set logging file /tmp/mem_trace/qos_gdb.log
+set logging file /tmp/mem_tace/bgp_gdb.log
+set breakpoint pending on
+
+thread apply all bt
+
+
+In GDB with a C program, you can do `watch *0x40020000` to set a watchpoint on a memory address, but this fails in Rust programs with a mysterious error. With a hint from @sheevink I found the solution: `watch *(0x40020000 as *const u32)`! gdb has a Rust parser!
+
+watch *(uint64_t *) (address)
+
+show can-use-hw-watchpoints
+
+Set the Watchpoint on Memory Address: Once the program is halted at the breakpoint, you can set a watchpoint on a memory address using the watch command.
+
+For example:watch *(int*)0xaddress
+
+Replace 0xaddress with the memory address you want to watch.
+You need to cast the address appropriately based on the data type you want to watch (int in this example).
+
+set print repeats 0
+set pagination off
+set breakpoint pending on
+break brk
+  commands
+    shell date
+    bt
+    continue
+  end
+break mmap
+  commands
+    shell date
+    bt
+    continue
+  end
+break mremap
+  commands
+    shell date
+    bt
+    continue
+  end
+

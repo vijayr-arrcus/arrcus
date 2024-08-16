@@ -1,0 +1,32 @@
+<interfaces>
+  <interface>
+    <name> swp1 </name>
+    <mtu> 1500 </mtu>
+  </interface>
+  <interface>
+    <name> swp2 </name>
+    <mtu> 1500 </mtu>
+  </interface>
+</interfaces>
+
+leaf interface {
+  string name
+  int mtu
+}
+
+drop interfaces.
+
+container interfaces {
+  leaf-list interface;
+}
+
+
+config
+  interfaces ---> drop
+      interface
+            swp1
+
+
+config
+  interface
+    swp1

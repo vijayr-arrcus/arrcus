@@ -1,0 +1,8 @@
+clear c
+fp stat get Statid=71 t=p
+cstat cpu0
+
+fp stat get Statid=71 t=p
+cstat cpu0
+
+TDBGC8_SELECT

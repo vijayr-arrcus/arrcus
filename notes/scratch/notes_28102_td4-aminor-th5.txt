@@ -1,0 +1,56 @@
+EID 0x00000071: eid=0x71, gid=0x1,
+ prio=0x7fffbd2c, flags=0x0, hw_index=0, slice_number=0, slice_expand_part=0, , Disabled, Dirty
+ IpProtocol
+  HW info:
+    Part: 2 Offset0: 20 Width0: 4 Order: 1
+    Part: 2 Offset1: 24 Width1: 4 Order: 2
+     DATA=0000003a
+     MASK=000000ff
+ IpInfo
+  HW info:
+    Part: 0 Offset0: 4 Width0: 1 Order: 2
+    Part: 0 Offset1: 5 Width1: 1 Order: 3
+    Part: 1 Offset2: 6 Width2: 2 Order: 4
+    Part: 1 Offset3: 64 Width3: 4 Order: 5
+    Part: 1 Offset4: 72 Width4: 1 Order: 6
+    Part: 1 Offset5: 74 Width5: 2 Order: 7
+    Part: 2 Offset6: 68 Width6: 3 Order: 1
+    Part: 2 Offset7: 72 Width7: 3 Order: 8
+  LT field info:
+    Field: 5 Offset0: 0 Width0: 1
+    Field: 5 Offset1: 1 Width1: 1
+    Field: 5 Offset2: 2 Width2: 1
+    Field: 4 Offset0: 0 Width0: 1
+    Field: 4 Offset1: 2 Width1: 1
+    Field: 4 Offset2: 3 Width2: 1
+    Field: 3 Offset0: 0 Width0: 1
+    Field: 3 Offset1: 1 Width1: 1
+    Field: 3 Offset2: 2 Width2: 1
+    Field: 3 Offset3: 3 Width3: 1
+    Field: 2 Offset0: 2 Width0: 1
+    Field: 2 Offset1: 3 Width1: 1
+    Field: 1 Offset0: 0 Width0: 1
+    Field: 1 Offset1: 2 Width1: 1
+    Field: 0 Offset0: 0 Width0: 1
+    Field: 0 Offset1: 1 Width1: 1
+    Field: 0 Offset2: 2 Width2: 1
+     DATA=00000000 00000000 00000000 00000000 00000000 00000002
+     MASK=00000000 00000000 00000000 00000000 00000000 00000002
+ IcmpTypeCode
+  HW info:
+    Part: 0 Offset0: 144 Width0: 16 Order: 1
+     DATA=00000106
+     MASK=0000ffff
+ L3DstMiscClassId
+  HW info:
+    Part: 0 Offset0: 73 Width0: 3 Order: 1
+  LT field info:
+    Field: 0 Offset0: 1 Width0: 3
+     DATA=00000004
+     MASK=0000000e
+
+         action = {act=RpDrop, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=GpCopyToCpu, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=CosMapNew, param0=536870914(0x20000002), param1=0(0), param2=0(0)}
+         flex_counter = {flexctr_action_id=268435463(0x10000007), gp_counter_id=103(0x67), yp_counter_id=0(0), rp_counter_id=104(0x68)}
+         policer = {policer id 47,peak_kbits_sec=0, peak_kbits_burst=0, commit_kbits_sec=0x7d0, commit_kbits_burst=0x200, PacketBased=0x1, mode=0, entries=1}

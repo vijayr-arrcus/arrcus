@@ -1,0 +1,172 @@
+de-11:~#
+root@node-11:~#
+root@node-11:~# ./track.sh qos.bin
+1. **
+*********************************************
+Wed 02 Aug 2023 08:42:34 PM UTC
+ Private  +   Shared  =  RAM used       Program
+
+ 17.9 MiB + 347.5 KiB =  18.2 MiB       qos.bin
+---------------------------------
+                         18.2 MiB
+=================================
+top - 20:42:34 up 19:32,  3 users,  load average: 1.87, 0.77, 0.53
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 27.9 us,  6.6 sy,  0.0 ni, 63.9 id,  0.0 wa,  0.0 hi,  1.6 si,  0.0 st
+MiB Mem :   7948.2 total,   2715.9 free,   1819.7 used,   3412.6 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   4802.3 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+29500 root      20   0 1297564  27544  10584 S   0.0   0.3   0:00.33 qos.bin
+1. *********************************************** END
+Wed 02 Aug 2023 08:47:35 PM UTC          - wait 100
+
+
+2. ***********************************************
+Wed 02 Aug 2023 08:47:35 PM UTC
+usage: ps_mem [-h] [--version] [-s] [-t] [-d] [-S] [-p <pid>[,pid2,...pidN]]
+              [-w <N>]
+ps_mem: error: argument -p: expected one argument
+top: -p requires argument
+2. *********************************************** END
+Wed 02 Aug 2023 08:52:36 PM UTC          - wait 100
+
+
+3. ***********************************************
+Wed 02 Aug 2023 08:52:36 PM UTC
+usage: ps_mem [-h] [--version] [-s] [-t] [-d] [-S] [-p <pid>[,pid2,...pidN]]
+              [-w <N>]
+ps_mem: error: argument -p: expected one argument
+top: -p requires argument
+3. *********************************************** END
+Wed 02 Aug 2023 08:54:15 PM UTC          - wait 202
+
+Wed 02 Aug 2023 08:54:16 PM UTC          - wait 201
+
+
+
+
+Wed 02 Aug 2023 08:56:13 PM UTC          - wait 850
+
+Wed 02 Aug 2023 08:57:37 PM UTC          - wait 10
+
+
+4. ***********************************************
+Wed 02 Aug 2023 08:57:37 PM UTC
+ Private  +   Shared  =  RAM used       Program
+
+ 19.8 MiB + 383.5 KiB =  20.2 MiB       qos.bin
+---------------------------------
+                         20.2 MiB
+=================================
+top - 20:57:37 up 19:47,  3 users,  load average: 2.12, 1.57, 1.02
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  1.7 sy,  0.0 ni, 98.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   3127.7 free,   1956.5 used,   2864.0 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5229.0 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+12411 root      20   0 1299284  29324  10520 S   0.0   0.4   0:00.66 qos.bin
+4. *********************************************** END
+Wed 02 Aug 2023 09:02:38 PM UTC          - wait 100
+
+
+5. ***********************************************
+Wed 02 Aug 2023 09:02:38 PM UTC
+ Private  +   Shared  =  RAM used       Program
+
+ 20.0 MiB + 382.5 KiB =  20.4 MiB       qos.bin
+---------------------------------
+                         20.4 MiB
+=================================
+top - 21:02:38 up 19:52,  3 users,  load average: 0.41, 0.85, 0.86
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  1.7 sy,  0.0 ni, 96.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   3117.4 free,   1962.9 used,   2867.8 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5222.6 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+12411 root      20   0 1299416  29588  10520 S   0.0   0.4   0:00.86 qos.bin
+5. *********************************************** END
+Wed 02 Aug 2023 09:07:39 PM UTC          - wait 100
+
+
+6. ***********************************************
+Wed 02 Aug 2023 09:07:39 PM UTC
+ Private  +   Shared  =  RAM used       Program
+
+ 20.1 MiB + 383.5 KiB =  20.5 MiB       qos.bin
+---------------------------------
+                         20.5 MiB
+=================================
+top - 21:07:39 up 19:57,  3 users,  load average: 0.36, 0.54, 0.72
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   3116.5 free,   1959.9 used,   2871.7 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5225.6 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+12411 root      20   0 1299548  29588  10520 S   0.0   0.4   0:01.07 qos.bin
+6. *********************************************** END
+Wed 02 Aug 2023 09:12:40 PM UTC          - wait 100
+
+
+7. ***********************************************
+Wed 02 Aug 2023 09:12:40 PM UTC
+ Private  +   Shared  =  RAM used       Program
+
+ 20.3 MiB + 383.5 KiB =  20.7 MiB       qos.bin
+---------------------------------
+                         20.7 MiB
+=================================
+top - 21:12:40 up 20:02,  3 users,  load average: 0.21, 0.36, 0.59
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  0.0 sy,  0.0 ni, 98.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   3112.2 free,   1960.1 used,   2875.9 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5225.5 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+12411 root      20   0 1299680  29852  10520 S   0.0   0.4   0:01.28 qos.bin
+7. *********************************************** END
+Wed 02 Aug 2023 09:17:41 PM UTC          - wait 100
+
+
+8. ***********************************************
+Wed 02 Aug 2023 09:17:41 PM UTC
+ Private  +   Shared  =  RAM used       Program
+
+ 20.4 MiB + 383.5 KiB =  20.8 MiB       qos.bin
+---------------------------------
+                         20.8 MiB
+=================================
+top - 21:17:41 up 20:07,  3 users,  load average: 0.35, 0.31, 0.50
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  0.0 sy,  0.0 ni, 98.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   3105.9 free,   1962.3 used,   2879.9 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5223.2 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+12411 root      20   0 1299944  30116  10520 S   0.0   0.4   0:01.50 qos.bin
+8. *********************************************** END
+^Cd 02 Aug 2023 09:19:29 PM UTC          - wait 194
+root@node-11:~# ./track.sh qos.bin
+1. ***********************************************
+Wed 02 Aug 2023 09:22:33 PM UTC
+ Private  +   Shared  =  RAM used       Program
+
+ 20.6 MiB + 383.5 KiB =  21.0 MiB       qos.bin
+---------------------------------
+                         21.0 MiB
+=================================
+top - 21:22:33 up 20:12,  3 users,  load average: 1.20, 0.71, 0.60
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7948.2 total,   3101.9 free,   1962.2 used,   2884.1 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5223.3 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+12411 root      20   0 1300076  30116  10520 S   0.0   0.4   0:01.70 qos.bin
+1. *********************************************** END
+^Cd 02 Aug 2023 09:22:44 PM UTC          - wait 290
+root@node-11:~#
+

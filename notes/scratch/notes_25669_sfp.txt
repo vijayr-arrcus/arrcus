@@ -1,0 +1,228 @@
+packages/base/any/onlp/src/onlp/module/src/onlp_main.c --- onlpdump
+
+pltf_server_confd_component_get_object
+    pltf_server_get_component_info
+        COMPONENT_TYPE_SFP
+
+
+pltf_server_get_all_property_info
+    pltf_server_get_all_sfp_property
+
+pltf_server_mpsc_sfp_tbl_rx_cb -- populate pltf_server_sfp_info_t
+  pltf_agent_convert_sfp_info_to_ds_obj --> pulblis sfp info to dstore. -- pltf_agent_sfp_info_t
+
+pltf_agent_onlp_sfp_info_get read and parse sff eeprom
+   onlp_sfp_eeprom_read
+      onlp_sfpi_eeprom_read -- per platform implementation.
+          /sys/bus/i2c/devices/%d-0050/eeprom
+      sff_eeprom_parse
+      ONL-standalone/sm/ONL/packages/base/any/onlp/src/onlp/module/src/onlp_main.c
+
+03h 100GBASE-LR4 or 25GBASE-L -- #define SFF8636_CC192_100GE_LR4          0x03
+27h 100G-LR or 100GBASE-LR1 (Clause 140), CAUI-4 (no FEC on host interface ---
+
+52  100GBASE-LR4    Fiber                  Arista Networks   QSFP-100G-LR4     XHT203501557
+Port 52: Present, Status = 0x00000000
+eeprom:
+  0000: 11 07 00 f0 00 f0 00 00 00 00 00 00 00 00 00 00   15
+  0010: 00 00 00 00 00 00 2e 0e 00 00 7e ef 00 00 00 00   31
+  0020: 00 00 25 24 26 6e 28 0e 29 f3 54 82 4f a6 4f a6   47
+  0030: 4f a6 52 0b 4c bf 4b 2e 43 3c 00 00 00 00 00 00   63
+  0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   79
+  0050: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   95
+  0060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  111
+  0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  127
+  0080: 11 cd 07 80 00 00 00 00 00 00 00 05 ff 00 0a 00  143
+  0090: 00 00 00 44 41 72 69 73 74 61 20 4e 65 74 77 6f  159
+  00a0: 72 6b 73 20 00 00 1c 73 51 53 46 50 2d 31 30 30   175
+  00b0: 47 2d 4c 52 34 20 20 20 32 31 66 58 00 c8 46 14  191
+  00c0: 03 07 3f 9a 58 48 54 32 30 33 35 30 31 35 35 37  207
+  00d0: 20 20 20 20 32 30 30 38 32 39 20 20 0c 10 67 1b  223
+  00e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  239
+  00f0: 00 00 00 00 00 00 00 00 00 00 00 00 9e d1 ca 8f  255
+
+#define SFF8636_IDENT_QSFP28             0x11
+idprom[0] == SFF8636_IDENT_QSFP28
+
+Port 55: Present, Status = 0x00000000
+eeprom:
+  0000: 11 08 00 f0 00 f0 00 00 00 00 00 50 00 50 00 00
+  0010: 00 00 00 00 00 00 29 7c 00 00 80 b1 00 00 36 fe
+  0020: 00 00 50 33 00 00 00 00 00 00 00 00 00 00 00 00
+  0030: 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00
+  0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0050: 00 00 00 00 00 00 00 aa aa 00 00 00 00 00 00 00
+  0060: 00 00 ff 00 00 00 00 00 00 00 00 2d 00 00 00 00
+  0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0080: 11 ce 07 80 00 00 00 00 00 00 00 05 ff 00 0a 00
+  0090: 00 00 00 64 41 72 69 73 74 61 20 4e 65 74 77 6f
+  00a0: 72 6b 73 20 00 00 1c 73 51 53 46 50 2d 31 30 30
+  00b0: 47 2d 4c 52 20 20 20 20 32 31 66 6c 05 14 00 40
+  00c0: 27 6b 3f df 58 4b 54 32 30 34 30 30 30 30 33 39
+  00d0: 20 20 20 20 32 30 30 39 32 37 20 20 3c 13 67 13
+  00e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  00f0: 00 00 00 00 00 00 00 00 00 00 00 00 dc 61 9f 46
+
+
+  ✔ 10:35:localhost [~/OpenNetworkLinux/docker/tools] [master|✚ 1…2]
+  513 => ./onlbuilder -9
+
+  [ ok  ] Enabling additional executable binary formats:
+
+  binfmt-support.bash: warning: setlocale: LC_ALL: cannot change locale
+  (en_US.UTF-8): No such file or directorybash: warning: setlocale: LC_A
+  LL: cannot change locale (en_US.UTF-8)✘-1 10:35:localhost [~/OpenNet
+  workLinux/docker/tools] [master|✚ 1…2]
+
+
+
+  pltf_agent_onlp_sfp_dom_info_bulk_get
+  pltf_agent_convert_sfp_dom_info_to_ds_obj
+
+
+#define KEY_ID_TEMPERATURE 0
+#define KEY_ID_VCC 1
+#define KEY_ID_TX1_BIAS 2
+#define KEY_ID_TX1_POWER 3
+#define KEY_ID_RX1_POWER 4
+#define KEY_ID_TX2_BIAS 5
+#define KEY_ID_TX2_POWER 6
+#define KEY_ID_RX2_POWER 7
+#define KEY_ID_TX3_BIAS 8
+#define KEY_ID_TX3_POWER 9
+#define KEY_ID_RX3_POWER 10
+#define KEY_ID_TX4_BIAS 11
+#define KEY_ID_TX4_POWER 12
+#define KEY_ID_RX4_POWER 13
+#define KEY_ID_TX5_BIAS 14
+#define KEY_ID_TX5_POWER 15
+#define KEY_ID_RX5_POWER 16
+#define KEY_ID_TX6_BIAS 17
+#define KEY_ID_TX6_POWER 18
+#define KEY_ID_RX6_POWER 19
+#define KEY_ID_TX7_BIAS 20
+#define KEY_ID_TX7_POWER 21
+#define KEY_ID_RX7_POWER 22
+#define KEY_ID_TX8_BIAS 23
+#define KEY_ID_TX8_POWER 24
+#define KEY_ID_RX8_POWER 25
+#define KEY_ID_TEMP_HIGH_ALARM 26
+#define KEY_ID_TEMP_LOW_ALARM 27
+#define KEY_ID_TEMP_HIGH_WARN 28
+#define KEY_ID_TEMP_LOW_WARN 29
+#define KEY_ID_VCC_HIGH_ALARM 30
+#define KEY_ID_VCC_LOW_ALARM 31
+#define KEY_ID_VCC_HIGH_WARN 32
+#define KEY_ID_VCC_LOW_WARN 33
+#define KEY_ID_TX_BIAS_HIGH_ALARM 34
+#define KEY_ID_TX_BIAS_LOW_ALARM 35
+#define KEY_ID_TX_BIAS_HIGH_WARN 36
+#define KEY_ID_TX_BIAS_LOW_WARN 37
+#define KEY_ID_TX_POWER_HIGH_ALARM 38
+#define KEY_ID_TX_POWER_LOW_ALARM 39
+#define KEY_ID_TX_POWER_HIGH_WARN 40
+#define KEY_ID_TX_POWER_LOW_WARN 41
+#define KEY_ID_RX_POWER_HIGH_ALARM 42
+#define KEY_ID_RX_POWER_LOW_ALARM 43
+#define KEY_ID_RX_POWER_HIGH_WARN 44
+#define KEY_ID_RX_POWER_LOW_WARN 45
+
+6  400GBASE-DR4    Fiber                  Arista Networks   QDD-400G-XDR4     XKT220901200
+
+Port 06: Present, Status = 0x00000000
+eeprom:
+  0000: 18 40 00 06 ff 00 00 00 00 00 00 00 00 00 3a 63   15
+  0010: 7e db 00 00 37 03 00 00 00 00 40 00 00 00 00 00   31
+  0020: 00 00 00 00 00 00 00 02 01 00 00 00 00 00 00 00   47
+  0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   63
+  0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   79
+  0050: 00 00 00 00 00 02 11 1c 84 01 0d 15 21 55 ff 00   95
+  0060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  111
+  0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  127
+  0080: 18 41 72 69 73 74 61 20 4e 65 74 77 6f 72 6b 73  143
+  0090: 20 00 1c 73 51 44 44 2d 34 30 30 47 2d 58 44 52  159
+  00a0: 34 20 20 20 34 31 58 4b 54 32 32 30 39 30 31 32  175
+  00b0: 30 30 20 20 20 20 32 32 30 33 30 31 20 20 20 20  191
+  00c0: 20 20 20 20 20 20 20 20 80 28 00 0c 00 00 00 00  207
+  00d0: 00 00 f0 00 06 00 00 00 00 00 00 00 00 00 26 00  223
+  00e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  239
+  00f0: 00 00 00 00 00 00 00 00 00 00 00 00 0d 29 9c a5  255
+
+
+_eeprom[0] == SFF_CMIS_IDENT_QSFP_DD
+0x18
+_eeprom[1] --> version number 4.0.
+
+eeprom[85] == 02   --- > SFF_CMIS_MODULE_TYPE_OPTICAL_SMF
+
+
+eeprom[87] == 1c ---> 28 -->     SFF_CMIS_SMF_CODE_400GBASE_DR4 = 28,
+
+>>> XDR 4 is more than 2kms long
+
+
+PLR4
+
+Port 07: Present, Status = 0x00000000
+eeprom:
+  0000: 18 40 00 06 ff 00 00 00 00 00 00 00 00 00 38 3a   15
+  0010: 7e 4c 00 00 37 02 00 00 00 00 40 00 00 00 00 00   31
+  0020: 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00   47
+  0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   63
+  0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   79
+  0050: 00 00 00 00 00 02 11 00 84 01 0d 16 21 55 ff 00   95
+  0060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  111
+  0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  127
+  0080: 18 41 72 69 73 74 61 20 4e 65 74 77 6f 72 6b 73  143
+  0090: 20 00 1c 73 51 44 44 2d 34 30 30 47 2d 50 4c 52  159
+  00a0: 34 20 20 20 34 30 58 4b 54 32 31 31 39 30 30 32  175
+  00b0: 35 37 20 20 20 20 32 31 30 35 30 37 20 20 20 20  191
+  00c0: 20 20 20 20 20 20 20 20 80 28 00 0c 00 00 00 00  207
+  00d0: 00 00 f0 00 06 00 00 00 00 00 00 00 00 00 37 00  223
+  00e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  239
+  00f0: 00 00 00 00 00 00 00 00 00 00 00 00 25 7d a2 e7  255
+
+
+media interface codes -- 87, 91, 95, 99, 103, 107, 111, 115
+e[87] = 0, e[91] = 16
+
+vendor name -- e[129] - e[144]
+41 72 69 73 74 61 20 4e 65 74 77 6f 72 6b 73 20
+Arista Networks
+
+serial number -- e[166] - e[181]
+58 4b 54 32 31 31 39 30 30 32 35 37 20 20 20 20
+88 75 84 50 49 49 57 48 48 50 53 55 32 32 32 32
+X  K  T  2  1  1  9  0  0  2  5  7             
+
+e[203] -- table 4-3 connector type 8024 -- 0c -- MP0 1x12 (Multifiber Parallel Optic)
+e[202] -- Cable assembly length -- 0
+e[128] -- 18 -- table 4-1 8024 -- QSFPDD
+
+e[148] -- vendor part number
+51 44 44 2d 34 30 30 47 2d 50 4c 52  159
+
+
+FS LR4
+checksum issue:
+
+eeprom:
+  0000: 18 40 00 06 00 00 00 00 00 00 00 00 00 00 2b e4    15
+  0010: 7d 5f f2 9a 31 dc 00 00 00 00 40 00 00 00 00 00    31
+  0020: 00 00 00 00 00 00 00 00 0f 00 00 00 00 00 00 00    47
+  0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    63
+  0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    79
+  0050: 00 00 00 00 00 02 11 1e 84 01 ff 00 00 00 00 00    95
+  0060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   111
+  0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 11   127
+  0080: 44 44 44 44 00 00 00 00 00 00 00 00 00 00 00 00   143
+  0090: 00 00 00 00 00 00 00 00 00 00 49 65 49 6e 49 4a   159
+  00a0: 4a 4a 00 00 00 00 00 00 00 00 65 87 8d 95 72 3e   175
+  00b0: 8f ad 00 00 00 00 00 00 00 00 67 3b 57 49 53 31   191
+  00c0: 46 75 00 00 00 00 00 00 00 00 11 11 11 11 11 11   207
+  00d0: 11 11 11 11 11 11 ff 00 00 00 00 00 00 ff ff 22   223
+  00e0: 22 22 22 11 11 11 11 22 22 22 22 00 00 00 00 00   239
+  00f0: 11 21 31 41 00 00 00 00 11 21 31 41 00 00 00 00   255
+Port 11: Missing.
+
+

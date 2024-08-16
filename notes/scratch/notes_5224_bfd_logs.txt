@@ -1,0 +1,691 @@
+Local Side,
+
+1. trunk info and ps.
+2. ps and End point info for both the member links.
+3. Fp group output.
+4. stats value for all the fp entries.
+5. get stats from the endpoint.
+
+int unit = 0;
+int ep_id_1 = 1;
+int ep_id_2 = 2;
+int tid = 1;
+fp show group 4
+int stat_id_1;
+int stat_id_2;
+bcm_trunk_info_t trunk_info;
+bcm_trunk_member_t trunk_members[5];
+int trunk_count;
+
+bcm_trunk_get(unit, tid, &trunk_info, 5, trunk_members, &trunk_count);
+int i =0;
+
+print trunk_info;
+
+for (i = 0; i < trunk_count; i++)
+{
+	print trunk_members[i];
+}
+
+
+stat_id_1 =
+stat_id_2 =
+
+bcm_bfd_endpoint_info_t ep_info;
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(unit, ep_id_1, &ep_info);
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(unit, ep_id_2, &ep_info);
+
+
+fp stat get statid=stat_id_1 t=p
+fp stat get statid=stat_id_2 t=p
+
+bcm_bfd_endpoint_stat_t ctr_info_1;
+bcm_bfd_endpoint_stat_t ctr_info_2;
+
+sal_memset(&ctr_info_1, 0, sizeof(bcm_bfd_endpoint_stat_t));
+sal_memset(&ctr_info_2, 0, sizeof(bcm_bfd_endpoint_stat_t));
+
+print bcm_bfd_endpoint_stat_get(unit, ep_id_1, &ctr_info_1, BCM_BFD_ENDPOINT_STAT_64BIT);
+print bcm_bfd_endpoint_stat_get(unit, ep_id_2, &ctr_info_2, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info_1;
+print ctr_info_2;
+
+
+
+
+The conclusion from the stats is that the response packet has the correct YourDiscriminator. However the received packets count is not correct.
+Delete the FP group and try to have the packet punted to CPU.
+
+1. trunk info and ps.
+
+
+
+2. ps and End point info for both the member links.
+3. Fp group output.
+4. stats value for all the fp entries.
+5. get stats from the endpoint.
+
+
+Local side
+==========
+
+
+fp show group 4
+show c cpu
+fp stat get statid=56 t=p
+fp stat get statid=57 t=p
+fp stat get statid=55 t=p
+
+int unit = 0;
+int ep_id = 1;
+bcm_bfd_endpoint_info_t ep_info;
+bcm_bfd_endpoint_stat_t ctr_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(unit, ep_id, &ep_info);
+print ep_info;
+
+print bcm_bfd_endpoint_stat_get(unit, ep_id, &ctr_info, BCM_BFD_ENDPOINT_STAT_64BIT);
+
+print ctr_info;
+
+
+
+BCM.0> fp show group 4                                                                                                                                                                                                                                             [320/15326]
+show c cpu
+fp stat get statid=56 t=p
+fp stat get statid=57 t=p
+fp stat get statid=55 t=p
+fp show group 4
+show c cpu
+
+fp stat get statid=56 t=p
+
+fp stat get statid=57 t=p
+
+fp stat get statid=55 t=p
+
+GID          4: gid=0x4, instance=0 mode=Double, stage=Ingress lookup=Enabled, ActionResId={-1}, pbmp={0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000088888888888888882222222222222223}
+         qset={DstMac, EtherType, Stage, StageIngress, InterfaceClassL2, InterfaceClassL3, IcmpTypeCode, MyStationHit, InterfaceClassVPort, BfdYourDiscriminator, PktType},
+         aset={CosQCpuNew, CopyToCpu, Drop, PolicerGroup, StatGroup, BFDSessionIdNew},
+         Qualifiers in Part-0: {EtherType->InterfaceClassL2->InterfaceClassVPort->BfdYourDiscriminator->PktType},
+         Qualifiers in Part-1: {DstMac->InterfaceClassL3->IcmpTypeCode->MyStationHit},
+
+         group_priority= 20
+         slice_primary =  {slice_number=3, Entry count=768(0x300), Entry free=765(0x2fd)},
+         slice_secondary = {slice_number=4}
+         group_status={prio_min=0, prio_max=0, entries_total=2304, entries_free=2301,
+                       counters_total=83968, counters_free=66045, meters_total=6144, meters_free=5376}
+EID 0x000000c2: gid=0x4,
+ slice=3, slice_idx=0, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000000
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2047(0x7ff), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 55  slice = 9 idx=3 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x000000c3: gid=0x4,
+ slice=3, slice_idx=0x1, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x1, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000000
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2047(0x7ff), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 56  slice = 9 idx=2 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x000000c4: gid=0x4,
+ slice=3, slice_idx=0x2, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x2, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000005
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=1(0x1), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 57  slice = 9 idx=7 entries=1}{Packets}
+         Extended statistics=NULL
+BCM.0>
+
+BCM.0>
+BCM.0> show c cpu
+MC_PERQ_PKT(6).cpu0         :                    81                 +57
+MC_PERQ_PKT(7).cpu0         :                 5,257              +3,956              10/s
+MC_PERQ_PKT(46).cpu0        :                   846                +778               2/s
+MC_PERQ_BYTE(6).cpu0        :                12,726              +9,030
+MC_PERQ_BYTE(7).cpu0        :               693,924            +522,192           1,338/s
+MC_PERQ_BYTE(46).cpu0       :                62,604             +57,572             136/s
+BCM.0>
+BCM.0> fp stat get statid=56 t=p
+The value is: 0x000000000
+BCM.0>
+BCM.0> fp stat get statid=57 t=p
+The value is: 0x0000001a7
+BCM.0>
+BCM.0> fp stat get statid=55 t=p
+The value is: 0x000000000
+
+
+BCM.0>
+BCM.0> cint
+cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint>
+cint> int unit = 0;
+int ep_id = 1;
+bcm_bfd_endpoint_info_t ep_info;
+bcm_bfd_endpoint_stat_t ctr_info;
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+print bcm_bfd_endpoint_get(unit, ep_id, &ep_info);
+print ep_info;
+
+print bcm_bfd_endpoint_stat_get(unit, ep_id, &ctr_info, BCM_BFD_ENDPOINT_STAT_64BIT);
+
+print ctr_info;
+int unit = 0;
+int ep_id = 1;
+
+bcm_bfd_endpoint_info_t ep_info;
+
+bcm_bfd_endpoint_stat_t ctr_info;
+
+
+
+bcm_bfd_endpoint_info_t_init(&ep_info);
+
+print bcm_bfd_endpoint_get(unit, ep_id, &ep_info);
+
+print ep_info;
+
+
+
+print bcm_bfd_endpoint_stat_get(unit, ep_id, &ctr_info, BCM_BFD_ENDPOINT_STAT_64BIT);
+
+
+
+print ctr_info;
+
+cint>
+
+
+cint>                                                                                                                                                                                                                                                              [828/15978]
+cint> int ep_id = 1;
+cint>
+cint> bcm_bfd_endpoint_info_t ep_info;
+cint>
+cint> bcm_bfd_endpoint_stat_t ctr_info;
+cint>
+cint>
+cint>
+cint> bcm_bfd_endpoint_info_t_init(&ep_info);
+cint>
+cint> print bcm_bfd_endpoint_get(unit, ep_id, &ep_info);
+int $$ = 0 (0x0)
+cint>
+cint> print ep_info;
+bcm_bfd_endpoint_info_t ep_info = {
+    unsigned int flags = 0 (0x0)
+    int id = 1 (0x1)
+    int remote_id = 0 (0x0)
+    bcm_bfd_tunnel_type_t type = bcmBFDTunnelTypeUdp (0)
+    int gport = 67108877 (0x400000d)
+    int tx_gport = -1 (0xffffffff)
+    int remote_gport = -1 (0xffffffff)
+    int bfd_period = 0 (0x0)
+    bcm_vlan_t vpn = 0 (0x0000)
+    unsigned char vlan_pri = 0 (0x00)
+    unsigned char inner_vlan_pri = 0 (0x00)
+    int vrf_id = 0 (0x0)
+    uint8[6] dst_mac = 00:00:00:00:00:00
+    uint8[6] src_mac = 00:00:00:00:00:00
+    uint16 pkt_inner_vlan_id = 0 (0x0000)
+    uint32 dst_ip_addr = 23.23.23.3
+    uint8[16] dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 src_ip_addr = 23.23.23.2
+    uint8[16] src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char ip_tos = 0 (0x00)
+    unsigned char ip_ttl = 255 (0xff)
+    uint32 inner_dst_ip_addr = 0.0.0.0
+    uint8[16] inner_dst_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    uint32 inner_src_ip_addr = 0.0.0.0
+    uint8[16] inner_src_ip6_addr = 0000:0000:0000:0000:0000:0000:0000:0000
+    unsigned char inner_ip_tos = 0 (0x00)
+    unsigned char inner_ip_ttl = 0 (0x00)
+    unsigned int udp_src_port = 49156 (0xc004)
+    uint32 label = 0 (0x0)
+    uint32 mpls_hdr = 0 (0x0)
+    bcm_mpls_egress_label_t egress_label = {
+        unsigned int flags = 0 (0x0)
+        unsigned int flags2 = 0 (0x0)
+        uint32 label = 4294967295 (0xffffffff)
+        int qos_map_id = 0 (0x0)
+        unsigned char exp = 255 (0xff)
+        unsigned char ttl = 0 (0x00)
+        unsigned char pkt_pri = 0 (0x00)
+        unsigned char pkt_cfi = 0 (0x00)
+        int tunnel_id = 0 (0x0)
+        int l3_intf_id = 0 (0x0)
+        bcm_mpls_egress_action_t action = BCM_MPLS_EGRESS_ACTION_SWAP (0)
+        int ecn_map_id = 0 (0x0)
+        int int_cn_map_id = 0 (0x0)
+        int egress_failover_id = 0 (0x0)
+        int egress_failover_if_id = 0 (0x0)
+        int outlif_counting_profile = -1 (0xffffffff)
+        bcm_mpls_special_label_push_type_t spl_label_push_type = bcmMplsSpecialLabelPushNone (0)
+        bcm_encap_access_t encap_access = bcmEncapAccessInvalid (0)
+        bcm_qos_egress_model_t egress_qos_model = {                                                                         [796/16872]            bcm_qos_egress_model_type_t egress_qos = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_model_type_t egress_ttl = bcmQosEgressModelUniform (0)
+            bcm_qos_egress_ecn_model_type_t egress_ecn = bcmQosEgressEcnModelInvalid (0)
+        }
+        int estimated_encap_size = 0 (0x0)
+    }
+    int egress_if = 100160 (0x18740)
+    unsigned char[32] mep_id = {
+        unsigned char mep_id[0] = 0 (0x00)
+        unsigned char mep_id[1] = 0 (0x00)
+        unsigned char mep_id[2] = 0 (0x00)
+        unsigned char mep_id[3] = 0 (0x00)
+        unsigned char mep_id[4] = 0 (0x00)
+        unsigned char mep_id[5] = 0 (0x00)
+        unsigned char mep_id[6] = 0 (0x00)
+        unsigned char mep_id[7] = 0 (0x00)
+        unsigned char mep_id[8] = 0 (0x00)
+        unsigned char mep_id[9] = 0 (0x00)
+        unsigned char mep_id[10] = 0 (0x00)
+        unsigned char mep_id[11] = 0 (0x00)
+        unsigned char mep_id[12] = 0 (0x00)
+        unsigned char mep_id[13] = 0 (0x00)
+        unsigned char mep_id[14] = 0 (0x00)
+        unsigned char mep_id[15] = 0 (0x00)
+        unsigned char mep_id[16] = 0 (0x00)
+        unsigned char mep_id[17] = 0 (0x00)
+        unsigned char mep_id[18] = 0 (0x00)
+        unsigned char mep_id[19] = 0 (0x00)
+        unsigned char mep_id[20] = 0 (0x00)
+        unsigned char mep_id[21] = 0 (0x00)
+        unsigned char mep_id[22] = 0 (0x00)
+        unsigned char mep_id[23] = 0 (0x00)                                                                                 [764/16872]        unsigned char mep_id[24] = 0 (0x00)
+        unsigned char mep_id[25] = 0 (0x00)
+        unsigned char mep_id[26] = 0 (0x00)
+        unsigned char mep_id[27] = 0 (0x00)
+        unsigned char mep_id[28] = 0 (0x00)
+        unsigned char mep_id[29] = 0 (0x00)
+        unsigned char mep_id[30] = 0 (0x00)
+        unsigned char mep_id[31] = 0 (0x00)
+    }
+    unsigned char mep_id_length = 0 (0x00)
+    int int_pri = 7 (0x7)
+    unsigned char cpu_qid = 0 (0x00)
+    bcm_bfd_state_t local_state = bcmBFDStateUp (3)
+    unsigned int local_discr = 5 (0x5)
+    bcm_bfd_diag_code_t local_diag = bcmBFDDiagCodeNone (0)
+    unsigned int local_flags = 0 (0x0)
+    unsigned int local_min_tx = 1000000 (0xf4240)
+    unsigned int local_min_rx = 1000000 (0xf4240)
+    unsigned int local_min_echo = 0 (0x0)
+    unsigned char local_detect_mult = 3 (0x03)
+    bcm_bfd_auth_type_t auth = bcmBFDAuthTypeNone (0)
+    unsigned int auth_index = 0 (0x0)
+    unsigned int tx_auth_seq = 148259874 (0x8d64422)
+    unsigned int rx_auth_seq = 0 (0x0)
+    unsigned int remote_flags = 0 (0x0)
+    bcm_bfd_state_t remote_state = bcmBFDStateUp (3)
+    unsigned int remote_discr = 3 (0x3)
+    bcm_bfd_diag_code_t remote_diag = bcmBFDDiagCodeNone (0)
+    unsigned int remote_min_tx = 150000 (0x249f0)
+    unsigned int remote_min_rx = 150000 (0x249f0)
+    unsigned int remote_min_echo = 0 (0x0)
+    unsigned char remote_detect_mult = 3 (0x03)
+    int sampling_ratio = 0 (0x0)
+    unsigned char loc_clear_threshold = 0 (0x00)
+    unsigned int ip_subnet_length = 0 (0x0)
+    unsigned char[32] remote_mep_id = {
+        unsigned char remote_mep_id[0] = 0 (0x00)
+        unsigned char remote_mep_id[1] = 0 (0x00)
+        unsigned char remote_mep_id[2] = 0 (0x00)
+        unsigned char remote_mep_id[3] = 0 (0x00)
+        unsigned char remote_mep_id[4] = 0 (0x00)
+        unsigned char remote_mep_id[5] = 0 (0x00)
+        unsigned char remote_mep_id[6] = 0 (0x00)
+        unsigned char remote_mep_id[7] = 0 (0x00)
+        unsigned char remote_mep_id[8] = 0 (0x00)
+        unsigned char remote_mep_id[9] = 0 (0x00)
+        unsigned char remote_mep_id[10] = 0 (0x00)
+        unsigned char remote_mep_id[11] = 0 (0x00)
+        unsigned char remote_mep_id[12] = 0 (0x00)
+        unsigned char remote_mep_id[13] = 0 (0x00)
+        unsigned char remote_mep_id[14] = 0 (0x00)
+        unsigned char remote_mep_id[15] = 0 (0x00)
+        unsigned char remote_mep_id[16] = 0 (0x00)
+        unsigned char remote_mep_id[17] = 0 (0x00)
+        unsigned char remote_mep_id[18] = 0 (0x00)
+        unsigned char remote_mep_id[19] = 0 (0x00)
+        unsigned char remote_mep_id[20] = 0 (0x00)
+        unsigned char remote_mep_id[21] = 0 (0x00)
+        unsigned char remote_mep_id[22] = 0 (0x00)
+        unsigned char remote_mep_id[23] = 0 (0x00)
+        unsigned char remote_mep_id[24] = 0 (0x00)
+        unsigned char remote_mep_id[25] = 0 (0x00)
+        unsigned char remote_mep_id[26] = 0 (0x00)                                                                          [701/16872]        unsigned char remote_mep_id[27] = 0 (0x00)
+        unsigned char remote_mep_id[28] = 0 (0x00)
+        unsigned char remote_mep_id[29] = 0 (0x00)
+        unsigned char remote_mep_id[30] = 0 (0x00)
+        unsigned char remote_mep_id[31] = 0 (0x00)
+    }
+    unsigned char remote_mep_id_length = 0 (0x00)
+    unsigned char[32] mis_conn_mep_id = {
+        unsigned char mis_conn_mep_id[0] = 0 (0x00)
+        unsigned char mis_conn_mep_id[1] = 0 (0x00)
+        unsigned char mis_conn_mep_id[2] = 0 (0x00)
+        unsigned char mis_conn_mep_id[3] = 0 (0x00)
+        unsigned char mis_conn_mep_id[4] = 0 (0x00)
+        unsigned char mis_conn_mep_id[5] = 0 (0x00)
+        unsigned char mis_conn_mep_id[6] = 0 (0x00)
+        unsigned char mis_conn_mep_id[7] = 0 (0x00)
+        unsigned char mis_conn_mep_id[8] = 0 (0x00)
+        unsigned char mis_conn_mep_id[9] = 0 (0x00)
+        unsigned char mis_conn_mep_id[10] = 0 (0x00)
+        unsigned char mis_conn_mep_id[11] = 0 (0x00)
+        unsigned char mis_conn_mep_id[12] = 0 (0x00)
+        unsigned char mis_conn_mep_id[13] = 0 (0x00)
+        unsigned char mis_conn_mep_id[14] = 0 (0x00)
+        unsigned char mis_conn_mep_id[15] = 0 (0x00)
+        unsigned char mis_conn_mep_id[16] = 0 (0x00)
+        unsigned char mis_conn_mep_id[17] = 0 (0x00)
+        unsigned char mis_conn_mep_id[18] = 0 (0x00)
+        unsigned char mis_conn_mep_id[19] = 0 (0x00)
+        unsigned char mis_conn_mep_id[20] = 0 (0x00)
+        unsigned char mis_conn_mep_id[21] = 0 (0x00)
+        unsigned char mis_conn_mep_id[22] = 0 (0x00)
+        unsigned char mis_conn_mep_id[23] = 0 (0x00)
+        unsigned char mis_conn_mep_id[24] = 0 (0x00)
+        unsigned char mis_conn_mep_id[25] = 0 (0x00)
+        unsigned char mis_conn_mep_id[26] = 0 (0x00)
+        unsigned char mis_conn_mep_id[27] = 0 (0x00)
+        unsigned char mis_conn_mep_id[28] = 0 (0x00)
+        unsigned char mis_conn_mep_id[29] = 0 (0x00)
+        unsigned char mis_conn_mep_id[30] = 0 (0x00)
+        unsigned char mis_conn_mep_id[31] = 0 (0x00)
+    }
+    unsigned char mis_conn_mep_id_length = 0 (0x00)
+    unsigned int bfd_detection_time = 0 (0x0)
+    uint16 pkt_vlan_id = 0 (0x0000)
+    uint16 rx_pkt_vlan_id = 0 (0x0000)
+    uint32 gal_label = 0 (0x0)
+    unsigned int faults = 0 (0x0)
+    unsigned int flags2 = 0 (0x0)
+    int ipv6_extra_data_index = 0 (0x0)
+    int punt_good_packet_period = 0 (0x0)
+    unsigned char bfd_period_cluster = 0 (0x00)
+    unsigned int vxlan_vnid = 0 (0x0)
+    unsigned short vlan_tpid = 0 (0x0000)
+    unsigned short inner_vlan_tpid = 0 (0x0000)
+    int injected_network_qos = 0 (0x0)
+    int profile_id = 0 (0x0)
+    unsigned char injected_core_id = 0 (0x00)
+}
+cint>
+cint>
+cint>
+cint>
+cint> print bcm_bfd_endpoint_stat_get(unit, ep_id, &ctr_info, BCM_BFD_ENDPOINT_STAT_64BIT);
+int $$ = 0 (0x0)
+cint>
+cint>
+cint>
+cint> print ctr_info;
+bcm_bfd_endpoint_stat_t ctr_info = {
+    unsigned int packets_in = 0 (0x0)
+    unsigned int packets_out = 0 (0x0)
+    unsigned int packets_drop = 0 (0x0)
+    unsigned int packets_auth_drop = 0 (0x0)
+    uint64 packets_in_64 = {0x00000000 0x0000036C}
+    uint64 packets_out_64 = {0x00000000 0x000001B7}
+    uint64 packets_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_auth_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_echo_reply = {0x00000000 0x00000000}
+}
+cint>
+
+
+BCM.0>
+BCM.0> trunk show
+trunk show
+Device supports 2112 trunk groups:
+  2048 front panel trunks (0..2047), 256 ports/trunk
+  64 fabric trunks (2048..2111), 64 ports/trunk
+trunk 1: (front panel, 1 ports)=ce7 dlf=any mc=any ipmc=any psc=resilient (0xf)
+trunk 2: (front panel, 0 ports)
+trunk 3: (front panel, 2 ports)=ce30,ce24 dlf=any mc=any ipmc=any psc=resilient (0xf)
+trunk 4: (front panel, 0 ports)
+BCM.0>
+BCM.0>
+BCM.0> l3 l3table show
+l3 l3table show
+Unit 0, free L3 table entries: 81912
+Entry VRF IP address       Mac Address           INTF MOD PORT    CLASS HIT    H/W Index
+1     0    22.22.22.22      00:00:00:00:00:00  100002    0    0         2 n      22296
+2     0    42.0.0.1         00:00:00:00:00:00  100002    0    0         2 n      25196
+3     0    23.23.23.2       00:00:00:00:00:00  100002    0    0         2 n      30624      (LOCAL ROUTE)
+4     0    62.1.1.2         00:00:00:00:00:00  100002    0    0         2 n      36232
+BCM.0>
+BCM.0>
+BCM.0> l3 egress show
+l3 egress show
+Entry  Mac                 Vlan INTF PORT MOD MPLS_LABEL ToCpu Drop RefCount L3MC
+100002  00:00:00:00:00:00    0 16383     0    0        -1   no   no   15   no
+100003  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100004  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100105  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100106  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100107  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100108  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100109  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100110  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100111  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100112  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100113  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100114  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100115  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100116  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100117  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100118  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100119  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100120  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100121  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100122  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100123  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100124  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100125  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100126  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100127  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100128  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100129  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100130  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100131  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100132  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100133  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100134  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100135  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100136  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100137  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100138  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100139  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100140  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no                                                                                                                                                                                        [61/16175]
+100141  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100142  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100143  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100144  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100145  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100146  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100147  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100148  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100149  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100150  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100151  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100152  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100153  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100154  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100155  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100157  d8:c4:97:61:f1:63    8    8     1t   0        -1   no   no    0   no
+100158  d8:c4:97:61:f1:63    8    8     1t   0        -1   no   no    0   no
+100159  00:00:00:00:00:00    0   -1   107    0        -1   no   no    2   no
+100160  01:00:5e:90:00:01    0    8     1t   0        -1   no   no    0   no
+100261  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100262  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100263  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100264  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100265  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100266  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100267  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100268  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100269  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100270  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100271  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100272  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100273  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100274  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100275  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100276  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100277  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100278  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100279  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100280  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100281  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100282  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100283  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100284  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100285  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100286  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100287  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100288  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100289  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100290  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100291  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100292  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100293  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100294  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100295  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100296  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100297  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100298  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100299  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100300  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100301  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100302  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100303  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100304  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100305  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100306  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100307  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100308  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100309  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100310  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    2   no
+100411  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100412  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100413  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100414  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100415  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100416  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100417  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100418  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100419  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100420  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100421  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100422  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100423  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100424  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100425  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100426  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100427  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100428  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100429  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100430  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100431  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100432  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100433  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100434  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100435  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100436  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100437  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100438  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100439  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100440  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100441  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100442  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100443  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100444  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100445  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100446  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100447  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100448  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100449  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100450  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100451  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100452  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100453  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100454  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100455  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100456  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100457  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100458  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100459  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100460  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    2   no
+100461  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100462  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100463  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+100464  00:00:00:00:00:00    0   -1     3t   0        -1   no   no    1   no
+
+
+BCM.0>
+BCM.0> l3 intf show
+l3 intf show
+Free L3INTF entries: 16374
+Unit  Intf  VRF Group VLAN    Source Mac     MTU TTL Tunnel InnerVlan  NATRealm
+------------------------------------------------------------------
+0     1     0     0     3966 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     2     2     0     3967 b4:a9:fc:09:f4:4f  1497 0    0     0     0
+0     3     2     0     3968 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     4     0     0     3969 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     5     0     0     3970 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     6     0     0     3971 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     7     0     0     3972 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+0     8     0     0     3973 b4:a9:fc:09:f4:4f  8974 0    0     0     0
+BCM.0>
+

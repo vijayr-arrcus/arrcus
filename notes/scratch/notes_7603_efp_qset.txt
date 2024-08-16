@@ -1,0 +1,121 @@
+BCM.0>
+BCM.0> fp list qualifiers egress
+fp list qualifiers egress
+SrcClassL2           Source L2 class                          Source L2 class mask
+SrcClassL3           Source L3 class                          Source L3 class mask
+SrcClassField        Source Field class                       Source Field class mask
+DstClassL2           Destination L2 class                     Destination L2 class mask
+DstClassL3           Destination L3 class                     Destination L3 class mask
+DstClassField        Destination Field class                  Destination Field class mask
+InterfaceClassL2     Interface Class L2.                      Interface Class L2.
+InterfaceClassL3     Interface Class L3.                      Interface Class L3.
+InterfaceClassPort   Interface Class Port.                    Interface Class Port.
+MirrorCopy           Mirrored only                            Mirrored only mask
+EgressClass          Class Id                                 Class Id mask
+EgressClassL3Interface Class Id                                 Class Id mask
+EgressClassTrill     Class Id                                 Class Id mask
+EgressClassWlan      Class Id                                 Class Id mask
+EgressClassL2Gre     Class Id                                 Class Id mask
+CpuQueue             CPU CosQ data                            6-bit mask
+IngressClassField    Class Id value                           Mask for Class Id value
+IngressInterfaceClassPort Class Id value                           Mask for Class Id value
+FibreChanRCtl        FibreChan RCtl                           Mask for FibreChan RCtl
+FibreChanFCtl        FibreChan FCtl                           Mask for FibreChan FCtl
+FibreChanCSCtl       FibreChan CSCtl                          Mask for FibreChan CSCtl
+FibreChanDFCtl       FibreChan DFCtl                          Mask for FibreChan DFCtl
+FibreChanType        FibreChan Type                           Mask for FibreChan Type
+FibreChanSrcId       FibreChan SrcId                          Mask for FibreChan SrcId
+FibreChanDstId       FibreChan DstId                          Mask for FibreChan DstId
+FibreChanVFTFabricId FibreChan VFT Fabric Id                  Mask for FibreChan VFT Fabric Id
+FibreChanVFTHopCount FibreChan VFT Hop Count                  Mask for FibreChan VFT Hop Count
+FibreChanVFTValid    FibreChan VFT Valid                      Mask for FibreChan VFT Valid
+DstVxlanGport        Destination vxlan gport                  n/a
+IntCongestionNotification Int_cn value                             Int_cn mask
+DstGport             Dst gport                                n/a
+IngressInterfaceClassVPort Class Id value                           Mask for Class Id value
+DstVlanGport         Destination vlan gport                   n/a
+DstVlanGports        Destination vlan gport                   Destination vlan gport mask
+DstVxlanGports       Destination Vxlan gport                  Destination Vxlan gport mask
+DstMplsGports        Destination Mpls gport                   Destination Mpls gport mask
+DstGports            Destination gport                        Destination gport mask
+DstMimGports         Destination Mim gport                    Destination Mim gport mask
+DestVirtualPortValid Destination Virtual Port Valid Bit Value. Destination Virtual Port Valid Bit Mask.
+HiGigDstMulticast    n/a                                      n/a
+HiGigDstMulticastGroupId n/a                                      n/a
+HiGigTrafficClass    n/a                                      n/a
+HiGigDstModuleGport  n/a                                      n/a
+HiGigDstPortGport    n/a                                      n/a
+HiGigDstModPortGport n/a                                      n/a
+HiGigSrcModuleGport  n/a                                      n/a
+HiGigSrcPortGport    n/a                                      n/a
+HiGigSrcModPortGport n/a                                      n/a
+HiGigLoadBalanceID   n/a                                      n/a
+HiGigColor           n/a                                      n/a
+HiGigIntCongestionNotification n/a                                      n/a
+HiGigIngressTagged   n/a                                      n/a
+HiGigDstTrunk        n/a                                      n/a
+HiGigDstTrunkId      n/a                                      n/a
+HiGigIngressL3SwitchPkt n/a                                      n/a
+HiGigLabel           n/a                                      n/a
+HiGigReplicationId   n/a                                      n/a
+HiGigVlan            n/a                                      n/a
+HiGigPortFilteringMode n/a                                      n/a
+HiGigSrcTrunk        n/a                                      n/a
+HiGigIngressClassificationTag n/a                                      n/a
+HiGigEgressMcast     n/a                                      n/a
+HiGigVni             n/a                                      n/a
+HiGigDstGport        n/a                                      n/a
+HiGigMulticastIndex  n/a                                      n/a
+HiGigVpReplicationId n/a                                      n/a
+HiGigSrcGport        n/a                                      n/a
+HiGigProtectionSwitchingStatus n/a                                      n/a
+HiGigMirrorToVp      n/a                                      n/a
+HiGigDstType         n/a                                      n/a
+HiGigSrcType         n/a                                      n/a
+HiGigOffloadEngineClassificationTag n/a                                      n/a
+HiGigOffloadEnginePktPriNew n/a                                      n/a
+HiGigOffloadEngineDscpNew n/a                                      n/a
+LoopBackQueue        n/a                                      n/a
+LoopBackSrcGport     n/a                                      n/a
+PktIsVisible         n/a                                      n/a
+LoopBackCpuMasqueradePktProfile n/a                                      n/a
+LoopBackColor        n/a                                      n/a
+LoopBackTrafficClass n/a                                      n/a
+LoopBackPacketProcessingPort n/a                                      n/a
+L2PayLoad            n/a                                      n/a
+HiGigMirrorOrSwitchPkt n/a                                      n/a
+HiGigPreserveFlags   n/a                                      n/a
+HiGigMplsPkt         n/a                                      n/a
+HiGigDoNotFlags      n/a                                      n/a
+HiGigVpPreserveFlags n/a                                      n/a
+HiGigOffloadEngineVxltStatus n/a                                      n/a
+HiGigForwardingType  n/a                                      n/a
+HiGigLabelType       n/a                                      n/a
+HiGigExtendedHeaderPresent n/a                                      n/a
+HiGigVpLagFailoverPacket n/a                                      n/a
+HiGigOffloadEnginePreserveDscp n/a                                      n/a
+HiGigOffloadEnginePreserveDot1p n/a                                      n/a
+HiGigOffloadEngineDeferredFlags n/a                                      n/a
+HiGigOffloadEngineSrcType n/a                                      n/a
+EgressClassVxlan     Class Id                                 Class Id mask
+EgressClassTunnel    n/a                                      n/a
+EgressClassL3InterfaceTunnel n/a                                      n/a
+EgressForwardingClassId n/a                                      n/a
+PrimaryKeySelect     n/a                                      n/a
+SrcMac              Data=<mac> Mask=<mac>
+DstMac              Data=<mac> Mask=<mac>
+IpFrag              frag=<IpFragNon | IpFragFirst | IpFragNonOrFirst | IpFragNotFirst
+                           | IpFragAny>
+LoopbackType        lb_type=<Any | Mirror | Wlan | Mim | Redirect>
+DstPort             Port=<port_numb> PortMask=<mask> Modid=<mod>, ModidMask=<mask>
+Color               color=<green | yellow | red>
+ForwardingType      fwd_type=<Any | L2 | L3 | L2Shared | L2Independent | L2Vpn
+                               | L2VpnDirect | L3Direct | Ip4Ucast | Ip4Mcast | Ip6Ucast | Ip6Mcast
+                               | Mpls | Trill | RxReason | TrafficManagement | Snoop | L2VpnExtended
+                               | Ip4UcastRpf | Ip6UcastRpf | MplsLabel1 | MplsLabel2 | MplsLabel3 | FCoE
+                               | L2SharedVpn | PortDirect | SvpDirect | VlanDirect | Invalid>
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0>

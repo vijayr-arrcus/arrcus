@@ -1,0 +1,312 @@
+sendSample
+  putAddress(receiver, &agent->myIP);
+    openCollectorSocket
+
+sfl_agent_init
+agentCB_sendPkt
+
+newCollector
+
+https://github.com/sflow/host-sflow/blob/master/src/Linux/README
+
+source interface
+
+HSPTOKEN_DATA( HSPTOKEN_DEV, "dev", HSPTOKENTYPE_ATTRIB, NULL)
+
+  case HSPOBJ_COLLECTOR:
+    {
+      HSPCollector *col = sp->sFlowSettings_file->collectors;
+      switch(tok->stok) {
+      case HSPTOKEN_IP:
+        if((tok = expectIP(sp, tok, &col->ipAddr, (struct sockaddr *)&col->sendSocketAddr)) == NULL) return NO;
+        break;
+      case HSPTOKEN_UDPPORT:
+        if((tok = expectInteger32(sp, tok, &col->udpPort, 1, 65535)) == NULL) return NO;
+        break;
+      case HSPTOKEN_NAMESPACE:
+        if((tok = expectNamespace(sp, tok, &col->namespace)) == NULL) return NO;
+        break;
+      case HSPTOKEN_DEV:
+        if((tok = expectDevice(sp, tok, &col->deviceName)) == NULL) return NO;
+        break;
+      default:
+        unexpectedToken(sp, tok, level[depth]);
+        return NO;
+        break;
+      }
+    }
+
+
+static void *openCollectorSocket(void *magic) {
+    HSPCollector *coll = (HSPCollector *)magic;
+
+
+		switch(coll->ipAddr.type) {
+			case SFLADDRESSTYPE_UNDEFINED:
+				// skip over it if the forward lookup failed
+				break;
+			case SFLADDRESSTYPE_IP_V4:
+				{
+					coll->socklen = sizeof(struct sockaddr_in);
+					struct sockaddr_in *sa = (struct sockaddr_in *)&(coll->sendSocketAddr);
+					sa->sin_family = AF_INET;
+					sa->sin_port = htons(coll->udpPort);
+					if((coll->socket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP))
+						 == -1) {
+						 myLog(LOG_ERR, "IPv4 send socket open failed : %s", strerror(errno));
+					}
+#ifdef IP_UNICAST_IF
+					else if (coll->deviceName)
+						bindCollectorToDevice(coll, NO);
+#endif
+				}
+		}
+
+
+#ifdef IP_UNICAST_IF
+
+  static bool bindCollectorToDevice(HSPCollector *coll, bool v6) {
+    myDebug(1, "bindCollectorToDevice: device=%s", coll->deviceName);
+    if(coll->deviceIfIndex==0) {
+      myLog(LOG_ERR, "bindCollectorToDevice : no ifIndex for device=%s", coll->deviceName);
+      return NO;
+    }
+    // optarg is int, but set to value of ifIndex in 32-bit network-byte-order representation
+    int ifIndex = htonl(coll->deviceIfIndex);
+    if(setsockopt(coll->socket,
+      v6 ? SOL_IPV6 : SOL_IP,
+      v6 ? IPV6_UNICAST_IF : IP_UNICAST_IF,
+      &ifIndex,
+      sizeof(ifIndex)) == -1) {
+      myLog(LOG_ERR, "bindCollectorToDevice : device=%s ifIndex=%d setsockopt (v6=%u) failed : %s",
+      coll->deviceName,
+      coll->deviceIfIndex,
+      v6,
+      strerror(errno));
+      return NO;
+    }
+    return YES;
+  }
+#endif
+
+
+
+
+source ip
+
+Agent
+======
+
+void sfl_agent_init(SFLAgent *agent,
+        SFLAddress *myIP, /* IP address of this agent in net byte order */
+        uint32_t subId,  /* agent_sub_id */
+        time_t bootTime,  /* agent boot time */
+        time_t now,       /* time now */
+        void *magic,      /* ptr to pass back in logging and alloc fns */
+        allocFn_t allocFn,
+        freeFn_t freeFn,
+        errorFn_t errorFn,
+        sendFn_t sendFn)
+{
+  /* first clear everything */
+  memset(agent, 0, sizeof(*agent));
+  /* now copy in the parameters */
+  agent->myIP = *myIP; /* structure copy */
+
+
+https://sflow.net/host-sflow-linux-config.php
+
+Agent IP Selection
+Selection from the list of IP addresses belonging to the host is automatic. You can check to see which agent IP was selected using:
+grep agentIP /etc/hsflowd.auto
+The selection can be influenced by these settings:
+
+AGENT CIDR
+agent.cidr = 10.0.0.0/8
+Prefer an IP address that falls into this range.
+
+AGENT INTERFACE
+agent = eth0
+Select the IP address associated with this interface.
+
+int selectAgentAddress(HSP *sp)
+{
+	if(debug) myLog(LOG_INFO, "selectAgentAddress");
+
+	if(sp->sFlow->explicitAgentIP && sp->sFlow->agentIP.type) {
+		// it was hard-coded in the config file
+		if(debug) myLog(LOG_INFO, "selectAgentAddress hard-coded in config file");
+		return YES;
+	}
+
+	// it may have been defined as agent=<device>
+	if(sp->sFlow->explicitAgentDevice && sp->sFlow->agentDevice) {
+		SFLAdaptor *ad = adaptorListGet(sp->adaptorList, sp->sFlow->agentDevice);
+		if(ad && ad->userData) {
+			HSPAdaptorNIO *adaptorNIO = (HSPAdaptorNIO *)ad->userData;
+			sp->sFlow->agentIP = adaptorNIO->ipAddr;
+			if(debug) myLog(LOG_INFO, "selectAgentAddress pegged to device in config file");
+			return YES;
+		}
+	}
+
+HSPTOKEN_DATA( HSPTOKEN_AGENTIP, "agentIP", HSPTOKENTYPE_ATTRIB )
+HSPTOKEN_DATA( HSPTOKEN_AGENT, "agent", HSPTOKENTYPE_ATTRIB )
+HSPTOKEN_DATA( HSPTOKEN_AGENTCIDR, "agent.cidr", HSPTOKENTYPE_ATTRIB )
+
+    case HSPTOKEN_AGENTIP:
+      if((tok = expectIP(sp, tok, &sp->sFlow->agentIP, NULL)) == NULL) return NO;
+      sp->sFlow->explicitAgentIP = YES;
+      break;
+    case HSPTOKEN_AGENTCIDR:
+      {
+        HSPCIDR cidr = { 0 };
+        if((tok = expectCIDR(sp, tok, &cidr)) == NULL) return NO;
+        addAgentCIDR(sp->sFlow->sFlowSettings_file, &cidr);
+      }
+      break;
+    case HSPTOKEN_AGENT:
+      if((tok = expectDevice(sp, tok, &sp->sFlowSettings_file->agentDevice)) == NULL) return NO;
+      break;
+
+void addAgentCIDR(HSPSFlowSettings *settings, HSPCIDR *cidr)
+  {
+    HSPCIDR *mycidr = (HSPCIDR *)my_calloc(sizeof(HSPCIDR));
+    *mycidr = *cidr;
+    // ordering is important here. We want them in reverse order,
+    // so add this at the beginning of the list
+    mycidr->nxt = settings->agentCIDRs;
+    settings->agentCIDRs = mycidr;
+  }
+
+
+    case HSPTOKEN_AGENT:
+      if((tok = expectDevice(sp, tok, &sp->sFlow->agentDevice)) == NULL) return NO;
+      sp->sFlow->explicitAgentDevice = YES;
+      break;
+
+
+
+
+void sfl_agent_set_address(SFLAgent *agent, SFLAddress *ip)
+{
+  SFLReceiver *rcv;
+
+  for( rcv = agent->receivers; rcv != NULL; rcv = rcv->nxt)
+    sfl_receiver_flush(rcv);
+  agent->myIP = (*ip);
+
+
+static void sendSample(SFLReceiver *receiver)
+{
+  /* construct and send out the sample, then reset for the next one... */
+  SFLAgent *agent = receiver->agent;
+
+  /* go back and fill in the header */
+  receiver->sampleCollector.datap = receiver->sampleCollector.data;
+  putNet32(receiver, SFLDATAGRAM_VERSION5);
+  putAddress(receiver, &agent->myIP);
+  putNet32(receiver, agent->subId);
+  putNet32(receiver, ++receiver->sampleCollector.packetSeqNo);
+  putNet32(receiver, sfl_agent_uptime_mS(agent));
+  putNet32(receiver, receiver->sampleCollector.numSamples);
+
+
+
+
+agent interface 
+
+
+agent ip
+
+
+HSPReadConfigFile
+     case HSPTOKEN_DEV:
+        if((tok = expectDevice(sp, tok, &col->deviceName)) == NULL) return NO;
+
+
+cat ./etc/hsflowd.conf
+# hsflowd configuration file
+
+sflow {
+
+  # (DO NOT EDIT BELOW LINE) override with preferred CIDR:
+      agent.cidr = 10.10.10.1/32
+  #   agent.cidr = 192.168.0.0/16
+  # (DO NOT EDIT BELOW LINE) Override with interface:
+  #   agent = eth0
+
+  # (DO NOT EDIT BELOW LINE)  Counter Polling:
+        polling = 10
+
+  # (DO NOT EDIT BELOW LINE)  default sampling N:
+        sampling = 1000
+
+  # (DO NOT EDIT THIS LINE)  collectors:
+        collector { ip=10.9.208.51 udpport=6343 }
+        collector { ip=127.0.0.1 udpport=6343 }
+
+  # (DO NOT EDIT THIS LINE) PCAP packet-sampling:
+
+}
+
+cat ./etc/hsflowd.conf
+# hsflowd configuration file
+
+sflow {
+
+  # (DO NOT EDIT BELOW LINE) override with preferred CIDR:
+      agent.cidr = 10.10.10.1/32
+  #   agent.cidr = 192.168.0.0/16
+  # (DO NOT EDIT BELOW LINE) Override with interface:
+      agent = ma1
+  #   agent = eth0
+
+  # (DO NOT EDIT BELOW LINE)  Counter Polling:
+        polling = 10
+
+  # (DO NOT EDIT BELOW LINE)  default sampling N:
+        sampling = 1000
+
+  # (DO NOT EDIT THIS LINE)  collectors:
+        collector { ip=10.9.208.51 udpport=6343 }
+        collector { ip=127.0.0.1 udpport=6343 }
+
+  # (DO NOT EDIT THIS LINE) PCAP packet-sampling:
+
+}
+
+
+cat /etc/hsflowd.auto
+# WARNING: Do not edit this file. It is generated automatically by hsflowd.
+rev_start=1
+hostname=ufispace-23d-205-39
+sampling=1000
+header=128
+datagram=1400
+polling=10
+agentIP=10.27.205.39
+agent=ma1
+ds_index=1
+collector=10.9.208.51 6343
+collector=127.0.0.1 6343
+rev_end=1
+
+
+sflowtool
+=========
+
+  /* get the agent address */
+  getAddress(sample, &sample->agent_addr);
+
+  /* version 5 has an agent sub-id as well */
+  if(sample->datagramVersion >= 5) {
+    sample->agentSubId = getData32(sample);
+    sf_logf_U32(sample, "agentSubId", sample->agentSubId);
+  }
+
+  sample->sequenceNo = getData32(sample);  /* this is the packet sequence number */
+  sample->sysUpTime = getData32(sample);
+  samplesInPacket = getData32(sample);
+  sf_logf(sample, "agent", printAddress(&sample->agent_addr, &buf));
+

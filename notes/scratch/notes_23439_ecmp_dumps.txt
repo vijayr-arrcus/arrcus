@@ -1,0 +1,572 @@
+BCM.0>
+BCM.0> l3 ecmp show
+l3 ecmp show
+ECMP group 204096(OverLay):
+        Dynamic mode 0, Flags 0x8, Max path 1, Dynamic size 0
+        Interfaces: (member count 1)
+        {203968}
+ECMP group 204097(OverLay):
+        Dynamic mode 0, Flags 0x8, Max path 1, Dynamic size 0
+        Interfaces: (member count 1)
+        {203970}
+ECMP group 203968(UnderLay):
+        Dynamic mode 1, Flags 0x14, Max path 64, Dynamic size 2048
+        Interfaces: (member count 2)
+        {100017} {100018}
+ECMP group 203970(UnderLay):
+        Dynamic mode 1, Flags 0x14, Max path 64, Dynamic size 2048
+        Interfaces: (member count 3)
+        {100017} {100018} {100024}
+ECMP group 203971(UnderLay):
+        Dynamic mode 1, Flags 0x14, Max path 64, Dynamic size 2048
+        Interfaces: (member count 3)
+        {100019} {100020} {100025}
+BCM.0>
+
+BCM.0>
+BCM.0> l3 egress show
+l3 egress show
+EgrID        MAC Address   Intf      Port Module   MTU       Type Drop
+---------------------------------------------------------------
+100000  00:00:00:00:00:00      0     0            0     0   underlay  yes
+
+100001  00:00:00:00:00:00   4095     0            0     0   underlay  yes
+
+100002  00:00:00:00:00:00      0     0            0     0   underlay  yes
+
+100003  00:00:00:00:00:00   4095     0            0     0   underlay  yes
+
+100004  00:00:01:00:00:01   4095    23            0     0   underlay   no
+
+100005  00:00:01:00:00:01   4095   155            0     0   underlay   no
+
+100006  00:00:01:00:00:01   4095    22            0     0   underlay   no
+
+100007  00:00:01:00:00:01   4095   341            0     0   underlay   no
+
+100008  00:00:01:00:00:01   4095    34            0     0   underlay   no
+
+100009  00:00:01:00:00:01   4095   100            0     0   underlay   no
+
+100010  00:00:01:00:00:01   4095   344            0     0   underlay   no
+
+100011  5c:17:83:ed:00:01      5     2            0     0   underlay   no
+
+100012  5c:17:83:ed:00:01      5     2            0     0   underlay   no
+
+100013  00:47:01:00:00:01      8   341            0     0   underlay   no
+
+100014  5c:17:83:ed:00:01      6   343            0     0   underlay   no
+
+100015  5c:17:83:ed:00:01      6   343            0     0   underlay   no
+
+100016  00:46:01:00:00:01      7   344            0     0   underlay   no
+
+100017  5c:17:83:ed:00:01      5     2            0     0   underlay   no
+
+100018  5c:17:83:ed:00:01      6   343            0     0   underlay   no
+100019  5c:17:83:ed:00:01     10   343            0     0   underlay   no
+
+100020  5c:17:83:ed:00:01     11     2            0     0   underlay   no
+
+100022  e8:c5:7a:8f:91:3f      1   121            0     0   underlay   no
+
+100023  e8:c5:7a:8f:91:3f      1   121            0     0   underlay   no
+
+100024  e8:c5:7a:8f:91:3f      1   121            0     0   underlay   no
+
+100025  e8:c5:7a:8f:91:3f     13   121            0     0   underlay   no
+
+100026  5c:17:83:ed:00:01     14   343            0     0   underlay   no
+
+116384  b4:6a:d4:a3:fc:7f   4098     9  flow      0     0    overlay   no
+
+116385  b4:6a:d4:a3:fc:7f   4099     9  flow      0     0    overlay   no
+
+116387  00:00:00:00:00:00   4101    11  flow      0     0    overlay   no
+
+BCM.0>
+
+
+BCM.0>
+BCM.0> l3 intf show
+l3 intf show
+INTF  VID   MAC Address
+----------------------------------------------
+1     3966  5c:07:58:a4:e0:03  UnderLay
+
+2     3967  5c:07:58:a4:e0:03  UnderLay
+
+3     3968  5c:07:58:a4:e0:03  UnderLay
+
+4     3969  5c:07:58:a4:e0:03  UnderLay
+
+5     3970  5c:07:58:a4:e0:03  UnderLay
+
+6     3971  5c:07:58:a4:e0:03  UnderLay
+
+7     1001  5c:07:58:a4:e0:03  UnderLay
+
+8     1002  5c:07:58:a4:e0:03  UnderLay
+
+9     2001  5c:07:58:a4:e0:03  UnderLay
+
+10    3971  5c:07:58:a4:e0:03  UnderLay
+
+11    3970  5c:07:58:a4:e0:03  UnderLay
+
+13    3966  5c:07:58:a4:e0:03  UnderLay
+
+14    3971  5c:07:58:a4:e0:03  UnderLay
+
+4095  0     ff:ff:ff:ff:ff:ff  UnderLay
+
+4096  32772 5c:07:58:a4:e0:03  OverLay
+
+4097  32773 5c:07:58:a4:e0:03  OverLay
+
+4098  32773 5c:07:58:a4:e0:03  OverLay
+
+4099  32772 5c:07:58:a4:e0:03  OverLay
+
+4101  0     5c:07:58:a4:e0:03  OverLay
+
+BCM.0>
+
+
+BCM.0>
+BCM.0> l3 route show
+l3 route show
+Unit 0, Total Number of route entries: 1245184
+        VRF      Net Addr           INTF UL_INTF AgHst  HIT FORTE SRC_LOOKUP
+------------------------------------------------
+1       3        0.0.0.0/0           100002 0          n n n
+2       3        200.1.0.0/16        100002 0          n n n
+3       3        200.2.0.0/16        116385 0          n n n
+4       2        0.0.0.0/0           100002 0          n n n
+5       2        100.1.0.0/16        100002 0          y n n
+6       2        100.2.0.0/16        100002 0          y n n
+7       0        0.0.0.0/0           100002 0          n n n
+BCM.0>
+BCM.0> l3 host show
+l3 host show
+         VRF Net Addr            INTF UL_INTF S-HIT D-HIT
+-------------------------------------------------------------
+1       3    200.1.0.1           100002 0    n    n
+2       2    100.1.0.150         100013 0    n    n
+3       2    100.2.0.150         100016 0    n    n
+4       2    100.1.0.1           100002 0    n    n
+5       2    100.1.0.50          116384 0    n    n
+6       2    100.2.0.1           100002 0    n    n
+7       2    100.2.0.50          116384 0    n    n
+8       0    130.130.130.130     100024 0    n    n
+9       0    32.32.32.32         204097 0    n    n
+10      0    28.28.28.28         100002 0    y    y
+11      0    30.30.30.30         204096 0    n    n
+BCM.0>
+
+
+root@Ufi-TH5-Leaf1# show dpal object bcm-xgs-vxlan-flow-l3vni
+dpal object-type bcm-xgs-vxlan-flow-l3vni
+ stats total-creates    2
+ stats total-placeholders 0
+ stats total-deletes    0
+ stats total-updates    0
+ stats total-create-deferrals 0
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 0
+ stats total-create-failures 0
+ stats total-update-failures 0
+ stats total-delete-failures 0
+ stats total-retries    0
+ stats total-in-retry-q 0
+ stats total-in-slow-retry-q 0
+ generic-entries entry
+                                                                                         PENDING  PENDING
+                                 ATTR                                                    PARENT   PARENT
+KEY          STATE    ATTR NAME  VALUE   PARENT TYPE              PARENT KEY             TYPE     KEY
+-----------------------------------------------------------------------------------------------------------
+vni_id:2000  created  vpnid      32772
+                      l3if_hwid  4096    bcm-xgs-vrf              vrfId:1073741827
+                                         bcm-xgs-overlay-rtr-mac  mac:5c:07:58:a4:e0:03
+vni_id:1000  created  vpnid      32773
+                      l3if_hwid  4097    bcm-xgs-vrf              vrfId:1073741826
+                                         bcm-xgs-overlay-rtr-mac  mac:5c:07:58:a4:e0:03
+
+root@Ufi-TH5-Leaf1#
+
+
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-vxlan-flow-ul-ecmp-tnl-init
+dpal object-type bcm-xgs-vxlan-flow-ul-ecmp-tnl-init
+ stats total-creates    4
+ stats total-placeholders 0
+ stats total-deletes    3
+ stats total-updates    0
+ stats total-create-deferrals 0
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 3
+ stats total-create-failures 0
+ stats total-update-failures 0
+ stats total-delete-failures 0
+ stats total-retries    0
+ stats total-in-retry-q 0
+ stats total-in-slow-retry-q 0
+ generic-entries entry
+                                                                                                  PENDING  PENDING
+                                    ATTR  ATTR                                                    PARENT   PARENT
+KEY                        STATE    NAME  VALUE  PARENT TYPE                     PARENT KEY       TYPE     KEY
+--------------------------------------------------------------------------------------------------------------------
+tnlid:1,ecmpid:1073741878  created               bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:52
+                                                 bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:40
+                                                 bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:39
+
+
+
+tal-deletes    37
+ stats total-updates    4
+ stats total-create-deferrals 0
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 0
+ stats total-create-failures 0
+ stats total-update-failures 0
+ stats total-delete-failures 0
+ stats total-retries    0
+ stats total-in-retry-q 0
+ stats total-in-slow-retry-q 0
+ generic-entries entry
+                                                                                                             PENDING  PENDING
+                                                 ATTR  ATTR                                                  PARENT   PARENT
+KEY                                     STATE    NAME  VALUE  PARENT TYPE                 PARENT KEY         TYPE     KEY
+-------------------------------------------------------------------------------------------------------------------------------
+vrfId:1,prefix:28.28.28.28/32           created               bcm-xgs-vrf                 vrfId:1
+                                                              bcm-xgs-nh                  nhid:1
+vrfId:1,prefix:30.30.30.30/32           created               bcm-xgs-vrf                 vrfId:1
+                                                              bcm-xgs-ecmp                ecmpid:1073741865
+vrfId:1,prefix:32.32.32.32/32           created               bcm-xgs-vrf                 vrfId:1
+                                                              bcm-xgs-ecmp                ecmpid:1073741878
+vrfId:1,prefix:130.130.130.130/32       created               bcm-xgs-vrf                 vrfId:1
+                                                              bcm-xgs-nh                  nhid:52
+vrfId:1073741826,prefix:100.1.0.0/16    created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:31
+vrfId:1073741826,prefix:100.1.0.1/32    created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:33
+vrfId:1073741826,prefix:100.1.0.50/32   created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-vxlan-flow-ol-path  pathid:69
+vrfId:1073741826,prefix:100.1.0.150/32  created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:109
+vrfId:1073741826,prefix:100.2.0.0/16    created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:23
+vrfId:1073741826,prefix:100.2.0.1/32    created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:25
+vrfId:1073741826,prefix:100.2.0.50/32   created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-vxlan-flow-ol-path  pathid:69
+vrfId:1073741826,prefix:100.2.0.150/32  created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:67
+vrfId:1073741827,prefix:200.1.0.0/16    created               bcm-xgs-vrf                 vrfId:1073741827
+                                                              bcm-xgs-nh                  nhid:15
+vrfId:1073741827,prefix:200.1.0.1/32    created               bcm-xgs-vrf                 vrfId:1073741827
+                                                              bcm-xgs-nh                  nhid:17
+vrfId:1073741827,prefix:200.2.0.0/16    created               bcm-xgs-vrf                 vrfId:1073741827
+                                                              bcm-xgs-vxlan-flow-ol-path  pathid:47
+
+root@Ufi-TH5-Leaf1#
+
+
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-vxlan-flow-ol-path
+dpal object-type bcm-xgs-vxlan-flow-ol-path
+ object-type
+                                                                                                                                                    TOTAL
+                                                                                                                                             TOTAL  IN
+                                                                     TOTAL      TOTAL      TOTAL      TOTAL     TOTAL     TOTAL              IN     SLOW                                                                                          PENDING  PENDING
+                            TOTAL    TOTAL         TOTAL    TOTAL    CREATE     UPDATE     DELETE     CREATE    UPDATE    DELETE    TOTAL    RETRY  RETRY                      ATTR  ATTR                                                         PARENT   PARENT
+OBJECT TYPE                 CREATES  PLACEHOLDERS  DELETES  UPDATES  DEFERRALS  DEFERRALS  DEFERRALS  FAILURES  FAILURES  FAILURES  RETRIES  Q      Q      KEY        STATE    NAME  VALUE    PARENT TYPE                    PARENT KEY           TYPE     KEY
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+bcm-xgs-vxlan-flow-ol-path  3        0             1        0        0          0          0          0         0         0         0        0      0      pathid:47  created  hwid  116385   bcm-xgs-vxlan-flow-nw-ol-l3if  vni_id:2000,tnlid:1
+                                                                                                                                                                                              bcm-xgs-vxlan-flow-tnl-init    tnlid:1
+                                                                                                                                                           pathid:69  created  hwid  116384   bcm-xgs-vxlan-flow-nw-ol-l3if  vni_id:1000,tnlid:1
+                                                                                                                                                                                              bcm-xgs-vxlan-flow-tnl-init    tnlid:1
+
+root@Ufi-TH5-Leaf1#
+
+
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-vxlan-flow-ul-ecmp-tnl-init
+dpal object-type bcm-xgs-vxlan-flow-ul-ecmp-tnl-init
+ stats total-creates    4
+ stats total-placeholders 0
+ stats total-deletes    3
+ stats total-updates    0
+ stats total-create-deferrals 0
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 3
+ stats total-create-failures 0
+ stats total-update-failures 0
+ stats total-delete-failures 0
+ stats total-retries    0
+ stats total-in-retry-q 0
+ stats total-in-slow-retry-q 0
+ generic-entries entry
+                                                                                                  PENDING  PENDING
+                                    ATTR  ATTR                                                    PARENT   PARENT
+KEY                        STATE    NAME  VALUE  PARENT TYPE                     PARENT KEY       TYPE     KEY
+--------------------------------------------------------------------------------------------------------------------
+tnlid:1,ecmpid:1073741878  created               bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:52
+                                                 bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:40
+                                                 bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:39
+
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-vxlan-flow-nh-tnl-init
+dpal object-type bcm-xgs-vxlan-flow-nh-tnl-init
+ object-type
+                                                                                                                                                        TOTAL
+                                                                                                                                                 TOTAL  IN
+                                                                         TOTAL      TOTAL      TOTAL      TOTAL     TOTAL     TOTAL              IN     SLOW                                                                                               PENDING  PENDING
+                                TOTAL    TOTAL         TOTAL    TOTAL    CREATE     UPDATE     DELETE     CREATE    UPDATE    DELETE    TOTAL    RETRY  RETRY                            ATTR                                                              PARENT   PARENT
+OBJECT TYPE                     CREATES  PLACEHOLDERS  DELETES  UPDATES  DEFERRALS  DEFERRALS  DEFERRALS  FAILURES  FAILURES  FAILURES  RETRIES  Q      Q      KEY              STATE    NAME      ATTR VALUE   PARENT TYPE                 PARENT KEY     TYPE     KEY
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+bcm-xgs-vxlan-flow-nh-tnl-init  4        0             1        0        0          0          1          0         0         0         0        0      0      tnlid:1,nhid:39  created  hwid      100020
+                                                                                                                                                                                         tnl_hwid  1276117003   bcm-xgs-vxlan-flow-nw-port  ifindex:0x435
+                                                                                                                                                               tnlid:1,nhid:40  created  hwid      100019
+                                                                                                                                                                                         tnl_hwid  1276117002   bcm-xgs-vxlan-flow-nw-port  ifindex:0x438
+                                                                                                                                                               tnlid:1,nhid:52  created  hwid      100025
+                                                                                                                                                                                         tnl_hwid  1276117005   bcm-xgs-vxlan-flow-nw-port  ifindex:0x3f1
+
+root@Ufi-TH5-Leaf1#
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-vxlan-flow-nw-port
+dpal object-type bcm-xgs-vxlan-flow-nw-port
+ object-type
+                                                                                                                                                    TOTAL
+                                                                                                                                             TOTAL  IN
+                                                                     TOTAL      TOTAL      TOTAL      TOTAL     TOTAL     TOTAL              IN     SLOW                                                         PENDING  PENDING
+                            TOTAL    TOTAL         TOTAL    TOTAL    CREATE     UPDATE     DELETE     CREATE    UPDATE    DELETE    TOTAL    RETRY  RETRY                          ATTR   ATTR   PARENT  PARENT  PARENT   PARENT
+OBJECT TYPE                 CREATES  PLACEHOLDERS  DELETES  UPDATES  DEFERRALS  DEFERRALS  DEFERRALS  FAILURES  FAILURES  FAILURES  RETRIES  Q      Q      KEY            STATE    NAME   VALUE  TYPE    KEY     TYPE     KEY
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+bcm-xgs-vxlan-flow-nw-port  4        0             1        0        0          0          1          0         0         0         0        0      0      ifindex:0x435  created  modid  65
+                                                                                                                                                           ifindex:0x438  created  modid  64
+                                                                                                                                                           ifindex:0x3f1  created  modid  67
+
+root@Ufi-TH5-Leaf1#
+
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-route-v4
+dpal object-type bcm-xgs-route-v4
+ stats total-creates    57
+ stats total-placeholders 0
+ stats total-deletes    42
+ stats total-updates    5
+ stats total-create-deferrals 0
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 0
+ stats total-create-failures 0
+ stats total-update-failures 0
+ stats total-delete-failures 0
+ stats total-retries    0
+ stats total-in-retry-q 0
+ stats total-in-slow-retry-q 0
+ generic-entries entry
+                                                                                                             PENDING  PENDING
+                                                 ATTR  ATTR                                                  PARENT   PARENT
+KEY                                     STATE    NAME  VALUE  PARENT TYPE                 PARENT KEY         TYPE     KEY
+-------------------------------------------------------------------------------------------------------------------------------
+vrfId:1,prefix:28.28.28.28/32           created               bcm-xgs-vrf                 vrfId:1
+                                                              bcm-xgs-nh                  nhid:1
+vrfId:1,prefix:30.30.30.30/32           created               bcm-xgs-vrf                 vrfId:1
+                                                              bcm-xgs-ecmp                ecmpid:1073741865
+vrfId:1,prefix:32.32.32.32/32           created               bcm-xgs-vrf                 vrfId:1
+                                                              bcm-xgs-ecmp                ecmpid:1073741878
+vrfId:1,prefix:130.130.130.130/32       created               bcm-xgs-vrf                 vrfId:1
+                                                              bcm-xgs-nh                  nhid:52
+vrfId:1073741826,prefix:100.1.0.0/16    created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:31
+vrfId:1073741826,prefix:100.1.0.1/32    created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:33
+vrfId:1073741826,prefix:100.1.0.50/32   created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-vxlan-flow-ol-path  pathid:69
+vrfId:1073741826,prefix:100.1.0.150/32  created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:121
+vrfId:1073741826,prefix:100.2.0.0/16    created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:23
+vrfId:1073741826,prefix:100.2.0.1/32    created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:25
+vrfId:1073741826,prefix:100.2.0.50/32   created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-vxlan-flow-ol-path  pathid:69
+vrfId:1073741826,prefix:100.2.0.150/32  created               bcm-xgs-vrf                 vrfId:1073741826
+                                                              bcm-xgs-nh                  nhid:67
+vrfId:1073741827,prefix:200.1.0.0/16    created               bcm-xgs-vrf                 vrfId:1073741827
+                                                              bcm-xgs-nh                  nhid:15
+vrfId:1073741827,prefix:200.1.0.1/32    created               bcm-xgs-vrf                 vrfId:1073741827
+                                                              bcm-xgs-nh                  nhid:17
+vrfId:1073741827,prefix:200.2.0.0/16    created               bcm-xgs-vrf                 vrfId:1073741827
+                                                              bcm-xgs-vxlan-flow-ol-path  pathid:47
+
+root@Ufi-TH5-Leaf1#
+
+
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-vxlan-flow-ol-path
+dpal object-type bcm-xgs-vxlan-flow-ol-path
+ stats total-creates    3
+ stats total-placeholders 0
+ stats total-deletes    1
+ stats total-updates    0
+ stats total-create-deferrals 0
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 0
+ stats total-create-failures 0
+ stats total-update-failures 0
+ stats total-delete-failures 0
+ stats total-retries    0
+ stats total-in-retry-q 0
+ stats total-in-slow-retry-q 0
+ generic-entries entry
+                                                                                       PENDING  PENDING
+                    ATTR  ATTR                                                         PARENT   PARENT
+KEY        STATE    NAME  VALUE    PARENT TYPE                    PARENT KEY           TYPE     KEY
+---------------------------------------------------------------------------------------------------------
+pathid:47  created  hwid  116385   bcm-xgs-vxlan-flow-nw-ol-l3if  vni_id:2000,tnlid:1
+                                   bcm-xgs-vxlan-flow-tnl-init    tnlid:1
+pathid:69  created  hwid  116384   bcm-xgs-vxlan-flow-nw-ol-l3if  vni_id:1000,tnlid:1
+                                   bcm-xgs-vxlan-flow-tnl-init    tnlid:1
+
+root@Ufi-TH5-Leaf1# show
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-nh
+dpal object-type bcm-xgs-nh
+ object-type
+                                                                                                                                    TOTAL
+                                                                                                                             TOTAL  IN
+                                                     TOTAL      TOTAL      TOTAL      TOTAL     TOTAL     TOTAL              IN     SLOW                                                           PENDING  PENDING
+OBJECT      TOTAL    TOTAL         TOTAL    TOTAL    CREATE     UPDATE     DELETE     CREATE    UPDATE    DELETE    TOTAL    RETRY  RETRY                           ATTR  ATTR     PARENT  PARENT  PARENT   PARENT
+TYPE        CREATES  PLACEHOLDERS  DELETES  UPDATES  DEFERRALS  DEFERRALS  DEFERRALS  FAILURES  FAILURES  FAILURES  RETRIES  Q      Q      KEY             STATE    NAME  VALUE    TYPE    KEY     TYPE     KEY
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+bcm-xgs-nh  67       0             47       57       0          0          0          0         0         0         0        0      0      nhid:1          created  hwid  100002
+                                                                                                                                           nhid:536870913  created  hwid  100003
+                                                                                                                                           nhid:805306369  created  hwid  100003
+                                                                                                                                           nhid:536870919  created  hwid  100012
+                                                                                                                                           nhid:805306375  created  hwid  100011
+                                                                                                                                           nhid:536870921  created  hwid  100015
+                                                                                                                                           nhid:805306377  created  hwid  100014
+                                                                                                                                           nhid:536870925  created  hwid  100023
+                                                                                                                                           nhid:805306381  created  hwid  100022
+                                                                                                                                           nhid:15         created  hwid  100002
+                                                                                                                                           nhid:17         created  hwid  100002
+                                                                                                                                           nhid:23         created  hwid  100002
+                                                                                                                                           nhid:25         created  hwid  100002
+                                                                                                                                           nhid:31         created  hwid  100002
+                                                                                                                                           nhid:33         created  hwid  100002
+                                                                                                                                           nhid:39         created  hwid  100017
+                                                                                                                                           nhid:40         created  hwid  100018
+                                                                                                                                           nhid:52         created  hwid  100024
+                                                                                                                                           nhid:67         created  hwid  100016
+                                                                                                                                           nhid:121        created  hwid  100013
+
+root@Ufi-TH5-Leaf1#
+
+
+
+[2024/08/13 14:05:00.402361]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 14:05:00.402367]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 14:05:00.404852]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203968) object created successfuly: (rc=0)
+[2024/08/13 14:05:02.593477]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_cfg: create ecmp_group: ecmp_id:1073741869 ecmp_obj_id:0 num_members:2
+[2024/08/13 14:05:02.595489]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg: Final: ecmp_obj_id = 203969
+[2024/08/13 14:05:04.648259]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 14:05:04.648266]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 14:05:04.650719]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203970) object created successfuly: (rc=0)
+[2024/08/13 14:05:04.652612]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 14:05:04.652619]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 14:05:04.654567]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203971) object created successfuly: (rc=0)
+[2024/08/13 14:05:04.659754]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_cfg: create ecmp_group: ecmp_id:1073741876 ecmp_obj_id:0 num_members:3
+[2024/08/13 14:05:04.661944]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg: Final: ecmp_obj_id = 203972
+
+
+BCM.0>
+BCM.0> l3 ecmp show
+l3 ecmp show
+ECMP group 204097(OverLay):
+        Dynamic mode 0, Flags 0x8, Max path 1, Dynamic size 0
+        Interfaces: (member count 1)
+        {203970}
+ECMP group 204098(OverLay):
+        Dynamic mode 0, Flags 0x8, Max path 1, Dynamic size 0
+        Interfaces: (member count 1)
+        {203971}
+ECMP group 203970(UnderLay):
+        Dynamic mode 1, Flags 0x14, Max path 64, Dynamic size 2048
+        Interfaces: (member count 2)
+        {100020} {100024}
+ECMP group 203971(UnderLay):
+        Dynamic mode 1, Flags 0x14, Max path 64, Dynamic size 2048
+        Interfaces: (member count 3)
+        {100019} {100020} {100024}
+ECMP group 203972(UnderLay):
+        Dynamic mode 2, Flags 0x14, Max path 64, Dynamic size 2048
+        Interfaces: (member count 3)
+        {100021} {100022} {100025}
+BCM.0>
+
+
+[2024/08/13 15:08:38.413574]--INFO--[BCM PLUGIN] bcmsdk_l3_ecmp_main_cb() vijay enter optype:1 dep_type:0 ecmp id 1073741871
+[2024/08/13 15:08:38.413612]--INFO--[BCM PLUGIN] bcmsdk_ecmp_api vijay Entry: after xlate_nhgrpid_to_bcmsdk_ecmp_obj ecmp_id:1073741871 - member_count 2
+[2024/08/13 15:08:38.413642]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 15:08:38.413667]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 15:08:38.416173]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203968) object created successfuly: (rc=0)
+[2024/08/13 15:08:38.421095]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_cfg: create ecmp_group: ecmp_id:1073741871 ecmp_obj_id:0 num_members:2
+[2024/08/13 15:08:38.422902]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg: Final: ecmp_obj_id = 203969
+[2024/08/13 15:08:42.277094]--INFO--[BCM PLUGIN] bcmsdk_l3_ecmp_main_cb() vijay enter optype:1 dep_type:0 ecmp id 1073741873
+[2024/08/13 15:08:42.277187]--INFO--[BCM PLUGIN] bcmsdk_ecmp_api vijay Entry: after xlate_nhgrpid_to_bcmsdk_ecmp_obj ecmp_id:1073741873 - member_count 2
+[2024/08/13 15:08:42.277219]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 15:08:42.277227]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 15:08:42.279319]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203970) object created successfuly: (rc=0)
+[2024/08/13 15:08:42.280249]--INFO--[BCM PLUGIN] bcmsdk_l3_ecmp_main_cb() vijay enter optype:1 dep_type:0 ecmp id 1073741874
+[2024/08/13 15:08:42.280269]--INFO--[BCM PLUGIN] bcmsdk_ecmp_api vijay Entry: after xlate_nhgrpid_to_bcmsdk_ecmp_obj ecmp_id:1073741874 - member_count 3
+[2024/08/13 15:08:42.280310]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 15:08:42.280333]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 15:08:42.282349]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203971) object created successfuly: (rc=0)
+[2024/08/13 15:08:42.286524]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_cfg: create ecmp_group: ecmp_id:1073741874 ecmp_obj_id:0 num_members:3
+[2024/08/13 15:08:42.288600]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg: Final: ecmp_obj_id = 203972
+[2024/08/13 15:08:42.305930]--INFO--[BCM PLUGIN] bcmsdk_l3_ecmp_main_cb() vijay enter optype:3 dep_type:3301 ecmp id 1073741871
+[2024/08/13 15:08:42.305951]--INFO--[BCM PLUGIN] bcmsdk_ecmp_api vijay Entry: after xlate_nhgrpid_to_bcmsdk_ecmp_obj ecmp_id:1073741871 - member_count 0
+
+
+
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-vxlan-flow-ul-ecmp-tnl-init
+dpal object-type bcm-xgs-vxlan-flow-ul-ecmp-tnl-init
+ stats total-creates    2
+ stats total-placeholders 0
+ stats total-deletes    1
+ stats total-updates    0
+ stats total-create-deferrals 0
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 1
+ stats total-create-failures 0
+ stats total-update-failures 0
+ stats total-delete-failures 0
+ stats total-retries    0
+ stats total-in-retry-q 0
+ stats total-in-slow-retry-q 0
+ generic-entries entry
+                                                                                                  PENDING  PENDING
+                                    ATTR  ATTR                                                    PARENT   PARENT
+KEY                        STATE    NAME  VALUE  PARENT TYPE                     PARENT KEY       TYPE     KEY
+--------------------------------------------------------------------------------------------------------------------
+tnlid:1,ecmpid:1073741874  created               bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:48
+                                                 bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:45
+                                                 bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:39
+
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-ecmp
+dpal object-type bcm-xgs-ecmp
+ stats total-creates    3
+ stats total-placeholders 0
+ stats total-deletes    1
+ stats total-updates    0
+ stats total-create-deferrals 0
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 0
+ stats total-create-failures 0
+ stats total-update-failures 0
+ stats total-delete-failures 0
+ stats total-retries    0
+ stats total-in-retry-q 0
+ stats total-in-slow-retry-q 0
+ generic-entries entry
+                                                           PENDING  PENDING
+                            ATTR  ATTR     PARENT  PARENT  PARENT   PARENT
+KEY                STATE    NAME  VALUE    TYPE    KEY     TYPE     KEY
+-----------------------------------------------------------------------------
+ecmpid:1073741873  created  hwid  203970
+ecmpid:1073741874  created  hwid  203971

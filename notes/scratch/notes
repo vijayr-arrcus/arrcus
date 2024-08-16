@@ -1,0 +1,13 @@
+uint32 mmu_egr_queue_stat_get_mcast(uint32 unit, uint32 port) {
+ uint64 value1;
+ uint32 cosq = 0;
+ bcm_gport_t gport;
+ print bcm_port_gport_get(unit, port, &gport);
+ for (cosq = 8; cosq < 12; cosq++) {
+   print bcm_cosq_bst_stat_get(unit, gport, cosq, 8, 0, &value1);
+   print value1;
+   print bcm_cosq_bst_stat_get(unit, gport, cosq, 11, 0, &value1);
+   print value1;
+ }
+ return 0;
+}

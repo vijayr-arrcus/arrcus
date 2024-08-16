@@ -1,0 +1,66 @@
+cint_reset();
+bcm_if_t l3_eo_id= 100005;
+
+
+bcm_bfd_endpoint_info_t  ep;
+bcm_bfd_endpoint_info_t_init(&ep);
+int unit = 0;
+bcm_port_t port = 33;
+int tid=1;
+bcm_ip_t sip_addr = 0x0a0a0a02;
+bcm_ip_t dip_addr = 0x0a0a0a01;
+int i =0;
+bcm_trunk_info_t trunk_info;
+int trunk_members_count = 0;
+bcm_trunk_member_t trunk_members[10];
+bcm_gport_t gport;
+
+bcm_port_gport_get(unit, port, &gport);
+
+printf("Port gport 0x%x \n", gport);
+
+
+print bcm_trunk_get(unit, tid, &trunk_info, 10, trunk_members, &trunk_members_count);
+
+printf("Number of trunk members %d\n", trunk_members_count);
+
+for (i = 0; i < trunk_members_count; i++) {
+  printf("Trunk member gport 0x%x\n", trunk_members[i].gport);
+  printf("Trunk member egress disabled %s\n",
+         trunk_members[i].flags & BCM_TRUNK_MEMBER_EGRESS_DISABLE ? "Yes" :"No");
+
+  print bcm_trunk_member_delete(unit, tid, &trunk_members[i]);
+
+	trunk_members[i].flags |= BCM_TRUNK_MEMBER_EGRESS_DISABLE;
+
+  print bcm_trunk_member_add(unit, tid, &trunk_members[i]);
+}
+
+print bcm_trunk_get(unit, tid, &trunk_info, 10, trunk_members, &trunk_members_count);
+for (i = 0; i < trunk_members_count; i++) {
+  printf("Trunk member gport %d\n", trunk_members[i].gport);
+  printf("Trunk member egress disabled %s\n",
+         trunk_members[i].flags & BCM_TRUNK_MEMBER_EGRESS_DISABLE ? "Yes" :"No");
+}
+
+ep.type = bcmBFDTunnelTypeUdp;
+ep.src_ip_addr = sip_addr;
+ep.dst_ip_addr = dip_addr;
+ep.udp_src_port = 50000;
+ep.egress_if = l3_eo_id;
+ep.vrf_id = 0;
+ep.ip_ttl = 255;
+ep.int_pri = 7;
+ep.auth = bcmBFDAuthTypeNone;
+BCM_GPORT_LOCAL_SET(ep.gport, port);
+ep.local_discr = 10;
+ep.auth_index = 0;
+ep.auth = bcmBFDAuthTypeNone;
+ep.local_min_tx = 1000000;
+ep.local_min_rx = 1000000;
+ep.local_detect_mult = 3;
+ep.rx_pkt_vlan_id = 0;
+
+print bcm_bfd_endpoint_create(unit, &ep);
+printf("\nCreated an endpoint with id %d Discr:%d\n", ep.id,ep.local_discr);
+

@@ -1,0 +1,859 @@
+No symbol "set" in current context.
+(gdb) set pagination off
+(gdb) attach 16693
+Attaching to program: /usr/lib/arcos/qos.bin, process 16693
+[New LWP 16700]
+[New LWP 16701]
+[New LWP 17127]
+[New LWP 17128]
+[New LWP 17129]
+[New LWP 17130]
+[New LWP 17131]
+[New LWP 17132]
+[New LWP 17133]
+[New LWP 17134]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f31d5c84544 in read () from /lib/x86_64-linux-gnu/libpthread.so.0
+(gdb) cont
+Continuing.
+[New Thread 0x7f318bfff700 (LWP 17571)]
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:07:14 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b3772a in malloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfd32b in nl_recv (sk=0x5639f49a4be0, nla=<optimized out>, buf=0x7fff0a542eb8, creds=0x7fff0a542ec0) at ././lib/nl.c:692
+#7  0x00007f31d5dfdcf5 in recvmsgs (cb=0x5639f499a8c0, sk=0x5639f49a4be0) at ././lib/nl.c:853
+#8  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f499a8c0) at ././lib/nl.c:1064
+#9  0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#10 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#11 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#12 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:07 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b3772a in malloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d60ef46e in mgd_memory_malloc_internal () from /usr/lib/libmgd_memory.so
+#7  0x00007f31d60ef540 in mgd_memory_malloc () from /usr/lib/libmgd_memory.so
+#8  0x00005639f394fb1d in qos_msg_set_aclass_action_police (aclass_msg=0x7f317f1e8620) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos.h:311
+#9  0x00005639f3965a73 in qos_read_policy_config_diff_mop_value_set (kpath=0x7fff0a53e160, iter_ctxt=iter_ctxt@entry=0x7fff0a542d50, oldvalue=<optimized out>, newvalue=0x7fff0a53e130) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_confd_policy_config.c:157
+#10 0x00005639f39674f9 in qos_read_policy_config_diff (kpath=<optimized out>, op=<optimized out>, oldvalue=<optimized out>, newvalue=<optimized out>, ctxt=0x7fff0a542d50) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_confd_policy_config.c:884
+#11 0x00007f31d604ebb5 in _confd_iterate () from /usr/lib/libconfd.so
+#12 0x00007f31d600b78d in cdb_diff_iterate () from /usr/lib/libconfd.so
+#13 0x00005639f39676d4 in qos_read_policy_cfg (sub_sock=256, rsock=261, spoint=159, opaque=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_confd_policy_config.c:953
+#14 0x00007f31d5fbd5f6 in dsproxy_fw_call_cfg_handlers () from /usr/lib/libconfdproxy.so
+#15 0x00007f31d5fba766 in ?? () from /usr/lib/libconfdproxy.so
+#16 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#17 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+[Thread 0x7f318bfff700 (LWP 17571) exited]
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:14 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f49fbc60, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f49fbc60, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f49fe820, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f49fb160, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f49fb160) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:15 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5e3458b in rtnl_link_af_alloc (link=link@entry=0x5639f4a24960, ops=ops@entry=0x7f31d5e83f80 <bridge_ops>) at ././lib/route/link/api.c:322
+#7  0x00007f31d5e37174 in af_lookup_and_alloc (link=link@entry=0x5639f4a24960, family=family@entry=7) at ././lib/route/link.c:100
+#8  0x00007f31d5e398a8 in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f49fbc60, pp=0x7fff0a542e00) at ././lib/route/link.c:753
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f49fbc60, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f49fe820, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f49fb160, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f49fb160) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:16 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4a33a30, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4a33a30, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f49fe820, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f49fb160, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f49fb160) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:41 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5b2b1f3 in open_memstream () from /lib/x86_64-linux-gnu/libc.so.6
+#7  0x00007f31d5ba6380 in __vsyslog_chk () from /lib/x86_64-linux-gnu/libc.so.6
+#8  0x00007f31d5ba68ec in syslog () from /lib/x86_64-linux-gnu/libc.so.6
+#9  0x00005639f3942338 in qos_replay_spolicy_config (ifname=ifname@entry=0x5639f49fa478 "bond10") at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_confd_spolicy_config.c:140
+#10 0x00005639f3926405 in qos_confd_replay_if (ifname=ifname@entry=0x5639f49fa478 "bond10") at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:73
+#11 0x00005639f3926e74 in qos_link_change_cb (cache=cache@entry=0x5639f49a5610, link=link@entry=0x5639f49fa440, action=action@entry=1, arg=arg@entry=0x0) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:283
+#12 0x00005639f392712e in qos_cache_change_cb (cache=cache@entry=0x5639f49a5610, obj=obj@entry=0x5639f49fa440, action=action@entry=1, param=param@entry=0x0) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:307
+#13 0x00007f31d5df78c9 in cache_include (type=<optimized out>, data=0x0, cb_v2=0x0, cb=0x5639f3927048 <qos_cache_change_cb>, obj=0x5639f49fa440, cache=0x5639f49a5610) at ././lib/cache.c:838
+#14 cache_include (cache=0x5639f49a5610, obj=0x5639f49fa440, cb=0x5639f3927048 <qos_cache_change_cb>, cb_v2=0x0, data=0x0, type=<optimized out>) at ././lib/cache.c:786
+#15 0x00007f31d5e396b7 in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=<optimized out>, pp=0x7fff0a542e00) at ././lib/route/link.c:817
+#16 0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#17 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f49f9600, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#18 0x00007f31d5df8480 in event_input (msg=0x5639f49fa370, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#19 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#20 recvmsgs (cb=0x5639f49fb0c0, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#21 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f49fb0c0) at ././lib/nl.c:1064
+#22 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#23 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#24 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#25 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#26 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:44 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5e3458b in rtnl_link_af_alloc (link=link@entry=0x5639f4a87970, ops=ops@entry=0x7f31d5e83f80 <bridge_ops>) at ././lib/route/link/api.c:322
+#7  0x00007f31d5e37174 in af_lookup_and_alloc (link=link@entry=0x5639f4a87970, family=family@entry=7) at ././lib/route/link.c:100
+#8  0x00007f31d5e39391 in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4a84660, pp=0x7fff0a542e00) at ././lib/route/link.c:633
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4a84660, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4a830f0, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4a68b20, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a68b20) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:44 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4aa8200, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4aa8200, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4aa6b40, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4a68b20, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a68b20) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:46 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4ac9540, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4ac9540, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4ac7f20, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4abf670, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4abf670) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:47 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4ae9ec0, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4ae9ec0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4ae8b90, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4abf670, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4abf670) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:48 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4b0abe0, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4b0abe0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4a47fe0, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4b05380, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4b05380) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:49 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4b29220, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4b29220, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4a42ff0, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4b05380, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4b05380) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:50 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5e3458b in rtnl_link_af_alloc (link=link@entry=0x5639f4b4d9e0, ops=ops@entry=0x7f31d5e83f80 <bridge_ops>) at ././lib/route/link/api.c:322
+#7  0x00007f31d5e37174 in af_lookup_and_alloc (link=link@entry=0x5639f4b4d9e0, family=family@entry=7) at ././lib/route/link.c:100
+#8  0x00007f31d5e398a8 in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4b4d310, pp=0x7fff0a542e00) at ././lib/route/link.c:753
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4b4d310, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4b36a40, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4b45690, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4b45690) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:51 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1732) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4b60950, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4b60950) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:52 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1536) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4b85880, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4b85880) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:53 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5e3c193 in inet6_alloc (link=<optimized out>) at ././lib/route/link/inet6.c:34
+#7  0x00007f31d5e3458b in rtnl_link_af_alloc (link=link@entry=0x5639f4baa970, ops=ops@entry=0x7f31d5e84520 <inet6_ops>) at ././lib/route/link/api.c:322
+#8  0x00007f31d5e37174 in af_lookup_and_alloc (link=link@entry=0x5639f4baa970, family=<optimized out>) at././lib/route/link.c:100
+#9  0x00007f31d5e39812 in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=<optimized out>, pp=0x7fff0a542e00) at ././lib/route/link.c:748
+#10 0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#11 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4bb09e0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#12 0x00007f31d5df8480 in event_input (msg=0x5639f4baa1a0, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#13 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#14 recvmsgs (cb=0x5639f4ba5af0, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#15 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4ba5af0) at ././lib/nl.c:1064
+#16 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#17 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#18 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#20 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:54 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1536) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4bc96c0, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4bc96c0) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:55 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5e3458b in rtnl_link_af_alloc (link=link@entry=0x5639f4a24d60, ops=ops@entry=0x7f31d5e83f80 <bridge_ops>) at ././lib/route/link/api.c:322
+#7  0x00007f31d5e37174 in af_lookup_and_alloc (link=link@entry=0x5639f4a24d60, family=family@entry=7) at ././lib/route/link.c:100
+#8  0x00007f31d5e398a8 in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4bf28c0, pp=0x7fff0a542e00) at ././lib/route/link.c:753
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4bf28c0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4a27780, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4bdaae0, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4bdaae0) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:56 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4c11700, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4c11700, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4c10fa0, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4c11140, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4c11140) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:57 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4c2daf0, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4c2daf0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4a1ecd0, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4a69240, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a69240) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:08:59 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4c528a0, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4c528a0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4c4d940, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4a1bb80, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a1bb80) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:00 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1512) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4c6daf0, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4c6daf0) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:05 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5e3458b in rtnl_link_af_alloc (link=link@entry=0x5639f4c97840, ops=ops@entry=0x7f31d5e83f80 <bridge_ops>) at ././lib/route/link/api.c:322
+#7  0x00007f31d5e37174 in af_lookup_and_alloc (link=link@entry=0x5639f4c97840, family=family@entry=7) at ././lib/route/link.c:100
+#8  0x00007f31d5e39391 in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f49ffdf0, pp=0x7fff0a542e00) at ././lib/route/link.c:633
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f49ffdf0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4c95940, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4c6daf0, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4c6daf0) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:22 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1624) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4a70a30, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a70a30) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:23 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1624) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4cbf190, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4cbf190) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:24 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1624) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4a89230, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a89230) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:25 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1624) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4a8fe70, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a8fe70) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:26 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1624) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4a97ae0, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a97ae0) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:27 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4d5cd20, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4d5cd20, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4b43e60, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4a568c0, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a568c0) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:28 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1624) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4a55d60, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a55d60) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:29 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4d9f7f0, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4d9f7f0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4b16d30, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4b6c670, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4b6c670) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:30 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4dc06a0, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4dc06a0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4ab6590, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4bc2b90, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4bc2b90) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:31 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4de1550, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4de1550, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4ab2ae0, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4a29fb0, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a29fb0) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:32 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4e024a0, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4e024a0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4a44960, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4b7ecf0, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4b7ecf0) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:09:33 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4e235c0, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4e235c0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4e0b8c0, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4a5bb30, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4a5bb30) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:10:10 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1664) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4d1d600, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4d1d600) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:10:28 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4df9db0, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4df9db0, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4df74d0, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4dc5370, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4dc5370) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:10:54 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfe248 in nl_object_alloc (ops=ops@entry=0x7f31d5e841a0 <link_obj_ops>) at ././lib/object.c:61
+#7  0x00007f31d5e38ccc in rtnl_link_alloc () at ././lib/route/link.c:1942
+#8  0x00007f31d5e3932b in link_msg_parser (ops=<optimized out>, who=<optimized out>, n=0x5639f4d14d00, pp=0x7fff0a542e00) at ././lib/route/link.c:610
+#9  0x00007f31d5df71f4 in nl_cache_parse (params=<optimized out>, nlh=<optimized out>, who=<optimized out>, ops=<optimized out>) at ././lib/cache.c:994
+#10 nl_cache_parse (ops=ops@entry=0x7f31d5e84220 <rtnl_link_ops>, who=who@entry=0x0, nlh=0x5639f4d14d00, params=params@entry=0x7fff0a542e00) at ././lib/cache.c:984
+#11 0x00007f31d5df8480 in event_input (msg=0x5639f4c3f2e0, arg=0x5639f49a5590) at ././lib/cache_mngr.c:111
+#12 0x00007f31d5dfdadc in nl_cb_call (msg=<optimized out>, type=<optimized out>, cb=<optimized out>) at ././include/netlink-private/netlink.h:145
+#13 recvmsgs (cb=0x5639f4d04d50, sk=0x5639f49a4be0) at ././lib/nl.c:1013
+#14 nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4d04d50) at ././lib/nl.c:1064
+#15 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#16 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#17 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#18 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#19 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189
+
+Thread 1 "qos.bin" hit Breakpoint 1, 0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+Mon 14 Aug 2023 07:11:05 PM UTC
+#0  0x00007f31d5ba2ea0 in brk () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f31d5ba2f89 in sbrk () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f31d5b39009 in __default_morecore () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f31d5b352b6 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f31d5b36478 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f31d5b38362 in calloc () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f31d5dfae48 in __nlmsg_alloc (len=1868) at ././lib/msg.c:275
+#7  0x00007f31d5dfb307 in nlmsg_convert (hdr=hdr@entry=0x5639f49e4110) at ././lib/msg.c:387
+#8  0x00007f31d5dfd8bc in recvmsgs (cb=0x5639f4c51b70, sk=0x5639f49a4be0) at ././lib/nl.c:865
+#9  nl_recvmsgs_report (sk=0x5639f49a4be0, cb=cb@entry=0x5639f4c51b70) at ././lib/nl.c:1064
+#10 0x00007f31d5df8ca6 in nl_cache_mngr_data_ready (mngr=0x5639f49a5590) at ././lib/cache_mngr.c:546
+#11 0x00005639f39272dd in qos_libnl_read_link_event (fd=<optimized out>, events=<optimized out>, params=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_libnl.c:357
+#12 0x00007f31d61289ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#13 0x00007f31d6129537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00005639f396503b in main (argc=<optimized out>, argv=<optimized out>) at /home/vijayr/qos_leak2/arrcus_sw/feature/qos/app/qos_main.c:1189

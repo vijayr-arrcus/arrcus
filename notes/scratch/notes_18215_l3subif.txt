@@ -1,0 +1,24 @@
+1. different vlans in the ingress and egress. [Pramod]
+2. ECMP. [Pramod]
+3. Working for the punt path. [Pramod]
+    1. with no vlan translation.
+    2. with vlan translation.
+4. Untagged traffic testing. [Pramod]
+  a. BCM_VXLAN_VPN_SERVICE_TAGGED, when we create the VP setting this is fine ? for untaggged traffic ?
+5. how is the VLAN derived for the OL NH, we have the access vp and VPN but no pointer to the VLAN. [Shivaraam]
+6. vxlan_port_create -- match is BCM_VXLAN_PORT_MATCH_PORT then what is the significance of [Shivaraam]
+    if (gport != BCM_GPORT_INVALID)
+        port_t.match_port = gport;
+    if (match_vlan != BCM_VLAN_INVALID)
+        port_t.match_vlan = match_vlan;
+7. Bond working. [Vijay]
+8. can the VNIs be the same across multiple VPNs. [Shivaraam]
+9. can the same VNI be used as some dummy VNIs for all VFIs created for l3 forwarding. [Shivaraam]
+10. Vlan translation. [Vijay]
+11. remove the UL egress object creation and try. -- No longer valid, we need this to derive the physical port from the access vp.
+12. egress vlan translation. [Vijay]
+13. normal vlan working.
+14. deriving the DVP and hence the vlan from the l3 intf object. - [Vijay]
+15. SVI working.
+16. How this will work on TH3, TD4 and TH5 -- [Vijay]
+17. Stats for l3 subif.

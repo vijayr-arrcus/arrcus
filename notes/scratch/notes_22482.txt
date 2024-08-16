@@ -1,0 +1,31 @@
+set specific pools HP and SP.
+
+bcmCosqControlIngressHeadroomPool = 124, /*  Associate an Ingress [Port, Prio] to
+																						 a specific Headroom pool */
+
+
+bcmCosqControlIngressHeadroomPool
+
+/*!
+ * \brief Get the profile for PG to SPID/HPID/PFCPRI mapping for a port.
+ *
+ * \param [in] unit Unit Number.
+ * \param [in] port Port number.
+ * \param [out] profile_id Profile index.
+ *
+ * \retval SHR_E_NONE Success.
+ * \retval !SHR_E_NONE Failure.
+ */
+int
+bcmi_ltsw_cosq_thd_port_pg_profile_get(int unit, bcm_port_t port, int *profile_id)
+{
+    SHR_FUNC_ENTER(unit);
+
+    SHR_IF_ERR_VERBOSE_EXIT
+        (mbcm_ltsw_cosq_thd_port_pg_profile_get(unit, port, profile_id));
+
+exit:
+    SHR_FUNC_EXIT();
+}
+
+

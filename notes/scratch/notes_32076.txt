@@ -1,0 +1,28 @@
+ESW:
+
+
+filter.m_fp_rule = BCMSDK_LOG_SYSLOG_ACTION_RULE_ID;
+filter.match_flags =
+				 BCM_KNET_FILTER_M_REASON | BCM_KNET_FILTER_M_FP_RULE;
+BCM_RX_REASON_SET(filter.m_reason, bcmRxReasonFilterMatch);
+rv = bcm_knet_filter_create(unit, &filter);
+
+TH5:
+
+filter.m_fp_rule = BCMSDK_LOG_SYSLOG_ACTION_RULE_ID;
+filter.match_flags =
+				 BCM_KNET_FILTER_M_FP_RULE | BCM_PKTIO_FILTER_M_REASON;
+BCM_PKTIO_REASON_SET(&filter.m_reason,
+										BCM_PKTIO_RX_REASON_CPU_FFP);
+print bcm_pktio_filter_create(unit, &filter);
+
+TD4:
+
+  filter.match_flags = BCM_PKTIO_FILTER_M_REASON;
+  BCM_PKTIO_REASON_SET(filter.m_flex_reason,
+                       BCM_PKTIO_RXPMD_FLEX_REASON_IFP);
+  filter.m_fp_rule = BCMSDK_LOG_SYSLOG_ACTION_RULE_ID;
+  rv = bcm_pktio_filter_create(unit, &filter);
+
+
+

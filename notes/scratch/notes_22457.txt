@@ -1,0 +1,108 @@
+cint for sflow entry
+---------------------
+
+cint_reset();
+
+const bcm_field_stat_t   stats[2] = { bcmFieldStatPackets, bcmFieldStatBytes };
+bcm_field_group_config_t group_config;
+bcm_field_entry_t        ifp_entry;
+uint32                   i2e_class_id = 0x88;
+int                      rv=0;
+int                      fp_statid = 554;
+bcm_port_t               ingress_port_1 = 0;
+
+
+printf("Doing port control set for port %d\n", ingress_port_1);
+
+BCM_IF_ERROR_RETURN(bcm_port_control_set(unit, ingress_port_1,
+																				 bcmPortControlSampleFlexDest,
+																				 BCM_PORT_CONTROL_SAMPLE_DEST_MIRROR));
+
+printf("Doing sample rate set for port %d\n", ingress_port_1);
+BCM_IF_ERROR_RETURN(bcm_port_control_set(unit, ingress_port_1,
+																				 bcmPortControlSampleFlexRate, 10));
+
+printf("IFP 1st pass config starts\r\n");
+print bcm_field_group_config_t_init(&group_config);
+
+BCM_FIELD_QSET_INIT(group_config.qset);
+BCM_FIELD_QSET_ADD(group_config.qset, bcmFieldQualifyStageIngress);
+BCM_FIELD_QSET_ADD(group_config.qset, bcmFieldQualifyDstTrunk);
+BCM_FIELD_ASET_INIT(group_config.aset);
+
+BCM_FIELD_ASET_ADD(group_config.aset, bcmFieldActionIngSampleEnable);
+BCM_FIELD_ASET_ADD(group_config.aset, bcmFieldActionEgressClassSelect);
+BCM_FIELD_ASET_ADD(group_config.aset, bcmFieldActionHiGigClassSelect);
+BCM_FIELD_ASET_ADD(group_config.aset, bcmFieldActionNewClassId);
+BCM_FIELD_ASET_ADD(group_config.aset, bcmFieldActionCosQCpuNew);
+
+BCM_FIELD_ASET_ADD(group_config.aset, bcmFieldActionStatGroup);
+
+print bcm_field_group_config_create(unit, &group_config);
+
+BCM_IF_ERROR_RETURN(bcm_field_stat_create_id(unit, group_config.group, 2,
+																						 stats, fp_statid));
+
+print bcm_field_entry_create(unit, group_config.group, &ifp_entry);
+
+
+print bcm_field_qualify_DstTrunk(unit, ifp_entry, 1, 0xffff);
+
+print bcm_field_action_add(unit, ifp_entry, bcmFieldActionIngSampleEnable, 0, 0);
+print bcm_field_action_add(unit, ifp_entry, bcmFieldActionHiGigClassSelect,
+													 BCM_FIELD_HIGIG_CLASS_SELECT_EGRESS, 0);
+print bcm_field_action_add(unit, ifp_entry, bcmFieldActionEgressClassSelect,
+													 BCM_FIELD_EGRESS_CLASS_SELECT_NEW, 0);
+print bcm_field_action_add(unit, ifp_entry, bcmFieldActionNewClassId, i2e_class_id, 0);
+print bcm_field_action_add(unit, ifp_entry, bcmFieldActionCosQCpuNew, 40, 40);
+
+BCM_IF_ERROR_RETURN(bcm_field_entry_stat_attach(unit, ifp_entry, fp_statid));
+
+BCM_IF_ERROR_RETURN(bcm_field_entry_install(unit, ifp_entry));
+
+
+printf("\nFirst PASS StatId: ");
+bshell(unit, "fp stat get StatId=554 t=p");
+printf("\n");
+bshell(unit, "dump chg SFLOW_ING_DATA_SOURCE");
+bshell(unit, "dump chg SFLOW_ING_FLEX_DATA_SOURCE");
+
+
+cint for mirror entry
+---------------------
+
+cint_reset();
+
+int unit=0;
+const bcm_field_stat_t   stats[2] = { bcmFieldStatPackets,
+	bcmFieldStatBytes };
+bcm_field_group_config_t group_config;
+bcm_field_entry_t        ifp_entry;
+int                      rv=0;
+int                      fp_statid = 555;
+bcm_port_t               ingress_port_1 = 0; /*Modify as per your avaialability*/
+
+
+print bcm_field_group_config_t_init(&group_config);
+BCM_FIELD_QSET_INIT(group_config.qset);
+BCM_FIELD_QSET_ADD(group_config.qset, bcmFieldQualifyDSCP);
+BCM_FIELD_QSET_ADD(group_config.qset, bcmFieldQualifyInPorts);
+BCM_FIELD_QSET_ADD(group_config.qset, bcmFieldQualifyIpType);
+
+BCM_FIELD_ASET_ADD(group_config.aset, bcmFieldActionMirrorIngress);
+
+print bcm_field_group_config_create(unit, &group_config);
+
+BCM_IF_ERROR_RETURN(bcm_field_stat_create_id(unit, group_config.group, 2,
+																						 stats, fp_statid));
+
+print bcm_field_entry_create(unit, group_config.group, &ifp_entry);
+
+print bcm_field_qualify_DSCP(unit, ifp_entry, 0x000000e0, 0x000000FF);
+print  bcm_field_qualify_InPort(unit, ifp_entry, ingress_port_1, 0xFFFF);
+print bcm_field_qualify_IpType(unit, ifp_entry, 0x00000000);
+
+BCM_IF_ERROR_RETURN(bcm_field_entry_stat_attach(unit, ifp_entry, fp_statid));
+
+BCM_IF_ERROR_RETURN(bcm_field_entry_install(unit, ifp_entry));
+

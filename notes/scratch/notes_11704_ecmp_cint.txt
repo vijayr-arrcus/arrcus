@@ -1,0 +1,10 @@
+cint_reset();
+bcm_l3_egress_ecmp_t ecmp_info;
+uint32_t flowset_size = 512;
+
+bcm_l3_egress_ecmp_t_init(&ecmp_info);
+ecmp_info.ecmp_group_flags = BCM_L3_ECMP_UNDERLAY;
+uint32_t options = 0;
+
+ecmp_info.dynamic_mode = BCM_L3_ECMP_DYNAMIC_MODE_NORMAL;
+ecmp_info->dynamic_size = flowset_size;

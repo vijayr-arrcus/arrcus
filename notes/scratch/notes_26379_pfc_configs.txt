@@ -1,0 +1,112 @@
+config
+hardware pfc profile pfc-test
+   traffic-class 2 lossless xoff 4096 xon 2048 hdrm 1024
+   traffic-class 3 lossless
+exit
+
+
+
+int swp51
+pfc profile pfc-test
+pfc tx enable true
+exit
+
+int swp52
+pfc rx enable true
+exit
+
+cplane_pfc_attr_object {
+  ifindex
+  pg_xon_threshold[8];
+  pg_xoff_threshold[8];
+  pg_hdrm_value[8];
+  rx_enabled;
+  tx_enabled;
+}
+
+bcm_pfc_interface_attrs {
+  ifindex,
+  src_obj - cplane_pfc_attr_object -- key ifindex.
+}
+
+{
+    "TblType": "bcm.xgs.sflow.target.tbl",
+    "TblCode": 59001,
+    "TblObjType": "bcm.xgs.sflow.target",
+    "TblIndices": [
+        {
+            "TblIndxName": "BCM_XGS_SFLOW_TARGET",
+            "TblIndxCode": 1,
+            "TblIndxType": "radix",
+            "TblIndxKeyAttrs": [
+                "target"
+            ]
+        }
+    ],
+    "TblDescription": "Stores all PD sflow target objects",
+    "XRefInfo": {
+      "SrcKeys": [
+        {
+          "Name": "cplane_sflow_target",
+          "DemuxAttr": "None",
+          "Info": [
+            {
+              "Type": "sflow.hal.target.config.table",
+              "KeyAttrs": [
+                "target"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+}
+
+
+ dpal_obj.obj_type = BCM_XGS_SFLOW_TARGET;
+  dpal_obj.obj_info = &bcm_xgs_sflow_target;
+
+  if ((optype == DPAL_OBJ_CREATE) ||
+      (optype == DPAL_OBJ_UPDATE)) {
+    rc = bcm_xgs_obj_add(&dpal_obj, dh);
+  } else {
+    rc = bcm_xgs_obj_del(&dpal_obj, dh);
+  }
+
+bcmsdk_port_create
+
+cplane_pfc_profile_object_2 { ---> bcm sdk side its a NOP
+  profile_id;
+  xon_threshold;
+  xoff_threshold;
+  hdrm_value;
+}
+
+cplane_pfc_interface_attr_object_2 { --> actuall profile per interface is here.
+  ifindex;
+  profile_id;  10, -1
+  pfc_rx;
+  pfc_tx;
+}
+
+xlate_layer --> delete/create for valid to invalid profile_id.  Dont set profile_id for invalid profile_id.
+
+cplane_pfc_attr_object_2 --> cplane_pfc_profile_object_2
+
+create of cplane_pfc_attr_object_2 --> we have to set a dependancy on a valid profile_id.
+so when cplane_pfc_profile_object_2 is deleted first we have to send update with invalid profile_id for cplane_pfc_attr_object_2.
+
+
+
+NH_OP ---> l3 subinterface ---> main interface.
+101   ---> 1056            ---> 1055
+delete of 101 --> 1056
+create of 101 --> 1078
+101   ---> 1078            ---> 1055
+
+
+aom_obj_add --> merge_cb --> copy the sdk hw_ids from old object to new object.
+merge_cb ---> aom_state_machine_run --> whatever dependancies are set run the state machine for them.
+
+prev_valid , now_invalid 
+we have delete the old cplane_pfc_interface_attr_object_2 and then create a new cplane_pfc_interface_attr_object_2 without setting the profile_id.

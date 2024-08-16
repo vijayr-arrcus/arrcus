@@ -1,0 +1,118 @@
+cint>
+cint>   bcm_field_entry_t  new_entry;
+bcm_field_entry_t  new_entry;
+cint>
+cint> print bcm_field_entry_create(0, 1, &new_entry);
+print bcm_field_entry_create(0, 1, &new_entry);
+int $$ = 0 (0x0)
+cint>
+cint> print new_entry;
+print new_entry;
+int new_entry = 163 (0xa3)
+cint>
+cint> print bcm_field_entry_copy_id(0, 0x8f, new_entry);
+print bcm_field_entry_copy_id(0, 0x8f, new_entry);
+int $$ = -8 (0xfffffff8)
+cint>
+cint> printf("%s \n", bcm_errmsg(-8));
+printf("%s \n", bcm_errmsg(-8));
+Entry exists
+cint>
+cint> print bcm_field_entry_copy(0, 0x8f, &new_entry);
+print bcm_field_entry_copy(0, 0x8f, &new_entry);
+int $$ = 0 (0x0)
+cint>
+cint> print new_entry;
+print new_entry;
+int new_entry = 164 (0xa4)
+cint>
+cint> exit;
+exit;
+
+0x0000009c
+
+EID 0x0000008f: eid=0x8f, gid=0x1,
+ prio=0x7fffbd2c, flags=0x20000002, hw_index=0x99, slice_number=0, slice_expand_part=0, Installed
+
+EID 0x0000009c: eid=0x9c, gid=0x1,
+ prio=0x7fffbd2c, flags=0x20000002, hw_index=0x99, slice_number=0, slice_expand_part=0, Installed
+ IpProtocol
+  HW info:
+    Part: 2 Offset0: 20 Width0: 4 Order: 1
+    Part: 2 Offset1: 24 Width1: 4 Order: 2
+     DATA=0000003a
+     MASK=000000ff
+ IpInfo
+  HW info:
+    Part: 0 Offset0: 4 Width0: 1 Order: 2
+    Part: 0 Offset1: 5 Width1: 1 Order: 3
+    Part: 1 Offset2: 6 Width2: 2 Order: 4
+    Part: 1 Offset3: 64 Width3: 4 Order: 5
+    Part: 1 Offset4: 72 Width4: 1 Order: 6
+    Part: 1 Offset5: 74 Width5: 2 Order: 7
+    Part: 2 Offset6: 68 Width6: 3 Order: 1
+    Part: 2 Offset7: 72 Width7: 3 Order: 8
+  LT field info:
+    Field: 5 Offset0: 0 Width0: 1
+    Field: 5 Offset1: 1 Width1: 1
+    Field: 5 Offset2: 2 Width2: 1
+    Field: 4 Offset0: 0 Width0: 1
+    Field: 4 Offset1: 2 Width1: 1
+    Field: 4 Offset2: 3 Width2: 1
+    Field: 3 Offset0: 0 Width0: 1
+    Field: 3 Offset1: 1 Width1: 1
+    Field: 3 Offset2: 2 Width2: 1
+    Field: 3 Offset3: 3 Width3: 1
+    Field: 2 Offset0: 2 Width0: 1
+    Field: 2 Offset1: 3 Width1: 1
+    Field: 1 Offset0: 0 Width0: 1
+    Field: 1 Offset1: 2 Width1: 1
+    Field: 0 Offset0: 0 Width0: 1
+    Field: 0 Offset1: 1 Width1: 1
+    Field: 0 Offset2: 2 Width2: 1
+     DATA=00000000 00000000 00000000 00000000 00000000 00000002
+     MASK=00000000 00000000 00000000 00000000 00000000 00000002
+ IcmpTypeCode
+  HW info:
+    Part: 0 Offset0: 144 Width0: 16 Order: 1
+     DATA=00000106
+     MASK=0000ffff
+    MASK=0000ffff
+ CopyToCpuReasonLow
+  HW info:
+    Part: 0 Offset0: 7 Width0: 1 Order: 3
+    Part: 0 Offset1: 8 Width1: 1 Order: 4
+    Part: 0 Offset2: 68 Width2: 4 Order: 6
+    Part: 1 Offset3: 77 Width3: 3 Order: 5
+    Part: 1 Offset4: 5 Width4: 1 Order: 7
+    Part: 2 Offset5: 4 Width5: 1 Order: 1
+    Part: 2 Offset6: 5 Width6: 1 Order: 2
+    Part: 2 Offset7: 77 Width7: 3 Order: 8
+    Part: 2 Offset8: 9 Width8: 1 Order: 9
+  LT field info:
+    Field: 0 Offset0: 1 Width0: 1
+    Field: 0 Offset1: 2 Width1: 1
+    Field: 0 Offset2: 5 Width2: 1
+    Field: 0 Offset3: 6 Width3: 1
+    Field: 0 Offset4: 9 Width4: 1
+    Field: 0 Offset5: 10 Width5: 1
+    Field: 0 Offset6: 11 Width6: 1
+    Field: 0 Offset7: 12 Width7: 1
+    Field: 0 Offset8: 13 Width8: 1
+    Field: 0 Offset9: 14 Width9: 1
+    Field: 0 Offset10: 15 Width10: 1
+    Field: 0 Offset11: 17 Width11: 1
+    Field: 0 Offset12: 21 Width12: 1
+    Field: 0 Offset13: 22 Width13: 1
+    Field: 0 Offset14: 23 Width14: 1
+    Field: 0 Offset15: 31 Width15: 1
+     DATA=00000000 00000040
+     MASK=00000000 00000040
+
+         action = {act=RpDrop, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=GpCopyToCpu, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=CosMapNew, param0=536870914(0x20000002), param1=0(0), param2=0(0)}
+         action = {act=GpStatGroup, param0=103(0x67), param1=0(0), param2=0(0)}
+         action = {act=RpStatGroup, param0=104(0x68), param1=0(0), param2=0(0)}
+         flex_counter = {flexctr_action_id=268435465(0x10000009), gp_counter_id=103(0x67), yp_counter_id=0(0), rp_counter_id=104(0x68)}
+         policer = {policer id 47,peak_kbits_sec=0, peak_kbits_burst=0, commit_kbits_sec=0x7d0, commit_kbits_burst=0x200, PacketBased=0x1, mode=0, entries=15}

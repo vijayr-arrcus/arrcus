@@ -1,0 +1,8 @@
+1. .1P priority to LocalTC to PG mapping.
+2. local tc to PG mapping settings API. -- 8 profiles.
+3. PG to SP settings. -- 8 profiles.
+4. SP Lossy/lossless settings.
+5. per port PG mapping. -- attaching a PG profile to a port.
+6. Guaranteed minimum space - per PG, per port and per SP.
+7. share of shared pool per PG/Port.
+8. PG headroom configs.

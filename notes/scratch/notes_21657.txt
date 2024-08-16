@@ -1,0 +1,24 @@
+cint_reset();
+int unit=0;
+int rv;
+int mtp_port=0;
+bcm_gport_t mtp_gport;
+bcm_mirror_destination_t mirror_dest1;
+print bcm_port_gport_get(0, mtp_port, &mtp_gport);
+bcm_mirror_destination_t_init(&mirror_dest1);
+mirror_dest1.gport = mtp_gport;
+print bcm_mirror_destination_create(unit, &mirror_dest1);
+print mirror_dest1.mirror_dest_id;
+
+cint_reset();
+int unit=0;
+int rv;
+int mtp_port=0;
+bcm_gport_t mtp_gport;
+bcm_mirror_destination_t mirror_dest2;
+print bcm_port_gport_get(0, mtp_port, &mtp_gport);
+bcm_mirror_destination_t_init(&mirror_dest2);
+mirror_dest2.flags2 = BCM_MIRROR_DEST_FLAGS2_IFA;
+mirror_dest2.gport = mtp_gport;
+print bcm_mirror_destination_create(unit, &mirror_dest2);
+print mirror_dest2.mirror_dest_id;

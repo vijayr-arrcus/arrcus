@@ -1,0 +1,8 @@
+ 1 >start logging 4104 ----> increase mem
+ 9 >start logging 4104
+ 10 >start logging 4104
+  22 >start logging 4104
+
+
+
+

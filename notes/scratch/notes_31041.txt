@@ -1,0 +1,12 @@
+  route --> next hop (outport, egress encap).
+  egress encap --> l3 intf + dst mac.
+  l3 intf --> vlan + src mac + vrf
+      DPALA_L3_INTF --> BCM_XGS_L3_INTF
+          ifindex --> reserved vlan for subinterface 0.
+            reserved vlan is untagged.
+
+            sdk objects --> l3_iif and l3_intf objects are created.
+              l3_iif -> l3 ingress interface. (vrf attributes of the l3 interfaces for an incoming packet)
+
+  dst mac --> arp resolution.
+  

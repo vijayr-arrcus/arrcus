@@ -1,0 +1,126 @@
+Requirement
+------------
+ingress and egress statistics per l2 subinterface (l2 access vps).
+
+design choices
+--------------
+1.  stats supported only for l2 subinterface access vps for both bond and physical interface.
+2.  stats not supported for vlan port configuration for now.
+3.  stats needs to be enabled per subinterface.
+  a. stats resource allocated only for subinterface with stats enabled.
+  b. if stats is not enabled, no stats is collected and stats counters will show 0 values.
+  c. once enabled stats will be collected for both ingress and egress direction.
+  d. reason to control stats collection per subinterface is because the flex counter resources are shared and limited.
+  e. when stats is disabled and enabled again, stats reporting should start afresh.
+4.  need to make sure show bond10 subinterface 1001 is possible to check stats for individual subinterfaces.
+5.  support for clear statistics.
+6.  Assumption is stats is used for accounting/telemetry and not just debugging.
+7.  scale of about 500 subinterface per box.
+  a. This scale limit is for both TD4(x9, x11) and TD3.
+  b. there is no actual resource restriction that imposes this scale.
+  c. for now we can claim we qualify for max 500 subinterfaces per box.
+  d. implementation challenges should be considered when we try to scale to large values.
+  e. for now the implementation would go with polling stats in dpal for subinterfaces on which stats is enabled.
+  f. polling will be  done periodically in dpal and mps message posted to ifmgr. -- key is Parent ifindex + vlan.
+  g. need a way to get subinterface ifindex from Parent ifindex+vlan.
+  h. Problem is we ignore notifications for the L3 interface, so seems like there is no dpal object for subinterface ifindex.
+  i. if we can post stats message directly for a subinterface ifindex then very little change in ifmgr and no new table needs to be defined. On the other hand, the configuration from PI/ifmgr has always been Parent ifindex + vlan, so we publish interface + vlan stats to ifmgr with a new table and can be extened to support port vlan as well.
+  j. the requirements is to have stats exported per subinterface via gnmi/dstore... so go with publishing stats per subinterface ifindex.
+8.  there seems to be a restriction on memberlinks in the bond.
+  a. the member links are part of a multicast group to replicate traffic on the egress of the access vp.
+  b. there is a limit on the number of members of the multicast group which seems to be 256.
+    i. This seems to be a restriction for TD4 alone. (both x9 and x11)
+    ii. No such restriction exists for TD3.
+  c. for normal physical interface such a multicast group doesnt exists.
+  d. we create an access vp per parent ifindex + vlan, the access vps are not replicated per member link.
+9.  there is a limitation on the number of multicast groups we can create on the box.
+  a. the number of multicast groups is limited to about 1000.
+  b. this restriction imposes max bond interfaces we can have to about 1000 each with a single member link per box.
+  c. this restriction seems to be specific to TD4.
+
+
+commands
+----------
+configuration
+-------------
+int bond10
+  subinterface 1001
+    ipv6 enabled false
+    ipv4 enabled false
+    mac-learning false
+    counters enabled true  --- > command available only for l2 subinterfaces.
+    vlan 1001
+  exit
+exit
+
+show command
+--------------
+
+show int bond10
+interface bond20
+ type                           ieee8023adLag
+ mtu                            9000
+ name                           bond20
+ description                    ""
+ enabled                        true
+ ifindex                        15004
+ admin-status                   UP
+ oper-status                    UP
+ last-change                    2023-01-12T20:59:04.219607-00:00
+ counters in-octets       22099247102
+ counters in-unicast-pkts 80110775
+ counters in-broadcast-pkts 1763
+ counters in-multicast-pkts 3360
+ counters in-discards     663
+ counters in-errors       0
+ counters in-unknown-protos 0
+ counters out-octets      22103561924
+ counters out-unicast-pkts 80110867
+ counters out-broadcast-pkts 22340
+ counters out-multicast-pkts 35803
+ counters out-discards    0
+ counters out-errors      0
+ counters in-ipv4-discards 0
+ counters in-stp-discards 0
+ counters in-vlan-discards 300
+ counters in-tcam-discards 363
+ counters in-policy-discards 0
+ counters in-mtu-exceeded-discards 0
+ load-interval                  30
+ fec                            fec-none
+ fec-corrected-errors           0
+ fec-uncorrected-errors         0
+ speed-group                    0
+ mac-learning                   false
+ time-elapsed-since-last-change 00:10:19
+ storm-control state bcast-Kbps 10000
+ storm-control state mcast-Kbps 10000
+ storm-control state uucast-Kbps 10000
+ subinterface 1001
+  ipv6 state neighbor-timeout 14400
+  ipv6 router-advertisement state interval 600
+  ipv6 router-advertisement state lifetime 1800
+  ipv6 router-advertisement state suppress false
+  ipv6 router-advertisement state virtual-router-only false
+  ipv6 router-advertisement state managed-config-flag false
+  ipv6 router-advertisement state other-config-flag false
+  ipv4 state neighbor-timeout 14400
+  state index      1001
+  state name       bond20.1001
+  state description ""
+  state enabled    true
+  state ifindex    15006
+  state admin-status UP
+  state oper-status UP
+  state counters enabled true  --- > [ new state output ]
+  state last-change 2023-01-12T20:58:02.966344-00:00
+  state counters in-unicast-pkts 1234        -----|
+  state counters in-broadcast-pkts 1234           |
+  state counters in-multicast-pkts 1234           | ====== counters applicable for l2 subinterfaces, we can choose to hide other stats or show them as zero, I have choosen to hide them here and only show what is relevant.
+  state counters out-unicast-pkts 5678            |
+  state counters out-broadcast-pkts 5678          |
+  state counters out-multicast-pkts 5678     -----|
+  state network-instance default
+  state dynamic ipv6-link-local fe80::b6a9:fcff:fe70:c381
+  state mac-learning false
+

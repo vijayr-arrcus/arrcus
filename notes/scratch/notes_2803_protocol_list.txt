@@ -1,0 +1,45 @@
+STP traffic
+LACP traffic
+ISIS traffic
+BGP v4 traffic
+OSPF v4 traffic
+BGP v6 traffic
+OSPF v6 traffic
+LLDP traffic
+VRRP v4 traffic
+VRRP v6 traffic
+ICMP v6 traffic
+SFTP v4 traffic
+TFTP v4 traffic
+NTP v4 traffic
+SSH v4 traffic
+Telnet v4 traffic
+Radius v4 traffic
+Tacacs v4 traffic
+SNMP v4 traffic
+SFTP v6 traffic
+TFTP v6 traffic
+NTP v6 traffic
+SSH v6 traffic
+Telnet v6 traffic
+Radius v6 traffic
+Tacacs v6 traffic
+SNMP v6 traffic
+ICMP monitor v4 traffic
+ICMP monitor v6 traffic
+DHCP v4 traffic
+DHCP v6 traffic
+ARP traffic
+v4 Exception traffic
+v6 Exception traffic
+v4 L3 Dest miss traffic
+v6 L3 Dest miss traffic
+v4 SelfIp traffic
+v6 SelfIp traffic
+v4 Glean traffic
+v6 Glean traffic
+IPv6 traffic
+IPv4 traffic
+TRACEROUTE v4 traffic
+TRACEROUTE v6 traffic
+UDP v4 traffic

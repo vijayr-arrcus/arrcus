@@ -1,0 +1,4 @@
+1. there is backpressure implemented for bcm objects and we pause ML, we still see queue buildup.
+2. allocate static nlmsg and check.
+3. impact of ioctl calls.
+4. 

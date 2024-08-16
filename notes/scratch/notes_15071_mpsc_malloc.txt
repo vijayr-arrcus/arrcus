@@ -1,0 +1,94 @@
+static void
+s_mpsc_util_replay_cb(mps_msg_t *msg_p, mps_msg_replay_status_e status,
+                      void *app_p)
+{
+  UNUSED(app_p);
+  mpsc_util_pub_tbl_ctx_t *ctx_p;
+  mpsc_util_hdl_t *util_p;
+  mpsc_util_replay_bq_entry_t *replay_entry_p;
+
+  ctx_p = (mpsc_util_pub_tbl_ctx_t *)
+    mpsc_pub_tbl_get_context(msg_p->hdl, msg_p->pub_id, msg_p->tbl_id);
+  if (!ctx_p) {
+    return;
+  }
+  util_p = (mpsc_util_hdl_t *)ctx_p->u_hdl;
+
+  replay_entry_p = new mpsc_util_replay_bq_entry_t;
+  assert(replay_entry_p && "replay entry alloc failed");
+  replay_entry_p->msg_p = mps_msg_dup(msg_p);
+  assert(replay_entry_p->msg_p && "replay entry msg dup failed");
+  replay_entry_p->status = status;
+  replay_entry_p->util_ctx_p = ctx_p;
+
+  bq_enque(util_p->replay_q, (bq_payload_t)replay_entry_p);
+  eventfd_write(util_p->replay_fd, 1);
+}
+
+
+static void
+s_mpsc_util_replay_fd_cb(evutil_socket_t fd, short what, void *arg)
+{
+  UNUSED(what);
+  mpsc_util_hdl_t *util_p = (mpsc_util_hdl_t *)arg;
+  eventfd_t read;
+  mpsc_util_replay_bq_entry_t *replay_entry_p;
+  uint32_t cnt = 0;
+
+  eventfd_read(fd, &read);
+  while (!bq_empty(util_p->replay_q)) {
+    replay_entry_p = (mpsc_util_replay_bq_entry_t *)bq_deque(util_p->replay_q);
+    if (replay_entry_p && replay_entry_p->util_ctx_p) {
+      replay_entry_p->util_ctx_p->replay_cb(replay_entry_p->msg_p,
+                                            replay_entry_p->status,
+                                            replay_entry_p->util_ctx_p->app_ctx);
+      mps_free_msg(replay_entry_p->msg_p);
+      delete replay_entry_p;
+    }
+    if (++cnt > MPSC_UTIL_QUANTUM) {
+      eventfd_write(fd, 1);
+      return;
+    }
+  }
+}
+
+
+mps_msg_dup
+   static inline mps_msg_t*
+		mps_msg_dup(mps_msg_t *src)
+		{
+			mps_msg_t *dst;
+
+			if (!src) {
+				return NULL;
+			}
+
+			dst = new mps_msg_t;
+			assert(dst && "mps msg alloc failed");
+
+			memset(dst, 0, sizeof(mps_msg_t));
+			dst->optype = src->optype;
+			mps_key_alloc_copy(&dst->pub_id, &src->pub_id);
+			mps_key_alloc_copy(&dst->tbl_id, &src->tbl_id);
+			mps_key_alloc_copy(&dst->key, &src->key);
+			mps_key_alloc_copy(&dst->msg, &src->msg);
+			dst->seq = src->seq;
+			dst->hdl = src->hdl;
+
+			return dst;
+		}
+
+		static inline int
+		mps_key_alloc_copy(mps_key_t *dst, mps_key_t *src)
+		{
+			if (unlikely(!dst || !src)) {
+				return -1;
+			}
+
+			dst->key = (uint8_t *)malloc(src->klen);
+			assert(dst->key && "key alloc failled");
+			dst->klen = src->klen;
+			memcpy((void *)(dst->key), (void *)(src->key), src->klen);
+			return 0;
+		}
+

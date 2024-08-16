@@ -1,0 +1,14 @@
+1. retry -- dependancy check in sdk layer, 30 secs timer.
+2. xlate layer.
+  a. return FAILURE bcs deps failed -- no stats
+    i. add cplane_obj_add from BCM_XGS_BOND object.
+    ii. have to start from cplane_obj_add.
+  b. return SUCCESS eventhough deps failed -- seems to indicate that all is good when its not true.
+    i. trigger bcm_xgs_obj_add from BCM_XGS_BOND object.
+    ii.
+3. deps_ready call back.
+  a. run through the entire deps tree eventhough first level objects are created.
+  b. May be we should avoid walking through the entire dpes tree and the object
+  in question knows the objects that are potentially waiting in pending_create state and trigger a obj_add and this time the callback check would return true.
+4. add/remove BCM_XGS_BOND object when no member link.
+  a. the BCM_XGS_L3IF --> BCM_XGS_PORT --> BCM_XGS_BOND. forces the BCM_XGS_BOND object to remain in delete_pending state and so the dependancies will be satisfied.

@@ -1,0 +1,428 @@
+first time enable v6 in problem state:
+
+
+[2023/07/01 11:06:09.447995][DEBUG][IFMGR] ifmgr_validate_subinterface: kpath =  /interfaces/interface{swp7}/subinterfaces/subinterface{0}
+[2023/07/01 11:06:09.463565][DEBUG][IFMGR] ifmgr_validate_intf_ip_enabled: kpath = /interfaces/interface{swp7}/subinterfaces/subinterface{0}/ipv6/config/enabled
+[2023/07/01 11:06:09.558606][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found on the ifmgr_global_ifname_list
+[2023/07/01 11:06:09.558664][DEBUG][IFMGR] ifmgr_read_if_cfg_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/07/01 11:06:09.564822][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found on the ifmgr_global_ifname_list
+[2023/07/01 11:06:09.564876][DEBUG][IFMGR] ifmgr_read_if_cfg_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/07/01 11:06:09.577673][DEBUG][IFMGR] ifmgrcfg_read_and_publish_if: fec cfg - 0 for swp7
+[2023/07/01 11:06:09.581751]**ERR**[IFMGR] SUBIF 0 exists:swp7 tag:0
+[2023/07/01 11:06:09.589586][DEBUG][IFMGR] DEBUG: Add msg received for intf swp7
+[2023/07/01 11:06:09.589655][DEBUG][IFMGR] ifmgr_handle_cfg_update_msg: swp7 invalid fec, set speed based fec - data->new_cfg->fec_type 1 data->curr_cfg->fec_type - 1 data->initial_config_done:1
+[2023/07/01 11:06:09.589722][DEBUG][IFMGR] ifmgr_process_new_if_config(): swp7 data->new_cfg->fec_type 1data->curr_cfg->fec_type - 1 data->initial_config_done:1 , chg:0
+[2023/07/01 11:06:09.589745][DEBUG][IFMGR] ifmgr_l3_process_intf_event: intf:swp7, delete:0, g_subif_lnx_bulk_in_prog:0
+[2023/07/01 11:06:09.603958][DEBUG][CONFDPROXY] Called Config Handler, read socket=182, result=0
+[2023/07/01 11:06:09.615167][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_del()
+[2023/07/01 11:06:09.619960][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_update()
+[2023/07/01 11:06:09.625122][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/01 11:06:09.626453][DEBUG][IFMGR] DEBUG: Adding INTF swp7 obj to the txlist for add event
+[2023/07/01 11:06:09.626498][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/07/01 11:06:09.634222][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found on the ifmgr_global_ifname_list
+[2023/07/01 11:06:09.634289][DEBUG][IFMGR] ifmgr_subif_cfg_read_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/07/01 11:06:09.645991][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found on the ifmgr_global_ifname_list
+[2023/07/01 11:06:09.646053][DEBUG][IFMGR] ifmgr_subif_cfg_read_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/07/01 11:06:09.649576][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/01 11:06:09.650327][DEBUG][IFMGR] DEBUG: Adding INTF swp7 obj to the txlist for add event
+[2023/07/01 11:06:09.650365][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and insertingit at the end
+[2023/07/01 11:06:09.650388][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/07/01 11:06:09.653012][DEBUG][CONFDPROXY] Called Config Handler, read socket=182, result=0
+[2023/07/01 11:06:09.655082][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/07/01 11:06:09.655123][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp7
+[2023/07/01 11:06:09.655147][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp7 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/07/01 11:06:09.655166][DEBUG][IFMGR] IFMGR publishing ifindex 1007 to lnx index 1007 mapping
+[2023/07/01 11:06:09.655193][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp7 ifindex 1007, admin state = 2, link state = 2, fec_tytpe = 1, speed:6 oper speed 6
+[2023/07/01 11:06:09.655276][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp7 ifindex 1007, admin state = 2, link state = 2, fec_tytpe = 1, urpf_mode  = 0
+
+
+
+disable v6:
+
+
+2023/07/01 11:48:17.471533][DEBUG][IFMGR] ifmgr_validate_subinterface: kpath =  /interfaces/interface{swp7}/subinterfaces/subinterface{0}
+[2023/07/01 11:48:17.488024][DEBUG][IFMGR] ifmgr_validate_intf_ip_enabled: kpath = /interfaces/interface{swp7}/subinterfaces/subinterface{0}/ipv6/config/enabled
+[2023/07/01 11:48:17.572111][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found onthe ifmgr_global_ifname_list
+[2023/07/01 11:48:17.572173][DEBUG][IFMGR] ifmgr_read_if_cfg_only_global_ifname_list(): Indicates absenceof "no ip" address config on the intf - hence skipping
+[2023/07/01 11:48:17.578479][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found onthe ifmgr_global_ifname_list
+[2023/07/01 11:48:17.578534][DEBUG][IFMGR] ifmgr_read_if_cfg_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/07/01 11:48:17.587415][DEBUG][IFMGR] ifmgrcfg_read_and_publish_if: fec cfg - 0 for swp7
+[2023/07/01 11:48:17.590969]**ERR**[IFMGR] SUBIF 0 exists:swp7 tag:0
+[2023/07/01 11:48:17.597963][DEBUG][IFMGR] DEBUG: Add msg received for intf swp7
+[2023/07/01 11:48:17.598031][DEBUG][IFMGR] ifmgr_handle_cfg_update_msg: swp7 invalid fec, set speed basedfec - data->new_cfg->fec_type 1 data->curr_cfg->fec_type - 1 data->initial_config_done:1
+[2023/07/01 11:48:17.598066][DEBUG][IFMGR] ifmgr_process_new_if_config(): swp7 data->new_cfg->fec_type 1 data->curr_cfg->fec_type - 1 data->initial_config_done:1 , chg:0
+[2023/07/01 11:48:17.598126][DEBUG][IFMGR] ifmgr_l3_process_intf_event: intf:swp7, delete:0, g_subif_lnx_bulk_in_prog:0
+[2023/07/01 11:48:17.606686][DEBUG][IFMGR] L3 update ipv4 enable 1 index 1007 l3_info->curr_v4_cfg.enabled 1, urpf_mode 0
+[2023/07/01 11:48:17.606738][DEBUG][IFMGR] L3 update ipv6 enable 0 index 1007 l3_info->curr_v6_cfg.enabled 0
+[2023/07/01 11:48:17.606758][DEBUG][IFMGR] No subinterface config exists for interface swp7
+[2023/07/01 11:48:17.606779][DEBUG][IFMGR] DEBUG1: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU:8974, ipv6_enabled: 0, parent_ifindex: 1007
+[2023/07/01 11:48:17.606800][DEBUG][IFMGR] DEBUG2: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU:8974, ipv6_enabled: 0, parent_ifindex: 1007
+[2023/07/01 11:48:17.606818][DEBUG][IFMGR] No V4 addresses have been configured on interface swp7
+[2023/07/01 11:48:17.606888][DEBUG][IFMGR] MPSC L3 TBL add/update publish succeeded for ifindex 1007, v4 mtu 8974
+[2023/07/01 11:48:17.606933][DEBUG][IFMGR] Executing cmd  echo 1 > /proc/sys/net/ipv6/conf/swp7/disable_ipv6 to disable interface
+[2023/07/01 11:48:17.619234][DEBUG][IFMGR] VRF - default DS v6 swp7 indx 3ef Route 3000::1/120 Admin state:2 Link state:2 force:0 Deleted
+[2023/07/01 11:48:17.619408][DEBUG][IFMGR] VRF - default DS v6 swp7 indx 3ef Route 3000::1/128 Admin state:2 Link state:2 force:0 Deleted
+[2023/07/01 11:48:17.625373][DEBUG][CONFDPROXY] Called Config Handler, read socket=182, result=0
+[2023/07/01 11:48:17.630565][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_del()
+[2023/07/01 11:48:17.635080][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_update()
+[2023/07/01 11:48:17.638804][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/01 11:48:17.639745][DEBUG][IFMGR] DEBUG: Adding INTF swp7 obj to the txlist for add event
+[2023/07/01 11:48:17.639795][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/07/01 11:48:17.644131][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found onthe ifmgr_global_ifname_list
+[2023/07/01 11:48:17.644184][DEBUG][IFMGR] ifmgr_subif_cfg_read_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/07/01 11:48:17.648414][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found onthe ifmgr_global_ifname_list
+[2023/07/01 11:48:17.648464][DEBUG][IFMGR] ifmgr_subif_cfg_read_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/07/01 11:48:17.651673][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/01 11:48:17.652600][DEBUG][IFMGR] DEBUG: Adding INTF swp7 obj to the txlist for add event
+[2023/07/01 11:48:17.652660][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/07/01 11:48:17.652684][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/07/01 11:48:17.654119][DEBUG][CONFDPROXY] Called Config Handler, read socket=182, result=0
+[2023/07/01 11:48:17.655811][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/07/01 11:48:17.655856][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp7
+[2023/07/01 11:48:17.655880][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp7 ifmgr_main_ctxt.restarted: 0,initial_config_done:1, restart_handled:1
+[2023/07/01 11:48:17.655902][DEBUG][IFMGR] IFMGR publishing ifindex 1007 to lnx index 1007 mapping
+[2023/07/01 11:48:17.655954][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp7 ifindex 1007, admin state = 2, link state = 2, fec_tytpe = 1, speed:6 oper speed 6
+[2023/07/01 11:48:17.656080][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp7 ifindex 1007, admin state = 2, link state = 2, fec_tytpe = 1, urpf_mode  = 0
+
+
+
+
+
+enable v6:
+
+
+
+[2023/07/01 11:49:29.568449][DEBUG][IFMGR] ifmgr_validate_subinterface: kpath =  /interfaces/interface{swp7}/subinterfaces/subinterface{0}
+[2023/07/01 11:49:29.581349][DEBUG][IFMGR] ifmgr_validate_intf_ip_enabled: kpath = /interfaces/interface{swp7}/subinterfaces/subinterface{0}/ipv6/config/enabled
+[2023/07/01 11:49:29.669352][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found onthe ifmgr_global_ifname_list
+[2023/07/01 11:49:29.669421][DEBUG][IFMGR] ifmgr_read_if_cfg_only_global_ifname_list(): Indicates absenceof "no ip" address config on the intf - hence skipping
+[2023/07/01 11:49:29.673823][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found onthe ifmgr_global_ifname_list
+[2023/07/01 11:49:29.673866][DEBUG][IFMGR] ifmgr_read_if_cfg_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+
+[2023/07/01 11:49:29.682948][DEBUG][IFMGR] ifmgrcfg_read_and_publish_if: fec cfg - 0 for swp7
+[2023/07/01 11:49:29.686597]**ERR**[IFMGR] SUBIF 0 exists:swp7 tag:0
+[2023/07/01 11:49:29.695377][DEBUG][IFMGR] DEBUG: Add msg received for intf swp7
+[2023/07/01 11:49:29.695455][DEBUG][IFMGR] ifmgr_handle_cfg_update_msg: swp7 invalid fec, set speed basedfec - data->new_cfg->fec_type 1 data->curr_cfg->fec_type - 1 data->initial_config_done:1
+[2023/07/01 11:49:29.695486][DEBUG][IFMGR] ifmgr_process_new_if_config(): swp7 data->new_cfg->fec_type 1 data->curr_cfg->fec_type - 1 data->initial_config_done:1 , chg:0
+[2023/07/01 11:49:29.695508][DEBUG][IFMGR] ifmgr_l3_process_intf_event: intf:swp7, delete:0, g_subif_lnx_bulk_in_prog:0
+[2023/07/01 11:49:29.706735][DEBUG][IFMGR] L3 update ipv4 enable 1 index 1007 l3_info->curr_v4_cfg.enabled 1, urpf_mode 0
+[2023/07/01 11:49:29.706796][DEBUG][IFMGR] L3 update ipv6 enable 1 index 1007 l3_info->curr_v6_cfg.enabled 1
+[2023/07/01 11:49:29.706817][DEBUG][IFMGR] No subinterface config exists for interface swp7
+[2023/07/01 11:49:29.706836][DEBUG][IFMGR] DEBUG1: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU:8974, ipv6_enabled: 1, parent_ifindex: 1007
+[2023/07/01 11:49:29.706856][DEBUG][IFMGR] DEBUG2: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU:8974, ipv6_enabled: 1, parent_ifindex: 1007
+[2023/07/01 11:49:29.706874][DEBUG][IFMGR] No V4 addresses have been configured on interface swp7
+[2023/07/01 11:49:29.706968][DEBUG][IFMGR] MPSC L3 TBL add/update publish succeeded for ifindex 1007, v4 mtu 8974
+[2023/07/01 11:49:29.706998][DEBUG][IFMGR] Executing cmd  echo 0 > /proc/sys/net/ipv6/conf/swp7/disable_ipv6 to enable interface
+[2023/07/01 11:49:29.726626][DEBUG][IFMGR] Executing cmd  ip addr add 3000::1/120 dev swp7 to enable interface
+[2023/07/01 11:49:29.755380][DEBUG][IFMGR] VRF - default DS v6 swp7 indx 3ef Route 3000::1/120 Admin state:2 Link state:2 force:0 Updated
+[2023/07/01 11:49:29.755556][DEBUG][IFMGR] VRF - default DS v6 swp7 indx 3ef Route 3000::1/128 Admin state:2 Link state:2 force:0 Updated
+[2023/07/01 11:49:29.763446][DEBUG][CONFDPROXY] Called Config Handler, read socket=182, result=0
+[2023/07/01 11:49:29.764180][DEBUG][IFMGR] Running duplicate addr check for swp7
+[2023/07/01 11:49:29.769030][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_del()
+[2023/07/01 11:49:29.773843][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_update()
+[2023/07/01 11:49:29.778526][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/01 11:49:29.779346][DEBUG][IFMGR] DEBUG: Adding INTF swp7 obj to the txlist for add event
+[2023/07/01 11:49:29.779403][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/07/01 11:49:29.784378][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found onthe ifmgr_global_ifname_list
+[2023/07/01 11:49:29.784437][DEBUG][IFMGR] ifmgr_subif_cfg_read_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/07/01 11:49:29.789015][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp7 not found onthe ifmgr_global_ifname_list
+[2023/07/01 11:49:29.789074][DEBUG][IFMGR] ifmgr_subif_cfg_read_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/07/01 11:49:29.792417][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/01 11:49:29.793177][DEBUG][IFMGR] DEBUG: Adding INTF swp7 obj to the txlist for add event
+[2023/07/01 11:49:29.793249][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/07/01 11:49:29.793272][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/07/01 11:49:29.794479][DEBUG][CONFDPROXY] Called Config Handler, read socket=182, result=0
+[2023/07/01 11:49:29.796043][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/07/01 11:49:29.796090][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp7
+[2023/07/01 11:49:29.796113][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp7 ifmgr_main_ctxt.restarted: 0,initial_config_done:1, restart_handled:1
+[2023/07/01 11:49:29.796132][DEBUG][IFMGR] IFMGR publishing ifindex 1007 to lnx index 1007 mapping
+[2023/07/01 11:49:29.796160][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp7 ifindex 1007, admin state = 2, link state = 2, fec_tytpe = 1, speed:6 oper speed 6
+[2023/07/01 11:49:29.796263][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp7 ifindex 1007, admin state = 2, link state = 2, fec_tytpe = 1, urpf_mode  = 0
+[2023/07/01 11:49:31.028984][DEBUG][IFMGR] Running duplicate addr check for swp7
+[2023/07/01 11:49:31.029155][DEBUG][IFMGR] Link local Address fe80::2e0:ecff:fe80:98da/64 Add rcvd on intf from linux swp7.
+[2023/07/01 11:49:31.029185][DEBUG][IFMGR] Setting the rcvd from lnx link local address flag for swp7
+[2023/07/01 11:49:31.029216][DEBUG][IFMGR] L3 update ipv4 enable 1 index 1007 l3_info->curr_v4_cfg.enabled 1, urpf_mode 0
+[2023/07/01 11:49:31.029245][DEBUG][IFMGR] L3 update ipv6 enable 1 index 1007 l3_info->curr_v6_cfg.enabled 1
+[2023/07/01 11:49:31.029263][DEBUG][IFMGR] No subinterface config exists for interface swp7
+[2023/07/01 11:49:31.029282][DEBUG][IFMGR] DEBUG1: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU:8974, ipv6_enabled: 1, parent_ifindex: 1007
+[2023/07/01 11:49:31.029303][DEBUG][IFMGR] DEBUG2: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU:8974, ipv6_enabled: 1, parent_ifindex: 1007
+[2023/07/01 11:49:31.029321][DEBUG][IFMGR] No V4 addresses have been configured on interface swp7
+[2023/07/01 11:49:31.029390][DEBUG][IFMGR] MPSC L3 TBL add/update publish succeeded for ifindex 1007, v4 mtu 8974
+[2023/07/01 11:49:31.413905][DEBUG][IFMGR] Running duplicate addr check for swp7
+
+
+
+(gdb) bt
+#0  0x000055ea27dc289c in ifmgr_handle_l3_v6_gb_update_msg ()
+#1  0x000055ea27dc3c06 in ifmgr_process_l3_cfg_msg ()
+#2  0x000055ea27db86d5 in ifmgrcfg_get_v6_gb_addr_info ()
+#3  0x000055ea27db8bfc in ifmgrcfg_get_and_fill_l3_info ()
+#4  0x000055ea27dbb803 in ifmgrcfg_read_and_publish_if ()
+#5  0x000055ea27dbbae9 in ifmgrcfg_read_if_config_modify_diff ()
+#6  0x000055ea27dbbbff in ?? ()
+#7  0x000055ea27dbbf66 in ?? ()
+#8  0x00007f6f4952a765 in _confd_iterate () from /usr/lib/libconfd.so
+#9  0x00007f6f494e778d in cdb_diff_iterate () from /usr/lib/libconfd.so
+#10 0x000055ea27daff72 in ifmgr_read_if_cfg ()
+#11 0x00007f6f494995f6 in dsproxy_fw_call_cfg_handlers () from /usr/lib/libconfdproxy.so
+#12 0x00007f6f49496766 in ?? () from /usr/lib/libconfdproxy.so
+#13 0x00007f6f498299ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#14 0x00007f6f4982a537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#15 0x000055ea27eaa068 in main ()
+(gdb) break ifmgr_enable_disable_lnx_v6_interface
+Function "ifmgr_enable_disable_lnx_v6_interface" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) cont
+Please answer y or [n].
+Make breakpoint pending on future shared library load? (y or [n]) y
+Breakpoint 4 (ifmgr_enable_disable_lnx_v6_interface) pending.
+(gdb) cont
+
+
+
+
+v6 enable true
+
+
+Thread 1 "ifmgr.bin" hit Breakpoint 2, 0x0000560700565976 in ifmgr_populate_ds_ifmgr_l3_obj_from_l3_info ()
+(gdb) bt
+#0  0x0000560700565976 in ifmgr_populate_ds_ifmgr_l3_obj_from_l3_info ()
+#1  0x0000560700598a39 in ifmgr_mpsc_publish_l3_data ()
+#2  0x00005607004ed8eb in ifmgr_handle_l3_v6_gb_update_msg ()
+#3  0x00005607004ee77e in ifmgr_process_l3_cfg_msg ()
+#4  0x000056070052302d in ifmgrcfg_get_v6_gb_addr_info ()
+#5  0x0000560700523554 in ifmgrcfg_get_and_fill_l3_info ()
+#6  0x000056070052615b in ifmgrcfg_read_and_publish_if ()
+#7  0x0000560700526441 in ifmgrcfg_read_if_config_modify_diff ()
+#8  0x0000560700526557 in ?? ()
+#9  0x00005607005268be in ?? ()
+#10 0x00007fa3a3a80765 in _confd_iterate () from /usr/lib/libconfd.so
+#11 0x00007fa3a3a3d78d in cdb_diff_iterate () from /usr/lib/libconfd.so
+#12 0x000056070051a8ca in ifmgr_read_if_cfg ()
+#13 0x00007fa3a39ef5f6 in dsproxy_fw_call_cfg_handlers () from /usr/lib/libconfdproxy.so
+#14 0x00007fa3a39ec766 in ?? () from /usr/lib/libconfdproxy.so
+#15 0x00007fa3a3d7f9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#16 0x00007fa3a3d80537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#17 0x00005607005f4068 in main ()
+(gdb) cont
+Continuing.
+[Detaching after fork from child process 22424]
+
+Thread 1 "ifmgr.bin" hit Breakpoint 2, 0x0000560700565976 in ifmgr_populate_ds_ifmgr_l3_obj_from_l3_info ()
+(gdb) bt
+#0  0x0000560700565976 in ifmgr_populate_ds_ifmgr_l3_obj_from_l3_info ()
+#1  0x0000560700598a39 in ifmgr_mpsc_publish_l3_data ()
+#2  0x00005607004ea408 in ifmgr_handle_lnx_l3_v6_ll_update_msg ()
+#3  0x00005607004ee74d in ifmgr_process_l3_cfg_msg ()
+#4  0x0000560700530ae9 in ifmgr_v6addr_change_cb_internal ()
+#5  0x0000560700530e63 in ifmgr_addr_change_cb ()
+#6  0x0000560700530f5f in ?? ()
+#7  0x00007fa3a38d28c9 in ?? () from /lib/x86_64-linux-gnu/libnl-3.so.200
+#8  0x00007fa3a3908ebd in ?? () from /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200
+#9  0x00007fa3a38d21f4 in nl_cache_parse () from /lib/x86_64-linux-gnu/libnl-3.so.200
+#10 0x00007fa3a38d3480 in ?? () from /lib/x86_64-linux-gnu/libnl-3.so.200
+#11 0x00007fa3a38d8adc in nl_recvmsgs_report () from /lib/x86_64-linux-gnu/libnl-3.so.200
+#12 0x00007fa3a38d3ca6 in nl_cache_mngr_data_ready () from /lib/x86_64-linux-gnu/libnl-3.so.200
+#13 0x00005607005278e3 in ifmgr_libnl_read_link_event ()
+#14 0x00007fa3a3d7f9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#15 0x00007fa3a3d80537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#16 0x00005607005f4068 in main ()
+(gdb) cont
+
+
+
+
+ipv6 is disabled but configure ipv6 address:
+
+[2023/07/03 07:41:03.582987][DEBUG][IFMGR] ifmgr_validate_subinterface: kpath =  /interfaces/interface{swp54}/subinterfaces/subinterface{0}
+[2023/07/03 07:41:03.784484][DEBUG][CONFDPROXY] Called Config Handler, read socket=246, result=0
+[2023/07/03 07:41:03.790740][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 07:41:03.790783][DEBUG][IFMGR] ifmgr_read_if_cfg_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/07/03 07:41:03.795332][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 07:41:03.795381][DEBUG][IFMGR] ifmgr_read_if_cfg_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/07/03 07:41:03.803758][DEBUG][IFMGR] ifmgrcfg_read_and_publish_if: fec cfg - 0 for swp54
+[2023/07/03 07:41:03.807309]**ERR**[IFMGR] SUBIF 0 exists:swp54 tag:0
+[2023/07/03 07:41:03.816054][DEBUG][IFMGR] DEBUG: Add msg received for intf swp54
+[2023/07/03 07:41:03.816112][DEBUG][IFMGR] ifmgr_process_new_if_config: swp54 data->new_cfg->fec_type:3 - IF_FEC_TTYPE_INVALID, data->curr_cfg->fec_type - 3 data->initial_config_done:1 , chg:1
+[2023/07/03 07:41:03.816138][DEBUG][IFMGR] ifmgr_process_new_if_config(): swp54 data->new_cfg->fec_type 3 data->curr_cfg->fec_type - 3 data->initial_config_done:1 , chg:1
+[2023/07/03 07:41:03.816160][DEBUG][IFMGR] ifmgr_l3_process_intf_event: intf:swp54, delete:0, g_subif_lnx_bulk_in_prog:0
+[2023/07/03 07:41:03.816183][DEBUG][IFMGR] DEBUG: Adding INTF swp54 obj to the txlist for add event
+[2023/07/03 07:41:03.816239][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/07/03 07:41:03.826196][DEBUG][IFMGR] ipv6 address 3000::1/120 ADD for index 1054, swp54 sent to linux succeed
+[2023/07/03 07:41:03.826251][DEBUG][IFMGR] VRF - default DS v6 swp54 indx 41e Route 3000::1/120 Admin state:2 Link state:2 force:1 Updated
+[2023/07/03 07:41:03.826345][DEBUG][IFMGR] VRF - default DS v6 swp54 indx 41e Route 3000::1/128 Admin state:2 Link state:2 force:1 Updated
+[2023/07/03 07:41:03.826420][DEBUG][IFMGR] L3 update ipv4 enable 1 index 1054 l3_info->curr_v4_cfg.enabled 1, urpf_mode 0
+[2023/07/03 07:41:03.826445][DEBUG][IFMGR] L3 update ipv6 enable 0 index 1054 l3_info->curr_v6_cfg.enabled 0
+[2023/07/03 07:41:03.826463][DEBUG][IFMGR] No subinterface config exists for interface swp54
+[2023/07/03 07:41:03.826494][DEBUG][IFMGR] DEBUG1: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU: 8974, ipv6_enabled: 0, parent_ifindex: 1054
+[2023/07/03 07:41:03.826517][DEBUG][IFMGR] DEBUG2: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU: 8974, ipv6_enabled: 0, parent_ifindex: 1054
+[2023/07/03 07:41:03.826535][DEBUG][IFMGR] No V4 addresses have been configured on interface swp54
+[2023/07/03 07:41:03.826752][DEBUG][IFMGR] MPSC L3 TBL add/update publish succeeded for ifindex 1054, v4 mtu 8974
+[2023/07/03 07:41:03.831893][DEBUG][CONFDPROXY] Called Config Handler, read socket=246, result=0
+[2023/07/03 07:41:03.832353][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/07/03 07:41:03.832395][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp54
+[2023/07/03 07:41:03.832416][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp54 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/07/03 07:41:03.832681][DEBUG][IFMGR] IFMGR publishing ifindex 1054 to lnx index 1054 mapping
+[2023/07/03 07:41:03.832751][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp54 ifindex 1054, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/07/03 07:41:03.832896][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp54 ifindex 1054, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+[2023/07/03 07:41:03.839381][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_del()
+[2023/07/03 07:41:03.847701][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_update()
+[2023/07/03 07:41:03.851327][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/03 07:41:03.853270][DEBUG][IFMGR] DEBUG: Adding INTF swp54 obj to the txlist for add event
+[2023/07/03 07:41:03.853318][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/07/03 07:41:03.857780][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 07:41:03.857830][DEBUG][IFMGR] ifmgr_subif_cfg_read_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/07/03 07:41:03.861833][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 07:41:03.861879][DEBUG][IFMGR] ifmgr_subif_cfg_read_exclude_global_ifname_list(): Indicates absence of "noip" address config on the intf - hence process here
+[2023/07/03 07:41:03.865830][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/03 07:41:03.866653][DEBUG][IFMGR] DEBUG: Adding INTF swp54 obj to the txlist for add event
+[2023/07/03 07:41:03.866692][DEBUG][IFMGR] INTF obj: Item exists - hence removing the item and inserting it at the end
+[2023/07/03 07:41:03.866713][DEBUG][IFMGR] DEBUG: Scheduled the pub event; pub timer already running
+[2023/07/03 07:41:03.868026][DEBUG][CONFDPROXY] Called Config Handler, read socket=246, result=0
+[2023/07/03 07:41:03.869612][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/07/03 07:41:03.869656][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp54
+[2023/07/03 07:41:03.869679][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp54 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/07/03 07:41:03.869697][DEBUG][IFMGR] IFMGR publishing ifindex 1054 to lnx index 1054 mapping
+[2023/07/03 07:41:03.869724][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp54 ifindex 1054, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/07/03 07:41:03.869811][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp54 ifindex 1054, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+
+
+
+After configuring v6 address enable v6
+
+
+[2023/07/03 10:14:06.392912][DEBUG][IFMGR] ifmgr_validate_subinterface: kpath =  /interfaces/interface{swp54}/subinterfaces/subinterface{0}
+[2023/07/03 10:14:06.400415][DEBUG][IFMGR] ifmgr_validate_intf_ip_enabled: kpath = /interfaces/interface{swp54}/subinterfaces/subinterface{0}/ipv6/config/enabled
+[2023/07/03 10:14:06.450862][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 10:14:06.450952][DEBUG][IFMGR] ifmgr_read_if_cfg_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/07/03 10:14:06.454912][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 10:14:06.454956][DEBUG][IFMGR] ifmgr_read_if_cfg_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/07/03 10:14:06.465005][DEBUG][IFMGR] ifmgrcfg_read_and_publish_if: fec cfg - 0 for swp54
+[2023/07/03 10:14:06.469187]**ERR**[IFMGR] SUBIF 0 exists:swp54 tag:0
+[2023/07/03 10:14:06.478436][DEBUG][IFMGR] DEBUG: Add msg received for intf swp54
+[2023/07/03 10:14:06.478495][DEBUG][IFMGR] ifmgr_process_new_if_config: swp54 data->new_cfg->fec_type:3 - IF_FEC_TTYPE_INVALID, data->curr_cfg->fec_type - 3 data->initial_config_done:1 , chg:1
+[2023/07/03 10:14:06.478522][DEBUG][IFMGR] ifmgr_process_new_if_config(): swp54 data->new_cfg->fec_type 3 data->curr_cfg->fec_type - 3 data->initial_config_done:1 , chg:1
+[2023/07/03 10:14:06.478598][DEBUG][IFMGR] ifmgr_l3_process_intf_event: intf:swp54, delete:0, g_subif_lnx_bulk_in_prog:0
+[2023/07/03 10:14:06.478635][DEBUG][IFMGR] DEBUG: Adding INTF swp54 obj to the txlist for add event
+[2023/07/03 10:14:06.478660][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/07/03 10:14:06.494657][DEBUG][IFMGR] L3 update ipv4 enable 1 index 1054 l3_info->curr_v4_cfg.enabled 1, urpf_mode 0
+[2023/07/03 10:14:06.494702][DEBUG][IFMGR] L3 update ipv6 enable 1 index 1054 l3_info->curr_v6_cfg.enabled 1
+[2023/07/03 10:14:06.494722][DEBUG][IFMGR] No subinterface config exists for interface swp54
+[2023/07/03 10:14:06.494744][DEBUG][IFMGR] DEBUG1: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU: 8974, ipv6_enabled: 1, parent_ifindex: 1054
+[2023/07/03 10:14:06.494766][DEBUG][IFMGR] DEBUG2: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU: 8974, ipv6_enabled: 1, parent_ifindex: 1054
+[2023/07/03 10:14:06.494785][DEBUG][IFMGR] No V4 addresses have been configured on interface swp54
+[2023/07/03 10:14:06.495054][DEBUG][IFMGR] MPSC L3 TBL add/update publish succeeded for ifindex 1054, v4 mtu 8974
+[2023/07/03 10:14:06.495090][DEBUG][IFMGR] Executing cmd  echo 0 > /proc/sys/net/ipv6/conf/swp54/disable_ipv6 to enable interface
+[2023/07/03 10:14:06.502160][DEBUG][IFMGR] Executing cmd  ip addr add 3000::1/120 dev swp54 to enable interface
+[2023/07/03 10:14:06.515434][DEBUG][IFMGR] VRF - default DS v6 swp54 indx 41e Route 3000::1/120 Admin state:2 Link state:2 force:0 Updated
+[2023/07/03 10:14:06.515679][DEBUG][IFMGR] VRF - default DS v6 swp54 indx 41e Route 3000::1/128 Admin state:2 Link state:2 force:0 Updated
+[2023/07/03 10:14:06.520383][DEBUG][CONFDPROXY] Called Config Handler, read socket=246, result=0
+[2023/07/03 10:14:06.520934][DEBUG][IFMGR] Running duplicate addr check for swp54
+[2023/07/03 10:14:06.521074][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/07/03 10:14:06.521155][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp54
+[2023/07/03 10:14:06.521223][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp54 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/07/03 10:14:06.521289][DEBUG][IFMGR] IFMGR publishing ifindex 1054 to lnx index 1054 mapping
+[2023/07/03 10:14:06.521360][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp54 ifindex 1054, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/07/03 10:14:06.521509][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp54 ifindex 1054, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+[2023/07/03 10:14:06.530126][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_del()
+[2023/07/03 10:14:06.536556][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_update()
+[2023/07/03 10:14:06.540309][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/03 10:14:06.541154][DEBUG][IFMGR] DEBUG: Adding INTF swp54 obj to the txlist for add event
+[2023/07/03 10:14:06.541255][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/07/03 10:14:06.545532][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 10:14:06.545645][DEBUG][IFMGR] ifmgr_subif_cfg_read_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/07/03 10:14:06.549511][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 10:14:06.549695][DEBUG][IFMGR] ifmgr_subif_cfg_read_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/07/03 10:14:06.553040][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/03 10:14:06.553911][DEBUG][IFMGR] DEBUG: Adding INTF swp54 obj to the txlist for add event
+
+
+
+[2023/07/03 10:14:06.392912][DEBUG][IFMGR] ifmgr_validate_subinterface: kpath =  /interfaces/interface{swp54}/subinterfaces/subinterface{0}
+[2023/07/03 10:14:06.400415][DEBUG][IFMGR] ifmgr_validate_intf_ip_enabled: kpath = /interfaces/interface{swp54}/subinterfaces/subinterface{0}/ipv6/config/enabled
+[2023/07/03 10:14:06.450862][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 10:14:06.450952][DEBUG][IFMGR] ifmgr_read_if_cfg_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/07/03 10:14:06.454912][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 10:14:06.454956][DEBUG][IFMGR] ifmgr_read_if_cfg_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/07/03 10:14:06.465005][DEBUG][IFMGR] ifmgrcfg_read_and_publish_if: fec cfg - 0 for swp54
+[2023/07/03 10:14:06.469187]**ERR**[IFMGR] SUBIF 0 exists:swp54 tag:0
+[2023/07/03 10:14:06.478436][DEBUG][IFMGR] DEBUG: Add msg received for intf swp54
+[2023/07/03 10:14:06.478495][DEBUG][IFMGR] ifmgr_process_new_if_config: swp54 data->new_cfg->fec_type:3 - IF_FEC_TTYPE_INVALID, data->curr_cfg->fec_type - 3 data->initial_config_done:1 , chg:1
+[2023/07/03 10:14:06.478522][DEBUG][IFMGR] ifmgr_process_new_if_config(): swp54 data->new_cfg->fec_type 3 data->curr_cfg->fec_type - 3 data->initial_config_done:1 , chg:1
+[2023/07/03 10:14:06.478598][DEBUG][IFMGR] ifmgr_l3_process_intf_event: intf:swp54, delete:0, g_subif_lnx_bulk_in_prog:0
+[2023/07/03 10:14:06.478635][DEBUG][IFMGR] DEBUG: Adding INTF swp54 obj to the txlist for add event
+[2023/07/03 10:14:06.478660][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/07/03 10:14:06.494657][DEBUG][IFMGR] L3 update ipv4 enable 1 index 1054 l3_info->curr_v4_cfg.enabled 1, urpf_mode 0
+[2023/07/03 10:14:06.494702][DEBUG][IFMGR] L3 update ipv6 enable 1 index 1054 l3_info->curr_v6_cfg.enabled 1
+[2023/07/03 10:14:06.494722][DEBUG][IFMGR] No subinterface config exists for interface swp54
+[2023/07/03 10:14:06.494744][DEBUG][IFMGR] DEBUG1: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU: 8974, ipv6_enabled: 1, parent_ifindex: 1054
+[2023/07/03 10:14:06.494766][DEBUG][IFMGR] DEBUG2: VRF table id: 1, MTU: 8974, ipv4_enabled: 1, IPv6 MTU: 8974, ipv6_enabled: 1, parent_ifindex: 1054
+[2023/07/03 10:14:06.494785][DEBUG][IFMGR] No V4 addresses have been configured on interface swp54
+[2023/07/03 10:14:06.495054][DEBUG][IFMGR] MPSC L3 TBL add/update publish succeeded for ifindex 1054, v4 mtu 8974
+[2023/07/03 10:14:06.495090][DEBUG][IFMGR] Executing cmd  echo 0 > /proc/sys/net/ipv6/conf/swp54/disable_ipv6 to enable interface
+[2023/07/03 10:14:06.502160][DEBUG][IFMGR] Executing cmd  ip addr add 3000::1/120 dev swp54 to enable interface
+[2023/07/03 10:14:06.515434][DEBUG][IFMGR] VRF - default DS v6 swp54 indx 41e Route 3000::1/120 Admin state:2 Link state:2 force:0 Updated
+[2023/07/03 10:14:06.515679][DEBUG][IFMGR] VRF - default DS v6 swp54 indx 41e Route 3000::1/128 Admin state:2 Link state:2 force:0 Updated
+[2023/07/03 10:14:06.520383][DEBUG][CONFDPROXY] Called Config Handler, read socket=246, result=0
+[2023/07/03 10:14:06.520934][DEBUG][IFMGR] Running duplicate addr check for swp54
+[2023/07/03 10:14:06.521074][DEBUG][IFMGR] ifmgr_pub_cb(): restart_handled:1, restarted:0
+[2023/07/03 10:14:06.521155][DEBUG][IFMGR] DEBUG: Processing UPDATE event for interface swp54
+[2023/07/03 10:14:06.521223][DEBUG][IFMGR] ifmgr_mpsc_publish_if_data: swp54 ifmgr_main_ctxt.restarted: 0, initial_config_done:1, restart_handled:1
+[2023/07/03 10:14:06.521289][DEBUG][IFMGR] IFMGR publishing ifindex 1054 to lnx index 1054 mapping
+[2023/07/03 10:14:06.521360][DEBUG][IFMGR] ifmgr_populate_ds_ifmgr_if_obj_from_ifindex_info() swp54 ifindex 1054, admin state = 2, link state = 2, fec_tytpe = 3, speed:8 oper speed 8
+[2023/07/03 10:14:06.521509][DEBUG][IFMGR] MPSC IF TBL add/update publish succeeded for swp54 ifindex 1054, admin state = 2, link state = 2, fec_tytpe = 3, urpf_mode  = 0
+[2023/07/03 10:14:06.530126][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_del()
+[2023/07/03 10:14:06.536556][DEBUG][IFMGR] DEBUG: Entered ifmgr_subif_cfg_read_update()
+[2023/07/03 10:14:06.540309][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/03 10:14:06.541154][DEBUG][IFMGR] DEBUG: Adding INTF swp54 obj to the txlist for add event
+[2023/07/03 10:14:06.541255][DEBUG][IFMGR] DEBUG: Scheduled the pub event by starting the evtimer
+[2023/07/03 10:14:06.545532][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 10:14:06.545645][DEBUG][IFMGR] ifmgr_subif_cfg_read_only_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence skipping
+[2023/07/03 10:14:06.549511][DEBUG][IFMGR] ifmgr_check_if_elem_in_global_ifname_list(): swp54 not found on the ifmgr_global_ifname_list
+[2023/07/03 10:14:06.549695][DEBUG][IFMGR] ifmgr_subif_cfg_read_exclude_global_ifname_list(): Indicates absence of "no ip" address config on the intf - hence process here
+[2023/07/03 10:14:06.553040][DEBUG][IFMGR] l3 urpf_mode:0 subif_num:0
+[2023/07/03 10:14:06.553911][DEBUG][IFMGR] DEBUG: Adding INTF swp54 obj to the txlist for add event
+
+
+
+
+
+
+
+
+/*
+ * Enable (or disable) linux v6 interface
+ */
+static void ifmgr_enable_disable_lnx_v6_interface (l3_info_t *data, bool enable)
+{
+    uint8_t index;
+    char cmd[100];
+    char buf[INET6_ADDRSTRLEN + 1];
+
+    snprintf(cmd, sizeof(cmd), "echo %d > /proc/sys/net/ipv6/conf/%s/disable_ipv6",
+             enable ? 0 : 1,
+             data->if_name);
+    ifmgr_debug_msg("Executing cmd  %s to %s interface \n",
+                    cmd, enable ? "enable" : "disable");
+    if (system(cmd) < 0) {
+        ifmgr_err_msg("Error in system cmd while %s interface",
+                      enable ? "enabling" : "disabling");
+    }
+
+    if (enable && data->curr_v6_cfg.v6_addr_info.count) {
+        index = 0; // We support only one GB address as of now.
+        memset(buf, 0, sizeof(buf));
+        inet_ntop(AF_INET6,
+                  &data->curr_v6_cfg.v6_addr_info.addr_list[index].addr.v6_pfx_addr,
+                  buf, INET6_ADDRSTRLEN);
+        snprintf(cmd, sizeof(cmd), "ip addr add %s/%d dev %s",
+                 buf,
+                 data->curr_v6_cfg.v6_addr_info.addr_list[index].addr.v6_pfx_len,
+                 data->if_name);
+        ifmgr_debug_msg("Executing cmd  %s to %s interface \n",
+                        cmd, enable ? "enable" : "disable");
+        if (system(cmd) < 0) {
+            ifmgr_err_msg("Error in system cmd while %s interface",
+                          enable ? "enabling" : "disabling");
+        }
+    }
+}

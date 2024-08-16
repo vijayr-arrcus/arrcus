@@ -1,0 +1,12 @@
+./mpsctl -t /default/bfd/common/bfd_hal_session_cfg_tbl/ -s Bfd.bfd_hal_session_cfg_object
+./mpsctl -t /default/oper/infra/ifmgr/vlans/ -s Ifmgr.ifmgr_vlan
+./mpsctl -t /default/oper/acl/hal/acl/ -s Acl.acl_hal_acl_object
+./mpsctl -t /default/hal/copp/copp_hal_policer/ -s Qos.qos_hal_police_object
+./mpsctl -t /default/oper/acl/hal/ace/ -s Acl.acl_hal_ace_object
+./mpsctl -t /default/hal/copp/copp_hal_service_policy/ -s Qos.qos_hal_service_policy_object
+./mpsctl -t /default/oper/infra/ifmgr/ifs/ -s Ifmgr.ifmgr_if
+./mpsctl -t /default/hal/sflow/sflow_target/ -s Sflow.sflow_hal_target_config_object
+./mpsctl -t /default/oper/dpal/common/dpal_bfd_session_stats_tbl/ -s Dpal.dpal_bfd_session_stats_object
+/usr/lib/arcos/mpsctl -t /default/oper/infra/ifmgr/ports/ -s Ifmgr.ifmgr_port
+./mpsctl -t /default/oper/dpal/common/dpal_port_alloc/ -s Dpal.dpal_port // port link status notification.
+./mpsctl -t /default/oper/acl/hal/target/ -s Acl.acl_hal_target_object

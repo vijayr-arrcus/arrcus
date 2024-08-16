@@ -1,0 +1,6 @@
+switch (hg2->ppd_overlay1.ppd_type) {
+	case 2:
+		return (((hg2->ppd_overlay3.opcode & 0x3) << 16) |
+						(hg2->ppd_overlay3.dst_vp_high << 8) |
+						(hg2->ppd_overlay3.dst_vp_low));
+}

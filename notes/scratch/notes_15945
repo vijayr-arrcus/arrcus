@@ -1,0 +1,119 @@
+1. power on after a long time no issue seen.
+2. Reboot and try immediately.
+3. Reboot wait for some time and try.
+4.
+
+
+Starting watchdog keepalive daemon...wd_keepalive:  no watchdog device configured, aborting                         [3113/9466].
+Stopping hotplug events dispatcher: systemd-udevd.
+Stopping Fault Agent: faultd.
+Loading new kernel image into memory...Cannot open `/vmlinuz': No such file or directory
+failed.
+Stopping lttng-sessiond: lttng-sessiond.
+Stopping ONLP SNMP Agent: onlp-snmpd.
+Stopping ONLP Platform Agent: onlpd.
+Stopping radvd: No /usr/sbin/radvd found running; none killed.
+radvd.
+Stopping resolvconf...done.
+Stopping S.M.A.R.T. daemon: smartd.
+[  310.300563 ] rcu: INFO: rcu_sched self-detected stall on CPU
+[  310.306274 ] rcu:     2-....: (20999 ticks this GP) idle=302/1/0x4000000000000002 softirq=73737/73746 fqs=5218
+[  310.316144 ] rcu:      (t=21016 jiffies g=169525 q=12842)
+[  310.321328 ] NMI backtrace for cpu 2
+[  310.324949 ] CPU: 2 PID: 5265 Comm: dpal_worker Tainted: G           O      4.19.84-arrcus #1
+[  310.333514 ] Hardware name: QTMC T4048-IX8A 1IX8UZZ000P/Switch Board, BIOS 3A09 08/06/2019
+[  310.341823 ] Call Trace:
+[  310.344400 ]  <IRQ>
+[  310.346550 ]  dump_stack+0x57/0x7a
+[  310.349997 ]  nmi_cpu_backtrace.cold.3+0x14/0x53
+[  310.354657 ]  ? lapic_can_unplug_cpu.cold.29+0x3a/0x3a
+[  310.359839 ]  nmi_trigger_cpumask_backtrace+0x8d/0x9a
+[  310.364934 ]  arch_trigger_cpumask_backtrace+0x14/0x20
+[  310.370118 ]  rcu_dump_cpu_stacks+0x8c/0xbe
+[  310.374345 ]  rcu_check_callbacks.cold.83+0x202/0x359
+[  310.379440 ]  ? account_system_index_time+0x8b/0xa0
+[  310.384362 ]  ? tick_sched_do_timer+0x60/0x60
+[  310.388764 ]  update_process_times+0x2a/0x60
+[  310.393078 ]  tick_sched_handle+0x38/0x50
+[  310.397131 ]  tick_sched_timer+0x37/0x80
+[  310.401098 ]  __hrtimer_run_queues+0xf3/0x250
+[  310.405499 ]  hrtimer_interrupt+0xfc/0x210
+[  310.409640 ]  ? rcu_irq_exit+0x18/0x20
+[  310.413433 ]  smp_apic_timer_interrupt+0x62/0x130
+[  310.418181 ]  apic_timer_interrupt+0xf/0x20
+[  310.422409 ]  </IRQ>
+[  310.424644 ] RIP: 0010:cfg_api_lock+0x38/0x43 [linux_bcm_knet]
+[  310.430521 ] Code: 48 89 fb 48 89 ef e8 dc ed b4 e1 49 89 04 24 83 bb 3c 02 00 00 00 74 18 49 8b 34 24 48 89 ef e8 43 ec b4 e1 8b 83 3c 02 00 00 <85> c0 75 fc eb d3 5b 5d 41 5c c3 83 c8 ff 48 83 3d 17 08 01 00 00
+[  310.449418 ] RSP: 0018:ffffc900023a3b38 EFLAGS: 00000202 ORIG_RAX: ffffffffffffff13
+[  310.457117 ] RAX: 0000000000000001 RBX: ffff8882714e0000 RCX: 0000000000000000
+[  310.464382 ] RDX: 0000000000000001 RSI: 0000000000000286 RDI: ffff8882714e0238
+[  310.471648 ] RBP: ffff8882714e0238 R08: 000c000000000c01 R09: 0000000000000188
+[  310.478913 ] R10: ffff8881f91c2f00 R11: 0000000000000000 R12: ffffc900023a3bb0
+[  310.486180 ] R13: 00007f329effc460 R14: 0000000000000000 R15: 00007f329effc460
+[  310.493447 ] WARNING: kernel stack regs at 00000000ae899545 in dpal_worker:5265 has bad 'bp' value 000000005c8cedde
+[  310.493449 ] unwind stack type:0 next_sp:          (null) mask:0x6 graph_idx:0
+[  310.493451 ] 00000000cd0517a3: ffff888277b03d88 (0xffff888277b03d88)
+[  310.493454 ] 00000000d44198c7: ffffffff8101e687 (show_trace_log_lvl+0x1f0/0x275)
+[  310.493454 ] 00000000a145ed7d: ffffc900023a3b08 (0xffffc900023a3b08)
+[  310.493457 ] 000000002a5b1bb0: ffffffffa007e4e3 (cfg_api_lock+0x38/0x43 [linux_bcm_knet])
+[  310.493458 ] 0000000010816b2b: 0000000000000006 (0x6)
+[  310.493459 ] 0000000006bb65fe: 0000000000000001 (0x1)
+[  310.493460 ] 00000000a5d18684: ffffc900023a0000 (0xffffc900023a0000)
+[  310.493461 ] 000000009917930f: ffffc900023a4000 (0xffffc900023a4000)
+[  310.493461 ] 000000005e9de6ba: 0000000000000000 ...
+[  310.493462 ] 00000000dfc6e17c: ffffc900023a0000 (0xffffc900023a0000)
+[  310.493461 ] 000000009917930f: ffffc900023a4000 (0xffffc900023a4000)
+[  310.493461 ] 000000005e9de6ba: 0000000000000000 ...
+[  310.493462 ] 00000000dfc6e17c: ffffc900023a0000 (0xffffc900023a0000)
+[  310.493463 ] 00000000feaf146f: ffffc900023a4000 (0xffffc900023a4000)
+[  310.493464 ] 0000000042cd6d72: 0000000000000000 ...
+[  310.493465 ] 000000005b21d374: 0000000000000006 (0x6)
+[  310.493466 ] 00000000d47f1182: ffff88820179ce00 (0xffff88820179ce00)
+[  310.493466 ] 000000001f62b923: 0000010100000000 (0x10100000000)
+[  310.493467 ] 00000000568992eb: 0000000000000000 ...
+[  310.493468 ] 00000000cdba0837: ffff888277b03cb8 (0xffff888277b03cb8)
+[  310.493470 ] 0000000077fd8069: ffffffffa007e4e3 (cfg_api_lock+0x38/0x43 [linux_bcm_knet])
+[  310.493471 ] 0000000069f7e4ca: 0000000000000000 ...
+[  310.493472 ] 000000007b9d0ab6: ffffc900023a3a88 (0xffffc900023a3a88)
+[  310.493473 ] 000000000bcf8ec6: 0000000000000086 (0x86)
+[  310.493473 ] 000000007e80a752: 0000000000000000 ...
+[  310.493474 ] 00000000bd2f2637: 0000000000000002 (0x2)
+[  310.493475 ] 00000000cdb36209: ffffffff82565d01 (0xffffffff82565d01)
+[  310.493476 ] 0000000072286c5d: 0000000000000087 (0x87)
+[  310.493477 ] 00000000c4188511: ffff888277b03d98 (0xffff888277b03d98)
+[  310.493478 ] 00000000ef4041b8: ffffffff8101e744 (show_stack+0x38/0x3a)
+[  310.493479 ] 0000000067712e6e: ffff888277b03db8 (0xffff888277b03db8)
+[  310.493481 ] 000000009cbaf1ee: ffffffff81bb1f7d (dump_stack+0x57/0x7a)
+[  310.493482 ] 00000000dae798fb: 0000000000000000 ...
+[  310.493482 ] 00000000bd9a4c43: 0000000000000002 (0x2)
+[  310.493483 ] 00000000baf1b3d3: ffff888277b03de8 (0xffff888277b03de8)
+[  310.493485 ] 00000000dc3bfebc: ffffffff81bb5e9e (nmi_cpu_backtrace.cold.3+0x14/0x53)
+[  310.493487 ] 00000000a886d436: ffffffff81043400 (lapic_can_unplug_cpu.cold.29+0x3a/0x3a)
+[  310.493488 ] 000000007ca73bac: 0000000000000002 (0x2)
+[  310.493489 ] 00000000c918d9fe: 0000000000000002 (0x2)
+[  310.493489 ] 00000000ba7ef5b3: ffffffff82565d68 (0xffffffff82565d68)
+[  310.493490 ] 0000000091d90869: ffff888277b03e10 (0xffff888277b03e10)
+[  310.493492 ] 000000003cf71d29: ffffffff81bb5e7d (nmi_trigger_cpumask_backtrace+0x8d/0x9a)
+[  310.493493 ] 000000003efbd068: ffffffff8244b1c0 (0xffffffff8244b1c0)
+[  310.493494 ] 00000000e358936a: 0000000000000002 (0x2)
+[  310.493495 ] 000000007fd24763: ffffffff8244b1c0 (0xffffffff8244b1c0)
+[  310.493496 ] 0000000036cdfcfd: ffff888277b03e20 (0xffff888277b03e20)
+[  310.493498 ] 00000000f32243b6: ffffffff81043454 (arch_trigger_cpumask_backtrace+0x14/0x20)
+[  310.493498 ] 00000000bb83a317: ffff888277b03e58 (0xffff888277b03e58)
+[  310.493501 ] 0000000056f62365: ffffffff810c1995 (rcu_dump_cpu_stacks+0x8c/0xbe)
+[  310.493502 ] 000000008643ee9b: ffffffff8244b1c0 (0xffffffff8244b1c0)
+[  310.493503 ] 00000000a9ce6ae2: ffff888277b213c0 (0xffff888277b213c0)
+[  310.493503 ] 00000000e505f4dc: ffffffff8244b1c0 (0xffffffff8244b1c0)
+[  310.493504 ] 00000000e1434b96: 000000000000322a (0x322a)
+[  310.493505 ] 00000000d8178429: 0000000000000082 (0x82)
+[  310.493506 ] 00000000bc93f79b: ffff888277b03ea8 (0xffff888277b03ea8)
+[  310.493508 ] 0000000043184cd1: ffffffff810c2020 (rcu_check_callbacks.cold.83+0x202/0x359)
+[  310.493509 ] 000000006207d30a: ffffffff8108cf9b (account_system_index_time+0x8b/0xa0)
+[  310.493510 ] 00000000b7273c17: ffffffff8244b1c0 (0xffffffff8244b1c0)
+[  310.493511 ] 000000005afcbe53: 0000000100002410 (0x100002410)
+[  310.493512 ] 000000005dd9d396: ffff88820179ce00 (0xffff88820179ce00)
+[  310.493513 ] 00000000a1d7e28a: 0000000000000000 ...
+[  310.493514 ] 00000000d38e08d4: ffffc900023a3a88 (0xffffc900023a3a88)
+[  310.493515 ] 00000000b2c5bbdb: ffff888277b1ba40 (0xffff888277b1ba40)
+[  310.493516 ] 000000006a658cc9: ffffffff810d9500 (tick_sched_do_timer+0x60/0x60)
+`

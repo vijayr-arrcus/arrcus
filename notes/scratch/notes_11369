@@ -1,0 +1,8 @@
+1. On a TD3 we have a shared memory of 64K between overlay and underlay.
+Hence we provided overlay-nexthop-profiles to choose how much of the shared memory to be provided to overlay and underlay.
+2. On a TD4 we have dedicated memory of 32k each for overlay and underlay.
+There is a particular mode were we can mark both the memory banks to be overlay (64)
+Therefore there are only two modes of operation.
+a. Overlay 32k and underlay 32k - P1
+b. Overlay 64k and underaly 0 - P2:
+3. We can provide the above two modes of selection to support a scale of more than 15k v4 and 15k v6 hosts.

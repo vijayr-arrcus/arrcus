@@ -1,0 +1,82 @@
+cint_reset();
+
+int unit = 0;
+bcm_l3_ingress_t g_l3_ing;
+bcm_l3_intf_t g_l3_intf;
+
+int
+l3_intf_create (int unit, bcm_l3_intf_t *l3if)
+{
+  bcm_mac_t mac = {0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff};
+
+  bcm_l3_intf_t_init(l3if);
+  sal_memcpy(l3if->l3a_mac_addr, mac, 6);
+  l3if->l3a_mtu = 8974;
+  l3if->l3a_vid = 3966;
+
+  print bcm_l3_intf_create(unit, l3if);
+  printf("%s l3 intf id returned is %d\n",
+         l3if->l3a_intf_id);
+  return 1;
+}
+
+int
+l3_ingress_get (int unit, int id)
+{
+	int rv = 0;
+	bcm_l3_ingress_t l3_ing;
+	print bcm_l3_ingress_t_init(&l3_ing);
+	rv = bcm_l3_ingress_get(unit, id, &l3_ing);
+  printf("l3 ingress returned %d/%s", rv, bcm_errmsg(rv));
+  if (!BCM_FAILURE(rv)) {
+    printf("failed to get ingress object\n");
+    return -1;
+	}
+  print l3_ing;
+	return 1;
+}
+
+int
+l3_ingress_create (int unit, int id, bcm_l3_ingress_t *l3_ing)
+{
+	int rv = 0;
+
+  bcm_l3_ingress_t_init(l3_ing);
+  l3_ing->flags |= BCM_L3_INGRESS_WITH_ID;
+  l3_ing->vrf = 0; // default vrf.
+
+  rv = bcm_l3_ingress_create(unit, l3_ing, &id);
+
+	if (!BCM_FAILURE(rv)) {
+     printf("failed to create ingress object %d/%s", rv, bcm_errmsg(rv));
+		 return -1;
+	}
+	return 1;
+}
+
+int
+l3_ingress_destroy (int unit, int id)
+{
+	print bcm_l3_ingress_destroy(unit, id);
+  return 1;
+}
+
+int
+l3_intf_destroy (int unit, int id)
+{
+	bcm_l3_intf_t intf;
+	bcm_l3_intf_t_init(&intf);
+	intf.l3a_intf_id = id;
+	print bcm_l3_intf_delete(unit, &intf);
+	return 1;
+}
+
+//print l3_intf_create(unit, &g_l3_intf);
+//print g_l3_intf;
+//print l3_ingress_get(unit, g_l3_intf.l3a_intf_id);
+//print l3_ingress_destroy(unit, g_l3_intf.l3a_intf_id);
+//print l3_intf_destroy(unit, g_l3_intf.l3a_intf_id);
+//print l3_intf_create(unit, &g_l3_intf);
+//print g_l3_intf;
+//print l3_ingress_get(unit, g_l3_intf.l3a_intf_id);
+//print l3_ingress_create(unit, g_l3_intf.l3a_intf_id, &g_l3_ing);

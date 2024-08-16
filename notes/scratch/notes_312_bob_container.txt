@@ -1,0 +1,3 @@
+bob create buster 521_b_p2_image
+bob launch 521_b_p2_image 521_b_p2
+bob connect 521_b_p2

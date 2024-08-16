@@ -1,0 +1,14 @@
+cint_reset();
+bcm_gport_t dgpp_port;
+int unit=0;
+int modid = 66;
+bcm_port_t port = 123;
+bcm_port_t rand_port = 10;
+BCM_GPORT_MODPORT_SET(dgpp_port, modid, port);
+
+print bcm_port_gport_add(unit, port, dgpp_port);
+
+
+print bcm_port_gport_delete(unit, port, dgpp_port);
+
+

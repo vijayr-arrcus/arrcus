@@ -1,0 +1,62 @@
+L3:
+===
+copy to cpu BCM_L3_COPY_TO_CPU ---> This might break the current copp code.
+
+"global_drop_egr_id"      : 100003,
+"global_punt_egr_id"      : 100002,
+
+
+if (RET_CODE_SUCCESS == ds_fib_egressid_path_flags_get(path_info, &flags)) {
+	if (flags & FIB_PATH_FLAG_UNRESOLVED) {
+		sdk_egress_info->flags |= BCM_L3_L2TOCPU; ---> the next hop will not be g_l3punt2cpu_egrobj....
+	} else if (flags & FIB_PATH_FLAG_DROP) {
+		*use_global_nh = true;
+		*hwid = g_asic_global_ctxt.g_blackhole_egrobj;
+	} else if ((flags & FIB_PATH_FLAG_LOCAL) ||
+						 (flags & FIB_PATH_FLAG_GLEAN)) {
+		*use_global_nh = true;
+		*hwid = g_asic_global_ctxt.g_l3punt2cpu_egrobj;
+	}
+}
+
+
+
+L2:
+===
+
+The transient traffic not/matching catch-all.
+L2 switched IP packet which was matching the FP rules before should now match the default catch-all. ---> is this right ?
+a. L2 switch. --> L2 TCAM should have an entry for CPU,
+b. Broadcast. --> BUM
+
+Mirror:
+	The dst port will still be the actual egress port, and the match criteria would be the copy to cpu reason code (check if this is the case).
+FP entry with copy to cpu:
+  What are the other copy to cpu reason codes, and will they all fall into DEFAUL catch-all case ?
+
+
+Deafult catch-all case how robust it is:
+
+	
+BUM traffic should be catch-all, validate.	 because we are saying skip in code.
+
+
+Understand why BFD is in Catch all.
+
+Understand why bcmFieldActionSwitchToCpuCancel is in catch all. and then bcmFieldActionDrop.
+
+but below is the catch-all action I see
+
+--
+ PacketRes
+    Part:2 Offset0: 132 Width0:   4
+    Part:2 Offset1: 136 Width1:   4
+    DATA=0x00000003
+    MASK=0xffffffff
+         action={act=DropCancel, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 5  slice = 8 idx=28 entries=3}{GreenBytes}{GreenPackets}{YellowBytes}{YellowPackets}{RedBytes}{RedPackets}
+         Extended statistics=NULL
+EID 0x00000007: gid=0x3,
+ slice=0, slice_idx=0x7e, part=0, prio=0x7800000c, flags=0x10602, Installed, Enabled, color_indep=1
+

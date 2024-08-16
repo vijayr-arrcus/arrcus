@@ -1,0 +1,378 @@
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0> fp stat get statid=234 t=p
+fp stat get statid=234 t=p
+The value is: 0x00000090f
+BCM.0>
+BCM.0> fp stat get statid=235 t=p
+fp stat get statid=235 t=p
+The value is: 0x000000000
+BCM.0>
+BCM.0> fp stat get statid=236 t=p
+fp stat get statid=236 t=p
+The value is: 0x000000000
+BCM.0>
+BCM.0> fp stat get statid=237 t=p
+fp stat get statid=237 t=p
+The value is: 0x000000931
+BCM.0>
+
+
+
+show c cpu
+fp stat get statid=80 t=p
+cint
+print bcm_bfd_endpoint_stat_get(unit, 2, &ctr_info, BCM_BFD_ENDPOINT_STAT_64BIT);
+print ctr_info;
+exit;
+
+2 == 1B52 == 6994 == 0x00000DB9  == 3513
+30 == 0x00001B6C == 7020   == 0x00000DC6 == 3526
+
+show c 2 | fp stat = 0x000001120 (4384) | packets_in_64 = {0x00002240} (8768) | packets_out_64 = {0x0000112E} (4398)
+show c 10 | 0x000001124  (4388)   | 0x00002248 (8776) | 0x00001132 (4402)
+
+
+epid = 2 dropping... peer learnt the discriminiator.
+
+
+
+
+port ce6 -- trunk ---> bfd session with speical (micro bfd) --- bfd session with known mac (macro bfd).
+
+
+
+
+
+
+leaf2(macro)      ------      (micro)leaf3 local disc = 40;
+
+
+
+
+device1:
+trunk1 -- add a port to trunk (ce6) create a micro bfd session (reserrved multicast mac -egress encap 1)for ce6 with l3intf as trunk1.endpoint create ep_id = 2
+			 -- dont add a port to trunk (ce7) create a micro bfd session (reserved multicast mac -egress encap 1) for ce7 with l3intf as trunk1. The endpoint creation goes through fine and I see below message. and most likely a macro bfd session is created. ep_id = 1.
+0:bcmi_xgs5_bfd_endpoint_gport_resolve:
+ Dedicated MAC 01-00-5E-90-00-01 must not be used for regular BFD session
+       -- now add ce7 to trunk.
+
+on ce7, the peer is sending micro bfd which matches the default fp entry however, it got mapped to the maco bfd session packet ep_id=1, eventhough I see drop counters are incremented I see that the endpoint learns the MyDiscrimoniator in the packets and responds further packets with a valid YourDiscriminator.
+
+Logs below:
+
+
+BCM.0>
+BCM.0> fp show group 4
+fp show group 4
+GID          4: gid=0x4, instance=0 mode=Double, stage=Ingress lookup=Enabled, ActionResId={-1}, pbmp={0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000088888888888888882222222222222223}
+         qset={DstMac, EtherType, Stage, StageIngress, InterfaceClassL2, InterfaceClassL3, IcmpTypeCode, MyStationHit, InterfaceClassVPort, BfdYourDiscriminator, PktType},
+         aset={CosQCpuNew, CopyToCpu, Drop, PolicerGroup, StatGroup, BFDSessionIdNew},
+         Qualifiers in Part-0: {EtherType->InterfaceClassL2->InterfaceClassVPort->BfdYourDiscriminator->PktType},
+         Qualifiers in Part-1: {DstMac->InterfaceClassL3->IcmpTypeCode->MyStationHit},
+
+         group_priority= 20
+         slice_primary =  {slice_number=3, Entry count=768(0x300), Entry free=764(0x2fc)},
+         slice_secondary = {slice_number=4}
+         group_status={prio_min=0, prio_max=0, entries_total=2304, entries_free=2300,
+                       counters_total=83968, counters_free=66044, meters_total=6144, meters_free=5376}
+EID 0x0000019e: gid=0x4,
+ slice=3, slice_idx=0, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000000
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2047(0x7ff), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 275  slice = 9 idx=3 entries=1}{Packets}
+         Extended statistics=NULL
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000000
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2047(0x7ff), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 276  slice = 9 idx=2 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x000001a0: gid=0x4,
+ slice=3, slice_idx=0x2, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x2, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000053
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=1(0x1), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 277  slice = 9 idx=7 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x000001a1: gid=0x4,
+ slice=3, slice_idx=0x3, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x3, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000054
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2(0x2), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 278  slice = 9 idx=6 entries=1}{Packets}
+         Extended statistics=NULL
+BCM.0>
+BCM.0> fp stat get statid=275 t=p     [Incoming packets have no YourDiscriminator]
+fp stat get statid=275 t=p
+The value is: 0x000000309
+BCM.0>
+BCM.0> fp stat get statid=276 t=p
+fp stat get statid=276 t=p
+The value is: 0x000000000
+BCM.0>
+BCM.0> fp stat get statid=277 t=p  [This is a macro bfd session no fp entry hit but the endpoint is getting mapped for invalid packets]
+fp stat get statid=277 t=p
+The value is: 0x000000000
+BCM.0>
+BCM.0> fp stat get statid=278 t=p
+fp stat get statid=278 t=p
+The value is: 0x000000339
+BCM.0>
+
+cint>
+cint>
+cint>
+cint>  print bcm_bfd_endpoint_stat_get(unit, 1, &ctr_info, BCM_BFD_ENDPOINT_STAT_64BIT);
+ print bcm_bfd_endpoint_stat_get(unit, ep_id, &ctr_info, BCM_BFD_ENDPOINT_STAT_64BIT);
+int $$ = 0 (0x0)
+cint>
+cint> print ctr_info;
+print ctr_info;
+bcm_bfd_endpoint_stat_t ctr_info = {
+    unsigned int packets_in = 0 (0x0)
+    unsigned int packets_out = 0 (0x0)
+    unsigned int packets_drop = 0 (0x0)
+    unsigned int packets_auth_drop = 0 (0x0)
+    uint64 packets_in_64 = {0x00000000 0x00000000}
+    uint64 packets_out_64 = {0x00000000 0x000003BA}
+    uint64 packets_drop_64 = {0x00000000 0x00000774}
+    uint64 packets_auth_drop_64 = {0x00000000 0x00000000}
+    uint64 packets_echo_reply = {0x00000000 0x00000000}
+}
+
+
+
+device2:
+trunk1 -- add a port to trunk (ce6) create a micro bfd session (reserrved multicast mac -egress encap 1)for ce6 with l3intf as trunk1.
+trunk1 -- add a port to trunk (ce7) create a micro bfd session (reserrved multicast mac -egress encap 1)for ce7 with l3intf as trunk1.
+
+
+
+what haoppens when we have micro bfd with reserved multicast mac encap) and a unique multicast mac encap on a port which is part of trunk.
+
+
+Logs:
+
+
+BCM.0>
+BCM.0> fp show group 4
+fp show group 4
+GID          4: gid=0x4, instance=0 mode=Double, stage=Ingress lookup=Enabled, ActionResId={-1}, pbmp={0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000088888888888888882222222222222223}
+         qset={DstMac, EtherType, Stage, StageIngress, InterfaceClassL2, InterfaceClassL3, IcmpTypeCode, MyStationHit, InterfaceClassVPort, BfdYourDiscriminator, PktType},
+         aset={CosQCpuNew, CopyToCpu, Drop, PolicerGroup, StatGroup, BFDSessionIdNew},
+         Qualifiers in Part-0: {EtherType->InterfaceClassL2->InterfaceClassVPort->BfdYourDiscriminator->PktType},
+         Qualifiers in Part-1: {DstMac->InterfaceClassL3->IcmpTypeCode->MyStationHit},
+
+         group_priority= 20
+         slice_primary =  {slice_number=3, Entry count=768(0x300), Entry free=762(0x2fa)},
+         slice_secondary = {slice_number=4}
+         group_status={prio_min=0, prio_max=2147483647, entries_total=2304, entries_free=2298,
+                       counters_total=83968, counters_free=66042, meters_total=6144, meters_free=5376}
+EID 0x00000080: gid=0x4,
+ slice=3, slice_idx=0, part=0, prio=0x7fffffff, flags=0x10602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0, part=1, prio=0x7fffffff, flags=0x10604, Installed, Enabled, color_indep=1
+
+ DstMac
+    Part:1 Offset0:  0 Width0:  16
+    Part:1 Offset1: 20 Width1:  16
+    Part:1 Offset2: 64 Width2:  16
+    DATA=0x0000ffff ffffffff
+    MASK=0x0000ffff ffffffff
+ EtherType
+    Part:0 Offset0: 48 Width0:  16
+    DATA=0x00000806
+    MASK=0x0000ffff
+ InterfaceClassL2
+    Part:0 Offset0: 64 Width0:  12
+    DATA=0x00000008
+    MASK=0x00000fff
+ InterfaceClassVPort
+    Part:0 Offset0: 16 Width0:   4
+    Part:0 Offset1: 36 Width1:   4
+    Part:0 Offset2: 40 Width2:   4
+    DATA=0x00000008
+    MASK=0x00000fff
+         action={act=Drop, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 43  slice = 9 idx=3 entries=1}{Packets}{Bytes}
+         Extended statistics=NULL
+EID 0x00000081: gid=0x4,
+ slice=3, slice_idx=0x1, part=0, prio=0x7fffffff, flags=0x10602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x1, part=1, prio=0x7fffffff, flags=0x10604, Installed, Enabled, color_indep=1
+
+ InterfaceClassL3
+    Part:1 Offset0: 16 Width0:   4
+    Part:1 Offset1: 36 Width1:   4
+    Part:1 Offset2: 40 Width2:   4
+    DATA=0x00000008
+    MASK=0x00000fff
+ IcmpTypeCode
+    Part:1 Offset0: 48 Width0:  16
+    DATA=0x00008700
+    MASK=0x0000ff00
+ InterfaceClassVPort
+    Part:0 Offset0: 16 Width0:   4
+    Part:0 Offset1: 36 Width1:   4
+    Part:0 Offset2: 40 Width2:   4
+    DATA=0x00000008
+    MASK=0x00000fff
+         action={act=Drop, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 44  slice = 9 idx=2 entries=1}{Packets}{Bytes}
+         Extended statistics=NULL
+EID 0x0000019a: gid=0x4,                                                                                                   [72/2076] slice=3, slice_idx=0x2, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x2, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000000
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2047(0x7ff), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 118  slice = 9 idx=7 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x0000019b: gid=0x4,
+ slice=3, slice_idx=0x3, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x3, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000000
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000011
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2047(0x7ff), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 119  slice = 9 idx=6 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x0000019c: gid=0x4,
+ slice=3, slice_idx=0x4, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x4, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000029
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=1(0x1), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 120  slice = 9 idx=5 entries=1}{Packets}
+         Extended statistics=NULL
+EID 0x0000019d: gid=0x4,
+ slice=3, slice_idx=0x5, part=0, prio=0, flags=0x810602, Installed, Enabled, color_indep=1
+ slice=4, slice_idx=0x5, part=1, prio=0, flags=0x810604, Installed, Enabled, color_indep=1
+
+ BfdYourDiscriminator
+    Part:0 Offset0:  0 Width0:  16
+    Part:0 Offset1: 20 Width1:  16
+    DATA=0x00000028
+    MASK=0xffffffff
+ PktType
+    Part:0 Offset0: 44 Width0:   4
+    Part:0 Offset1: 80 Width1:   4
+    DATA=0x00000012
+    MASK=0x0000007f
+         action={act=CopyToCpu, param0=0(0), param1=0(0), param2=0(0), param3=0(0)}
+         action={act=CosQCpuNew, param0=46(0x2e), param1=46(0x2e), param2=0(0), param3=0(0)}
+         action={act=BFDSessionIdNew, param0=2(0x2), param1=0(0), param2=0(0), param3=0(0)}
+         policer=
+         statistics={stat id 121  slice = 9 idx=4 entries=1}{Packets}
+         Extended statistics=NULL
+BCM.0>
+BCM.0>
+BCM.0> fp stat get statid=118 t=p
+fp stat get statid=118 t=p
+The value is: 0x000000001
+BCM.0>
+BCM.0> fp stat get statid=119 t=p
+fp stat get statid=119 t=p
+The value is: 0x000000000
+BCM.0>
+BCM.0> fp stat get statid=120 t=p
+fp stat get statid=120 t=p
+The value is: 0x000000220
+BCM.0>
+BCM.0> fp stat get statid=121 t=p
+fp stat get statid=121 t=p
+The value is: 0x00000022b
+BCM.0>
+
