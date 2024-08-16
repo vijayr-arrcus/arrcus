@@ -1,3 +1,0 @@
-stats
-
-/sys/class/net/vlan1349/statistics

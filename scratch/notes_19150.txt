@@ -1,4 +1,0 @@
-1. branch merge to new branch.
-2. 256 port numbers.
-3. flex counters limited to 64 ports.
-4. bcmsim -- 

@@ -1,6 +1,0 @@
-1. Gave debs with changing mgmt_memory to malloc.
- - Oliver sees changes in memory consumption with the memory not stabilizing.
-2. Gave qos.bin with stats commented out...
- - memory stabilized.
- - memory dint stabilise we still see a jump.
-3. go back to mgmt_memory and commented out stats..

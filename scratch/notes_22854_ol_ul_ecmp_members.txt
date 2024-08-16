@@ -1,1 +1,0 @@
-ds_bcm_xgs_vxlan_flow_path_hwid_get(out_path_bcm_obj, &ecmp_mem_arr[cnt++]);

@@ -1,8 +1,0 @@
-
-
-         BFD session is programmed down even in UP condition and expect a first packet to transition to UP state.
-             in standalone and single unit system --- only one HW-Epoint --- we have the retry in place and at end of retry we declare ADMIN_DOWN. -- the PI will trigger delete of the HW end point.
-             in standalone and dual unit system --- there are two HW-Epoints -- have a retry in place for both the HW endpoints and if both the EPoints have DOWN then we declare ADMIN_DOWN.
-                      and if even one EP point is up... we declare the state as UP... --- but what happens to the other unit HW endpoint ? -- The pi will not trigger delete of the HW end point. 
-
-

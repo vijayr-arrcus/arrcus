@@ -1,8 +1,0 @@
-    a --- > b
-  (A) ----> B  disc
-
-
-  a is sending to b...
-pkt(a) --> my_disc = A, your_disc = 0 --> Admin_state
-  pkt(a) --> my_disc = A, your_disc = B
-  pkt(b) --> my_disc = B, your_disc = A

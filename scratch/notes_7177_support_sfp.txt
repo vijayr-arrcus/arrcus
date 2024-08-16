@@ -1,8 +1,0 @@
-1. 56 -- yes  -- Working
-2. 55 -- yes  -- Not working (not expected)
-3. 54 -- No   -- Not working (expected)
-4. 53 -- yes  -- Working
-5. 52 -- yes  -- Working
-6. 51 -- No   -- Not working (expected)
-7. 50 -- yes  -- Working
-8. 49 -- No  --  Not working (expected)

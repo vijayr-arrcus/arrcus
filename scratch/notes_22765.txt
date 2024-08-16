@@ -1,7 +1,0 @@
-[2023/09/25 08:48:45.903977]--INFO--[BCM PLUGIN] Allocated dgpp 134348801 for replica nh 1245
-[2023/09/25 08:48:45.905159]--INFO--[BCM PLUGIN] Allocated dgpp 134348802 for replica nh 1245
-[2023/09/25 08:48:45.941373]--INFO--[BCM PLUGIN] Allocated dgpp 134348803 for replica nh 1245
-[2023/09/25 08:48:45.942613]--INFO--[BCM PLUGIN] Allocated dgpp 134348804 for replica nh 1245
-[2023/09/25 08:48:46.084889]--INFO--[BCM PLUGIN] Allocated dgpp 134348805 for replica nh 1245
-
-

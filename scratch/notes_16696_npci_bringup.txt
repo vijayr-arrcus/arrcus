@@ -1,3 +1,0 @@
-screen tty.usbserial-A9O4LYFO 115200
-scp -O ONL-standalone.bcm.ARCOS-v5.3.1B_ONL-OS_2023-10-12.1147-efb2261_AMD64_SWI_INSTALLER root@10.10.10.1:/root/
-ifconfig eth0 10.10.10.1 netmast 255.255.255.0

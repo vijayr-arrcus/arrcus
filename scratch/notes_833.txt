@@ -1,6 +1,0 @@
-13490756167301180160
-13490756167301180160
-
-$8 = {__obj = {base = {descriptor = 0x7f1e906645e0 <dpal.bcm_xgs_acl.descriptor>, n_unknown_fields = 0, unknown_fields = 0x0}, has_acl_id = 1, acl_id = 13490756167301180160, has_acl_type = 1, acl_type = 1,    n_ports = 0, po
-rts = 0x7f1e08cae890}}
-

@@ -1,6 +1,0 @@
-TODO: 17th Aug 2023
-1. finalize configs and share it with Adi/Umesh. -- Sandeep.
-2. close gaps on Topology -- Abhijeeth.
-3. Regression and health check of TH3 -- Vijay/Abhijeeth/Sowmya.
-4. Per role test plan including scale and soak tests -- Oliver.
-5. Optics -- Vijay/Abhijeeth.

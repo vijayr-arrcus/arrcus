@@ -1,7 +1,0 @@
-1. CLI implementation
-2. profile implementation.
-  a. yang changes - 2-3 days.
-    i. profile + interface rx + tx.
-  b. confd layer changes - 2 days
-  c. pub-sub layer - 2-3 days. -- posting message to PD layer.
-3. UT and fixing issue 2-3 days. 

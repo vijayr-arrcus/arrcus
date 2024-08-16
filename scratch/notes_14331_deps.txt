@@ -1,2 +1,0 @@
-bcm_xgs_obj_get_deps --- > get parent object from child -- the child knows the parents that its dependant on.
-bcm_xgs_obj_walk_deps --> walk objects that are dependant on me. parent doesnt know the childs dependant on me.

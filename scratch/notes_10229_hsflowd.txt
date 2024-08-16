@@ -1,3 +1,0 @@
-HSP_DEFAULT_LOGFILE
-src/Linux/hsflowd.c
-

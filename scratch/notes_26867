@@ -1,8 +1,0 @@
-dpal_hw_mmu_gbl_prof_link_cache_walker
-    bcmsdk_mmu_queue_profile_to_target_api
-
-    memset(&data_cb, 0, sizeof(struct confd_data_cbs));
-    data_cb.get_object = dpal_intf_pltfm_get_object;
-    strncpy(data_cb.callpoint, arc_hw_platform_if__callpointid_intf_mmu_q_state,
-            MAX_CALLPOINT_LEN);
-

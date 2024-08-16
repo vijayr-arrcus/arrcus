@@ -1,3 +1,0 @@
-https://unix.stackexchange.com/questions/688216/how-to-get-the-full-console-log-of-my-tmux-session-on-linux
-
-capture-pane -S -

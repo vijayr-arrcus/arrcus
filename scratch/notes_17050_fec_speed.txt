@@ -1,3 +1,0 @@
-[2023/01/20 08:55:08.811739]**ERR**[BCM PLUGIN] Unit: 0 app : Failed to apply speed config, sdk : Invalid configuration, type - 1, id - 20
-[2023/01/20 08:55:08.811809]**ERR**[BCM PLUGIN] Unit: 0 app : Failed to read port en state during fec config, sdk : Invalid port, type - 1, id - 20
-[2023/01/20 08:55:08.811820]**ERR**[BCM PLUGIN] Unit: 0 app : Failed to set port attributes, sdk : Invalid port, type - 1, id - 1011

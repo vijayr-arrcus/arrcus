@@ -1,8 +1,0 @@
-cint_reset();
-int unit = 0;
-int port = 35;
-
-bcm_port_info_t sdk_port_info;
-bcm_port_info_t_init(&sdk_port_info);
-print bcm_port_info_get(unit, port, &sdk_port_info);
-

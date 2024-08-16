@@ -1,6 +1,0 @@
-[2022/10/26 12:50:14.273662]**ERR**[BCM PLUGIN] bcmsdk_route_ipv4_api(): Unit: 0 , optype 1 app : VIJAY path info for Ipv4 path hwid, sdk : (null),IPV4, vrf : 0, nhop : 40000319, pfx : 1.0.2.0, pfx_len : 24
-[2022/10/26 12:50:14.273874]**ERR**[BCM PLUGIN] VIJAY delete 0 retval 0
-[2022/10/26 12:50:14.273982]**ERR**[BCM PLUGIN] bcmsdk_route_ipv4_api(): Unit: 0 , optype 1 app : VIJAY new Going to retrieve path info for Ipv4 path hwid, sdk : (null),IPV4, vrf : 0, nhop : 40000319, pfx : 1.0.2.0, pfx_len : 24
-[2022/10/26 12:50:14.274724]**ERR**[BCM PLUGIN] VIJAY dep_type 3302
-[2022/10/26 12:50:14.274843]**ERR**[BCM PLUGIN] bcmsdk_route_ipv4_api(): Unit: 0 , optype 1 app : VIJAY Failed to retrieve path info for Ipv4 path hwid, sdk : (null),IPV4, vrf : 0, nhop : 40000319, pfx : 1.0.2.0, pfx_len : 24
-

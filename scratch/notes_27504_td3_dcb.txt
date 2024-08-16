@@ -1,3 +1,0 @@
-1. refer to PG102 in the box folder for TD3.
-2. HiGig2 Module header is what we need to look for.
-3. page 84.

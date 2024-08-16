@@ -1,5 +1,0 @@
-1. stats object creation in dpal ltsw & esw -- 2 days
-2. polling of stats + ifindex vlan to subinterface ifindex translation -- 2 days.
-3. ifmgr changes to support yang cli -- 1 day
-4. ifmgr changes for show command -- 1 day
-5. td4, x9 and x11 validation -- 2-3 days.

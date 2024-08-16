@@ -1,6 +1,0 @@
-const char *auto_execute = (ARGC == 1) ? ARGV[0] : "YES";
-if (!sal_strcmp(auto_execute, "YES")) {
-  print "execute(): Start";
-  print execute();
-  print "execute(): End";
-}

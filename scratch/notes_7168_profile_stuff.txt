@@ -1,4 +1,0 @@
-
-Write UP:
-1. cases per platform, and features.
-2. resources per features.

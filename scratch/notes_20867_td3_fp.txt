@@ -1,4 +1,0 @@
-fp group 1 show
-fp group 1 brief
-fp stat get statid=43 type=p
-

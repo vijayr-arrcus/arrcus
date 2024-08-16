@@ -1,3 +1,0 @@
-arrcus (platfAGent) ---> UFI ---> sysfs of the SFP fro the status of RX LOSS.
-onlpdump --------------> UFI ---> sysfs of the SFP fro the status of RX LOSS.
-
