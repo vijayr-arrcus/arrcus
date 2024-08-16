@@ -456,3 +456,117 @@ bcm-xgs-nh  67       0             47       57       0          0          0    
                                                                                                                                            nhid:121        created  hwid  100013
 
 root@Ufi-TH5-Leaf1#
+
+
+
+[2024/08/13 14:05:00.402361]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 14:05:00.402367]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 14:05:00.404852]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203968) object created successfuly: (rc=0)
+[2024/08/13 14:05:02.593477]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_cfg: create ecmp_group: ecmp_id:1073741869 ecmp_obj_id:0 num_members:2
+[2024/08/13 14:05:02.595489]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg: Final: ecmp_obj_id = 203969
+[2024/08/13 14:05:04.648259]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 14:05:04.648266]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 14:05:04.650719]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203970) object created successfuly: (rc=0)
+[2024/08/13 14:05:04.652612]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 14:05:04.652619]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 14:05:04.654567]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203971) object created successfuly: (rc=0)
+[2024/08/13 14:05:04.659754]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_cfg: create ecmp_group: ecmp_id:1073741876 ecmp_obj_id:0 num_members:3
+[2024/08/13 14:05:04.661944]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg: Final: ecmp_obj_id = 203972
+
+
+BCM.0>
+BCM.0> l3 ecmp show
+l3 ecmp show
+ECMP group 204097(OverLay):
+        Dynamic mode 0, Flags 0x8, Max path 1, Dynamic size 0
+        Interfaces: (member count 1)
+        {203970}
+ECMP group 204098(OverLay):
+        Dynamic mode 0, Flags 0x8, Max path 1, Dynamic size 0
+        Interfaces: (member count 1)
+        {203971}
+ECMP group 203970(UnderLay):
+        Dynamic mode 1, Flags 0x14, Max path 64, Dynamic size 2048
+        Interfaces: (member count 2)
+        {100020} {100024}
+ECMP group 203971(UnderLay):
+        Dynamic mode 1, Flags 0x14, Max path 64, Dynamic size 2048
+        Interfaces: (member count 3)
+        {100019} {100020} {100024}
+ECMP group 203972(UnderLay):
+        Dynamic mode 2, Flags 0x14, Max path 64, Dynamic size 2048
+        Interfaces: (member count 3)
+        {100021} {100022} {100025}
+BCM.0>
+
+
+[2024/08/13 15:08:38.413574]--INFO--[BCM PLUGIN] bcmsdk_l3_ecmp_main_cb() vijay enter optype:1 dep_type:0 ecmp id 1073741871
+[2024/08/13 15:08:38.413612]--INFO--[BCM PLUGIN] bcmsdk_ecmp_api vijay Entry: after xlate_nhgrpid_to_bcmsdk_ecmp_obj ecmp_id:1073741871 - member_count 2
+[2024/08/13 15:08:38.413642]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 15:08:38.413667]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 15:08:38.416173]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203968) object created successfuly: (rc=0)
+[2024/08/13 15:08:38.421095]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_cfg: create ecmp_group: ecmp_id:1073741871 ecmp_obj_id:0 num_members:2
+[2024/08/13 15:08:38.422902]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg: Final: ecmp_obj_id = 203969
+[2024/08/13 15:08:42.277094]--INFO--[BCM PLUGIN] bcmsdk_l3_ecmp_main_cb() vijay enter optype:1 dep_type:0 ecmp id 1073741873
+[2024/08/13 15:08:42.277187]--INFO--[BCM PLUGIN] bcmsdk_ecmp_api vijay Entry: after xlate_nhgrpid_to_bcmsdk_ecmp_obj ecmp_id:1073741873 - member_count 2
+[2024/08/13 15:08:42.277219]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 15:08:42.277227]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 15:08:42.279319]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203970) object created successfuly: (rc=0)
+[2024/08/13 15:08:42.280249]--INFO--[BCM PLUGIN] bcmsdk_l3_ecmp_main_cb() vijay enter optype:1 dep_type:0 ecmp id 1073741874
+[2024/08/13 15:08:42.280269]--INFO--[BCM PLUGIN] bcmsdk_ecmp_api vijay Entry: after xlate_nhgrpid_to_bcmsdk_ecmp_obj ecmp_id:1073741874 - member_count 3
+[2024/08/13 15:08:42.280310]--INFO--[BCM PLUGIN] vijay Create/Update for l3 ecmp underlay(0)/overlay(-1) is called.
+[2024/08/13 15:08:42.280333]--INFO--[BCM PLUGIN] bcmsdk_xgs_ltsw_l3_ecmp_create_cb() vijay dynamic mode with inactive duration 33 usec flowset_size 2048
+[2024/08/13 15:08:42.282349]--INFO--[BCM PLUGIN] Create(0)/Update(1)=0: vijay l3 ecmp UNDERLAY(203971) object created successfuly: (rc=0)
+[2024/08/13 15:08:42.286524]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_cfg: create ecmp_group: ecmp_id:1073741874 ecmp_obj_id:0 num_members:3
+[2024/08/13 15:08:42.288600]--INFO--[DPAL_PLUGIN_UL_ECMP vijay] bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg: Final: ecmp_obj_id = 203972
+[2024/08/13 15:08:42.305930]--INFO--[BCM PLUGIN] bcmsdk_l3_ecmp_main_cb() vijay enter optype:3 dep_type:3301 ecmp id 1073741871
+[2024/08/13 15:08:42.305951]--INFO--[BCM PLUGIN] bcmsdk_ecmp_api vijay Entry: after xlate_nhgrpid_to_bcmsdk_ecmp_obj ecmp_id:1073741871 - member_count 0
+
+
+
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-vxlan-flow-ul-ecmp-tnl-init
+dpal object-type bcm-xgs-vxlan-flow-ul-ecmp-tnl-init
+ stats total-creates    2
+ stats total-placeholders 0
+ stats total-deletes    1
+ stats total-updates    0
+ stats total-create-deferrals 0
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 1
+ stats total-create-failures 0
+ stats total-update-failures 0
+ stats total-delete-failures 0
+ stats total-retries    0
+ stats total-in-retry-q 0
+ stats total-in-slow-retry-q 0
+ generic-entries entry
+                                                                                                  PENDING  PENDING
+                                    ATTR  ATTR                                                    PARENT   PARENT
+KEY                        STATE    NAME  VALUE  PARENT TYPE                     PARENT KEY       TYPE     KEY
+--------------------------------------------------------------------------------------------------------------------
+tnlid:1,ecmpid:1073741874  created               bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:48
+                                                 bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:45
+                                                 bcm-xgs-vxlan-flow-nh-tnl-init  tnlid:1,nhid:39
+
+root@Ufi-TH5-Leaf1# show dpal object-type bcm-xgs-ecmp
+dpal object-type bcm-xgs-ecmp
+ stats total-creates    3
+ stats total-placeholders 0
+ stats total-deletes    1
+ stats total-updates    0
+ stats total-create-deferrals 0
+ stats total-update-deferrals 0
+ stats total-delete-deferrals 0
+ stats total-create-failures 0
+ stats total-update-failures 0
+ stats total-delete-failures 0
+ stats total-retries    0
+ stats total-in-retry-q 0
+ stats total-in-slow-retry-q 0
+ generic-entries entry
+                                                           PENDING  PENDING
+                            ATTR  ATTR     PARENT  PARENT  PARENT   PARENT
+KEY                STATE    NAME  VALUE    TYPE    KEY     TYPE     KEY
+-----------------------------------------------------------------------------
+ecmpid:1073741873  created  hwid  203970
+ecmpid:1073741874  created  hwid  203971

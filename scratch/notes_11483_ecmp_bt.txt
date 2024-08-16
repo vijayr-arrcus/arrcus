@@ -1,0 +1,262 @@
+(gdb) break bcmsdk_xgs_ltsw_l3_ecmp_create_cb
+Breakpoint 1 at 0x7f8dc4247e10: file /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c, line 2981.
+(gdb) command
+Type commands for breakpoint(s) 1, one per line.
+End with a line saying just "end".
+>bt
+>cont
+>set pagination off
+>end
+(gdb) d
+Delete all breakpoints? (y or n) y
+(gdb) set pagination off
+(gdb) break bcmsdk_xgs_ltsw_l3_ecmp_create_cb
+Breakpoint 2 at 0x7f8dc4247e10: file /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c, line 2981.
+(gdb) command
+Type commands for breakpoint(s) 2, one per line.
+End with a line saying just "end".
+>bt
+>cont
+>end
+(gdb) break bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg
+Breakpoint 3 at 0x7f8dc414afd0: file /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c, line 122.
+(gdb) bt
+#0  0x00007f8f1494538f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f8f15527408 in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#2  0x00007f8f1551d329 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#3  0x00005589c3aaac69 in main (argc=<optimized out>, argv=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_main.c:1333
+(gdb) cont
+Continuing.
+end
+^C
+Thread 1 "dpal.bin" received signal SIGINT, Interrupt.
+0x00007f8f1494538f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) info break
+Num     Type           Disp Enb Address            What
+2       breakpoint     keep y   0x00007f8dc4247e10 in bcmsdk_xgs_ltsw_l3_ecmp_create_cb at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c:2981
+        bt
+        cont
+3       breakpoint     keep y   0x00007f8dc414afd0 in bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c:122
+(gdb) d 3
+(gdb) break bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg
+Breakpoint 4 at 0x7f8dc414afd0: file /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c, line 122.
+(gdb) command
+Type commands for breakpoint(s) 4, one per line.
+End with a line saying just "end".
+>bt
+>cont
+>end
+(gdb) cont
+Continuing.
+[Detaching after fork from child process 20872]
+[Detaching after fork from child process 20874]
+[Detaching after fork from child process 20886]
+[Detaching after fork from child process 20908]
+[Switching to Thread 0x7f8da6ffd700 (LWP 4640)]
+
+Thread 15 "dpal_worker" hit Breakpoint 2, bcmsdk_xgs_ltsw_l3_ecmp_create_cb (data=0x7f8da6ff9f80) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c:2981
+2981    /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c: No such file or directory.
+#0  bcmsdk_xgs_ltsw_l3_ecmp_create_cb (data=0x7f8da6ff9f80) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c:2981
+#1  0x00007f8dc40c9b02 in bcmsdk_ecmp_api (obj=<optimized out>, optype=optype@entry=DPAL_OBJ_MIN, unit=0, alloc_hwid=alloc_hwid@entry=0x7f8da6ffb290, alloc_overlay_hwid=alloc_overlay_hwid@entry=0x7f8da6ffb294) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_ecmp.c:224
+#2  0x00007f8dc40ca7f1 in bcmsdk_l3_ecmp_main_cb (obj=0x7f8d6eb91ea0, obj_old=0x0, optype=DPAL_OBJ_MIN, ctxt=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_ecmp.c:562
+#3  0x00007f8dc419a685 in bcm_xgs_obj_aom_cb (oh=0x7f8d6eb99ef0, client_space=<optimized out>, old_val=0x0, val=0x7f8d6eb91ea0, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:46726
+#4  0x00007f8f1524ed95 in aom_fsm_create_cb (ptr=ptr@entry=0x7f8d6eb99ef0, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1169
+#5  0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525eea0 <obj_fsm>, st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb99ef0, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#6  0x00007f8f152463ef in aom_obj_fsm_run (st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb99ef0, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:319
+#7  0x00007f8f15247f8d in __aom_obj_add (key=key@entry=0x7f8da6ffb840, val=<optimized out>, key_deps=key_deps@entry=0x0, n_deps=n_deps@entry=0, key_srcs=0x7f8da6ffb860, n_srcs=1) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2747
+#8  0x00007f8f1524f77d in aom_obj_add_with_srcs (key=key@entry=0x7f8da6ffb840, val=<optimized out>, key_deps=key_deps@entry=0x0, n_deps=n_deps@entry=0, key_srcs=<optimized out>, n_srcs=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2774
+#9  0x00007f8dc41899c6 in bcm_xgs_ecmp_obj_add (ctxt=0x5589c4fe7c00, obj=0x7f8da6ffb8d0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:8430
+#10 bcm_xgs_obj_add (obj=obj@entry=0x7f8da6ffb8d0, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:43154
+#11 0x00007f8dc40cb643 in bcmsdk_l3_ecmp_api (wh=wh@entry=0x5589c4fe7680, obj=obj@entry=0x5589c4abaf40, old_obj=old_obj@entry=0x0, optype=<optimized out>, optype@entry=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_ecmp.c:648
+#12 0x00007f8dc40e6a28 in bcmsdk_cfg_obj (wh=0x5589c4fe7680, obj_new=0x5589c4abaf40, obj_old=0x0, optype=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:96
+#13 0x00007f8f157bcd96 in dpal_plugin_invoke_cb_internal (optype=DPAL_OBJ_MIN, unit=0, worker_ctxt=0x5589c4fe0610, dpal_obj_old=0x0, dpal_obj=0x5589c4abaf40) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_plugin.c:1383
+#14 dpal_plugin_invoke_cb_locked (dpal_obj=dpal_obj@entry=0x5589c4abaf40, dpal_obj_old=dpal_obj_old@entry=0x0, worker_ctxt=worker_ctxt@entry=0x5589c4fe0610, unit=unit@entry=0, optype=optype@entry=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_plugin.c:1412
+#15 0x00007f8f158724ea in dpal_aom_cb (dpal_obj=0x5589c4abaf40, old_obj=0x0, optype=<optimized out>, ctxt=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:928
+#16 0x00007f8f157dd1d5 in cplane_obj_aom_cb (oh=0x7f8d6eb99e28, client_space=<optimized out>, old_val=0x0, val=0x5589c4abaf40, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:56250
+#17 0x00007f8f1524ed95 in aom_fsm_create_cb (ptr=ptr@entry=0x7f8d6eb99e28, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1169
+#18 0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525eea0 <obj_fsm>, st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb99e28, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#19 0x00007f8f152463ef in aom_obj_fsm_run (st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb99e28, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:319
+#20 0x00007f8f15247f8d in __aom_obj_add (key=key@entry=0x7f8da6ffc000, val=<optimized out>, key_deps=key_deps@entry=0x5589c40de3d0, n_deps=2, key_srcs=key_srcs@entry=0x0, n_srcs=n_srcs@entry=0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2747
+#21 0x00007f8f1524f794 in aom_obj_add (key=key@entry=0x7f8da6ffc000, val=<optimized out>, key_deps=key_deps@entry=0x5589c40de3d0, n_deps=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2784
+#22 0x00007f8f1580ba2a in dpal_nexthop_group_obj_add (obj=obj@entry=0x5589c4abb760, ctxt=ctxt@entry=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:8705
+#23 0x00007f8f1581e7db in cplane_obj_add (obj=0x5589c4abb760, ctxt=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:50878
+#24 0x00007f8f1586ed82 in dpal_aom_handoff (worker_ctxt=worker_ctxt@entry=0x5589c4fe0610, msg=0x5589c4abb0e0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:974
+#25 0x00007f8f1586f1be in dpal_worker_cb (wq=0x7f8d6c003200, arg=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1091
+#26 0x00007f8f15277246 in bwq_do_read (fd=<optimized out>, events=<optimized out>, arg=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/libutils/bwq/src/bwq.c:194
+#27 0x00007f8f1551c9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#28 0x00007f8f1551d537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#29 0x00007f8f15870e23 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1150
+#30 0x00007f8f15871296 in dpal_worker_thread (arg=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1366
+#31 0x00007f8f15443fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#32 0x00007f8f1494506f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 15 "dpal_worker" hit Breakpoint 4, bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg (unit=unit@entry=0, sdk_obj=sdk_obj@entry=0x7f8da6ff5860) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c:122
+122     /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c: No such file or directory.
+#0  bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg (unit=unit@entry=0, sdk_obj=sdk_obj@entry=0x7f8da6ff5860) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c:122
+#1  0x00007f8dc414b837 in bcmsdk_vxlan_flow_ul_ecmp_cfg (unit=unit@entry=0, optype=optype@entry=DPAL_OBJ_MIN, sdk_obj=sdk_obj@entry=0x7f8da6ff5860) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c:216
+#2  0x00007f8dc4201140 in bcmsdk_vxlan_flow_ul_ecmp_main_cb (obj=<optimized out>, obj_old=<optimized out>, optype=DPAL_OBJ_MIN, ctxt=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_xlate_ul_ecmp.c:149
+#3  0x00007f8dc419a685 in bcm_xgs_obj_aom_cb (oh=0x7f8d6eb9a5f8, client_space=<optimized out>, old_val=0x0, val=0x5589c4aba580, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:46726
+#4  0x00007f8f1524ed95 in aom_fsm_create_cb (ptr=ptr@entry=0x7f8d6eb9a5f8, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1169
+#5  0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525eea0 <obj_fsm>, st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9a5f8, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#6  0x00007f8f152463ef in aom_obj_fsm_run (st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9a5f8, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:319
+#7  0x00007f8f15247f8d in __aom_obj_add (key=key@entry=0x7f8da6ff6400, val=<optimized out>, key_deps=key_deps@entry=0x5589c4e9c720, n_deps=n_deps@entry=2, key_srcs=0x7f8da6ff6410, n_srcs=1) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2747
+#8  0x00007f8f1524f77d in aom_obj_add_with_srcs (key=key@entry=0x7f8da6ff6400, val=<optimized out>, key_deps=key_deps@entry=0x5589c4e9c720, n_deps=n_deps@entry=2, key_srcs=<optimized out>, n_srcs=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2774
+#9  0x00007f8dc4175640 in bcm_xgs_vxlan_flow_ul_ecmp_tnl_init_obj_add (obj=obj@entry=0x7f8da6ff6590, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:42220
+#10 0x00007f8dc418ad7b in bcm_xgs_obj_add (obj=obj@entry=0x7f8da6ff6590, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:43355
+#11 0x00007f8dc4200a4c in bcmsdk_vxlan_flow_ul_ecmp_dep_cb (child=<optimized out>, old_child=<optimized out>, parent=<optimized out>, optype=<optimized out>, child_ctxt=<optimized out>, parent_ctxt=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_xlate_ul_ecmp.c:319
+#12 0x00007f8dc416474a in bcm_xgs_obj_aom_dep_cb (c_oh=<optimized out>, child_old_val=0x0, child_val=0x7f8d6eb959e0, p_oh=<optimized out>, parent_val=0x0, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:46836
+#13 0x00007f8f15245557 in aom_fsm_deps_add_dep_cb (ptr=ptr@entry=0x7f8d6eb9a5f8, next_state=next_state@entry=AOM_ST_PENDING_CREATE, arg=arg@entry=0x7f8d6eb9a530) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1882
+#14 0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525ee60 <deps_fsm>, st=<optimized out>, ev=ev@entry=0, o=o@entry=0x7f8d6eb9a5f8, arg=arg@entry=0x7f8d6eb9a530) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#15 0x00007f8f152464e3 in aom_deps_fsm_run (st=<optimized out>, ev=ev@entry=AOM_DEPS_EV_MIN, o=o@entry=0x7f8d6eb9a5f8, arg=arg@entry=0x7f8d6eb9a530) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:325
+#16 0x00007f8f15247360 in aom_lock_dependency (ctxt=ctxt@entry=0x7f8d6c00e310, child=child@entry=0x7f8d6eb9a530, dep=dep@entry=0x7f8d6eb7e130, key=key@entry=0x5589c40f3410, resolved=resolved@entry=0x7f8da6ff956e) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2439
+#17 0x00007f8f1524769a in aom_obj_new_deps (ctxt=ctxt@entry=0x7f8d6c00e310, obj=obj@entry=0x7f8d6eb9a530, key_deps=key_deps@entry=0x5589c40f3410, n_deps=n_deps@entry=3, resolved=resolved@entry=0x7f8da6ff956e) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2575
+#18 0x00007f8f15247d87 in __aom_obj_add (key=key@entry=0x7f8da6ff9620, val=<optimized out>, key_deps=key_deps@entry=0x5589c40f3410, n_deps=n_deps@entry=3, key_srcs=0x7f8da6ff9630, n_srcs=1) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2736
+#19 0x00007f8f1524f77d in aom_obj_add_with_srcs (key=key@entry=0x7f8da6ff9620, val=<optimized out>, key_deps=key_deps@entry=0x5589c40f3410, n_deps=n_deps@entry=3, key_srcs=<optimized out>, n_srcs=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2774
+#20 0x00007f8dc417c6df in bcm_xgs_vxlan_flow_nw_vp_obj_add (obj=obj@entry=0x7f8da6ff9810, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:13792
+#21 0x00007f8dc418a90b in bcm_xgs_obj_add (obj=obj@entry=0x7f8da6ff9810, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:43184
+#22 0x00007f8dc41350b0 in bcmsdk_vxlan_flow_tnl_api (wh=wh@entry=0x5589c4fe7680, obj=obj@entry=0x5589c4abbde0, obj_old=obj_old@entry=0x0, optype=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_xlate_common.c:1247
+#23 0x00007f8dc4200235 in bcmsdk_ip4_tnl_api (wh=wh@entry=0x5589c4fe7680, obj=obj@entry=0x5589c4abbde0, obj_old=obj_old@entry=0x0, optype=optype@entry=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_ip_tnl.c:28
+#24 0x00007f8dc40e6b9d in bcmsdk_cfg_obj (wh=0x5589c4fe7680, obj_new=<optimized out>, obj_old=0x0, optype=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:240
+#25 0x00007f8f157bcd96 in dpal_plugin_invoke_cb_internal (optype=DPAL_OBJ_MIN, unit=0, worker_ctxt=0x5589c4fe0610, dpal_obj_old=0x0, dpal_obj=0x5589c4abbde0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_plugin.c:1383
+#26 dpal_plugin_invoke_cb_locked (dpal_obj=dpal_obj@entry=0x5589c4abbde0, dpal_obj_old=dpal_obj_old@entry=0x0, worker_ctxt=worker_ctxt@entry=0x5589c4fe0610, unit=unit@entry=0, optype=optype@entry=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_plugin.c:1412
+#27 0x00007f8f158724ea in dpal_aom_cb (dpal_obj=0x5589c4abbde0, old_obj=0x0, optype=<optimized out>, ctxt=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:928
+#28 0x00007f8f157dd1d5 in cplane_obj_aom_cb (oh=0x7f8d6eb9a2d8, client_space=<optimized out>, old_val=0x0, val=0x5589c4abbde0, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:56250
+#29 0x00007f8f1524ed95 in aom_fsm_create_cb (ptr=ptr@entry=0x7f8d6eb9a2d8, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1169
+#30 0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525eea0 <obj_fsm>, st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9a2d8, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#31 0x00007f8f152463ef in aom_obj_fsm_run (st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9a2d8, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:319
+#32 0x00007f8f15247f8d in __aom_obj_add (key=key@entry=0x7f8da6ffc000, val=<optimized out>, key_deps=0x7f8da6ffc010, n_deps=1, key_srcs=key_srcs@entry=0x0, n_srcs=n_srcs@entry=0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2747
+#33 0x00007f8f1524f794 in aom_obj_add (key=key@entry=0x7f8da6ffc000, val=<optimized out>, key_deps=<optimized out>, n_deps=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2784
+#34 0x00007f8f157f3982 in dpal_tunnels_obj_add (obj=obj@entry=0x5589c4ab7180, ctxt=ctxt@entry=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:10383
+#35 0x00007f8f1581ee5b in cplane_obj_add (obj=0x5589c4ab7180, ctxt=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:50890
+#36 0x00007f8f1586ed82 in dpal_aom_handoff (worker_ctxt=worker_ctxt@entry=0x5589c4fe0610, msg=0x5589c4aba240) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:974
+#37 0x00007f8f1586f1be in dpal_worker_cb (wq=0x7f8d6c003200, arg=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1091
+#38 0x00007f8f15277246 in bwq_do_read (fd=<optimized out>, events=<optimized out>, arg=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/libutils/bwq/src/bwq.c:194
+#39 0x00007f8f1551c9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#40 0x00007f8f1551d537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#41 0x00007f8f15870e23 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1150
+#42 0x00007f8f15871296 in dpal_worker_thread (arg=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1366
+#43 0x00007f8f15443fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#44 0x00007f8f1494506f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+[Detaching after fork from child process 20959]
+[Detaching after fork from child process 20963]
+
+Thread 15 "dpal_worker" hit Breakpoint 2, bcmsdk_xgs_ltsw_l3_ecmp_create_cb (data=0x7f8da6ff9f80) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c:2981
+2981    /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c: No such file or directory.
+#0  bcmsdk_xgs_ltsw_l3_ecmp_create_cb (data=0x7f8da6ff9f80) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c:2981
+#1  0x00007f8dc40c9b02 in bcmsdk_ecmp_api (obj=<optimized out>, optype=optype@entry=DPAL_OBJ_MIN, unit=0, alloc_hwid=alloc_hwid@entry=0x7f8da6ffb290, alloc_overlay_hwid=alloc_overlay_hwid@entry=0x7f8da6ffb294) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_ecmp.c:224
+#2  0x00007f8dc40ca7f1 in bcmsdk_l3_ecmp_main_cb (obj=0x7f8d6eb90a80, obj_old=0x0, optype=DPAL_OBJ_MIN, ctxt=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_ecmp.c:562
+#3  0x00007f8dc419a685 in bcm_xgs_obj_aom_cb (oh=0x7f8d6eb9f9e0, client_space=<optimized out>, old_val=0x0, val=0x7f8d6eb90a80, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:46726
+#4  0x00007f8f1524ed95 in aom_fsm_create_cb (ptr=ptr@entry=0x7f8d6eb9f9e0, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1169
+#5  0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525eea0 <obj_fsm>, st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9f9e0, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#6  0x00007f8f152463ef in aom_obj_fsm_run (st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9f9e0, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:319
+#7  0x00007f8f15247f8d in __aom_obj_add (key=key@entry=0x7f8da6ffb840, val=<optimized out>, key_deps=key_deps@entry=0x0, n_deps=n_deps@entry=0, key_srcs=0x7f8da6ffb860, n_srcs=1) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2747
+#8  0x00007f8f1524f77d in aom_obj_add_with_srcs (key=key@entry=0x7f8da6ffb840, val=<optimized out>, key_deps=key_deps@entry=0x0, n_deps=n_deps@entry=0, key_srcs=<optimized out>, n_srcs=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2774
+#9  0x00007f8dc41899c6 in bcm_xgs_ecmp_obj_add (ctxt=0x5589c4fe7c00, obj=0x7f8da6ffb8d0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:8430
+#10 bcm_xgs_obj_add (obj=obj@entry=0x7f8da6ffb8d0, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:43154
+#11 0x00007f8dc40cb643 in bcmsdk_l3_ecmp_api (wh=wh@entry=0x5589c4fe7680, obj=obj@entry=0x5589c4abe000, old_obj=old_obj@entry=0x0, optype=<optimized out>, optype@entry=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_ecmp.c:648
+#12 0x00007f8dc40e6a28 in bcmsdk_cfg_obj (wh=0x5589c4fe7680, obj_new=0x5589c4abe000, obj_old=0x0, optype=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:96
+#13 0x00007f8f157bcd96 in dpal_plugin_invoke_cb_internal (optype=DPAL_OBJ_MIN, unit=0, worker_ctxt=0x5589c4fe0610, dpal_obj_old=0x0, dpal_obj=0x5589c4abe000) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_plugin.c:1383
+#14 dpal_plugin_invoke_cb_locked (dpal_obj=dpal_obj@entry=0x5589c4abe000, dpal_obj_old=dpal_obj_old@entry=0x0, worker_ctxt=worker_ctxt@entry=0x5589c4fe0610, unit=unit@entry=0, optype=optype@entry=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_plugin.c:1412
+#15 0x00007f8f158724ea in dpal_aom_cb (dpal_obj=0x5589c4abe000, old_obj=0x0, optype=<optimized out>, ctxt=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:928
+#16 0x00007f8f157dd1d5 in cplane_obj_aom_cb (oh=0x7f8d6eb9f918, client_space=<optimized out>, old_val=0x0, val=0x5589c4abe000, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:56250
+#17 0x00007f8f1524ed95 in aom_fsm_create_cb (ptr=ptr@entry=0x7f8d6eb9f918, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1169
+#18 0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525eea0 <obj_fsm>, st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9f918, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#19 0x00007f8f152463ef in aom_obj_fsm_run (st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9f918, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:319
+#20 0x00007f8f15247f8d in __aom_obj_add (key=key@entry=0x7f8da6ffc000, val=<optimized out>, key_deps=key_deps@entry=0x7f8d6eb914e0, n_deps=2, key_srcs=key_srcs@entry=0x0, n_srcs=n_srcs@entry=0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2747
+#21 0x00007f8f1524f794 in aom_obj_add (key=key@entry=0x7f8da6ffc000, val=<optimized out>, key_deps=key_deps@entry=0x7f8d6eb914e0, n_deps=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2784
+#22 0x00007f8f1580ba2a in dpal_nexthop_group_obj_add (obj=obj@entry=0x5589c4abe4e0, ctxt=ctxt@entry=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:8705
+#23 0x00007f8f1581e7db in cplane_obj_add (obj=0x5589c4abe4e0, ctxt=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:50878
+#24 0x00007f8f1586ed82 in dpal_aom_handoff (worker_ctxt=worker_ctxt@entry=0x5589c4fe0610, msg=0x5589c4abce20) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:974
+#25 0x00007f8f1586f1be in dpal_worker_cb (wq=0x7f8d6c003200, arg=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1091
+#26 0x00007f8f15277246 in bwq_do_read (fd=<optimized out>, events=<optimized out>, arg=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/libutils/bwq/src/bwq.c:194
+#27 0x00007f8f1551c9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#28 0x00007f8f1551d537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#29 0x00007f8f15870e23 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1150
+#30 0x00007f8f15871296 in dpal_worker_thread (arg=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1366
+#31 0x00007f8f15443fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#32 0x00007f8f1494506f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 15 "dpal_worker" hit Breakpoint 2, bcmsdk_xgs_ltsw_l3_ecmp_create_cb (data=0x7f8da6ff9f80) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c:2981
+2981    in /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c
+#0  bcmsdk_xgs_ltsw_l3_ecmp_create_cb (data=0x7f8da6ff9f80) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_plugin.c:2981
+#1  0x00007f8dc40c9b02 in bcmsdk_ecmp_api (obj=<optimized out>, optype=optype@entry=DPAL_OBJ_MIN, unit=0, alloc_hwid=alloc_hwid@entry=0x7f8da6ffb290, alloc_overlay_hwid=alloc_overlay_hwid@entry=0x7f8da6ffb294) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_ecmp.c:224
+#2  0x00007f8dc40ca7f1 in bcmsdk_l3_ecmp_main_cb (obj=0x5589c4ab86a0, obj_old=0x0, optype=DPAL_OBJ_MIN, ctxt=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_ecmp.c:562
+#3  0x00007f8dc419a685 in bcm_xgs_obj_aom_cb (oh=0x7f8d6eb9fdc8, client_space=<optimized out>, old_val=0x0, val=0x5589c4ab86a0, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:46726
+#4  0x00007f8f1524ed95 in aom_fsm_create_cb (ptr=ptr@entry=0x7f8d6eb9fdc8, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1169
+#5  0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525eea0 <obj_fsm>, st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9fdc8, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#6  0x00007f8f152463ef in aom_obj_fsm_run (st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9fdc8, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:319
+#7  0x00007f8f15247f8d in __aom_obj_add (key=key@entry=0x7f8da6ffb840, val=<optimized out>, key_deps=key_deps@entry=0x0, n_deps=n_deps@entry=0, key_srcs=0x7f8da6ffb860, n_srcs=1) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2747
+#8  0x00007f8f1524f77d in aom_obj_add_with_srcs (key=key@entry=0x7f8da6ffb840, val=<optimized out>, key_deps=key_deps@entry=0x0, n_deps=n_deps@entry=0, key_srcs=<optimized out>, n_srcs=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2774
+#9  0x00007f8dc41899c6 in bcm_xgs_ecmp_obj_add (ctxt=0x5589c4fe7c00, obj=0x7f8da6ffb8d0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:8430
+#10 bcm_xgs_obj_add (obj=obj@entry=0x7f8da6ffb8d0, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:43154
+#11 0x00007f8dc40cb643 in bcmsdk_l3_ecmp_api (wh=wh@entry=0x5589c4fe7680, obj=obj@entry=0x5589c4b25980, old_obj=old_obj@entry=0x0, optype=<optimized out>, optype@entry=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3_ecmp.c:648
+#12 0x00007f8dc40e6a28 in bcmsdk_cfg_obj (wh=0x5589c4fe7680, obj_new=0x5589c4b25980, obj_old=0x0, optype=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:96
+#13 0x00007f8f157bcd96 in dpal_plugin_invoke_cb_internal (optype=DPAL_OBJ_MIN, unit=0, worker_ctxt=0x5589c4fe0610, dpal_obj_old=0x0, dpal_obj=0x5589c4b25980) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_plugin.c:1383
+#14 dpal_plugin_invoke_cb_locked (dpal_obj=dpal_obj@entry=0x5589c4b25980, dpal_obj_old=dpal_obj_old@entry=0x0, worker_ctxt=worker_ctxt@entry=0x5589c4fe0610, unit=unit@entry=0, optype=optype@entry=DPAL_OBJ_MIN) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_plugin.c:1412
+#15 0x00007f8f158724ea in dpal_aom_cb (dpal_obj=0x5589c4b25980, old_obj=0x0, optype=<optimized out>, ctxt=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:928
+#16 0x00007f8f157dd1d5 in cplane_obj_aom_cb (oh=0x7f8d6eb9fd00, client_space=<optimized out>, old_val=0x0, val=0x5589c4b25980, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:56250
+#17 0x00007f8f1524ed95 in aom_fsm_create_cb (ptr=ptr@entry=0x7f8d6eb9fd00, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1169
+#18 0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525eea0 <obj_fsm>, st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9fd00, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#19 0x00007f8f152463ef in aom_obj_fsm_run (st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9fd00, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:319
+#20 0x00007f8f15247f8d in __aom_obj_add (key=key@entry=0x7f8da6ffc000, val=<optimized out>, key_deps=key_deps@entry=0x5589c4e96fa0, n_deps=3, key_srcs=key_srcs@entry=0x0, n_srcs=n_srcs@entry=0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2747
+#21 0x00007f8f1524f794 in aom_obj_add (key=key@entry=0x7f8da6ffc000, val=<optimized out>, key_deps=key_deps@entry=0x5589c4e96fa0, n_deps=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2784
+#22 0x00007f8f1580ba2a in dpal_nexthop_group_obj_add (obj=obj@entry=0x5589c4abc2c0, ctxt=ctxt@entry=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:8705
+#23 0x00007f8f1581e7db in cplane_obj_add (obj=0x5589c4abc2c0, ctxt=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:50878
+#24 0x00007f8f1586ed82 in dpal_aom_handoff (worker_ctxt=worker_ctxt@entry=0x5589c4fe0610, msg=0x5589c4abdb20) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:974
+#25 0x00007f8f1586f1be in dpal_worker_cb (wq=0x7f8d6c003200, arg=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1091
+#26 0x00007f8f15277246 in bwq_do_read (fd=<optimized out>, events=<optimized out>, arg=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/libutils/bwq/src/bwq.c:194
+#27 0x00007f8f1551c9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#28 0x00007f8f1551d537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#29 0x00007f8f15870e23 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1150
+#30 0x00007f8f15871296 in dpal_worker_thread (arg=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1366
+#31 0x00007f8f15443fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#32 0x00007f8f1494506f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 15 "dpal_worker" hit Breakpoint 4, bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg (unit=unit@entry=0, sdk_obj=sdk_obj@entry=0x7f8da6ff5860) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c:122
+122     /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c: No such file or directory.
+#0  bcmsdk_vxlan_flow_ul_ecmp_add_update_cfg (unit=unit@entry=0, sdk_obj=sdk_obj@entry=0x7f8da6ff5860) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c:122
+#1  0x00007f8dc414b837 in bcmsdk_vxlan_flow_ul_ecmp_cfg (unit=unit@entry=0, optype=optype@entry=DPAL_OBJ_MIN, sdk_obj=sdk_obj@entry=0x7f8da6ff5860) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_sdk_ul_ecmp.c:216
+#2  0x00007f8dc4201140 in bcmsdk_vxlan_flow_ul_ecmp_main_cb (obj=<optimized out>, obj_old=<optimized out>, optype=DPAL_OBJ_MIN, ctxt=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_xlate_ul_ecmp.c:149
+#3  0x00007f8dc419a685 in bcm_xgs_obj_aom_cb (oh=0x7f8d6eba00e8, client_space=<optimized out>, old_val=0x0, val=0x5589c4abac00, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:46726
+#4  0x00007f8f1524ed95 in aom_fsm_create_cb (ptr=ptr@entry=0x7f8d6eba00e8, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1169
+#5  0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525eea0 <obj_fsm>, st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eba00e8, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#6  0x00007f8f152463ef in aom_obj_fsm_run (st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eba00e8, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:319
+#7  0x00007f8f15247f8d in __aom_obj_add (key=key@entry=0x7f8da6ff6400, val=<optimized out>, key_deps=key_deps@entry=0x5589c424c6d0, n_deps=n_deps@entry=3, key_srcs=0x7f8da6ff6410, n_srcs=1) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2747
+#8  0x00007f8f1524f77d in aom_obj_add_with_srcs (key=key@entry=0x7f8da6ff6400, val=<optimized out>, key_deps=key_deps@entry=0x5589c424c6d0, n_deps=n_deps@entry=3, key_srcs=<optimized out>, n_srcs=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2774
+#9  0x00007f8dc4175640 in bcm_xgs_vxlan_flow_ul_ecmp_tnl_init_obj_add (obj=obj@entry=0x7f8da6ff6590, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:42220
+#10 0x00007f8dc418ad7b in bcm_xgs_obj_add (obj=obj@entry=0x7f8da6ff6590, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:43355
+#11 0x00007f8dc4200a4c in bcmsdk_vxlan_flow_ul_ecmp_dep_cb (child=<optimized out>, old_child=<optimized out>, parent=<optimized out>, optype=<optimized out>, child_ctxt=<optimized out>, parent_ctxt=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_xlate_ul_ecmp.c:319
+#12 0x00007f8dc416474a in bcm_xgs_obj_aom_dep_cb (c_oh=<optimized out>, child_old_val=0x7f8d6eb959e0, child_val=0x5589c4abed00, p_oh=<optimized out>, parent_val=0x0, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:46836
+#13 0x00007f8f15245557 in aom_fsm_deps_add_dep_cb (ptr=ptr@entry=0x7f8d6eba00e8, next_state=next_state@entry=AOM_ST_PENDING_CREATE, arg=arg@entry=0x7f8d6eb9a530) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1882
+#14 0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525ee60 <deps_fsm>, st=<optimized out>, ev=ev@entry=0, o=o@entry=0x7f8d6eba00e8, arg=arg@entry=0x7f8d6eb9a530) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#15 0x00007f8f152464e3 in aom_deps_fsm_run (st=<optimized out>, ev=ev@entry=AOM_DEPS_EV_MIN, o=o@entry=0x7f8d6eba00e8, arg=arg@entry=0x7f8d6eb9a530) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:325
+#16 0x00007f8f15247360 in aom_lock_dependency (ctxt=ctxt@entry=0x7f8d6c00e310, child=child@entry=0x7f8d6eb9a530, dep=dep@entry=0x7f8d6eb7e520, key=key@entry=0x5589c40bbab0, resolved=resolved@entry=0x7f8da6ff956e) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2439
+#17 0x00007f8f1524769a in aom_obj_new_deps (ctxt=ctxt@entry=0x7f8d6c00e310, obj=obj@entry=0x7f8d6eb9a530, key_deps=key_deps@entry=0x5589c40bbab0, n_deps=n_deps@entry=4, resolved=resolved@entry=0x7f8da6ff956e) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2575
+#18 0x00007f8f15247d87 in __aom_obj_add (key=key@entry=0x7f8da6ff9620, val=<optimized out>, key_deps=key_deps@entry=0x5589c40bbab0, n_deps=n_deps@entry=4, key_srcs=0x7f8da6ff9630, n_srcs=1) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2736
+#19 0x00007f8f1524f77d in aom_obj_add_with_srcs (key=key@entry=0x7f8da6ff9620, val=<optimized out>, key_deps=key_deps@entry=0x5589c40bbab0, n_deps=n_deps@entry=4, key_srcs=<optimized out>, n_srcs=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2774
+#20 0x00007f8dc417c6df in bcm_xgs_vxlan_flow_nw_vp_obj_add (obj=obj@entry=0x7f8da6ff9810, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:13792
+#21 0x00007f8dc418a90b in bcm_xgs_obj_add (obj=obj@entry=0x7f8da6ff9810, ctxt=ctxt@entry=0x5589c4fe7c00) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:43184
+#22 0x00007f8dc41350b0 in bcmsdk_vxlan_flow_tnl_api (wh=wh@entry=0x5589c4fe7680, obj=obj@entry=0x5589c4abe680, obj_old=obj_old@entry=0x5589c4abbde0, optype=DPAL_OBJ_UPDATE) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_vxlan_flow_xlate_common.c:1247
+#23 0x00007f8dc4200235 in bcmsdk_ip4_tnl_api (wh=wh@entry=0x5589c4fe7680, obj=obj@entry=0x5589c4abe680, obj_old=obj_old@entry=0x5589c4abbde0, optype=optype@entry=DPAL_OBJ_UPDATE) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_ip_tnl.c:28
+#24 0x00007f8dc40e6b9d in bcmsdk_cfg_obj (wh=0x5589c4fe7680, obj_new=<optimized out>, obj_old=0x5589c4abbde0, optype=DPAL_OBJ_UPDATE) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:240
+#25 0x00007f8f157bcd96 in dpal_plugin_invoke_cb_internal (optype=DPAL_OBJ_UPDATE, unit=0, worker_ctxt=0x5589c4fe0610, dpal_obj_old=0x5589c4abbde0, dpal_obj=0x5589c4abe680) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_plugin.c:1383
+#26 dpal_plugin_invoke_cb_locked (dpal_obj=dpal_obj@entry=0x5589c4abe680, dpal_obj_old=dpal_obj_old@entry=0x5589c4abbde0, worker_ctxt=worker_ctxt@entry=0x5589c4fe0610, unit=unit@entry=0, optype=optype@entry=DPAL_OBJ_UPDATE) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_plugin.c:1412
+#27 0x00007f8f158724ea in dpal_aom_cb (dpal_obj=0x5589c4abe680, old_obj=0x5589c4abbde0, optype=<optimized out>, ctxt=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:928
+#28 0x00007f8f157dd1d5 in cplane_obj_aom_cb (oh=0x7f8d6eb9a2d8, client_space=<optimized out>, old_val=0x5589c4abbde0, val=0x5589c4abe680, optype=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:56250
+#29 0x00007f8f1524830f in aom_fsm_update_cb (ptr=ptr@entry=0x7f8d6eb9a2d8, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:1221
+#30 0x00007f8f15245fdb in aom_fsm_run (fsm=fsm@entry=0x7f8f1525eea0 <obj_fsm>, st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9a2d8, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:311
+#31 0x00007f8f152463ef in aom_obj_fsm_run (st=<optimized out>, ev=<optimized out>, o=o@entry=0x7f8d6eb9a2d8, arg=arg@entry=0x0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:319
+#32 0x00007f8f15247f8d in __aom_obj_add (key=key@entry=0x7f8da6ffc000, val=<optimized out>, key_deps=0x7f8da6ffc010, n_deps=1, key_srcs=key_srcs@entry=0x0, n_srcs=n_srcs@entry=0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2747
+#33 0x00007f8f1524f794 in aom_obj_add (key=key@entry=0x7f8da6ffc000, val=<optimized out>, key_deps=<optimized out>, n_deps=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/infra/aom/lib/aom.c:2784
+#34 0x00007f8f157f3982 in dpal_tunnels_obj_add (obj=obj@entry=0x5589c4abf040, ctxt=ctxt@entry=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:10383
+#35 0x00007f8f1581ee5b in cplane_obj_add (obj=0x5589c4abf040, ctxt=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/gen_cplane_obj.c:50890
+#36 0x00007f8f1586ed82 in dpal_aom_handoff (worker_ctxt=worker_ctxt@entry=0x5589c4fe0610, msg=0x5589c4abf1e0) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:974
+#37 0x00007f8f1586f1be in dpal_worker_cb (wq=0x7f8d6c003200, arg=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1091
+#38 0x00007f8f15277246 in bwq_do_read (fd=<optimized out>, events=<optimized out>, arg=<optimized out>) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/libutils/bwq/src/bwq.c:194
+#39 0x00007f8f1551c9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#40 0x00007f8f1551d537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#41 0x00007f8f15870e23 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1150
+#42 0x00007f8f15871296 in dpal_worker_thread (arg=0x5589c4fe0610) at /home/ashish/nobackup/th5/th3-brkout/arrcus_sw/dpal/common/app/dpal_worker.c:1366
+#43 0x00007f8f15443fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#44 0x00007f8f1494506f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) cont
