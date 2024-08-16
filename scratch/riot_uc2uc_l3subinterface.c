@@ -115,34 +115,8 @@
 
 cint_reset();
 
-/**************************   1 basic function
- * begin*************************************/
-/* Create vlan and add port to vlan */
-
-int vlan_create_add_port(int unit, int vlan, int port) {
-  bcm_pbmp_t pbmp, upbmp;
-  bcm_error_t rv = BCM_E_NONE;
-
-  rv = bcm_vlan_create(unit, vlan);
-  if (BCM_E_NONE != rv) {
-    printf("bcm_vlan_create failed %s\n", bcm_errmsg(rv));
-    return rv;
-  }
-  BCM_PBMP_CLEAR(pbmp);
-  BCM_PBMP_CLEAR(upbmp);
-  BCM_PBMP_PORT_ADD(pbmp, port);
-  rv = bcm_vlan_port_add(unit, vlan, pbmp, upbmp);
-  if (BCM_E_NONE != rv) {
-    printf("bcm_vlan_port_add failed %s\n", bcm_errmsg(rv));
-    return rv;
-  }
-
-  printf("vlan_create_add_port SUCCESS \n");
-
-  return rv;
-}
-
-int vxlan_riot_system_config(int unit, uint16 udp_dst_port, int enable_hash) {
+int vxlan_riot_system_config(int unit, uint16 udp_dst_port, int enable_hash)
+{
   bcm_error_t rv = BCM_E_NONE;
 
   /* L4 Port for VxLAN */
@@ -196,7 +170,8 @@ int vxlan_riot_system_config(int unit, uint16 udp_dst_port, int enable_hash) {
 /*
  * Routine to enable Vxlan Access Port Config
  */
-int vxlan_access_port_config(int unit, bcm_port_t port) {
+int vxlan_access_port_config(int unit, bcm_port_t port)
+{
   bcm_error_t rv = BCM_E_NONE;
 
   rv = bcm_port_control_set(unit, port, bcmPortControlVxlanEnable, 0x0);
@@ -227,7 +202,8 @@ int vxlan_access_port_config(int unit, bcm_port_t port) {
 /*
  * Routine to enable Vxlan Network Port Config
  */
-int vxlan_network_port_config(int unit, bcm_port_t port) {
+int vxlan_network_port_config(int unit, bcm_port_t port)
+{
   bcm_error_t rv = BCM_E_NONE;
 
   rv = bcm_port_control_set(unit, port, bcmPortControlVxlanEnable, 0x1);
@@ -252,56 +228,15 @@ int vxlan_network_port_config(int unit, bcm_port_t port) {
 }
 
 /*
- * vxlan init and term tunnel create
- */
-bcm_error_t vxlan_tunnel_init_term_create(int unit, bcm_ip_t sip_init,
-                                          bcm_ip_t dip_init, bcm_ip_t sip_term,
-                                          bcm_ip_t dip_term, int ttl,
-                                          uint16 udp_src_port,
-                                          uint16 udp_dst_port,
-                                          bcm_gport_t *tnl_id) {
-  bcm_error_t rv = BCM_E_NONE;
-
-  bcm_tunnel_initiator_t tnl_init;
-  bcm_tunnel_initiator_t_init(&tnl_init);
-  bcm_tunnel_terminator_t tnl_term;
-  bcm_tunnel_terminator_t_init(&tnl_term);
-
-  tnl_init.ttl = ttl;
-  tnl_init.udp_src_port = udp_src_port;
-  tnl_init.udp_dst_port = udp_dst_port;
-  tnl_init.sip = sip_init;
-  tnl_init.dip = dip_init;
-  tnl_init.flags = 0;
-  tnl_init.type = bcmTunnelTypeVxlan;
-
-  /* create vxlan tunnel init */
-  BCM_IF_ERROR_RETURN(bcm_vxlan_tunnel_initiator_create(unit, &tnl_init));
-  printf("bcm_vxlan_tunnel_initiator_create() %s\n", bcm_errmsg(rv));
-
-  *tnl_id = tnl_init.tunnel_id;
-  tnl_term.flags = BCM_TUNNEL_TERM_TUNNEL_WITH_ID;
-  tnl_term.tunnel_id = *tnl_id;
-  tnl_term.type = bcmTunnelTypeVxlan;
-  tnl_term.sip = sip_term;
-  tnl_term.dip = dip_term;
-  tnl_term.sip_mask = 0xffffffff;
-  tnl_term.dip_mask = 0xffffffff;
-
-  /* create vxlan tunnel term */
-  rv = bcm_vxlan_tunnel_terminator_create(unit, &tnl_term);
-  printf("bcm_vxlan_tunnel_terminator_create() %s\n", bcm_errmsg(rv));
-
-  return rv;
-}
-
-/*
  * Routine to Create a Virtual port Group
  */
-int vxlan_vpn_group_create(int unit, bcm_vpn_t *vpn, bcm_multicast_t *mcast,
+int vxlan_vpn_group_create(int unit,
+                           bcm_vpn_t *vpn,
+                           bcm_multicast_t *mcast,
                            uint32 vnid, uint32 flags,
                            uint32 egress_service_tpid,
-                           bcm_vlan_t egress_service_vlan) {
+                           bcm_vlan_t egress_service_vlan)
+{
   bcm_error_t rv = BCM_E_NONE;
 
   rv = bcm_multicast_create(unit, BCM_MULTICAST_TYPE_VXLAN, mcast);
@@ -336,8 +271,11 @@ int vxlan_vpn_group_create(int unit, bcm_vpn_t *vpn, bcm_multicast_t *mcast,
 /*
  * Routine to update vlan profile
  */
-int vlan_vfi_profile_update(int unit, bcm_vlan_t vlan, bcm_vrf_t vrf,
-                            bcm_if_t intf) {
+int vlan_vfi_profile_update(int unit,
+                            bcm_vlan_t vlan,
+                            bcm_vrf_t vrf,
+                            bcm_if_t intf)
+{
   bcm_error_t rv = BCM_E_NONE;
 
   /* get vlan control structure */
@@ -363,7 +301,8 @@ int vlan_vfi_profile_update(int unit, bcm_vlan_t vlan, bcm_vrf_t vrf,
 }
 
 int l3_egress_create(int unit, uint32 flags, bcm_if_t intf, bcm_gport_t port,
-                     bcm_mac_t mac_addr, bcm_if_t *egr_obj_id) {
+                     bcm_mac_t mac_addr, bcm_if_t *egr_obj_id)
+{
   int rv = 0;
   bcm_l3_egress_t egr_t;
   bcm_l3_egress_t_init(&egr_t);
@@ -382,7 +321,8 @@ int vxlan_port_create(int unit, bcm_vpn_t vpn, bcm_port_t gport, int flags,
                       bcm_vlan_t match_vlan, bcm_gport_t match_tunnel_id,
                       bcm_gport_t egress_tunnel_id,
                       bcm_vlan_t egress_service_vlan,
-                      uint32 egress_service_tpid, bcm_gport_t *vxlan_port) {
+                      uint32 egress_service_tpid, bcm_gport_t *vxlan_port)
+{
   int rv = 0;
 
   bcm_vxlan_port_t port_t;
@@ -423,7 +363,8 @@ int vxlan_port_create(int unit, bcm_vpn_t vpn, bcm_port_t gport, int flags,
  * Wrapper to add an L3 interface.
  */
 int l3_intf_create(int unit, bcm_mac_t mac_addr, bcm_vlan_t vid,
-                   bcm_if_t *intf_id) {
+                   bcm_if_t *intf_id)
+{
   int rv = 0;
 
   /* init strucuture and configure members */
@@ -443,7 +384,8 @@ int l3_intf_create(int unit, bcm_mac_t mac_addr, bcm_vlan_t vid,
  * Routine to create L2 Station Entry
  */
 int l2_station_add(int unit, bcm_mac_t mac_addr, bcm_vlan_t vlan,
-                   bcm_vlan_t vlan_mask, int flags, int *station_id) {
+                   bcm_vlan_t vlan_mask, int flags, int *station_id)
+{
   int rv = 0;
 
   /* vars */
@@ -466,7 +408,8 @@ int l2_station_add(int unit, bcm_mac_t mac_addr, bcm_vlan_t vlan,
  * Wrapper for L3 Route Creation
  */
 int l3_route_add(int unit, bcm_ip_t ip_addr, bcm_ip_t ip_mask, bcm_vrf_t vrf,
-                 bcm_if_t egr_obj) {
+                 bcm_if_t egr_obj)
+{
   int rv = 0;
 
   bcm_l3_route_t route_t;
@@ -483,29 +426,12 @@ int l3_route_add(int unit, bcm_ip_t ip_addr, bcm_ip_t ip_mask, bcm_vrf_t vrf,
   return rv;
 }
 
-/*
- * Update termination tunnel
- */
-int vxlan_tunnel_term_update(int unit, bcm_gport_t tnl_id, uint32 mflags) {
-  int rv = 0;
-
-  bcm_tunnel_terminator_t tnl_info;
-  bcm_tunnel_terminator_t_init(&tnl_info);
-  tnl_info.tunnel_id = tnl_id;
-  print bcm_vxlan_tunnel_terminator_get(unit, &tnl_info);
-  tnl_info.multicast_flag = mflags;
-  tnl_info.flags |= BCM_TUNNEL_TERM_TUNNEL_WITH_ID;
-
-  rv = bcm_vxlan_tunnel_terminator_update(unit, &tnl_info);
-
-  return rv;
-}
-
 /**
  *  Adding VFP entry for port's tagged packets.
  */
 bcm_error_t create_vfp_entry_tagged(int unit, int svp_id, int port, int vlan,
-                                    bcm_field_group_t vfp_group) {
+                                    bcm_field_group_t vfp_group)
+{
   int rv = BCM_E_NONE;
   bcm_field_qset_t qset;
   bcm_field_entry_t vfp_entry = 0;
@@ -554,7 +480,8 @@ bcm_error_t create_vfp_entry_tagged(int unit, int svp_id, int port, int vlan,
  *  Adding VFP entry for port's untagged packets.
  */
 bcm_error_t create_vfp_entry_untagged(int unit, int svp_id, int port,
-                                      bcm_field_group_t vfp_group) {
+                                      bcm_field_group_t vfp_group)
+{
   int rv = BCM_E_NONE;
   bcm_field_qset_t qset;
   bcm_field_entry_t vfp_entry = 0;
@@ -592,52 +519,8 @@ bcm_error_t create_vfp_entry_untagged(int unit, int svp_id, int port,
   return rv;
 }
 
-/**
- *  Adding VFP entry for port's wrongly tagged packets.
- */
-bcm_error_t create_vfp_entry_wrong_tagged(int unit, int svp_id, int port,
-                                          bcm_field_group_t vfp_group) {
-  int rv = BCM_E_NONE;
-  bcm_field_qset_t qset;
-  bcm_field_entry_t vfp_entry = 0;
-
-  rv = bcm_field_entry_create(unit, vfp_group, &vfp_entry);
-  if (BCM_FAILURE(rv)) {
-    printf("Error in bcm_field_entry_create, wrong tagged: %s.\n",
-           bcm_errmsg(rv));
-    return rv;
-  }
-  printf("vfp_entry wrong tagged %d\n", vfp_entry);
-  rv = bcm_field_qualify_InPort(unit, vfp_entry, port, 0x3f);
-  if (BCM_FAILURE(rv)) {
-    printf("Error in bcm_field_qualify_InPort, wrong tagged: %s.\n",
-           bcm_errmsg(rv));
-    return rv;
-  }
-  rv = bcm_field_qualify_VlanFormat(unit, vfp_entry,
-                                    BCM_FIELD_VLAN_FORMAT_OUTER_TAGGED, 0x0f);
-  if (BCM_FAILURE(rv)) {
-    printf("Error in bcm_field_qualify_VlanFormat, untagged: %s.\n",
-           bcm_errmsg(rv));
-    return rv;
-  }
-  rv = bcm_field_action_add(unit, vfp_entry, bcmFieldActionDrop, 0, 0);
-  if (BCM_FAILURE(rv)) {
-    printf("Error in bcm_field_action_add, wrong tagged: %s.\n",
-           bcm_errmsg(rv));
-    return rv;
-  }
-  rv = bcm_field_entry_install(unit, vfp_entry);
-  if (BCM_FAILURE(rv)) {
-    printf("Error in bcm_field_entry_install blah, wrong tagged: %s.\n",
-           bcm_errmsg(rv));
-    return rv;
-  }
-
-  return rv;
-}
-
-bcm_error_t create_vfp_group(int unit, bcm_field_group_t *vfp_group) {
+bcm_error_t create_vfp_group(int unit, bcm_field_group_t *vfp_group)
+{
   int rv = BCM_E_NONE;
   bcm_field_qset_t qset;
 
@@ -653,178 +536,6 @@ bcm_error_t create_vfp_group(int unit, bcm_field_group_t *vfp_group) {
   }
   return rv;
 }
-
-/*
- *  Routine to build IPv4 packet
- *
- *    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
- *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- *   |Version|  IHL  |Type of Service|          Total Length         |
- *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- *   |         Identification        |Flags|      Fragment Offset    |
- *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- *   |  Time to Live |    Protocol   |         Header Checksum       |
- *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- *   |                       Source Address                          |
- *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- *   |                    Destination Address                        |
- *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- *   |                    Options                    |    Padding    |
- *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- */
-void tx_ipv4_packet_from_cpu(int unit, int vlan_tag, bcm_mac_t src_mac,
-                             bcm_mac_t dst_mac, bcm_ip_t src_ip,
-                             bcm_ip_t dst_ip, bcm_port_t dest_port) {
-  bcm_pkt_t *pkt;
-  int pkt_size = 68; /* including VLAN Tag if BCM_PKT_F_NO_VTAG = 0 */
-  int flags = BCM_TX_CRC_APPEND;
-
-  /* EtherType(2B) Version+IHL+TOS(2B) Total Length (2B) + Identification (2B)
-     Flags+Fragment offset(2B) TTL(1B: TTL=0x10) Protocol(1B: UDP=0x11) Header
-     Checksum(2B) */
-  char ipv4_ether_type[2] = {0x08, 0x00};
-  /* ipv4.total_length = 68 - 12 - 2 - 4 - 4 = 46; */
-  char ipv4_hdr[24] = {0x45, 0x00, 0x00, 0x2E, 0x00, 0x00, 0x00,
-                       0x00, 0x40, 0xFF, 0xDA, 0x7E, 0xC0, 0xA8,
-                       0x0A, 0x01, 0xC0, 0xA8, 0x14, 0x01};
-
-  if (BCM_E_NONE != bcm_pkt_alloc(unit, pkt_size, flags, &pkt)) {
-    printf("TX: Failed to allocate packets\n");
-  }
-
-  /* packet init */
-  sal_memset(pkt->_pkt_data.data, 0x00, pkt_size);
-
-  sal_memcpy(ipv4_hdr + 12, &src_ip, 4);
-  sal_memcpy(ipv4_hdr + 16, &dst_ip, 4);
-
-  BCM_PKT_HDR_DMAC_SET(&pkt, dst_mac);
-  BCM_PKT_HDR_SMAC_SET(&pkt, src_mac);
-  BCM_PKT_HDR_TPID_SET(&pkt, 0x8100);
-  BCM_PKT_HDR_VTAG_CONTROL_SET(&pkt, vlan_tag);
-  sal_memcpy(pkt->pkt_data->data + 16, ipv4_ether_type, 2);
-  sal_memcpy(pkt->pkt_data->data + 18, ipv4_hdr, 24);
-  BCM_PKT_PORT_SET(&pkt, dest_port, 0, 0);
-  pkt->call_back = NULL;
-
-  if (BCM_E_NONE != bcm_tx(unit, pkt, NULL)) {
-    printf("bcm tx error\n");
-  }
-
-  bcm_pkt_free(unit, pkt);
-}
-
-/*
- *  Routine to build VxLAN packet
- *
- *    MAC_DA(6B) MAC_SA(6B) outer VLAN(4B, optional)
- *    Ethertype(2B, 0x0800) IPv4 header(20B, without options)
- *    UDP source port (2B) UDP dest port (2B)
- *    UDP length (2B) UDP checksum (2B)
- *
- *    VXLAN Header
- *
- *    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
- *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- *   | FFFFIFFF (1)  | Reserved      |          Reserved             |
- *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- *   |         VNID (3B)                             | Reserved      |
- *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- *
- *    (1) F [7b] ?V Flag bits, currently reserved, it is configurable on TD2.
- *        I [1b] ?V Identifier bit, indicate the definition of this frame format
- *                 (always set to 1) and that the VN_ID is valid.
- *
- *    VN_ID [24b] ?V Virtual Network ID, Identifies the Virtual L2 Network.
- *    Reserved_1 [24b], Reserved_2 [8b] ?V These bits are currently undefined,
- * configurable on TD2.
- *
- */
-
-void tx_vxlan_packet_from_cpu(
-    int unit, bcm_mac_t ul_dst_mac, bcm_mac_t ul_src_mac, bcm_ip_t ul_dip,
-    bcm_ip_t ul_sip, uint16 ul_udp_dst_port, uint16 ul_udp_src_port,
-    uint32 vnid, int ul_vlan_tag, bcm_mac_t ol_dst_mac, bcm_mac_t ol_src_mac,
-    bcm_ip_t ol_dip, bcm_ip_t ol_sip, int ol_vlan_tag, bcm_port_t dest_port) {
-  bcm_pkt_t *pkt;
-  int pkt_size = 122; /* 68 ipv4 packet size + 54 vxlan tunnel header size */
-  int flags = BCM_TX_CRC_APPEND;
-
-  /*
-     ul_ipv4_hdr: IPv4 header(20B, without options)
-                  UDP source port (2B) UDP dest port (2B)
-                  UDP length (2B) UDP checksum (2B)
-   */
-
-  char ul_ipv4_ether_type[2] = {0x08, 0x00};
-  /* ipv4.total_length = 122 - 12 - 2 - 4 - 4 = 104 (0x68); */
-  char ul_ipv4_hdr[28] = {0x45, 0x00, 0x00, 0x64, 0x00, 0x00, 0x00,
-                          0x00, 0x3F, 0x11, 0x3F, 0x6A, 0x14, 0x14,
-                          0x14, 0x01, 0x0A, 0x0A, 0x0A, 0x01, 0xFF,
-                          0xFF, 0x21, 0x18, 0x00, 0x3A, 0x00, 0x00};
-
-  char vxlan_header[8] = {0x08, 0x00, 0x00, 0x00, 0x01, 0x23, 0x45, 0x00};
-
-  /* EtherType(2B) Version+IHL+TOS(2B) Total Length (2B) + Identification (2B)
-     Flags+Fragment offset(2B) TTL(1B: TTL=0x10) Protocol(1B: UDP=0x11) Header
-     Checksum(2B) */
-  char ol_ipv4_ether_type[2] = {0x08, 0x00};
-  char ol_ipv4_hdr[24] = {0x45, 0x00, 0x00, 0x2A, 0x00, 0x00, 0x00, 0x00,
-                          0x40, 0xFF, 0xDA, 0x82, 0xC0, 0xA8, 0x14, 0x01,
-                          0xC0, 0xA8, 0x0A, 0x01, 0x00, 0x00, 0x00, 0x00};
-  if (BCM_E_NONE != bcm_pkt_alloc(unit, pkt_size, flags, &pkt)) {
-    printf("TX: Failed to allocate packets\n");
-  }
-
-  /* packet init */
-  sal_memset(pkt->_pkt_data.data, 0x00, pkt_size);
-
-  /* ul_mac */
-  BCM_PKT_HDR_DMAC_SET(&pkt, ul_dst_mac);
-  BCM_PKT_HDR_SMAC_SET(&pkt, ul_src_mac);
-  BCM_PKT_HDR_TPID_SET(&pkt, 0x8100);
-  BCM_PKT_HDR_VTAG_CONTROL_SET(&pkt, ul_vlan_tag);
-
-  /* ul_ip */
-  sal_memcpy(ul_ipv4_hdr + 12, &ul_sip, 4);
-  sal_memcpy(ul_ipv4_hdr + 16, &ul_dip, 4);
-  sal_memcpy(ul_ipv4_hdr + 20, &ul_udp_src_port, 2);
-  sal_memcpy(ul_ipv4_hdr + 22, &ul_udp_dst_port, 2);
-
-  sal_memcpy(pkt->pkt_data->data + 16, ul_ipv4_ether_type, 2);
-  sal_memcpy(pkt->pkt_data->data + 18, ul_ipv4_hdr, 28);
-
-  /* vxlan_header */
-  int vnid_temp = vnid << 8;
-  sal_memcpy(vxlan_header + 4, &vnid_temp, 3);
-  sal_memcpy(pkt->pkt_data->data + 46, vxlan_header, 8);
-
-  /* ol_dst_mac, ol_src_mac */
-  sal_memcpy(pkt->pkt_data->data + 54, ol_dst_mac, 6);
-  sal_memcpy(pkt->pkt_data->data + 60, ol_src_mac, 6);
-
-  char ol_tpid[2] = {0x81, 0x00};
-  sal_memcpy(pkt->pkt_data->data + 66, ol_tpid, 2);
-  ol_vlan_tag <<= 16;
-  sal_memcpy(pkt->pkt_data->data + 68, &ol_vlan_tag, 2);
-
-  /* ol_ip */
-  sal_memcpy(ol_ipv4_hdr + 12, &ol_sip, 4);
-  sal_memcpy(ol_ipv4_hdr + 16, &ol_dip, 4);
-
-  sal_memcpy(pkt->pkt_data->data + 70, ol_ipv4_ether_type, 2);
-  sal_memcpy(pkt->pkt_data->data + 72, ol_ipv4_hdr, 24);
-
-  BCM_PKT_PORT_SET(&pkt, dest_port, 0, 0);
-  pkt->call_back = NULL;
-
-  if (BCM_E_NONE != bcm_tx(unit, pkt, NULL)) {
-    printf("bcm tx error\n");
-  }
-
-  bcm_pkt_free(unit, pkt);
-}
-
 /**************************1 basic function
  * end*************************************/
 
@@ -852,7 +563,8 @@ bcm_field_entry_t access_port_2_eid = BCM_FIELD_ENTRY_INVALID;
 
 /**************************3 test setup functions begin***********************/
 
-bcm_error_t create_ifp_group(int unit, bcm_field_group_config_t *group_config) {
+bcm_error_t create_ifp_group(int unit, bcm_field_group_config_t *group_config)
+{
   bcm_error_t rv = BCM_E_NONE;
   /* FP group configuration and creation */
   bcm_field_group_config_t_init(group_config);
@@ -868,64 +580,12 @@ bcm_error_t create_ifp_group(int unit, bcm_field_group_config_t *group_config) {
   return rv;
 }
 
-bcm_error_t create_ifp_to_cpu_rule(int unit, bcm_field_group_t gid,
-                                   bcm_field_entry_t *eid, bcm_port_t port,
-                                   int drop) {
-  bcm_error_t rv = BCM_E_NONE;
-  bcm_port_t port_mask = 0xffffffff;
-  /* FP entry configuration and creation */
-  rv = bcm_field_entry_create(unit, gid, eid);
-  if (BCM_FAILURE(rv)) {
-    printf("\nError in bcm_field_entry_create() : %s\n", bcm_errmsg(rv));
-    return rv;
-  }
-  rv = bcm_field_qualify_InPort(unit, *eid, port, port_mask);
-  if (BCM_FAILURE(rv)) {
-    printf("\nError in bcm_field_qualify_InPort() : %s\n", bcm_errmsg(rv));
-    return rv;
-  }
-  /* FP entry actions configuration */
-  if (1 == drop) {
-    rv = bcm_field_action_add(unit, *eid, bcmFieldActionDrop, 0, 0);
-    if (BCM_FAILURE(rv)) {
-      printf("\nError in bcm_field_action_add() : %s\n", bcm_errmsg(rv));
-      return rv;
-    }
-  }
-  rv = bcm_field_action_add(unit, *eid, bcmFieldActionCopyToCpu, 0, 0);
-  if (BCM_FAILURE(rv)) {
-    printf("\nError in bcm_field_action_add() : %s\n", bcm_errmsg(rv));
-    return rv;
-  }
-  /* Installing FP entry to FP TCAM */
-  rv = bcm_field_entry_install(unit, *eid);
-  if (BCM_FAILURE(rv)) {
-    printf("\nError in bcm_field_entry_install() : %s\n", bcm_errmsg(rv));
-    return rv;
-  }
-  return rv;
-}
-
-bcm_error_t destroy_ifp_to_cpu_rule(int unit, bcm_field_entry_t eid) {
-  bcm_error_t rv = BCM_E_NONE;
-  if (BCM_FIELD_ENTRY_INVALID == eid) {
-    return rv;
-  }
-
-  /* Destroying FP entry */
-  rv = bcm_field_entry_destroy(unit, eid);
-  if (BCM_FAILURE(rv)) {
-    printf("\nError in bcm_field_entry_destroy() : %s\n", bcm_errmsg(rv));
-    return rv;
-  }
-  return rv;
-}
-
 /* This function is written so that hardcoding of port
    numbers in Cint scripts is removed. This function gives
    required number of ports
 */
-bcm_error_t portNumbersGet(int unit, int *port_list, int num_ports) {
+bcm_error_t portNumbersGet(int unit, int *port_list, int num_ports)
+{
 
   int i = 0, port = 0, rv = 0;
   bcm_port_config_t configP;
@@ -959,7 +619,8 @@ bcm_error_t portNumbersGet(int unit, int *port_list, int num_ports) {
  * to CPU.
  */
 bcm_error_t ingress_port_setup(int unit, bcm_port_t port,
-                               bcm_field_entry_t *entry) {
+                               bcm_field_entry_t *entry)
+{
   int drop;
   bcm_error_t rv;
   BCM_IF_ERROR_RETURN(bcm_port_loopback_set(unit, port, BCM_PORT_LOOPBACK_MAC));
@@ -982,7 +643,8 @@ bcm_error_t ingress_port_setup(int unit, bcm_port_t port,
 }
 
 bcm_error_t clear_port_setup(int unit, bcm_port_t port,
-                             bcm_field_entry_t *entry) {
+                             bcm_field_entry_t *entry)
+{
   bcm_error_t rv;
   BCM_IF_ERROR_RETURN(
       bcm_port_loopback_set(unit, port, BCM_PORT_LOOPBACK_NONE));
@@ -1005,7 +667,8 @@ bcm_error_t clear_port_setup(int unit, bcm_port_t port,
  */
 
 bcm_error_t egress_port_setup(int unit, bcm_port_t port,
-                              bcm_field_entry_t *entry) {
+                              bcm_field_entry_t *entry)
+{
   int drop;
   bcm_error_t rv;
   BCM_IF_ERROR_RETURN(bcm_port_loopback_set(unit, port, BCM_PORT_LOOPBACK_MAC));
@@ -1029,7 +692,8 @@ bcm_error_t egress_port_setup(int unit, bcm_port_t port,
 
 /*   Select 3 ports and does ingess and egress port setting on respective ports.
  *   */
-bcm_error_t test_setup(int unit) {
+bcm_error_t test_setup(int unit)
+{
   int port_list[4], i;
   bcm_field_entry_t entry[4] = {
       BCM_FIELD_ENTRY_INVALID, BCM_FIELD_ENTRY_INVALID, BCM_FIELD_ENTRY_INVALID,
@@ -1083,7 +747,8 @@ bcm_error_t test_setup(int unit) {
 *********************************************************************
 **********************************************************************/
 
-bcm_error_t riot_access2access(int unit) {
+bcm_error_t riot_access2access(int unit)
+{
 
   bcm_error_t rv = BCM_E_NONE;
   bcm_ip_t payload_sip = 0xC0A80A01;               /* 192.168.10.1 */
@@ -1333,7 +998,8 @@ bcm_error_t riot_access2access(int unit) {
  *
  *
  */
-void verify(int unit) {
+void verify(int unit)
+{
   char str[512];
   bshell(unit, "hm ieee");
   printf(" \n****************************\n\n\n\n\n");
@@ -1431,7 +1097,8 @@ void verify(int unit) {
  * c)demonstrates the functionality(done in verify()).
  */
 
-bcm_error_t execute() {
+bcm_error_t execute()
+{
   bcm_error_t rv;
   int unit = 0;
 
@@ -1477,6 +1144,7 @@ bcm_error_t execute() {
 }
 
 const char *auto_execute = (ARGC == 1) ? ARGV[0] : "YES";
-if (!sal_strcmp(auto_execute, "YES")) {
+if (!sal_strcmp(auto_execute, "YES"))
+{
   print execute();
 }
