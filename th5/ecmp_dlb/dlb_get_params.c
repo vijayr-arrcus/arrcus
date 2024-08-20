@@ -114,10 +114,8 @@ int config_dlb_egr_port_attributes_get (int unit, bcm_port_t egr_port)
 }
 
 config_dlb_egr_port_attributes_get(0,  343);
-config_dlb_egr_port_attributes_get(0, 
-                             2);
-config_dlb_egr_port_attributes_get(0,
-                         121);
+config_dlb_egr_port_attributes_get(0, 2);
+config_dlb_egr_port_attributes_get(0, 121);
 
 int print_port_quality (int unit, bcm_port_t egr_port)
 {
@@ -143,6 +141,16 @@ int print_port_quality (int unit, bcm_port_t egr_port)
 print_port_quality(0, 343);
 print_port_quality(0, 2);
 print_port_quality(0, 121);
+
+swp8 -- 121
+swp47s1 -- 2
+swp48s2 -- 343
+
+pt reset DLB_ECMP_FLOWSET_INST0m
+pt reset DLB_ECMP_FLOWSET_INST1m
+
+pt dump -d DLB_ECMP_FLOWSET_INST0m
+pt dump -d DLB_ECMP_FLOWSET_INST1m
 
 bcm_l3_egress_ecmp_t ecmp_info;
 bcm_l3_ecmp_member_t ecmp_member_array[10];

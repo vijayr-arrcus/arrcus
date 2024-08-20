@@ -136,6 +136,13 @@ int print_port_quality (int unit, bcm_port_t egr_port)
   printf("\t- quality(1) - %d\n", port_quality.quality);
   return 0;
 }
+print_port_quality(0, 44); // swp6
+print_port_quality(0, 67); // swp7s1
+print_port_quality(0, 167); // swp48s2
+
+swp48s2 -- 167
+swp6 -- 44
+swp7s1 -- 67
 
 print_port_quality(0, 343); // swp48s2
 print_port_quality(0, 2); // swp 47s1
@@ -154,6 +161,10 @@ while ( i < 500) {
   i++;
 }
 i = 0;
+
+> swp8 -- 121
+> swp47s1 -- 2
+> swp48s2 -- 343
 
 pt reset DLB_ECMP_FLOWSET_INST0m
 pt reset DLB_ECMP_FLOWSET_INST1m
