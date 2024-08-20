@@ -1,0 +1,901 @@
+f2:~# cli
+Welcome to the ArcOS CLI
+User root last logged in 2024-08-19T14:00:08.554773+00:00, to Edgecore-TH5-Leaf2, from 10.9.208.70 using cli-ssh
+root connected from 10.9.208.70 using ssh on Edgecore-TH5-Leaf2
+root@Edgecore-TH5-Leaf2# traffic
+root@Edgecore-TH5-Leaf2# show interface swp* oper-status UP | select counters in-pkts-rate | select counters out-pkts-rate | select counters out-bits-rate-brief | select counters in-bits-rate-brief | select counters out-discards | select counters in-discards | select counters in-unicast-pkts | select counters out-unicast-pkts | select counters in-broadcast-pkts | select counters out-broadcast-pkts | tab
+interface
+                     IN                   OUT         OUT
+         IN UNICAST  BROADCAST  IN        UNICAST     BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS        PKTS       DISCARDS  PKTS        PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+-------------------------------------------------------------------------------------------------------------------------
+swp6     5116061     0          67        49          0          0         18.15 mbps   19555     88 bps       0
+swp8     0           0          14        0           0          0         8 bps        0         8 bps        0
+swp13    0           0          14        0           0          0         8 bps        0         8 bps        0
+swp45    0           0          14        0           0          0         8 bps        0         8 bps        0
+swp5s1   0           0          0         0           4          0         0 bps        0         24 bps       0
+swp7s1   5113097     0          37        7895658062  0          0         18.09 mbps   19491     272.64 gbps  29999837
+swp7s2   0           0          14        0           0          0         40 bps       0         40 bps       0
+swp14s1  0           0          0         0           3          0         0 bps        0         24 bps       0
+swp48s2  5116473     0          61        7895655814  0          1         18.14 mbps   19547     272.64 gbps  29999838
+swp49s1  7895654200  1          0         7710600     1          1         260.64 gbps  29999841 -
+interface
+                     IN                   OUT         OUT
+         IN UNICAST  BROADCAST  IN        UNICAST     BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS        PKTS       DISCARDS  PKTS        PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+-------------------------------------------------------------------------------------------------------------------------
+swp6     5116061     0          67        49          0          0         18.15 mbps   19555     88 bps       0
+swp8     0           0          14        0           0          0         8 bps        0         8 bps        0
+swp13    0           0          14        0           0          0         8 bps        0         8 bps        0
+swp45    0           0          14        0           0          0         8 bps        0         8 bps        0
+swp5s1   0           0          0         0           4          0         0 bps        0         24 bps       0
+swp7s1   5113097     0          37        7895658062  0          0         18.09 mbps   19491     272.64 gbps  29999837
+swp7s2   0           0          14        0           0          0         40 bps       0         40 bps       0
+swp14s1  0           0          0         0           3          0         0 bps        0         24 bps       0
+swp48s2  5116473     0          61        7895655814  0          1         18.14 mbps   19547     272.64 gbps  29999838
+swp49s1  7895654200  1          0         7710600     1          1         260.64 gbps  29999841  interface
+                     IN                   OUT         OUT
+         IN UNICAST  BROADCAST  IN        UNICAST     BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS        PKTS       DISCARDS  PKTS        PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+-------------------------------------------------------------------------------------------------------------------------
+swp6     5116061     0          67        49          0          0         18.15 mbps   19555     88 bps       0
+swp8     0           0          14        0           0          0         8 bps        0         8 bps        0
+swp13    0           0          14        0           0          0         8 bps        0         8 bps        0
+swp45    0           0          14        0           0          0         8 bps        0         8 bps        0
+swp5s1   0           0          0         0           4          0         0 bps        0         24 bps       0
+swp7s1   5113097     0          37        7895658062  0          0         18.09 mbps   19491     272.64 gbps  29999837
+swp7s2   0           0          14        0           0          0         40 bps       0         40 bps       0
+swp14s1  0           0          0         0           3          0         0 bps        0         24 bps       0
+swp48s2  5116473     0          61        7895655814  0          1         18.14 mbps   19547     272.64 gbps  29999838
+swp49s1  7895654200  1          0         7710600     1          1         260.64 gbps  29999841  15.47 mbps   29299
+swp49s2  7895653453  1          0         7634911     2          1         260.64 gbps  29999843  15.47 mbps   29297
+
+root@Edgecore-TH5-Leaf2#
+root@Edgecore-TH5-Leaf2#
+root@Edgecore-TH5-Leaf2#
+root@Edgecore-TH5-Leaf2#
+root@Edgecore-TH5-Leaf2#
+root@Edgecore-TH5-Leaf2# traffic
+root@Edgecore-TH5-Leaf2# show interface swp* oper-status UP | select counters in-pkts-rate | select counters out-pkts-rate | select counters out-bits-rate-brief | select counters in-bits-rate-brief | select counters out-discards | select counters in-discards | select counters in-unicast-pkts | select counters out-unicast-pkts | select counters in-broadcast-pkts | select counters out-broadcast-pkts | tab
+interface
+                     IN                   OUT         OUT
+         IN UNICAST  BROADCAST  IN        UNICAST     BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS        PKTS       DISCARDS  PKTS        PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+-------------------------------------------------------------------------------------------------------------------------
+swp6     5702495     0          68        49          0          0         18.14 mbps   19552     80 bps       0
+swp8     0           0          15        0           0          0         8 bps        0         8 bps        0
+swp13    0           0          15        0           0          0         8 bps        0         8 bps        0
+swp45    0           0          15        0           0          0         8 bps        0         8 bps        0
+swp5s1   0           0          0         0           4          0         0 bps        0         24 bps       0
+swp7s1   5699422     0          38        8795782403  0          0         18.12 mbps   19529     272.67 gbps  30002669
+swp7s2   0           0          15        0           0          0         40 bps       0         40 bps       0
+swp14s1  0           0          0         0           3          0         0 bps        0         24 bps       0
+swp48s2  5701772     0          62        8795779907  0          1         18.11 mbps   19518     272.67 gbps  30002662
+swp49s1  8795778284  1          0         8589628     1          1         260.67 gbps  30002663  15.47 mbps   29301
+swp49s2  8795777525  1          0         8513939     2          1         260.67 gbps  30002664  15.47 mbps   29301
+
+root@Edgecore-TH5-Leaf2# traffic
+root@Edgecore-TH5-Leaf2# show interface swp* oper-status UP | select counters in-pkts-rate | select counters out-pkts-rate | select counters out-bits-rate-brief | select counters in-bits-rate-brief | select counters out-discards | select counters in-discards | select counters in-unicast-pkts | select counters out-unicast-pkts | select counters in-broadcast-pkts | select counters out-broadcast-pkts | tab
+interface
+                     IN                   OUT         OUT
+         IN UNICAST  BROADCAST  IN        UNICAST     BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS        PKTS       DISCARDS  PKTS        PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+-------------------------------------------------------------------------------------------------------------------------
+swp6     6094141     0          73        52          0          0         18.16 mbps   19569     128 bps      0
+swp8     0           0          16        0           0          0         24 bps       0         24 bps       0
+swp13    0           0          16        0           0          0         24 bps       0         24 bps       0
+swp45    0           0          16        0           0          0         24 bps       0         24 bps       0
+swp5s1   0           0          0         0           4          0         0 bps        0         40 bps       0
+swp7s1   6089050     0          40        9395875679  0          0         18.10 mbps   19504     272.68 gbps  30003643
+swp7s2   0           0          15        0           0          0         8 bps        0         8 bps        0
+swp14s1  0           0          0         0           3          0         0 bps        0         40 bps       0
+swp48s2  6092569     0          66        9395873411  0          1         18.12 mbps   19528     272.68 gbps  30003643
+swp49s1  9395871830  1          0         9175656     1          1         260.68 gbps  30003645  15.47 mbps   29301
+swp49s2  9395871053  1          0         9099968     2          1         260.68 gbps  30003645  15.47 mbps   29301
+
+root@Edgecore-TH5-Leaf2# traffic | repeat ?
+Possible completions:
+  <interval in seconds>
+  |      Output modifiers
+  <cr>
+root@Edgecore-TH5-Leaf2# traffic | repeat 5
+root@Edgecore-TH5-Leaf2# show interface swp* oper-status UP | select counters in-pkts-rate | select counters out-pkts-rate | select counters out-bits-rate-brief | select counters in-bits-rate-brief | select counters out-discards | select counters in-discards | select counters in-unicast-pkts | select counters out-unicast-pkts | select counters in-broadcast-pkts | select counters out-broadcast-pkts | tab | repeat 5
+--- repeat refresh ---
+interface
+                     IN                   OUT         OUT
+         IN UNICAST  BROADCAST  IN        UNICAST     BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS        PKTS       DISCARDS  PKTS        PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+-------------------------------------------------------------------------------------------------------------------------
+swp6     6191746     0          73        52          0          0         18.15 mbps   19561     136 bps      0
+swp8     0           0          16        0           0          0         16 bps       0         16 bps       0
+swp13    0           0          16        0           0          0         16 bps       0         16 bps       0
+swp45    0           0          16        0           0          0         16 bps       0         16 bps       0
+swp5s1   0           0          0         0           4          0         0 bps        0         32 bps       0
+swp7s1   6186753     0          41        9545898765  0          0         18.10 mbps   19510     272.68 gbps  30003793
+swp7s2   0           0          16        0           0          0         56 bps       0         56 bps       0
+swp14s1  0           0          0         0           3          0         0 bps        0         32 bps       0
+swp48s2  6190273     0          67        9545896497  0          1         18.12 mbps   19530     272.68 gbps  30003793
+swp49s1  9545894837  1          0         9322163     1          1         260.68 gbps  30003792  15.47 mbps   29301
+swp49s2  9545894052  1          0         9246475     2          1         260.68 gbps  30003792  15.47 mbps   29301
+
+--- repeat refresh ---
+interface
+                     IN                   OUT         OUT
+         IN UNICAST  BROADCAST  IN        UNICAST     BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS        PKTS       DISCARDS  PKTS        PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+-------------------------------------------------------------------------------------------------------------------------
+swp6     6289469     0          73        52          0          0         18.15 mbps   19558     112 bps      0
+swp8     0           0          16        0           0          0         8 bps        0         8 bps        0
+swp13    0           0          16        0           0          0         8 bps        0         8 bps        0
+swp45    0           0          16        0           0          0         8 bps        0         8 bps        0
+swp5s1   0           0          0         0           4          0         0 bps        0         24 bps       0
+swp7s1   6284577     0          41        9695919701  0          0         18.11 mbps   19519     272.68 gbps  30003854
+swp7s2   0           0          16        0           0          0         40 bps       0         40 bps       0
+swp14s1  0           0          0         0           3          0         0 bps        0         24 bps       0
+swp48s2  6287734     0          67        9695917449  0          1         18.12 mbps   19524     272.68 gbps  30003854
+swp49s1  9695915834  1          0         9468668     1          1         260.68 gbps  30003855  15.47 mbps   29301
+swp49s2  9695915086  1          0         9392979     2          1         260.68 gbps  30003856  15.47 mbps   29301
+
+--- repeat refresh ---
+interface
+                     IN                   OUT         OUT
+         IN UNICAST  BROADCAST  IN        UNICAST     BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS        PKTS       DISCARDS  PKTS        PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+-------------------------------------------------------------------------------------------------------------------------
+swp6     6387209     0          74        52          0          0         18.15 mbps   19556     136 bps      0
+swp8     0           0          17        0           0          0         48 bps       0         48 bps       0
+swp13    0           0          17        0           0          0         48 bps       0         48 bps       0
+swp45    0           0          17        0           0          0         48 bps       0         48 bps       0
+swp5s1   0           0          0         0           4          0         0 bps        0         80 bps       0
+swp7s1   6382190     0          41        9845943727  0          0         18.11 mbps   19520     272.68 gbps  30004000
+swp7s2   0           0          16        0           0          0         32 bps       0         32 bps       0
+swp14s1  0           0          0         0           3          0         0 bps        0         80 bps       0
+swp48s2  6385400     0          67        9845941500  0          1         18.12 mbps   19526     272.68 gbps  30004001
+swp49s1  9845939890  1          0         9615176     1          1         260.68 gbps  30004002  15.47 mbps   29301
+swp49s2  9845939118  1          0         9539487     2          1         260.68 gbps  30004002  15.47 mbps   29301
+
+--- repeat refresh ---
+interface
+                     IN                   OUT         OUT
+         IN UNICAST  BROADCAST  IN        UNICAST     BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS        PKTS       DISCARDS  PKTS        PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+-------------------------------------------------------------------------------------------------------------------------
+swp6     6484507     0          74        52          0          0         18.13 mbps   19541     112 bps      0
+swp8     0           0          17        0           0          0         40 bps       0         40 bps       0
+swp13    0           0          17        0           0          0         40 bps       0         40 bps       0
+swp45    0           0          17        0           0          0         40 bps       0         40 bps       0
+swp5s1   0           0          0         0           4          0         0 bps        0         64 bps       0
+swp7s1   6479967     0          41        9995968016  0          0         18.12 mbps   19526     272.68 gbps  30004132
+swp7s2   0           0          16        0           0          0         24 bps       0         24 bps       0
+swp14s1  0           0          0         0           3          0         0 bps        0         64 bps       0
+swp48s2  6483337     0          67        9995965763  0          1         18.13 mbps   19536     272.68 gbps  30004132
+swp49s1  9995963987  1          0         9761684     1          1         260.68 gbps  30004128  15.47 mbps   29301
+swp49s2  9995963205  1          0         9685995     2          1         260.68 gbps  30004128  15.47 mbps   29301
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     6582698      0          74        52           0          0         18.15 mbps   19556     88 bps       0
+swp8     0            0          17        0            0          0         32 bps       0         32 bps       0
+swp13    0            0          17        0            0          0         32 bps       0         32 bps       0
+swp45    0            0          17        0            0          0         32 bps       0         32 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         48 bps       0
+swp7s1   6577337      0          41        10145990736  0          0         18.11 mbps   19518     272.68 gbps  30004196
+swp7s2   0            0          16        0            0          0         16 bps       0         16 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         48 bps       0
+swp48s2  6580786      0          67        10145988506  0          1         18.12 mbps   19528     272.68 gbps  30004196
+swp49s1  10145986927  1          0         9908191      1          1         260.68 gbps  30004199  15.47 mbps   29301
+swp49s2  10145986144  1          0         9832502      2          1         260.68 gbps  30004199  15.47 mbps   29301
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     6680490      0          74        52           0          0         18.15 mbps   19557     104 bps      0
+swp8     0            0          17        0            0          0         24 bps       0         24 bps       0
+swp13    0            0          17        0            0          0         24 bps       0         24 bps       0
+swp45    0            0          17        0            0          0         24 bps       0         24 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         40 bps       0
+swp7s1   6674843      0          41        10296014319  0          0         18.11 mbps   19515     272.68 gbps  30004276
+swp7s2   0            0          16        0            0          0         8 bps        0         8 bps        0
+swp14s1  0            0          0         0            3          0         0 bps        0         40 bps       0
+swp48s2  6678507      0          67        10296012084  0          1         18.12 mbps   19531     272.68 gbps  30004276
+swp49s1  10296010465  1          0         10054698     1          1         260.68 gbps  30004277  15.47 mbps   29301
+swp49s2  10296009716  1          0         9979009      2          1         260.68 gbps  30004279  15.47 mbps   29301
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     6778141      0          74        52           0          0         18.14 mbps   19552     88 bps       0
+swp8     0            0          17        0            0          0         16 bps       0         16 bps       0
+swp13    0            0          17        0            0          0         16 bps       0         16 bps       0
+swp45    0            0          17        0            0          0         16 bps       0         16 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         32 bps       0
+swp7s1   6772029      0          42        10445980499  0          0         18.10 mbps   19503     272.67 gbps  30002581
+swp7s2   0            0          17        0            0          0         56 bps       0         56 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         32 bps       0
+swp48s2  6776572      0          68        10445978995  0          1         18.14 mbps   19544     272.67 gbps  30002603
+swp49s1  10445977778  1          0         10201151     1          1         260.67 gbps  30002616  15.47 mbps   29299
+swp49s2  10445977251  1          0         10125462     2          1         260.67 gbps  30002625  15.47 mbps   29299
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     6875774      0          74        52           0          0         18.14 mbps   19548     72 bps       0
+swp8     0            0          17        0            0          0         8 bps        0         8 bps        0
+swp13    0            0          17        0            0          0         8 bps        0         8 bps        0
+swp45    0            0          17        0            0          0         8 bps        0         8 bps        0
+swp5s1   0            0          0         0            4          0         0 bps        0         24 bps       0
+swp7s1   6868983      0          42        10596059777  0          0         18.08 mbps   19485     272.69 gbps  30004619
+swp7s2   0            0          17        0            0          0         40 bps       0         40 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         24 bps       0
+swp48s2  6875111      0          68        10596057526  0          1         18.16 mbps   19570     272.69 gbps  30004615
+swp49s1  10596055867  1          0         10347711     1          1         260.68 gbps  30004612  15.47 mbps   29301
+swp49s2  10596055112  1          0         10272022     2          1         260.68 gbps  30004613  15.47 mbps   29301
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     6973567      0          75        52           0          0         18.14 mbps   19550     104 bps      0
+swp8     0            0          18        0            0          0         48 bps       0         48 bps       0
+swp13    0            0          18        0            0          0         48 bps       0         48 bps       0
+swp45    0            0          18        0            0          0         48 bps       0         48 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         80 bps       0
+swp7s1   6966676      0          42        10746082878  0          0         18.09 mbps   19494     272.69 gbps  30004620
+swp7s2   0            0          17        0            0          0         32 bps       0         32 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         80 bps       0
+swp48s2  6972636      0          68        10746080633  0          1         18.15 mbps   19560     272.69 gbps  30004616
+swp49s1  10746079057  1          0         10494218     1          1         260.68 gbps  30004616  15.47 mbps   29301
+swp49s2  10746078287  1          0         10418529     2          1         260.68 gbps  30004617  15.47 mbps   29301
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     7169355      0          79        55           0          0         18.15 mbps   19558     152 bps      0
+swp8     0            0          18        0            0          0         32 bps       0         32 bps       0
+swp13    0            0          18        0            0          0         32 bps       0         32 bps       0
+swp45    0            0          18        0            0          0         32 bps       0         32 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         48 bps       0
+swp7s1   7161600      0          44        11046131685  0          0         18.09 mbps   19493     272.69 gbps  30004698
+swp7s2   0            0          17        0            0          0         16 bps       0         16 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         48 bps       0
+swp48s2  7167964      0          72        11046129417  0          1         18.14 mbps   19553     272.69 gbps  30004695
+swp49s1  11046127832  1          0         10787235     1          1         260.68 gbps  30004695  15.47 mbps   29301
+swp49s2  11046127081  1          0         10711546     2          1         260.68 gbps  30004696  15.47 mbps   29301
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          79        55           0          0         16.39 mbps   17656     144 bps      0
+swp8     0            0          18        0            0          0         24 bps       0         24 bps       0
+swp13    0            0          18        0            0          0         24 bps       0         24 bps       0
+swp45    0            0          18        0            0          0         24 bps       0         24 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         40 bps       0
+swp7s1   7197812      0          44        11101449267  0          0         16.34 mbps   17612     246.26 gbps  27096880
+swp7s2   0            0          17        0            0          0         8 bps        0         8 bps        0
+swp14s1  0            0          0         0            3          0         0 bps        0         40 bps       0
+swp48s2  7203943      0          72        11101449243  0          1         16.38 mbps   17655     246.26 gbps  27096946
+swp49s1  11101449216  1          0         10841260     1          1         235.42 gbps  27096995  13.97 mbps   26461
+swp49s2  11101449216  1          0         10765572     2          1         235.42 gbps  27097017  13.97 mbps   26461
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          79        55           0          0         13.87 mbps   14945     120 bps      0
+swp8     0            0          18        0            0          0         16 bps       0         16 bps       0
+swp13    0            0          18        0            0          0         16 bps       0         16 bps       0
+swp45    0            0          18        0            0          0         16 bps       0         16 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         32 bps       0
+swp7s1   7197812      0          45        11101449267  0          0         13.84 mbps   14908     208.45 gbps  22937012
+swp7s2   0            0          18        0            0          0         56 bps       0         56 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         32 bps       0
+swp48s2  7203943      0          73        11101449243  0          1         13.87 mbps   14944     208.45 gbps  22937068
+swp49s1  11101449216  1          0         10841260     1          1         199.28 gbps  22937110  11.83 mbps   22398
+swp49s2  11101449216  1          0         10765572     2          1         199.28 gbps  22937128  11.83 mbps   22398
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          79        55           0          0         11.74 mbps   12650     96 bps       0
+swp8     0            0          18        0            0          0         8 bps        0         8 bps        0
+swp13    0            0          18        0            0          0         8 bps        0         8 bps        0
+swp45    0            0          18        0            0          0         8 bps        0         8 bps        0
+swp5s1   0            0          0         0            4          0         0 bps        0         24 bps       0
+swp7s1   7197812      0          45        11101449267  0          0         11.71 mbps   12619     176.45 gbps  19415760
+swp7s2   0            0          18        0            0          0         40 bps       0         40 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         24 bps       0
+swp48s2  7203943      0          73        11101449243  0          1         11.74 mbps   12649     176.45 gbps  19415808
+swp49s1  11101449216  1          0         10841260     1          1         168.69 gbps  19415844  10.01 mbps   18959
+swp49s2  11101449216  1          0         10765572     2          1         168.69 gbps  19415858  10.01 mbps   18959
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          80        55           0          0         9.94 mbps    10707     128 bps      0
+swp8     0            0          19        0            0          0         48 bps       0         48 bps       0
+swp13    0            0          19        0            0          0         48 bps       0         48 bps       0
+swp45    0            0          19        0            0          0         48 bps       0         48 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         80 bps       0
+swp7s1   7197812      0          45        11101449267  0          0         9.91 mbps    10681     149.36 gbps  16435085
+swp7s2   0            0          18        0            0          0         32 bps       0         32 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         80 bps       0
+swp48s2  7203943      0          73        11101449243  0          1         9.94 mbps    10707     149.36 gbps  16435126
+swp49s1  11101449216  1          0         10841260     1          1         142.79 gbps  16435156  8.47 mbps    16048
+swp49s2  11101449216  1          0         10765572     2          1         142.79 gbps  16435168  8.47 mbps    16048
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          80        55           0          0         8.41 mbps    9063      104 bps      0
+swp8     0            0          19        0            0          0         40 bps       0         40 bps       0
+swp13    0            0          19        0            0          0         40 bps       0         40 bps       0
+swp45    0            0          19        0            0          0         40 bps       0         40 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         64 bps       0
+swp7s1   7197812      0          45        11101449267  0          0         8.39 mbps    9041      126.43 gbps  13911998
+swp7s2   0            0          18        0            0          0         24 bps       0         24 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         64 bps       0
+swp48s2  7203943      0          73        11101449243  0          1         8.41 mbps    9063      126.43 gbps  13912033
+swp49s1  11101449216  1          0         10841260     1          1         120.87 gbps  13912058  7.17 mbps    13584
+swp49s2  11101449216  1          0         10765572     2          1         120.87 gbps  13912069  7.17 mbps    13584
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          80        55           0          0         7.12 mbps    7671      112 bps      0
+swp8     0            0          19        0            0          0         32 bps       0         32 bps       0
+swp13    0            0          19        0            0          0         32 bps       0         32 bps       0
+swp45    0            0          19        0            0          0         32 bps       0         32 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         48 bps       0
+swp7s1   7197812      0          45        11101449267  0          0         7.10 mbps    7653      107.02 gbps  11776251
+swp7s2   0            0          18        0            0          0         16 bps       0         16 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         48 bps       0
+swp48s2  7203943      0          73        11101449243  0          1         7.12 mbps    7671      107.02 gbps  11776281
+swp49s1  11101449216  1          0         10841260     1          1         102.31 gbps  11776302  6.07 mbps    11498
+swp49s2  11101449216  1          0         10765572     2          1         102.31 gbps  11776312  6.07 mbps    11498
+
+--- repeat refresh ---
+interface
+                      IN                                OUT                                                   OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS     IN PKTS  OUT BITS    PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF  RATE     RATE BRIEF  RATE
+-----------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          80        55           0          0         6.03 mbps   6493     88 bps      0
+swp8     0            0          19        0            0          0         24 bps      0        24 bps      0
+swp13    0            0          19        0            0          0         24 bps      0        24 bps      0
+swp45    0            0          19        0            0          0         24 bps      0        24 bps      0
+swp5s1   0            0          0         0            4          0         0 bps       0        40 bps      0
+swp7s1   7197812      0          45        11101449267  0          0         6.01 mbps   6478     90.59 gbps  9968381
+swp7s2   0            0          18        0            0          0         8 bps       0        8 bps       0
+swp14s1  0            0          0         0            3          0         0 bps       0        40 bps      0
+swp48s2  7203943      0          73        11101449243  0          1         6.03 mbps   6493     90.59 gbps  9968406
+swp49s1  11101449216  1          0         10841260     1          1         86.61 gbps  9968424  5.14 mbps   9732
+swp49s2  11101449216  1          0         10765572     2          1         86.61 gbps  9968432  5.14 mbps   9732
+
+--- repeat refresh ---
+interface
+                      IN                                OUT                                                   OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS     IN PKTS  OUT BITS    PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF  RATE     RATE BRIEF  RATE
+-----------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          80        55           0          0         5.10 mbps   5496     72 bps      0
+swp8     0            0          19        0            0          0         16 bps      0        16 bps      0
+swp13    0            0          19        0            0          0         16 bps      0        16 bps      0
+swp45    0            0          19        0            0          0         16 bps      0        16 bps      0
+swp5s1   0            0          0         0            4          0         0 bps       0        32 bps      0
+swp7s1   7197812      0          46        11101449267  0          0         5.09 mbps   5483     76.69 gbps  8438052
+swp7s2   0            0          19        0            0          0         56 bps      0        56 bps      0
+swp14s1  0            0          0         0            3          0         0 bps       0        32 bps      0
+swp48s2  7203943      0          74        11101449243  0          1         5.10 mbps   5496     76.69 gbps  8438073
+swp49s1  11101449216  1          0         10841260     1          1         73.31 gbps  8438088  4.35 mbps   8237
+swp49s2  11101449216  1          0         10765572     2          1         73.31 gbps  8438095  4.35 mbps   8237
+
+--- repeat refresh ---
+interface
+                      IN                                OUT                                                   OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS     IN PKTS  OUT BITS    PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF  RATE     RATE BRIEF  RATE
+-----------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          80        55           0          0         4.32 mbps   4652     56 bps      0
+swp8     0            0          19        0            0          0         8 bps       0        8 bps       0
+swp13    0            0          19        0            0          0         8 bps       0        8 bps       0
+swp45    0            0          19        0            0          0         8 bps       0        8 bps       0
+swp5s1   0            0          0         0            4          0         0 bps       0        24 bps      0
+swp7s1   7197812      0          46        11101449267  0          0         4.31 mbps   4641     64.91 gbps  7142656
+swp7s2   0            0          19        0            0          0         40 bps      0        40 bps      0
+swp14s1  0            0          0         0            3          0         0 bps       0        24 bps      0
+swp48s2  7203943      0          74        11101449243  0          1         4.32 mbps   4652     64.91 gbps  7142674
+swp49s1  11101449216  1          0         10841260     1          1         62.06 gbps  7142687  3.68 mbps   6972
+swp49s2  11101449216  1          0         10765572     2          1         62.06 gbps  7142693  3.68 mbps   6972
+
+--- repeat refresh ---
+interface
+                      IN                                OUT                                                   OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS     IN PKTS  OUT BITS    PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF  RATE     RATE BRIEF  RATE
+-----------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          81        55           0          0         3.66 mbps   3937     88 bps      0
+swp8     0            0          20        0            0          0         48 bps      0        48 bps      0
+swp13    0            0          20        0            0          0         48 bps      0        48 bps      0
+swp45    0            0          20        0            0          0         48 bps      0        48 bps      0
+swp5s1   0            0          0         0            4          0         0 bps       0        80 bps      0
+swp7s1   7197812      0          46        11101449267  0          0         3.65 mbps   3928     54.95 gbps  6046127
+swp7s2   0            0          19        0            0          0         32 bps      0        32 bps      0
+swp14s1  0            0          0         0            3          0         0 bps       0        80 bps      0
+swp48s2  7203943      0          74        11101449243  0          1         3.66 mbps   3937     54.95 gbps  6046142
+swp49s1  11101449216  1          0         10841260     1          1         52.53 gbps  6046153  3.12 mbps   5901
+swp49s2  11101449216  1          0         10765572     2          1         52.53 gbps  6046159  3.12 mbps   5901
+
+--- repeat refresh ---
+interface
+                      IN                                OUT                                                   OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS     IN PKTS  OUT BITS    PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF  RATE     RATE BRIEF  RATE
+-----------------------------------------------------------------------------------------------------------------------
+swp6     7205216      0          83        55           0          0         3.09 mbps   3332     72 bps      0
+swp8     0            0          20        0            0          0         40 bps      0        40 bps      0
+swp13    0            0          20        0            0          0         40 bps      0        40 bps      0
+swp45    0            0          20        0            0          0         40 bps      0        40 bps      0
+swp5s1   0            0          0         0            4          0         0 bps       0        64 bps      0
+swp7s1   7197812      0          47        11101449267  0          0         3.09 mbps   3324     46.51 gbps  5117935
+swp7s2   0            0          19        0            0          0         24 bps      0        24 bps      0
+swp14s1  0            0          0         0            3          0         0 bps       0        64 bps      0
+swp48s2  7203943      0          75        11101449243  0          1         3.09 mbps   3332     46.51 gbps  5117948
+swp49s1  11101449216  1          0         10841260     1          1         44.47 gbps  5117958  2.64 mbps   4995
+swp49s2  11101449216  1          0         10765572     2          1         44.47 gbps  5117963  2.64 mbps   4995
+
+--- repeat refresh ---
+interface
+                      IN                                OUT                                                   OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS     IN PKTS  OUT BITS    PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF  RATE     RATE BRIEF  RATE
+-----------------------------------------------------------------------------------------------------------------------
+swp6     7212470      0          85        11075834     0          0         2.83 mbps   3043     3.09 gbps   340067
+swp8     0            0          20        0            0          0         32 bps      0        32 bps      0
+swp13    0            0          20        0            0          0         32 bps      0        32 bps      0
+swp45    0            0          20        0            0          0         32 bps      0        32 bps      0
+swp5s1   0            0          0         0            4          0         0 bps       0        48 bps      0
+swp7s1   7204956      0          48        11101449482  0          0         2.82 mbps   3032     39.37 gbps  4332245
+swp7s2   0            0          19        0            0          0         16 bps      0        16 bps      0
+swp14s1  0            0          0         0            3          0         0 bps       0        48 bps      0
+swp48s2  7211169      0          78        11112497729  0          1         2.83 mbps   3042     42.45 gbps  4671478
+swp49s1  11112511523  1          0         10852067     1          1         40.59 gbps  4671911  2.41 mbps   4559
+swp49s2  11112511353  1          0         10776378     2          1         40.59 gbps  4671910  2.41 mbps   4559
+
+--- repeat refresh ---
+interface
+                      IN                                OUT                                                   OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS     IN PKTS  OUT BITS    PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF  RATE     RATE BRIEF  RATE
+-----------------------------------------------------------------------------------------------------------------------
+swp6     7240930      0          85        54801305     0          0         3.20 mbps   3450     14.82 gbps  1630393
+swp8     0            0          20        0            0          0         24 bps      0        24 bps      0
+swp13    0            0          20        0            0          0         24 bps      0        24 bps      0
+swp45    0            0          20        0            0          0         24 bps      0        24 bps      0
+swp5s1   0            0          0         0            4          0         0 bps       0        40 bps      0
+swp7s1   7233245      0          48        11101449482  0          0         3.19 mbps   3436     33.33 gbps  3667166
+swp7s2   0            0          19        0            0          0         8 bps       0        8 bps       0
+swp14s1  0            0          0         0            3          0         0 bps       0        40 bps      0
+swp48s2  7239823      0          78        11156224157  0          1         3.21 mbps   3455     48.14 gbps  5296882
+swp49s1  11156237611  1          0         10894768     1          1         46.02 gbps  5297238  2.73 mbps   5171
+swp49s2  11156237147  1          0         10819079     2          1         46.02 gbps  5297229  2.73 mbps   5171
+
+--- repeat refresh ---
+interface
+                      IN                                OUT                                                   OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS     IN PKTS  OUT BITS    PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF  RATE     RATE BRIEF  RATE
+-----------------------------------------------------------------------------------------------------------------------
+swp6     7289531      0          85        129703696    0          0         4.10 mbps   4413     33.44 gbps  3679876
+swp8     0            0          20        0            0          0         16 bps      0        16 bps      0
+swp13    0            0          20        0            0          0         16 bps      0        16 bps      0
+swp45    0            0          20        0            0          0         16 bps      0        16 bps      0
+swp5s1   0            0          0         0            4          0         0 bps       0        32 bps      0
+swp7s1   7282252      0          49        11101449482  0          0         4.10 mbps   4414     28.21 gbps  3104188
+swp7s2   0            0          20        0            0          0         56 bps      0        56 bps      0
+swp14s1  0            0          0         0            3          0         0 bps       0        32 bps      0
+swp48s2  7288509      0          79        11231127570  0          1         4.10 mbps   4420     61.65 gbps  6783523
+swp49s1  11231140711  1          0         10967915     1          1         58.94 gbps  6783815  3.50 mbps   6623
+swp49s2  11231139850  1          0         10892226     2          1         58.94 gbps  6783795  3.50 mbps   6623
+
+--- repeat refresh ---
+interface
+                      IN                                OUT                                                   OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS     IN PKTS  OUT BITS    PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF  RATE     RATE BRIEF  RATE
+-----------------------------------------------------------------------------------------------------------------------
+swp6     7357296      0          85        233809873    0          0         5.40 mbps   5817     57.36 gbps  6311388
+swp8     0            0          20        0            0          0         8 bps       0        8 bps       0
+swp13    0            0          20        0            0          0         8 bps       0        8 bps       0
+swp45    0            0          20        0            0          0         8 bps       0        8 bps       0
+swp5s1   0            0          0         0            4          0         0 bps       0        24 bps      0
+swp7s1   7350050      0          49        11101449482  0          0         5.40 mbps   5818     23.88 gbps  2627638
+swp7s2   0            0          20        0            0          0         40 bps      0        40 bps      0
+swp14s1  0            0          0         0            3          0         0 bps       0        24 bps      0
+swp48s2  7356281      0          79        11335234610  0          1         5.40 mbps   5823     81.24 gbps  8938596
+swp49s1  11335247436  1          0         11069582     1          1         77.66 gbps  8938833  4.61 mbps   8728
+swp49s2  11335246360  1          0         10993893     2          1         77.66 gbps  8938809  4.61 mbps   8728
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     7442999      0          86        365472645    0          0         7.01 mbps    7556      85.29 gbps   9385004
+swp8     0            0          21        0            0          0         48 bps       0         48 bps       0
+swp13    0            0          21        0            0          0         48 bps       0         48 bps       0
+swp45    0            0          21        0            0          0         48 bps       0         48 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         80 bps       0
+swp7s1   7435785      0          49        11101449482  0          0         7.01 mbps    7558      20.21 gbps   2224247
+swp7s2   0            0          20        0            0          0         32 bps       0         32 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         80 bps       0
+swp48s2  7441998      0          79        11466897058  0          1         7.02 mbps    7561      105.50 gbps  11608878
+swp49s1  11466909636  1          0         11198158     1          1         100.86 gbps  11609069  5.99 mbps    11336
+swp49s2  11466909313  1          0         11122470     2          1         100.86 gbps  11609074  5.99 mbps    11336
+
+--- repeat refresh ---
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     7540113      0          86        515026578    0          0         8.70 mbps    9378      113.93 gbps  12536088
+swp8     0            0          21        0            0          0         40 bps       0         40 bps       0
+swp13    0            0          21        0            0          0         40 bps       0         40 bps       0
+swp45    0            0          21        0            0          0         40 bps       0         40 bps       0
+swp5s1   0            0          0         0            4          0         0 bps        0         64 bps       0
+swp7s1   7533335      0          49        11101449482  0          0         8.72 mbps    9393      17.11 gbps   1882784
+swp7s2   0            0          20        0            0          0         24 bps       0         24 bps       0
+swp14s1  0            0          0         0            3          0         0 bps        0         64 bps       0
+swp48s2  7539429      0          79        11616449731  0          1         8.72 mbps    9392      131.04 gbps  14418517
+swp49s1  11616462690  1          0         11344206     1          1         125.27 gbps  14418692  7.43 mbps    14080
+swp49s2  11616462836  1          0         11268518     2          1         125.27 gbps  14418709  7.43 mbps    14080
+
+Aborted: by user
+root@Edgecore-TH5-Leaf2#
+root@Edgecore-TH5-Leaf2# config
+Entering configuration mode terminal
+root@Edgecore-TH5-Leaf2(config)# int swp48s2
+root@Edgecore-TH5-Leaf2(config-interface-swp48s2)# enable false
+root@Edgecore-TH5-Leaf2(config-interface-swp48s2)# commit
+Commit complete.
+root@Edgecore-TH5-Leaf2(config-interface-swp48s2)# end
+root@Edgecore-TH5-Leaf2# traffic
+root@Edgecore-TH5-Leaf2# show interface swp* oper-status UP | select counters in-pkts-rate | select counters out-pkts-rate | select counters out-bits-rate-brief | select counters in-bits-rate-brief | select counters out-discards | select counters in-discards | select counters in-unicast-pkts | select counters out-unicast-pkts | select counters in-broadcast-pkts | select counters out-broadcast-pkts | tab
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     8126219      0          93        1414605046   0          114       14.66 mbps   15804     214.16 gbps  23565039
+swp8     0            0          22        0            0          0         40 bps       0         40 bps       0
+swp13    0            0          22        0            0          0         40 bps       0         40 bps       0
+swp45    0            0          22        0            0          0         40 bps       0         40 bps       0
+swp5s1   0            0          0         31           4          0         0 bps        0         424 bps      0
+swp7s1   8382864      0          56        11506732058  0          0         21.19 mbps   22834     104.63 gbps  11513223
+swp7s2   0            0          21        0            0          0         24 bps       0         24 bps       0
+swp14s1  0            0          0         83           3          0         0 bps        0         1.02 kbps    1
+swp49s1  12516661888  1          0         12223302     1          1         210.87 gbps  24271256  12.51 mbps   23704
+swp49s2  12516661799  1          622472    12147001     2          1         210.87 gbps  24271260  12.51 mbps   23691
+
+root@Edgecore-TH5-Leaf2# traffic
+root@Edgecore-TH5-Leaf2# show interface swp* oper-status UP | select counters in-pkts-rate | select counters out-pkts-rate | select counters out-bits-rate-brief | select counters in-bits-rate-brief | select counters out-discards | select counters in-discards | select counters in-unicast-pkts | select counters out-unicast-pkts | select counters in-broadcast-pkts | select counters out-broadcast-pkts | tab
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     10568443     0          107       5165195033   0          114       18.07 mbps   19475     271.77 gbps  29903787
+swp8     0            0          26        0            0          0         32 bps       0         32 bps       0
+swp13    0            0          26        0            0          0         32 bps       0         32 bps       0
+swp45    0            0          26        0            0          0         32 bps       0         32 bps       0
+swp5s1   0            0          0         31           4          0         0 bps        0         56 bps       0
+swp7s1   13266034     0          70        15257321922  0          0         36.02 mbps   38822     270.07 gbps  29716902
+swp7s2   0            0          25        0            0          0         16 bps       0         16 bps       0
+swp14s1  0            0          0         83           3          0         0 bps        0         64 bps       0
+swp49s1  16267251812  1          0         15885987     1          1         259.90 gbps  29914722  15.42 mbps   29216
+swp49s2  16267251755  1          622472    15809686     2          1         259.90 gbps  29914727  15.42 mbps   29216
+
+root@Edgecore-TH5-Leaf2#
+root@Edgecore-TH5-Leaf2#
+root@Edgecore-TH5-Leaf2#
+root@Edgecore-TH5-Leaf2# config
+Entering configuration mode terminal
+root@Edgecore-TH5-Leaf2(config)# int swp48s2
+root@Edgecore-TH5-Leaf2(config-interface-swp48s2)# enable true
+root@Edgecore-TH5-Leaf2(config-interface-swp48s2)# commit
+Commit complete.
+root@Edgecore-TH5-Leaf2(config-interface-swp48s2)# end
+root@Edgecore-TH5-Leaf2# traffic
+root@Edgecore-TH5-Leaf2# show interface swp* oper-status UP | select counters in-pkts-rate | select counters out-pkts-rate | select counters out-bits-rate-brief | select counters in-bits-rate-brief | select counters out-discards | select counters in-discards | select counters in-unicast-pkts | select counters out-unicast-pkts | select counters in-broadcast-pkts | select counters out-broadcast-pkts | tab
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     10959924     0          108       5765424128   0          114       18.12 mbps   19524     272.25 gbps  29957105
+swp8     0            0          27        0            0          0         48 bps       0         48 bps       0
+swp13    0            0          27        0            0          0         48 bps       0         48 bps       0
+swp45    0            0          27        0            0          0         48 bps       0         48 bps       0
+swp5s1   0            0          0         31           4          0         0 bps        0         80 bps       0
+swp7s1   14046882     0          71        15857554806  0          0         36.13 mbps   38934     271.38 gbps  29861270
+swp7s2   0            0          26        0            0          0         32 bps       0         32 bps       0
+swp14s1  0            0          0         83           3          0         0 bps        0         88 bps       0
+swp48s2  7861381      0          81        12111366621  0          1         64.80 kbps   66        973.03 mbps  107064
+swp49s1  16867482353  1          0         16472150     1          1         260.32 gbps  29962763  15.45 mbps   29263
+swp49s2  16867481766  1          622472    16395849     2          1         260.32 gbps  29962750  15.45 mbps   29263
+
+root@Edgecore-TH5-Leaf2# traffic
+root@Edgecore-TH5-Leaf2# show interface swp* oper-status UP | select counters in-pkts-rate | select counters out-pkts-rate | select counters out-bits-rate-brief | select counters in-bits-rate-brief | select counters out-discards | select counters in-discards | select counters in-unicast-pkts | select counters out-unicast-pkts | select counters in-broadcast-pkts | select counters out-broadcast-pkts | tab
+interface
+                      IN                                OUT
+         IN UNICAST   BROADCAST  IN        OUT UNICAST  BROADCAST  OUT       IN BITS      IN PKTS   OUT BITS     OUT PKTS
+NAME     PKTS         PKTS       DISCARDS  PKTS         PKTS       DISCARDS  RATE BRIEF   RATE      RATE BRIEF   RATE
+---------------------------------------------------------------------------------------------------------------------------
+swp6     11057365     0          116       5915309966   0          114       18.11 mbps   19518     272.28 gbps  29960185
+swp8     0            0          27        0            0          0         40 bps       0         40 bps       0
+swp13    0            0          27        0            0          0         40 bps       0         40 bps       0
+swp45    0            0          27        0            0          0         40 bps       0         40 bps       0
+swp5s1   0            0          0         31           4          0         0 bps        0         64 bps       0
+swp7s1   14180246     0          74        15912200014  0          0         34.38 mbps   37051     244.97 gbps  26954825
+swp7s2   0            0          26        0            0          0         24 bps       0         24 bps       0
+swp14s1  0            0          0         83           3          0         0 bps        0         72 bps       0
+swp48s2  7923344      0          98        12206605546  0          1         1.82 mbps    1959      27.40 gbps   3014812
+swp49s1  17017368883  1          0         16618524     1          1         260.34 gbps  29964996  15.45 mbps   29265
+swp49s2  17017368775  1          622472    16542223     2          1         260.34 gbps  29965000  15.45 mbps   29265
+
+root@Edgecore-TH5-Leaf2# cc
+root@Edgecore-TH5-Leaf2# clear if-clear counters name all
+result counters cleared
+root@Edgecore-TH5-Leaf2# cc
+root@Edgecore-TH5-Leaf2# clear if-clear counters name all
+result counters cleared
+root@Edgecore-TH5-Leaf2# traffic
+root@Edgecore-TH5-Leaf2# show interface swp* oper-status UP | select counters in-pkts-rate | select counters out-pkts-rate | select counters out-bits-rate-brief | select counters in-bits-rate-brief | select counters out-discards | select counters in-discards | select counters in-unicast-pkts | select counters out-unicast-pkts | select counters in-broadcast-pkts | select counters out-broadcast-pkts | tab
+interface
+         IN         IN                   OUT        OUT                                                   OUT
+         UNICAST    BROADCAST  IN        UNICAST    BROADCAST  OUT       IN BITS     IN PKTS  OUT BITS    PKTS
+NAME     PKTS       PKTS       DISCARDS  PKTS       PKTS       DISCARDS  RATE BRIEF  RATE     RATE BRIEF  RATE
+-------------------------------------------------------------------------------------------------------------------
+swp6     195140     0          0         299906080  0          0         5.13 mbps   5531     77.26 gbps  8501635
+swp8     0          0          0         0          0          0         0 bps       0        0 bps       0
+swp13    0          0          0         0          0          0         0 bps       0        0 bps       0
+swp45    0          0          0         0          0          0         0 bps       0        0 bps       0
+swp5s1   0          0          0         0          0          0         0 bps       0        0 bps       0
+swp7s1   195936     0          1         0          0          0         5.16 mbps   5559     64 bps      0
+swp7s2   0          0          1         0          0          0         48 bps      0        48 bps      0
+swp14s1  0          0          0         0          0          0         0 bps       0        0 bps       0
+swp48s2  194678     0          0         299904073  0          0         5.12 mbps   5517     77.26 gbps  8501588
+swp49s1  299904802  0          0         292876     0          0         73.86 gbps  8501605  4.38 mbps   8303
+swp49s2  299905231  0          0         292876     0          0         73.86 gbps  8501617  4.38 mbps   8303
+
+root@Edgecore-TH5-Leaf2#
+
+
+result of cint to collect port quality information:
+===================================================
+
+Connection closed.
+root@Edgecore-TH5-Leaf2:~# telnet localhost 8888
+Trying ::1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0> cint
+cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint>
+cint> int print_port_quality (int unit, bcm_port_t egr_port)
+{
+  bcm_l3_ecmp_dlb_port_quality_t port_quality;
+  port_quality.buffer_id = 0;
+  port_quality.port = egr_port;
+  port_quality.quality = 0;
+
+  printf("port %d \n", egr_port);
+  BCM_IF_ERROR_RETURN(bcm_l3_ecmp_dlb_port_quality_get(unit, &port_quality));
+  printf("\t- quality(0) - %d\n", port_quality.quality);
+
+  port_quality.buffer_id = 1;
+  port_quality.port = egr_port;
+  port_quality.quality = 0;
+
+  BCM_IF_ERROR_RETURN(bcm_l3_ecmp_dlb_port_quality_get(unit, &port_quality));
+  printf("\t- quality(1) - %d\n", port_quality.quality);
+  return 0;
+}int print_port_quality (int unit, bcm_port_t egr_port)
+
+{
+
+  bcm_l3_ecmp_dlb_port_quality_t port_quality;
+
+  port_quality.buffer_id = 0;
+
+  port_quality.port = egr_port;
+
+  port_quality.quality = 0;
+
+
+
+  printf("port %d \n", egr_port);
+
+  BCM_IF_ERROR_RETURN(bcm_l3_ecmp_dlb_port_quality_get(unit, &port_quality));
+
+  printf("\t- quality(0) - %d\n", port_quality.quality);
+
+
+
+  port_quality.buffer_id = 1;
+
+  port_quality.port = egr_port;
+
+  port_quality.quality = 0;
+
+
+
+  BCM_IF_ERROR_RETURN(bcm_l3_ecmp_dlb_port_quality_get(unit, &port_quality));
+
+  printf("\t- quality(1) - %d\n", port_quality.quality);
+
+  return 0;
+
+
+}
+cint>
+cint> print_port_quality(0, 44); // swp6
+print_port_quality(0, 67); // swp7s1
+print_port_quality(0, 167); // swp48s2print_port_quality(0, 44); // swp6
+print_port_quality(0, 67); // swp7s1
+
+port 44
+        - quality(0) - 7
+        - quality(1) - 7
+cint>
+cint> print_port_quality(0, 67); // swp7s1
+port 67
+        - quality(0) - 7
+        - quality(1) - 7
+cint>
+cint>
+print_port_quality(0, 167); // swp48s2
+port 167
+        - quality(0) - 7
+        - quality(1) - 7
+cint>
+cint>
+
+cint>
+cint>
+
+cint>
+cint> print_port_quality(0, 44); // swp6
+print_port_quality(0, 67); // swp7s1
+print_port_quality(0, 167); // swp48s2print_port_quality(0, 44); // swp6
+print_port_quality(0, 67); // swp7s1
+
+port 44
+        - quality(0) - 7
+        - quality(1) - 7
+cint>
+cint> print_port_quality(0, 67); // swp7s1
+port 67
+        - quality(0) - 3
+        - quality(1) - 3
+cint>
+cint>
+print_port_quality(0, 167); // swp48s2
+port 167
+        - quality(0) - 3
+        - quality(1) - 3
+cint>
+cint> print_port_quality(0, 44); // swp6
+print_port_quality(0, 67); // swp7s1
+print_port_quality(0, 167); // swp48s2print_port_quality(0, 44); // swp6
+print_port_quality(0, 67); // swp7s1
+
+port 44
+        - quality(0) - 3
+        - quality(1) - 3
+cint>
+cint> print_port_quality(0, 67); // swp7s1
+port 67
+        - quality(0) - 3
+        - quality(1) - 3
+cint>
+cint>
+print_port_quality(0, 167); // swp48s2
+port 167
+        - quality(0) - 7
+        - quality(1) - 7
+cint>
+cint> Cannot advertise speed 400000 duplex full
+
+
+cint>
+cint>
+
+cint>
+cint>
+
+cint>
+cint> print_port_quality(0, 44); // swp6
+print_port_quality(0, 67); // swp7s1
+print_port_quality(0, 167); // swp48s2print_port_quality(0, 44); // swp6
+print_port_quality(0, 67); // swp7s1
+
+port 44
+        - quality(0) - 3
+        - quality(1) - 3
+cint>
+cint> print_port_quality(0, 67); // swp7s1
+port 67
+        - quality(0) - 3
+        - quality(1) - 3
+cint>
+cint>
+print_port_quality(0, 167); // swp48s2
+port 167
+        - quality(0) - 7
+        - quality(1) - 7
+cint>
+cint> print_port_quality(0, 44); // swp6
+print_port_quality(0, 67); // swp7s1
+print_port_quality(0, 167); // swp48s2print_port_quality(0, 44); // swp6
+port 44
+        - quality(0) - 3
+        - quality(1) - 3
+cint>
+cint> print_port_quality(0, 67); // swp7s1
+port 67
+        - quality(0) - 7
+        - quality(1) - 7
+cint>
+cint>
+print_port_quality(0, 167); // swp48s2
+port 167
+        - quality(0) - 3
+        - quality(1) - 3
+cint>
+cint>
+
