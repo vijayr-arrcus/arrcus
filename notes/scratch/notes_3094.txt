@@ -1,0 +1,8 @@
+1. table of approaches.
+2. subinterface 0 will still be vlan based and tagged subinterfaces will be VFI based.
+3. Kernel side what is the required to support l3 subinterfaces -- may already be available but recheck.
+4. routing between VFI and VLAN ports.
+5. ECMP with a mix of VFI and VLAN. -- no ecmp for VFI based in the current drop.
+6. copp entries.
+7. scale numbers.
+8. routing between VFI and SVI.

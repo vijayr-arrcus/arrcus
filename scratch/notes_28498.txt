@@ -1,0 +1,20 @@
+1. Validate new cint with scenarios - 23/08/2024 vijay/pramod
+2. dpal modelling - 26/08/2024 -- vijay/Pramod
+3. l3 subinterface match criteria SVP/DVP creation
+  a. subinterface 0 -- 30/08/2024 -- Vijay
+  b. non zero subinterface -- 30/08/2024 -- Pramod.
+4. Attach SVP to VFI.
+  a. subinterface 0 -- 03/09/2024 -- Vijay
+    i. setup intf -- 05/09/2024 -- Vijay
+  b. non zero subinterface -- 03/09/2024 -- Pramod.
+    i. setup intf -- 05/09/2024 -- Pramod
+5. setup VFI based My station. -- 08/09/2024 --  Vijay
+6. Derive L3IIF from VFI. -- 08/09/2024 -- Pramod.
+7. setting up wellknown egress object. --  Vijay -- 12/09/2024
+  a. self ip
+  b. unresolved NH
+  c. glean NH
+8. setting up egress objects for normal forwarding traffic. -- Pramod
+9. host routes -- Pramod
+10. ALPM routes -- Pramod
+11. ecmp programming. -- Vijay
