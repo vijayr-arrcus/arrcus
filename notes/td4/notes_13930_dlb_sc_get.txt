@@ -1,3 +1,26 @@
+
+root@EQ-IX-Leaf3# show ver
+Platform:         S9300-32D
+Software:         Arrcus ArcOS
+Software Version: aminor:Aug_23_24:1_57_AM
+Form Factor:      32x400GbE
+Serial Number:    WK41BBVG00005P1
+MAC Address:      e8:c5:7a:b1:27:ba
+CPU Information:  Intel(R) Xeon(R) D-2145NT CPU @ 1.90GHz, 16 cores
+Memory [Total]:   32587228 kB
+Uptime:           1 hour, 6 minutes
+root@EQ-IX-Leaf3#
+root@EQ-IX-Leaf3:~# cd /
+root@EQ-IX-Leaf3:/# find . -name *build*.json
+./usr/share/arcos/build_info_cfg.json
+root@EQ-IX-Leaf3:/# cat ./usr/share/arcos/build_info_cfg.json
+{
+    "Version": "aminor:Aug_23_24:1_57_AM",
+    "CommitId": "d17f6eaeb6f5b4d9f0eb55286e5a5b932c26fe44",
+    "Timestamp": "2024-08-23 01:57:15",
+    "Engineer": "release"
+root@EQ-IX-Leaf3:/# cd
+root@EQ-IX-Leaf3:~#
 root@EQ-IX-Leaf3:~# service spyder stop
 ^Z
 [1]+  Stopped                 service spyder stop
