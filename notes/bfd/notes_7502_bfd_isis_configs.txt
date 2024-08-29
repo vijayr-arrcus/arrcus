@@ -1,0 +1,77 @@
+Device 1:
+
+network-instance default
+ protocol ISIS default
+ global net      [ 49.0001.0404.0404.0404.00 ]
+ global level-capability LEVEL_2
+ global max-ecmp-paths 16
+ global auto-cost reference-bandwidth 100
+ global graceful-restart enabled true
+ global timers lsp-lifetime-interval 300
+ global timers lsp-refresh-interval 225
+ global mpls igp-ldp-sync enabled true
+ global lsp-bit overload-bit set-bit-on-boot true
+ global lsp-bit overload-bit advertise-high-metric false
+ global lsp-bit overload-bit reset-trigger WAIT_FOR_BGP
+  exit
+ !
+  global af IPV4 UNICAST
+  enabled true
+  exit
+ !
+ level 2
+  enabled true
+  exit
+ !
+
+ !
+
+ interface swp66
+  enabled     true
+  network-type POINT_TO_POINT
+  bfd bfd-tlv true
+  bfd profile GLOBAL
+  af IPV4 UNICAST
+   enabled true
+  !
+
+  level 2
+   enabled true
+   exit
+  !
+  exit
+
+
+Device 2:
+network-instance default
+ protocol ISIS default
+ global net      [ 49.0001.0202.0202.0202.00 ]
+ global level-capability LEVEL_2
+ global max-ecmp-paths 16
+ global auto-cost reference-bandwidth 100
+ global graceful-restart enabled true
+ global timers lsp-lifetime-interval 300
+ global timers lsp-refresh-interval 225
+ global mpls igp-ldp-sync enabled true
+ global af IPV4 UNICAST
+  enabled true
+  exit
+ !
+ level 2
+  enabled true
+  exit
+ !
+ interface swp2
+  enabled     true
+  network-type POINT_TO_POINT
+  bfd bfd-tlv true
+  bfd profile GLOBAL
+  af IPV4 UNICAST
+   enabled true
+  !
+  level 2
+   enabled true
+   exit
+  !
+  exit
+ !

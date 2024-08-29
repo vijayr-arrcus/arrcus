@@ -1,0 +1,46 @@
+cint_reset();
+int unit = 0;
+int port = 67;
+uint32 flags = 0;
+
+print bcm_stat_custom_get(unit, port, snmpBcmCustomTransmit3, &flags);
+
+print bcm_stat_custom_delete_all(unit, port, snmpBcmCustomTransmit4);
+
+print bcm_stat_custom_add(unit, port, snmpBcmCustomTransmit4, bcmDbgCntTIPMCD4);
+
+
+BCM.0>
+BCM.0> cstat get ce0 tx
+cstat get ce0 tx
+Custom Transmit stats are enabled for following triggers
+[Triggers are common for all ports]
+
+ snmpBcmCustomTransmit0-
+                TGIP6 TGIPMC6
+ snmpBcmCustomTransmit1-
+                TIPD6 TIPMCD6
+ snmpBcmCustomTransmit2-
+                TGIPMC6
+ snmpBcmCustomTransmit3-
+                TIPD4 TIPMCD4 TIPD6 TIPMCD6 TTNLE
+                TTTLD TCFID TVXLTMD TSTGD TAGED
+                TL2MCD TPKTD TSIPL THIGIG2 THGI
+                TL2_MTU TPARITY_ERR TIP_LEN_FAIL TSLLD MODIDTOOLARGEDROP
+                PKTMODTOOLARGEDROP PROTSWITCHINGDROP TxFwdDomainNotFoundDrop TxNotFwdDomainMemberDrop TxIpmcL2SrcPortPruneDrop
+                TxNonUnicastPruneDrop TxSvpRemoveDrop TxVplagPruneDrop TxSplitHorizonDrop TxMmuPurgeDrop
+                TxStgDisableDrop TxEgressPortDrop TxEgressFilterDrop TxVisibilityDrop
+ snmpBcmCustomTransmit4-
+                TGIP4 TGIP6
+ snmpBcmCustomTransmit5-
+                TIPMCD4 TIPMCD6
+ snmpBcmCustomTransmit6-
+                TxSvpRemoveDrop TxSplitHorizonDrop
+ snmpBcmCustomTransmit7-
+                FcmPortClass2TxFrames
+ snmpBcmCustomTransmit8-
+                PROTSWITCHINGDROP
+BCM.0>
+BCM.0> cstat set ce0 tx 6 TIPD4
+cstat set ce0 tx 6 TIPD4
+BCM.0>

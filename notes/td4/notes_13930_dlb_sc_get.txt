@@ -1,0 +1,899 @@
+root@EQ-IX-Leaf3:~# service spyder stop
+^Z
+[1]+  Stopped                 service spyder stop
+root@EQ-IX-Leaf3:~# bg
+[1]+ service spyder stop &
+root@EQ-IX-Leaf3:~# spyder list | grep -v -
+Socket "/tmp/.spyder.sock" not found, spyder probably not running
+[1]+  Done                    service spyder stop
+root@EQ-IX-Leaf3:~# service spyder start
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~# telnet localhost 8888
+Trying ::1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0> cint_reset();
+int unit = 0;
+int32 seed = 0;
+int use_flow_based_hash_ecmp = 0;
+int block_n_offset_select = 0;
+int hash_control;
+int hash_computation = 0;
+int pre_process_enable = 0;
+int ipv4_select_fields = 0;
+int dlb_ecmp_sampling_rate = 0;
+int dlb_ecmp_random_seed = 0;
+int dlb_ecmp_egress_bytes_exponent = 0;
+int dlb_ecmp_queued_bytes_exponent = 0;
+int dlb_ecmp_physical_queued_bytes_exponent = 0;
+int dlb_ecmp_egress_bytes_decrease_reset = 0;
+int dlb_ecmp_queued_bytes_decrease_reset = 0;
+int dlb_ecmp_physical_queued_decrease_reset = 0;
+int dlb_ecmp_egress_bytes_min_threshold = 0;
+int dlb_ecmp_egress_bytes_max_threshold = 0;
+int dlb_ecmp_queued_bytes_min_threshold = 0;
+int dlb_ecmp_queued_bytes_max_threshold = 0;
+int dlb_ecmp_physical_queued_bytes_min_threshold = 0;
+int dlb_ecmp_physical_queued_bytes_max_threshold = 0;cint_reset();
+int dlb_ecmp_queued_bytes_max_threshold = 0;
+
+int dlb_ecmp_physical_queued_bytes_min_threshold = 0;
+
+Unknown command: cint_reset()
+BCM.0>
+BCM.0> int unit = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int32 seed = 0;
+Unknown command: int32
+BCM.0>
+BCM.0> int use_flow_based_hash_ecmp = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int block_n_offset_select = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int hash_control;
+Unknown command: int
+BCM.0>
+BCM.0> int hash_computation = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int pre_process_enable = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int ipv4_select_fields = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_sampling_rate = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_random_seed = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_egress_bytes_exponent = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_queued_bytes_exponent = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_physical_queued_bytes_exponent = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_egress_bytes_decrease_reset = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_queued_bytes_decrease_reset = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_physical_queued_decrease_reset = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_egress_bytes_min_threshold = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_egress_bytes_max_threshold = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_queued_bytes_min_threshold = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_queued_bytes_max_threshold = 0;
+Unknown command: int
+BCM.0>
+BCM.0> int dlb_ecmp_physical_queued_bytes_min_threshold = 0;
+Unknown command: int
+BCM.0>
+BCM.0>
+int dlb_ecmp_physical_queued_bytes_max_threshold = 0;
+Unknown command: int
+BCM.0>
+BCM.0> cint
+cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint>
+cint> cint_reset();
+int unit = 0;
+int32 seed = 0;
+int use_flow_based_hash_ecmp = 0;
+int block_n_offset_select = 0;
+int hash_control;
+int hash_computation = 0;
+int pre_process_enable = 0;
+int ipv4_select_fields = 0;
+int dlb_ecmp_sampling_rate = 0;
+int dlb_ecmp_random_seed = 0;
+int dlb_ecmp_egress_bytes_exponent = 0;
+int dlb_ecmp_queued_bytes_exponent = 0;
+int dlb_ecmp_physical_queued_bytes_exponent = 0;
+int dlb_ecmp_egress_bytes_decrease_reset = 0;
+int dlb_ecmp_queued_bytes_decrease_reset = 0;
+int dlb_ecmp_physical_queued_decrease_reset = 0;
+int dlb_ecmp_egress_bytes_min_threshold = 0;
+int dlb_ecmp_egress_bytes_max_threshold = 0;
+int dlb_ecmp_queued_bytes_min_threshold = 0;
+int dlb_ecmp_queued_bytes_max_threshold = 0;
+int dlb_ecmp_physical_queued_bytes_min_threshold = 0;
+int dlb_ecmp_physical_queued_bytes_max_threshold = 0;cint_reset();
+int unit = 0;
+
+int32 seed = 0;
+
+int use_flow_based_hash_ecmp = 0;
+
+int block_n_offset_select = 0;
+
+int hash_control;
+
+int hash_computation = 0;
+
+int pre_process_enable = 0;
+
+int ipv4_select_fields = 0;
+
+int dlb_ecmp_sampling_rate = 0;
+
+int dlb_ecmp_random_seed = 0;
+
+int dlb_ecmp_egress_bytes_exponent = 0;
+
+int dlb_ecmp_queued_bytes_exponent = 0;
+
+int dlb_ecmp_physical_queued_bytes_exponent = 0;
+
+int dlb_ecmp_egress_bytes_decrease_reset = 0;
+
+int dlb_ecmp_queued_bytes_decrease_reset = 0;
+
+int dlb_ecmp_physical_queued_decrease_reset = 0;
+
+int dlb_ecmp_egress_bytes_min_threshold = 0;
+
+int dlb_ecmp_egress_bytes_max_threshold = 0;
+
+int dlb_ecmp_queued_bytes_min_threshold = 0;
+
+int dlb_ecmp_queued_bytes_max_threshold = 0;
+
+int dlb_ecmp_physical_queued_bytes_min_threshold = 0;
+
+cint>
+cint> int unit = 0;
+cint>
+cint> int32 seed = 0;
+cint>
+cint> int use_flow_based_hash_ecmp = 0;
+cint>
+cint> int block_n_offset_select = 0;
+cint>
+cint> int hash_control;
+cint>
+cint> int hash_computation = 0;
+cint>
+cint> int pre_process_enable = 0;
+cint>
+cint> int ipv4_select_fields = 0;
+cint>
+cint> int dlb_ecmp_sampling_rate = 0;
+cint>
+cint> int dlb_ecmp_random_seed = 0;
+cint>
+cint> int dlb_ecmp_egress_bytes_exponent = 0;
+cint>
+cint> int dlb_ecmp_queued_bytes_exponent = 0;
+cint>
+cint> int dlb_ecmp_physical_queued_bytes_exponent = 0;
+cint>
+cint> int dlb_ecmp_egress_bytes_decrease_reset = 0;
+cint>
+cint> int dlb_ecmp_queued_bytes_decrease_reset = 0;
+cint>
+cint> int dlb_ecmp_physical_queued_decrease_reset = 0;
+cint>
+cint> int dlb_ecmp_egress_bytes_min_threshold = 0;
+cint>
+cint> int dlb_ecmp_egress_bytes_max_threshold = 0;
+cint>
+cint> int dlb_ecmp_queued_bytes_min_threshold = 0;
+cint>
+cint> int dlb_ecmp_queued_bytes_max_threshold = 0;
+cint>
+cint> int dlb_ecmp_physical_queued_bytes_min_threshold = 0;
+cint>
+cint>
+
+
+
+int dlb_ecmp_physical_queued_bytes_max_threshold = 0;
+cint>
+cint>
+cint>
+cint>
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicSampleRate, &dlb_ecmp_sampling_rate));
+printf("bcmSwitchEcmpDynamicSampleRate = %d\n", dlb_ecmp_sampling_rate);BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicSampleRate, &dlb_ecmp_sampling_rate));
+cint>
+cint>
+printf("bcmSwitchEcmpDynamicSampleRate = %d\n", dlb_ecmp_sampling_rate);
+bcmSwitchEcmpDynamicSampleRate = 62500
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesExponent,
+&dlb_ecmp_egress_bytes_exponent));
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesExponent,
+
+&dlb_ecmp_egress_bytes_exponent));
+cint>
+cint>
+
+cint>
+cint> printf("bcmSwitchEcmpDynamicSampleRate = %d\n", dlb_ecmp_sampling_rate);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesExponent, &dlb_ecmp_egress_bytes_exponent));
+printf("bcmSwitchEcmpDynamicEgressBytesExponent = %d\n", dlb_ecmp_egress_bytes_exponent);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesDecreaseReset, &dlb_ecmp_egress_bytes_decrease_reset));
+printf("bcmSwitchEcmpDynamicEgressBytesDecreaseReset = %d\n", dlb_ecmp_egress_bytes_decrease_reset);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesExponent, &dlb_ecmp_queued_bytes_exponent));
+printf("bcmSwitchEcmpDynamicQueuedBytesExponent = %d\n", dlb_ecmp_queued_bytes_exponent);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesDecreaseReset, &dlb_ecmp_queued_bytes_decrease_reset));
+printf("bcmSwitchEcmpDynamicQueuedBytesDecreaseReset = %d\n",dlb_ecmp_queued_bytes_decrease_reset);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent, &dlb_ecmp_physical_queued_bytes_exponent));
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent = %d\n", dlb_ecmp_physical_queued_bytes_exponent);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset, &dlb_ecmp_physical_queued_decrease_reset));
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset = %d\n", dlb_ecmp_physical_queued_decrease_reset);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesMinThreshold, &dlb_ecmp_egress_bytes_min_threshold));
+printf("bcmSwitchEcmpDynamicEgressBytesMinThreshold = 0x%X\n", dlb_ecmp_egress_bytes_min_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesMaxThreshold, &dlb_ecmp_egress_bytes_max_threshold));
+printf("bcmSwitchEcmpDynamicEgressBytesMaxThreshold = 0x%X\n", dlb_ecmp_egress_bytes_max_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedByteprintf("bcmSwitchEcmpDynamicSampleRate = %d\n", dlb_ecmp_sampling_rate);
+bcmSwitchEcmpDynamicSampleRate = 62500
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesDecreaseReset, &dlb_ecmp_egress_bytes_decrease_reset));
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesExponent, &dlb_ecmp_egress_bytes_exponent));
+cint>
+cint> printf("bcmSwitchEcmpDynamicEgressBytesExponent = %d\n", dlb_ecmp_egress_bytes_exponent);
+bcmSwitchEcmpDynamicEgressBytesExponent = 3
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesDecreaseReset, &dlb_ecmp_egress_bytes_decrease_reset));
+cint>
+cint> printf("bcmSwitchEcmpDynamicEgressBytesDecreaseReset = %d\n", dlb_ecmp_egress_bytes_decrease_reset);
+bcmSwitchEcmpDynamicEgressBytesDecreaseReset = 0
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesExponent, &dlb_ecmp_queued_bytes_exponent));
+cint>
+cint> printf("bcmSwitchEcmpDynamicQueuedBytesExponent = %d\n", dlb_ecmp_queued_bytes_exponent);
+bcmSwitchEcmpDynamicQueuedBytesExponent = 3
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesDecreaseReset, &dlb_ecmp_queued_bytes_decrease_reset));
+cint>
+cint> printf("bcmSwitchEcmpDynamicQueuedBytesDecreaseReset = %d\n",dlb_ecmp_queued_bytes_decrease_reset);
+bcmSwitchEcmpDynamicQueuedBytesDecreaseReset = 0
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent, &dlb_ecmp_physical_queued_bytes_exponent));
+cint>
+cint> printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent = %d\n", dlb_ecmp_physical_queued_bytes_exponent);
+bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent = 3
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset, &dlb_ecmp_physical_queued_decrease_reset));
+cint>
+cint> printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset = %d\n", dlb_ecmp_physical_queued_decrease_reset);
+bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset = 0
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesMinThreshold, &dlb_ecmp_egress_bytes_min_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicEgressBytesMinThreshold = 0x%X\n", dlb_ecmp_egress_bytes_min_threshold);
+bcmSwitchEcmpDynamicEgressBytesMinThreshold = 0x3E8
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesMaxThreshold, &dlb_ecmp_egress_bytes_max_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicEgressBytesMaxThreshold = 0x%X\n", dlb_ecmp_egress_bytes_max_threshold);
+bcmSwitchEcmpDynamicEgressBytesMaxThreshold = 0x2710
+cint>
+cint> sMinThreshold, &dlb_ecmp_queued_bytes_min_threshold));
+printf("bcmSwitchEcmpDynamicQueuedBytesMinThreshold = 0x%X\n", dlb_ecmp_queued_bytes_min_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesMaxThreshold, &dlb_ecmp_queued_bytes_max_threshold));
+printf("bcmSwitchEcmpDynamicQueuedBytesMaxThreshold = 0x%X\n", dlb_ecmp_queued_bytes_max_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold, &dlb_ecmp_physical_queued_bytes_min_threshold));
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold = 0x%X\n", dlb_ecmp_physical_queued_bytes_min_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold, &dlb_ecmp_physical_queued_bytes_max_threshold));
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold = 0x%X\n", dlb_ecmp_physical_queued_bytes_max_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicRandomSeed, &dlb_ecmp_random_seed));
+printf("bcmSwitchEcmpDynamicRandomSeed = 0x%X\n", dlb_ecmp_random_seed);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesMinThreshold, &dlb_ecmp_queued_bytes_min_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicQueuedBytesMinThreshold = 0x%X\n", dlb_ecmp_queued_bytes_min_threshold);
+bcmSwitchEcmpDynamicQueuedBytesMinThreshold = 0x5D44
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesMaxThreshold, &dlb_ecmp_queued_bytes_max_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicQueuedBytesMaxThreshold = 0x%X\n", dlb_ecmp_queued_bytes_max_threshold);
+bcmSwitchEcmpDynamicQueuedBytesMaxThreshold = 0xFE00
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold, &dlb_ecmp_physical_queued_bytes_min_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold = 0x%X\n", dlb_ecmp_physical_queued_bytes_min_threshold);
+bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold = 0x2EA2
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold, &dlb_ecmp_physical_queued_bytes_max_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold = 0x%X\n", dlb_ecmp_physical_queued_bytes_max_threshold);
+bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold = 0x7F00
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicRandomSeed, &dlb_ecmp_random_seed));
+cint>
+cint> printf("bcmSwitchEcmpDynamicRandomSeed = 0x%X\n", dlb_ecmp_random_seed);
+bcmSwitchEcmpDynamicRandomSeed = 0x5555
+cint>
+cint>
+
+cint>
+cint>
+
+
+
+
+cint>
+cint>
+cint>
+cint>
+cint>
+cint>
+cint>
+cint>
+
+cint>
+cint>
+
+cint>
+cint>
+
+cint>
+cint>
+
+cint>
+cint> print dlb_ecmp_sampling_rate;
+print dlb_ecmp_random_seed;
+print dlb_ecmp_egress_bytes_exponent;
+print dlb_ecmp_queued_bytes_exponent;
+print dlb_ecmp_physical_queued_bytes_exponent;
+print dlb_ecmp_egress_bytes_decrease_reset;
+print dlb_ecmp_queued_bytes_decrease_reset;
+print dlb_ecmp_physical_queued_decrease_reset;
+print dlb_ecmp_egress_bytes_min_threshold;
+print dlb_ecmp_egress_bytes_max_threshold;
+print dlb_ecmp_queued_bytes_min_threshold;
+print dlb_ecmp_queued_bytes_max_threshold;
+print dlb_ecmp_physical_queued_bytes_min_threshold;
+print dlb_ecmp_physical_queued_bytes_max_threshold;print dlb_ecmp_sampling_rate;
+print dlb_ecmp_queued_bytes_min_threshold;
+
+print dlb_ecmp_queued_bytes_max_threshold;
+
+print dlb_ecmp_physical_queued_bytes_min_threshold;
+
+int dlb_ecmp_sampling_rate = 62500 (0xf424)
+cint>
+cint> print dlb_ecmp_random_seed;
+int dlb_ecmp_random_seed = 21845 (0x5555)
+cint>
+cint> print dlb_ecmp_egress_bytes_exponent;
+int dlb_ecmp_egress_bytes_exponent = 3 (0x3)
+cint>
+cint> print dlb_ecmp_queued_bytes_exponent;
+int dlb_ecmp_queued_bytes_exponent = 3 (0x3)
+cint>
+cint> print dlb_ecmp_physical_queued_bytes_exponent;
+int dlb_ecmp_physical_queued_bytes_exponent = 3 (0x3)
+cint>
+cint> print dlb_ecmp_egress_bytes_decrease_reset;
+int dlb_ecmp_egress_bytes_decrease_reset = 0 (0x0)
+cint>
+cint> print dlb_ecmp_queued_bytes_decrease_reset;
+int dlb_ecmp_queued_bytes_decrease_reset = 0 (0x0)
+cint>
+cint> print dlb_ecmp_physical_queued_decrease_reset;
+int dlb_ecmp_physical_queued_decrease_reset = 0 (0x0)
+cint>
+cint> print dlb_ecmp_egress_bytes_min_threshold;
+int dlb_ecmp_egress_bytes_min_threshold = 1000 (0x3e8)
+cint>
+cint> print dlb_ecmp_egress_bytes_max_threshold;
+int dlb_ecmp_egress_bytes_max_threshold = 10000 (0x2710)
+cint>
+cint> print dlb_ecmp_queued_bytes_min_threshold;
+int dlb_ecmp_queued_bytes_min_threshold = 23876 (0x5d44)
+cint>
+cint> print dlb_ecmp_queued_bytes_max_threshold;
+int dlb_ecmp_queued_bytes_max_threshold = 65024 (0xfe00)
+cint>
+cint> print dlb_ecmp_physical_queued_bytes_min_threshold;
+int dlb_ecmp_physical_queued_bytes_min_threshold = 11938 (0x2ea2)
+cint>
+cint>
+print dlb_ecmp_physical_queued_bytes_max_threshold;
+int dlb_ecmp_physical_queued_bytes_max_threshold = 32512 (0x7f00)
+cint>
+cint> ^]
+telnet> q
+Connection closed.
+root@EQ-IX-Leaf3:~# service spyder stop
+^Z
+[1]+  Stopped                 service spyder stop
+root@EQ-IX-Leaf3:~# jobs
+[1]+  Stopped                 service spyder stop
+root@EQ-IX-Leaf3:~# bg
+[1]+ service spyder stop &
+root@EQ-IX-Leaf3:~# spyder list | grep -v -
+* telemetry
+root@EQ-IX-Leaf3:~# kill -9 $(pidof telemetry.bin)
+root@EQ-IX-Leaf3:~# spyder list | grep -v -
+Socket "/tmp/.spyder.sock" not found, spyder probably not running
+[1]+  Done                    service spyder stop
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~# ifconfig ma1
+ma1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.27.206.34  netmask 255.255.0.0  broadcast 10.27.255.255
+        inet6 fe80::eac5:7aff:feb1:27bc  prefixlen 64  scopeid 0x20<link>
+        ether e8:c5:7a:b1:27:bc  txqueuelen 1000  (Ethernet)
+        RX packets 61857  bytes 4740074 (4.5 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2718  bytes 671239 (655.5 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0xaaa00000-aaa7ffff
+
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~# service spyder start
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~# cli
+Welcome to the ArcOS CLI
+root connected from 10.9.208.70 using ssh on EQ-IX-Leaf3
+root@EQ-IX-Leaf3# show run hardware
+hardware platform ecmp mode DYNAMIC
+root@EQ-IX-Leaf3#
+root@EQ-IX-Leaf3:~# telnet localhost 8888
+Trying ::1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0> cint
+cint
+Entering C Interpreter. Type 'exit;' to quit.
+
+cint>
+cint> cint_reset();
+int unit = 0;
+int32 seed = 0;
+int use_flow_based_hash_ecmp = 0;
+int block_n_offset_select = 0;
+int hash_control;
+int hash_computation = 0;
+int pre_process_enable = 0;
+int ipv4_select_fields = 0;
+int dlb_ecmp_sampling_rate = 0;
+int dlb_ecmp_random_seed = 0;
+int dlb_ecmp_egress_bytes_exponent = 0;
+int dlb_ecmp_queued_bytes_exponent = 0;
+int dlb_ecmp_physical_queued_bytes_exponent = 0;
+int dlb_ecmp_egress_bytes_decrease_reset = 0;
+int dlb_ecmp_queued_bytes_decrease_reset = 0;
+int dlb_ecmp_physical_queued_decrease_reset = 0;
+int dlb_ecmp_egress_bytes_min_threshold = 0;
+int dlb_ecmp_egress_bytes_max_threshold = 0;
+int dlb_ecmp_queued_bytes_min_threshold = 0;
+int dlb_ecmp_queued_bytes_max_threshold = 0;
+int dlbc_ecmp_physical_queued_bytes_min_threshold = 0;
+int dlb_ecmp_physical_queued_bytes_max_threshold = 0;
+int_reset();
+int unit = 0;
+
+int32 seed = 0;
+
+int use_flow_based_hash_ecmp = 0;
+
+int block_n_offset_select = 0;
+
+int hash_control;
+
+int hash_computation = 0;
+
+int pre_process_enable = 0;
+
+int ipv4_select_fields = 0;
+
+int dlb_ecmp_sampling_rate = 0;
+
+int dlb_ecmp_random_seed = 0;
+
+int dlb_ecmp_egress_bytes_exponent = 0;
+
+int dlb_ecmp_queued_bytes_exponent = 0;
+
+int dlb_ecmp_physical_queued_bytes_exponent = 0;
+
+int dlb_ecmp_egress_bytes_decrease_reset = 0;
+
+int dlb_ecmp_queued_bytes_decrease_reset = 0;
+
+int dlb_ecmp_physical_queued_decrease_reset = 0;
+
+int dlb_ecmp_egress_bytes_min_threshold = 0;
+
+int dlb_ecmp_egress_bytes_max_threshold = 0;
+
+int dlb_ecmp_queued_bytes_min_threshold = 0;
+
+int dlb_ecmp_queued_bytes_max_threshold = 0;
+
+int dlb_ecmp_physical_queued_bytes_min_threshold = 0;
+
+int dlb_ecmp_physical_queued_bytes_max_threshold = 0;
+
+cint>
+cint> int unit = 0;
+cint>
+cint> int32 seed = 0;
+cint>
+cint> int use_flow_based_hash_ecmp = 0;
+cint>
+cint> int block_n_offset_select = 0;
+cint>
+cint> int hash_control;
+cint>
+cint> int hash_computation = 0;
+cint>
+cint> int pre_process_enable = 0;
+cint>
+cint> int ipv4_select_fields = 0;
+cint>
+cint> int dlb_ecmp_sampling_rate = 0;
+cint>
+cint> int dlb_ecmp_random_seed = 0;
+cint>
+cint> int dlb_ecmp_egress_bytes_exponent = 0;
+cint>
+cint> int dlb_ecmp_queued_bytes_exponent = 0;
+cint>
+cint> int dlb_ecmp_physical_queued_bytes_exponent = 0;
+cint>
+cint> int dlb_ecmp_egress_bytes_decrease_reset = 0;
+cint>
+cint> int dlb_ecmp_queued_bytes_decrease_reset = 0;
+cint>
+cint> int dlb_ecmp_physical_queued_decrease_reset = 0;
+cint>
+cint> int dlb_ecmp_egress_bytes_min_threshold = 0;
+cint>
+cint> int dlb_ecmp_egress_bytes_max_threshold = 0;
+cint>
+cint> int dlb_ecmp_queued_bytes_min_threshold = 0;
+cint>
+cint> int dlb_ecmp_queued_bytes_max_threshold = 0;
+cint>
+cint> int dlb_ecmp_physical_queued_bytes_min_threshold = 0;
+cint>
+cint> int dlb_ecmp_physical_queued_bytes_max_threshold = 0;
+cint>
+cint>
+
+cint>
+cint>
+
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicSampleRate, &dlb_ecmp_sampling_rate));
+printf("bcmSwitchEcmpDynamicSampleRate = %d\n", dlb_ecmp_sampling_rate);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesExponent, &dlb_ecmp_egress_bytes_exponent));
+printf("bcmSwitchEcmpDynamicEgressBytesExponent = %d\n", dlb_ecmp_egress_bytes_exponent);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesDecreaseReset, &dlb_ecmp_egress_bytes_decrease_reset));
+printf("bcmSwitchEcmpDynamicEgressBytesDecreaseReset = %d\n", dlb_ecmp_egress_bytes_decrease_reset);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesExponent, &dlb_ecmp_queued_bytes_exponent));
+printf("bcmSwitchEcmpDynamicQueuedBytesExponent = %d\n", dlb_ecmp_queued_bytes_exponent);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesDecreaseReset, &dlb_ecmp_queued_bytes_decrease_reset));
+printf("bcmSwitchEcmpDynamicQueuedBytesDecreaseReset = %d\n",dlb_ecmp_queued_bytes_decrease_reset);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent, &dlb_ecmp_physical_queued_bytes_exponent));
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent = %d\n", dlb_ecmp_physical_queued_bytes_exponent);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset, &dlb_ecmp_physical_queued_decrease_reset));
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset = %d\n", dlb_ecmp_physical_queued_decrease_reset);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesMinThreshold, &dlb_ecmp_egress_bytes_min_threshold));
+printf("bcmSwitchEcmpDynamicEgressBytesMinThreshold = 0x%X\n", dlb_ecmp_egress_bytes_min_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesMaxThreshold, &dlb_ecmp_egress_bytes_max_threshold));
+printf("bcmSwitchEcmpDynamicEgressBytesMaxThreshold = 0x%X\n", dlb_ecmp_egress_bytes_max_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesMinThreshold, &dlb_ecmp_queued_bytes_min_threshold));
+printf("bcmSwitchEcmpDynamicQueuedBytesMinThreshold = 0x%X\n", dlb_ecmp_queued_bytes_min_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesMaxThreshold, &dlb_ecmp_queued_bytes_max_threshold));
+printf("bcmSwitchEcmpDynamicQueuedBytesMaxThreshold = 0x%X\n", dlb_ecmp_queued_bytes_max_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold, &dlb_ecmp_physical_queued_bytes_min_threshold));
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold = 0x%X\n", dlb_ecmp_physical_queued_bytes_min_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold, &dlb_ecmp_physical_queued_bytes_max_threshold));
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold = 0x%X\n", dlb_ecmp_physical_queued_bytes_max_threshold);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicRandomSeed, &dlb_ecmp_random_seed));
+printf("bcmSwitchEcmpDynamicRandomSeed = 0x%X\n", dlb_ecmp_random_seed);BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicSampleRate, &dlb_ecmp_sampling_rate));
+printf("bcmSwitchEcmpDynamicEgressBytesExponent = %d\n", dlb_ecmp_egress_bytes_exponent);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesDecreaseReset, &dlb_ecmp_egress_bytes_decrease_reset));
+
+printf("bcmSwitchEcmpDynamicEgressBytesDecreaseReset = %d\n", dlb_ecmp_egress_bytes_decrease_reset);
+
+
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesExponent, &dlb_ecmp_queued_bytes_exponent));
+
+printf("bcmSwitchEcmpDynamicQueuedBytesExponent = %d\n", dlb_ecmp_queued_bytes_exponent);
+
+
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesDecreaseReset, &dlb_ecmp_queued_bytes_decrease_reset));
+
+printf("bcmSwitchEcmpDynamicQueuedBytesDecreaseReset = %d\n",dlb_ecmp_queued_bytes_decrease_reset);
+
+
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent, &dlb_ecmp_physical_queued_bytes_exponent));
+
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent = %d\n", dlb_ecmp_physical_queued_bytes_exponent);
+
+
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset, &dlb_ecmp_physical_queued_decrease_reset));
+
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset = %d\n", dlb_ecmp_physical_queued_decrease_reset);
+
+
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesMinThreshold, &dlb_ecmp_egress_bytes_min_threshold));
+
+printf("bcmSwitchEcmpDynamicEgressBytesMinThreshold = 0x%X\n", dlb_ecmp_egress_bytes_min_threshold);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesMaxThreshold, &dlb_ecmp_egress_bytes_max_threshold));
+
+printf("bcmSwitchEcmpDynamicEgressBytesMaxThreshold = 0x%X\n", dlb_ecmp_egress_bytes_max_threshold);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesMinThreshold, &dlb_ecmp_queued_bytes_min_threshold));
+
+printf("bcmSwitchEcmpDynamicQueuedBytesMinThreshold = 0x%X\n", dlb_ecmp_queued_bytes_min_threshold);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesMaxThreshold, &dlb_ecmp_queued_bytes_max_threshold));
+
+printf("bcmSwitchEcmpDynamicQueuedBytesMaxThreshold = 0x%X\n", dlb_ecmp_queued_bytes_max_threshold);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold, &dlb_ecmp_physical_queued_bytes_min_threshold));
+
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold = 0x%X\n", dlb_ecmp_physical_queued_bytes_min_threshold);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold, &dlb_ecmp_physical_queued_bytes_max_threshold));
+
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold = 0x%X\n", dlb_ecmp_physical_queued_bytes_max_threshold);
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicRandomSeed, &dlb_ecmp_random_seed));
+
+cint>
+cint> printf("bcmSwitchEcmpDynamicSampleRate = %d\n", dlb_ecmp_sampling_rate);
+bcmSwitchEcmpDynamicSampleRate = 62500
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesExponent, &dlb_ecmp_egress_bytes_exponent));
+cint>
+cint> printf("bcmSwitchEcmpDynamicEgressBytesExponent = %d\n", dlb_ecmp_egress_bytes_exponent);
+bcmSwitchEcmpDynamicEgressBytesExponent = 3
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesDecreaseReset, &dlb_ecmp_egress_bytes_decrease_reset));
+cint>
+cint> printf("bcmSwitchEcmpDynamicEgressBytesDecreaseReset = %d\n", dlb_ecmp_egress_bytes_decrease_reset);
+bcmSwitchEcmpDynamicEgressBytesDecreaseReset = 0
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesExponent, &dlb_ecmp_queued_bytes_exponent));
+cint>
+cint> printf("bcmSwitchEcmpDynamicQueuedBytesExponent = %d\n", dlb_ecmp_queued_bytes_exponent);
+bcmSwitchEcmpDynamicQueuedBytesExponent = 3
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesDecreaseReset, &dlb_ecmp_queued_bytes_decrease_reset));
+cint>
+cint> printf("bcmSwitchEcmpDynamicQueuedBytesDecreaseReset = %d\n",dlb_ecmp_queued_bytes_decrease_reset);
+bcmSwitchEcmpDynamicQueuedBytesDecreaseReset = 0
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent, &dlb_ecmp_physical_queued_bytes_exponent));
+cint>
+cint> printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent = %d\n", dlb_ecmp_physical_queued_bytes_exponent);
+bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent = 3
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset, &dlb_ecmp_physical_queued_decrease_reset));
+cint>
+cint> printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset = %d\n", dlb_ecmp_physical_queued_decrease_reset);
+bcmSwitchEcmpDynamicPhysicalQueuedBytesDecreaseReset = 0
+cint>
+cint>
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesMinThreshold, &dlb_ecmp_egress_bytes_min_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicEgressBytesMinThreshold = 0x%X\n", dlb_ecmp_egress_bytes_min_threshold);
+bcmSwitchEcmpDynamicEgressBytesMinThreshold = 0x3E8
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesMaxThreshold, &dlb_ecmp_egress_bytes_max_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicEgressBytesMaxThreshold = 0x%X\n", dlb_ecmp_egress_bytes_max_threshold);
+bcmSwitchEcmpDynamicEgressBytesMaxThreshold = 0x2710
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesMinThreshold, &dlb_ecmp_queued_bytes_min_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicQueuedBytesMinThreshold = 0x%X\n", dlb_ecmp_queued_bytes_min_threshold);
+bcmSwitchEcmpDynamicQueuedBytesMinThreshold = 0x5D44
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesMaxThreshold, &dlb_ecmp_queued_bytes_max_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicQueuedBytesMaxThreshold = 0x%X\n", dlb_ecmp_queued_bytes_max_threshold);
+bcmSwitchEcmpDynamicQueuedBytesMaxThreshold = 0xFE00
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold, &dlb_ecmp_physical_queued_bytes_min_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold = 0x%X\n", dlb_ecmp_physical_queued_bytes_min_threshold);
+bcmSwitchEcmpDynamicPhysicalQueuedBytesMinThreshold = 0x2EA2
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold, &dlb_ecmp_physical_queued_bytes_max_threshold));
+cint>
+cint> printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold = 0x%X\n", dlb_ecmp_physical_queued_bytes_max_threshold);
+bcmSwitchEcmpDynamicPhysicalQueuedBytesMaxThreshold = 0x7F00
+cint>
+cint> BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicRandomSeed, &dlb_ecmp_random_seed));
+cint>
+cint>
+printf("bcmSwitchEcmpDynamicRandomSeed = 0x%X\n", dlb_ecmp_random_seed);
+bcmSwitchEcmpDynamicRandomSeed = 0x5555
+cint>
+cint> print dlb_ecmp_sampling_rate;
+print dlb_ecmp_random_seed;
+print dlb_ecmp_egress_bytes_exponent;
+print dlb_ecmp_queued_bytes_exponent;
+print dlb_ecmp_physical_queued_bytes_exponent;
+print dlb_ecmp_egress_bytes_decrease_reset;
+print dlb_ecmp_queued_bytes_decrease_reset;
+print dlb_ecmp_physical_queued_decrease_reset;
+print dlb_ecmp_egress_bytes_min_threshold;
+print dlb_ecmp_egress_bytes_max_threshold;
+print dlb_ecmp_queued_bytes_min_threshold;
+print dlb_ecmp_queued_bytes_max_threshold;
+print dlb_ecmp_physical_queued_bytes_min_threshold;
+print dlb_ecmp_physical_queued_bytes_max_threshold;print dlb_ecmp_sampling_rate;
+print dlb_ecmp_queued_bytes_min_threshold;
+
+print dlb_ecmp_queued_bytes_max_threshold;
+
+print dlb_ecmp_physical_queued_bytes_min_threshold;
+
+int dlb_ecmp_sampling_rate = 62500 (0xf424)
+cint>
+cint> print dlb_ecmp_random_seed;
+int dlb_ecmp_random_seed = 21845 (0x5555)
+cint>
+cint> print dlb_ecmp_egress_bytes_exponent;
+int dlb_ecmp_egress_bytes_exponent = 3 (0x3)
+cint>
+cint> print dlb_ecmp_queued_bytes_exponent;
+int dlb_ecmp_queued_bytes_exponent = 3 (0x3)
+cint>
+cint> print dlb_ecmp_physical_queued_bytes_exponent;
+int dlb_ecmp_physical_queued_bytes_exponent = 3 (0x3)
+cint>
+cint> print dlb_ecmp_egress_bytes_decrease_reset;
+int dlb_ecmp_egress_bytes_decrease_reset = 0 (0x0)
+cint>
+cint> print dlb_ecmp_queued_bytes_decrease_reset;
+int dlb_ecmp_queued_bytes_decrease_reset = 0 (0x0)
+cint>
+cint> print dlb_ecmp_physical_queued_decrease_reset;
+int dlb_ecmp_physical_queued_decrease_reset = 0 (0x0)
+cint>
+cint> print dlb_ecmp_egress_bytes_min_threshold;
+int dlb_ecmp_egress_bytes_min_threshold = 1000 (0x3e8)
+cint>
+cint> print dlb_ecmp_egress_bytes_max_threshold;
+int dlb_ecmp_egress_bytes_max_threshold = 10000 (0x2710)
+cint>
+cint> print dlb_ecmp_queued_bytes_min_threshold;
+int dlb_ecmp_queued_bytes_min_threshold = 23876 (0x5d44)
+cint>
+cint> print dlb_ecmp_queued_bytes_max_threshold;
+int dlb_ecmp_queued_bytes_max_threshold = 65024 (0xfe00)
+cint>
+cint> print dlb_ecmp_physical_queued_bytes_min_threshold;
+int dlb_ecmp_physical_queued_bytes_min_threshold = 11938 (0x2ea2)
+cint>
+cint>
+print dlb_ecmp_physical_queued_bytes_max_threshold;
+int dlb_ecmp_physical_queued_bytes_max_threshold = 32512 (0x7f00)
+cint>
+cint> ^]
+telnet> q
+Connection closed.
+root@EQ-IX-Leaf3:~# cat /var/log/arcos/dpal.bin_logfile.txt | grep bcmsdk_xgs_td4_l3_ecmp_param_set_cb
+[2024/08/29 05:55:57.021586]--INFO--[BCM PLUGIN] bcmsdk_xgs_td4_l3_ecmp_param_set_cb() DLB default profile
+root@EQ-IX-Leaf3:~#
+root@EQ-IX-Leaf3:~# date
+Thu 29 Aug 2024 06:02:52 AM PDT

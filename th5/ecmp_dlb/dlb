@@ -207,3 +207,18 @@ port_quality.port = 121;
 
 bcm_l3_ecmp_dlb_port_quality_get(0, &port_quality);
 print port_quality;
+print dlb_ecmp_sampling_rate = 0;
+print dlb_ecmp_random_seed = 0;
+print dlb_ecmp_egress_bytes_exponent = 0;
+print dlb_ecmp_queued_bytes_exponent = 0;
+print dlb_ecmp_physical_queued_bytes_exponent = 0;
+print dlb_ecmp_egress_bytes_decrease_reset = 0;
+print dlb_ecmp_queued_bytes_decrease_reset = 0;
+print dlb_ecmp_physical_queued_decrease_reset = 0;
+print dlb_ecmp_egress_bytes_min_threshold = 0;
+print dlb_ecmp_egress_bytes_max_threshold = 0;
+print dlb_ecmp_queued_bytes_min_threshold = 0;
+print dlb_ecmp_queued_bytes_max_threshold = 0;
+print dlb_ecmp_physical_queued_bytes_min_threshold = 0;
+print dlb_ecmp_physical_queued_bytes_max_threshold = 0;
+
