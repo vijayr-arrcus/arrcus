@@ -59,6 +59,8 @@ BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchHashControl, &hash_con
 printf("bcmSwitchHashControl = %d\n", hash_control);
 BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicSampleRate, &dlb_ecmp_sampling_rate));
 printf("bcmSwitchEcmpDynamicSampleRate = %d\n", dlb_ecmp_sampling_rate);
+
+bcm_switch_control_set(0, bcmSwitchEcmpDynamicSampleRate, 2000000);
 BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesExponent, &dlb_ecmp_egress_bytes_exponent));
 printf("bcmSwitchEcmpDynamicEgressBytesExponent = %d\n", dlb_ecmp_egress_bytes_exponent);
 BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesDecreaseReset, &dlb_ecmp_egress_bytes_decrease_reset));
@@ -123,7 +125,6 @@ int print_port_quality (int unit, bcm_port_t egr_port)
   port_quality.buffer_id = 0;
   port_quality.port = egr_port;
   port_quality.quality = 0;
-
   printf("port %d \n", egr_port);
   BCM_IF_ERROR_RETURN(bcm_l3_ecmp_dlb_port_quality_get(unit, &port_quality));
   printf("\t- quality(0) - %d\n", port_quality.quality);
@@ -165,6 +166,11 @@ i = 0;
 > swp8 -- 121
 > swp47s1 -- 2
 > swp48s2 -- 343
+
+bshell(0, "bsh -c 'pt reset DLB_ECMP_FLOWSET_INST0m'");
+bshell(0, "bsh -c 'pt reset DLB_ECMP_FLOWSET_INST1m'");
+bshell(0, "bsh -c 'pt dump -d DLB_ECMP_FLOWSET_INST0m'");
+bshell(0, "bsh -c 'pt dump -d DLB_ECMP_FLOWSET_INST1m'");
 
 pt reset DLB_ECMP_FLOWSET_INST0m
 pt reset DLB_ECMP_FLOWSET_INST1m
@@ -222,3 +228,14 @@ print dlb_ecmp_queued_bytes_max_threshold;
 print dlb_ecmp_physical_queued_bytes_min_threshold;
 print dlb_ecmp_physical_queued_bytes_max_threshold;
 
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchEcmpDynamicEgressBytesExponent, dlb_ecmp_egress_bytes_exponent));
+BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchEcmpDynamicQueuedBytesExponent, dlb_ecmp_queued_bytes_exponent));
+BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent, dlb_ecmp_physical_queued_bytes_exponent));
+
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicEgressBytesExponent, &dlb_ecmp_egress_bytes_exponent));
+printf("bcmSwitchEcmpDynamicEgressBytesExponent = %d\n", dlb_ecmp_egress_bytes_exponent);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicQueuedBytesExponent, &dlb_ecmp_queued_bytes_exponent));
+printf("bcmSwitchEcmpDynamicQueuedBytesExponent = %d\n", dlb_ecmp_queued_bytes_exponent);
+BCM_IF_ERROR_RETURN(bcm_switch_control_get(unit, bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent, &dlb_ecmp_physical_queued_bytes_exponent));
+printf("bcmSwitchEcmpDynamicPhysicalQueuedBytesExponent = %d\n", dlb_ecmp_physical_queued_bytes_exponent);

@@ -1,0 +1,21 @@
+static const char *obj_state_names[] = {
+  "init",
+  "pending-create",
+  "create-issued",
+  "create-retry",
+  "create-failure",
+  "created",
+  "update-issued",
+  "update-retry",
+  "pending-update",
+  "update-failure",
+  "delete-issued",
+  "delete-notify-issued",
+  "delete-retry",
+  "delete-failure",
+  "delete-notify-retry",
+  "delete-notify-failure",
+  "deleted"
+};
+
+encode_generic_entry
