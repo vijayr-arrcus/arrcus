@@ -1,0 +1,54 @@
+sudo apt-get install linux-tools-5.10
+perf tools install
+
+sudo apt-get install git build-essential libelf-dev libperl-dev flex bison
+git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+cd linux/tools/perf
+make
+sudo cp perf /usr/local/bin/
+
+
+echo 0 > /proc/sys/kernel/perf_event_paranoid
+
+echo "kernel.perf_event_paranoid = 0" >> /etc/sysctl.conf
+
+
+2. Compile your program with debugging symbols
+This will help perf to map recorded addresses back to function names.
+
+For C/C++ programs, use the -g flag:
+gcc -g -o my_program my_program.c
+3. Record the performance data
+Use perf record to start profiling. You can specify the target program or a PID.
+
+To record the execution of a program:
+perf record -g ./my_program
+To record an already running process:
+perf record -g -p <pid>
+The -g option is for capturing call graphs (i.e., stack traces).
+
+4. Analyze the recorded data
+Use perf report to analyze the recorded performance data.
+
+To generate a report:
+perf report
+This will display a hierarchical list of functions along with their CPU usage. You can see which functions were called most often or took the most time.
+
+5. Filter and drill down into specific functions
+You can navigate through the report interactively or use filters.
+
+To filter the report for a specific function:
+
+perf report --stdio | grep <function_name>
+To generate a flat (non-hierarchical) view:
+
+perf report --stdio --sort=symbol
+6. Save the report for later analysis
+You can save the report to a file for sharing or later analysis.
+
+To save the report:
+perf report > perf_report.txt
+7. Visualize the data (optional)
+For more advanced visualizations, you can use tools like FlameGraph or Hotspot to visualize the performance data collected by perf.
+
+By following these steps, you can effectively use perf to get a detailed record of function calls and their performance impact in your program.

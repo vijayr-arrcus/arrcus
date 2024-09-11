@@ -1,0 +1,290 @@
+(gdb) bt
+warning: Could not find DWO CU /home/vijayr/bcm_sdk_6531/bcm_sdk/build/unix-user/x86-smp_generic_64-2_6/src/bcm/esw/l2.dwo(0xb69b375f0cd487af) referenced by CU at offset 0x31584 [in module /usr/lib/libsdk.so]
+#0  0x00007f1de0546514 in bcmsdk_l2_entry_event_handle () from /usr/lib/libdpal_plugin_xgs.so
+#1  0x00007f1da0f469ad in _bcm_l2_addr_callback ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/bcm/esw/l2.c:1895
+#2  0x00007f1da0f4c159 in _bcm_l2_register_callback ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/bcm/esw/l2.c:1852
+warning: Could not find DWO CU /home/vijayr/bcm_sdk_6531/bcm_sdk/build/unix-user/x86-smp_generic_64-2_6/src/soc/esw/l2xmsg.dwo(0x34a47640db1048bb) referenced by CU at offset 0x4b600 [in module /usr/lib/libsdk.so]
+#3  0x00007f1da3266dde in soc_l2x_callback ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/soc/esw/l2xmsg.c:476
+warning: Could not find DWO CU /home/vijayr/bcm_sdk_6531/bcm_sdk/build/unix-user/x86-smp_generic_64-2_6/src/soc/esw/l2mod.dwo(0xe79528decd8893ea) referenced by CU at offset 0x4b558 [in module /usr/lib/libsdk.so]
+#4  0x00007f1da32602a6 in _soc_td2_l2mod_fifo_process ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/soc/esw/l2mod.c:498
+warning: Could not find DWO CU /home/vijayr/bcm_sdk_6531/bcm_sdk/build/unix-user/x86-smp_generic_64-2_6/src/soc/common/cmicx_l2mod.dwo(0x7456acb0581afc32) referenced by CU at offset 0x52db8 [in module /usr/lib/libsdk.so]
+#5  0x00007f1da3b54a40 in _soc_cmicx_l2mod_sbus_fifo_dma_thread ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/soc/common/cmicx_l2mod.c:188
+warning: Could not find DWO CU /home/vijayr/bcm_sdk_6531/bcm_sdk/build/unix-user/x86-smp_generic_64-2_6/src/sal/core/unix/thread.dwo(0x2ec34bedc0cde7f3) referenced by CU at offset 0x4a818 [in module /usr/lib/libsdk.so]
+#6  0x00007f1da313fdbf in thread_boot ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/sal/core/unix/thread.c:213
+#7  0x00007f1e5fe6efa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#8  0x00007f1e5f40706f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb)
+
+(gdb) bt
+#0  0x00007f1de0546514 in bcmsdk_l2_entry_event_handle () from /usr/lib/libdpal_plugin_xgs.so
+#1  0x00007f1da0f469ad in _bcm_l2_addr_callback ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/bcm/esw/l2.c:1895
+#2  0x00007f1da0f4c159 in _bcm_l2_register_callback ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/bcm/esw/l2.c:1852
+#3  0x00007f1da3266dde in soc_l2x_callback ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/soc/esw/l2xmsg.c:476
+#4  0x00007f1da32602a6 in _soc_td2_l2mod_fifo_process ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/soc/esw/l2mod.c:498
+#5  0x00007f1da3b54a40 in _soc_cmicx_l2mod_sbus_fifo_dma_thread ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/soc/common/cmicx_l2mod.c:188
+#6  0x00007f1da313fdbf in thread_boot ()
+    at /home/vijayr/bcm_sdk_6531/bcm_sdk/src/sal/core/unix/thread.c:213
+#7  0x00007f1e5fe6efa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#8  0x00007f1e5f40706f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb)
+
+
+
+root@EVPN-ix8a:~# ps -T -p  $(pidof dpal.bin)
+  PID  SPID TTY          TIME CMD
+21740 21740 ?        00:00:33 dpal.bin
+21740 21751 ?        00:00:00 dpal.bin-ust
+21740 21752 ?        00:00:00 dpal.bin-ust
+21740 21784 ?        00:00:00 dpal.bin
+21740 21786 ?        00:00:00 dpal.bin
+21740 21787 ?        00:00:00 dpal.bin
+21740 21788 ?        00:00:00 dpal.bin
+21740 21790 ?        00:00:33 TEP_WRK_1
+21740 21791 ?        00:00:00 dpal.bin
+21740 21797 ?        00:00:00 ZMQbg/0
+21740 21798 ?        00:14:27 ZMQbg/1
+21740 22051 ?        00:00:19 TEP_WRK_2
+21740 22052 ?        00:11:34 TEP_WRK_3
+21740 23911 ?        00:00:05 dpal_worker
+21740 23912 ?        00:00:00 dpal_mac_lrn
+21740 23913 ?        00:00:00 dpal_lxk
+21740 23914 ?        01:06:13 dpal_stats
+21740 23915 ?        00:00:00 bcmDPC
+21740 23916 ?        00:22:33 bcmINTR
+21740 23918 ?        02:00:10 socdmadesc.0
+21740 23919 ?        00:00:00 Async thread
+21740 23935 ?        00:00:00 SOC KNET RX
+21740 23945 ?        00:00:00 uC msg
+21740 23946 ?        00:00:00 uC system msg
+21740 23976 ?        06:32:29 bcmCNTR.0
+21740 23977 ?        00:00:35 CtrEvict.0
+21740 23980 ?        00:00:01 bcmMEM_SCAN.0
+21740 23981 ?        00:00:00 bcmTX
+21740 23982 ?        00:00:00 bcmXGS3AsyncTX
+21740 23995 ?        00:04:49 bcmALPMDH.0
+21740 23998 ?        00:00:00 bcmBFD
+21740 24015 ?        00:00:00 IPROC_M0SSQ_EVE
+21740 24016 ?        03:20:43 bcmLINK.0
+21740 24017 ?        00:00:11 bcmL2MOD.0
+21740 24018 ?        00:04:16 bcmRX
+21740 24100 ?        00:00:38 bcmL2age.0
+21740 24125 ?        00:00:00 dpal_worker
+21740 24126 ?        00:00:00 dpal_worker
+21740 24127 ?        00:00:00 dpal_worker
+21740 24134 ?        00:00:00 dpal_worker
+21740 24135 ?        00:00:00 ZMQbg/2
+21740 24136 ?        00:00:40 ZMQbg/3
+21740 24259 ?        00:00:16 bcm_bst_sync_th
+root@EVPN-ix8a:~#
+
+
+
+root@TD4x11-002:~#  ps -T -p  $(pidof dpal.bin) | grep -v bcm
+  PID  SPID TTY          TIME CMD
+ 5044  5044 ?        00:00:06 dpal.bin
+ 5044  5056 ?        00:00:00 dpal.bin-ust
+ 5044  5057 ?        00:00:00 dpal.bin-ust
+ 5044  5337 ?        00:00:00 dpal.bin
+ 5044  5338 ?        00:00:00 dpal.bin
+ 5044  5339 ?        00:00:00 dpal.bin
+ 5044  5340 ?        00:00:00 dpal.bin
+ 5044  5341 ?        00:00:00 dpal.bin
+ 5044  5342 ?        00:00:00 dpal.bin
+ 5044  5346 ?        00:00:03 TEP_WRK_1
+ 5044  5347 ?        00:00:00 ZMQbg/0
+ 5044  5349 ?        00:01:59 ZMQbg/1
+ 5044  5564 ?        00:00:02 TEP_WRK_2
+ 5044  5565 ?        00:01:11 TEP_WRK_3
+ 5044  7186 ?        00:00:09 dpal_worker
+ 5044  7187 ?        00:00:00 dpal_mac_lrn
+ 5044  7188 ?        00:00:00 dpal_lxk
+ 5044  7189 ?        00:23:45 dpal_stats
+ 5044  7195 ?        00:00:00 shrSysmInst
+ 5044  7273 ?        00:00:00 shrSysmInst
+
+
+
+root@TD4x11-002:~#  ps -T -p  $(pidof dpal.bin) | grep -v bcm
+  PID  SPID TTY          TIME CMD
+ 5044  5044 ?        00:00:06 dpal.bin
+ 5044  5056 ?        00:00:00 dpal.bin-ust
+ 5044  5057 ?        00:00:00 dpal.bin-ust
+ 5044  5337 ?        00:00:00 dpal.bin
+ 5044  5338 ?        00:00:00 dpal.bin
+ 5044  5339 ?        00:00:00 dpal.bin
+ 5044  5340 ?        00:00:00 dpal.bin
+ 5044  5341 ?        00:00:00 dpal.bin
+ 5044  5342 ?        00:00:00 dpal.bin
+ 5044  5346 ?        00:00:03 TEP_WRK_1
+ 5044  5347 ?        00:00:00 ZMQbg/0
+ 5044  5349 ?        00:01:59 ZMQbg/1
+ 5044  5564 ?        00:00:02 TEP_WRK_2
+ 5044  5565 ?        00:01:11 TEP_WRK_3
+ 5044  7186 ?        00:00:09 dpal_worker
+ 5044  7187 ?        00:00:00 dpal_mac_lrn
+ 5044  7188 ?        00:00:00 dpal_lxk
+ 5044  7189 ?        00:23:45 dpal_stats
+ 5044  7195 ?        00:00:00 shrSysmInst
+ 5044  7273 ?        00:00:00 shrSysmInst
+ 5044  7362 ?        00:02:35 pm_thread
+ 5044  7415 ?        00:00:03 AssistThreadInt
+ 5044  7416 ?        00:00:00 AssistThreadExt
+ 5044  7425 ?        00:00:07 MacMon.0
+ 5044  7537 ?        00:04:59 Bcmpkt_tp_rx_bc
+ 5044  7539 ?        00:03:51 LM_THREAD.0
+ 5044  7550 ?        00:00:06 PktioRx
+ 5044  7614 ?        00:00:00 dpal_worker
+ 5044  7615 ?        00:00:00 dpal_worker
+ 5044  7616 ?        00:00:00 dpal_worker
+ 5044  7622 ?        00:00:00 dpal_worker
+ 5044  7623 ?        00:00:00 ZMQbg/2
+ 5044  7624 ?        00:00:05 ZMQbg/3
+ 5044  7362 ?        00:02:35 pm_thread
+ 5044  7415 ?        00:00:03 AssistThreadInt
+ 5044  7416 ?        00:00:00 AssistThreadExt
+ 5044  7425 ?        00:00:07 MacMon.0
+ 5044  7537 ?        00:04:59 Bcmpkt_tp_rx_bc
+ 5044  7539 ?        00:03:51 LM_THREAD.0
+ 5044  7550 ?        00:00:06 PktioRx
+ 5044  7614 ?        00:00:00 dpal_worker
+ 5044  7615 ?        00:00:00 dpal_worker
+ 5044  7616 ?        00:00:00 dpal_worker
+ 5044  7622 ?        00:00:00 dpal_worker
+ 5044  7623 ?        00:00:00 ZMQbg/2
+ 5044  7624 ?        00:00:05 ZMQbg/3
+
+
+ TD3:
+ ====
+
+(gdb) info thread
+  Id   Target Id                                          Frame
+* 1    Thread 0x7f0eb0831100 (LWP 31598) "dpal.bin"       0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  2    Thread 0x7f0eb082d700 (LWP 31647) "dpal.bin-ust"   0x00007f0eb2e3f3c7 in recvmsg () from /lib/x86_64-linux-gnu/libpthread.so.0
+  3    Thread 0x7f0eb002c700 (LWP 31648) "dpal.bin-ust"   0x00007f0eb23d1af9 in syscall () from /lib/x86_64-linux-gnu/libc.so.6
+  4    Thread 0x7f0e59d73700 (LWP 31665) "dpal.bin"       0x00007f0eb16937a3 in ?? () from /usr/lib/libHAObserver.so
+  5    Thread 0x7f0e59572700 (LWP 31666) "TEP_WRK_1"      0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  6    Thread 0x7f0e58d71700 (LWP 31667) "ZMQbg/0"        0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  7    Thread 0x7f0e517ff700 (LWP 31668) "dpal.bin"       0x00007f0eb16937a3 in ?? () from /usr/lib/libHAObserver.so
+  8    Thread 0x7f0e50ffe700 (LWP 31669) "dpal.bin"       0x00007f0eb16937a3 in ?? () from /usr/lib/libHAObserver.so
+  9    Thread 0x7f0e27fff700 (LWP 31670) "dpal.bin"       0x00007f0eb16937a3 in ?? () from /usr/lib/libHAObserver.so
+  10   Thread 0x7f0e277fe700 (LWP 31671) "ZMQbg/1"        0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  11   Thread 0x7f0e26ffd700 (LWP 31672) "dpal.bin"       0x00007f0eb16937a3 in ?? () from /usr/lib/libHAObserver.so
+  12   Thread 0x7f0e267fc700 (LWP 31673) "dpal.bin"       0x00007f0eb16937a3 in ?? () from /usr/lib/libHAObserver.so
+  13   Thread 0x7f0e25ffb700 (LWP 31830) "TEP_WRK_2"      0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  14   Thread 0x7f0e257fa700 (LWP 31831) "TEP_WRK_3"      0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  15   Thread 0x7f0dde838700 (LWP 1118) "dpal_worker"     0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  16   Thread 0x7f0dde037700 (LWP 1119) "dpal_mac_lrn"    0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  17   Thread 0x7f0ddd836700 (LWP 1120) "dpal_lxk"        0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  18   Thread 0x7f0ddd035700 (LWP 1121) "dpal_stats"      0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  19   Thread 0x7f0e5805d700 (LWP 1122) "bcmDPC"          0x00007f0eb2e3d896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  20   Thread 0x7f0eac10f700 (LWP 1123) "bcmINTR"         0x00007f0eb23cdfc7 in ioctl () from /lib/x86_64-linux-gnu/libc.so.6
+  21   Thread 0x7f0e50052700 (LWP 1128) "socdmadesc.0"    0x00007f0eb2e3d896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  22   Thread 0x7f0e2405b700 (LWP 1133) "Async thread"    0x00007f0eb2e3d896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  23   Thread 0x7f0eac10a700 (LWP 1142) "SOC KNET RX"     0x00007f0eb23cdfc7 in ioctl () from /lib/x86_64-linux-gnu/libc.so.6
+  24   Thread 0x7f0e2402e700 (LWP 1148) "uC msg"          0x00007f0eb2e3d896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  25   Thread 0x7f0ddc034700 (LWP 1149) "uC system msg"   0x00007f0eb2e3d896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  26   Thread 0x7f0dcf589700 (LWP 1150) "bcmCNTR.0"       0x00007f0eb2e3da82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  27   Thread 0x7f0dcf55c700 (LWP 1151) "CtrEvict.0"      0x00007f0eb2e3da82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  28   Thread 0x7f0dce5aa700 (LWP 1154) "bcmMEM_SCAN.0"   0x00007f0eb2e3da82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  29   Thread 0x7f0dce5d7700 (LWP 1161) "bcmTX"           0x00007f0eb2e3d896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  30   Thread 0x7f0dce57d700 (LWP 1164) "bcmXGS3AsyncTX"  0x00007f0eb2e3d896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  31   Thread 0x7f0dce10e700 (LWP 1174) "bcmALPMDH.0"     0x00007f0eb2e3da82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  32   Thread 0x7f0dcdf94700 (LWP 1176) "bcmBFD"          0x00007f0eb2e3d896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  33   Thread 0x7f0dcdf67700 (LWP 1218) "IPROC_M0SSQ_EVE" 0x00007f0eb2e3d896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  34   Thread 0x7f0e58030700 (LWP 1219) "bcmLINK.0"       0x00007f0eb2e3da82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  35   Thread 0x7f0dcdd12700 (LWP 1220) "bcmL2MOD.0"      0x00007f0eb2e3da82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  36   Thread 0x7f0dcdce5700 (LWP 1221) "bcmRX"           0x00007f0eb2e3da82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  37   Thread 0x7f0dcdcb8700 (LWP 1291) "bcmL2age.0"      0x00007f0eb2e3da82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  38   Thread 0x7f0dcdc72700 (LWP 1316) "dpal_worker"     0x00007f0eb2e3e544 in read () from /lib/x86_64-linux-gnu/libpthread.so.0
+  39   Thread 0x7f0dcd471700 (LWP 1317) "dpal_worker"     0x00007f0eb2e3e667 in accept () from /lib/x86_64-linux-gnu/libpthread.so.0
+  40   Thread 0x7f0dccc70700 (LWP 1318) "dpal_worker"     0x00007f0eb2e3e544 in read () from /lib/x86_64-linux-gnu/libpthread.so.0
+  41   Thread 0x7f0db3732700 (LWP 1323) "dpal_worker"     0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  42   Thread 0x7f0db2f31700 (LWP 1324) "ZMQbg/2"         0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  43   Thread 0x7f0db2730700 (LWP 1325) "ZMQbg/3"         0x00007f0eb23d738f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  44   Thread 0x7f0e5811f700 (LWP 1428) "bcm_bst_sync_th" 0x00007f0eb2e3da82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+
+
+TD4:
+====
+
+(gdb) info thread
+  Id   Target Id                                          Frame
+* 1    Thread 0x7fcf131d2100 (LWP 5044) "dpal.bin"        0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  2    Thread 0x7fcf131ce700 (LWP 5056) "dpal.bin-ust"    0x00007fcf157f93c7 in recvmsg () from /lib/x86_64-linux-gnu/libpthread.so.0
+  3    Thread 0x7fcf129cd700 (LWP 5057) "dpal.bin-ust"    0x00007fcf14d72af9 in syscall () from /lib/x86_64-linux-gnu/libc.so.6
+  4    Thread 0x7fcf121cc700 (LWP 5337) "dpal.bin"        0x00007fcf140347a3 in ?? () from /usr/lib/libHAObserver.so
+  5    Thread 0x7fcf10d3a700 (LWP 5338) "dpal.bin"        0x00007fcf140347a3 in ?? () from /usr/lib/libHAObserver.so
+  6    Thread 0x7fcee1fff700 (LWP 5339) "dpal.bin"        0x00007fcf140347a3 in ?? () from /usr/lib/libHAObserver.so
+  7    Thread 0x7fcee17fe700 (LWP 5340) "dpal.bin"        0x00007fcf140347a3 in ?? () from /usr/lib/libHAObserver.so
+  8    Thread 0x7fcee0ffd700 (LWP 5341) "dpal.bin"        0x00007fcf140347a3 in ?? () from /usr/lib/libHAObserver.so
+  9    Thread 0x7fced3fff700 (LWP 5342) "dpal.bin"        0x00007fcf140347a3 in ?? () from /usr/lib/libHAObserver.so
+  10   Thread 0x7fced37fe700 (LWP 5346) "TEP_WRK_1"       0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  11   Thread 0x7fced2ffd700 (LWP 5347) "ZMQbg/0"         0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  12   Thread 0x7fced27fc700 (LWP 5349) "ZMQbg/1"         0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  13   Thread 0x7fcd7c2c3700 (LWP 5564) "TEP_WRK_2"       0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  14   Thread 0x7fcd7bac2700 (LWP 5565) "TEP_WRK_3"       0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  15   Thread 0x7fcd7a728700 (LWP 7186) "dpal_worker"     0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  16   Thread 0x7fcd79f27700 (LWP 7187) "dpal_mac_lrn"    0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  17   Thread 0x7fcd79726700 (LWP 7188) "dpal_lxk"        0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  18   Thread 0x7fcd78f25700 (LWP 7189) "dpal_stats"      0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  19   Thread 0x7fcf10039700 (LWP 7190) "bcmDPC"          0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  20   Thread 0x7fced0021700 (LWP 7195) "shrSysmInst"     0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  21   Thread 0x7fced0010700 (LWP 7196) "bcmtrmNotify"    0x00007fcf157f7a82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  22   Thread 0x7fcd780bb700 (LWP 7273) "shrSysmInst"     0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  23   Thread 0x7fcd78026700 (LWP 7274) "bcmtrmModel.0"   0x00007fcf157f7a82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  24   Thread 0x7fcd78037700 (LWP 7275) "bcmtrmInter.0"   0x00007fcf157f7a82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  25   Thread 0x7fcd78048700 (LWP 7278) "bcmbdSbusdma0"   0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  26   Thread 0x7fcd78015700 (LWP 7279) "bcmbdSbusdma1"   0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  27   Thread 0x7fcd48038700 (LWP 7280) "bcmbdSbusdma2"   0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  28   Thread 0x7fcd48027700 (LWP 7281) "bcmbdFifodma"    0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  29   Thread 0x7fcd48016700 (LWP 7282) "bcmbdPortIntr"   0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  30   Thread 0x7fcd34173700 (LWP 7283) "bcmbdIPEPIntr"   0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  31   Thread 0x7fcd3412f700 (LWP 7284) "bcmbdMmuIntr"    0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  32   Thread 0x7fcd34140700 (LWP 7285) "bcmbdPvtIntr"    0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  33   Thread 0x7fcf15afc700 (LWP 7300) "bcmaSysIsr"      0x00007fcf14d6efc7 in ioctl () from /lib/x86_64-linux-gnu/libc.so.6
+  34   Thread 0x7fcd34151700 (LWP 7301) "bcmbdM0ssqUc0Sw" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  35   Thread 0x7fcd34162700 (LWP 7302) "bcmbdM0ssqUc1Sw" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  36   Thread 0x7fcd3411e700 (LWP 7303) "bcmbdM0ssqUc2Sw" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  37   Thread 0x7fcd3402a700 (LWP 7304) "bcmbdM0ssqUc3Sw" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  38   Thread 0x7fcd23dfe700 (LWP 7306) "bcmptmWalRd"     0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  39   Thread 0x7fcd23dcb700 (LWP 7336) "bcmtmBstEvent"   0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  40   Thread 0x7fcd23dba700 (LWP 7342) "bcmcthL2Learn"   0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  41   Thread 0x7fcd23ded700 (LWP 7352) "bcmptmSerCorr"   0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  42   Thread 0x7fcd23d98700 (LWP 7355) "bcmptmSerSram"   0x00007fcf157f7a82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  43   Thread 0x7fcd23e31700 (LWP 7362) "pm_thread"       0x00007fcf157f7a82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  44   Thread 0x7fcd23ddc700 (LWP 7393) "bcmpcIntrHandle" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  45   Thread 0x7fcd23e0f700 (LWP 7394) "bcmptmCciColCmn" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  46   Thread 0x7fcd23da9700 (LWP 7395) "bcmptmCciColIpE" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  47   Thread 0x7fcd34019700 (LWP 7396) "bcmptmCciColTmC" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  48   Thread 0x7fcd3403b700 (LWP 7397) "bcmptmCciColPor" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  49   Thread 0x7fcd78099700 (LWP 7404) "bcmptmCciColEvi" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  50   Thread 0x7fcd23e20700 (LWP 7405) "bcmptmCciColPol" 0x00007fcf157f7a82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  51   Thread 0x7fcd780aa700 (LWP 7406) "bcmtmPfcDdrScan" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  52   Thread 0x7fcd36fe3700 (LWP 7415) "AssistThreadInt" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  53   Thread 0x7fcd36fd2700 (LWP 7416) "AssistThreadExt" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  54   Thread 0x7fcd36fc1700 (LWP 7425) "MacMon.0"        0x00007fcf157f7a82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  55   Thread 0x7fcd36fb0700 (LWP 7426) "bcmL2Learn"      0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  56   Thread 0x7fcd36f9f700 (LWP 7537) "Bcmpkt_tp_rx_bc" 0x00007fcf14d6d6f9 in poll () from /lib/x86_64-linux-gnu/libc.so.6
+  57   Thread 0x7fcd36f8e700 (LWP 7539) "LM_THREAD.0"     0x00007fcf157f7a82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  58   Thread 0x7fcd36f7d700 (LWP 7548) "bcmbdMcsMsg"     0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  59   Thread 0x7fcd36f6c700 (LWP 7549) "bcmbdMcsSystemM" 0x00007fcf157f7896 in do_futex_wait.constprop () from /lib/x86_64-linux-gnu/libpthread.so.0
+  60   Thread 0x7fcd36f5b700 (LWP 7550) "PktioRx"         0x00007fcf157f7a82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  61   Thread 0x7fcd36f4a700 (LWP 7573) "bcmL2age.0"      0x00007fcf157f7a82 in do_futex_wait () from /lib/x86_64-linux-gnu/libpthread.so.0
+  62   Thread 0x7fcd2ffff700 (LWP 7614) "dpal_worker"     0x00007fcf157f8544 in read () from /lib/x86_64-linux-gnu/libpthread.so.0
+  63   Thread 0x7fcd211ab700 (LWP 7615) "dpal_worker"     0x00007fcf157f8667 in accept () from /lib/x86_64-linux-gnu/libpthread.so.0
+  64   Thread 0x7fcd209aa700 (LWP 7616) "dpal_worker"     0x00007fcf157f8544 in read () from /lib/x86_64-linux-gnu/libpthread.so.0
+  65   Thread 0x7fccfd3b6700 (LWP 7622) "dpal_worker"     0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  66   Thread 0x7fccfcbb5700 (LWP 7623) "ZMQbg/2"         0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+  67   Thread 0x7fccf67fe700 (LWP 7624) "ZMQbg/3"         0x00007fcf14d7838f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6

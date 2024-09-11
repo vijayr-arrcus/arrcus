@@ -1,0 +1,60 @@
+/*
+ * Routine to Create a Virtual port Group
+ */
+bcm_vpn_t vpn_id;
+bcm_multicast_t mcast;
+int vfi_create (int unit)
+{
+	bcm_error_t rv = BCM_E_NONE;
+	rv = bcm_multicast_create(unit, BCM_MULTICAST_TYPE_FLOW, &mcast);
+	printf("bcm_multicast_create() %s mc group=%d\n", bcm_errmsg(rv), mcast);
+	if (rv != BCM_E_NONE) {
+		return rv;
+	}
+	bcm_flow_vpn_config_t vpn_t;
+	bcm_flow_vpn_config_t_init(&vpn_t);
+
+	vpn_t.broadcast_group = mcast;
+	vpn_t.unknown_multicast_group = mcast;
+	vpn_t.unknown_unicast_group = mcast;
+	vpn_t.flags = BCM_FLOW_VPN_ELAN;
+	rv = bcm_flow_vpn_create(unit, &vpn_id, &vpn_t);
+	if (rv != BCM_E_NONE) {
+		printf("bcm_flow_vpn_create() %s vpn=0x%x\n",
+					 bcm_errmsg(rv), vpn_id);
+	}
+	printf(" vpn id created is %d\n", vpn_id);
+	return rv;
+}
+
+int vp_create (int unit)
+{
+	int rv;
+	bcm_flow_match_config_t match_info;
+	bcm_flow_match_config_t_init(&match_info);
+
+	match_info.port = 40;
+	match_info.vlan = 10;
+	match_info.vpn = vpn_id;
+	match_info.criteria = BCM_FLOW_MATCH_CRITERIA_PORT_GROUP_VLAN;
+	match_info.valid_elements = BCM_FLOW_MATCH_VLAN_VALID | BCM_FLOW_MATCH_VPN_VALID;
+
+	match_info.valid_elements |= (BCM_FLOW_MATCH_PORT_VALID);
+	rv = bcm_flow_match_add(unit, &match_info, 0, NULL);
+	print rv;
+	return rv;
+}
+
+print  vfi_create(0);
+print vp_create(0);
+
+
+cint> print vp_create(0);
+print vp_create(0);
+Unit=0 Table ING_VLAN_XLATE_1_TABLE:
+  insert  OVID=10 L2_IIF_PORT_GROUP_ID=40 STRENGTH_PROFILE_INDEX=1 VFI_STRENGTH=4
+VFI=4097
+exit status=0
+int rv = 0 (0x0)
+int $$ = 0 (0x0)
+cint>

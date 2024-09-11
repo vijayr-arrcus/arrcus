@@ -1,0 +1,100 @@
+  if (dpal_get_ha_state() == HA_OBS_STATE_ACTIVE) {
+    if (false == dpal_stats_init(worker_ctxt,
+                                 worker_ctxt->main_ctxt->mpsc_ctxt_p)) {
+      LOG_ERR_MSG("DPAL", "\n dpal stats init failed, bail out");
+      DPAL_TRACE_VA(dpal_infra, error_str,
+                    "dpal stats init failed, bail out");
+      return NULL;
+    }
+  }
+
+  dpal_aom_init(worker_ctxt);
+
+  /* Intialize plugin helper library */
+  if (dpal_get_ha_state() == HA_OBS_STATE_ACTIVE) {
+    dpal_initialize_plugin_helper_lib(worker_ctxt->worker_ev_base,
+                                      worker_ctxt->main_ctxt->mpsc_ctxt_p,
+                                      &worker_ctxt->plugin_helper);
+  }
+
+
+
+dpal_mpsc_publish_obj
+	  rc = tbl_p->info.pub(tbl_p->mpsc_p->c_h, pubid, tbl_p->tbl_id, op, obj);
+
+dpal_plugin_helper_create_mpsc_tables (ctxt is the helper context)
+  info.tbl_name = (char *)DPAL_DSTORE_BFD_SESSION_STATE_TBL_NAME;
+  info.use_machine_id = false;
+  info.pub =
+    (dpal_mpsc_pub_fn_t)mps_dpal_bfd_session_state_object_publish_obj_blocking;
+  ctxt->bfd_tbl_h = dpal_mpsc_publish_table(ctxt->mpsc_p, info);
+  if (!ctxt->bfd_tbl_h) {
+    return false;
+  }
+
+dpal_mpsc_publish_table
+		tbl_p->info = info;
+		tbl_p->mpsc_p = mpsc_p;
+
+dpal_initialize_plugin_helper_lib(worker_ctxt->worker_ev_base,
+     worker_ctxt->main_ctxt->mpsc_ctxt_p,
+     &worker_ctxt->plugin_helper);
+
+if (false == dpal_stats_init(worker_ctxt,
+												 worker_ctxt->main_ctxt->mpsc_ctxt_p)) {
+dpal_stats_init (dpal_worker_ctxt_t *worker_ctxt,
+                 dpal_mpsc_ctxt_p mpsc_p)
+{
+  dpal_stats_ctxt_t *ctxt = &worker_ctxt->stats_ctxt;
+  ctxt->mpsc_p = mpsc_p;
+		dpal_stats_init_pair
+				 pair->mpsc_tbl_p = dpal_mpsc_publish_table(ctxt->mpsc_p, *mpsc_info);
+				 dpal_mpsc_publish_table (dpal_mpsc_ctxt_p mpsc_p, dpal_mpsc_pub_tbl_info_t info) {
+					 int ret;
+					 dpal_mpsc_pub_tbl_p tbl_p;
+					 char buf[128];
+					 mpsc_reg_attr_t attr;
+					 mps_key_t tblid, pubid;
+
+					 if (!mpsc_p || !info.tbl_name || !info.pub) {
+						 return NULL;
+					 }
+
+					 tbl_p = calloc(sizeof(*tbl_p), 1);
+					 if (!tbl_p) {
+						 return NULL;
+					 }
+
+					 tbl_p->info = info;
+					 tbl_p->mpsc_p = mpsc_p;
+
+					 mpsc_set_default_reg_attr(&attr);
+
+					 dpal_mpsc_construct_pub_id(buf, sizeof(buf), &pubid);
+					 dpal_mpsc_construct_pub_tblid(mpsc_p, info.use_machine_id, info.tbl_name,
+																				 &tblid);
+
+					 ret = mpsc_pub_tbl_create(mpsc_p->c_h, tblid, pubid, attr);
+					 DPAL_MPSC_INFO("%s(): created table %s, rc = %d", __FUNCTION__,
+													tbl_p->info.tbl_name, ret);
+
+					 if (ret < 0) {
+						 free(tbl_p);
+						 free(tblid.key);
+						 tbl_p = NULL;
+					 } else {
+						 tbl_p->tbl_id = tblid;
+					 }
+					 return tbl_p;
+				 }
+
+
+dpal_main
+		dpal_main_ctxt.mpsc_ctxt_p = dpal_mpsc_init
+							memset(&ctrl_ep, 0, sizeof(mps_ep_addr_t));
+							ctrl_ep.service_uri = strdup(arcos_mps_get_ctrl_uri());
+							ctxt->c_h = mpsc_init(ctrl_ep, attr);
+							return ctxt;
+
+
+dpal_worker_init

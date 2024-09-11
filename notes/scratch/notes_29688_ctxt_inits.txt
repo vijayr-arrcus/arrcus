@@ -81,3 +81,8 @@ both cplane and global objects are per worker thread..
 
 worker or device context maintains a tree of meta handles for each object type..
 
+
+
+dpal_init_worker_plugin_ctxt
+
+dpal_discover_devices -- discover the number of devices and units in the plugin.

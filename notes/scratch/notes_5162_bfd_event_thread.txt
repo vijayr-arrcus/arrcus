@@ -1,0 +1,1 @@
+  pthread_mutex_init(&g_asic_global_ctxt.intf_tree_mtx, NULL);
