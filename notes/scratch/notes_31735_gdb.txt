@@ -75,3 +75,38 @@ break mremap
     continue
   end
 
+(gdb) print *(dpal_mpsc_ctxt_p) 0x55d3ca984550
+$1 = {c_h = 0x55d3ca984e20, slot_id = 0, machine_id = 0x55d3ca983280 "standalone", dist_platform = false,
+  replay_in_progress = false, posted_restart_msg = true, snapshot_tbl_replayed = true, snapshot_cnt = 0,
+  snapshot_replayed_cnt = 1, snapshot_tables_created = 0, snapshot_tables_acked = 0, snapshot_tables = {
+    head = 0x55d3cb946340, cmp = 0x0}, snapshot_tblid = {klen = 44,
+    key = 0x55d3cb946180 "/default/oper/dpal/common/dpal_snapshot_tbl/"}, hw_rsrc_user_tblid = {klen = 0,
+    key = 0x0}, ctxt_str_uri = 0x21 <error: Cannot access memory at address 0x21>}
+(gdb) set var ptr = (dpal_mpsc_ctxt_p) 0x55d3ca984550
+No symbol "ptr" in current context.
+(gdb) set var my_pointer = (dpal_mpsc_ctxt_p) 0x55d3ca984550
+No symbol "my_pointer" in current context.
+(gdb) set ptr=(dpal_mpsc_ctxt_p) 0x55d3ca984550
+No symbol "ptr" in current context.
+(gdb) set $ptr=(dpal_mpsc_ctxt_p) 0x55d3ca984550
+(gdb) print ptr
+No symbol "ptr" in current context.
+(gdb) print $ptr
+$2 = (dpal_mpsc_ctxt_p) 0x55d3ca984550
+(gdb) print * $ptr
+$3 = {c_h = 0x55d3ca984e20, slot_id = 0, machine_id = 0x55d3ca983280 "standalone", dist_platform = false,
+  replay_in_progress = false, posted_restart_msg = true, snapshot_tbl_replayed = true, snapshot_cnt = 0,
+  snapshot_replayed_cnt = 1, snapshot_tables_created = 0, snapshot_tables_acked = 0, snapshot_tables = {
+    head = 0x55d3cb946340, cmp = 0x0}, snapshot_tblid = {klen = 44,
+    key = 0x55d3cb946180 "/default/oper/dpal/common/dpal_snapshot_tbl/"}, hw_rsrc_user_tblid = {klen = 0,
+    key = 0x0}, ctxt_str_uri = 0x21 <error: Cannot access memory at address 0x21>}
+(gdb) print &$ptr->ctxt_str_uri
+$4 = (char **) 0x55d3ca9845a8
+(gdb) q
+
+
+
+
+0x563eedd6f540
+dpal_main_ctxt_t           dpal_main_ctxt;
+  dpal_mpsc_ctxt_p            mpsc_ctxt_p;

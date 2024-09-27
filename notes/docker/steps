@@ -17,3 +17,5 @@ https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-con
 
 docker system prune
 docker system prune -a
+
+docker rm --force

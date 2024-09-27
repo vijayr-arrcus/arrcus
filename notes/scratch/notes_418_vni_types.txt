@@ -1,0 +1,7 @@
+DPAL_VXLAN_VNI:
+    return bcmsdk_vxlan_flow_vni_api(wh, obj, obj_old, optype);
+
+
+
+L3 VNI:
+					BCM_XGS_VXLAN_FLOW_L3VNI

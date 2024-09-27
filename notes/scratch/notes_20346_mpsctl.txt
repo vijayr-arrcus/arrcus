@@ -10,3 +10,4 @@
 /usr/lib/arcos/mpsctl -t /default/oper/infra/ifmgr/ports/ -s Ifmgr.ifmgr_port
 ./mpsctl -t /default/oper/dpal/common/dpal_port_alloc/ -s Dpal.dpal_port // port link status notification.
 ./mpsctl -t /default/oper/acl/hal/target/ -s Acl.acl_hal_target_object
+./mpsctl -t /default/oper/dpal/common/dpal_bfd_session_state_tbl/ -s Dpal.dpal_bfd_session_state_object
