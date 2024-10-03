@@ -1,0 +1,1441 @@
+COMMAND    PID USER   FD      TYPE             DEVICE SIZE/OFF   NODE NAME
+dpal.bin 24228 root  cwd       DIR               0,18     4096  20531 /
+dpal.bin 24228 root  rtd       DIR               0,18     4096  20531 /
+dpal.bin 24228 root  txt       REG               0,19    56224   6308 /usr/lib/arcos/dpal.bin
+dpal.bin 24228 root  mem       REG                7,0            6308 /usr/lib/arcos/dpal.bin (path dev=0,19)
+dpal.bin 24228 root  mem       CHR              127,0          115616 /dev/linux-kernel-bde
+dpal.bin 24228 root  mem       CHR              120,0          135403 /dev/linux_ngbde
+dpal.bin 24228 root  mem       REG                7,0            3568 /usr/arcos/lib/libbcm_sdk_xgs.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7097 /usr/lib/libdpal_plugin_xgs.so (path dev=0,19)
+dpal.bin 24228 root  DEL       REG               0,22          148622 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148621 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148620 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148619 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148618 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148617 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148616 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148615 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148614 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148613 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148612 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148611 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148610 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148609 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148608 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148607 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148589 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148588 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148587 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148586 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148585 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148584 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148583 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148582 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148581 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148580 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148579 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148578 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148577 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148576 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148575 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148574 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148556 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148555 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148554 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148553 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148552 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148551 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148550 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148549 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148548 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148547 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148546 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148545 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148544 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148543 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148542 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148541 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148523 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148522 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148521 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148520 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148519 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148518 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148517 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148516 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148515 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148514 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148513 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148512 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148511 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148510 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148509 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148508 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148490 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148489 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148488 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148487 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148486 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148485 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148484 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148483 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148482 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          148481 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131072 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131071 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131070 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131069 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131068 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131067 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131049 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131048 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131047 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131046 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131045 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131044 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131043 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131042 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131041 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131040 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131039 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131038 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131037 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131036 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131035 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131034 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131016 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131015 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131014 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131013 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131012 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131011 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131010 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131009 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131008 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131007 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131006 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131005 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131004 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131003 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131002 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          131001 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141063 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141062 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141061 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141060 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141059 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141058 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141057 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141056 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141055 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141054 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141053 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141052 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141051 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141050 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141049 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141048 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141030 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141029 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141028 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141027 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141026 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141025 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141024 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141023 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141022 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141021 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141020 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141019 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141018 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141017 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141016 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          141015 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140997 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140996 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140995 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140994 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140993 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140992 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140991 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140990 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140989 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140988 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140987 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140986 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140964 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140963 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140962 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140961 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140960 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140959 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140958 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140957 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140956 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140955 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140954 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140953 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140952 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140951 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140950 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140949 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140931 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140930 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140929 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140928 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140927 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140926 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140925 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140924 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140923 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140922 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140921 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140920 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140919 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140918 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140917 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140916 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140898 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140897 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140896 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140895 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140894 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140893 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140892 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140891 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140890 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140889 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140888 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140887 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140886 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140885 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140884 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140883 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140865 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140864 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140863 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140862 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140861 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140860 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140859 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140858 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140857 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140856 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140855 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140854 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140853 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140852 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140851 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140850 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140799 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140798 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140797 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140796 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140795 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140794 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140793 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140792 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140791 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140790 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140789 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140788 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140787 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140786 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140785 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140784 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140766 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140765 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140764 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140763 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140762 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140761 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140760 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140759 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140758 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140757 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140756 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140755 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140754 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140753 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140752 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140751 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140733 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140732 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140731 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140730 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140729 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140728 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140727 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140726 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140725 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140724 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140723 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140722 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140985 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140984 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140983 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140721 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140720 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140719 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140982 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140832 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140831 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140666 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  mem       REG                7,0            7091 /usr/lib/libdpal_plugin_lxk.so (path dev=0,19)
+dpal.bin 24228 root  DEL       REG               0,22          140830 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140829 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140828 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140827 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140826 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140825 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140824 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140823 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140822 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140821 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140820 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140819 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140718 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140667 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140665 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140664 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  mem       REG                7,0            3182 /lib/x86_64-linux-gnu/libnss_aaa.so.2 (path dev=0,19)
+dpal.bin 24228 root  DEL       REG               0,22          140818 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140817 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140700 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140699 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140698 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140697 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140663 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140662 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140696 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140695 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140694 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140693 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140692 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140691 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140661 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140660 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140690 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140689 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140688 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140687 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140686 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140685 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140659 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140658 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140657 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140656 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140655 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140654 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140653 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140652 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  mem       REG                7,0            7082 /usr/lib/libdpal_plugin_common.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3187 /lib/x86_64-linux-gnu/libnss_files-2.28.so (path dev=0,19)
+dpal.bin 24228 root  DEL       REG               0,22          140634 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140633 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140632 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140631 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140630 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140629 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140628 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140627 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140626 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140625 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140624 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140623 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140622 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140621 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140620 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  DEL       REG               0,22          140619 /dev/shm/ust-shm-consumer-4454
+dpal.bin 24228 root  mem       REG                7,0            3222 /lib/x86_64-linux-gnu/libresolv-2.28.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3152 /lib/x86_64-linux-gnu/libkeyutils.so.1.8 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17655 /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3122 /lib/x86_64-linux-gnu/libcom_err.so.2.1 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17649 /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17653 /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17887 /usr/lib/x86_64-linux-gnu/liburcu-common.so.6.0.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17560 /usr/lib/x86_64-linux-gnu/libevent_pthreads-2.1.so.6.0.2 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17601 /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17773 /usr/lib/x86_64-linux-gnu/libnorm.so.1.5.8 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17804 /usr/lib/x86_64-linux-gnu/libpgm-5.2.so.0.0.122 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17851 /usr/lib/x86_64-linux-gnu/libsodium.so.23.2.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7075 /usr/lib/libdict.so.2 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17532 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17885 /usr/lib/x86_64-linux-gnu/liburcu-cds.so.6.0.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17883 /usr/lib/x86_64-linux-gnu/liburcu-bp.so.6.0.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17690 /usr/lib/x86_64-linux-gnu/liblttng-ust-tracepoint.so.0.0.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7071 /usr/lib/libcontainerid_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3142 /lib/x86_64-linux-gnu/libgcc_s.so.1 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17860 /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7254 /usr/lib/libtimestamp.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7180 /usr/lib/libmps_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7237 /usr/lib/libsshot.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7057 /usr/lib/libbq.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7272 /usr/lib/libwlist.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7217 /usr/lib/libring.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7251 /usr/lib/libtepool.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7038 /usr/lib/libHAObserver.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3115 /lib/x86_64-linux-gnu/libc-2.28.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7150 /usr/lib/libipfix_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7055 /usr/lib/libbgp_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17638 /usr/lib/x86_64-linux-gnu/libip4tc.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7256 /usr/lib/libtwamp_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7183 /usr/lib/libmpsc_util.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7244 /usr/lib/libsysmgrclient.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7145 /usr/lib/libindexer.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7072 /usr/lib/libdebug_confd.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7060 /usr/lib/libcapi_support.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7062 /usr/lib/libchassismgr_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7157 /usr/lib/libl2rib_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7216 /usr/lib/librib_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7243 /usr/lib/libsysmgr_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7205 /usr/lib/libptp_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7176 /usr/lib/libmonitor_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7269 /usr/lib/libvrfmgr_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7225 /usr/lib/libsflow_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7240 /usr/lib/libstp_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7102 /usr/lib/libfeatmgr_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7053 /usr/lib/libbfd_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7199 /usr/lib/libpltfAgent_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7162 /usr/lib/libli_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7040 /usr/lib/libacl_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7190 /usr/lib/libnat_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7210 /usr/lib/libqos_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7144 /usr/lib/libifmgr_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7104 /usr/lib/libfib_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7079 /usr/lib/libdpal_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7065 /usr/lib/libcommon_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17812 /usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1.0.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17921 /usr/lib/x86_64-linux-gnu/libzmq.so.5.2.1 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7186 /usr/lib/libmsglib.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7165 /usr/lib/liblist.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3248 /lib/x86_64-linux-gnu/libutil-2.28.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7068 /usr/lib/libconfdproxy.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7067 /usr/lib/libconfd.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7238 /usr/lib/libstats.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17646 /usr/lib/x86_64-linux-gnu/libjansson.so.4.11.1 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17692 /usr/lib/x86_64-linux-gnu/liblttng-ust.so.0.0.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3177 /lib/x86_64-linux-gnu/libnl-3.so.200.26.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17771 /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200.26.0 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7046 /usr/lib/libaom.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3224 /lib/x86_64-linux-gnu/librt-2.28.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7203 /usr/lib/libprintutils.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7056 /usr/lib/libbitfield.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7058 /usr/lib/libbwq.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7273 /usr/lib/libworkqueue.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7069 /usr/lib/libcontainerid.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7051 /usr/lib/libavl.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7174 /usr/lib/libmgd_memory.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7173 /usr/lib/libmempool.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7137 /usr/lib/libhash.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7168 /usr/lib/liblogging.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3157 /lib/x86_64-linux-gnu/libm-2.28.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3128 /lib/x86_64-linux-gnu/libdl-2.28.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3218 /lib/x86_64-linux-gnu/libpthread-2.28.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7182 /usr/lib/libmpsc.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7211 /usr/lib/libqueue.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17556 /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6.0.2 (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0           17521 /usr/lib/x86_64-linux-gnu/libbsd.so.0.9.1 (path dev=0,19)
+dpal.bin 24228 root  mem       REG               0,22     4096  18265 /dev/shm/lttng-ust-wait-7-0
+dpal.bin 24228 root  mem       REG                7,0            7037 /usr/lib/libHAObsClnt.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            7080 /usr/lib/libdpal_core.so (path dev=0,19)
+dpal.bin 24228 root  mem       REG                7,0            3099 /lib/x86_64-linux-gnu/ld-2.28.so (path dev=0,19)
+dpal.bin 24228 root    0r      CHR                1,3      0t0  11265 /dev/null
+dpal.bin 24228 root    1w     FIFO               0,12      0t0 132906 pipe
+dpal.bin 24228 root    2w     FIFO               0,12      0t0 132906 pipe
+dpal.bin 24228 root    3u     unix 0x000000007ecf37d8      0t0 137601 type=STREAM
+dpal.bin 24228 root    4u     unix 0x00000000b387aa62      0t0 137602 type=STREAM
+dpal.bin 24228 root    5w     FIFO               0,12      0t0 140635 pipe
+dpal.bin 24228 root    6u      REG               0,22  1316224 140619 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root    7w     FIFO               0,12      0t0 140636 pipe
+dpal.bin 24228 root    8u      REG               0,22  1316224 140620 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root    9w     FIFO               0,12      0t0 140637 pipe
+dpal.bin 24228 root   10u      REG               0,22  1316224 140621 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   11w     FIFO               0,12      0t0 140638 pipe
+dpal.bin 24228 root   12u      REG               0,22  1316224 140622 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   13w     FIFO               0,12      0t0 140639 pipe
+dpal.bin 24228 root   14u      REG               0,22  1316224 140623 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   15w     FIFO               0,12      0t0 140640 pipe
+dpal.bin 24228 root   16u      REG               0,22  1316224 140625 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   17u      REG               0,22  1316224 140624 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   18w     FIFO               0,12      0t0 140641 pipe
+dpal.bin 24228 root   19w     FIFO               0,12      0t0 140642 pipe
+dpal.bin 24228 root   20u      REG               0,22  1316224 140626 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   21w     FIFO               0,12      0t0 140643 pipe
+dpal.bin 24228 root   22u      REG               0,22  1316224 140627 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   23w     FIFO               0,12      0t0 140644 pipe
+dpal.bin 24228 root   24u      REG               0,22  1316224 140628 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   25w     FIFO               0,12      0t0 140645 pipe
+dpal.bin 24228 root   26u      REG               0,22  1316224 140629 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   27w     FIFO               0,12      0t0 140646 pipe
+dpal.bin 24228 root   28u      REG               0,22  1316224 140630 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   29w     FIFO               0,12      0t0 140647 pipe
+dpal.bin 24228 root   30u      REG               0,22  1316224 140631 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   31w     FIFO               0,12      0t0 140648 pipe
+dpal.bin 24228 root   32u      REG               0,22  1316224 140632 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   33w     FIFO               0,12      0t0 140649 pipe
+dpal.bin 24228 root   34w      REG                8,4 11775050 783410 /var/log/arcos/dpal.bin_logfile.txt
+dpal.bin 24228 root   35u      REG               0,22  1316224 140633 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   36w     FIFO               0,12      0t0 140650 pipe
+dpal.bin 24228 root   37u     unix 0x00000000e16412ef      0t0 135914 type=DGRAM
+dpal.bin 24228 root   38u      REG               0,22  1316224 140634 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   39w     FIFO               0,12      0t0 140651 pipe
+dpal.bin 24228 root   40u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root   41r     FIFO               0,12      0t0 138975 pipe
+dpal.bin 24228 root   42w     FIFO               0,12      0t0 138975 pipe
+dpal.bin 24228 root   43w     FIFO               0,12      0t0 140668 pipe
+dpal.bin 24228 root   44u      REG               0,22 20977024 140652 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   45w     FIFO               0,12      0t0 140669 pipe
+dpal.bin 24228 root   46u      REG               0,22 20977024 140654 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   47u      REG               0,22 20977024 140653 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   48w     FIFO               0,12      0t0 140670 pipe
+dpal.bin 24228 root   49w     FIFO               0,12      0t0 140671 pipe
+dpal.bin 24228 root   50u      REG               0,22 20977024 140655 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   51w     FIFO               0,12      0t0 140672 pipe
+dpal.bin 24228 root   52u      REG               0,22 20977024 140656 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   53w     FIFO               0,12      0t0 140673 pipe
+dpal.bin 24228 root   54u      REG               0,22 20977024 140657 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   55w     FIFO               0,12      0t0 140674 pipe
+dpal.bin 24228 root   56u      REG               0,22 20977024 140658 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   57w     FIFO               0,12      0t0 140675 pipe
+dpal.bin 24228 root   58u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root   59u      REG               0,22 20977024 140659 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   60w     FIFO               0,12      0t0 140676 pipe
+dpal.bin 24228 root   61u      REG               0,22 20977024 140660 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   62w     FIFO               0,12      0t0 140677 pipe
+dpal.bin 24228 root   63u      REG               0,22 20977024 140661 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   64w     FIFO               0,12      0t0 140678 pipe
+dpal.bin 24228 root   65u      REG               0,22 20977024 140662 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   66u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root   67u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root   68r     FIFO               0,12      0t0 149531 pipe
+dpal.bin 24228 root   69w     FIFO               0,12      0t0 149531 pipe
+dpal.bin 24228 root   70r     FIFO               0,12      0t0 138976 pipe
+dpal.bin 24228 root   71w     FIFO               0,12      0t0 138976 pipe
+dpal.bin 24228 root   72u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root   73u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root   74w     FIFO               0,12      0t0 140679 pipe
+dpal.bin 24228 root   75u      REG               0,22 20977024 140663 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   76w     FIFO               0,12      0t0 140680 pipe
+dpal.bin 24228 root   77u      REG               0,22 20977024 140664 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   78w     FIFO               0,12      0t0 140681 pipe
+dpal.bin 24228 root   79u      REG               0,22 20977024 140665 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   80w     FIFO               0,12      0t0 140682 pipe
+dpal.bin 24228 root   81u      REG               0,22 20977024 140666 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   82w     FIFO               0,12      0t0 140683 pipe
+dpal.bin 24228 root   83u      REG               0,22 20977024 140667 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   84w     FIFO               0,12      0t0 140684 pipe
+dpal.bin 24228 root   85u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root   86u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root   87w     FIFO               0,12      0t0 140701 pipe
+dpal.bin 24228 root   88u      REG               0,22  1316224 140685 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   89w     FIFO               0,12      0t0 140702 pipe
+dpal.bin 24228 root   90u      REG               0,22  1316224 140686 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   91w     FIFO               0,12      0t0 140703 pipe
+dpal.bin 24228 root   92u      REG               0,22  1316224 140687 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   93w     FIFO               0,12      0t0 140704 pipe
+dpal.bin 24228 root   94u      REG               0,22  1316224 140688 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   95w     FIFO               0,12      0t0 140705 pipe
+dpal.bin 24228 root   96u      REG               0,22  1316224 140689 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   97w     FIFO               0,12      0t0 140706 pipe
+dpal.bin 24228 root   98u      REG               0,22  1316224 140690 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root   99w     FIFO               0,12      0t0 140707 pipe
+dpal.bin 24228 root  100u      REG               0,22  1316224 140691 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  101w     FIFO               0,12      0t0 140708 pipe
+dpal.bin 24228 root  102u      REG               0,22  1316224 140692 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  103w     FIFO               0,12      0t0 140709 pipe
+dpal.bin 24228 root  104u      REG               0,22  1316224 140693 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  105w     FIFO               0,12      0t0 140710 pipe
+dpal.bin 24228 root  106u      REG               0,22  1316224 140695 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  107u      REG               0,22  1316224 140694 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  108w     FIFO               0,12      0t0 140711 pipe
+dpal.bin 24228 root  109w     FIFO               0,12      0t0 140712 pipe
+dpal.bin 24228 root  110u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  111u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root  112u      REG               0,22  1316224 140696 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  113w     FIFO               0,12      0t0 140713 pipe
+dpal.bin 24228 root  114u      REG               0,22  1316224 140697 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  115w     FIFO               0,12      0t0 140714 pipe
+dpal.bin 24228 root  116u      REG               0,22  1316224 140698 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  117w     FIFO               0,12      0t0 140715 pipe
+dpal.bin 24228 root  118u      REG               0,22  1316224 140699 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  119w     FIFO               0,12      0t0 140716 pipe
+dpal.bin 24228 root  120u      REG               0,22  1316224 140700 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  121w     FIFO               0,12      0t0 140717 pipe
+dpal.bin 24228 root  122u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  123w     FIFO               0,12      0t0 140734 pipe
+dpal.bin 24228 root  124u      REG               0,22 20977024 140718 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  125w     FIFO               0,12      0t0 140735 pipe
+dpal.bin 24228 root  126u      REG               0,22 20977024 140719 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  127w     FIFO               0,12      0t0 140736 pipe
+dpal.bin 24228 root  128u      REG               0,22 20977024 140720 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  129w     FIFO               0,12      0t0 140737 pipe
+dpal.bin 24228 root  130u     unix 0x00000000aaaff9da      0t0 139876 @00013 type=DGRAM
+dpal.bin 24228 root  131u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  132u      REG               0,22 20977024 140722 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  133u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  134u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  135u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  136u      REG               0,22 20977024 140721 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  137w     FIFO               0,12      0t0 140738 pipe
+dpal.bin 24228 root  138w     FIFO               0,12      0t0 140739 pipe
+dpal.bin 24228 root  139u      REG               0,22 20977024 140723 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  140w     FIFO               0,12      0t0 140740 pipe
+dpal.bin 24228 root  141u      REG               0,22 20977024 140724 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  142w     FIFO               0,12      0t0 140741 pipe
+dpal.bin 24228 root  143u      REG               0,22 20977024 140725 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  144w     FIFO               0,12      0t0 140742 pipe
+dpal.bin 24228 root  145u      REG               0,22 20977024 140726 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  146w     FIFO               0,12      0t0 140743 pipe
+dpal.bin 24228 root  147u      REG               0,22 20977024 140727 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  148w     FIFO               0,12      0t0 140744 pipe
+dpal.bin 24228 root  149u      REG               0,22 20977024 140728 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  150w     FIFO               0,12      0t0 140745 pipe
+dpal.bin 24228 root  151u      REG               0,22 20977024 140729 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  152w     FIFO               0,12      0t0 140746 pipe
+dpal.bin 24228 root  153u      REG               0,22 20977024 140730 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  154w     FIFO               0,12      0t0 140747 pipe
+dpal.bin 24228 root  155u      REG               0,22 20977024 140731 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  156w     FIFO               0,12      0t0 140748 pipe
+dpal.bin 24228 root  157u      REG               0,22 20977024 140732 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  158w     FIFO               0,12      0t0 140749 pipe
+dpal.bin 24228 root  159u      REG               0,22 20977024 140733 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  160w     FIFO               0,12      0t0 140750 pipe
+dpal.bin 24228 root  161w     FIFO               0,12      0t0 140767 pipe
+dpal.bin 24228 root  162u      REG               0,22 20977024 140751 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  163w     FIFO               0,12      0t0 140768 pipe
+dpal.bin 24228 root  164u      REG               0,22 20977024 140752 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  165w     FIFO               0,12      0t0 140769 pipe
+dpal.bin 24228 root  166u      REG               0,22 20977024 140753 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  167w     FIFO               0,12      0t0 140770 pipe
+dpal.bin 24228 root  168u      REG               0,22 20977024 140754 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  169w     FIFO               0,12      0t0 140771 pipe
+dpal.bin 24228 root  170u      REG               0,22 20977024 140755 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  171w     FIFO               0,12      0t0 140772 pipe
+dpal.bin 24228 root  172u      REG               0,22 20977024 140756 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  173w     FIFO               0,12      0t0 140773 pipe
+dpal.bin 24228 root  174u      REG               0,22 20977024 140757 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  175w     FIFO               0,12      0t0 140774 pipe
+dpal.bin 24228 root  176u      REG               0,22 20977024 140758 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  177w     FIFO               0,12      0t0 140775 pipe
+dpal.bin 24228 root  178u      REG               0,22 20977024 140759 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  179w     FIFO               0,12      0t0 140776 pipe
+dpal.bin 24228 root  180u      REG               0,22 20977024 140760 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  181w     FIFO               0,12      0t0 140777 pipe
+dpal.bin 24228 root  182u      REG               0,22 20977024 140761 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  183w     FIFO               0,12      0t0 140778 pipe
+dpal.bin 24228 root  184u      REG               0,22 20977024 140762 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  185w     FIFO               0,12      0t0 140779 pipe
+dpal.bin 24228 root  186u      REG               0,22 20977024 140763 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  187w     FIFO               0,12      0t0 140780 pipe
+dpal.bin 24228 root  188u      REG               0,22 20977024 140764 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  189w     FIFO               0,12      0t0 140781 pipe
+dpal.bin 24228 root  190u      REG               0,22 20977024 140765 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  191w     FIFO               0,12      0t0 140782 pipe
+dpal.bin 24228 root  192u      REG               0,22 20977024 140766 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  193w     FIFO               0,12      0t0 140783 pipe
+dpal.bin 24228 root  194w     FIFO               0,12      0t0 140800 pipe
+dpal.bin 24228 root  195u      REG               0,22 20977024 140784 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  196w     FIFO               0,12      0t0 140801 pipe
+dpal.bin 24228 root  197u      REG               0,22 20977024 140785 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  198w     FIFO               0,12      0t0 140802 pipe
+dpal.bin 24228 root  199u      REG               0,22 20977024 140786 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  200w     FIFO               0,12      0t0 140803 pipe
+dpal.bin 24228 root  201u      REG               0,22 20977024 140787 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  202w     FIFO               0,12      0t0 140804 pipe
+dpal.bin 24228 root  203u      REG               0,22 20977024 140788 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  204w     FIFO               0,12      0t0 140805 pipe
+dpal.bin 24228 root  205u      REG               0,22 20977024 140789 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  206w     FIFO               0,12      0t0 140806 pipe
+dpal.bin 24228 root  207u      REG               0,22 20977024 140790 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  208w     FIFO               0,12      0t0 140807 pipe
+dpal.bin 24228 root  209u      REG               0,22 20977024 140791 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  210w     FIFO               0,12      0t0 140808 pipe
+dpal.bin 24228 root  211u      REG               0,22 20977024 140792 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  212w     FIFO               0,12      0t0 140809 pipe
+dpal.bin 24228 root  213u      REG               0,22 20977024 140793 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  214w     FIFO               0,12      0t0 140810 pipe
+dpal.bin 24228 root  215u      REG               0,22 20977024 140794 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  216w     FIFO               0,12      0t0 140811 pipe
+dpal.bin 24228 root  217u      REG               0,22 20977024 140795 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  218w     FIFO               0,12      0t0 140812 pipe
+dpal.bin 24228 root  219u      REG               0,22 20977024 140796 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  220w     FIFO               0,12      0t0 140813 pipe
+dpal.bin 24228 root  221u      REG               0,22 20977024 140797 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  222w     FIFO               0,12      0t0 140814 pipe
+dpal.bin 24228 root  223u      REG               0,22 20977024 140798 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  224w     FIFO               0,12      0t0 140815 pipe
+dpal.bin 24228 root  225u      REG               0,22 20977024 140799 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  226w     FIFO               0,12      0t0 140816 pipe
+dpal.bin 24228 root  227w     FIFO               0,12      0t0 140833 pipe
+dpal.bin 24228 root  228u      REG               0,22  1316224 140817 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  229w     FIFO               0,12      0t0 140834 pipe
+dpal.bin 24228 root  230u      REG               0,22  1316224 140818 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  231w     FIFO               0,12      0t0 140835 pipe
+dpal.bin 24228 root  232u      REG               0,22  1316224 140819 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  233w     FIFO               0,12      0t0 140836 pipe
+dpal.bin 24228 root  234u      REG               0,22  1316224 140820 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  235w     FIFO               0,12      0t0 140837 pipe
+dpal.bin 24228 root  236u      REG               0,22  1316224 140821 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  237w     FIFO               0,12      0t0 140838 pipe
+dpal.bin 24228 root  238u      REG               0,22  1316224 140822 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  239w     FIFO               0,12      0t0 140839 pipe
+dpal.bin 24228 root  240u      REG               0,22  1316224 140823 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  241w     FIFO               0,12      0t0 140840 pipe
+dpal.bin 24228 root  242u      REG               0,22  1316224 140824 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  243w     FIFO               0,12      0t0 140841 pipe
+dpal.bin 24228 root  244u      REG               0,22  1316224 140825 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  245w     FIFO               0,12      0t0 140842 pipe
+dpal.bin 24228 root  246u      REG               0,22  1316224 140826 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  247w     FIFO               0,12      0t0 140843 pipe
+dpal.bin 24228 root  248u      REG               0,22  1316224 140827 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  249w     FIFO               0,12      0t0 140844 pipe
+dpal.bin 24228 root  250u      REG               0,22  1316224 140828 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  251w     FIFO               0,12      0t0 140845 pipe
+dpal.bin 24228 root  252u      REG               0,22  1316224 140829 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  253w     FIFO               0,12      0t0 140846 pipe
+dpal.bin 24228 root  254u      REG               0,22  1316224 140830 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  255w     FIFO               0,12      0t0 140847 pipe
+dpal.bin 24228 root  256u      REG               0,22  1316224 140831 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  257w     FIFO               0,12      0t0 140848 pipe
+dpal.bin 24228 root  258u      REG               0,22  1316224 140832 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  259w     FIFO               0,12      0t0 140849 pipe
+dpal.bin 24228 root  260w     FIFO               0,12      0t0 140866 pipe
+dpal.bin 24228 root  261u      REG               0,22 20977024 140850 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  262w     FIFO               0,12      0t0 140867 pipe
+dpal.bin 24228 root  263u      REG               0,22 20977024 140851 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  264w     FIFO               0,12      0t0 140868 pipe
+dpal.bin 24228 root  265u      REG               0,22 20977024 140852 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  266w     FIFO               0,12      0t0 140869 pipe
+dpal.bin 24228 root  267u      REG               0,22 20977024 140853 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  268w     FIFO               0,12      0t0 140870 pipe
+dpal.bin 24228 root  269u      REG               0,22 20977024 140854 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  270w     FIFO               0,12      0t0 140871 pipe
+dpal.bin 24228 root  271u      REG               0,22 20977024 140855 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  272w     FIFO               0,12      0t0 140872 pipe
+dpal.bin 24228 root  273u      REG               0,22 20977024 140856 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  274w     FIFO               0,12      0t0 140873 pipe
+dpal.bin 24228 root  275u      REG               0,22 20977024 140857 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  276w     FIFO               0,12      0t0 140874 pipe
+dpal.bin 24228 root  277u      REG               0,22 20977024 140858 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  278w     FIFO               0,12      0t0 140875 pipe
+dpal.bin 24228 root  279u      REG               0,22 20977024 140859 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  280w     FIFO               0,12      0t0 140876 pipe
+dpal.bin 24228 root  281u      REG               0,22 20977024 140860 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  282w     FIFO               0,12      0t0 140877 pipe
+dpal.bin 24228 root  283u      REG               0,22 20977024 140861 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  284w     FIFO               0,12      0t0 140878 pipe
+dpal.bin 24228 root  285u      REG               0,22 20977024 140862 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  286w     FIFO               0,12      0t0 140879 pipe
+dpal.bin 24228 root  287u      REG               0,22 20977024 140863 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  288w     FIFO               0,12      0t0 140880 pipe
+dpal.bin 24228 root  289u      REG               0,22 20977024 140864 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  290w     FIFO               0,12      0t0 140881 pipe
+dpal.bin 24228 root  291u      REG               0,22 20977024 140865 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  292w     FIFO               0,12      0t0 140882 pipe
+dpal.bin 24228 root  293w     FIFO               0,12      0t0 140899 pipe
+dpal.bin 24228 root  294u      REG               0,22 20977024 140883 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  295w     FIFO               0,12      0t0 140900 pipe
+dpal.bin 24228 root  296u      REG               0,22 20977024 140884 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  297w     FIFO               0,12      0t0 140901 pipe
+dpal.bin 24228 root  298u      REG               0,22 20977024 140885 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  299w     FIFO               0,12      0t0 140902 pipe
+dpal.bin 24228 root  300u      REG               0,22 20977024 140886 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  301w     FIFO               0,12      0t0 140903 pipe
+dpal.bin 24228 root  302u      REG               0,22 20977024 140887 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  303w     FIFO               0,12      0t0 140904 pipe
+dpal.bin 24228 root  304u      REG               0,22 20977024 140888 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  305w     FIFO               0,12      0t0 140905 pipe
+dpal.bin 24228 root  306u      REG               0,22 20977024 140889 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  307w     FIFO               0,12      0t0 140906 pipe
+dpal.bin 24228 root  308u      REG               0,22 20977024 140890 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  309w     FIFO               0,12      0t0 140907 pipe
+dpal.bin 24228 root  310u      REG               0,22 20977024 140891 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  311w     FIFO               0,12      0t0 140908 pipe
+dpal.bin 24228 root  312u      REG               0,22 20977024 140892 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  313w     FIFO               0,12      0t0 140909 pipe
+dpal.bin 24228 root  314u      REG               0,22 20977024 140893 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  315w     FIFO               0,12      0t0 140910 pipe
+dpal.bin 24228 root  316u      REG               0,22 20977024 140894 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  317w     FIFO               0,12      0t0 140911 pipe
+dpal.bin 24228 root  318u      REG               0,22 20977024 140895 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  319w     FIFO               0,12      0t0 140912 pipe
+dpal.bin 24228 root  320u      REG               0,22 20977024 140896 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  321w     FIFO               0,12      0t0 140913 pipe
+dpal.bin 24228 root  322u      REG               0,22 20977024 140897 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  323w     FIFO               0,12      0t0 140914 pipe
+dpal.bin 24228 root  324u      REG               0,22 20977024 140898 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  325w     FIFO               0,12      0t0 140915 pipe
+dpal.bin 24228 root  326w     FIFO               0,12      0t0 140932 pipe
+dpal.bin 24228 root  327u      REG               0,22 20977024 140916 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  328w     FIFO               0,12      0t0 140933 pipe
+dpal.bin 24228 root  329u      REG               0,22 20977024 140917 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  330w     FIFO               0,12      0t0 140934 pipe
+dpal.bin 24228 root  331u      REG               0,22 20977024 140918 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  332w     FIFO               0,12      0t0 140935 pipe
+dpal.bin 24228 root  333u      REG               0,22 20977024 140919 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  334w     FIFO               0,12      0t0 140936 pipe
+dpal.bin 24228 root  335u      REG               0,22 20977024 140920 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  336w     FIFO               0,12      0t0 140937 pipe
+dpal.bin 24228 root  337u      REG               0,22 20977024 140921 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  338w     FIFO               0,12      0t0 140938 pipe
+dpal.bin 24228 root  339u      REG               0,22 20977024 140922 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  340w     FIFO               0,12      0t0 140939 pipe
+dpal.bin 24228 root  341u      REG               0,22 20977024 140923 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  342w     FIFO               0,12      0t0 140940 pipe
+dpal.bin 24228 root  343u      REG               0,22 20977024 140924 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  344w     FIFO               0,12      0t0 140941 pipe
+dpal.bin 24228 root  345u      REG               0,22 20977024 140925 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  346w     FIFO               0,12      0t0 140942 pipe
+dpal.bin 24228 root  347u      REG               0,22 20977024 140926 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  348w     FIFO               0,12      0t0 140943 pipe
+dpal.bin 24228 root  349u      REG               0,22 20977024 140927 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  350w     FIFO               0,12      0t0 140944 pipe
+dpal.bin 24228 root  351u      REG               0,22 20977024 140928 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  352w     FIFO               0,12      0t0 140945 pipe
+dpal.bin 24228 root  353u      REG               0,22 20977024 140929 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  354w     FIFO               0,12      0t0 140946 pipe
+dpal.bin 24228 root  355u      REG               0,22 20977024 140930 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  356w     FIFO               0,12      0t0 140947 pipe
+dpal.bin 24228 root  357u      REG               0,22 20977024 140931 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  358w     FIFO               0,12      0t0 140948 pipe
+dpal.bin 24228 root  359w     FIFO               0,12      0t0 140965 pipe
+dpal.bin 24228 root  360u      REG               0,22 20977024 140949 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  361w     FIFO               0,12      0t0 140966 pipe
+dpal.bin 24228 root  362u      REG               0,22 20977024 140950 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  363w     FIFO               0,12      0t0 140967 pipe
+dpal.bin 24228 root  364u      REG               0,22 20977024 140951 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  365w     FIFO               0,12      0t0 140968 pipe
+dpal.bin 24228 root  366u      REG               0,22 20977024 140952 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  367w     FIFO               0,12      0t0 140969 pipe
+dpal.bin 24228 root  368u      REG               0,22 20977024 140953 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  369w     FIFO               0,12      0t0 140970 pipe
+dpal.bin 24228 root  370u      REG               0,22 20977024 140954 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  371w     FIFO               0,12      0t0 140971 pipe
+dpal.bin 24228 root  372u      REG               0,22 20977024 140955 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  373w     FIFO               0,12      0t0 140972 pipe
+dpal.bin 24228 root  374u      REG               0,22 20977024 140956 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  375w     FIFO               0,12      0t0 140973 pipe
+dpal.bin 24228 root  376u      REG               0,22 20977024 140957 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  377w     FIFO               0,12      0t0 140974 pipe
+dpal.bin 24228 root  378u      REG               0,22 20977024 140958 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  379w     FIFO               0,12      0t0 140975 pipe
+dpal.bin 24228 root  380u      REG               0,22 20977024 140959 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  381w     FIFO               0,12      0t0 140976 pipe
+dpal.bin 24228 root  382u      REG               0,22 20977024 140960 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  383w     FIFO               0,12      0t0 140977 pipe
+dpal.bin 24228 root  384u      REG               0,22 20977024 140961 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  385w     FIFO               0,12      0t0 140978 pipe
+dpal.bin 24228 root  386u      REG               0,22 20977024 140962 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  387w     FIFO               0,12      0t0 140979 pipe
+dpal.bin 24228 root  388u      REG               0,22 20977024 140963 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  389w     FIFO               0,12      0t0 140980 pipe
+dpal.bin 24228 root  390u      REG               0,22 20977024 140964 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  391w     FIFO               0,12      0t0 140981 pipe
+dpal.bin 24228 root  392w     FIFO               0,12      0t0 140998 pipe
+dpal.bin 24228 root  393u      REG               0,22  1316224 140982 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  394w     FIFO               0,12      0t0 140999 pipe
+dpal.bin 24228 root  395u      REG               0,22  1316224 140983 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  396w     FIFO               0,12      0t0 141000 pipe
+dpal.bin 24228 root  397u      REG               0,22  1316224 140984 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  398w     FIFO               0,12      0t0 141001 pipe
+dpal.bin 24228 root  399u      REG               0,22  1316224 140985 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  400w     FIFO               0,12      0t0 141002 pipe
+dpal.bin 24228 root  401u      REG               0,22  1316224 140986 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  402w     FIFO               0,12      0t0 141003 pipe
+dpal.bin 24228 root  403u      REG               0,22  1316224 140987 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  404w     FIFO               0,12      0t0 141004 pipe
+dpal.bin 24228 root  405u      REG               0,22  1316224 140988 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  406w     FIFO               0,12      0t0 141005 pipe
+dpal.bin 24228 root  407u      REG               0,22  1316224 140989 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  408w     FIFO               0,12      0t0 141006 pipe
+dpal.bin 24228 root  409u      REG               0,22  1316224 140990 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  410w     FIFO               0,12      0t0 141007 pipe
+dpal.bin 24228 root  411u      REG               0,22  1316224 140991 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  412w     FIFO               0,12      0t0 141008 pipe
+dpal.bin 24228 root  413u      REG               0,22  1316224 140992 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  414w     FIFO               0,12      0t0 141009 pipe
+dpal.bin 24228 root  415u      REG               0,22  1316224 140993 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  416w     FIFO               0,12      0t0 141010 pipe
+dpal.bin 24228 root  417u      REG               0,22  1316224 140994 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  418w     FIFO               0,12      0t0 141011 pipe
+dpal.bin 24228 root  419u      REG               0,22  1316224 140995 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  420w     FIFO               0,12      0t0 141012 pipe
+dpal.bin 24228 root  421u      REG               0,22  1316224 140996 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  422w     FIFO               0,12      0t0 141013 pipe
+dpal.bin 24228 root  423u      REG               0,22  1316224 140997 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  424w     FIFO               0,12      0t0 141014 pipe
+dpal.bin 24228 root  425w     FIFO               0,12      0t0 141031 pipe
+dpal.bin 24228 root  426u      REG               0,22  1316224 141015 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  427w     FIFO               0,12      0t0 141032 pipe
+dpal.bin 24228 root  428u      REG               0,22  1316224 141016 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  429w     FIFO               0,12      0t0 141033 pipe
+dpal.bin 24228 root  430u      REG               0,22  1316224 141017 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  431w     FIFO               0,12      0t0 141034 pipe
+dpal.bin 24228 root  432u      REG               0,22  1316224 141018 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  433w     FIFO               0,12      0t0 141035 pipe
+dpal.bin 24228 root  434u      REG               0,22  1316224 141019 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  435w     FIFO               0,12      0t0 141036 pipe
+dpal.bin 24228 root  436u      REG               0,22  1316224 141020 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  437w     FIFO               0,12      0t0 141037 pipe
+dpal.bin 24228 root  438u      REG               0,22  1316224 141021 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  439w     FIFO               0,12      0t0 141038 pipe
+dpal.bin 24228 root  440u      REG               0,22  1316224 141022 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  441w     FIFO               0,12      0t0 141039 pipe
+dpal.bin 24228 root  442u      REG               0,22  1316224 141023 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  443w     FIFO               0,12      0t0 141040 pipe
+dpal.bin 24228 root  444u      REG               0,22  1316224 141024 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  445w     FIFO               0,12      0t0 141041 pipe
+dpal.bin 24228 root  446u      REG               0,22  1316224 141025 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  447w     FIFO               0,12      0t0 141042 pipe
+dpal.bin 24228 root  448u      REG               0,22  1316224 141026 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  449w     FIFO               0,12      0t0 141043 pipe
+dpal.bin 24228 root  450u      REG               0,22  1316224 141027 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  451w     FIFO               0,12      0t0 141044 pipe
+dpal.bin 24228 root  452u      REG               0,22  1316224 141028 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  453w     FIFO               0,12      0t0 141045 pipe
+dpal.bin 24228 root  454u      REG               0,22  1316224 141029 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  455w     FIFO               0,12      0t0 141046 pipe
+dpal.bin 24228 root  456u      REG               0,22  1316224 141030 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  457w     FIFO               0,12      0t0 141047 pipe
+dpal.bin 24228 root  458w     FIFO               0,12      0t0 141064 pipe
+dpal.bin 24228 root  459u      REG               0,22 20977024 141048 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  460w     FIFO               0,12      0t0 141065 pipe
+dpal.bin 24228 root  461u      REG               0,22 20977024 141049 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  462w     FIFO               0,12      0t0 141066 pipe
+dpal.bin 24228 root  463u      REG               0,22 20977024 141050 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  464w     FIFO               0,12      0t0 141067 pipe
+dpal.bin 24228 root  465u      REG               0,22 20977024 141051 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  466w     FIFO               0,12      0t0 141068 pipe
+dpal.bin 24228 root  467u      REG               0,22 20977024 141052 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  468w     FIFO               0,12      0t0 141069 pipe
+dpal.bin 24228 root  469u      REG               0,22 20977024 141053 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  470w     FIFO               0,12      0t0 141070 pipe
+dpal.bin 24228 root  471u      REG               0,22 20977024 141054 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  472w     FIFO               0,12      0t0 141071 pipe
+dpal.bin 24228 root  473u      REG               0,22 20977024 141055 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  474w     FIFO               0,12      0t0 141072 pipe
+dpal.bin 24228 root  475u      REG               0,22 20977024 141056 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  476w     FIFO               0,12      0t0 141073 pipe
+dpal.bin 24228 root  477u      REG               0,22 20977024 141057 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  478w     FIFO               0,12      0t0 141074 pipe
+dpal.bin 24228 root  479u      REG               0,22 20977024 141058 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  480w     FIFO               0,12      0t0 141075 pipe
+dpal.bin 24228 root  481u      REG               0,22 20977024 141059 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  482w     FIFO               0,12      0t0 141076 pipe
+dpal.bin 24228 root  483u      REG               0,22 20977024 141060 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  484w     FIFO               0,12      0t0 130997 pipe
+dpal.bin 24228 root  485u      REG               0,22 20977024 141061 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  486w     FIFO               0,12      0t0 130998 pipe
+dpal.bin 24228 root  487u      REG               0,22 20977024 141062 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  488w     FIFO               0,12      0t0 130999 pipe
+dpal.bin 24228 root  489u      REG               0,22 20977024 141063 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  490w     FIFO               0,12      0t0 131000 pipe
+dpal.bin 24228 root  491w     FIFO               0,12      0t0 131017 pipe
+dpal.bin 24228 root  492u      REG               0,22 20977024 131001 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  493w     FIFO               0,12      0t0 131018 pipe
+dpal.bin 24228 root  494u      REG               0,22 20977024 131002 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  495w     FIFO               0,12      0t0 131019 pipe
+dpal.bin 24228 root  496u      REG               0,22 20977024 131003 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  497w     FIFO               0,12      0t0 131020 pipe
+dpal.bin 24228 root  498u      REG               0,22 20977024 131004 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  499w     FIFO               0,12      0t0 131021 pipe
+dpal.bin 24228 root  500u      REG               0,22 20977024 131005 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  501w     FIFO               0,12      0t0 131022 pipe
+dpal.bin 24228 root  502u      REG               0,22 20977024 131006 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  503w     FIFO               0,12      0t0 131023 pipe
+dpal.bin 24228 root  504u      REG               0,22 20977024 131007 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  505w     FIFO               0,12      0t0 131024 pipe
+dpal.bin 24228 root  506u      REG               0,22 20977024 131008 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  507w     FIFO               0,12      0t0 131025 pipe
+dpal.bin 24228 root  508u      REG               0,22 20977024 131009 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  509w     FIFO               0,12      0t0 131026 pipe
+dpal.bin 24228 root  510u      REG               0,22 20977024 131010 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  511w     FIFO               0,12      0t0 131027 pipe
+dpal.bin 24228 root  512u      REG               0,22 20977024 131011 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  513w     FIFO               0,12      0t0 131028 pipe
+dpal.bin 24228 root  514u      REG               0,22 20977024 131012 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  515w     FIFO               0,12      0t0 131029 pipe
+dpal.bin 24228 root  516u      REG               0,22 20977024 131013 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  517w     FIFO               0,12      0t0 131030 pipe
+dpal.bin 24228 root  518u      REG               0,22 20977024 131014 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  519w     FIFO               0,12      0t0 131031 pipe
+dpal.bin 24228 root  520u      REG               0,22 20977024 131015 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  521w     FIFO               0,12      0t0 131032 pipe
+dpal.bin 24228 root  522u      REG               0,22 20977024 131016 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  523w     FIFO               0,12      0t0 131033 pipe
+dpal.bin 24228 root  524w     FIFO               0,12      0t0 131050 pipe
+dpal.bin 24228 root  525u      REG               0,22 20977024 131034 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  526w     FIFO               0,12      0t0 131051 pipe
+dpal.bin 24228 root  527u      REG               0,22 20977024 131035 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  528w     FIFO               0,12      0t0 131052 pipe
+dpal.bin 24228 root  529u      REG               0,22 20977024 131036 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  530w     FIFO               0,12      0t0 131053 pipe
+dpal.bin 24228 root  531u      REG               0,22 20977024 131037 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  532w     FIFO               0,12      0t0 131054 pipe
+dpal.bin 24228 root  533u      REG               0,22 20977024 131038 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  534w     FIFO               0,12      0t0 131055 pipe
+dpal.bin 24228 root  535u      REG               0,22 20977024 131039 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  536w     FIFO               0,12      0t0 131056 pipe
+dpal.bin 24228 root  537u      REG               0,22 20977024 131040 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  538w     FIFO               0,12      0t0 131057 pipe
+dpal.bin 24228 root  539u      REG               0,22 20977024 131041 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  540w     FIFO               0,12      0t0 131058 pipe
+dpal.bin 24228 root  541u      REG               0,22 20977024 131042 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  542w     FIFO               0,12      0t0 131059 pipe
+dpal.bin 24228 root  543u      REG               0,22 20977024 131043 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  544w     FIFO               0,12      0t0 131060 pipe
+dpal.bin 24228 root  545u      REG               0,22 20977024 131044 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  546w     FIFO               0,12      0t0 131061 pipe
+dpal.bin 24228 root  547u      REG               0,22 20977024 131045 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  548w     FIFO               0,12      0t0 131062 pipe
+dpal.bin 24228 root  549u      REG               0,22 20977024 131046 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  550w     FIFO               0,12      0t0 131063 pipe
+dpal.bin 24228 root  551u      REG               0,22 20977024 131047 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  552w     FIFO               0,12      0t0 131064 pipe
+dpal.bin 24228 root  553u      REG               0,22 20977024 131048 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  554w     FIFO               0,12      0t0 131065 pipe
+dpal.bin 24228 root  555u      REG               0,22 20977024 131049 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  556w     FIFO               0,12      0t0 131066 pipe
+dpal.bin 24228 root  557w     FIFO               0,12      0t0 148491 pipe
+dpal.bin 24228 root  558u      REG               0,22 20977024 131067 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  559w     FIFO               0,12      0t0 148492 pipe
+dpal.bin 24228 root  560u      REG               0,22 20977024 131068 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  561w     FIFO               0,12      0t0 148493 pipe
+dpal.bin 24228 root  562u      REG               0,22 20977024 131069 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  563w     FIFO               0,12      0t0 148494 pipe
+dpal.bin 24228 root  564u      REG               0,22 20977024 131070 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  565w     FIFO               0,12      0t0 148495 pipe
+dpal.bin 24228 root  566u      REG               0,22 20977024 131071 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  567w     FIFO               0,12      0t0 148496 pipe
+dpal.bin 24228 root  568u      REG               0,22 20977024 131072 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  569w     FIFO               0,12      0t0 148497 pipe
+dpal.bin 24228 root  570u      REG               0,22 20977024 148481 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  571w     FIFO               0,12      0t0 148498 pipe
+dpal.bin 24228 root  572u      REG               0,22 20977024 148482 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  573w     FIFO               0,12      0t0 148499 pipe
+dpal.bin 24228 root  574u      REG               0,22 20977024 148483 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  575w     FIFO               0,12      0t0 148500 pipe
+dpal.bin 24228 root  576u      REG               0,22 20977024 148484 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  577w     FIFO               0,12      0t0 148501 pipe
+dpal.bin 24228 root  578u      REG               0,22 20977024 148485 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  579w     FIFO               0,12      0t0 148502 pipe
+dpal.bin 24228 root  580u      REG               0,22 20977024 148486 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  581w     FIFO               0,12      0t0 148503 pipe
+dpal.bin 24228 root  582u      REG               0,22 20977024 148487 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  583w     FIFO               0,12      0t0 148504 pipe
+dpal.bin 24228 root  584u      REG               0,22 20977024 148488 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  585w     FIFO               0,12      0t0 148505 pipe
+dpal.bin 24228 root  586u      REG               0,22 20977024 148489 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  587w     FIFO               0,12      0t0 148506 pipe
+dpal.bin 24228 root  588u      REG               0,22 20977024 148490 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  589w     FIFO               0,12      0t0 148507 pipe
+dpal.bin 24228 root  590w     FIFO               0,12      0t0 148524 pipe
+dpal.bin 24228 root  591u      REG               0,22 20977024 148508 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  592w     FIFO               0,12      0t0 148525 pipe
+dpal.bin 24228 root  593u      REG               0,22 20977024 148509 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  594w     FIFO               0,12      0t0 148526 pipe
+dpal.bin 24228 root  595u      REG               0,22 20977024 148510 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  596w     FIFO               0,12      0t0 148527 pipe
+dpal.bin 24228 root  597u      REG               0,22 20977024 148511 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  598w     FIFO               0,12      0t0 148528 pipe
+dpal.bin 24228 root  599u      REG               0,22 20977024 148512 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  600w     FIFO               0,12      0t0 148529 pipe
+dpal.bin 24228 root  601u      REG               0,22 20977024 148513 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  602w     FIFO               0,12      0t0 148530 pipe
+dpal.bin 24228 root  603u      REG               0,22 20977024 148514 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  604w     FIFO               0,12      0t0 148531 pipe
+dpal.bin 24228 root  605u      REG               0,22 20977024 148515 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  606w     FIFO               0,12      0t0 148532 pipe
+dpal.bin 24228 root  607u      REG               0,22 20977024 148516 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  608w     FIFO               0,12      0t0 148533 pipe
+dpal.bin 24228 root  609u      REG               0,22 20977024 148517 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  610w     FIFO               0,12      0t0 148534 pipe
+dpal.bin 24228 root  611u      REG               0,22 20977024 148518 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  612w     FIFO               0,12      0t0 148535 pipe
+dpal.bin 24228 root  613u      REG               0,22 20977024 148519 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  614w     FIFO               0,12      0t0 148536 pipe
+dpal.bin 24228 root  615u      REG               0,22 20977024 148520 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  616w     FIFO               0,12      0t0 148537 pipe
+dpal.bin 24228 root  617u      REG               0,22 20977024 148521 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  618w     FIFO               0,12      0t0 148538 pipe
+dpal.bin 24228 root  619u      REG               0,22 20977024 148522 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  620w     FIFO               0,12      0t0 148539 pipe
+dpal.bin 24228 root  621u      REG               0,22 20977024 148523 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  622w     FIFO               0,12      0t0 148540 pipe
+dpal.bin 24228 root  623w     FIFO               0,12      0t0 148557 pipe
+dpal.bin 24228 root  624u      REG               0,22 20977024 148541 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  625w     FIFO               0,12      0t0 148558 pipe
+dpal.bin 24228 root  626u      REG               0,22 20977024 148542 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  627w     FIFO               0,12      0t0 148559 pipe
+dpal.bin 24228 root  628u      REG               0,22 20977024 148543 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  629w     FIFO               0,12      0t0 148560 pipe
+dpal.bin 24228 root  630u      REG               0,22 20977024 148544 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  631w     FIFO               0,12      0t0 148561 pipe
+dpal.bin 24228 root  632u      REG               0,22 20977024 148545 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  633w     FIFO               0,12      0t0 148562 pipe
+dpal.bin 24228 root  634u      REG               0,22 20977024 148546 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  635w     FIFO               0,12      0t0 148563 pipe
+dpal.bin 24228 root  636u      REG               0,22 20977024 148547 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  637w     FIFO               0,12      0t0 148564 pipe
+dpal.bin 24228 root  638u      REG               0,22 20977024 148548 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  639w     FIFO               0,12      0t0 148565 pipe
+dpal.bin 24228 root  640u      REG               0,22 20977024 148549 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  641w     FIFO               0,12      0t0 148566 pipe
+dpal.bin 24228 root  642u      REG               0,22 20977024 148550 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  643w     FIFO               0,12      0t0 148567 pipe
+dpal.bin 24228 root  644u      REG               0,22 20977024 148551 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  645w     FIFO               0,12      0t0 148568 pipe
+dpal.bin 24228 root  646u      REG               0,22 20977024 148552 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  647w     FIFO               0,12      0t0 148569 pipe
+dpal.bin 24228 root  648u      REG               0,22 20977024 148553 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  649w     FIFO               0,12      0t0 148570 pipe
+dpal.bin 24228 root  650u      REG               0,22 20977024 148554 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  651w     FIFO               0,12      0t0 148571 pipe
+dpal.bin 24228 root  652u      REG               0,22 20977024 148555 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  653w     FIFO               0,12      0t0 148572 pipe
+dpal.bin 24228 root  654u      REG               0,22 20977024 148556 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  655w     FIFO               0,12      0t0 148573 pipe
+dpal.bin 24228 root  656w     FIFO               0,12      0t0 148590 pipe
+dpal.bin 24228 root  657u      REG               0,22 20977024 148574 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  658w     FIFO               0,12      0t0 148591 pipe
+dpal.bin 24228 root  659u      REG               0,22 20977024 148575 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  660w     FIFO               0,12      0t0 148592 pipe
+dpal.bin 24228 root  661u      REG               0,22 20977024 148576 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  662w     FIFO               0,12      0t0 148593 pipe
+dpal.bin 24228 root  663u      REG               0,22 20977024 148577 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  664w     FIFO               0,12      0t0 148594 pipe
+dpal.bin 24228 root  665u      REG               0,22 20977024 148578 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  666w     FIFO               0,12      0t0 148595 pipe
+dpal.bin 24228 root  667u      REG               0,22 20977024 148579 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  668w     FIFO               0,12      0t0 148596 pipe
+dpal.bin 24228 root  669u      REG               0,22 20977024 148580 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  670w     FIFO               0,12      0t0 148597 pipe
+dpal.bin 24228 root  671u      REG               0,22 20977024 148581 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  672w     FIFO               0,12      0t0 148598 pipe
+dpal.bin 24228 root  673u      REG               0,22 20977024 148582 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  674w     FIFO               0,12      0t0 148599 pipe
+dpal.bin 24228 root  675u      REG               0,22 20977024 148583 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  676w     FIFO               0,12      0t0 148600 pipe
+dpal.bin 24228 root  677u      REG               0,22 20977024 148584 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  678w     FIFO               0,12      0t0 148601 pipe
+dpal.bin 24228 root  679u      REG               0,22 20977024 148585 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  680w     FIFO               0,12      0t0 148602 pipe
+dpal.bin 24228 root  681u      REG               0,22 20977024 148586 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  682w     FIFO               0,12      0t0 148603 pipe
+dpal.bin 24228 root  683u      REG               0,22 20977024 148587 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  684w     FIFO               0,12      0t0 148604 pipe
+dpal.bin 24228 root  685u      REG               0,22 20977024 148588 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  686w     FIFO               0,12      0t0 148605 pipe
+dpal.bin 24228 root  687u      REG               0,22 20977024 148589 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  688w     FIFO               0,12      0t0 148606 pipe
+dpal.bin 24228 root  689w     FIFO               0,12      0t0 148623 pipe
+dpal.bin 24228 root  690u      REG               0,22 20977024 148607 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  691w     FIFO               0,12      0t0 148624 pipe
+dpal.bin 24228 root  692u      REG               0,22 20977024 148608 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  693w     FIFO               0,12      0t0 148625 pipe
+dpal.bin 24228 root  694u      REG               0,22 20977024 148609 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  695w     FIFO               0,12      0t0 148626 pipe
+dpal.bin 24228 root  696u      REG               0,22 20977024 148610 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  697w     FIFO               0,12      0t0 148627 pipe
+dpal.bin 24228 root  698u      REG               0,22 20977024 148611 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  699w     FIFO               0,12      0t0 148628 pipe
+dpal.bin 24228 root  700u      REG               0,22 20977024 148612 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  701w     FIFO               0,12      0t0 148629 pipe
+dpal.bin 24228 root  702u      REG               0,22 20977024 148613 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  703w     FIFO               0,12      0t0 148630 pipe
+dpal.bin 24228 root  704u      REG               0,22 20977024 148614 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  705w     FIFO               0,12      0t0 148631 pipe
+dpal.bin 24228 root  706u      REG               0,22 20977024 148615 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  707w     FIFO               0,12      0t0 148632 pipe
+dpal.bin 24228 root  708u      REG               0,22 20977024 148616 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  709w     FIFO               0,12      0t0 148633 pipe
+dpal.bin 24228 root  710u      REG               0,22 20977024 148617 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  711w     FIFO               0,12      0t0 148634 pipe
+dpal.bin 24228 root  712u      REG               0,22 20977024 148618 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  713w     FIFO               0,12      0t0 148635 pipe
+dpal.bin 24228 root  714u      REG               0,22 20977024 148619 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  715w     FIFO               0,12      0t0 148636 pipe
+dpal.bin 24228 root  716u      REG               0,22 20977024 148620 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  717w     FIFO               0,12      0t0 148637 pipe
+dpal.bin 24228 root  718u      REG               0,22 20977024 148621 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  719w     FIFO               0,12      0t0 148638 pipe
+dpal.bin 24228 root  720u      REG               0,22 20977024 148622 /dev/shm/ust-shm-consumer-4454 (deleted)
+dpal.bin 24228 root  721w     FIFO               0,12      0t0 148639 pipe
+dpal.bin 24228 root  722u     IPv4             135731      0t0    TCP localhost:49304->localhost:30108 (ESTABLISHED)
+dpal.bin 24228 root  723u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root  724r     FIFO               0,12      0t0 139057 pipe
+dpal.bin 24228 root  725w     FIFO               0,12      0t0 139057 pipe
+dpal.bin 24228 root  726u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  727u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  728u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  729u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  730u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root  731r     FIFO               0,12      0t0 139058 pipe
+dpal.bin 24228 root  732w     FIFO               0,12      0t0 139058 pipe
+dpal.bin 24228 root  733u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  734u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  735u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  736u     IPv4             147712      0t0    TCP localhost:35382->localhost:30109 (ESTABLISHED)
+dpal.bin 24228 root  737u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  738u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  739u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  740u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  741u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  742u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  743u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  744u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  745u     IPv4             144914      0t0    TCP localhost:45592->localhost:4565 (ESTABLISHED)
+dpal.bin 24228 root  746u     IPv4             146750      0t0    TCP localhost:45588->localhost:4565 (ESTABLISHED)
+dpal.bin 24228 root  747u     IPv4             141795      0t0    TCP localhost:45590->localhost:4565 (ESTABLISHED)
+dpal.bin 24228 root  748u     IPv4             141796      0t0    TCP localhost:45596->localhost:4565 (ESTABLISHED)
+dpal.bin 24228 root  749u     IPv4             144915      0t0    TCP localhost:45598->localhost:4565 (ESTABLISHED)
+dpal.bin 24228 root  750u     IPv4             141797      0t0    TCP localhost:45600->localhost:4565 (ESTABLISHED)
+dpal.bin 24228 root  751u     IPv4             141827      0t0    TCP localhost:46344->localhost:4565 (ESTABLISHED)
+dpal.bin 24228 root  752u     IPv4             141828      0t0    TCP localhost:46348->localhost:4565 (ESTABLISHED)
+dpal.bin 24228 root  753u     IPv4             143894      0t0    TCP localhost:46354->localhost:4565 (ESTABLISHED)
+dpal.bin 24228 root  754u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root  755r     FIFO               0,12      0t0 151037 pipe
+dpal.bin 24228 root  756w     FIFO               0,12      0t0 151037 pipe
+dpal.bin 24228 root  757u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  758u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  759u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root  760u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  761u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  762r     FIFO               0,12      0t0 135917 pipe
+dpal.bin 24228 root  763w     FIFO               0,12      0t0 135917 pipe
+dpal.bin 24228 root  764u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  765u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  766u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  767u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  768u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  769u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  770u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  771u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  772u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root  773r     FIFO               0,12      0t0 151038 pipe
+dpal.bin 24228 root  774w     FIFO               0,12      0t0 151038 pipe
+dpal.bin 24228 root  775u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  776u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  777u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  778u  a_inode               0,13        0  11193 [eventpoll]
+dpal.bin 24228 root  779r     FIFO               0,12      0t0 151041 pipe
+dpal.bin 24228 root  780w     FIFO               0,12      0t0 151041 pipe
+dpal.bin 24228 root  781u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  782u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  783u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  784u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  785u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  786u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  787u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  788u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  789u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  790u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  791u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  792u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  793u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  794u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  795u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  796u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  797u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  798u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  799u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  800u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  801u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  802u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  803u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  804u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  805u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  806u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  807u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  808u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  809u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  810u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  811u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  812u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  813u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  814u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  815u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  816u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  817u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  818u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  819u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  820u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  821u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  822u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  823u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  824u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  825u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  826u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  827u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  828u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  829u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  830u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  831u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  832u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  833u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  834u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  835u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  836u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  837u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  838u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  839u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  840u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  841u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  842u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  843u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  844u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  845u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  846u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  847u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  848u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  849u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  850u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  851u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  852u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  853u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  854u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  855u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  856u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  857u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  858u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  859u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  860u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  861u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  862u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  863u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  864u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  865u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  866u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  867u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  868u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  869u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  870u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  871u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  872u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  873u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  874u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  875u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  876u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  877u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  878u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  879u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  880u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  881u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  882u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  883u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  884u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  885u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  886u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  887u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  888u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  889u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  890u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  891u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  892u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  893u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  894u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  895u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  896u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  897u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  898u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  899u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  900u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  901u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  902u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  903u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  904u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  905u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  906u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  907u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  908u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  909u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  910u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  911u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  912u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  913u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  914u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  915u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  916u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  917u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  918u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  919u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  920u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  921u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  922u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  923u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  924u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  925u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  926u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  927u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  928u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  929u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  930u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  931u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  932u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  933u  netlink                         0t0 151042 ROUTE
+dpal.bin 24228 root  934u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  935u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  936u  netlink                         0t0 151043 ROUTE
+dpal.bin 24228 root  937u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  938u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  939u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  940u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  941u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  942u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  943u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  944u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  945u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  946u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  947u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  948u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  949u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  950u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  951u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  952u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  953u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  954u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  955u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  956u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  957u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  958u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  959u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  960u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  961u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  962u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  963u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  964u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  965u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  966u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  967u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  968u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  969u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  970u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  971u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  972u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  973u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  974u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  975u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  976u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  977u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  978u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  979u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  980u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  981u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  982u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  983u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  984u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  985u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  986u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  987u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  988u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  989u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  990u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  991u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  992u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  993u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  994u  a_inode               0,13        0  11193 [eventfd]
+dpal.bin 24228 root  995u      CHR              120,0      0t0 135403 /dev/linux_ngbde
+dpal.bin 24228 root  996u      CHR              121,0      0t0 135404 /dev/linux_ngknet
+dpal.bin 24228 root  997u      CHR              126,0      0t0 115617 /dev/linux-user-bde
+dpal.bin 24228 root  998u      CHR              127,0      0t0 115616 /dev/linux-kernel-bde

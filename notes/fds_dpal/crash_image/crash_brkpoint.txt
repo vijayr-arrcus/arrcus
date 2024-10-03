@@ -1,0 +1,1037 @@
+total 0
+lrwx------ 1 root root 64 Sep 29 07:47 1000 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1001 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1002 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1003 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1004 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1005 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1006 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1007 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1008 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1009 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1010 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1011 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1012 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1013 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1014 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1015 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1016 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1017 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1018 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1019 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1020 -> socket:[99714]
+lrwx------ 1 root root 64 Sep 29 07:47 1021 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1022 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1023 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1024 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1025 -> socket:[99715]
+lrwx------ 1 root root 64 Sep 29 07:47 1026 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1027 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1028 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1029 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 1030 -> /dev/linux_ngbde
+lrwx------ 1 root root 64 Sep 29 07:47 1031 -> /dev/linux_ngknet
+lrwx------ 1 root root 64 Sep 29 07:47 1032 -> /dev/linux-user-bde
+lrwx------ 1 root root 64 Sep 29 07:47 1033 -> /dev/linux-kernel-bde
+lr-x------ 1 root root 64 Sep 29 07:47 755 -> pipe:[96501]
+l-wx------ 1 root root 64 Sep 29 07:47 756 -> pipe:[96501]
+lrwx------ 1 root root 64 Sep 29 07:47 757 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 758 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 759 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 760 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 761 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 762 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 763 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 764 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 765 -> anon_inode:[eventpoll]
+lrwx------ 1 root root 64 Sep 29 07:47 766 -> anon_inode:[eventfd]
+lr-x------ 1 root root 64 Sep 29 07:47 767 -> pipe:[84866]
+l-wx------ 1 root root 64 Sep 29 07:47 768 -> pipe:[84866]
+lrwx------ 1 root root 64 Sep 29 07:47 769 -> anon_inode:[eventpoll]
+lrwx------ 1 root root 64 Sep 29 07:47 770 -> anon_inode:[eventfd]
+lr-x------ 1 root root 64 Sep 29 07:47 771 -> pipe:[96502]
+l-wx------ 1 root root 64 Sep 29 07:47 772 -> pipe:[96502]
+lrwx------ 1 root root 64 Sep 29 07:47 773 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 774 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 775 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 776 -> anon_inode:[eventpoll]
+lr-x------ 1 root root 64 Sep 29 07:47 777 -> pipe:[96505]
+l-wx------ 1 root root 64 Sep 29 07:47 778 -> pipe:[96505]
+lrwx------ 1 root root 64 Sep 29 07:47 779 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 780 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 781 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 782 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 783 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 784 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 785 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 786 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 787 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 788 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 789 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 790 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 791 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 792 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 793 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 794 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 795 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 796 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 797 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 798 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 799 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 800 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 801 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 802 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 803 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 804 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 805 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 806 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 807 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 808 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 809 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 810 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 811 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 812 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 813 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 814 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 815 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 816 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 817 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 818 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 819 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 820 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 821 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 822 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 823 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 824 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 825 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 826 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 827 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 828 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 829 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 830 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 831 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 832 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 833 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 834 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 835 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 836 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 837 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 838 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 839 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 840 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 841 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 842 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 843 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 844 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 845 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 846 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 847 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 848 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 849 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 850 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 851 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 852 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 853 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 854 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 855 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 856 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 857 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 858 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 859 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 860 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 861 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 862 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 863 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 864 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 865 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 866 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 867 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 868 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 869 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 870 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 871 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 872 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 873 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 874 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 875 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 876 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 877 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 878 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 879 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 880 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 881 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 882 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 883 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 884 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 885 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 886 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 887 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 888 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 889 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 890 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 891 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 892 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 893 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 894 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 895 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 896 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 897 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 898 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 899 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 900 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 901 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 902 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 903 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 904 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 905 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 906 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 907 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 908 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 909 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 910 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 911 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 912 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 913 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 914 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 915 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 916 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 917 -> anon_inode:[eventpoll]
+lr-x------ 1 root root 64 Sep 29 07:47 918 -> pipe:[96508]
+l-wx------ 1 root root 64 Sep 29 07:47 919 -> pipe:[96508]
+lrwx------ 1 root root 64 Sep 29 07:47 920 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 921 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 922 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 923 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 924 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 925 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 926 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 927 -> anon_inode:[eventpoll]
+lrwx------ 1 root root 64 Sep 29 07:47 928 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 929 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 930 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 931 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 932 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 933 -> anon_inode:[eventpoll]
+lrwx------ 1 root root 64 Sep 29 07:47 934 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 935 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 936 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 937 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 938 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 939 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 940 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 941 -> socket:[102801]
+lrwx------ 1 root root 64 Sep 29 07:47 942 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 943 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 944 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 945 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 946 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 947 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 948 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 949 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 950 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 951 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 952 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 953 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 954 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 955 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 956 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 957 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 958 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 959 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 960 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 961 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 962 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 963 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 964 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 965 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 966 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 967 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 968 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 969 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 970 -> anon_inode:[eventpoll]
+lr-x------ 1 root root 64 Sep 29 07:47 971 -> pipe:[92915]
+l-wx------ 1 root root 64 Sep 29 07:47 972 -> pipe:[92915]
+lrwx------ 1 root root 64 Sep 29 07:47 973 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 974 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 975 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 976 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 977 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 978 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 979 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 980 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 981 -> anon_inode:[eventpoll]
+lr-x------ 1 root root 64 Sep 29 07:47 982 -> pipe:[100548]
+l-wx------ 1 root root 64 Sep 29 07:47 983 -> pipe:[100548]
+lrwx------ 1 root root 64 Sep 29 07:47 984 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 985 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 986 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 987 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 988 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 989 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 990 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 991 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 992 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 993 -> socket:[102802]
+lrwx------ 1 root root 64 Sep 29 07:47 994 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 995 -> anon_inode:[eventpoll]
+lrwx------ 1 root root 64 Sep 29 07:47 996 -> anon_inode:[eventfd]
+lr-x------ 1 root root 64 Sep 29 07:47 997 -> pipe:[100549]
+l-wx------ 1 root root 64 Sep 29 07:47 998 -> pipe:[100549]
+lrwx------ 1 root root 64 Sep 29 07:47 999 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 234 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 235 -> pipe:[81787]
+l-wx------ 1 root root 64 Sep 29 07:47 236 -> pipe:[81804]
+lrwx------ 1 root root 64 Sep 29 07:47 237 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 238 -> pipe:[81805]
+lrwx------ 1 root root 64 Sep 29 07:47 239 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 240 -> pipe:[81806]
+lrwx------ 1 root root 64 Sep 29 07:47 241 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 242 -> pipe:[81807]
+lrwx------ 1 root root 64 Sep 29 07:47 243 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 244 -> pipe:[81808]
+lrwx------ 1 root root 64 Sep 29 07:47 245 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 246 -> pipe:[81809]
+lrwx------ 1 root root 64 Sep 29 07:47 247 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 248 -> pipe:[81810]
+lrwx------ 1 root root 64 Sep 29 07:47 249 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 250 -> pipe:[81811]
+lrwx------ 1 root root 64 Sep 29 07:47 251 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 252 -> pipe:[81812]
+lrwx------ 1 root root 64 Sep 29 07:47 253 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 254 -> pipe:[81813]
+lrwx------ 1 root root 64 Sep 29 07:47 255 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 256 -> pipe:[81814]
+lrwx------ 1 root root 64 Sep 29 07:47 257 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 258 -> pipe:[81815]
+lrwx------ 1 root root 64 Sep 29 07:47 259 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 260 -> pipe:[81816]
+lrwx------ 1 root root 64 Sep 29 07:47 261 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 262 -> pipe:[81817]
+lrwx------ 1 root root 64 Sep 29 07:47 263 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 264 -> pipe:[81818]
+lrwx------ 1 root root 64 Sep 29 07:47 265 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 266 -> pipe:[81819]
+lrwx------ 1 root root 64 Sep 29 07:47 267 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 268 -> pipe:[81820]
+l-wx------ 1 root root 64 Sep 29 07:47 269 -> pipe:[93462]
+lrwx------ 1 root root 64 Sep 29 07:47 270 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 271 -> pipe:[93463]
+lrwx------ 1 root root 64 Sep 29 07:47 272 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 273 -> pipe:[93464]
+lrwx------ 1 root root 64 Sep 29 07:47 274 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 275 -> pipe:[93465]
+lrwx------ 1 root root 64 Sep 29 07:47 276 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 277 -> pipe:[93466]
+lrwx------ 1 root root 64 Sep 29 07:47 278 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 279 -> pipe:[93467]
+lrwx------ 1 root root 64 Sep 29 07:47 280 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 281 -> pipe:[93468]
+lrwx------ 1 root root 64 Sep 29 07:47 282 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 283 -> pipe:[93469]
+lrwx------ 1 root root 64 Sep 29 07:47 284 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 285 -> pipe:[93470]
+lrwx------ 1 root root 64 Sep 29 07:47 286 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 287 -> pipe:[93471]
+lrwx------ 1 root root 64 Sep 29 07:47 288 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 289 -> pipe:[86579]
+lrwx------ 1 root root 64 Sep 29 07:47 290 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 291 -> pipe:[86580]
+lrwx------ 1 root root 64 Sep 29 07:47 292 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 293 -> pipe:[86581]
+lrwx------ 1 root root 64 Sep 29 07:47 294 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 295 -> pipe:[86582]
+lrwx------ 1 root root 64 Sep 29 07:47 296 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 297 -> pipe:[86583]
+lrwx------ 1 root root 64 Sep 29 07:47 298 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 299 -> pipe:[86584]
+lrwx------ 1 root root 64 Sep 29 07:47 300 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 301 -> pipe:[86585]
+l-wx------ 1 root root 64 Sep 29 07:47 302 -> pipe:[86602]
+lrwx------ 1 root root 64 Sep 29 07:47 303 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 304 -> pipe:[86603]
+lrwx------ 1 root root 64 Sep 29 07:47 305 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 306 -> pipe:[86604]
+lrwx------ 1 root root 64 Sep 29 07:47 307 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 308 -> pipe:[86605]
+lrwx------ 1 root root 64 Sep 29 07:47 309 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 310 -> pipe:[86606]
+lrwx------ 1 root root 64 Sep 29 07:47 311 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 312 -> pipe:[86607]
+lrwx------ 1 root root 64 Sep 29 07:47 313 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 314 -> pipe:[86608]
+lrwx------ 1 root root 64 Sep 29 07:47 315 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 316 -> pipe:[86609]
+lrwx------ 1 root root 64 Sep 29 07:47 317 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 318 -> pipe:[86610]
+lrwx------ 1 root root 64 Sep 29 07:47 319 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 320 -> pipe:[86611]
+lrwx------ 1 root root 64 Sep 29 07:47 321 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 322 -> pipe:[86612]
+lrwx------ 1 root root 64 Sep 29 07:47 323 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 324 -> pipe:[86613]
+lrwx------ 1 root root 64 Sep 29 07:47 325 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 326 -> pipe:[86614]
+lrwx------ 1 root root 64 Sep 29 07:47 327 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 328 -> pipe:[86615]
+lrwx------ 1 root root 64 Sep 29 07:47 329 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 330 -> pipe:[86616]
+lrwx------ 1 root root 64 Sep 29 07:47 331 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 332 -> pipe:[86617]
+lrwx------ 1 root root 64 Sep 29 07:47 333 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 334 -> pipe:[86618]
+l-wx------ 1 root root 64 Sep 29 07:47 335 -> pipe:[86635]
+lrwx------ 1 root root 64 Sep 29 07:47 336 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 337 -> pipe:[86636]
+lrwx------ 1 root root 64 Sep 29 07:47 338 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 339 -> pipe:[86637]
+lrwx------ 1 root root 64 Sep 29 07:47 340 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 341 -> pipe:[86638]
+lrwx------ 1 root root 64 Sep 29 07:47 342 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 343 -> pipe:[86639]
+lrwx------ 1 root root 64 Sep 29 07:47 344 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 345 -> pipe:[86640]
+lrwx------ 1 root root 64 Sep 29 07:47 346 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 347 -> pipe:[86641]
+lrwx------ 1 root root 64 Sep 29 07:47 348 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 349 -> pipe:[86642]
+lrwx------ 1 root root 64 Sep 29 07:47 350 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 351 -> pipe:[86643]
+lrwx------ 1 root root 64 Sep 29 07:47 352 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 353 -> pipe:[86644]
+lrwx------ 1 root root 64 Sep 29 07:47 354 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 355 -> pipe:[86645]
+lrwx------ 1 root root 64 Sep 29 07:47 356 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 357 -> pipe:[86646]
+lrwx------ 1 root root 64 Sep 29 07:47 358 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 359 -> pipe:[86647]
+lrwx------ 1 root root 64 Sep 29 07:47 360 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 361 -> pipe:[86648]
+lrwx------ 1 root root 64 Sep 29 07:47 362 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 363 -> pipe:[86649]
+lrwx------ 1 root root 64 Sep 29 07:47 364 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 365 -> pipe:[86650]
+lrwx------ 1 root root 64 Sep 29 07:47 366 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 367 -> pipe:[86651]
+l-wx------ 1 root root 64 Sep 29 07:47 368 -> pipe:[86668]
+lrwx------ 1 root root 64 Sep 29 07:47 369 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 370 -> pipe:[86669]
+lrwx------ 1 root root 64 Sep 29 07:47 371 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 372 -> pipe:[86670]
+lrwx------ 1 root root 64 Sep 29 07:47 373 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 374 -> pipe:[86671]
+lrwx------ 1 root root 64 Sep 29 07:47 375 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 376 -> pipe:[86672]
+lrwx------ 1 root root 64 Sep 29 07:47 377 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 378 -> pipe:[86673]
+lrwx------ 1 root root 64 Sep 29 07:47 379 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 380 -> pipe:[86674]
+lrwx------ 1 root root 64 Sep 29 07:47 381 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 382 -> pipe:[86675]
+lrwx------ 1 root root 64 Sep 29 07:47 383 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 384 -> pipe:[86676]
+lrwx------ 1 root root 64 Sep 29 07:47 385 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 386 -> pipe:[86677]
+lrwx------ 1 root root 64 Sep 29 07:47 387 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 388 -> pipe:[86678]
+lrwx------ 1 root root 64 Sep 29 07:47 389 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 390 -> pipe:[86679]
+lrwx------ 1 root root 64 Sep 29 07:47 391 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 392 -> pipe:[86680]
+lrwx------ 1 root root 64 Sep 29 07:47 393 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 394 -> pipe:[86681]
+lrwx------ 1 root root 64 Sep 29 07:47 395 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 396 -> pipe:[86682]
+lrwx------ 1 root root 64 Sep 29 07:47 397 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 398 -> pipe:[86683]
+lrwx------ 1 root root 64 Sep 29 07:47 399 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 400 -> pipe:[86684]
+l-wx------ 1 root root 64 Sep 29 07:47 401 -> pipe:[86701]
+lrwx------ 1 root root 64 Sep 29 07:47 402 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 403 -> pipe:[86702]
+lrwx------ 1 root root 64 Sep 29 07:47 404 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 405 -> pipe:[86703]
+lrwx------ 1 root root 64 Sep 29 07:47 406 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 407 -> pipe:[86704]
+lrwx------ 1 root root 64 Sep 29 07:47 408 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 409 -> pipe:[86705]
+lrwx------ 1 root root 64 Sep 29 07:47 410 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 411 -> pipe:[86706]
+lrwx------ 1 root root 64 Sep 29 07:47 412 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 413 -> pipe:[86707]
+lrwx------ 1 root root 64 Sep 29 07:47 414 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 415 -> pipe:[86708]
+lrwx------ 1 root root 64 Sep 29 07:47 416 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 417 -> pipe:[86709]
+lrwx------ 1 root root 64 Sep 29 07:47 418 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 419 -> pipe:[86710]
+lrwx------ 1 root root 64 Sep 29 07:47 420 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 421 -> pipe:[86711]
+lrwx------ 1 root root 64 Sep 29 07:47 422 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 423 -> pipe:[86712]
+lrwx------ 1 root root 64 Sep 29 07:47 424 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 425 -> pipe:[86713]
+lrwx------ 1 root root 64 Sep 29 07:47 426 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 427 -> pipe:[86714]
+lrwx------ 1 root root 64 Sep 29 07:47 428 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 429 -> pipe:[86715]
+lrwx------ 1 root root 64 Sep 29 07:47 430 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 431 -> pipe:[86716]
+lrwx------ 1 root root 64 Sep 29 07:47 432 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 433 -> pipe:[86717]
+l-wx------ 1 root root 64 Sep 29 07:47 434 -> pipe:[86734]
+lrwx------ 1 root root 64 Sep 29 07:47 435 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 436 -> pipe:[86735]
+lrwx------ 1 root root 64 Sep 29 07:47 437 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 438 -> pipe:[86736]
+lrwx------ 1 root root 64 Sep 29 07:47 439 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 440 -> pipe:[86737]
+lrwx------ 1 root root 64 Sep 29 07:47 441 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 442 -> pipe:[86738]
+lrwx------ 1 root root 64 Sep 29 07:47 443 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 444 -> pipe:[86739]
+lrwx------ 1 root root 64 Sep 29 07:47 445 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 446 -> pipe:[86740]
+lrwx------ 1 root root 64 Sep 29 07:47 447 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 448 -> pipe:[86741]
+lrwx------ 1 root root 64 Sep 29 07:47 449 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 450 -> pipe:[86742]
+lrwx------ 1 root root 64 Sep 29 07:47 451 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 452 -> pipe:[86743]
+lrwx------ 1 root root 64 Sep 29 07:47 453 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 454 -> pipe:[86744]
+lrwx------ 1 root root 64 Sep 29 07:47 455 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 456 -> pipe:[86745]
+lrwx------ 1 root root 64 Sep 29 07:47 457 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 458 -> pipe:[86746]
+lrwx------ 1 root root 64 Sep 29 07:47 459 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 460 -> pipe:[86747]
+lrwx------ 1 root root 64 Sep 29 07:47 461 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 462 -> pipe:[86748]
+lrwx------ 1 root root 64 Sep 29 07:47 463 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 464 -> pipe:[86749]
+lrwx------ 1 root root 64 Sep 29 07:47 465 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 466 -> pipe:[86750]
+l-wx------ 1 root root 64 Sep 29 07:47 467 -> pipe:[86767]
+lrwx------ 1 root root 64 Sep 29 07:47 468 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 469 -> pipe:[86768]
+lrwx------ 1 root root 64 Sep 29 07:47 470 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 471 -> pipe:[86769]
+lrwx------ 1 root root 64 Sep 29 07:47 472 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 473 -> pipe:[86770]
+lrwx------ 1 root root 64 Sep 29 07:47 474 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 475 -> pipe:[86771]
+lrwx------ 1 root root 64 Sep 29 07:47 476 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 477 -> pipe:[86772]
+lrwx------ 1 root root 64 Sep 29 07:47 478 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 479 -> pipe:[86773]
+lrwx------ 1 root root 64 Sep 29 07:47 480 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 481 -> pipe:[86774]
+lrwx------ 1 root root 64 Sep 29 07:47 482 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 483 -> pipe:[86775]
+lrwx------ 1 root root 64 Sep 29 07:47 484 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 485 -> pipe:[86776]
+lrwx------ 1 root root 64 Sep 29 07:47 486 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 487 -> pipe:[86777]
+lrwx------ 1 root root 64 Sep 29 07:47 488 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 489 -> pipe:[86778]
+lrwx------ 1 root root 64 Sep 29 07:47 490 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 491 -> pipe:[86779]
+lrwx------ 1 root root 64 Sep 29 07:47 492 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 493 -> pipe:[86780]
+lrwx------ 1 root root 64 Sep 29 07:47 494 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 495 -> pipe:[86781]
+lrwx------ 1 root root 64 Sep 29 07:47 496 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 497 -> pipe:[86782]
+lrwx------ 1 root root 64 Sep 29 07:47 498 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 499 -> pipe:[86783]
+l-wx------ 1 root root 64 Sep 29 07:47 500 -> pipe:[86800]
+lrwx------ 1 root root 64 Sep 29 07:47 501 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 502 -> pipe:[86801]
+lrwx------ 1 root root 64 Sep 29 07:47 503 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 504 -> pipe:[86802]
+lrwx------ 1 root root 64 Sep 29 07:47 505 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 506 -> pipe:[86803]
+lrwx------ 1 root root 64 Sep 29 07:47 507 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 508 -> pipe:[86804]
+lrwx------ 1 root root 64 Sep 29 07:47 509 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 510 -> pipe:[86805]
+lrwx------ 1 root root 64 Sep 29 07:47 511 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 512 -> pipe:[86806]
+lrwx------ 1 root root 64 Sep 29 07:47 513 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 514 -> pipe:[86807]
+lrwx------ 1 root root 64 Sep 29 07:47 515 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 516 -> pipe:[86808]
+lrwx------ 1 root root 64 Sep 29 07:47 517 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 518 -> pipe:[86809]
+lrwx------ 1 root root 64 Sep 29 07:47 519 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 520 -> pipe:[86810]
+lrwx------ 1 root root 64 Sep 29 07:47 521 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 522 -> pipe:[86811]
+lrwx------ 1 root root 64 Sep 29 07:47 523 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 524 -> pipe:[86812]
+lrwx------ 1 root root 64 Sep 29 07:47 525 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 526 -> pipe:[86813]
+lrwx------ 1 root root 64 Sep 29 07:47 527 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 528 -> pipe:[86814]
+lrwx------ 1 root root 64 Sep 29 07:47 529 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 530 -> pipe:[86815]
+lrwx------ 1 root root 64 Sep 29 07:47 531 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 532 -> pipe:[86816]
+l-wx------ 1 root root 64 Sep 29 07:47 533 -> pipe:[86833]
+lrwx------ 1 root root 64 Sep 29 07:47 534 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 535 -> pipe:[86834]
+lrwx------ 1 root root 64 Sep 29 07:47 536 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 537 -> pipe:[86835]
+lrwx------ 1 root root 64 Sep 29 07:47 538 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 539 -> pipe:[86836]
+lrwx------ 1 root root 64 Sep 29 07:47 540 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 541 -> pipe:[86837]
+lrwx------ 1 root root 64 Sep 29 07:47 542 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 543 -> pipe:[86838]
+lrwx------ 1 root root 64 Sep 29 07:47 544 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 545 -> pipe:[86839]
+lrwx------ 1 root root 64 Sep 29 07:47 546 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 547 -> pipe:[86840]
+lrwx------ 1 root root 64 Sep 29 07:47 548 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 549 -> pipe:[86841]
+lrwx------ 1 root root 64 Sep 29 07:47 550 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 551 -> pipe:[86842]
+lrwx------ 1 root root 64 Sep 29 07:47 552 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 553 -> pipe:[86843]
+lrwx------ 1 root root 64 Sep 29 07:47 554 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 555 -> pipe:[86844]
+lrwx------ 1 root root 64 Sep 29 07:47 556 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 557 -> pipe:[86845]
+lrwx------ 1 root root 64 Sep 29 07:47 558 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 559 -> pipe:[86846]
+lrwx------ 1 root root 64 Sep 29 07:47 560 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 561 -> pipe:[86847]
+lrwx------ 1 root root 64 Sep 29 07:47 562 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 563 -> pipe:[86848]
+lrwx------ 1 root root 64 Sep 29 07:47 564 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 565 -> pipe:[86849]
+l-wx------ 1 root root 64 Sep 29 07:47 566 -> pipe:[86866]
+lrwx------ 1 root root 64 Sep 29 07:47 567 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 568 -> pipe:[86867]
+lrwx------ 1 root root 64 Sep 29 07:47 569 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 570 -> pipe:[86868]
+lrwx------ 1 root root 64 Sep 29 07:47 571 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 572 -> pipe:[86869]
+lrwx------ 1 root root 64 Sep 29 07:47 573 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 574 -> pipe:[86870]
+lrwx------ 1 root root 64 Sep 29 07:47 575 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 576 -> pipe:[86871]
+lrwx------ 1 root root 64 Sep 29 07:47 577 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 578 -> pipe:[86872]
+lrwx------ 1 root root 64 Sep 29 07:47 579 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 580 -> pipe:[86873]
+lrwx------ 1 root root 64 Sep 29 07:47 581 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 582 -> pipe:[86874]
+lrwx------ 1 root root 64 Sep 29 07:47 583 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 584 -> pipe:[86875]
+lrwx------ 1 root root 64 Sep 29 07:47 585 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 586 -> pipe:[86876]
+lrwx------ 1 root root 64 Sep 29 07:47 587 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 588 -> pipe:[86877]
+lrwx------ 1 root root 64 Sep 29 07:47 589 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 590 -> pipe:[86878]
+lrwx------ 1 root root 64 Sep 29 07:47 591 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 592 -> pipe:[86879]
+lrwx------ 1 root root 64 Sep 29 07:47 593 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 594 -> pipe:[86880]
+lrwx------ 1 root root 64 Sep 29 07:47 595 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 596 -> pipe:[86881]
+lrwx------ 1 root root 64 Sep 29 07:47 597 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 598 -> pipe:[86882]
+l-wx------ 1 root root 64 Sep 29 07:47 599 -> pipe:[86899]
+lrwx------ 1 root root 64 Sep 29 07:47 600 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 601 -> pipe:[86900]
+lrwx------ 1 root root 64 Sep 29 07:47 602 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 603 -> pipe:[86901]
+lrwx------ 1 root root 64 Sep 29 07:47 604 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 605 -> pipe:[86902]
+lrwx------ 1 root root 64 Sep 29 07:47 606 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 607 -> pipe:[86903]
+lrwx------ 1 root root 64 Sep 29 07:47 608 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 609 -> pipe:[86904]
+lrwx------ 1 root root 64 Sep 29 07:47 610 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 611 -> pipe:[86905]
+lrwx------ 1 root root 64 Sep 29 07:47 612 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 613 -> pipe:[86906]
+lrwx------ 1 root root 64 Sep 29 07:47 614 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 615 -> pipe:[86907]
+lrwx------ 1 root root 64 Sep 29 07:47 616 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 617 -> pipe:[86908]
+lrwx------ 1 root root 64 Sep 29 07:47 618 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 619 -> pipe:[86909]
+lrwx------ 1 root root 64 Sep 29 07:47 620 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 621 -> pipe:[86910]
+lrwx------ 1 root root 64 Sep 29 07:47 622 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 623 -> pipe:[86911]
+lrwx------ 1 root root 64 Sep 29 07:47 624 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 625 -> pipe:[86912]
+lrwx------ 1 root root 64 Sep 29 07:47 626 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 627 -> pipe:[86913]
+lrwx------ 1 root root 64 Sep 29 07:47 628 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 629 -> pipe:[86914]
+lrwx------ 1 root root 64 Sep 29 07:47 630 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 631 -> pipe:[86915]
+l-wx------ 1 root root 64 Sep 29 07:47 632 -> pipe:[86932]
+lrwx------ 1 root root 64 Sep 29 07:47 633 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 634 -> pipe:[86933]
+lrwx------ 1 root root 64 Sep 29 07:47 635 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 636 -> pipe:[86934]
+lrwx------ 1 root root 64 Sep 29 07:47 637 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 638 -> pipe:[86935]
+lrwx------ 1 root root 64 Sep 29 07:47 639 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 640 -> pipe:[86936]
+lrwx------ 1 root root 64 Sep 29 07:47 641 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 642 -> pipe:[86937]
+lrwx------ 1 root root 64 Sep 29 07:47 643 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 644 -> pipe:[86938]
+lrwx------ 1 root root 64 Sep 29 07:47 645 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 646 -> pipe:[86939]
+lrwx------ 1 root root 64 Sep 29 07:47 647 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 648 -> pipe:[86940]
+lrwx------ 1 root root 64 Sep 29 07:47 649 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 650 -> pipe:[86941]
+lrwx------ 1 root root 64 Sep 29 07:47 651 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 652 -> pipe:[86942]
+lrwx------ 1 root root 64 Sep 29 07:47 653 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 654 -> pipe:[86943]
+lrwx------ 1 root root 64 Sep 29 07:47 655 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 656 -> pipe:[86944]
+lrwx------ 1 root root 64 Sep 29 07:47 657 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 658 -> pipe:[86945]
+lrwx------ 1 root root 64 Sep 29 07:47 659 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 660 -> pipe:[86946]
+lrwx------ 1 root root 64 Sep 29 07:47 661 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 662 -> pipe:[86947]
+lrwx------ 1 root root 64 Sep 29 07:47 663 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 664 -> pipe:[86948]
+l-wx------ 1 root root 64 Sep 29 07:47 665 -> pipe:[86965]
+lrwx------ 1 root root 64 Sep 29 07:47 666 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 667 -> pipe:[86966]
+lrwx------ 1 root root 64 Sep 29 07:47 668 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 669 -> pipe:[86967]
+lrwx------ 1 root root 64 Sep 29 07:47 670 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 671 -> pipe:[86968]
+lrwx------ 1 root root 64 Sep 29 07:47 672 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 673 -> pipe:[86969]
+lrwx------ 1 root root 64 Sep 29 07:47 674 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 675 -> pipe:[86970]
+lrwx------ 1 root root 64 Sep 29 07:47 676 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 677 -> pipe:[86971]
+lrwx------ 1 root root 64 Sep 29 07:47 678 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 679 -> pipe:[86972]
+lrwx------ 1 root root 64 Sep 29 07:47 680 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 681 -> pipe:[86973]
+lrwx------ 1 root root 64 Sep 29 07:47 682 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 683 -> pipe:[86974]
+lrwx------ 1 root root 64 Sep 29 07:47 684 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 685 -> pipe:[86975]
+lrwx------ 1 root root 64 Sep 29 07:47 686 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 687 -> pipe:[86976]
+lrwx------ 1 root root 64 Sep 29 07:47 688 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 689 -> pipe:[86977]
+lrwx------ 1 root root 64 Sep 29 07:47 690 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 691 -> pipe:[86978]
+lrwx------ 1 root root 64 Sep 29 07:47 692 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 693 -> pipe:[86979]
+lrwx------ 1 root root 64 Sep 29 07:47 694 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 695 -> pipe:[86980]
+lrwx------ 1 root root 64 Sep 29 07:47 696 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 697 -> pipe:[86981]
+l-wx------ 1 root root 64 Sep 29 07:47 698 -> /var/log/arcos/dpal.bin_logfile.txt
+lrwx------ 1 root root 64 Sep 29 07:47 699 -> anon_inode:[eventpoll]
+lr-x------ 1 root root 64 Sep 29 07:47 700 -> pipe:[86985]
+l-wx------ 1 root root 64 Sep 29 07:47 701 -> pipe:[86985]
+lrwx------ 1 root root 64 Sep 29 07:47 702 -> socket:[94710]
+lrwx------ 1 root root 64 Sep 29 07:47 703 -> socket:[86986]
+lrwx------ 1 root root 64 Sep 29 07:47 704 -> anon_inode:[eventpoll]
+lr-x------ 1 root root 64 Sep 29 07:47 705 -> pipe:[96300]
+l-wx------ 1 root root 64 Sep 29 07:47 706 -> pipe:[96300]
+lrwx------ 1 root root 64 Sep 29 07:47 707 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 708 -> anon_inode:[eventpoll]
+lr-x------ 1 root root 64 Sep 29 07:47 709 -> pipe:[96301]
+l-wx------ 1 root root 64 Sep 29 07:47 710 -> pipe:[96301]
+lrwx------ 1 root root 64 Sep 29 07:47 711 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 712 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 713 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 714 -> anon_inode:[eventpoll]
+lrwx------ 1 root root 64 Sep 29 07:47 715 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 716 -> anon_inode:[eventpoll]
+lrwx------ 1 root root 64 Sep 29 07:47 717 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 718 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 719 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 720 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 721 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 722 -> socket:[82617]
+lrwx------ 1 root root 64 Sep 29 07:47 723 -> anon_inode:[eventpoll]
+lr-x------ 1 root root 64 Sep 29 07:47 724 -> pipe:[82618]
+l-wx------ 1 root root 64 Sep 29 07:47 725 -> pipe:[82618]
+lrwx------ 1 root root 64 Sep 29 07:47 726 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 727 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 728 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 729 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 730 -> anon_inode:[eventpoll]
+lr-x------ 1 root root 64 Sep 29 07:47 731 -> pipe:[82619]
+l-wx------ 1 root root 64 Sep 29 07:47 732 -> pipe:[82619]
+lrwx------ 1 root root 64 Sep 29 07:47 733 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 734 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 735 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 736 -> socket:[82620]
+lrwx------ 1 root root 64 Sep 29 07:47 737 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 738 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 739 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 740 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 741 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 742 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 743 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 744 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 Sep 29 07:47 745 -> socket:[99532]
+lrwx------ 1 root root 64 Sep 29 07:47 746 -> socket:[83878]
+lrwx------ 1 root root 64 Sep 29 07:47 747 -> socket:[99533]
+lrwx------ 1 root root 64 Sep 29 07:47 748 -> socket:[99534]
+lrwx------ 1 root root 64 Sep 29 07:47 749 -> socket:[83879]
+lrwx------ 1 root root 64 Sep 29 07:47 750 -> socket:[83880]
+lrwx------ 1 root root 64 Sep 29 07:47 751 -> socket:[101578]
+lrwx------ 1 root root 64 Sep 29 07:47 752 -> socket:[95603]
+lrwx------ 1 root root 64 Sep 29 07:47 753 -> socket:[94019]
+lrwx------ 1 root root 64 Sep 29 07:47 754 -> anon_inode:[eventpoll]
+lrwx------ 1 root root 64 Sep 29 07:47 100 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 101 -> pipe:[81654]
+lrwx------ 1 root root 64 Sep 29 07:47 102 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 103 -> pipe:[81655]
+l-wx------ 1 root root 64 Sep 29 07:47 104 -> pipe:[81672]
+lrwx------ 1 root root 64 Sep 29 07:47 105 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 106 -> pipe:[81673]
+lrwx------ 1 root root 64 Sep 29 07:47 107 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 108 -> pipe:[81674]
+lrwx------ 1 root root 64 Sep 29 07:47 109 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 110 -> pipe:[81675]
+lrwx------ 1 root root 64 Sep 29 07:47 111 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 112 -> pipe:[81676]
+lrwx------ 1 root root 64 Sep 29 07:47 113 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 114 -> pipe:[81677]
+lrwx------ 1 root root 64 Sep 29 07:47 115 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 116 -> pipe:[81678]
+lrwx------ 1 root root 64 Sep 29 07:47 117 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 118 -> pipe:[81679]
+lrwx------ 1 root root 64 Sep 29 07:47 119 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 120 -> pipe:[81680]
+lrwx------ 1 root root 64 Sep 29 07:47 121 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 122 -> pipe:[81681]
+lrwx------ 1 root root 64 Sep 29 07:47 123 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 124 -> pipe:[81682]
+lrwx------ 1 root root 64 Sep 29 07:47 125 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 126 -> pipe:[81683]
+lrwx------ 1 root root 64 Sep 29 07:47 127 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 128 -> pipe:[81684]
+lrwx------ 1 root root 64 Sep 29 07:47 129 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 130 -> pipe:[81685]
+lrwx------ 1 root root 64 Sep 29 07:47 131 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 132 -> pipe:[81686]
+lrwx------ 1 root root 64 Sep 29 07:47 133 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 134 -> pipe:[81687]
+lrwx------ 1 root root 64 Sep 29 07:47 135 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 136 -> pipe:[81688]
+l-wx------ 1 root root 64 Sep 29 07:47 137 -> pipe:[81705]
+lrwx------ 1 root root 64 Sep 29 07:47 138 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 139 -> pipe:[81706]
+lrwx------ 1 root root 64 Sep 29 07:47 140 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 141 -> pipe:[81707]
+lrwx------ 1 root root 64 Sep 29 07:47 142 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 143 -> pipe:[81708]
+lrwx------ 1 root root 64 Sep 29 07:47 144 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 145 -> pipe:[81709]
+lrwx------ 1 root root 64 Sep 29 07:47 146 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 147 -> pipe:[81710]
+lrwx------ 1 root root 64 Sep 29 07:47 148 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 149 -> pipe:[81711]
+lrwx------ 1 root root 64 Sep 29 07:47 150 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 151 -> pipe:[81712]
+lrwx------ 1 root root 64 Sep 29 07:47 152 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 153 -> pipe:[81713]
+lrwx------ 1 root root 64 Sep 29 07:47 154 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 155 -> pipe:[81714]
+lrwx------ 1 root root 64 Sep 29 07:47 156 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 157 -> pipe:[81715]
+lrwx------ 1 root root 64 Sep 29 07:47 158 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 159 -> pipe:[81716]
+lrwx------ 1 root root 64 Sep 29 07:47 160 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 161 -> pipe:[81717]
+lrwx------ 1 root root 64 Sep 29 07:47 162 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 163 -> pipe:[81718]
+lrwx------ 1 root root 64 Sep 29 07:47 164 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 165 -> pipe:[81719]
+lrwx------ 1 root root 64 Sep 29 07:47 166 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 167 -> pipe:[81720]
+lrwx------ 1 root root 64 Sep 29 07:47 168 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 169 -> pipe:[81721]
+l-wx------ 1 root root 64 Sep 29 07:47 170 -> pipe:[81738]
+lrwx------ 1 root root 64 Sep 29 07:47 171 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 172 -> pipe:[81739]
+lrwx------ 1 root root 64 Sep 29 07:47 173 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 174 -> pipe:[81740]
+lrwx------ 1 root root 64 Sep 29 07:47 175 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 176 -> pipe:[81741]
+lrwx------ 1 root root 64 Sep 29 07:47 177 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 178 -> pipe:[81742]
+lrwx------ 1 root root 64 Sep 29 07:47 179 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 180 -> pipe:[81743]
+lrwx------ 1 root root 64 Sep 29 07:47 181 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 182 -> pipe:[81744]
+lrwx------ 1 root root 64 Sep 29 07:47 183 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 184 -> pipe:[81745]
+lrwx------ 1 root root 64 Sep 29 07:47 185 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 186 -> pipe:[81746]
+lrwx------ 1 root root 64 Sep 29 07:47 187 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 188 -> pipe:[81747]
+lrwx------ 1 root root 64 Sep 29 07:47 189 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 190 -> pipe:[81748]
+lrwx------ 1 root root 64 Sep 29 07:47 191 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 192 -> pipe:[81749]
+lrwx------ 1 root root 64 Sep 29 07:47 193 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 194 -> pipe:[81750]
+lrwx------ 1 root root 64 Sep 29 07:47 195 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 196 -> pipe:[81751]
+lrwx------ 1 root root 64 Sep 29 07:47 197 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 198 -> pipe:[81752]
+lrwx------ 1 root root 64 Sep 29 07:47 199 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 200 -> pipe:[81753]
+lrwx------ 1 root root 64 Sep 29 07:47 201 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 202 -> pipe:[81754]
+l-wx------ 1 root root 64 Sep 29 07:47 203 -> pipe:[81771]
+lrwx------ 1 root root 64 Sep 29 07:47 204 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 205 -> pipe:[81772]
+lrwx------ 1 root root 64 Sep 29 07:47 206 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 207 -> pipe:[81773]
+lrwx------ 1 root root 64 Sep 29 07:47 208 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 209 -> pipe:[81774]
+lrwx------ 1 root root 64 Sep 29 07:47 210 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 211 -> pipe:[81775]
+lrwx------ 1 root root 64 Sep 29 07:47 212 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 213 -> pipe:[81776]
+lrwx------ 1 root root 64 Sep 29 07:47 214 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 215 -> pipe:[81777]
+lrwx------ 1 root root 64 Sep 29 07:47 216 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 217 -> pipe:[81778]
+lrwx------ 1 root root 64 Sep 29 07:47 218 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 219 -> pipe:[81779]
+lrwx------ 1 root root 64 Sep 29 07:47 22 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+lrwx------ 1 root root 64 Sep 29 07:47 220 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 221 -> pipe:[81780]
+lrwx------ 1 root root 64 Sep 29 07:47 222 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 223 -> pipe:[81781]
+lrwx------ 1 root root 64 Sep 29 07:47 224 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 225 -> pipe:[81782]
+lrwx------ 1 root root 64 Sep 29 07:47 226 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 227 -> pipe:[81783]
+lrwx------ 1 root root 64 Sep 29 07:47 228 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 229 -> pipe:[81784]
+lrwx------ 1 root root 64 Sep 29 07:47 230 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 231 -> pipe:[81785]
+lrwx------ 1 root root 64 Sep 29 07:47 232 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 233 -> pipe:[81786]
+lrwx------ 1 root root 64 Sep 29 07:47 24 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 25 -> pipe:[81583]
+lrwx------ 1 root root 64 Sep 29 07:47 26 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 27 -> pipe:[81584]
+lrwx------ 1 root root 64 Sep 29 07:47 28 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 29 -> pipe:[81585]
+lrwx------ 1 root root 64 Sep 29 07:47 30 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 31 -> pipe:[81586]
+lrwx------ 1 root root 64 Sep 29 07:47 32 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 33 -> pipe:[81587]
+lrwx------ 1 root root 64 Sep 29 07:47 34 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 35 -> pipe:[81588]
+lrwx------ 1 root root 64 Sep 29 07:47 36 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 37 -> pipe:[81589]
+l-wx------ 1 root root 64 Sep 29 07:47 38 -> pipe:[81606]
+lrwx------ 1 root root 64 Sep 29 07:47 39 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 40 -> pipe:[81607]
+lrwx------ 1 root root 64 Sep 29 07:47 41 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 42 -> pipe:[81608]
+lrwx------ 1 root root 64 Sep 29 07:47 43 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 44 -> pipe:[81609]
+lrwx------ 1 root root 64 Sep 29 07:47 45 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 46 -> pipe:[81610]
+lrwx------ 1 root root 64 Sep 29 07:47 47 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 48 -> pipe:[81611]
+lrwx------ 1 root root 64 Sep 29 07:47 49 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 50 -> pipe:[81612]
+lrwx------ 1 root root 64 Sep 29 07:47 51 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 52 -> pipe:[81613]
+lrwx------ 1 root root 64 Sep 29 07:47 53 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 54 -> pipe:[81614]
+lrwx------ 1 root root 64 Sep 29 07:47 55 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 56 -> pipe:[81615]
+lrwx------ 1 root root 64 Sep 29 07:47 57 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 58 -> pipe:[81616]
+lrwx------ 1 root root 64 Sep 29 07:47 59 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 60 -> pipe:[81617]
+lrwx------ 1 root root 64 Sep 29 07:47 61 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 62 -> pipe:[81618]
+lrwx------ 1 root root 64 Sep 29 07:47 63 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 64 -> pipe:[81619]
+lrwx------ 1 root root 64 Sep 29 07:47 65 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 66 -> pipe:[81620]
+lrwx------ 1 root root 64 Sep 29 07:47 67 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 68 -> pipe:[81621]
+lrwx------ 1 root root 64 Sep 29 07:47 69 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 70 -> pipe:[81622]
+l-wx------ 1 root root 64 Sep 29 07:47 71 -> pipe:[81639]
+lrwx------ 1 root root 64 Sep 29 07:47 72 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 73 -> pipe:[81640]
+lrwx------ 1 root root 64 Sep 29 07:47 74 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 75 -> pipe:[81641]
+lrwx------ 1 root root 64 Sep 29 07:47 76 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 77 -> pipe:[81642]
+lrwx------ 1 root root 64 Sep 29 07:47 78 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 79 -> pipe:[81643]
+lrwx------ 1 root root 64 Sep 29 07:47 80 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 81 -> pipe:[81644]
+lrwx------ 1 root root 64 Sep 29 07:47 82 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 83 -> pipe:[81645]
+lrwx------ 1 root root 64 Sep 29 07:47 84 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 85 -> pipe:[81646]
+lrwx------ 1 root root 64 Sep 29 07:47 86 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 87 -> pipe:[81647]
+lrwx------ 1 root root 64 Sep 29 07:47 88 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 89 -> pipe:[81648]
+lrwx------ 1 root root 64 Sep 29 07:47 90 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 91 -> pipe:[81649]
+lrwx------ 1 root root 64 Sep 29 07:47 92 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 93 -> pipe:[81650]
+lrwx------ 1 root root 64 Sep 29 07:47 94 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 95 -> pipe:[81651]
+lrwx------ 1 root root 64 Sep 29 07:47 96 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 97 -> pipe:[81652]
+lrwx------ 1 root root 64 Sep 29 07:47 98 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:47 99 -> pipe:[81653]
+dr-x------ 2 root root  0 Sep 29 07:46 .
+dr-xr-xr-x 9 root root  0 Sep 29 07:46 ..
+lr-x------ 1 root root 64 Sep 29 07:46 0 -> /dev/null
+l-wx------ 1 root root 64 Sep 29 07:46 1 -> pipe:[87776]
+lrwx------ 1 root root 64 Sep 29 07:46 10 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:46 11 -> pipe:[81576]
+lrwx------ 1 root root 64 Sep 29 07:46 12 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:46 13 -> pipe:[81577]
+lrwx------ 1 root root 64 Sep 29 07:46 14 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:46 15 -> pipe:[81578]
+lrwx------ 1 root root 64 Sep 29 07:46 16 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:46 17 -> pipe:[81579]
+lrwx------ 1 root root 64 Sep 29 07:46 18 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:46 19 -> pipe:[81580]
+l-wx------ 1 root root 64 Sep 29 07:46 2 -> pipe:[87776]
+lrwx------ 1 root root 64 Sep 29 07:46 20 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:46 21 -> pipe:[81581]
+l-wx------ 1 root root 64 Sep 29 07:46 23 -> pipe:[81582]
+lrwx------ 1 root root 64 Sep 29 07:46 3 -> socket:[92316]
+lrwx------ 1 root root 64 Sep 29 07:46 4 -> socket:[92317]
+l-wx------ 1 root root 64 Sep 29 07:46 5 -> pipe:[81573]
+lrwx------ 1 root root 64 Sep 29 07:46 6 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:46 7 -> pipe:[81574]
+lrwx------ 1 root root 64 Sep 29 07:46 8 -> /dev/shm/ust-shm-consumer-4496 (deleted)
+l-wx------ 1 root root 64 Sep 29 07:46 9 -> pipe:[81575]

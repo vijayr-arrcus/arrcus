@@ -1,0 +1,669 @@
+COMMAND   PID USER   FD      TYPE             DEVICE  SIZE/OFF   NODE NAME
+dpal.bin 5091 root  cwd       DIR               0,18      4096  21516 /
+dpal.bin 5091 root  rtd       DIR               0,18      4096  21516 /
+dpal.bin 5091 root  txt       REG               0,19     56224   6308 /usr/lib/arcos/dpal.bin
+dpal.bin 5091 root  mem       REG                7,0             6308 /usr/lib/arcos/dpal.bin (path dev=0,19)
+dpal.bin 5091 root  mem       REG               0,22 325451776  36963 /dev/shm/root_sdk_ha_0
+dpal.bin 5091 root  mem       REG               0,22  42016768  36959 /dev/shm/root_bcm_ha_0
+dpal.bin 5091 root  mem       REG                0,9            37108 socket:[37108] (stat: No such file or directory)
+dpal.bin 5091 root  mem       REG               0,22  16908288  36961 /dev/shm/root_sdk_ha_gen
+dpal.bin 5091 root  mem       CHR              127,0              666 /dev/linux-kernel-bde
+dpal.bin 5091 root  mem       CHR              120,0            16734 /dev/linux_ngbde
+dpal.bin 5091 root  mem       REG                7,0             3568 /usr/arcos/lib/libbcm_sdk_xgs.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG               0,22   4194304  36957 /dev/shm/root_bcm_ha_gen
+dpal.bin 5091 root  mem       REG                7,0             3180 /lib/x86_64-linux-gnu/libnsl-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3191 /lib/x86_64-linux-gnu/libnss_nis-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3183 /lib/x86_64-linux-gnu/libnss_compat-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7091 /usr/lib/libdpal_plugin_lxk.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7082 /usr/lib/libdpal_plugin_common.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7097 /usr/lib/libdpal_plugin_xgs.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3182 /lib/x86_64-linux-gnu/libnss_aaa.so.2 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3187 /lib/x86_64-linux-gnu/libnss_files-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3222 /lib/x86_64-linux-gnu/libresolv-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3152 /lib/x86_64-linux-gnu/libkeyutils.so.1.8 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17655 /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3122 /lib/x86_64-linux-gnu/libcom_err.so.2.1 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17649 /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17653 /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17887 /usr/lib/x86_64-linux-gnu/liburcu-common.so.6.0.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17560 /usr/lib/x86_64-linux-gnu/libevent_pthreads-2.1.so.6.0.2 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17601 /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17773 /usr/lib/x86_64-linux-gnu/libnorm.so.1.5.8 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17804 /usr/lib/x86_64-linux-gnu/libpgm-5.2.so.0.0.122 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17851 /usr/lib/x86_64-linux-gnu/libsodium.so.23.2.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7075 /usr/lib/libdict.so.2 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17532 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17885 /usr/lib/x86_64-linux-gnu/liburcu-cds.so.6.0.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17883 /usr/lib/x86_64-linux-gnu/liburcu-bp.so.6.0.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17690 /usr/lib/x86_64-linux-gnu/liblttng-ust-tracepoint.so.0.0.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7071 /usr/lib/libcontainerid_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3142 /lib/x86_64-linux-gnu/libgcc_s.so.1 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17860 /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7254 /usr/lib/libtimestamp.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7180 /usr/lib/libmps_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7237 /usr/lib/libsshot.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7057 /usr/lib/libbq.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7272 /usr/lib/libwlist.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7217 /usr/lib/libring.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7251 /usr/lib/libtepool.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7038 /usr/lib/libHAObserver.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3115 /lib/x86_64-linux-gnu/libc-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7150 /usr/lib/libipfix_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7055 /usr/lib/libbgp_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17638 /usr/lib/x86_64-linux-gnu/libip4tc.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7256 /usr/lib/libtwamp_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7183 /usr/lib/libmpsc_util.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7244 /usr/lib/libsysmgrclient.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7145 /usr/lib/libindexer.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7072 /usr/lib/libdebug_confd.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7060 /usr/lib/libcapi_support.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7062 /usr/lib/libchassismgr_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7157 /usr/lib/libl2rib_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7216 /usr/lib/librib_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7243 /usr/lib/libsysmgr_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7205 /usr/lib/libptp_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7176 /usr/lib/libmonitor_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7269 /usr/lib/libvrfmgr_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7225 /usr/lib/libsflow_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7240 /usr/lib/libstp_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7102 /usr/lib/libfeatmgr_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7053 /usr/lib/libbfd_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7199 /usr/lib/libpltfAgent_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7162 /usr/lib/libli_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7040 /usr/lib/libacl_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7190 /usr/lib/libnat_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7210 /usr/lib/libqos_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7144 /usr/lib/libifmgr_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7104 /usr/lib/libfib_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7079 /usr/lib/libdpal_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7065 /usr/lib/libcommon_capi.so.0.1.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17812 /usr/lib/x86_64-linux-gnu/libprotobuf-c.so.1.0.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17921 /usr/lib/x86_64-linux-gnu/libzmq.so.5.2.1 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7186 /usr/lib/libmsglib.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7165 /usr/lib/liblist.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3248 /lib/x86_64-linux-gnu/libutil-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7068 /usr/lib/libconfdproxy.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7067 /usr/lib/libconfd.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7238 /usr/lib/libstats.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17646 /usr/lib/x86_64-linux-gnu/libjansson.so.4.11.1 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17692 /usr/lib/x86_64-linux-gnu/liblttng-ust.so.0.0.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3177 /lib/x86_64-linux-gnu/libnl-3.so.200.26.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17771 /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200.26.0 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7046 /usr/lib/libaom.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3224 /lib/x86_64-linux-gnu/librt-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7203 /usr/lib/libprintutils.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7056 /usr/lib/libbitfield.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7058 /usr/lib/libbwq.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7273 /usr/lib/libworkqueue.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7069 /usr/lib/libcontainerid.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7051 /usr/lib/libavl.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7174 /usr/lib/libmgd_memory.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7173 /usr/lib/libmempool.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7137 /usr/lib/libhash.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7168 /usr/lib/liblogging.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3157 /lib/x86_64-linux-gnu/libm-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3128 /lib/x86_64-linux-gnu/libdl-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3218 /lib/x86_64-linux-gnu/libpthread-2.28.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7182 /usr/lib/libmpsc.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7211 /usr/lib/libqueue.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17556 /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6.0.2 (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0            17521 /usr/lib/x86_64-linux-gnu/libbsd.so.0.9.1 (path dev=0,19)
+dpal.bin 5091 root  mem       REG               0,22      4096   3020 /dev/shm/lttng-ust-wait-7-0
+dpal.bin 5091 root  mem       REG                7,0             7037 /usr/lib/libHAObsClnt.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             7080 /usr/lib/libdpal_core.so (path dev=0,19)
+dpal.bin 5091 root  mem       REG                7,0             3099 /lib/x86_64-linux-gnu/ld-2.28.so (path dev=0,19)
+dpal.bin 5091 root    0u      CHR              136,0       0t0      3 /dev/pts/0
+dpal.bin 5091 root    1u      CHR              136,0       0t0      3 /dev/pts/0
+dpal.bin 5091 root    2u      CHR              136,0       0t0      3 /dev/pts/0
+dpal.bin 5091 root    3u     unix 0x00000000faa8bacd       0t0  31768 type=STREAM
+dpal.bin 5091 root    4u     unix 0x00000000d2ad2b56       0t0  31769 type=STREAM
+dpal.bin 5091 root    5w      REG                8,4  14091661 783410 /var/log/arcos/dpal.bin_logfile.txt
+dpal.bin 5091 root    6u     unix 0x0000000080909a29       0t0  35037 type=DGRAM
+dpal.bin 5091 root    7u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root    8r     FIFO               0,12       0t0  21417 pipe
+dpal.bin 5091 root    9w     FIFO               0,12       0t0  21417 pipe
+dpal.bin 5091 root   10u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   11u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root   12r     FIFO               0,12       0t0  17970 pipe
+dpal.bin 5091 root   13w     FIFO               0,12       0t0  17970 pipe
+dpal.bin 5091 root   14u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root   15r     FIFO               0,12       0t0  23238 pipe
+dpal.bin 5091 root   16w     FIFO               0,12       0t0  23238 pipe
+dpal.bin 5091 root   17u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   18u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   19u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   20u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root   21u     unix 0x00000000a9ea041d       0t0  26164 @00005 type=DGRAM
+dpal.bin 5091 root   22u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   23u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root   24u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   25u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   26u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   27u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   28u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   29u     IPv4              23311       0t0    TCP localhost:52394->localhost:30108 (ESTABLISHED)
+dpal.bin 5091 root   30u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root   31r     FIFO               0,12       0t0  17395 pipe
+dpal.bin 5091 root   32w     FIFO               0,12       0t0  17395 pipe
+dpal.bin 5091 root   33u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   34u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   35u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   36u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   37u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root   38r     FIFO               0,12       0t0  17396 pipe
+dpal.bin 5091 root   39w     FIFO               0,12       0t0  17396 pipe
+dpal.bin 5091 root   40u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   41u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   42u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   43u     IPv4              24387       0t0    TCP localhost:57270->localhost:30111 (ESTABLISHED)
+dpal.bin 5091 root   44u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   45u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   46u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   47u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   48u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   49u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   50u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   51u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   52u     IPv4              34886       0t0    TCP localhost:49788->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root   53u     IPv4              20150       0t0    TCP localhost:49790->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root   54u     IPv4              34887       0t0    TCP localhost:49792->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root   55u     IPv4              20151       0t0    TCP localhost:49794->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root   56u     IPv4              34888       0t0    TCP localhost:49796->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root   57u     IPv4              20152       0t0    TCP localhost:49798->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root   58u     IPv4              34901       0t0    TCP localhost:50026->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root   59u     IPv4              34902       0t0    TCP localhost:50028->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root   60u     IPv4              35220       0t0    TCP localhost:50904->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root   61u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root   62r     FIFO               0,12       0t0  31414 pipe
+dpal.bin 5091 root   63w     FIFO               0,12       0t0  31414 pipe
+dpal.bin 5091 root   64u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   65u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   66u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root   67r     FIFO               0,12       0t0  30228 pipe
+dpal.bin 5091 root   68w     FIFO               0,12       0t0  30228 pipe
+dpal.bin 5091 root   69u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   70u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   71u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   72u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   73u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   74u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   75u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   76u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   77u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   78u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   79u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   80u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   81u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root   82r     FIFO               0,12       0t0  31415 pipe
+dpal.bin 5091 root   83w     FIFO               0,12       0t0  31415 pipe
+dpal.bin 5091 root   84u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   85u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root   86r     FIFO               0,12       0t0  31418 pipe
+dpal.bin 5091 root   87w     FIFO               0,12       0t0  31418 pipe
+dpal.bin 5091 root   88u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   89u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   90u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   91u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   92u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   93u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   94u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   95u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   96u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   97u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   98u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root   99u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  100u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  101u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  102u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  103u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  104u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  105u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  106u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  107u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  108u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  109u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  110u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  111u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  112u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  113u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  114u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  115u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  116u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  117u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  118u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  119u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  120u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  121u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  122u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  123u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  124u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  125u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  126u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  127u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  128u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  129u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  130u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  131u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  132u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  133u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  134u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  135u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  136u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  137u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  138u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  139u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  140u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  141u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  142u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  143u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  144u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  145u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  146u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  147u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  148u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  149u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  150u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  151u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  152u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  153u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  154u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  155u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  156u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  157u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  158u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  159u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  160u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  161u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  162u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  163u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  164u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  165u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  166u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  167u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  168u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  169u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  170u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  171u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  172u  netlink                          0t0  40075 ROUTE
+dpal.bin 5091 root  173u  netlink                          0t0  40076 ROUTE
+dpal.bin 5091 root  174u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  175u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  176u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  177u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  178u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  179u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  180u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  181u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  182u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  183u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  184u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  185u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  186u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  187u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  188u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  189u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  190u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  191u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  192u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  193u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  194u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  195u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  196u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  197u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  198u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  199u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  200u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  201u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  202u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  203u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  204u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  205u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  206u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  207u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  208u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  209u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  210u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  211u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  212u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  213u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  214u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  215u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  216u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  217u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  218u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  219u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  220u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  221u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  222u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  223u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  224u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  225u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  226u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  227u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  228u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  229u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  230u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  231u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  232u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  233u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  234u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  235u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  236u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  237u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  238u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  239u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  240u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  241u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  242u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  243u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  244u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  245u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  246u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  247u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  248u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  249u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  250u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  251u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  252u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  253u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  254u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  255u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  256u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  257u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  258u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  259u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  260u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  261u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  262u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  263u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  264u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  265u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  266u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  267u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  268u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  269u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  270u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  271u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  272u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  273u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  274u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  275u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  276u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  277u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  278u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  279u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  280u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  281u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  282u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  283u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  284u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  285u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  286u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  287u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  288u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  289u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  290u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  291u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  292u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  293u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  294u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  295u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  296u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  297u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  298u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  299u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  300u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  301u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  302u      CHR              120,0       0t0  16734 /dev/linux_ngbde
+dpal.bin 5091 root  303u      CHR              121,0       0t0  19051 /dev/linux_ngknet
+dpal.bin 5091 root  304u      CHR              126,0       0t0  19049 /dev/linux-user-bde
+dpal.bin 5091 root  305u      CHR              127,0       0t0    666 /dev/linux-kernel-bde
+dpal.bin 5091 root  306u      REG               0,22   4194304  36957 /dev/shm/root_bcm_ha_gen
+dpal.bin 5091 root  307u      REG               0,22  42016768  36959 /dev/shm/root_bcm_ha_0
+dpal.bin 5091 root  308u      REG               0,22  16908288  36961 /dev/shm/root_sdk_ha_gen
+dpal.bin 5091 root  309u      REG               0,22 325451776  36963 /dev/shm/root_sdk_ha_0
+dpal.bin 5091 root  310u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  311u     pack              37108       0t0    ALL type=SOCK_RAW
+dpal.bin 5091 root  312u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  313u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  314u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  315u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  316u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  317u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  318u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  319u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  320u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  321u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  322u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  323u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  324u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  325u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  326u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  327u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  328u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  329u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  330u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  331u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  332u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  333u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  334u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  335u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  336u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  337u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  338u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  339u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  340u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  341u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  342u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  343u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  344u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  345u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  346u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  347u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  348u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  349u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  350u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  351u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  352u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  353u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  354u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  355u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  356u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  357u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  358u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  359u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  360u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  361u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  362u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  363u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  364u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  365u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  366u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  367u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  368u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  369u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  370u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  371u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  372u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  373u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  374u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  375u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  376u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  377u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  378u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  379u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  380u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  381u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  382u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  383u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  384u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  385u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  386u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  387u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  388u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  389u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  390u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  391u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  392u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  393u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  394u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  395u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  396u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  397u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  398u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  399u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  400u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  401u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  402u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  403u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  404u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  405u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  406u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  407u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  408u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  409u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  410u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  411u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  412u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  413u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  414u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  415u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  416u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  417u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  418u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  419u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  420u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  421u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  422u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  423u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  424u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  425u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  426u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  427u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  428u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  429u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  430u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  431u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  432u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  433u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  434u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  435u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  436u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  437u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  438u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  439u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  440u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  441u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  442u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  443u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  444u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  445u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  446u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  447u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  448u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  449u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  450u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  451u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  452u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  453u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  454u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  455u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  456u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  457u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  458u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  459u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  460u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  461u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  462u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  463u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  464u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  465u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  466u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  467u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  468u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  469u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  470u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  471u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  472u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  473u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  474u      CHR                5,2       0t0   1159 /dev/ptmx
+dpal.bin 5091 root  475u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  476u      CHR              136,0       0t0      3 /dev/pts/0
+dpal.bin 5091 root  477u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  478u     IPv4              36106       0t0    TCP localhost:8888 (LISTEN)
+dpal.bin 5091 root  479u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  481u  netlink                          0t0  32319 ROUTE
+dpal.bin 5091 root  482u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root  483u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  484u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  485u  netlink                          0t0  32322 ROUTE
+dpal.bin 5091 root  486u  netlink                          0t0  32323 ROUTE
+dpal.bin 5091 root  487r     FIFO               0,12       0t0  35065 pipe
+dpal.bin 5091 root  488w     FIFO               0,12       0t0  35065 pipe
+dpal.bin 5091 root  489u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  490u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  491u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  492u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root  493u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  494u  a_inode               0,13         0  10169 [eventpoll]
+dpal.bin 5091 root  495u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  496u     IPv4              28294       0t0    TCP localhost:30023 (LISTEN)
+dpal.bin 5091 root  497u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  498u     IPv4              37971       0t0    TCP localhost:49222->localhost:30081 (ESTABLISHED)
+dpal.bin 5091 root  499u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  500u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  501u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  502u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  503u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  504u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  505u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  506u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  507u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  508u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  509u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  510u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  511u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  512u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  513u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  514u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  515u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  516u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  517u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  518u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  519u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  520u  netlink                          0t0  28295 ROUTE
+dpal.bin 5091 root  521u  netlink                          0t0  28296 ROUTE
+dpal.bin 5091 root  522u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  523u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  524u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  525u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  526u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  527u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  528u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  529u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  530u     IPv4              37990       0t0    TCP localhost:50856->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root  531u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  532u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  533u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  534u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  535u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  536u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  537u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  538u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  539u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  540u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  541u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  542u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  543u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  544u  a_inode               0,13         0  10169 [eventfd]
+dpal.bin 5091 root  545u     IPv4              31583       0t0    TCP localhost:30023->localhost:43182 (ESTABLISHED)
+dpal.bin 5091 root  546u     IPv4              31584       0t0    TCP localhost:30023->localhost:43188 (ESTABLISHED)
+dpal.bin 5091 root  547u     IPv4              31585       0t0    TCP localhost:30023->localhost:43196 (ESTABLISHED)
+dpal.bin 5091 root  548u     IPv4              31586       0t0    TCP localhost:30023->localhost:43198 (ESTABLISHED)
+dpal.bin 5091 root  549u     IPv4              31587       0t0    TCP localhost:30023->localhost:43210 (ESTABLISHED)
+dpal.bin 5091 root  550u     IPv4              35221       0t0    TCP localhost:50906->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root  551u     IPv4              35222       0t0    TCP localhost:50908->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root  552u     IPv4              30461       0t0    TCP localhost:50924->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root  553u     IPv4              43036       0t0    TCP localhost:50926->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root  554u     IPv4              43037       0t0    TCP localhost:50928->localhost:4565 (ESTABLISHED)
+dpal.bin 5091 root  555u     IPv4              43038       0t0    TCP localhost:50930->localhost:4565 (ESTABLISHED)
