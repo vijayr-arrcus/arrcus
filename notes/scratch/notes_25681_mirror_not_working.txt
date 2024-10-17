@@ -1,0 +1,746 @@
+Network interface Info: ID: 39
+        Name: swp6s1/ce8
+        Flags: 0x00000004
+        Vlan: 0
+        Port: 22
+        Port Encapsulate: IEEE
+        Port Queue: 7
+        CHannel: 0
+        FrameSize: 9000
+        MAC Address: e8:c5:7a:b1:2b:ec
+        User Data:
+0000: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0010: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0020: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0030: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+
+
+Network interface Info: ID: 40
+        Name: swp7s1
+        Flags: 0x00000004
+        Vlan: 0
+        Port: 23
+        Port Encapsulate: IEEE
+        Port Queue: 7
+        CHannel: 0
+        FrameSize: 9000
+        MAC Address: e8:c5:7a:b1:2b:ec
+        User Data:
+0000: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0010: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0020: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0030: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+
+
+Network interface Info: ID: 30
+        Name: swp26
+        Flags: 0x00000004
+        Vlan: 0
+        Port: 122
+        Port Encapsulate: IEEE
+        Port Queue: 7
+        CHannel: 0
+        FrameSize: 9000
+        MAC Address: e8:c5:7a:b1:2b:ec
+        User Data:
+0000: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0010: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0020: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0030: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+
+Network interface Info: ID: 32
+        Name: swp28
+        Flags: 0x00000004
+        Vlan: 0
+        Port: 140
+        Port Encapsulate: IEEE
+        Port Queue: 7
+        CHannel: 0
+        FrameSize: 9000
+        MAC Address: e8:c5:7a:b1:2b:ec
+        User Data:
+0000: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0010: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0020: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+0030: 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00
+
+BCM.0> mirror show
+mirror show
+cd20: Mirror ingress to local port ce9
+cd20: Mirror ingress to local port ce8
+cd22: Mirror ingress to local port ce9
+cd22: Mirror ingress to local port ce8
+-----------------------------------------
+BCM.0>
+
+root@Spine3# show running-config monitor-session
+monitor-session 100
+ enable true
+ destination interface swp6s1
+ !ce8
+ destination interface swp7s1
+ !ce9
+ source interface swp26 INGRESS
+ !cd20
+ source interface swp28 INGRESS
+ !cd22
+!
+root@Spine3#
+
+interface swp28
+ type    ethernetCsmacd
+ mtu     9214
+ enabled true
+ ethernet port-speed SPEED_400GB
+ subinterface 0
+  ipv4 address 10.88.3.106
+   prefix-length 31
+  exit
+ exit
+ acl-service-policies ingress-acl-sets ACL_INTF
+  acl-set ACL_IPV4
+   set-name TRANSIT-INTRA-FABRIC
+  !
+ !
+!
+root@Spine3# show run int swp26
+interface swp26
+ type    ethernetCsmacd
+ mtu     9214
+ enabled false
+ ethernet port-speed SPEED_400GB
+ subinterface 0
+  ipv4 address 10.88.3.42
+   prefix-length 31
+  exit
+ exit
+ acl-service-policies ingress-acl-sets ACL_INTF
+  acl-set ACL_IPV4
+   set-name TRANSIT-INTRA-FABRIC
+  !
+ !
+!
+
+acl acl-set TRANSIT-INTRA-FABRIC ACL_IPV4
+acl acl-set bloomerg_cp_acl ACL_IPV4
+acl acl-set cp_acl_bfd ACL_IPV4
+
+
+GID 0x00000003: gid=0x3, instance=-1 mode=Double, stage=Ingress lookup=Enabled, ActionResId={2},
+         Pbmp={0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001f0000f0000f0000f0000f0000f0003f001ff},
+         qset={SrcIp , DstIp , InPorts , RangeCheck , L4SrcPort , L4DstPort , IpProtocol , DSCP , Ttl , TcpControl , IpInfo , IcmpTypeCode , SrcGport , MplsLabel1Id , IpExtensionHdrNum },
+         aset={CopyToCpu:size[4] , CopyToCpuCancel:size[4] , Drop:size[4] , DropCancel:size[4] , MirrorIngress:size[16] , L3Switch:size[16] , GpCopyToCpuCancel:size[32] , RedirectEgrNextHop:size[20] , PolicerGroup:size[36] , StatGroup:size[24] , CosMapNew:size[8] , IngressDstTypeSelect:size[8] },
+         aset_size= 152
+         preselectors={},
+         group_priority= 19
+         group_hintId= 3
+         slice_primary= {slice_number=4, entries_total=2048, entries_free=2000 },
+         slice_secondary= {slice_number=5, entries_total=2048, entries_free=2000 },
+         group_status=  entries_total=8191, entries_free=8143,
+                        allocated_entries_total=2047, allocated_entries_free=1999,
+                        meters_total=512, meters_free=412, counters_total=4096, counters_free=4048}
+
+
+         flex_counter = {flexctr_action_id=268435467(0x1000000b), counter_id=2(0x2)}
+
+
+BCM.0>
+BCM.0> flexctr stat show StatId=268435467 1-4
+flexctr stat show StatId=268435467 1-4
+Counter value: Action Id=268435467
+        index 1
+                A:                     0,  B:                     0
+        index 2
+                A:         2,565,522,370,  B:    10,390,402,041,704
+        index 3
+                A:                     0,  B:                     0
+        index 4
+                A:                     0,  B:                     0
+BCM.0>
+BCM.0>
+
+BCM.0>
+BCM.0>
+
+root@Spine3# show acl acl-set TRANSIT-INTRA-FABRIC
+acl acl-set TRANSIT-INTRA-FABRIC ACL_IPV4
+ state name TRANSIT-INTRA-FABRIC
+ state type ACL_IPV4
+ acl-entry 100
+  state sequence-id       100
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          100
+  ipv4 state source-address 0.0.0.0/0
+  ipv4 state destination-address 0.0.0.0/0
+  ipv4 state protocol IP_ICMP
+  ipv4 state icmp-type ICMP_ECHO_REQUEST
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 110
+  state sequence-id       110
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          110
+  ipv4 state source-address 0.0.0.0/0
+  ipv4 state destination-address 0.0.0.0/0
+  ipv4 state protocol IP_ICMP
+  ipv4 state icmp-type ICMP_ECHO_REPLY
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 120
+  state sequence-id       120
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          120
+  ipv4 state source-address 0.0.0.0/0
+  ipv4 state destination-address 0.0.0.0/0
+  ipv4 state protocol IP_ICMP
+  ipv4 state icmp-type ICMP_TIME_EXCEEDED
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 130
+  state sequence-id       130
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          130
+  ipv4 state source-address 0.0.0.0/0
+  ipv4 state destination-address 0.0.0.0/0
+  ipv4 state protocol IP_ICMP
+  ipv4 state icmp-type ICMP_DST_UNREACH
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 140
+  state sequence-id       140
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          140
+  ipv4 state source-address 0.0.0.0/0
+  ipv4 state destination-address 0.0.0.0/0
+  ipv4 state protocol IP_UDP
+  transport state destination-port 33434..33464
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 150
+  state sequence-id       150
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          150
+  ipv4 state source-address 10.39.0.0/16
+  ipv4 state destination-address 10.39.0.0/16
+  ipv4 state protocol IP_UDP
+  ipv4 state hop-limit 255
+  transport state destination-port 3784
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 160
+  state sequence-id       160
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          160
+  ipv4 state source-address 10.39.0.0/16
+  ipv4 state destination-address 10.39.0.0/16
+  ipv4 state protocol IP_UDP
+  ipv4 state hop-limit 254
+  transport state destination-port 3785
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 170
+  state sequence-id       170
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          170
+  ipv4 state source-address 10.39.0.0/16
+  ipv4 state destination-address 10.39.0.0/16
+  ipv4 state protocol IP_TCP
+  transport state destination-port 179
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 180
+  state sequence-id       180
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          180
+  ipv4 state source-address 10.39.0.0/16
+  ipv4 state destination-address 10.39.0.0/16
+  ipv4 state protocol IP_TCP
+  transport state source-port 179
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 190
+  state sequence-id       190
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          190
+  ipv4 state source-address 10.34.0.0/15
+  ipv4 state destination-address 10.34.0.0/15
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 200
+  state sequence-id       200
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          200
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.32.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 205
+  state sequence-id       205
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          205
+  ipv4 state source-address 10.36.0.0/18
+  ipv4 state destination-address 10.36.0.0/18
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 210
+  state sequence-id       210
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          210
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.34.0.0/15
+  ipv4 state protocol IP_TCP
+  transport state destination-port 2222
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 221
+  state sequence-id       221
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          221
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.34.0.0/15
+  ipv4 state protocol IP_TCP
+  transport state destination-port 11629
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 222
+  state sequence-id       222
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          222
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.34.0.0/15
+  ipv4 state protocol IP_TCP
+  transport state destination-port 10379
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 223
+  state sequence-id       223
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          223
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.34.0.0/15
+  ipv4 state protocol IP_TCP
+  transport state destination-port 5105
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 224
+  state sequence-id       224
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          224
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.34.0.0/15
+  ipv4 state protocol IP_TCP
+  transport state destination-port 22
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 230
+  state sequence-id       230
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          230
+  ipv4 state source-address 10.34.0.0/15
+  ipv4 state destination-address 10.32.0.0/16
+  ipv4 state protocol IP_TCP
+  transport state tcp-flags [ TCP_SYN TCP_ACK ]
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 231
+  state sequence-id       231
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          231
+  ipv4 state source-address 10.34.0.0/15
+  ipv4 state destination-address 10.32.0.0/16
+  ipv4 state protocol IP_TCP
+  transport state tcp-flags [ TCP_ACK ]
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 232
+  state sequence-id       232
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          232
+  ipv4 state source-address 10.34.0.0/15
+  ipv4 state destination-address 10.32.0.0/16
+  ipv4 state protocol IP_TCP
+  transport state tcp-flags [ TCP_PSH TCP_ACK ]
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 233
+  state sequence-id       233
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          233
+  ipv4 state source-address 10.34.0.0/15
+  ipv4 state destination-address 10.32.0.0/16
+  ipv4 state protocol IP_TCP
+  transport state tcp-flags [ TCP_RST ]
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 239
+  state sequence-id       239
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          239
+  ipv4 state source-address 10.34.0.0/15
+  ipv4 state destination-address 10.32.0.0/16
+  ipv4 state protocol IP_TCP
+  transport state destination-port 10379
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 240
+  state sequence-id       240
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          240
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.34.0.0/15
+  ipv4 state protocol IP_TCP
+  transport state source-port 10379
+  transport state tcp-flags [ TCP_SYN TCP_ACK ]
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 241
+  state sequence-id       241
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          241
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.34.0.0/15
+  ipv4 state protocol IP_TCP
+  transport state source-port 10379
+  transport state tcp-flags [ TCP_ACK ]
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 242
+  state sequence-id       242
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          242
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.34.0.0/15
+  ipv4 state protocol IP_TCP
+  transport state source-port 10379
+  transport state tcp-flags [ TCP_PSH TCP_ACK ]
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 243
+  state sequence-id       243
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          243
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.34.0.0/15
+  ipv4 state protocol IP_TCP
+  transport state source-port 10379
+  transport state tcp-flags [ TCP_RST ]
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 250
+  state sequence-id       250
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          250
+  ipv4 state source-address 10.36.128.0/18
+  ipv4 state destination-address 10.32.0.0/13
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 255
+  state sequence-id       255
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          255
+  ipv4 state source-address 10.32.0.0/13
+  ipv4 state destination-address 10.36.128.0/18
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 261
+  state sequence-id       261
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          261
+  ipv4 state source-address 10.36.64.0/18
+  ipv4 state destination-address 10.36.64.0/18
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 262
+  state sequence-id       262
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          262
+  ipv4 state source-address 10.33.0.0/16
+  ipv4 state destination-address 10.33.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 263
+  state sequence-id       263
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          263
+  ipv4 state source-address 10.37.0.0/16
+  ipv4 state destination-address 10.37.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 271
+  state sequence-id       271
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          271
+  ipv4 state source-address 10.36.0.0/18
+  ipv4 state destination-address 10.32.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 272
+  state sequence-id       272
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          272
+  ipv4 state source-address 10.36.0.0/18
+  ipv4 state destination-address 10.34.0.0/15
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 273
+  state sequence-id       273
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          273
+  ipv4 state source-address 10.36.0.0/18
+  ipv4 state destination-address 10.33.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 274
+  state sequence-id       274
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          274
+  ipv4 state source-address 10.36.0.0/18
+  ipv4 state destination-address 10.37.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 281
+  state sequence-id       281
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          281
+  ipv4 state source-address 10.33.0.0/16
+  ipv4 state destination-address 10.32.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 282
+  state sequence-id       282
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          282
+  ipv4 state source-address 10.33.0.0/16
+  ipv4 state destination-address 10.36.0.0/18
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 291
+  state sequence-id       291
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          291
+  ipv4 state source-address 10.37.0.0/16
+  ipv4 state destination-address 10.32.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 292
+  state sequence-id       292
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          292
+  ipv4 state source-address 10.37.0.0/16
+  ipv4 state destination-address 10.34.0.0/15
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 293
+  state sequence-id       293
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          293
+  ipv4 state source-address 10.37.0.0/16
+  ipv4 state destination-address 10.36.0.0/18
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 301
+  state sequence-id       301
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          301
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.36.0.0/18
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 302
+  state sequence-id       302
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          302
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.33.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 303
+  state sequence-id       303
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          303
+  ipv4 state source-address 10.32.0.0/16
+  ipv4 state destination-address 10.37.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 311
+  state sequence-id       311
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          311
+  ipv4 state source-address 10.34.0.0/15
+  ipv4 state destination-address 10.36.0.0/18
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 312
+  state sequence-id       312
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          312
+  ipv4 state source-address 10.34.0.0/15
+  ipv4 state destination-address 10.37.0.0/16
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ acl-entry 320
+  state sequence-id       320
+  state matched-ingress-packets 0
+  state matched-egress-packets 0
+  state matched-ingress-octets 0
+  state matched-egress-octets 0
+  state priority          320
+  ipv4 state source-address 10.32.0.0/13
+  ipv4 state destination-address 10.32.0.0/13
+  actions state forwarding-action DROP
+  actions state log-action LOG_SYSLOG
+ acl-entry 330
+  state sequence-id       330
+  state matched-ingress-packets 2592227228,
+  state matched-egress-packets 0
+  state matched-ingress-octets 10498557511934
+  state matched-egress-octets 0
+  state priority          330
+  ipv4 state source-address 0.0.0.0/0
+  ipv4 state destination-address 0.0.0.0/0
+  actions state forwarding-action ACCEPT
+  actions state log-action LOG_NONE
+ interface
+                    TARGET                         TARGET
+ID     DIRECTION    ATTRIBUTE  ID     DIRECTION    ATTRIBUTE
+--------------------------------------------------------------
+swp28  ingress-acl  ACL_INTF   swp28  ingress-acl  ACL_INTF
+
+root@Spine3#
+
+print bcm_field_entry_enable_set(0, 0x000000a9, 1);

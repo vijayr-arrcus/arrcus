@@ -1072,3 +1072,33 @@ bcm_cosq_control_get(unit, gport, index, bcmCosqControlEgressUCQueueMinLimitByte
 
 bcm_cosq_control_get(unit, gport, index, bcmCosqControlDropLimitAlpha, &args);
 debug bcmlt - 
+
+
+dump sw all
+dump sw config
+dump sw cosq
+dump sw dlb
+dump sw flow
+dump sw id_port
+dump sw id_l2_if
+dump sw l2
+dump sw mirror
+dump sw port
+dump sw subport
+dump sw profile
+dump sw sbr
+dump sw stg
+dump sw trunk
+dump sw vlan
+dump sw qos
+dump sw mpls
+dump sw pktio
+dump sw pktio_perf
+dump sw multicast
+dump sw ipmc
+dump sw flexstate
+dump sw flexctr
+dump sw l3
+dump sw link
+dump sw rate
+

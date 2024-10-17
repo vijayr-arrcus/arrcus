@@ -1,0 +1,179 @@
+./mpsctl -t /default/oper/acl/hal/acl/ -s Acl.acl_hal_acl_object
+DPAL_ACL_LIST
+BCM_XGS_ACL -- We dont do anything in the SDK layer.
+Operation : UPDATE
+{
+  "acl_name": "TRANSIT-INTRA-FABRIC",
+  "owner_name": "confd"
+}
+
+./mpsctl -t /default/oper/acl/hal/ace/ -s Acl.acl_hal_ace_object
+DPAL_ACL_ACE
+Operation : UPDATE
+{
+  "acl_id": 1,
+  "sequence_id": 65544,
+  "priority": 134283272,
+  "match_action": {
+    "ipv4_params": {
+      "ipv4_src": {
+        "v4_pfx_addr": 0,
+        "v4_pfx_len": 0
+      }
+    },
+    "action": 3
+  }
+}
+
+./mpsctl -t /default/oper/acl/hal/target/ -s Acl.acl_hal_target_object
+DPAL_ACL_TARGET
+BCM_XGS_ACL_TARGET -- Group creation happens here.
+The ACL target gives the GROUP TYPE.
+The ACL type gives the subtype.
+      BCM_FILTER_GRP --> Group create based on direction, target type, acl_type.
+
+bcm_find_update_filter_grp
+  bcm_create_fp_group
+
+int ctr_obj = bcmsdk_fp_get_counter_object(fp_stage, type);
+int num_stat = bcmsdk_fp_get_num_stats(fp_stage);
+int count_drop = 1;
+uint32_t flexctr_id;
+rv = g_asic_global_ctxt.xgs_cb.fp_flexctr_action_create_cb(unit, *fp_group_id,
+                                                           fp_stage, ctr_obj,
+                                                           num_stat, count_drop,
+                                                           &flexctr_id);
+
+/* Packet colors for flex counter. */
+#define BCM_FIELD_COUNT_ALL     0
+#define BCM_FIELD_COUNT_GREEN   1
+#define BCM_FIELD_COUNT_YELLOW  2
+#define BCM_FIELD_COUNT_RED     4
+
+rc = flexctr_get_stat_id(flexctr_id, &hw_stats_id);
+bcmsdk_xgs_ltsw_acl_insert_fp_entry
+      rc = g_asic_global_ctxt.xgs_cb.fp_flexctr_attach_cb(unit, fp_entry_id, hw_stats_id,
+                flexctr_id,
+                BCM_FIELD_COUNT_ALL);
+
+MPS service URI: /system/ipc/arcos_mps_ctrl
+        Table ID: [/default/oper/acl/hal/target/][29]
+        Schema ID: Acl.acl_hal_target_object
+########################################################################
+Operation : UPDATE
+ {
+  "acl_target": {
+    "target_ctxt": 1,
+    "target_id": 1035,
+    "target_type": 1,
+    "direction": 1
+  },
+  "acl_id": 1,
+  "flags": 0,
+  "target_type_if": 2203,
+  "target_type_member_if": false,
+  "target_type_bond_if": false
+}
+
+============= COPP ============
+
+./mpsctl -t /default/oper/acl/hal/acl/ -s Acl.acl_hal_acl_object
+
+Operation : UPDATE
+ {
+  "acl_id": 5541943097347642742,
+  "acl_type": 3,
+  "acl_name": "copp-system-bpdu",
+  "owner_name": "copp"
+}
+
+
+./mpsctl -t /default/hal/copp/copp_hal_policer/ -s Qos.qos_hal_police_object
+
+MPS service URI: /system/ipc/arcos_mps_ctrl
+        Table ID: [/default/hal/copp/copp_hal_policer/][35]
+        Schema ID: Qos.qos_hal_police_object
+########################################################################
+Operation : UPDATE
+ {
+  "police_id": -1570259515,
+  "committed_rate": {
+    "qos_rate": 100000,
+    "qos_unit": 4
+  },
+  "committed_burst": 10000
+}
+
+
+./mpsctl -t /default/oper/acl/hal/ace/ -s Acl.acl_hal_ace_object
+
+MPS service URI: /system/ipc/arcos_mps_ctrl
+        Table ID: [/default/oper/acl/hal/ace/][26]
+        Schema ID: Acl.acl_hal_ace_object
+########################################################################
+Operation : UPDATE
+ {
+  "acl_id": 5541943097347642742,
+  "sequence_id": 1000,
+  "priority": 1000,
+  "match_action": {
+    "eth_params": {
+      "dest_mac": "AQAMzMzN"
+    },
+    "action": 1
+  }
+}
+Operation : UPDATE
+ {
+  "acl_id": 5541943097347642742,
+  "sequence_id": 1001,
+  "priority": 1001,
+  "match_action": {
+    "eth_params": {
+      "dest_mac": "AYDCAAAA"
+    },
+    "action": 1
+  }
+}
+
+./mpsctl -t /default/hal/copp/copp_hal_service_policy/ -s Qos.qos_hal_service_policy_object
+DPAL_COPP_SERVICE_POLICY
+BCM_XGS_COPP_POLICY_TARGET
+
+bcm_xgs_copp_target_find_update_filter_grp
+    bcm_copp_create_catch_all_entries
+    bcm_copp_create_exception_type_entries
+
+########################################################################
+Operation : UPDATE
+ {
+  "target": {
+    "target_id": 4294967295,
+    "target_type": 1,
+    "direction": 2
+  },
+  "bind_id_1": 9223372036854775807,
+  "bind_id_2": -6744213259961227540,
+  "action_type": 14,
+  "police_id": -1570259515,
+  "dep_type": 5021,
+  "seq_num": 0
+}
+Operation : UPDATE
+ {
+  "target": {
+    "target_id": 4294967295,
+    "target_type": 1,
+    "direction": 2
+  },
+  "bind_id_1": 9223372036854775807,
+  "bind_id_2": -6744213259961227540,
+  "action_type": 13,
+  "mark_value": 7,
+  "seq_num": 0
+}
+
+
+
+stats get:
+  bcm_service_policy_stats_api

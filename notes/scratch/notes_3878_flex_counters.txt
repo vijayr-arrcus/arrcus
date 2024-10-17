@@ -1,0 +1,60 @@
+Flex counters get
+flex counter stats
+fp stats
+
+ * \param [in] unit Unit number.
+ * \param [in] stat_counter_id Flex counter ID.
+ * \param [in] num_entries Total number of counter entries need to get.
+ * \param [in] counter_indexes Each counter entry index of the given counter action.
+ * \param [out] counter_values Statistic for the specific counter entry.
+ *
+ * \retval SHR_E_NONE on success and error code otherwise.
+ */
+int bcm_ltsw_flexctr_stat_sync_get(int unit,
+                                   uint32_t stat_counter_id,
+                                   uint32_t num_entries,
+                                   uint32_t *counter_indexes,
+                                   bcm_flexctr_counter_value_t *counter_values)
+
+bcm_flexctr_stat_sync_get()
+
+
+flexctr stat show
+
+
+EID 0x0000006f: eid=0x6f, gid=0x1,
+ prio=0x7fffc503, flags=0x20000002, hw_index=0x69, Installed
+ EtherType
+  HW info:
+    Part: 0 Offset0: 20 Width0: 4
+    Part: 0 Offset1: 24 Width1: 4
+    Part: 0 Offset2: 28 Width2: 4
+    Part: 0 Offset3: 32 Width3: 4
+     DATA=00000806
+     MASK=0000ffff
+ VpnOpaqueCtrlId
+  HW info:
+    Part: 0 Offset0: 68 Width0: 4
+     DATA=00000001
+     MASK=00000001
+
+         action = {act=RpDrop, param0=0(0), param1=0(0), param2=0(0)
+         action = {act=GpCopyToCpu, param0=0(0), param1=0(0), param2=0(0)
+         action = {act=CosMapNew, param0=536870919(0x20000007), param1=0(0), param2=0(0)
+         action = {act=GpStatGroup, param0=71(0x47), param1=0(0), param2=0(0)
+         action = {act=RpStatGroup, param0=72(0x48), param1=0(0), param2=0(0)
+         flex_counter = {flexctr_action_id=268435463(0x10000007), gp_counter_id=71(0x47),
+yp_counter_id=0(0), rp_counter_id=72(0x48)}
+         policer = {policer id 32}
+BCM.0>
+BCM.0> flexctr stat show StatId=268435463 70-72
+flexctr stat show StatId=268435463 70-72
+Counter value: Action Id=268435463
+        index 70
+                A:                     0,  B:     0
+        index 71 >>> Greeen
+                A:                     1,  B:    64
+        index 72 >>> Red
+                A:                     0,  B:     0
+BCM.0>
+BCM.0>

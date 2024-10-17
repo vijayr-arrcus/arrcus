@@ -1,0 +1,477 @@
+(gdb)
+(gdb)
+(gdb)
+(gdb)
+(gdb) bt full
+#0  0x00007f0a944ca25a in bcmsdk_xgs_ltsw_knet_db_netif_info_create (netif_id=34, port=4096) at ./dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_netdev.c:163
+No locals.
+#1  bcmsdk_xgs_ltsw_netdev_create (unit=0, port=4096, netdev_name=0x7f0a3fffda10 "swp14s2", ifindex=<optimized out>) at ./dpal/plugin/bcm/xgs/ltsw/common/app/bcm_xgs_ltsw_netdev.c:244
+        rv = <optimized out>
+        netif_id = 34
+        filter_id = 5348
+        __FUNCTION__ = "bcmsdk_xgs_ltsw_netdev_create"
+#2  0x00007f0a94431fc3 in bcmsdk_port_create_netdevs (unit=unit@entry=0, port=port@entry=4096, fp_port_num=fp_port_num@entry=14, subport=subport@entry=2, ifindex=ifindex@entry=0x7f0a3fffdab8,
+    is_replay_in_progress=<optimized out>) at ./dpal/plugin/bcm/xgs/common/app/bcm_port.c:556
+        rv = <optimized out>
+        netdev_name = "swp14s2\000`\333\377?\n\177\000"
+        rc = <optimized out>
+        is_standalone = <optimized out>
+        slot_id_str = <optimized out>
+        slot_id = <optimized out>
+        __func__ = "bcmsdk_port_create_netdevs"
+        bcm_link_status = 32522
+#3  0x00007f0a94436e4e in bcmsdk_port_main_create (bcm_xgs_port=<optimized out>, ctxt=0x563c9d95ef80) at ./dpal/plugin/bcm/xgs/common/app/bcm_port.c:2549
+        unit = 0
+        dh = 0x563c9d95ef80
+        port = 4096
+        phy_port = <optimized out>
+        fp_port = <optimized out>
+        sub_port_num = 2
+        tid = 0
+        idx = <optimized out>
+        temp = <optimized out>
+        j = <optimized out>
+        sub_port_temp = {62, 4096, 32522, 128, 4096, 32522, 2486618607, 32522, 1073732848, 32522}
+        tgport = 0
+        ifindex = 1054
+        rc = RET_CODE_SUCCESS
+        rv = <optimized out>
+        dummy = <optimized out>
+        obj = {obj_type = 2223, obj_info = 0x7f0a3fffdaf0, opaque = 0x7f0a3fffdb00}
+        obj_out = 0x7f0a400129a0
+        dpal_port = {__obj = {base = {descriptor = 0x7f0a101b0e60, n_unknown_fields = 2, unknown_fields = 0x0}, has_ifindex = 0, ifindex = 1, has_app_id = 1, app_id = 1,
+            name = 0x7f0a11df1480 "\200\036\337\021\n\177", has_admin_status = 1073732480, admin_status = 32522, has_link_status = 1, link_status = 0, has_mtu = 1, mtu = 9412, has_mac_address = 1,
+            mac_address = 207978178987496, has_lnx_ifindex = 1, lnx_ifindex = 1049, has_auto_negotiate = 1, auto_negotiate = 0, has_duplex_mode = 1, duplex_mode = 1, has_speed = 1, speed = 8,
+            has_breakout_mode = 0, breakout_mode = 0, has_loopback_mode = -1875675136, loopback_mode = 2063603184, has_fec_mode = 1, fec_mode = 3, has_phy_intf_type = 1073732704, phy_intf_type = 32522,
+            has_phy_port = 308609400, phy_port = 32522, has_slot = -1651118208, slot = 22076, has_unit = 1, unit = 0, has_modport = 270202704, modport = 32522, has_sysport = 1073732816, sysport = 32522,
+            n_active_member_list = 139683412845492, active_member_list = 0x0, has_min_links = 0, min_links = 0, n_egress_disabled_member_list = 596911, egress_disabled_member_list = 0x7f0a3fffdc60,
+            has_penalty_count = 0, penalty_count = 0, has_suppress_state = -474178944, suppress_state = 32523}}
+        breakout = <optimized out>
+        cp_ifmgr_port = <optimized out>
+        in_cp_port = {__obj = {base = {descriptor = 0x7f0be39926e0 <ifmgr.ifmgr_port.descriptor>, n_unknown_fields = 0, unknown_fields = 0x0}, has_ifindex = 1, ifindex = 1054, has_port = 0, port = 0,
+            has_slot = 0, slot = 0, has_core = 0, core = 0, has_unit = 0, unit = 0, has_fp_port = 0, fp_port = 0, has_parent_fp_port = 0, parent_fp_port = 0, has_breakout = 0, breakout = 0, has_subport_num = 0,
+            subport_num = 0}}
+        info = <optimized out>
+        bcm_bond_obj = 0x0
+        __FUNCTION__ = "bcmsdk_port_main_create"
+        __func__ = "bcmsdk_port_main_create"
+#4  0x00007f0a9440fac5 in bcm_xgs_obj_aom_cb (oh=0x7f0a12650ba0, client_space=<optimized out>, old_val=0x0, val=0x7f0a40012880, optype=<optimized out>) at ./dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:50533
+        k = 0x7f0a12650ba0
+        meta_h = 0x7f0a101af800
+        do_sec_tree_hdling = true
+        rc = RET_CODE_SUCCESS
+        obj = 0x7f0a40012880
+        old_obj = 0x0
+--Type <RET> for more, q to quit, c to continue without paging--
+        dpal_optype = DPAL_OBJ_MIN
+        _ctxt = 0x7f0a101af750
+        replay_in_progress = false
+        mpsc_p = <optimized out>
+#5  0x00007f0be3f04180 in aom_fsm_create_cb (ptr=ptr@entry=0x7f0a12650ba0, next_state=next_state@entry=AOM_ST_CREATED, arg=arg@entry=0x0) at ./infra/aom/lib/aom.c:1169
+        obj = 0x7f0a12650ba0
+        meta = 0x7f0a101af800
+        cb = <optimized out>
+        old_val = 0x0
+#6  0x00007f0be3efde33 in aom_fsm_run (fsm=fsm@entry=0x7f0be3f16ea0 <obj_fsm>, st=1, ev=ev@entry=4, o=o@entry=0x7f0a12650ba0, arg=arg@entry=0x0) at ./infra/aom/lib/aom.c:311
+        entry = <optimized out>
+        new_state = AOM_ST_CREATED
+        cb = 0x7f0be3f04125 <aom_fsm_create_cb>
+        __FUNCTION__ = "aom_fsm_run"
+#7  0x00007f0be3efe279 in aom_obj_fsm_run (st=<optimized out>, ev=ev@entry=AOM_EV_ALL_RESOLVED, o=o@entry=0x7f0a12650ba0, arg=arg@entry=0x0) at ./infra/aom/lib/aom.c:319
+No locals.
+#8  0x00007f0be3f042fa in aom_obj_resolve (obj=0x7f0a12650ba0) at ./infra/aom/lib/aom.c:2250
+        resolved = true
+#9  0x00007f0be3f04520 in aom_obj_resolve_dependents (resume=resume@entry=0x7f0a125fccf0) at ./infra/aom/lib/aom.c:2294
+        child = <optimized out>
+        elem = 0x7f0a126515d0
+        iter_count = 0
+        parent = <optimized out>
+        yield_count = 100
+#10 0x00007f0be3f045d9 in aom_do_deferred (fd=<optimized out>, events=<optimized out>, arg=0x7f0a1000e3d0) at ./infra/aom/lib/aom.c:2327
+        elem = 0x7f0a125fcce0
+        item = 0x7f0a125fcce0
+        ctxt = 0x7f0a1000e3d0
+        wq = 0x7f0a1000e3e8
+        ignore = 74
+        count = 8
+        done = true
+        __FUNCTION__ = "aom_do_deferred"
+#11 0x00007f0be41b79ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+No symbol table info available.
+#12 0x00007f0be41b8537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+No symbol table info available.
+#13 0x00007f0be452f2f8 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x563c9d957980) at ./dpal/common/app/dpal_worker.c:1154
+No locals.
+#14 0x00007f0be452f786 in dpal_worker_thread (arg=0x563c9d957980) at ./dpal/common/app/dpal_worker.c:1370
+        worker_ctxt = 0x563c9d957980
+        reader_info = {eb = 0x7f0a10000b60, cb = 0x7f0be452d420 <dpal_worker_sysmgr_cb>, arg = 0x563c9d957980}
+        info = {hwm = 0, lwm = 0, strict = false}
+        rc = <optimized out>
+#15 0x00007f0be40fbfa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+No symbol table info available.
+#16 0x00007f0be368206f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+(gdb)
+(gdb)
+(gdb) set pagination off
+(gdb)
+
+
+
+
+
+(gdb) print *$info->port_info
+$54 = {fp_port_num = 14, sdk_port_num = 62, base_port = 0, init_create_netdev = true, breakout_supported = true, auto_neg = false,
+  parent_fpport = 0, paired_fpport = 0, init_breakout_mode = 17 '\021', num_sub_ports = 8 '\b', sub_port_list = 0x7f0a11d10100, unit = 0 '\000',
+  phy_port = 0, core = 0, default_speed = 400000, ext_phy = false, tx_taps = {{{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0,
+            0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0,
+        taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0,
+            0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0,
+        taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0,
+            0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0,
+        taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}}}
+(gdb)
+
+
+
+
+(gdb)
+$57 = {fp_port_num = 14, sdk_port_num = 62, base_port = 0, init_create_netdev = true, breakout_supported = true, auto_neg = false,
+  parent_fpport = 0, paired_fpport = 0, init_breakout_mode = 17 '\021', num_sub_ports = 8 '\b', sub_port_list = 0x7f0a11d10100, unit = 0 '\000',
+  phy_port = 0, core = 0, default_speed = 400000, ext_phy = false, tx_taps = {{{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0,
+            0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0,
+        taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0,
+            0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0,
+        taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0,
+            0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0,
+        taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}}}
+(gdb) frame
+#3  0x00007f0a94436e4e in bcmsdk_port_main_create (bcm_xgs_port=<optimized out>, ctxt=0x563c9d95ef80)
+    at ./dpal/plugin/bcm/xgs/common/app/bcm_port.c:2549
+2549    in ./dpal/plugin/bcm/xgs/common/app/bcm_port.c
+(gdb) print sub_port_num
+$58 = 2
+(gdb) print *$info->port_info->sub_port_list[0]
+Cannot access memory at address 0x3e
+(gdb) print $info->port_info->sub_port_list[0]
+$59 = 62
+(gdb) print $info->port_info->sub_port_list[1]
+$60 = 4096
+(gdb) print $info->port_info->sub_port_list[2]
+$61 = 32522
+(gdb) print $info->port_info->sub_port_list[3]
+$62 = 0
+(gdb) print $info->port_info->sub_port_list[4]
+$63 = 128
+(gdb) print $info->port_info->sub_port_list[5]
+$64 = 4096
+(gdb) print $info->port_info->sub_port_list[6]
+$65 = 32522
+(gdb) print $info->port_info->sub_port_list[7]
+$66 = 0
+(gdb)
+
+
+
+(gdb) set $head = (avl_tree_private_t *)g_asic_global_ctxt.port_info_tree
+(gdb) print *$head
+$84 = {root = 0x7f0a101b0c90, offset = 2, size = 2, compare_fn = 0x0, cur_nodes = 32, total_inserts = 31, total_deletes = 0, total_ll_rotations = 0,
+  total_lr_rotations = 0, total_rr_rotations = 26, total_rl_rotations = 0, flags = 0, tree_walk_epoch = 0}
+(gdb) set $node=$head->root
+(gdb) set $info=(bcmsdk_port_info_t *)$node
+(gdb) print *$info->port_info
+$85 = {fp_port_num = 15, sdk_port_num = 63, base_port = 0, init_create_netdev = true, breakout_supported = true, auto_neg = false, parent_fpport = 0,
+  paired_fpport = 0, init_breakout_mode = 17 '\021', num_sub_ports = 8 '\b', sub_port_list = 0x7f0a11d10120, unit = 0 '\000', phy_port = 0, core = 0,
+  default_speed = 400000, ext_phy = false, tx_taps = {{{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0,
+            0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0,
+            0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}}}
+(gdb) print $info->port_info.sub_port_list[0]
+$86 = 63
+(gdb) print $info->port_info.sub_port_list[1]
+$87 = 4096
+(gdb) print $info->port_info.sub_port_list[2]
+$88 = 32522
+(gdb) print $info->port_info.sub_port_list[3]
+$89 = 0
+(gdb) print $info->port_info.sub_port_list[4]
+$90 = 128
+(gdb) print $info->port_info.sub_port_list[5]
+$91 = 4096
+(gdb) print $info->port_info.sub_port_list[6]
+$92 = 32522
+(gdb) print $info->port_info.sub_port_list[7]
+$93 = 0
+(gdb)
+
+(gdb) set $node=$node->right
+(gdb) set $info=(bcmsdk_port_info_t *)$node
+(gdb) print *$info->port_info
+$94 = {fp_port_num = 23, sdk_port_num = 103, base_port = 0, init_create_netdev = true, breakout_supported = true, auto_neg = false, parent_fpport = 0,
+  paired_fpport = 0, init_breakout_mode = 17 '\021', num_sub_ports = 8 '\b', sub_port_list = 0x7f0a11d10220, unit = 0 '\000', phy_port = 0, core = 0,
+  default_speed = 400000, ext_phy = false, tx_taps = {{{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0,
+            0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0,
+            0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}}}
+(gdb) print $info->port_info.sub_port_list[0]
+$95 = 103
+(gdb) print $info->port_info.sub_port_list[1]
+$96 = 0
+(gdb) print $info->port_info.sub_port_list[2]
+$97 = 0
+(gdb) print $info->port_info.sub_port_list[3]
+$98 = 0
+(gdb) print $info->port_info.sub_port_list[4]
+$99 = 105
+(gdb) print $info->port_info.sub_port_list[5]
+$100 = 0
+(gdb) print $info->port_info.sub_port_list[6]
+$101 = 0
+(gdb) print $info->port_info.sub_port_list[7]
+$102 = 0
+(gdb) print $node
+$103 = (struct avl_node_t_ *) 0x7f0a101b09c0
+(gdb)
+
+(gdb) print $node
+$103 = (struct avl_node_t_ *) 0x7f0a101b09c0
+(gdb) set $node=$node->right
+(gdb) set $info=(bcmsdk_port_info_t *)$node
+(gdb) print *$info->port_info
+$104 = {fp_port_num = 27, sdk_port_num = 123, base_port = 0, init_create_netdev = true, breakout_supported = true, auto_neg = false, parent_fpport = 0,
+  paired_fpport = 0, init_breakout_mode = 17 '\021', num_sub_ports = 8 '\b', sub_port_list = 0x7f0a11d102a0, unit = 0 '\000', phy_port = 0, core = 0,
+  default_speed = 400000, ext_phy = false, tx_taps = {{{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0,
+            0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0,
+            0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}}}
+(gdb) print $info->port_info.sub_port_list[0]
+$105 = 123
+(gdb) print $info->port_info.sub_port_list[1]
+$106 = 0
+(gdb) print $info->port_info.sub_port_list[2]
+$107 = 0
+(gdb) print $info->port_info.sub_port_list[3]
+$108 = 0
+(gdb) print $info->port_info.sub_port_list[4]
+$109 = 127
+(gdb) print $info->port_info.sub_port_list[5]
+$110 = 0
+(gdb) print $info->port_info.sub_port_list[6]
+$111 = 0
+(gdb) print $info->port_info.sub_port_list[7]
+$112 = 0
+(gdb)
+
+(gdb) set $node=$node->right
+(gdb) set $info=(bcmsdk_port_info_t *)$node
+(gdb) print *$info->port_info
+$113 = {fp_port_num = 29, sdk_port_num = 141, base_port = 0, init_create_netdev = true, breakout_supported = true, auto_neg = false, parent_fpport = 0,
+  paired_fpport = 0, init_breakout_mode = 17 '\021', num_sub_ports = 8 '\b', sub_port_list = 0x7f0a11d102e0, unit = 0 '\000', phy_port = 0, core = 0,
+  default_speed = 400000, ext_phy = false, tx_taps = {{{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0,
+            0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0,
+            0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}}}
+(gdb) print $info->port_info.sub_port_list[0]
+$114 = 141
+(gdb) print $info->port_info.sub_port_list[1]
+$115 = 4096
+(gdb) print $info->port_info.sub_port_list[2]
+$116 = 32522
+(gdb) print $info->port_info.sub_port_list[3]
+$117 = 0
+(gdb) print $info->port_info.sub_port_list[4]
+$118 = 128
+(gdb) print $info->port_info.sub_port_list[5]
+$119 = 4096
+(gdb) print $info->port_info.sub_port_list[6]
+$120 = 32522
+(gdb) print $info->port_info.sub_port_list[7]
+$121 = 0
+(gdb) print $node
+$122 = (struct avl_node_t_ *) 0x7f0a101b0690
+(gdb)
+
+
+(gdb) print $node
+$144 = (struct avl_node_t_ *) 0x0
+(gdb) set $node=(struct avl_node_t_ *) 0x7f0a101b0690
+(gdb) print *$node
+$145 = {walk_epoch = 0, checksum = 0, height = 3, key = 0x0, data = 0x7f0a11daaa88, left = 0x7f0a101b0870, right = 0x7f0a101b0950, tree = 0x7f0a11d0fe00}
+(gdb) set $info=(bcmsdk_port_info_t *)$node
+(gdb) print *$info->port_info
+$146 = {fp_port_num = 29, sdk_port_num = 141, base_port = 0, init_create_netdev = true, breakout_supported = true, auto_neg = false, parent_fpport = 0,
+  paired_fpport = 0, init_breakout_mode = 17 '\021', num_sub_ports = 8 '\b', sub_port_list = 0x7f0a11d102e0, unit = 0 '\000', phy_port = 0, core = 0,
+  default_speed = 400000, ext_phy = false, tx_taps = {{{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0,
+            0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0,
+            0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}}}
+(gdb) print $info->port_info.sub_port_list[0]
+$147 = 141
+(gdb) print $info->port_info.sub_port_list[1]
+$148 = 4096
+(gdb) print $info->port_info.sub_port_list[2]
+$149 = 32522
+(gdb) print $info->port_info.sub_port_list[3]
+$150 = 0
+(gdb) print $info->port_info.sub_port_list[4]
+$151 = 128
+(gdb) print $info->port_info.sub_port_list[5]
+$152 = 4096
+(gdb) print $info->port_info.sub_port_list[6]
+$153 = 32522
+(gdb) print $info->port_info.sub_port_list[7]
+$154 = 0
+(gdb) print $node
+$155 = (struct avl_node_t_ *) 0x7f0a101b0690
+(gdb)
+
+=======
+
+
+(gdb) set $node=$node->right
+(gdb) set $info=(bcmsdk_port_info_t *)$node
+(gdb) print *$info->port_info
+$123 = {fp_port_num = 30, sdk_port_num = 142, base_port = 0, init_create_netdev = true, breakout_supported = true, auto_neg = false, parent_fpport = 0,
+  paired_fpport = 0, init_breakout_mode = 17 '\021', num_sub_ports = 8 '\b', sub_port_list = 0x7f0a11d10300, unit = 0 '\000', phy_port = 0, core = 0,
+  default_speed = 400000, ext_phy = false, tx_taps = {{{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0,
+            0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0,
+            0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}}}
+(gdb) print $info->port_info.sub_port_list[0]
+$124 = 142
+(gdb) print $info->port_info.sub_port_list[01
+A syntax error in expression, near `'.
+(gdb) print $info->port_info.sub_port_list[1]
+$125 = 0
+(gdb) print $info->port_info.sub_port_list[2]
+$126 = 0
+(gdb) print $info->port_info.sub_port_list[3]
+$127 = 0
+(gdb) print $info->port_info.sub_port_list[4]
+$128 = 144
+(gdb) print $info->port_info.sub_port_list[5]
+$129 = 0
+(gdb) print $info->port_info.sub_port_list[6]
+$130 = 0
+(gdb) print $info->port_info.sub_port_list[7]
+$131 = 0
+(gdb) print $node
+$132 = (struct avl_node_t_ *) 0x7f0a101b0950
+(gdb)
+
+(gdb) set $node=$node->right
+(gdb) set $info=(bcmsdk_port_info_t *)$node
+(gdb) print *$info->port_info
+$133 = {fp_port_num = 31, sdk_port_num = 143, base_port = 0, init_create_netdev = true, breakout_supported = true, auto_neg = false, parent_fpport = 0,
+  paired_fpport = 0, init_breakout_mode = 17 '\021', num_sub_ports = 8 '\b', sub_port_list = 0x7f0a11d10320, unit = 0 '\000', phy_port = 0, core = 0,
+  default_speed = 400000, ext_phy = false, tx_taps = {{{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0,
+            0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0,
+            0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}}, {{num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+            0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0,
+            0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}},
+        method = PLUGIN_TX_TAP_INVALID}, {num_lanes = 0, taps = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {
+            0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}, method = PLUGIN_TX_TAP_INVALID}}}}
+(gdb) print $info->port_info.sub_port_list[0]
+$134 = 143
+(gdb) print $info->port_info.sub_port_list[1]
+$135 = 4096
+(gdb) print $info->port_info.sub_port_list[2]
+$136 = 32522
+(gdb) print $info->port_info.sub_port_list[3]
+$137 = 0
+(gdb) print $info->port_info.sub_port_list[4]
+$138 = 128
+(gdb) print $info->port_info.sub_port_list[5]
+$139 = 4096
+(gdb) print $info->port_info.sub_port_list[6]
+$140 = 32522
+(gdb) print $info->port_info.sub_port_list[7]
+$141 = 0
+(gdb) print $node
+$142 = (struct avl_node_t_ *) 0x7f0a101af330
+(gdb)
