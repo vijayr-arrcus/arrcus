@@ -1,0 +1,549 @@
+root@TD4-x11-016:~# !gdb
+gdb /usr/lib/arcos/dpal.bin -c core.0.MacMon.0.4863
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/lib/arcos/dpal.bin...Reading symbols from /usr/lib/debug/.build-id/92/eb068776ec25b7cf2bf5f24d5eb94a02dadc23.debug...done.
+done.
+
+warning: exec file is newer than core file.
+[New LWP 6407]
+[New LWP 4905]
+[New LWP 5276]
+[New LWP 5280]
+[New LWP 4904]
+[New LWP 5282]
+[New LWP 5287]
+[New LWP 5281]
+[New LWP 6107]
+[New LWP 6110]
+[New LWP 6238]
+[New LWP 6117]
+[New LWP 6237]
+[New LWP 6256]
+[New LWP 5286]
+[New LWP 5284]
+[New LWP 6250]
+[New LWP 5283]
+[New LWP 6590]
+[New LWP 6298]
+[New LWP 6108]
+[New LWP 5654]
+[New LWP 6128]
+[New LWP 6248]
+[New LWP 6299]
+[New LWP 6249]
+[New LWP 6260]
+[New LWP 5289]
+[New LWP 6262]
+[New LWP 6246]
+[New LWP 6366]
+[New LWP 6343]
+[New LWP 6251]
+[New LWP 6257]
+[New LWP 6127]
+[New LWP 6239]
+[New LWP 6321]
+[New LWP 6604]
+[New LWP 6367]
+[New LWP 6314]
+[New LWP 6363]
+[New LWP 4863]
+[New LWP 5653]
+[New LWP 6253]
+[New LWP 6364]
+[New LWP 6247]
+[New LWP 6408]
+[New LWP 6571]
+[New LWP 6591]
+[New LWP 6365]
+[New LWP 6252]
+[New LWP 6371]
+[New LWP 6375]
+[New LWP 6258]
+[New LWP 6640]
+[New LWP 6639]
+[New LWP 6259]
+[New LWP 6631]
+[New LWP 6376]
+[New LWP 6370]
+[New LWP 6573]
+[New LWP 6109]
+[New LWP 6592]
+[New LWP 6638]
+[New LWP 6369]
+[New LWP 6630]
+[New LWP 6632]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+851     /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c: No such file or directory.
+[Current thread is 1 (Thread 0x7f3ed403f700 (LWP 6407))]
+warning: Missing auto-load script at offset 0 in section .debug_gdb_scripts
+of file /usr/lib/debug/.build-id/1f/bda37184836b904314685c56dc0b3931f797f7.debug.
+Use `info auto-load python-scripts [REGEXP]' to list them.
+(gdb) bt
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+#1  0x00007f3e0151b420 in l2_mac_mon_process () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:542
+warning: Could not find DWO CU /build/bcmsdk-6.5.31/build/unix-user/x86-smp_generic_64-2_6/src/shared/shr_thread.dwo(0xd94bf6eb1c0f017) referenced by CU at offset 0x4add8 [in module /usr/lib/debug/.build-id/62/c34
+7b85725413fdd15838b2703db03d35a81b6.debug]
+#2  0x00007f3e0318bf39 in tc_thread () at /build/bcmsdk-6.5.31/src/shared/shr_thread.c:218
+warning: Could not find DWO CU /build/bcmsdk-6.5.31/build/unix-user/x86-smp_generic_64-2_6/src/sal/core/unix/thread.dwo(0x8bd0f6f1941447c9) referenced by CU at offset 0x4a818 [in module /usr/lib/debug/.build-id/62
+/c347b85725413fdd15838b2703db03d35a81b6.debug]
+#3  0x00007f3e0314a86f in thread_boot () at /build/bcmsdk-6.5.31/src/sal/core/unix/thread.c:213
+#4  0x00007f3fc69d1fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#5  0x00007f3fc5f5806f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) bt full
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+No locals.
+#1  0x00007f3e0151b420 in l2_mac_mon_process () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:542
+No locals.
+#2  0x00007f3e0318bf39 in tc_thread () at /build/bcmsdk-6.5.31/src/shared/shr_thread.c:218
+No locals.
+#3  0x00007f3e0314a86f in thread_boot () at /build/bcmsdk-6.5.31/src/sal/core/unix/thread.c:213
+No locals.
+#4  0x00007f3fc69d1fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+No symbol table info available.
+#5  0x00007f3fc5f5806f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+(gdb) file /usr/lib/arcos/dpal.bin
+warning: exec file is newer than core file.
+Load new symbol table from "/usr/lib/arcos/dpal.bin"? (y or n) n
+Not confirmed.
+(gdb) file /usr/lib/arcos/dpal.biQuit
+(gdb) q
+root@TD4-x11-016:~# gdb /usr/lib/arcos/dpal.bin -c core.0.MacMon.0.4863
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/lib/arcos/dpal.bin...Reading symbols from /usr/lib/debug/.build-id/92/eb068776ec25b7cf2bf5f24d5eb94a02dadc23.debug...done.
+done.
+
+warning: exec file is newer than core file.
+[New LWP 6407]
+[New LWP 4905]
+[New LWP 5276]
+[New LWP 5280]
+[New LWP 4904]
+[New LWP 5282]
+[New LWP 5287]
+[New LWP 5281]
+[New LWP 6107]
+[New LWP 6110]
+[New LWP 6238]
+[New LWP 6117]
+[New LWP 6237]
+[New LWP 6256]
+[New LWP 5286]
+[New LWP 5284]
+[New LWP 6250]
+[New LWP 5283]
+[New LWP 6590]
+[New LWP 6298]
+[New LWP 6108]
+[New LWP 5654]
+[New LWP 6128]
+[New LWP 6248]
+[New LWP 6299]
+[New LWP 6249]
+[New LWP 6260]
+[New LWP 5289]
+[New LWP 6262]
+[New LWP 6246]
+[New LWP 6366]
+[New LWP 6343]
+[New LWP 6251]
+[New LWP 6257]
+[New LWP 6127]
+[New LWP 6239]
+[New LWP 6321]
+[New LWP 6604]
+[New LWP 6367]
+[New LWP 6314]
+[New LWP 6363]
+[New LWP 4863]
+[New LWP 5653]
+[New LWP 6253]
+[New LWP 6364]
+[New LWP 6247]
+[New LWP 6408]
+[New LWP 6571]
+[New LWP 6591]
+[New LWP 6365]
+[New LWP 6252]
+[New LWP 6371]
+[New LWP 6375]
+[New LWP 6258]
+[New LWP 6640]
+[New LWP 6639]
+[New LWP 6259]
+[New LWP 6631]
+[New LWP 6376]
+[New LWP 6370]
+[New LWP 6573]
+[New LWP 6109]
+[New LWP 6592]
+[New LWP 6638]
+[New LWP 6369]
+[New LWP 6630]
+[New LWP 6632]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+c347b85725413fdd15838b2703db03d35a81b6.debug]
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+851     /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c: No such file or directory.
+[Current thread is 1 (Thread 0x7f3ed403f700 (LWP 6407))]
+warning: Missing auto-load script at offset 0 in section .debug_gdb_scripts
+of file /usr/lib/debug/.build-id/1f/bda37184836b904314685c56dc0b3931f797f7.debug.
+Use `info auto-load python-scripts [REGEXP]' to list them.
+(gdb) file /usr/lib/arcos/dpal.bin
+warning: exec file is newer than core file.
+Load new symbol table from "/usr/lib/arcos/dpal.bin"? (y or n) y
+Reading symbols from /usr/lib/arcos/dpal.bin...Load new symbol table from "/usr/lib/debug/.build-id/92/eb068776ec25b7cf2bf5f24d5eb94a02dadc23.debug"? (y or n) y
+Reading symbols from /usr/lib/debug/.build-id/92/eb068776ec25b7cf2bf5f24d5eb94a02dadc23.debug...done.
+done.
+(gdb) bt
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+#1  0x00007f3e0151b420 in l2_mac_mon_process () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:542
+warning: Could not find DWO CU /build/bcmsdk-6.5.31/build/unix-user/x86-smp_generic_64-2_6/src/shared/shr_thread.dwo(0xd94bf6eb1c0f017) referenced by CU at offset 0x4add8 [in module /usr/lib/debug/.build-id/62/c34
+7b85725413fdd15838b2703db03d35a81b6.debug]
+#2  0x00007f3e0318bf39 in tc_thread () at /build/bcmsdk-6.5.31/src/shared/shr_thread.c:218
+warning: Could not find DWO CU /build/bcmsdk-6.5.31/build/unix-user/x86-smp_generic_64-2_6/src/sal/core/unix/thread.dwo(0x8bd0f6f1941447c9) referenced by CU at offset 0x4a818 [in module /usr/lib/debug/.build-id/62
+/c347b85725413fdd15838b2703db03d35a81b6.debug]
+#3  0x00007f3e0314a86f in thread_boot () at /build/bcmsdk-6.5.31/src/sal/core/unix/thread.c:213
+#4  0x00007f3fc69d1fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#5  0x00007f3fc5f5806f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) bt full
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+No locals.
+#1  0x00007f3e0151b420 in l2_mac_mon_process () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:542
+No locals.
+#2  0x00007f3e0318bf39 in tc_thread () at /build/bcmsdk-6.5.31/src/shared/shr_thread.c:218
+No locals.
+#3  0x00007f3e0314a86f in thread_boot () at /build/bcmsdk-6.5.31/src/sal/core/unix/thread.c:213
+No locals.
+#4  0x00007f3fc69d1fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+No symbol table info available.
+#5  0x00007f3fc5f5806f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+(gdb) disassemble bcmi_l2_mac_move_mon_feature_start_get
+Dump of assembler code for function bcmi_l2_mac_move_mon_feature_start_get:
+   0x00007f3e0151a900 <+0>:     push   %rbp
+   0x00007f3e0151a901 <+1>:     push   %rbx
+   0x00007f3e0151a902 <+2>:     movslq %edi,%rbx
+   0x00007f3e0151a905 <+5>:     mov    %rbx,%rdi
+   0x00007f3e0151a908 <+8>:     lea    0x181be831(%rip),%rbx        # 0x7f3e196d9140 <mac_move_mon_cfg>
+   0x00007f3e0151a90f <+15>:    shl    $0x5,%rdi
+   0x00007f3e0151a913 <+19>:    add    %rdi,%rbx
+   0x00007f3e0151a916 <+22>:    sub    $0x8,%rsp
+   0x00007f3e0151a91a <+26>:    mov    0x18(%rbx),%rbp
+   0x00007f3e0151a91e <+30>:    mov    (%rbx),%rdi
+   0x00007f3e0151a921 <+33>:    callq  0x7f3dff938590 <sal_spinlock_lock@plt>
+=> 0x00007f3e0151a926 <+38>:    mov    0xc(%rbp),%ebp
+   0x00007f3e0151a929 <+41>:    mov    (%rbx),%rdi
+   0x00007f3e0151a92c <+44>:    callq  0x7f3dff963610 <sal_spinlock_unlock@plt>
+   0x00007f3e0151a931 <+49>:    and    $0x2,%ebp
+   0x00007f3e0151a934 <+52>:    test   %ebp,%ebp
+   0x00007f3e0151a936 <+54>:    setne  %al
+   0x00007f3e0151a939 <+57>:    add    $0x8,%rsp
+   0x00007f3e0151a93d <+61>:    pop    %rbx
+   0x00007f3e0151a93e <+62>:    pop    %rbp
+   0x00007f3e0151a93f <+63>:    retq
+End of assembler dump.
+(gdb) q
+root@TD4-x11-016:~# gdb /usr/lib/arcos/dpal.bin -c core.0.MacMon.0.4863
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/lib/arcos/dpal.bin...Reading symbols from /usr/lib/debug/.build-id/92/eb068776ec25b7cf2bf5f24d5eb94a02dadc23.debug...done.
+done.
+
+warning: exec file is newer than core file.
+[New LWP 6407]
+[New LWP 4905]
+[New LWP 5276]
+[New LWP 5280]
+[New LWP 4904]
+[New LWP 5282]
+[New LWP 5287]
+[New LWP 5281]
+[New LWP 6107]
+[New LWP 6110]
+[New LWP 6238]
+[New LWP 6117]
+[New LWP 6237]
+[New LWP 6256]
+[New LWP 5286]
+[New LWP 5284]
+[New LWP 6250]
+[New LWP 5283]
+[New LWP 6590]
+[New LWP 6298]
+[New LWP 6108]
+[New LWP 5654]
+[New LWP 6128]
+[New LWP 6248]
+[New LWP 6299]
+[New LWP 6249]
+[New LWP 6260]
+[New LWP 5289]
+[New LWP 6262]
+[New LWP 6246]
+[New LWP 6366]
+[New LWP 6343]
+[New LWP 6251]
+[New LWP 6257]
+[New LWP 6127]
+[New LWP 6239]
+[New LWP 6321]
+[New LWP 6604]
+[New LWP 6367]
+[New LWP 6314]
+[New LWP 6363]
+[New LWP 4863]
+[New LWP 5653]
+[New LWP 6253]
+[New LWP 6364]
+[New LWP 6247]
+[New LWP 6408]
+[New LWP 6571]
+[New LWP 6591]
+[New LWP 6365]
+[New LWP 6252]
+[New LWP 6371]
+[New LWP 6375]
+[New LWP 6258]
+[New LWP 6640]
+[New LWP 6639]
+[New LWP 6259]
+[New LWP 6631]
+[New LWP 6376]
+[New LWP 6370]
+[New LWP 6573]
+[New LWP 6109]
+[New LWP 6592]
+[New LWP 6638]
+[New LWP 6369]
+[New LWP 6630]
+[New LWP 6632]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+c347b85725413fdd15838b2703db03d35a81b6.debug]
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+851     /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c: No such file or directory.
+[Current thread is 1 (Thread 0x7f3ed403f700 (LWP 6407))]
+warning: Missing auto-load script at offset 0 in section .debug_gdb_scripts
+of file /usr/lib/debug/.build-id/1f/bda37184836b904314685c56dc0b3931f797f7.debug.
+Use `info auto-load python-scripts [REGEXP]' to list them.
+(gdb) bt full
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+No locals.
+#1  0x00007f3e0151b420 in l2_mac_mon_process () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:542
+No locals.
+warning: Could not find DWO CU /build/bcmsdk-6.5.31/build/unix-user/x86-smp_generic_64-2_6/src/shared/shr_thread.dwo(0xd94bf6eb1c0f017) referenced by CU at offset 0x4add8 [in module /usr/lib/debug/.build-id/62/c34
+7b85725413fdd15838b2703db03d35a81b6.debug]
+#2  0x00007f3e0318bf39 in tc_thread () at /build/bcmsdk-6.5.31/src/shared/shr_thread.c:218
+No locals.
+warning: Could not find DWO CU /build/bcmsdk-6.5.31/build/unix-user/x86-smp_generic_64-2_6/src/sal/core/unix/thread.dwo(0x8bd0f6f1941447c9) referenced by CU at offset 0x4a818 [in module /usr/lib/debug/.build-id/62
+/c347b85725413fdd15838b2703db03d35a81b6.debug]
+#3  0x00007f3e0314a86f in thread_boot () at /build/bcmsdk-6.5.31/src/sal/core/unix/thread.c:213
+No locals.
+#4  0x00007f3fc69d1fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+No symbol table info available.
+#5  0x00007f3fc5f5806f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+(gdb) disassemble bcmi_l2_mac_move_mon_feature_start_get
+Dump of assembler code for function bcmi_l2_mac_move_mon_feature_start_get:
+   0x00007f3e0151a900 <+0>:     push   %rbp
+   0x00007f3e0151a901 <+1>:     push   %rbx
+   0x00007f3e0151a902 <+2>:     movslq %edi,%rbx
+   0x00007f3e0151a905 <+5>:     mov    %rbx,%rdi
+   0x00007f3e0151a908 <+8>:     lea    0x181be831(%rip),%rbx        # 0x7f3e196d9140 <mac_move_mon_cfg>
+   0x00007f3e0151a90f <+15>:    shl    $0x5,%rdi
+   0x00007f3e0151a913 <+19>:    add    %rdi,%rbx
+   0x00007f3e0151a916 <+22>:    sub    $0x8,%rsp
+   0x00007f3e0151a91a <+26>:    mov    0x18(%rbx),%rbp
+   0x00007f3e0151a91e <+30>:    mov    (%rbx),%rdi
+   0x00007f3e0151a921 <+33>:    callq  0x7f3dff938590 <sal_spinlock_lock@plt>
+=> 0x00007f3e0151a926 <+38>:    mov    0xc(%rbp),%ebp
+   0x00007f3e0151a929 <+41>:    mov    (%rbx),%rdi
+   0x00007f3e0151a92c <+44>:    callq  0x7f3dff963610 <sal_spinlock_unlock@plt>
+   0x00007f3e0151a931 <+49>:    and    $0x2,%ebp
+   0x00007f3e0151a934 <+52>:    test   %ebp,%ebp
+   0x00007f3e0151a936 <+54>:    setne  %al
+   0x00007f3e0151a939 <+57>:    add    $0x8,%rsp
+   0x00007f3e0151a93d <+61>:    pop    %rbx
+   0x00007f3e0151a93e <+62>:    pop    %rbp
+   0x00007f3e0151a93f <+63>:    retq
+End of assembler dump.
+(gdb) print $rdi
+$1 = 139903939251120
+(gdb) print $edi
+$2 = -325448784
+(gdb) info registers
+rax            0x0                 0
+rbx            0x7f3e196d9140      139904691310912
+rcx            0x0                 0
+rdx            0x7f3ed403e370      139907821724528
+rsi            0x0                 0
+rdi            0x7f3dec9a0bb0      139903939251120
+rbp            0x7f3d9b4439d0      0x7f3d9b4439d0
+rsp            0x7f3ed403e2f0      0x7f3ed403e2f0
+r8             0x0                 0
+r9             0xffffffff          4294967295
+r10            0x7f3ed403e2c0      139907821724352
+r11            0x246               582
+r12            0x7f3ded562b78      139903951580024
+r13            0x7f3dec977901      139903939082497
+r14            0x0                 0
+r15            0x0                 0
+rip            0x7f3e0151a926      0x7f3e0151a926 <bcmi_l2_mac_move_mon_feature_start_get+38>
+eflags         0x10246             [ PF ZF IF RF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x0                 0
+k1             0x0                 0
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+(gdb) bt
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+#1  0x00007f3e0151b420 in l2_mac_mon_process () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:542
+#2  0x00007f3e0318bf39 in tc_thread () at /build/bcmsdk-6.5.31/src/shared/shr_thread.c:218
+#3  0x00007f3e0314a86f in thread_boot () at /build/bcmsdk-6.5.31/src/sal/core/unix/thread.c:213
+#4  0x00007f3fc69d1fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#5  0x00007f3fc5f5806f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) frame 0
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+851     in /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c
+(gdb) info registers
+rax            0x0                 0
+rbx            0x7f3e196d9140      139904691310912
+rcx            0x0                 0
+rdx            0x7f3ed403e370      139907821724528
+rsi            0x0                 0
+rdi            0x7f3dec9a0bb0      139903939251120
+rbp            0x7f3d9b4439d0      0x7f3d9b4439d0
+rsp            0x7f3ed403e2f0      0x7f3ed403e2f0
+r8             0x0                 0
+r9             0xffffffff          4294967295
+r10            0x7f3ed403e2c0      139907821724352
+r11            0x246               582
+r12            0x7f3ded562b78      139903951580024
+r13            0x7f3dec977901      139903939082497
+r14            0x0                 0
+r15            0x0                 0
+rip            0x7f3e0151a926      0x7f3e0151a926 <bcmi_l2_mac_move_mon_feature_start_get+38>
+eflags         0x10246             [ PF ZF IF RF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x0                 0
+k1             0x0                 0
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+(gdb) print $rdi
+$3 = 139903939251120
+(gdb) bt
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+#1  0x00007f3e0151b420 in l2_mac_mon_process () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:542
+#2  0x00007f3e0318bf39 in tc_thread () at /build/bcmsdk-6.5.31/src/shared/shr_thread.c:218
+#3  0x00007f3e0314a86f in thread_boot () at /build/bcmsdk-6.5.31/src/sal/core/unix/thread.c:213
+#4  0x00007f3fc69d1fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#5  0x00007f3fc5f5806f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) frame 1
+#1  0x00007f3e0151b420 in l2_mac_mon_process () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:542
+542     in /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c
+(gdb) info registers
+rax            0x0                 0
+rbx            0x7f3e196d9380      139904691311488
+rcx            0x0                 0
+rdx            0x7f3ed403e370      139907821724528
+rsi            0x0                 0
+rdi            0x7f3dec9a0bb0      139903939251120
+rbp            0x3e                0x3e
+rsp            0x7f3ed403e310      0x7f3ed403e310
+r8             0x0                 0
+r9             0xffffffff          4294967295
+r10            0x7f3ed403e2c0      139907821724352
+r11            0x246               582
+r12            0x7f3ded562b78      139903951580024
+r13            0x7f3dec977901      139903939082497
+r14            0x0                 0
+r15            0x0                 0
+rip            0x7f3e0151b420      0x7f3e0151b420 <l2_mac_mon_process+2784>
+eflags         0x10246             [ PF ZF IF RF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x0                 0
+k1             0x0                 0
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+(gdb) frame 0
+#0  bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:851
+851     in /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c
+(gdb) print $edi
+$4 = -325448784
+(gdb) print $rdi
+$5 = 139903939251120
+(gdb)
+
