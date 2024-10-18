@@ -547,3 +547,185 @@ $4 = -325448784
 $5 = 139903939251120
 (gdb)
 
+root@TD4-x11-016:~# gdb /usr/lib/arcos/dpal.bin -p $(pidof dpal.bin)
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/lib/arcos/dpal.bin...Reading symbols from /usr/lib/debug/.build-id/92/eb068776ec25b7cf2bf5f24d5eb94a02dadc23.debug...done.
+done.
+Attaching to program: /usr/lib/arcos/dpal.bin, process 5008
+[New LWP 5029]
+[New LWP 5030]
+[New LWP 5320]
+[New LWP 5321]
+[New LWP 5322]
+[New LWP 5330]
+[New LWP 5331]
+[New LWP 5332]
+[New LWP 5333]
+[New LWP 5334]
+[New LWP 5335]
+[New LWP 5540]
+[New LWP 5541]
+[New LWP 6161]
+[New LWP 6162]
+[New LWP 6163]
+[New LWP 6164]
+[New LWP 6165]
+[New LWP 6206]
+[New LWP 6207]
+[New LWP 6275]
+[New LWP 6276]
+[New LWP 6277]
+[New LWP 6285]
+[New LWP 6286]
+[New LWP 6287]
+[New LWP 6288]
+[New LWP 6289]
+[New LWP 6290]
+[New LWP 6291]
+[New LWP 6292]
+[New LWP 6311]
+[New LWP 6312]
+[New LWP 6313]
+[New LWP 6314]
+[New LWP 6315]
+[New LWP 6316]
+[New LWP 6317]
+[New LWP 6318]
+[New LWP 6319]
+[New LWP 6320]
+[New LWP 6321]
+[New LWP 6330]
+[New LWP 6331]
+[New LWP 6332]
+[New LWP 6333]
+[New LWP 6334]
+[New LWP 6335]
+[New LWP 6336]
+[New LWP 6337]
+[New LWP 6338]
+[New LWP 6339]
+[New LWP 6350]
+[New LWP 6356]
+[New LWP 6479]
+[New LWP 6494]
+[New LWP 6495]
+[New LWP 6496]
+[New LWP 6497]
+[New LWP 6499]
+[New LWP 6543]
+[New LWP 6544]
+[New LWP 6545]
+[New LWP 6551]
+[New LWP 6552]
+[New LWP 6553]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f7ea30b238f in epoll_wait () from /lib/x86_64-linux-gnu/libc.so.6
+warning: Missing auto-load script at offset 0 in section .debug_gdb_scripts
+of file /usr/lib/debug/.build-id/1f/bda37184836b904314685c56dc0b3931f797f7.debug.
+Use `info auto-load python-scripts [REGEXP]' to list them.
+(gdb) break bcmi_l2_mac_move_mon_feature_start_get
+warning: Could not find DWO CU /build/bcmsdk-6.5.31/build/unix-user/x86-smp_generic_64-2_6/src/bcm/ltsw/l2_mac_mon.dwo(0xf60ea763cb6ff6e0) referenced by CU at offset 0x331e0 [in module /usr/lib/debug/.build-id/62/c347b85725413fdd15838b2703db03d35a81b6.debug]
+Breakpoint 1 at 0x7f7ce151a900: file /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c, line 845.
+(gdb) cont
+Continuing.
+[Switching to Thread 0x7f7d08084700 (LWP 6350)]
+
+Thread 54 "MacMon.0" hit Breakpoint 1, bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:845
+845     /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c: No such file or directory.
+(gdb) info register
+rax            0x0                 0
+rbx            0x0                 0
+rcx            0x0                 0
+rdx            0x7f7d08083370      140174982394736
+rsi            0x0                 0
+rdi            0x0                 0
+rbp            0x3e                0x3e
+rsp            0x7f7d08083308      0x7f7d08083308
+r8             0x0                 0
+r9             0xffffffff          4294967295
+r10            0x7f7d080832c0      140174982394560
+r11            0x246               582
+r12            0x7f7ce318bec0      140174362721984
+r13            0x7f7cd49779e8      140174119369192
+r14            0x7f7cf96d9380      140174737380224
+r15            0x0                 0
+rip            0x7f7ce151a900      0x7f7ce151a900 <bcmi_l2_mac_move_mon_feature_start_get>
+eflags         0x246               [ PF ZF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x0                 0
+k1             0x0                 0
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+(gdb) cont
+Continuing.
+
+Thread 54 "MacMon.0" hit Breakpoint 1, bcmi_l2_mac_move_mon_feature_start_get () at /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c:845
+845     in /build/bcmsdk-6.5.31/src/bcm/ltsw/l2_mac_mon.c
+(gdb) info register
+rax            0x0                 0
+rbx            0x0                 0
+rcx            0x0                 0
+rdx            0x7f7d08083370      140174982394736
+rsi            0x0                 0
+rdi            0x0                 0
+rbp            0x3e                0x3e
+rsp            0x7f7d08083308      0x7f7d08083308
+r8             0x0                 0
+r9             0xffffffff          4294967295
+r10            0x7f7d080832c0      140174982394560
+r11            0x246               582
+r12            0x7f7ce318bec0      140174362721984
+r13            0x7f7cd49779e8      140174119369192
+r14            0x7f7cf96d9380      140174737380224
+r15            0x0                 0
+rip            0x7f7ce151a900      0x7f7ce151a900 <bcmi_l2_mac_move_mon_feature_start_get>
+eflags         0x246               [ PF ZF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x0                 0
+k1             0x0                 0
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 5008] will be detached.
+
+Quit anyway? (y or n) y
+Detaching from program: /usr/lib/arcos/dpal.bin, process 5008
+[Inferior 1 (process 5008) detached]
+root@TD4-x11-016:~#
+root@TD4-x11-016:~#
+
