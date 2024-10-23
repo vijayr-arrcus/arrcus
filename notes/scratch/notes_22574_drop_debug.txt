@@ -1,0 +1,326 @@
+SIP --> 10.176.0.101
+DIP --> 11.176.0.101
+
+
+BCM.0>
+BCM.0> l3 l3table show
+l3 l3table show
+Unit 0, free L3 table entries: 16111
+Entry VRF IP address       Mac Address           INTF MOD PORT    CLASS HIT    H/W Index
+1     0    11.176.0.113     00:00:00:00:00:00  100011    0    0         0 y      24
+2     0    10.176.245.101   00:00:00:00:00:00  200260    0    0         3 y      52         (ECMP)
+3     0    10.176.247.84    00:00:00:00:00:00  200260    0    0         3 y      172        (ECMP)
+4     0    10.179.0.114     00:00:00:00:00:00  200260    0    0         3 y      176        (ECMP)
+5     0    11.176.0.79      00:00:00:00:00:00  100019    0    0         3 y      184
+6     0    10.176.248.98    00:00:00:00:00:00  200260    0    0         3 y      192        (ECMP)
+7     0    13.176.0.81      00:00:00:00:00:00  200260    0    0         3 y      240        (ECMP)
+8     0    10.176.245.81    00:00:00:00:00:00  200260    0    0         3 y      264        (ECMP)
+9     0    10.183.106.213   00:00:00:00:00:00  100011    0    0         3 y      340
+10    0    10.176.245.111   00:00:00:00:00:00  200260    0    0         3 y      352        (ECMP)
+11    0    10.176.246.109   00:00:00:00:00:00  100041    0    0         0 y      356
+12    0    10.178.112.104   00:00:00:00:00:00  200260    0    0         3 y      372        (ECMP)
+13    0    10.88.2.234      00:00:00:00:00:00  100035    0    0         3 y      404
+14    0    11.176.112.73    00:00:00:00:00:00  100040    0    0         0 y      432
+15    0    10.176.0.74      00:00:00:00:00:00  200260    0    0         3 y      476        (ECMP)
+16    0    10.176.248.108   00:00:00:00:00:00  200260    0    0         3 y      528        (ECMP)
+17    0    10.88.2.170      00:00:00:00:00:00  100034    0    0         3 y      552
+18    0    13.178.112.112   00:00:00:00:00:00  200260    0    0         3 y      556        (ECMP)
+19    0    10.176.245.80    00:00:00:00:00:00  200260    0    0         3 y      576        (ECMP)
+20    0    10.176.248.76    00:00:00:00:00:00  200260    0    0         3 y      588        (ECMP)
+21    0    11.176.0.101     00:00:00:00:00:00  100005    0    0         3 y      640
+
+
+BCM.0>
+BCM.0> l3 egress show
+l3 egress show
+Entry  Mac                 Vlan INTF PORT MOD MPLS_LABEL ToCpu Drop RefCount L3MC
+100002  00:00:00:00:00:00    0 16383     0    0        -1   no   no   14   no
+100003  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    2   no
+100004  00:00:00:00:00:00    0 16383     0    0        -1   no  yes    0   no
+100005  00:00:00:00:00:00    5 16383     0    0        -1   no   no    2   no
+100006  00:12:00:00:00:0a    5    5   123    0        -1   no   no    3   no
+100007  00:12:01:00:00:06    5    5   127    0        -1   no   no    3   no
+100008  00:12:00:00:00:0f    5    5   123    0        -1   no   no    3   no
+100009  00:12:01:00:00:09    5    5   127    0        -1   no   no    3   no
+100010  00:12:01:00:00:0c    5    5   127    0        -1   no   no    3   no
+100011  00:12:00:00:00:0d    5    5   123    0        -1   no   no    3   no
+100013  00:12:00:00:00:0c    5    5   123    0        -1   no   no    3   no
+
+
+
+BCM.0> l3 intf show
+l3 intf show
+Free L3INTF entries: 16377
+Unit  Intf  VRF Group VLAN    Source Mac     MTU TTL Tunnel InnerVlan  NATRealm
+------------------------------------------------------------------
+0     1     0     0     3966 68:21:5f:b7:21:11  9188 0    0     0     0
+0     2     0     0     3967 68:21:5f:b7:21:11  9188 0    0     0     0
+0     3     0     0     3968 68:21:5f:b7:21:11  9188 0    0     0     0
+0     4     0     0     3969 68:21:5f:b7:21:11  9188 0    0     0     0
+0     5     0     0     30   68:21:5f:b7:21:11  8974 0    0     0     0
+BCM.0>
+
+
+
+root@Leaf2# show network-instance default rib IPV4 ipv4-entries entry 11.176.0.101/32
+ipv4-entries entry 11.176.0.101/32
+ best-protocol BGP
+ hw-update install-ack false
+ hw-update status-code 0
+ hw-update version 0
+ origin BGP
+  metric       0
+  pref         20
+  tag          0
+  route-type   EBGP
+  nhid         100
+  last-updated 2024-10-23T02:32:18.208614-00:00
+  flags        ""
+  opaque-data  0
+  next-hop
+                                                                      PUSHED
+                                                                      MPLS    NH
+                              NETWORK                                 LABEL   TUNNEL  VNI  RTEP
+PATHID  TYPE  NEXT HOP        INSTANCE  INTERFACE  WEIGHT  FLAGS      STACK   ID      ID   MAC
+-------------------------------------------------------------------------------------------------
+99      IPV4  10.183.106.201  default   -          100     RECURSIVE  -       -       -    -
+
+root@Leaf2#
+
+
+root@Leaf2# show network-instance default fib IPV4 ipv4-prefix-entry 11.176.0.101/32
+ipv4-prefix-entry 11.176.0.101/32
+ ipv4-prefix-entry
+                 QOS             NEXT
+                 CLASS  LOCATOR  HOP   PUBLISH  PUBLISH
+PREFIX           ID     ARGS     ID    TYPE     ID
+---------------------------------------------------------
+11.176.0.101/32  -      -        100   PATH     220
+
+root@Leaf2#
+
+
+root@Leaf2# show network-instance default fib IPV4 ipv4-nexthop-entry 100
+ipv4-nexthop-entry 100
+ ipv4-nexthop-entry
+       EOS0     SOURCE                                                                                        NH      NH                                 NUM             IGP
+       NEXTHOP  NEXTHOP                             PROTECTION  PATH             NH                    PUSH   TUNNEL  TUNNEL  RTEP             NETWORK   COLL   IGP      PATH
+INDEX  INDEX    INDEX    LEVEL  FLAGS               TRACKER ID  ID    PATH TYPE  TYPE  NEXT HOP        LABEL  ID      VNI ID  MAC   INTERFACE  INSTANCE  PATHS  PATH ID  TYPE  BACKUP
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+100    -        -        2      RECURSIVE,IP_REACH  -           99    RECURSIVE  IPV4  10.183.106.201  -      -       -       -     -          default   1      [ 220 ]  -     -
+
+root@Leaf2# show network-instance default fib ipv4 ipv4-prefix-entry 10.183.106.201/32
+ipv4-prefix-entry 10.183.106.201/32
+ ipv4-prefix-entry
+                   QOS             NEXT
+                   CLASS  LOCATOR  HOP   PUBLISH  PUBLISH
+PREFIX             ID     ARGS     ID    TYPE     ID
+-----------------------------------------------------------
+10.183.106.201/32  -      -        221   PATH     220
+
+root@Leaf2#
+
+
+root@Leaf2# show network-instance default fib ipv4 ipv4-path 220
+ipv4-path 220
+ ipv4-path
+                                                                                         MPLS
+PATH                NETWORK   NH       NH                                        TUNNEL  LABEL
+ID    PATH TYPE     INSTANCE  TABLEID  TYPE  NEXT HOP        INTERFACE  IFINDEX  ID      STACK  FLAGS  BACKUP  REFCOUNT  LEVEL
+--------------------------------------------------------------------------------------------------------------------------------
+220   CONNECTED_V4  default   1        IPV4  10.183.106.201  vlan30     20006    -       -             -       1         1
+
+root@Leaf2#
+
+
+root@Leaf2#
+root@Leaf2#
+root@Leaf2#
+root@Leaf2# show arp
+arp-entries arp-entry
+IP              IFNAME  HWADDR             LAST UPDATED                      AGE          STATE
+-----------------------------------------------------------------------------------------------------
+10.88.2.170     swp49   74:d4:dd:51:c6:92  2024-10-22T21:57:19.035461-00:00  0d 01:53:04  -
+10.88.2.234     swp50   74:d4:dd:51:c6:92  2024-10-22T21:57:19.036062-00:00  0d 01:53:04  -
+10.88.0.170     swp51   c0:18:50:eb:b7:33  2024-10-22T21:59:19.562882-00:00  0d 01:51:03  -
+10.88.0.234     swp52   c0:18:50:eb:b7:33  2024-10-22T21:59:19.562079-00:00  0d 01:51:03  -
+10.183.106.170  vlan30  00:12:01:00:00:01  2024-10-23T02:32:18.172777-00:00  0d 01:18:05  REACHABLE
+10.183.106.171  vlan30  00:12:01:00:00:02  2024-10-23T02:32:18.172377-00:00  0d 01:18:05  REACHABLE
+10.183.106.173  vlan30  00:12:01:00:00:03  2024-10-23T02:32:18.172803-00:00  0d 01:18:05  REACHABLE
+10.183.106.174  vlan30  00:12:01:00:00:04  2024-10-23T02:32:18.173708-00:00  0d 01:18:05  REACHABLE
+10.183.106.176  vlan30  00:12:01:00:00:05  2024-10-23T02:32:18.174278-00:00  0d 01:18:05  REACHABLE
+10.183.106.177  vlan30  00:12:01:00:00:06  2024-10-23T02:32:18.174242-00:00  0d 01:18:05  REACHABLE
+10.183.106.178  vlan30  00:12:01:00:00:07  2024-10-23T02:32:18.174318-00:00  0d 01:18:05  REACHABLE
+10.183.106.179  vlan30  00:12:01:00:00:08  2024-10-23T02:32:18.17429-00:00   0d 01:18:05  REACHABLE
+10.183.106.180  vlan30  00:12:01:00:00:09  2024-10-23T02:32:18.171541-00:00  0d 01:18:05  REACHABLE
+10.183.106.181  vlan30  00:12:01:00:00:0a  2024-10-23T02:32:18.174343-00:00  0d 01:18:05  REACHABLE
+10.183.106.184  vlan30  00:12:01:00:00:0b  2024-10-23T02:32:18.172973-00:00  0d 01:18:05  REACHABLE
+10.183.106.198  vlan30  00:12:01:00:00:0c  2024-10-23T02:32:18.173868-00:00  0d 01:18:05  REACHABLE
+10.183.106.199  vlan30  00:12:01:00:00:0d  2024-10-23T02:32:18.173582-00:00  0d 01:18:05  REACHABLE
+10.183.106.201  vlan30  00:12:00:00:00:01  2024-10-23T02:32:18.174265-00:00  0d 01:18:05  REACHABLE
+10.183.106.202  vlan30  00:12:00:00:00:02  2024-10-23T02:32:18.174331-00:00  0d 01:18:05  REACHABLE
+10.183.106.203  vlan30  00:12:00:00:00:03  2024-10-23T02:32:18.174303-00:00  0d 01:18:05  REACHABLE
+10.183.106.204  vlan30  00:12:00:00:00:04  2024-10-23T02:32:18.174384-00:00  0d 01:18:05  REACHABLE
+10.183.106.205  vlan30  00:12:00:00:00:05  2024-10-23T02:32:18.174357-00:00  0d 01:18:05  REACHABLE
+10.183.106.206  vlan30  00:12:00:00:00:06  2024-10-23T02:32:18.174408-00:00  0d 01:18:05  REACHABLE
+10.183.106.207  vlan30  00:12:00:00:00:07  2024-10-23T02:32:18.174396-00:00  0d 01:18:05  REACHABLE
+10.183.106.208  vlan30  00:12:00:00:00:08  2024-10-23T02:32:18.173043-00:00  0d 01:18:05  REACHABLE
+10.183.106.209  vlan30  00:12:00:00:00:09  2024-10-23T02:32:18.172817-00:00  0d 01:18:05  REACHABLE
+10.183.106.210  vlan30  00:12:00:00:00:0a  2024-10-23T02:32:18.173825-00:00  0d 01:18:05  REACHABLE
+10.183.106.211  vlan30  00:12:00:00:00:0b  2024-10-23T02:32:18.173293-00:00  0d 01:18:05  REACHABLE
+10.183.106.212  vlan30  00:12:00:00:00:0c  2024-10-23T02:32:18.173907-00:00  0d 01:18:05  REACHABLE
+10.183.106.213  vlan30  00:12:00:00:00:0d  2024-10-23T02:32:18.173892-00:00  0d 01:18:05  REACHABLE
+10.183.106.214  vlan30  00:12:00:00:00:0e  2024-10-23T02:32:18.173933-00:00  0d 01:18:05  REACHABLE
+10.183.106.215  vlan30  00:12:00:00:00:0f  2024-10-23T02:32:18.17392-00:00   0d 01:18:05  REACHABLE
+10.183.106.216  vlan30  00:12:00:00:00:10  2024-10-23T02:32:18.174371-00:00  0d 01:18:05  REACHABLE
+
+root@Leaf2# show network-instance default fib IPV4 ipv4-adjacency
+ipv4-adjacency
+IF                LINK    VRF                                                             PATH
+INDEX  INTERFACE  STATUS  ID   IPADDR          HWADDR             L2IFINDEX  NHT IP       ID
+------------------------------------------------------------------------------------------------
+1024   swp24      DOWN    1
+1025   swp25      DOWN    1
+1026   swp26      DOWN    1
+1027   swp27      DOWN    1
+1028   swp28      DOWN    1
+1029   swp29      DOWN    1
+1030   swp30      DOWN    1
+1031   swp31      DOWN    1
+1032   swp32      DOWN    1
+1033   swp33      DOWN    1
+1034   swp34      DOWN    1
+1035   swp35      DOWN    1
+1036   swp36      DOWN    1
+1037   swp37      DOWN    1
+1038   swp38      DOWN    1
+1039   swp39      DOWN    1
+1040   swp40      DOWN    1
+1041   swp41      DOWN    1
+1042   swp42      DOWN    1
+1043   swp43      DOWN    1
+1044   swp44      DOWN    1
+1045   swp45      DOWN    1
+1046   swp46      DOWN    1
+1047   swp47      DOWN    1
+1048   swp48      DOWN    1
+1049   swp49      UP      1    10.88.2.170     74:d4:dd:51:c6:92  1049       10.88.2.170  93
+1050   swp50      UP      1    10.88.2.234     74:d4:dd:51:c6:92  1050       10.88.2.234  95
+1051   swp51      UP      1    10.88.0.170     c0:18:50:eb:b7:33  1051       10.88.0.170  176
+1052   swp52      UP      1    10.88.0.234     c0:18:50:eb:b7:33  1052       10.88.0.234  174
+1053   swp53      DOWN    1
+1054   swp54      DOWN    1
+1055   swp55      UP      1
+1056   swp56      UP      1
+20005  vlan1      DOWN    1
+20006  vlan30     UP      1    10.183.106.170  00:12:01:00:00:01  1056
+                               10.183.106.171  00:12:01:00:00:02  1056
+                               10.183.106.173  00:12:01:00:00:03  1056
+                               10.183.106.174  00:12:01:00:00:04  1056
+                               10.183.106.176  00:12:01:00:00:05  1056
+                               10.183.106.177  00:12:01:00:00:06  1056
+                               10.183.106.178  00:12:01:00:00:07  1056
+                               10.183.106.179  00:12:01:00:00:08  1056
+                               10.183.106.180  00:12:01:00:00:09  1056
+                               10.183.106.181  00:12:01:00:00:0a  1056
+                               10.183.106.184  00:12:01:00:00:0b  1056
+                               10.183.106.198  00:12:01:00:00:0c  1056
+                               10.183.106.199  00:12:01:00:00:0d  1056
+                               10.183.106.201  00:12:00:00:00:01  1055
+                               10.183.106.202  00:12:00:00:00:02  1055
+                               10.183.106.203  00:12:00:00:00:03  1055
+                               10.183.106.204  00:12:00:00:00:04  1055
+                               10.183.106.205  00:12:00:00:00:05  1055
+                               10.183.106.206  00:12:00:00:00:06  1055
+                               10.183.106.207  00:12:00:00:00:07  1055
+                               10.183.106.208  00:12:00:00:00:08  1055
+                               10.183.106.209  00:12:00:00:00:09  1055
+                               10.183.106.210  00:12:00:00:00:0a  1055
+                               10.183.106.211  00:12:00:00:00:0b  1055
+                               10.183.106.212  00:12:00:00:00:0c  1055
+                               10.183.106.213  00:12:00:00:00:0d  1055
+                               10.183.106.214  00:12:00:00:00:0e  1055
+                               10.183.106.215  00:12:00:00:00:0f  1055
+                               10.183.106.216  00:12:00:00:00:10  1055
+20007  loopback0  UP      1
+1001   swp1       DOWN    1
+1002   swp2       DOWN    1
+1003   swp3       DOWN    1
+1004   swp4       DOWN    1
+1005   swp5       DOWN    1
+1006   swp6       DOWN    1
+1007   swp7       DOWN    1
+1008   swp8       DOWN    1
+1009   swp9       DOWN    1
+1010   swp10      DOWN    1
+1011   swp11      DOWN    1
+1012   swp12      DOWN    1
+1013   swp13      DOWN    1
+1014   swp14      DOWN    1
+1015   swp15      DOWN    1
+1016   swp16      DOWN    1
+1017   swp17      DOWN    1
+1018   swp18      DOWN    1
+1019   swp19      DOWN    1
+1020   swp20      DOWN    1
+1021   swp21      DOWN    1
+1022   swp22      DOWN    1
+1023   swp23      DOWN    1
+
+root@Leaf2#
+
+
+root@Leaf2# show dpal object-type dpal-v4-route generic-entries entry vrf_id:1,prefix:10.183.106.201/32
+generic-entries entry vrf_id:1,prefix:10.183.106.201/32
+ entry
+                                                                                   PENDING  PENDING
+                                            ATTR  ATTR                             PARENT   PARENT
+KEY                                STATE    NAME  VALUE  PARENT TYPE   PARENT KEY  TYPE     KEY
+-----------------------------------------------------------------------------------------------------
+vrf_id:1,prefix:10.183.106.201/32  created               dpal-vrf      vrf_id:1
+                                                         dpal-nexthop  pathid:220
+
+root@Leaf2#
+
+root@Leaf2# show dpal object-type dpal-v4-route generic-entries entry vrf_id:1,prefix:11.176.0.101/32
+generic-entries entry vrf_id:1,prefix:11.176.0.101/32
+ entry
+                                                                                PENDING  PENDING
+                                          ATTR  ATTR                 PARENT     PARENT   PARENT
+KEY                              STATE    NAME  VALUE  PARENT TYPE   KEY        TYPE     KEY
+--------------------------------------------------------------------------------------------------
+vrf_id:1,prefix:11.176.0.101/32  created               dpal-vrf      vrf_id:1
+                                                       dpal-nexthop  pathid:23
+
+root@Leaf2#
+
+root@Leaf2# show dpal object-type dpal-nexthop generic-entries entry pathid:23
+generic-entries entry pathid:23
+ entry
+                                                                            PENDING  PENDING
+                                      ATTR                                  PARENT   PARENT
+KEY        STATE    ATTR NAME         VALUE   PARENT TYPE   PARENT KEY      TYPE     KEY
+----------------------------------------------------------------------------------------------
+pathid:23  created  path-hwid         100005
+                    path-l3intf-hwid  0       dpal-l3-intf  ifindex:0x4e26
+
+root@Leaf2# show dpal object-type bcm-xgs-route-v4 generic-entries entry vrf_id:1,prefix:11.176.0.101/32
+generic-entries entry vrf_id:1,prefix:11.176.0.101/32
+ entry
+                                                                             PENDING  PENDING
+                                          ATTR  ATTR                PARENT   PARENT   PARENT
+KEY                              STATE    NAME  VALUE  PARENT TYPE  KEY      TYPE     KEY
+-----------------------------------------------------------------------------------------------
+vrf_id:1,prefix:11.176.0.101/32  created               bcm-xgs-vrf  vrfId:1
+                                                       bcm-xgs-nh   nhid:23
+
+root@Leaf2#
+
+root@Leaf2# show dpal object-type bcm-xgs-nh generic-entries entry nhid:23
+generic-entries entry nhid:23
+ entry
+                                                 PENDING  PENDING
+                  ATTR  ATTR     PARENT  PARENT  PARENT   PARENT
+KEY      STATE    NAME  VALUE    TYPE    KEY     TYPE     KEY
+-------------------------------------------------------------------
+nhid:23  created  hwid  100005

@@ -1,0 +1,357 @@
+Continuing.
+[Switching to Thread 0x7fa8df5d4700 (LWP 5711)]
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fda47b in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<synthetic pointer>, ifindex=106102872080387)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h:623
+623     /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h: No such file or directory.
+(gdb) bt
+#0  0x00007fa900fda47b in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (vlan=<synthetic pointer>,
+    ifindex=106102872080387)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h:623
+#1  bcmsdk_l3_intf_get_batch_int_data_api (count=count@entry=1 '\001', batch=batch@entry=0x61d000247280,
+    batch_rc=batch_rc@entry=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:2803
+#2  0x00007fa900ee9690 in bcmsdk_fetch_int_data (ctxt=<optimized out>, keys=<optimized out>, count=1,
+    data=0x61d000245550, type=<optimized out>, batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:431
+#3  0x00007fa9876beb7e in dpal_plugin_fetch_batch_int_data (worker=worker@entry=0x61b000014280,
+    keys=keys@entry=0x7fa8df5cc4d0, count=count@entry=1, data=data@entry=0x61d000245550,
+    ctxt=<optimized out>, obj_name=0x602000d19c10 "dpal-l3-intf", batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1704
+#4  0x00007fa9876b0dec in dpal_state_get_next_internal_attr (tctxt=0x6110000f34c0, kpath=0x7fa8df5ce630,
+    next=0) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_state_oper.c:723
+#5  0x00007fa986f6c55d in confd_fd_ready () from /usr/lib/libconfd.so
+#6  0x00007fa986c46757 in ?? () from /usr/lib/libconfdproxy.so
+#7  0x00007fa9873ff9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#8  0x00007fa987400537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#9  0x00007fa98776fad3 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1211
+#10 0x00007fa987770ad6 in dpal_worker_thread (arg=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1582
+#11 0x00007fa987343fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#12 0x00007fa9865d106f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) finish
+Run till exit from #0  0x00007fa900fda47b in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<synthetic pointer>, ifindex=106102872080387)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h:623
+bcmsdk_l3_intf_get_batch_int_data_api (count=count@entry=1 '\001', batch=batch@entry=0x61d000247280,
+    batch_rc=batch_rc@entry=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h:625
+625     in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h
+(gdb) bt
+#0  bcmsdk_l3_intf_get_batch_int_data_api (count=count@entry=1 '\001', batch=batch@entry=0x61d000247280,
+    batch_rc=batch_rc@entry=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h:625
+#1  0x00007fa900ee9690 in bcmsdk_fetch_int_data (ctxt=<optimized out>, keys=<optimized out>, count=1,
+    data=0x61d000245550, type=<optimized out>, batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:431
+#2  0x00007fa9876beb7e in dpal_plugin_fetch_batch_int_data (worker=worker@entry=0x61b000014280,
+    keys=keys@entry=0x7fa8df5cc4d0, count=count@entry=1, data=data@entry=0x61d000245550,
+    ctxt=<optimized out>, obj_name=0x602000d19c10 "dpal-l3-intf", batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1704
+#3  0x00007fa9876b0dec in dpal_state_get_next_internal_attr (tctxt=0x6110000f34c0, kpath=0x7fa8df5ce630,
+    next=0) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_state_oper.c:723
+#4  0x00007fa986f6c55d in confd_fd_ready () from /usr/lib/libconfd.so
+#5  0x00007fa986c46757 in ?? () from /usr/lib/libconfdproxy.so
+#6  0x00007fa9873ff9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#7  0x00007fa987400537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#8  0x00007fa98776fad3 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1211
+#9  0x00007fa987770ad6 in dpal_worker_thread (arg=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1582
+#10 0x00007fa987343fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#11 0x00007fa9865d106f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) finish
+Run till exit from #0  bcmsdk_l3_intf_get_batch_int_data_api (count=count@entry=1 '\001',
+    batch=batch@entry=0x61d000247280, batch_rc=batch_rc@entry=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h:625
+0x00007fa900ee9690 in bcmsdk_fetch_int_data (ctxt=<optimized out>, keys=<optimized out>, count=1,
+    data=0x61d000245550, type=<optimized out>, batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:431
+431     /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c: No such file or directory.
+Value returned is $1 = RET_CODE_SUCCESS
+(gdb) bt
+#0  0x00007fa900ee9690 in bcmsdk_fetch_int_data (ctxt=<optimized out>, keys=<optimized out>, count=1,
+    data=0x61d000245550, type=<optimized out>, batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:431
+#1  0x00007fa9876beb7e in dpal_plugin_fetch_batch_int_data (worker=worker@entry=0x61b000014280,
+    keys=keys@entry=0x7fa8df5cc4d0, count=count@entry=1, data=data@entry=0x61d000245550,
+    ctxt=<optimized out>, obj_name=0x602000d19c10 "dpal-l3-intf", batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1704
+#2  0x00007fa9876b0dec in dpal_state_get_next_internal_attr (tctxt=0x6110000f34c0, kpath=0x7fa8df5ce630,
+    next=0) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_state_oper.c:723
+#3  0x00007fa986f6c55d in confd_fd_ready () from /usr/lib/libconfd.so
+#4  0x00007fa986c46757 in ?? () from /usr/lib/libconfdproxy.so
+#5  0x00007fa9873ff9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#6  0x00007fa987400537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#7  0x00007fa98776fad3 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1211
+#8  0x00007fa987770ad6 in dpal_worker_thread (arg=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1582
+#9  0x00007fa987343fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#10 0x00007fa9865d106f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) finish
+Run till exit from #0  0x00007fa900ee9690 in bcmsdk_fetch_int_data (ctxt=<optimized out>,
+    keys=<optimized out>, count=1, data=0x61d000245550, type=<optimized out>, batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:431
+dpal_plugin_fetch_batch_int_data (worker=worker@entry=0x61b000014280, keys=keys@entry=0x7fa8df5cc4d0,
+    count=count@entry=1, data=data@entry=0x61d000245550, ctxt=<optimized out>,
+    obj_name=0x602000d19c10 "dpal-l3-intf", batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1706
+1706    /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c: No such file or directory.
+Value returned is $2 = RET_CODE_SUCCESS
+(gdb) bt
+#0  dpal_plugin_fetch_batch_int_data (worker=worker@entry=0x61b000014280, keys=keys@entry=0x7fa8df5cc4d0,
+    count=count@entry=1, data=data@entry=0x61d000245550, ctxt=<optimized out>,
+    obj_name=0x602000d19c10 "dpal-l3-intf", batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1706
+#1  0x00007fa9876b0dec in dpal_state_get_next_internal_attr (tctxt=0x6110000f34c0, kpath=0x7fa8df5ce630,
+    next=0) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_state_oper.c:723
+#2  0x00007fa986f6c55d in confd_fd_ready () from /usr/lib/libconfd.so
+#3  0x00007fa986c46757 in ?? () from /usr/lib/libconfdproxy.so
+#4  0x00007fa9873ff9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#5  0x00007fa987400537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#6  0x00007fa98776fad3 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1211
+#7  0x00007fa987770ad6 in dpal_worker_thread (arg=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1582
+#8  0x00007fa987343fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#9  0x00007fa9865d106f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) finish
+Run till exit from #0  dpal_plugin_fetch_batch_int_data (worker=worker@entry=0x61b000014280,
+    keys=keys@entry=0x7fa8df5cc4d0, count=count@entry=1, data=data@entry=0x61d000245550,
+    ctxt=<optimized out>, obj_name=0x602000d19c10 "dpal-l3-intf", batch_rc=0x61d000245d50)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1706
+dpal_state_get_next_internal_attr (tctxt=0x6110000f34c0, kpath=0x7fa8df5ce630, next=0)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_state_oper.c:727
+727     /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_state_oper.c: No such file or directory.
+Value returned is $3 = RET_CODE_SUCCESS
+(gdb) bt
+#0  dpal_state_get_next_internal_attr (tctxt=0x6110000f34c0, kpath=0x7fa8df5ce630, next=0)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_state_oper.c:727
+#1  0x00007fa986f6c55d in confd_fd_ready () from /usr/lib/libconfd.so
+#2  0x00007fa986c46757 in ?? () from /usr/lib/libconfdproxy.so
+#3  0x00007fa9873ff9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#4  0x00007fa987400537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#5  0x00007fa98776fad3 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1211
+#6  0x00007fa987770ad6 in dpal_worker_thread (arg=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1582
+#7  0x00007fa987343fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#8  0x00007fa9865d106f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) finish
+Run till exit from #0  dpal_state_get_next_internal_attr (tctxt=0x6110000f34c0, kpath=0x7fa8df5ce630,
+    next=0) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_state_oper.c:727
+0x00007fa986f6c55d in confd_fd_ready () from /usr/lib/libconfd.so
+Value returned is $4 = 0
+(gdb) bt
+#0  0x00007fa986f6c55d in confd_fd_ready () from /usr/lib/libconfd.so
+#1  0x00007fa986c46757 in ?? () from /usr/lib/libconfdproxy.so
+#2  0x00007fa9873ff9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#3  0x00007fa987400537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#4  0x00007fa98776fad3 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1211
+#5  0x00007fa987770ad6 in dpal_worker_thread (arg=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1582
+#6  0x00007fa987343fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+#7  0x00007fa9865d106f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) cont
+Continuing.
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+3784    /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c: No such file or directory.
+(gdb) cont
+Continuing.
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+3784    in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+(gdb) cont
+Continuing.
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+3784    in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+(gdb) finish
+Run till exit from #0  0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+bcmsdk_l3_get_vlan_id (pathid=<optimized out>, vlan_id=vlan_id@entry=0x7fa8df5d1c7a)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3760
+3760    in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+(gdb) bt
+#0  bcmsdk_l3_get_vlan_id (pathid=<optimized out>, vlan_id=vlan_id@entry=0x7fa8df5d1c7a)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3760
+#1  0x00007fa900f0c96e in bcmsdk_bfd_hal_session_cfg_obj_derive_encap_info (dh=dh@entry=0x608000b78ba0,
+    bfd_obj=bfd_obj@entry=0x60f0000ebbd0, decoded_obj=decoded_obj@entry=0x7fa8df5d1e20)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c:690
+#2  0x00007fa900f0e01b in bcm_bfd_session_cfg_main_create_cb (obj=obj@entry=0x603000dd6590,
+    ctxt=ctxt@entry=0x608000b78ba0)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c:764
+#3  0x00007fa900f0f79b in bcm_bfd_session_cfg_main_cb (obj=0x603000dd6590, old_obj=0x0,
+    optype=DPAL_OBJ_MIN, ctxt=0x608000b78ba0)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c:948
+#4  0x00007fa900fa874d in bcm_xgs_obj_aom_cb (oh=0x62700011ca60, client_space=<optimized out>,
+    old_val=0x0, val=0x603000dd6590, optype=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:51477
+#5  0x00007fa98714b180 in ?? () from /usr/lib/libaom.so
+#6  0x00007fa987144e33 in ?? () from /usr/lib/libaom.so
+#7  0x00007fa987145279 in ?? () from /usr/lib/libaom.so
+#8  0x00007fa98714693a in ?? () from /usr/lib/libaom.so
+#9  0x00007fa98714e0fa in aom_obj_add_with_srcs () from /usr/lib/libaom.so
+#10 0x00007fa900f87272 in bcm_xgs_bfd_session_info_obj_add (obj=obj@entry=0x7fa8df5d2a00,
+    ctxt=ctxt@entry=0x608000b78ba0)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:36602
+#11 0x00007fa900f983db in bcm_xgs_obj_add (obj=obj@entry=0x7fa8df5d2a00, ctxt=ctxt@entry=0x608000b78ba0)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:47660
+#12 0x00007fa900f10c70 in bcmsdk_bfd_session_cfg_object_api (obj=obj@entry=0x603000daf320,
+    obj_old=obj_old@entry=0x0, optype=optype@entry=DPAL_OBJ_MIN, wh=wh@entry=0x61b000014980)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c:1464
+#13 0x00007fa900eece50 in bcmsdk_cfg_obj (wh=0x61b000014980, obj_new=0x603000daf320, obj_old=0x0,
+    optype=DPAL_OBJ_MIN)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:180
+#14 0x00007fa9876bbf06 in dpal_plugin_invoke_cb_internal (optype=DPAL_OBJ_MIN, unit=0,
+    worker_ctxt=0x61b000014280, dpal_obj_old=0x0, dpal_obj=0x603000daf320)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1435
+#15 dpal_plugin_invoke_cb_locked (dpal_obj=dpal_obj@entry=0x603000daf320,
+    dpal_obj_old=dpal_obj_old@entry=0x0, worker_ctxt=worker_ctxt@entry=0x61b000014280, unit=unit@entry=0,
+    optype=optype@entry=DPAL_OBJ_MIN)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1464
+#16 0x00007fa987771b2a in dpal_aom_cb (dpal_obj=0x603000daf320, old_obj=0x0, optype=<optimized out>,
+    ctxt=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:953
+#17 0x00007fa9876dfe6a in cplane_obj_aom_cb (oh=0x627000163b90, client_space=<optimized out>,
+    old_val=0x0, val=0x603000daf320, optype=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/gen_cplane_obj.c:57180
+#18 0x00007fa98714b180 in ?? () from /usr/lib/libaom.so
+#19 0x00007fa987144e33 in ?? () from /usr/lib/libaom.so
+#20 0x00007fa987145279 in ?? () from /usr/lib/libaom.so
+#21 0x00007fa98714b2fa in ?? () from /usr/lib/libaom.so
+#22 0x00007fa98714b520 in ?? () from /usr/lib/libaom.so
+#23 0x00007fa98714b5d9 in ?? () from /usr/lib/libaom.so
+#24 0x00007fa9873ff9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#25 0x00007fa987400537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#26 0x00007fa98776fad3 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1211
+#27 0x00007fa987770ad6 in dpal_worker_thread (arg=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1582
+#28 0x00007fa987343fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+--Type <RET> for more, q to quit, c to continue without paging--q
+Quit
+(gdb) bt
+#0  bcmsdk_l3_get_vlan_id (pathid=<optimized out>, vlan_id=vlan_id@entry=0x7fa8df5d1c7a)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3760
+#1  0x00007fa900f0c96e in bcmsdk_bfd_hal_session_cfg_obj_derive_encap_info (dh=dh@entry=0x608000b78ba0,
+    bfd_obj=bfd_obj@entry=0x60f0000ebbd0, decoded_obj=decoded_obj@entry=0x7fa8df5d1e20)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c:690
+#2  0x00007fa900f0e01b in bcm_bfd_session_cfg_main_create_cb (obj=obj@entry=0x603000dd6590,
+    ctxt=ctxt@entry=0x608000b78ba0)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c:764
+#3  0x00007fa900f0f79b in bcm_bfd_session_cfg_main_cb (obj=0x603000dd6590, old_obj=0x0,
+    optype=DPAL_OBJ_MIN, ctxt=0x608000b78ba0)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c:948
+#4  0x00007fa900fa874d in bcm_xgs_obj_aom_cb (oh=0x62700011ca60, client_space=<optimized out>,
+    old_val=0x0, val=0x603000dd6590, optype=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:51477
+#5  0x00007fa98714b180 in ?? () from /usr/lib/libaom.so
+#6  0x00007fa987144e33 in ?? () from /usr/lib/libaom.so
+#7  0x00007fa987145279 in ?? () from /usr/lib/libaom.so
+#8  0x00007fa98714693a in ?? () from /usr/lib/libaom.so
+#9  0x00007fa98714e0fa in aom_obj_add_with_srcs () from /usr/lib/libaom.so
+#10 0x00007fa900f87272 in bcm_xgs_bfd_session_info_obj_add (obj=obj@entry=0x7fa8df5d2a00,
+    ctxt=ctxt@entry=0x608000b78ba0)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:36602
+#11 0x00007fa900f983db in bcm_xgs_obj_add (obj=obj@entry=0x7fa8df5d2a00, ctxt=ctxt@entry=0x608000b78ba0)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/gen_bcm_xgs_obj.c:47660
+#12 0x00007fa900f10c70 in bcmsdk_bfd_session_cfg_object_api (obj=obj@entry=0x603000daf320,
+    obj_old=obj_old@entry=0x0, optype=optype@entry=DPAL_OBJ_MIN, wh=wh@entry=0x61b000014980)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_bfd.c:1464
+#13 0x00007fa900eece50 in bcmsdk_cfg_obj (wh=0x61b000014980, obj_new=0x603000daf320, obj_old=0x0,
+    optype=DPAL_OBJ_MIN)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:180
+#14 0x00007fa9876bbf06 in dpal_plugin_invoke_cb_internal (optype=DPAL_OBJ_MIN, unit=0,
+    worker_ctxt=0x61b000014280, dpal_obj_old=0x0, dpal_obj=0x603000daf320)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1435
+#15 dpal_plugin_invoke_cb_locked (dpal_obj=dpal_obj@entry=0x603000daf320,
+    dpal_obj_old=dpal_obj_old@entry=0x0, worker_ctxt=worker_ctxt@entry=0x61b000014280, unit=unit@entry=0,
+    optype=optype@entry=DPAL_OBJ_MIN)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1464
+#16 0x00007fa987771b2a in dpal_aom_cb (dpal_obj=0x603000daf320, old_obj=0x0, optype=<optimized out>,
+    ctxt=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:953
+#17 0x00007fa9876dfe6a in cplane_obj_aom_cb (oh=0x627000163b90, client_space=<optimized out>,
+    old_val=0x0, val=0x603000daf320, optype=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/gen_cplane_obj.c:57180
+#18 0x00007fa98714b180 in ?? () from /usr/lib/libaom.so
+#19 0x00007fa987144e33 in ?? () from /usr/lib/libaom.so
+#20 0x00007fa987145279 in ?? () from /usr/lib/libaom.so
+#21 0x00007fa98714b2fa in ?? () from /usr/lib/libaom.so
+#22 0x00007fa98714b520 in ?? () from /usr/lib/libaom.so
+#23 0x00007fa98714b5d9 in ?? () from /usr/lib/libaom.so
+#24 0x00007fa9873ff9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#25 0x00007fa987400537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+#26 0x00007fa98776fad3 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1211
+#27 0x00007fa987770ad6 in dpal_worker_thread (arg=0x61b000014280)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1582
+#28 0x00007fa987343fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+--Type <RET> for more, q to quit, c to continue without paging--q
+Quit
+(gdb) cont
+Continuing.
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+3784    in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+(gdb) cont
+Continuing.
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+3784    in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+(gdb) cont
+Continuing.
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+3784    in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+(gdb) cont
+Continuing.
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+3784    in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+(gdb) cont
+Continuing.
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+3784    in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+(gdb) cont
+Continuing.
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+3784    in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+(gdb) cont
+Continuing.
+
+Thread 16 "dpal_worker" hit Breakpoint 1, 0x00007fa900fdd030 in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (
+    vlan=<optimized out>, ifindex=<optimized out>)
+    at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:3784
+3784    in /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c
+(gdb) d
+Delete all breakpoints? (y or n) y
+(gdb) cont
+Continuing.

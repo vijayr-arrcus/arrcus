@@ -1,0 +1,139 @@
+No symbol table info available.
+<<<< starting tech support collection [VIJAY] >>>:
+
+Thread 16 "dpal_worker" hit Breakpoint 2, 0x00007fa900fda47b in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (vlan=<synthetic pointer>, ifindex=106102872080387) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h:623
+623     /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h: No such file or directory.
+#0  0x00007fa900fda47b in bcmsdk_get_l3intf_rsvd_vlan_from_ifindex (vlan=<synthetic pointer>, ifindex=106102872080387) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_inlines.h:623
+        l3if_obj = {__obj = {base = {descriptor = 0x7fa986b41ac0 <dpal.bcm_xgs_port.descriptor>, n_unknown_fields = 0, unknown_fields = 0x0}, has_ifindex = 1, ifindex = 1009, has_mac_addr = 0, mac_addr = {len = 0, data = 0x0}, has_hwid = 0, hwid = 0, has_rsvd_vlan = 0, rsvd_vlan = 0, prefix = 0x0, has_vrf_id = 0, vrf_id = 0, has_mcast_grp = 0, mcast_grp = 0, has_l3_iif_id = 0, l3_iif_id = 0, has_l3_iif_cntr_id = 0, l3_iif_cntr_id = 0, has_l3iif_stat_grp_dummy_id = 0, l3iif_stat_grp_dummy_id = 0}}
+        dh = <optimized out>
+        vid = <optimized out>
+        rc = <optimized out>
+        obj_in = {obj_type = 163606, obj_info = 0x7fa8df5cc320, opaque = 0x60800005dea0}
+        obj_out = 0x603000ca8a30
+        l3if_out = <optimized out>
+        rc = <optimized out>
+        obj_in = <optimized out>
+        obj_out = <optimized out>
+        l3if_obj = <optimized out>
+        l3if_out = <optimized out>
+        dh = <optimized out>
+        vid = <optimized out>
+        __FUNCTION__ = "bcmsdk_get_l3intf_rsvd_vlan_from_ifindex"
+#1  bcmsdk_l3_intf_get_batch_int_data_api (count=count@entry=1 '\001', batch=batch@entry=0x61d000225680, batch_rc=batch_rc@entry=0x61d0000c9350) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_l3.c:2803
+        buf = <optimized out>
+        elem = <optimized out>
+        idx = <optimized out>
+        dep = 0
+        kv_cnt = <optimized out>
+        rc = <optimized out>
+        iftype = <optimized out>
+        port = <optimized out>
+        hwid = 1
+        rsvd_vlan = 0
+        addr = <optimized out>
+#2  0x00007fa900ee9690 in bcmsdk_fetch_int_data (ctxt=<optimized out>, keys=<optimized out>, count=1, data=0x61d0000c8b50, type=<optimized out>, batch_rc=0x61d0000c9350) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/plugin/bcm/xgs/common/app/bcm_dpal_init.c:431
+        batch = 0x61d000225680
+        rc = <optimized out>
+        idx1 = <optimized out>
+        idx2 = <optimized out>
+#3  0x00007fa9876beb7e in dpal_plugin_fetch_batch_int_data (worker=worker@entry=0x61b000014280, keys=keys@entry=0x7fa8df5cc4d0, count=count@entry=1, data=data@entry=0x61d0000c8b50, ctxt=<optimized out>, obj_name=0x602000cc4130 "dpal-l3-intf", batch_rc=0x61d0000c9350) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_plugin.c:1704
+        plugin_ctxt = <optimized out>
+        plugin = <optimized out>
+        i = <optimized out>
+        idx1 = <optimized out>
+        idx2 = <optimized out>
+        rc = RET_CODE_NOT_FOUND
+#4  0x00007fa9876b0dec in dpal_state_get_next_internal_attr (tctxt=0x611000027640, kpath=0x7fa8df5ce630, next=0) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_state_oper.c:723
+        key = 0x61b00011e6ca "\361\003"
+        rc = RET_CODE_SUCCESS
+        n = 0
+        tv = {{tag = {tag = 778, ns = 0}, v = {type = 0, val = {xmltag = {tag = 4, ns = 0}, symbol = 4, buf = {size = 4, ptr = 0x7fa8df5cedb8 "\005"}, c_buf = {size = 4, ptr = 0x7fa8df5cedb8 "\005"}, s = 0x4 <error: Cannot access memory at address 0x4>, c_s = 0x4 <error: Cannot access memory at address 0x4>, i8 = 4 '\004', i16 = 4, i32 = 4, i64 = 4, u8 = 4 '\004', u16 = 4, u32 = 4, u64 = 4, d = 1.9762625833649862e-323, ip = {s_addr = 4}, ip6 = {__in6_u = {__u6_addr8 = "\004\000\000\000\000\000\000\000\270\355\\ߨ\177\000", __u6_addr16 = {4, 0, 0, 0, 60856, 57180, 32680, 0}, __u6_addr32 = {4, 0, 3747409336, 32680}}}, boolean = 4, qname = {prefix = {size = 4, ptr = 0x7fa8df5cedb8 "\005"}, name = {size = 871584, ptr = 0x7fa8df5cedb8 "\005"}}, datetime = {year = 4, month = 0 '\000', day = 0 '\000', hour = 0 '\000', min = 0 '\000', sec = 0 '\000', micro = 3747409336, timezone = -88 '\250', timezone_minutes = 127 '\177'}, date = {year = 4, month = 0 '\000', day = 0 '\000', timezone = 0 '\000', timezone_minutes = 0 '\000'}, time = {hour = 4 '\004', min = 0 '\000', sec = 0 '\000', micro = 0, timezone = -72 '\270', timezone_minutes = -19 '\355'}, duration = {years = 4, months = 0, days = 3747409336, hours = 32680, mins = 871584, secs = 24704, micros = 3747409336}, enumvalue = 4, b32 = 4, b64 = 4, list = {size = 4, ptr = 0x7fa8df5cedb8}, hkp = 0x4, ptr = {type = C_STR, valp = 0x7fa8df5cedb8}, oidp = 0x4, ipv4prefix = {ip = {s_addr = 4}, len = 0 '\000'}, ipv6prefix = {ip6 = {__in6_u = {__u6_addr8 = "\004\000\000\000\000\000\000\000\270\355\\ߨ\177\000", __u6_addr16 = {4, 0, 0, 0, 60856, 57180, 32680, 0}, __u6_addr32 = {4, 0, 3747409336, 32680}}}, len = 160 '\240'}, d64 = {value = 4, fraction_digits = 184 '\270'}, idref = {ns = 4, id = 0}, dquad = {quad = "\004\000\000"}, enumhash = 4}}}, {tag = {tag = 862112, ns = 24704}, v = {type = 2264622904, val = {xmltag = {tag = 0, ns = 0}, symbol = 0, buf = {size = 0, ptr = 0x714843500 ""}, c_buf = {size = 0, ptr = 0x714843500 ""}, s = 0x0, c_s = 0x0, i8 = 0 '\000', i16 = 0, i32 = 0, i64 = 0, u8 = 0 '\000', u16 = 0, u32 = 0, u64 = 0, d = 0, ip = {s_addr = 0}, ip6 = {__in6_u = {__u6_addr8 = "\000\000\000\000\000\000\000\000\000\065\204\024\a\000\000", __u6_addr16 = {0, 0, 0, 0, 13568, 5252, 7, 0}, __u6_addr32 = {0, 0, 344208640, 7}}}, boolean = 0, qname = {prefix = {size = 0, ptr = 0x714843500 ""}, name = {size = 3747407408, ptr = 0x7fa8df5ce810 ""}}, datetime = {year = 0, month = 0 '\000', day = 0 '\000', hour = 0 '\000', min = 0 '\000', sec = 0 '\000', micro = 344208640, timezone = 7 '\a', timezone_minutes = 0 '\000'}, date = {year = 0, month = 0 '\000', day = 0 '\000', timezone = 0 '\000', timezone_minutes = 0 '\000'}, time = {hour = 0 '\000', min = 0 '\000', sec = 0 '\000', micro = 0, timezone = 0 '\000', timezone_minutes = 53 '5'}, duration = {years = 0, months = 0, days = 344208640, hours = 7, mins = 3747407408, secs = 32680, micros = 3747407888}, enumvalue = 0, b32 = 0, b64 = 0, list = {size = 0, ptr = 0x714843500}, hkp = 0x0, ptr = {type = 0, valp = 0x714843500}, oidp = 0x0, ipv4prefix = {ip = {s_addr = 0}, len = 0 '\000'}, ipv6prefix = {ip6 = {__in6_u = {__u6_addr8 = "\000\000\000\000\000\000\000\000\000\065\204\024\a\000\000", __u6_addr16 = {0, 0, 0, 0, 13568, 5252, 7, 0}, __u6_addr32 = {0, 0, 344208640, 7}}}, len = 48 '0'}, d64 = {value = 0, fraction_digits = 0 '\000'}, idref = {ns = 0, id = 0}, dquad = {quad = "\000\000\000"}, enumhash = 0}}}}
+        objtype = 0x7fa8df5cedb8
+        tag = 0x7fa8df5cebd8
+        instance = 0x7fa8df5ce818
+        tc = 0x61d0000c8a80
+        worker = <optimized out>
+        ctxt = <optimized out>
+        meta = <optimized out>
+        obs = 0x6220000031d0
+        confdrc = <optimized out>
+        __PRETTY_FUNCTION__ = "dpal_state_get_next_internal_attr"
+#5  0x00007fa986f6c55d in confd_fd_ready () from /usr/lib/libconfd.so
+No symbol table info available.
+#6  0x00007fa986c46757 in ?? () from /usr/lib/libconfdproxy.so
+No symbol table info available.
+#7  0x00007fa9873ff9ba in ?? () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+No symbol table info available.
+#8  0x00007fa987400537 in event_base_loop () from /usr/lib/x86_64-linux-gnu/libevent-2.1.so.6
+No symbol table info available.
+#9  0x00007fa98776fad3 in dpal_worker_init (worker_ctxt=worker_ctxt@entry=0x61b000014280) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1211
+No locals.
+#10 0x00007fa987770ad6 in dpal_worker_thread (arg=0x61b000014280) at /home/ashish/nobackup/711/asan_711a/arrcus_sw/dpal/common/app/dpal_worker.c:1582
+        worker_ctxt = 0x61b000014280
+        reader_info = {eb = 0x61700002ff00, cb = 0x7fa98776d840 <dpal_worker_sysmgr_cb>, arg = 0x61b000014280}
+        info = {hwm = 0, lwm = 0, strict = false}
+        rc = <optimized out>
+        __FUNCTION__ = "dpal_worker_thread"
+#11 0x00007fa987343fa3 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+No symbol table info available.
+#12 0x00007fa9865d106f in clone () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+[Thread 0x7fa8c1f76700 (LWP 6207) exited]
+[Thread 0x7fa8c664c700 (LWP 6093) exited]
+[Thread 0x7fa8c6e63700 (LWP 6092) exited]
+[Thread 0x7fa8c767a700 (LWP 6091) exited]
+[Thread 0x7fa8c8dda700 (LWP 6080) exited]
+[Thread 0x7fa8c95f1700 (LWP 6079) exited]
+[Thread 0x7fa8c9e00700 (LWP 6078) exited]
+[Thread 0x7fa8c9e9f700 (LWP 6029) exited]
+[Thread 0x7fa8ca099700 (LWP 5964) exited]
+[Thread 0x7fa8ca7b2700 (LWP 5945) exited]
+[Thread 0x7fa8ca7f5700 (LWP 5944) exited]
+[Thread 0x7fa8cb023700 (LWP 5936) exited]
+[Thread 0x7fa8cb65e700 (LWP 5919) exited]
+[Thread 0x7fa8cb6a1700 (LWP 5918) exited]
+[Thread 0x7fa8cffb3700 (LWP 5915) exited]
+[Thread 0x7fa8d0f56700 (LWP 5911) exited]
+[Thread 0x7fa8d0f99700 (LWP 5910) exited]
+[Thread 0x7fa8d38e9700 (LWP 5897) exited]
+[Thread 0x7fa8d392c700 (LWP 5896) exited]
+[Thread 0x7fa8d4bc3700 (LWP 5875) exited]
+[Thread 0x7fa8d3cbd700 (LWP 5874) exited]
+[Thread 0x7fa8d3cea700 (LWP 5792) exited]
+[Thread 0x7fa8d3d2d700 (LWP 5760) exited]
+[Thread 0x7fa8d4bde700 (LWP 5754) exited]
+[Thread 0x7fa8da4ce700 (LWP 5729) exited]
+[Thread 0x7fa8dace5700 (LWP 5728) exited]
+[Thread 0x7fa8db4fc700 (LWP 5727) exited]
+[Thread 0x7fa8dbd13700 (LWP 5726) exited]
+[Thread 0x7fa8dc52a700 (LWP 5723) exited]
+[Thread 0x7fa8dcd41700 (LWP 5722) exited]
+[Thread 0x7fa8dd558700 (LWP 5721) exited]
+[Thread 0x7fa8ddd8f700 (LWP 5716) exited]
+[Thread 0x7fa8de5ae700 (LWP 5715) exited]
+[Thread 0x7fa8dedbd700 (LWP 5714) exited]
+[Thread 0x7fa8df5d4700 (LWP 5711) exited]
+[Thread 0x7fa90314c700 (LWP 4411) exited]
+[Thread 0x7fa903963700 (LWP 4408) exited]
+[Thread 0x7fa90417a700 (LWP 4201) exited]
+[Thread 0x7fa904991700 (LWP 4196) exited]
+[Thread 0x7fa9051e8700 (LWP 4191) exited]
+[Thread 0x7fa9059fe700 (LWP 4189) exited]
+[Thread 0x7fa90623f700 (LWP 4187) exited]
+[Thread 0x7fa906a40700 (LWP 4186) exited]
+[Thread 0x7fa8ca020700 (LWP 5966) exited]
+[Thread 0x7fa907241700 (LWP 4185) exited]
+[Thread 0x7fa907a42700 (LWP 4179) exited]
+[Thread 0x7fa908243700 (LWP 4176) exited]
+[Thread 0x7fa92f455700 (LWP 4171) exited]
+[Thread 0x7fa9815fe700 (LWP 4120) exited]
+[Thread 0x7fa981dff700 (LWP 4115) exited]
+[Inferior 1 (process 4089) exited with code 01]
+(gdb) <<<< starting tech support collection [VIJAY] >>>:
+Undefined command: "<<<<".  Try "help".
+(gdb)
+Undefined command: "<<<<".  Try "help".
+(gdb)
+Undefined command: "<<<<".  Try "help".
+(gdb)
+
