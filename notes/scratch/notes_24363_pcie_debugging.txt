@@ -1,0 +1,42 @@
+pcie debugging:
+
+BCM.0> attach
+attach
+Attach: Unit 0 (BCM56780_A0): attached (current unit)
+BCM.0>
+BCM.0> dsh -c "pciephy fwinfo"
+dsh -c "pciephy fwinfo"
+ PCIe FW loader version: 2.9
+ PCIe FW loader built date: 20201005
+ PCIe FW version: D000_05
+
+Firmware was loaded! (version: 0xd005)
+Loader is running! (Last heart-beat = 0x65c1bd7)
+Loader running summary:
+ Stage1 loader run times: 341
+ Stage2 loader run times: 148
+ Loading process run times: 148
+ Loading failure times: 0
+ PCIE Reset status in 1 time run: 0x2f8
+ PCIE Reset status in 2 time run: 0x2f8
+ PCIE Reset status in 3 time run: 0x2f8
+ PCIE Reset status in 4 time run: 0x2f8
+ PCIE Reset status in 5 time run: 0x2f8
+Stage1 time logs:
+ Line 104 time: 336
+ Line 117 time: 11395
+Stage2 time logs:
+ Line 764 time: 30057
+ Line 776 time: 30059
+ Line 795 time: 36324
+ Line 800 time: 36325
+ Line 246 time: 139704
+ Line 253 time: 139704
+ Line 804 time: 139707
+ Line 661 time: 139709
+ Line 809 time: 139734
+ Line 814 time: 139738
+ Line 819 time: 140430
+ Line 824 time: 140500
+ Line 832 time: 140502
+BCM.0>

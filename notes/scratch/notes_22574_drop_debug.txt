@@ -324,3 +324,8 @@ generic-entries entry nhid:23
 KEY      STATE    NAME  VALUE    TYPE    KEY     TYPE     KEY
 -------------------------------------------------------------------
 nhid:23  created  hwid  100005
+
+
+show network-instance default fib IPV4 ipv4-prefix-entry ?
+
+show network-instance default fib IPV4 ipv4-path

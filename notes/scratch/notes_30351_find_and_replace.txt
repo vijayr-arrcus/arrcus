@@ -1,0 +1,3 @@
+#find and replace
+
+grep -rl lhiredis * | xargs sed -i 's/ -lhiredis//g'

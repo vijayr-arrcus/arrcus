@@ -1,0 +1,3 @@
+running spyder
+
+spyder --config /etc/spyder.monolithic.yaml server --log-file /var/log/spyder.log --run-as arcos
