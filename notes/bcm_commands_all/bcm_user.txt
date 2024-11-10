@@ -41,6 +41,8 @@ rlwrap nc localhost 8888
  cd /etc/arcos/bcm
  /root/bcm.user
 
+ Run bcm.user from the location where the required soc files exists.
+
 
  46  cd /usr/share/arcos/
 47  ./kmod_hdlr.py stop
