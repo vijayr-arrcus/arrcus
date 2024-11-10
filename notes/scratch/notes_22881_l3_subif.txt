@@ -1,2 +1,3 @@
 dump chg SOURCE_VP
 dump chg VLAN_XLATE_1_DOUBLE
+dump chg VFI_ATTRS_2
