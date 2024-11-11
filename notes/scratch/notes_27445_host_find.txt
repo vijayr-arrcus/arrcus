@@ -1,0 +1,17 @@
+0x0ab76b81
+
+
+cint_reset();
+int rv = BCM_E_NONE;
+int unit = 0;
+
+bcm_l3_egress_t egr_obj;
+bcm_if_t egr_obj_if;
+bcm_l3_host_t host_t;
+
+bcm_l3_host_t_init(&host_t);
+host_t.l3a_ip_addr = 0x0ab76b81;
+host_t.l3a_ip_addr = 0x0a5803ab;
+host_t.l3a_vrf=0;
+rv = bcm_l3_host_find(unit, &host_t);
+print host_t;

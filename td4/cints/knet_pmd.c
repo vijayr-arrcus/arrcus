@@ -61,7 +61,7 @@ filter.dest_type = BCM_PKTIO_DEST_T_NETIF;
 sal_memcpy(filter.desc, "Filter bcm", 20);
 filter.dest_id = 1;
 filter.match_flags = BCM_PKTIO_FILTER_M_INGPORT;
-filter.m_ingport = 100;
+filter.m_ingport = 63;
 print bcm_pktio_filter_create(unit, &filter);
 
 pw stop
