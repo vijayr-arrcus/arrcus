@@ -1,3 +1,14 @@
 dump chg SOURCE_VP
 dump chg VLAN_XLATE_1_DOUBLE
 dump chg VFI_ATTRS_2
+dump chg PORT <x>
+dump chg LPORT <x_index> 1
+dump chg VFI
+dump chg L3_IIF <x>
+dump chg L3_IIF_PROFILE 1
+dump chg EGR_L3_NEXT_HOP
+dump chg L2_ENTRY_SINGLE (MAC_T table)
+dump chg EGR_L3_NEXT_HOP
+dump chg ING_VLAN_VFI_MEMBERSHIP
+dump chg L3_IPMC
+dump chg L3_IPMC_REMAP 1 1
