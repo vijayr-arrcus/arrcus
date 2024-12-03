@@ -1,0 +1,2395 @@
+BCM.0>
+BCM.0> fp show 0x00000004
+fp show 0x00000004
+BCM.0>
+BCM.0> fp show group 0x00000004
+fp show group 0x00000004
+GID 0x00000004: gid=0x4, instance=-1 mode=Double, stage=Ingress lookup=Enabled, ActionResId={3},
+         Pbmp={0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003ff00fff01fff007ff},
+         qset={SrcMac , DstMac , InPorts , OuterVlanId , EtherType , SrcGport },
+         aset={CopyToCpu:size[4] , CopyToCpuCancel:size[4] , Drop:size[4] , DropCancel:size[4] , MirrorIngress:size[16] , L3Switch:size[16] , GpCopyToCpuCancel:size[32] , RedirectEgrNextHop:size[20] , PolicerGroup:size[36] , StatGroup:size[24] , CosMapNew:size[8] , IngressDstTypeSelect:size[8] },
+         aset_size= 152
+         preselectors={},
+         group_priority= 27
+         group_hintId= 4
+         slice_primary= {slice_number=10, entries_total=1024, entries_free=916 },
+         slice_secondary= {slice_number=11, entries_total=1024, entries_free=916 },
+         group_status=  entries_total=1023, entries_free=915,
+                        allocated_entries_total=1023, allocated_entries_free=915,
+                        meters_total=512, meters_free=412, counters_total=4096, counters_free=3988}
+EID 0x00000151: eid=0x151, gid=0x4,
+ prio=0x7fefff8f, flags=0x20200002, hw_index=0xa, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000063
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=109(0x6d)}
+
+EID 0x00000152: eid=0x152, gid=0x4,
+ prio=0x7fefff90, flags=0x20200002, hw_index=0x6, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000062
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=110(0x6e)}
+
+EID 0x00000153: eid=0x153, gid=0x4,
+ prio=0x7fefff91, flags=0x20200002, hw_index=0x1, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000061
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=111(0x6f)}
+
+EID 0x00000154: eid=0x154, gid=0x4,
+ prio=0x7feffe6d, flags=0x20200002, hw_index=0x66, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000003
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=112(0x70)}
+
+EID 0x00000155: eid=0x155, gid=0x4,
+ prio=0x7feffe6e, flags=0x20200002, hw_index=0x62, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000002
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=113(0x71)}
+
+EID 0x00000156: eid=0x156, gid=0x4,
+ prio=0x7feffe6f, flags=0x20200002, hw_index=0x5e, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000001
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=114(0x72)}
+
+EID 0x00000157: eid=0x157, gid=0x4,
+ prio=0x7feffed1, flags=0x20200002, hw_index=0x5a, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000003
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=115(0x73)}
+
+EID 0x00000158: eid=0x158, gid=0x4,
+ prio=0x7feffed2, flags=0x20200002, hw_index=0x55, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000002
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=116(0x74)}
+
+EID 0x00000159: eid=0x159, gid=0x4,
+ prio=0x7feffed3, flags=0x20200002, hw_index=0x51, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000001
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=117(0x75)}
+
+EID 0x0000015a: eid=0x15a, gid=0x4,
+ prio=0x7fefff35, flags=0x20200002, hw_index=0x4d, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000003
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=118(0x76)}
+
+EID 0x0000015b: eid=0x15b, gid=0x4,
+ prio=0x7fefff36, flags=0x20200002, hw_index=0x49, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000002
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=119(0x77)}
+
+EID 0x0000015c: eid=0x15c, gid=0x4,
+ prio=0x7fefff37, flags=0x20200002, hw_index=0x45, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000001
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=120(0x78)}
+
+EID 0x0000015d: eid=0x15d, gid=0x4,
+ prio=0x7fefff79, flags=0x20200002, hw_index=0x3e, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000065
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=121(0x79)}
+
+EID 0x0000015e: eid=0x15e, gid=0x4,
+ prio=0x7fefff7a, flags=0x20200002, hw_index=0x3a, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000064
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=122(0x7a)}
+
+EID 0x0000015f: eid=0x15f, gid=0x4,
+ prio=0x7fefff7b, flags=0x20200002, hw_index=0x36, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000063
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=123(0x7b)}
+
+EID 0x00000160: eid=0x160, gid=0x4,
+ prio=0x7fefff7c, flags=0x20200002, hw_index=0x32, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000062
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=124(0x7c)}
+
+EID 0x00000161: eid=0x161, gid=0x4,
+ prio=0x7fefff7d, flags=0x20200002, hw_index=0x2d, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000061
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=125(0x7d)}
+
+EID 0x00000162: eid=0x162, gid=0x4,
+ prio=0x7fefff83, flags=0x20200002, hw_index=0x28, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000065
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=126(0x7e)}
+
+EID 0x00000163: eid=0x163, gid=0x4,
+ prio=0x7fefff84, flags=0x20200002, hw_index=0x24, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000064
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=127(0x7f)}
+
+EID 0x00000164: eid=0x164, gid=0x4,
+ prio=0x7fefff85, flags=0x20200002, hw_index=0x20, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000063
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=128(0x80)}
+
+EID 0x00000165: eid=0x165, gid=0x4,
+ prio=0x7fefff86, flags=0x20200002, hw_index=0x1c, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000062
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=129(0x81)}
+
+EID 0x00000166: eid=0x166, gid=0x4,
+ prio=0x7fefff87, flags=0x20200002, hw_index=0x17, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000061
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=130(0x82)}
+
+EID 0x00000167: eid=0x167, gid=0x4,
+ prio=0x7fefff8c, flags=0x20200002, hw_index=0x16, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000010 94000355
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=131(0x83)}
+
+EID 0x00000168: eid=0x168, gid=0x4,
+ prio=0x7fefff8d, flags=0x20200002, hw_index=0x12, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000065
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=132(0x84)}
+
+EID 0x00000169: eid=0x169, gid=0x4,
+ prio=0x7fefff8e, flags=0x20200002, hw_index=0xe, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000064
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=133(0x85)}
+
+EID 0x0000016a: eid=0x16a, gid=0x4,
+ prio=0x7feeff93, flags=0x20200002, hw_index=0x6b, slice_number=0xa, slice_expand_part=0, Installed
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000002
+     MASK=0000ffff
+
+         action = {act=CopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=Drop, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=L3Switch, param0=100002(0x186a2), param1=0(0), param2=0(0)}
+         action = {act=GpCopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=IngressDstTypeSelect, param0=3(0x3), param1=0(0), param2=0(0)}
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=134(0x86)}
+
+EID 0x00000175: eid=0x175, gid=0x4,
+ prio=0x7feffe6d, flags=0x20200002, hw_index=0x67, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000006
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=135(0x87)}
+
+EID 0x00000176: eid=0x176, gid=0x4,
+ prio=0x7feffe6e, flags=0x20200002, hw_index=0x63, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000005
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=136(0x88)}
+
+EID 0x00000177: eid=0x177, gid=0x4,
+ prio=0x7feffe6f, flags=0x20200002, hw_index=0x5f, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000004
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=137(0x89)}
+
+EID 0x00000178: eid=0x178, gid=0x4,
+ prio=0x7feffed1, flags=0x20200002, hw_index=0x5b, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000006
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=138(0x8a)}
+
+EID 0x00000179: eid=0x179, gid=0x4,
+ prio=0x7feffed2, flags=0x20200002, hw_index=0x56, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000005
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=139(0x8b)}
+
+EID 0x0000017a: eid=0x17a, gid=0x4,
+ prio=0x7feffed3, flags=0x20200002, hw_index=0x52, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000004
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=140(0x8c)}
+
+EID 0x0000017b: eid=0x17b, gid=0x4,
+ prio=0x7fefff35, flags=0x20200002, hw_index=0x4e, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000006
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=141(0x8d)}
+
+EID 0x0000017c: eid=0x17c, gid=0x4,
+ prio=0x7fefff36, flags=0x20200002, hw_index=0x4a, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000005
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=142(0x8e)}
+
+EID 0x0000017d: eid=0x17d, gid=0x4,
+ prio=0x7fefff37, flags=0x20200002, hw_index=0x46, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000004
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=143(0x8f)}
+
+EID 0x0000017e: eid=0x17e, gid=0x4,
+ prio=0x7fefff73, flags=0x20200002, hw_index=0x43, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000011 01330001
+     MASK=0000ffff ffff0000
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=144(0x90)}
+
+EID 0x0000017f: eid=0x17f, gid=0x4,
+ prio=0x7fefff79, flags=0x20200002, hw_index=0x3f, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000060
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=145(0x91)}
+
+EID 0x00000180: eid=0x180, gid=0x4,
+ prio=0x7fefff7a, flags=0x20200002, hw_index=0x3b, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005f
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=146(0x92)}
+
+EID 0x00000181: eid=0x181, gid=0x4,
+ prio=0x7fefff7b, flags=0x20200002, hw_index=0x37, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005e
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=147(0x93)}
+
+EID 0x00000182: eid=0x182, gid=0x4,
+ prio=0x7fefff7c, flags=0x20200002, hw_index=0x33, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005d
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=148(0x94)}
+
+EID 0x00000183: eid=0x183, gid=0x4,
+ prio=0x7fefff7d, flags=0x20200002, hw_index=0x2e, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005c
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=149(0x95)}
+
+EID 0x00000184: eid=0x184, gid=0x4,
+ prio=0x7fefff83, flags=0x20200002, hw_index=0x2a, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000060
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=150(0x96)}
+
+EID 0x00000185: eid=0x185, gid=0x4,
+ prio=0x7fefff84, flags=0x20200002, hw_index=0x25, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005f
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=151(0x97)}
+
+EID 0x00000186: eid=0x186, gid=0x4,
+ prio=0x7fefff85, flags=0x20200002, hw_index=0x21, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005e
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=152(0x98)}
+
+EID 0x00000187: eid=0x187, gid=0x4,
+ prio=0x7fefff86, flags=0x20200002, hw_index=0x1d, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005d
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=153(0x99)}
+
+EID 0x00000188: eid=0x188, gid=0x4,
+ prio=0x7fefff87, flags=0x20200002, hw_index=0x18, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005c
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=154(0x9a)}
+
+EID 0x00000189: eid=0x189, gid=0x4,
+ prio=0x7fefff8d, flags=0x20200002, hw_index=0x13, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000060
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=155(0x9b)}
+
+EID 0x0000018a: eid=0x18a, gid=0x4,
+ prio=0x7fefff8e, flags=0x20200002, hw_index=0xf, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005f
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=156(0x9c)}
+
+EID 0x0000018b: eid=0x18b, gid=0x4,
+ prio=0x7fefff8f, flags=0x20200002, hw_index=0xb, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005e
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=157(0x9d)}
+
+EID 0x0000018c: eid=0x18c, gid=0x4,
+ prio=0x7fefff90, flags=0x20200002, hw_index=0x7, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005d
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=158(0x9e)}
+
+EID 0x0000018d: eid=0x18d, gid=0x4,
+ prio=0x7fefff91, flags=0x20200002, hw_index=0x2, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 0100005c
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=159(0x9f)}
+
+EID 0x0000018e: eid=0x18e, gid=0x4,
+ prio=0x7feeff93, flags=0x20200002, hw_index=0x6c, slice_number=0xa, slice_expand_part=0, Installed
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000004
+     MASK=0000ffff
+
+         action = {act=CopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=Drop, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=L3Switch, param0=100002(0x186a2), param1=0(0), param2=0(0)}
+         action = {act=GpCopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=IngressDstTypeSelect, param0=3(0x3), param1=0(0), param2=0(0)}
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=160(0xa0)}
+
+EID 0x00000199: eid=0x199, gid=0x4,
+ prio=0x7fefff7d, flags=0x20200002, hw_index=0x2f, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000000
+     MASK=0000ffff ffffff00
+ OuterVlanId
+  HW info:
+    Part: 0 Offset0: 20 Width0: 4 Order: 1
+    Part: 0 Offset1: 24 Width1: 4 Order: 2
+    Part: 0 Offset2: 28 Width2: 4 Order: 3
+     DATA=000003e8
+     MASK=00000fff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000008
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=161(0xa1)}
+
+EID 0x0000019a: eid=0x19a, gid=0x4,
+ prio=0x7fefff87, flags=0x20200002, hw_index=0x19, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000000
+     MASK=0000ffff ffffff00
+ OuterVlanId
+  HW info:
+    Part: 0 Offset0: 20 Width0: 4 Order: 1
+    Part: 0 Offset1: 24 Width1: 4 Order: 2
+    Part: 0 Offset2: 28 Width2: 4 Order: 3
+     DATA=000003e8
+     MASK=00000fff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000008
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=162(0xa2)}
+
+EID 0x0000019b: eid=0x19b, gid=0x4,
+ prio=0x7fefff91, flags=0x20200002, hw_index=0x3, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000031 01000000
+     MASK=0000ffff ffffff00
+ DstMac
+  HW info:
+    Part: 0 Offset0: 96 Width0: 16 Order: 1
+    Part: 0 Offset1: 112 Width1: 16 Order: 3
+    Part: 1 Offset2: 112 Width2: 16 Order: 2
+     DATA=00000041 01000000
+     MASK=0000ffff ffffff00
+ OuterVlanId
+  HW info:
+    Part: 0 Offset0: 20 Width0: 4 Order: 1
+    Part: 0 Offset1: 24 Width1: 4 Order: 2
+    Part: 0 Offset2: 28 Width2: 4 Order: 3
+     DATA=000003e8
+     MASK=00000fff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000008
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=163(0xa3)}
+
+EID 0x0000019c: eid=0x19c, gid=0x4,
+ prio=0x7feeff93, flags=0x20200002, hw_index=0x6d, slice_number=0xa, slice_expand_part=0, Installed
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000008
+     MASK=0000ffff
+
+         action = {act=CopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=Drop, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=L3Switch, param0=100002(0x186a2), param1=0(0), param2=0(0)}
+         action = {act=GpCopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=IngressDstTypeSelect, param0=3(0x3), param1=0(0), param2=0(0)}
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=164(0xa4)}
+
+EID 0x000001a7: eid=0x1a7, gid=0x4,
+ prio=0x7feeff93, flags=0x20200002, hw_index=0x6e, slice_number=0xa, slice_expand_part=0, Installed
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         action = {act=CopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=Drop, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=L3Switch, param0=100002(0x186a2), param1=0(0), param2=0(0)}
+         action = {act=GpCopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=IngressDstTypeSelect, param0=3(0x3), param1=0(0), param2=0(0)}
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=165(0xa5)}
+
+EID 0x000001a8: eid=0x1a8, gid=0x4,
+ prio=0x7feffe6d, flags=0x20200002, hw_index=0x68, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000003
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=166(0xa6)}
+
+EID 0x000001a9: eid=0x1a9, gid=0x4,
+ prio=0x7feffe6e, flags=0x20200002, hw_index=0x64, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000002
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=167(0xa7)}
+
+EID 0x000001aa: eid=0x1aa, gid=0x4,
+ prio=0x7feffe6f, flags=0x20200002, hw_index=0x60, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000001
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=168(0xa8)}
+
+EID 0x000001ab: eid=0x1ab, gid=0x4,
+ prio=0x7feffed1, flags=0x20200002, hw_index=0x5c, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000003
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=169(0xa9)}
+
+EID 0x000001ac: eid=0x1ac, gid=0x4,
+ prio=0x7feffed2, flags=0x20200002, hw_index=0x58, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000002
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=170(0xaa)}
+
+EID 0x000001ad: eid=0x1ad, gid=0x4,
+ prio=0x7feffed3, flags=0x20200002, hw_index=0x53, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000001
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=171(0xab)}
+
+EID 0x000001ae: eid=0x1ae, gid=0x4,
+ prio=0x7fefff35, flags=0x20200002, hw_index=0x4f, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000003
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=172(0xac)}
+
+EID 0x000001af: eid=0x1af, gid=0x4,
+ prio=0x7fefff36, flags=0x20200002, hw_index=0x4b, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000002
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=173(0xad)}
+
+EID 0x000001b0: eid=0x1b0, gid=0x4,
+ prio=0x7fefff37, flags=0x20200002, hw_index=0x47, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000001
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=174(0xae)}
+
+EID 0x000001b1: eid=0x1b1, gid=0x4,
+ prio=0x7fefff78, flags=0x20200002, hw_index=0x42, slice_number=0xa, slice_expand_part=0, Installed
+ DstMac
+  HW info:
+    Part: 0 Offset0: 96 Width0: 16 Order: 1
+    Part: 0 Offset1: 112 Width1: 16 Order: 3
+    Part: 1 Offset2: 112 Width2: 16 Order: 2
+     DATA=00000180 c2000002
+     MASK=0000ffff ffffffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=175(0xaf)}
+
+EID 0x000001b2: eid=0x1b2, gid=0x4,
+ prio=0x7fefff79, flags=0x20200002, hw_index=0x40, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000065
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=176(0xb0)}
+
+EID 0x000001b3: eid=0x1b3, gid=0x4,
+ prio=0x7fefff7a, flags=0x20200002, hw_index=0x3c, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000064
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=177(0xb1)}
+
+EID 0x000001b4: eid=0x1b4, gid=0x4,
+ prio=0x7fefff7b, flags=0x20200002, hw_index=0x38, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000063
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=178(0xb2)}
+
+EID 0x000001b5: eid=0x1b5, gid=0x4,
+ prio=0x7fefff7c, flags=0x20200002, hw_index=0x34, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000062
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=179(0xb3)}
+
+EID 0x000001b6: eid=0x1b6, gid=0x4,
+ prio=0x7fefff7d, flags=0x20200002, hw_index=0x30, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000061
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=180(0xb4)}
+
+EID 0x000001b7: eid=0x1b7, gid=0x4,
+ prio=0x7fefff83, flags=0x20200002, hw_index=0x2b, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000065
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=181(0xb5)}
+
+EID 0x000001b8: eid=0x1b8, gid=0x4,
+ prio=0x7fefff84, flags=0x20200002, hw_index=0x26, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000064
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=182(0xb6)}
+
+EID 0x000001b9: eid=0x1b9, gid=0x4,
+ prio=0x7fefff85, flags=0x20200002, hw_index=0x22, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000063
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=183(0xb7)}
+
+EID 0x000001ba: eid=0x1ba, gid=0x4,
+ prio=0x7fefff86, flags=0x20200002, hw_index=0x1e, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000062
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=184(0xb8)}
+
+EID 0x000001bb: eid=0x1bb, gid=0x4,
+ prio=0x7fefff87, flags=0x20200002, hw_index=0x1a, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000061
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=185(0xb9)}
+
+EID 0x000001bc: eid=0x1bc, gid=0x4,
+ prio=0x7fefff8d, flags=0x20200002, hw_index=0x14, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000065
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=186(0xba)}
+
+EID 0x000001bd: eid=0x1bd, gid=0x4,
+ prio=0x7fefff8e, flags=0x20200002, hw_index=0x10, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000064
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=187(0xbb)}
+
+EID 0x000001be: eid=0x1be, gid=0x4,
+ prio=0x7fefff8f, flags=0x20200002, hw_index=0xc, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000063
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=188(0xbc)}
+
+EID 0x000001bf: eid=0x1bf, gid=0x4,
+ prio=0x7fefff90, flags=0x20200002, hw_index=0x8, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000062
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=189(0xbd)}
+
+EID 0x000001c0: eid=0x1c0, gid=0x4,
+ prio=0x7fefff91, flags=0x20200002, hw_index=0x4, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000061
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000003
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=190(0xbe)}
+
+EID 0x000001c1: eid=0x1c1, gid=0x4,
+ prio=0x7feeff93, flags=0x20200002, hw_index=0x6f, slice_number=0xa, slice_expand_part=0, Installed
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         action = {act=CopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=Drop, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=L3Switch, param0=100002(0x186a2), param1=0(0), param2=0(0)}
+         action = {act=GpCopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=IngressDstTypeSelect, param0=3(0x3), param1=0(0), param2=0(0)}
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=191(0xbf)}
+
+EID 0x000001c2: eid=0x1c2, gid=0x4,
+ prio=0x7feffe6d, flags=0x20200002, hw_index=0x69, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000006
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         action = {act=CopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=Drop, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=L3Switch, param0=100002(0x186a2), param1=0(0), param2=0(0)}
+         action = {act=GpCopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=IngressDstTypeSelect, param0=3(0x3), param1=0(0), param2=0(0)}
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=192(0xc0)}
+
+EID 0x000001c3: eid=0x1c3, gid=0x4,
+ prio=0x7feffe6e, flags=0x20200002, hw_index=0x65, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000005
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=193(0xc1)}
+
+EID 0x000001c4: eid=0x1c4, gid=0x4,
+ prio=0x7feffe6f, flags=0x20200002, hw_index=0x61, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000004
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=194(0xc2)}
+
+EID 0x000001c5: eid=0x1c5, gid=0x4,
+ prio=0x7feffed1, flags=0x20200002, hw_index=0x5d, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000006
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=195(0xc3)}
+
+EID 0x000001c6: eid=0x1c6, gid=0x4,
+ prio=0x7feffed2, flags=0x20200002, hw_index=0x59, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000005
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=196(0xc4)}
+
+EID 0x000001c7: eid=0x1c7, gid=0x4,
+ prio=0x7feffed3, flags=0x20200002, hw_index=0x54, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000004
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=197(0xc5)}
+
+EID 0x000001c8: eid=0x1c8, gid=0x4,
+ prio=0x7fefff35, flags=0x20200002, hw_index=0x50, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000006
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=198(0xc6)}
+
+EID 0x000001c9: eid=0x1c9, gid=0x4,
+ prio=0x7fefff36, flags=0x20200002, hw_index=0x4c, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000005
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=199(0xc7)}
+
+EID 0x000001ca: eid=0x1ca, gid=0x4,
+ prio=0x7fefff37, flags=0x20200002, hw_index=0x48, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000004
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=200(0xc8)}
+
+EID 0x000001cb: eid=0x1cb, gid=0x4,
+ prio=0x7fefff73, flags=0x20200002, hw_index=0x44, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000011 01330001
+     MASK=0000ffff ffff0000
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         action = {act=CopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=Drop, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=L3Switch, param0=100002(0x186a2), param1=0(0), param2=0(0)}
+         action = {act=GpCopyToCpuCancel, param0=0(0), param1=0(0), param2=0(0)}
+         action = {act=IngressDstTypeSelect, param0=3(0x3), param1=0(0), param2=0(0)}
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=201(0xc9)}
+
+EID 0x000001cc: eid=0x1cc, gid=0x4,
+ prio=0x7fefff79, flags=0x20200002, hw_index=0x41, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000060
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=202(0xca)}
+
+EID 0x000001cd: eid=0x1cd, gid=0x4,
+ prio=0x7fefff7a, flags=0x20200002, hw_index=0x3d, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005f
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=203(0xcb)}
+
+EID 0x000001ce: eid=0x1ce, gid=0x4,
+ prio=0x7fefff7b, flags=0x20200002, hw_index=0x39, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005e
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=204(0xcc)}
+
+EID 0x000001cf: eid=0x1cf, gid=0x4,
+ prio=0x7fefff7c, flags=0x20200002, hw_index=0x35, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005d
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=205(0xcd)}
+
+EID 0x000001d0: eid=0x1d0, gid=0x4,
+ prio=0x7fefff7d, flags=0x20200002, hw_index=0x31, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005c
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000806
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=206(0xce)}
+
+EID 0x000001d1: eid=0x1d1, gid=0x4,
+ prio=0x7fefff83, flags=0x20200002, hw_index=0x2c, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000060
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=207(0xcf)}
+
+EID 0x000001d2: eid=0x1d2, gid=0x4,
+ prio=0x7fefff84, flags=0x20200002, hw_index=0x27, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005f
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=208(0xd0)}
+
+EID 0x000001d3: eid=0x1d3, gid=0x4,
+ prio=0x7fefff85, flags=0x20200002, hw_index=0x23, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005e
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=209(0xd1)}
+
+EID 0x000001d4: eid=0x1d4, gid=0x4,
+ prio=0x7fefff86, flags=0x20200002, hw_index=0x1f, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005d
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=210(0xd2)}
+
+EID 0x000001d5: eid=0x1d5, gid=0x4,
+ prio=0x7fefff87, flags=0x20200002, hw_index=0x1b, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005c
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=000086dd
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=211(0xd3)}
+
+EID 0x000001d6: eid=0x1d6, gid=0x4,
+ prio=0x7fefff8d, flags=0x20200002, hw_index=0x15, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 01000060
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=212(0xd4)}
+
+EID 0x000001d7: eid=0x1d7, gid=0x4,
+ prio=0x7fefff8e, flags=0x20200002, hw_index=0x11, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005f
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=213(0xd5)}
+
+EID 0x000001d8: eid=0x1d8, gid=0x4,
+ prio=0x7fefff8f, flags=0x20200002, hw_index=0xd, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005e
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=214(0xd6)}
+
+EID 0x000001d9: eid=0x1d9, gid=0x4,
+ prio=0x7fefff90, flags=0x20200002, hw_index=0x9, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005d
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=215(0xd7)}
+
+EID 0x000001da: eid=0x1da, gid=0x4,
+ prio=0x7fefff91, flags=0x20200002, hw_index=0x5, slice_number=0xa, slice_expand_part=0, Installed
+ SrcMac
+  HW info:
+    Part: 0 Offset0: 80 Width0: 16 Order: 2
+    Part: 1 Offset1: 80 Width1: 16 Order: 1
+    Part: 1 Offset2: 96 Width2: 16 Order: 3
+     DATA=00000032 0100005c
+     MASK=0000ffff ffffffff
+ EtherType
+  HW info:
+    Part: 1 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000800
+     MASK=0000ffff
+ SrcGport
+  HW info:
+    Part: 0 Offset0: 128 Width0: 16 Order: 1
+     DATA=00000006
+     MASK=0000ffff
+
+         flex_counter = {flexctr_action_id=268435466(0x1000000a), counter_id=216(0xd8)}
+
+BCM.0>
+BCM.0>

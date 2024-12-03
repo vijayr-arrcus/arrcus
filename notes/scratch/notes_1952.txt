@@ -1,0 +1,33 @@
+root@NewDev-31# show datapath queues interface swp55 voq | tab
+datapath
+                                                                                                                                                          WRED     WRED
+                                                                QUEUE                                    QUEUE    QUEUE                          WRED     ECN      ECN
+                       QUEUE    QUEUE     QUEUE      QUEUE      UC       QUEUE UC  QUEUE UC   QUEUE UC   MC       MC       QUEUE MC   QUEUE MC   DROPPED  MARKED   MARKED
+NAME   IFNAME  ID  ID  TXCOUNT  TXBYTES   DROPCOUNT  DROPBYTES  TXCOUNT  TXBYTES   DROPCOUNT  DROPBYTES  TXCOUNT  TXBYTES  DROPCOUNT  DROPBYTES  PACKETS  PACKETS  BYTES
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+lc0-0  swp55   0   0   95       10352     0          0          85       8972      0          0          10       1380     0          0          0        0        0
+               1   1   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               2   2   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               3   3   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               4   4   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               5   5   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               6   6   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               7   7   184240   14441784  0          0          184240   14441784  0          0          0        0        0          0          0        0        0
+
+root@NewDev-31# show datapath queues interface  swp55 voq | tab | nomore
+datapath
+                                                                                                                                                          WRED     WRED
+                                                                QUEUE                                    QUEUE    QUEUE                          WRED     ECN      ECN
+                       QUEUE    QUEUE     QUEUE      QUEUE      UC       QUEUE UC  QUEUE UC   QUEUE UC   MC       MC       QUEUE MC   QUEUE MC   DROPPED  MARKED   MARKED
+NAME   IFNAME  ID  ID  TXCOUNT  TXBYTES   DROPCOUNT  DROPBYTES  TXCOUNT  TXBYTES   DROPCOUNT  DROPBYTES  TXCOUNT  TXBYTES  DROPCOUNT  DROPBYTES  PACKETS  PACKETS  BYTES
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+lc0-0  swp55   0   0   97       10628     0          0          85       8972      0          0          12       1656     0          0          0        0        0
+               1   1   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               2   2   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               3   3   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               4   4   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               5   5   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               6   6   0        0         0          0          0        0         0          0          0        0        0          0          0        0        0
+               7   7   191031   15158778  0          0          191031   15158778  0          0          0        0        0          0          0        0        0
+
+root@NewDev-31#

@@ -76,3 +76,6 @@ ADDRESS    MAC ADDRESS        INTERFACE  INTERFACE  ESI  PROTOCOL  NAME     NUM 
 ---
 
 ```
+
+
+show network-instance default ip-tunnels

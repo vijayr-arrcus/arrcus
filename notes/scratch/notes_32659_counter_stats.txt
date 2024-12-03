@@ -1,0 +1,42 @@
+acl acl-set l2-acl ACL_L2
+acl-entry 100
+l2 source-mac 0C:48:C6:76:b0:A9
+l2 source-mac-mask FF:FF:FF:FF:FF:F0
+actions forwarding-action DROP
+
+acl acl-set v4-acl ACL_IPV4
+acl-entry 100
+ipv4 source-address 10.10.10.1/32
+actions forwarding-action DROP
+
+interface vlan100
+ type    l3ipvlan
+ enabled true
+ subinterface 0
+  ipv4 address 10.10.10.2
+   prefix-length 24
+  exit
+ exit
+ acl-service-policies ingress-acl-sets ACL_INTF
+  acl-set ACL_L2
+   set-name l2-acl
+  !
+ !
+!
+
+
+acl acl-set test_custom_copp_bgp ACL_IPV4
+ acl-entry 100
+  ipv4 protocol IP_TCP
+  transport destination-port 179
+ !
+!
+
+copp classifier copp-class
+filter ACL acl-type ACL_IPV4 acl-name test_custom_copp_bgp
+
+copp policy copp-policy
+classifier copp-class
+action POLICE committed rate value 10000
+
+control-plane service-policy INGRESS name copp-policy

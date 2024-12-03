@@ -1,0 +1,92 @@
+vlan 1341       ports cpu,xe7-xe18 (0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fff01), untagged xe7-xe18 (0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fff00) MCAST_FLOOD_UNKNOWN
+
+1341  1341        ACTIVE  bond1      -
+                          bond2      -
+                          bond3      -
+                          bond4      -
+                          bond5      -
+                          bond6      -
+                          bond7      -
+                          bond8      -
+                          bond9      -
+                          bond10     -
+                          bond11     -
+                          bond12     -
+
+BCM.0> knet netif show
+knet netif show
+Interface ID 1: name=acl_log_all type=Vlan vlan=0 port=n/a
+Interface ID 2: name=sflow type=Vlan vlan=0 port=n/a rcpu
+Interface ID 3: name=mirror type=Vlan vlan=0 port=n/a
+Interface ID 4: name=swp0 type=Port vlan=0 port=xe0
+Interface ID 5: name=swp1 type=Port vlan=0 port=xe1
+Interface ID 6: name=swp2 type=Port vlan=0 port=xe2
+Interface ID 7: name=swp3 type=Port vlan=0 port=xe3
+Interface ID 8: name=swp4 type=Port vlan=0 port=xe4
+Interface ID 9: name=swp5 type=Port vlan=0 port=xe5
+Interface ID 10: name=swp6 type=Port vlan=0 port=xe6
+Interface ID 11: name=swp7 type=Port vlan=0 port=xe7
+Interface ID 12: name=swp8 type=Port vlan=0 port=xe8
+Interface ID 13: name=swp9 type=Port vlan=0 port=xe9
+Interface ID 14: name=swp10 type=Port vlan=0 port=xe10
+Interface ID 15: name=swp11 type=Port vlan=0 port=xe11
+Interface ID 16: name=swp12 type=Port vlan=0 port=xe12
+Interface ID 17: name=swp13 type=Port vlan=0 port=xe13
+Interface ID 18: name=swp14 type=Port vlan=0 port=xe14
+Interface ID 19: name=swp15 type=Port vlan=0 port=xe15
+Interface ID 20: name=swp16 type=Port vlan=0 port=xe16
+Interface ID 21: name=swp17 type=Port vlan=0 port=xe17
+Interface ID 22: name=swp18 type=Port vlan=0 port=xe18
+Interface ID 23: name=swp19 type=Port vlan=0 port=xe19
+Interface ID 24: name=swp20 type=Port vlan=0 port=xe20
+Interface ID 25: name=swp21 type=Port vlan=0 port=xe21
+Interface ID 26: name=swp22 type=Port vlan=0 port=xe22
+Interface ID 27: name=swp23 type=Port vlan=0 port=xe23
+Interface ID 28: name=swp24 type=Port vlan=0 port=xe24
+Interface ID 29: name=swp25 type=Port vlan=0 port=xe25
+Interface ID 30: name=swp26 type=Port vlan=0 port=xe26
+Interface ID 31: name=swp27 type=Port vlan=0 port=xe27
+Interface ID 32: name=swp28 type=Port vlan=0 port=xe29
+Interface ID 33: name=swp29 type=Port vlan=0 port=xe30
+Interface ID 34: name=swp30 type=Port vlan=0 port=xe31
+Interface ID 35: name=swp31 type=Port vlan=0 port=xe32
+Interface ID 36: name=swp32 type=Port vlan=0 port=ge0
+Interface ID 37: name=swp33 type=Port vlan=0 port=xe33
+Interface ID 38: name=swp34 type=Port vlan=0 port=xe34
+Interface ID 39: name=swp35 type=Port vlan=0 port=xe35
+Interface ID 40: name=swp36 type=Port vlan=0 port=xe36
+Interface ID 41: name=swp37 type=Port vlan=0 port=xe37
+Interface ID 42: name=swp38 type=Port vlan=0 port=xe38
+Interface ID 43: name=swp39 type=Port vlan=0 port=xe39
+Interface ID 44: name=swp40 type=Port vlan=0 port=xe40
+Interface ID 45: name=swp41 type=Port vlan=0 port=xe41
+Interface ID 46: name=swp42 type=Port vlan=0 port=xe42
+Interface ID 47: name=swp43 type=Port vlan=0 port=xe43
+Interface ID 48: name=swp44 type=Port vlan=0 port=xe44
+Interface ID 49: name=swp45 type=Port vlan=0 port=xe45
+Interface ID 50: name=swp46 type=Port vlan=0 port=xe46
+Interface ID 51: name=swp47 type=Port vlan=0 port=xe47
+Interface ID 52: name=swp48 type=Port vlan=0 port=xe28
+Interface ID 53: name=swp49 type=Port vlan=0 port=ce0
+Interface ID 54: name=swp50 type=Port vlan=0 port=ce1
+Interface ID 55: name=swp51 type=Port vlan=0 port=ce2
+Interface ID 56: name=swp52 type=Port vlan=0 port=ce3
+Interface ID 57: name=swp53 type=Port vlan=0 port=ce4
+BCM.0>
+BCM.0>
+
+
+Group 0xf000004 (FLOW)
+        port xe7, encap id 432783
+        port xe8, encap id 432784
+        port xe9, encap id 432785
+        port xe10, encap id 432786
+        port xe11, encap id 432787
+        port xe12, encap id 432788
+        port xe13, encap id 432789
+        port xe14, encap id 432790
+        port xe15, encap id 432791
+        port xe16, encap id 432792
+        port xe17, encap id 432793
+        port xe18, encap id 432794
+        port cpu0, encap id -1

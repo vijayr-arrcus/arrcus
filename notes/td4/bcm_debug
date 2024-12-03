@@ -1038,7 +1038,7 @@ lt traverse -l PROTOCOL_PKT_FORWARD_TABLE
 
 MON_ING_TRACE_EVENT -- whethere a particular event should copy to CPU or not.
 
-Metering red 
+Metering red
 
 BLOCK_MASK_DROP --> when we are not able to send the traffic on any ports.
 bcmPktTraceEventIngressVfp
@@ -1071,7 +1071,7 @@ bcm_cosq_control_set(unit, gport, index, bcmCosqControlEgressUCQueueMinLimitByte
 bcm_cosq_control_get(unit, gport, index, bcmCosqControlEgressUCQueueMinLimitBytes, &args);
 
 bcm_cosq_control_get(unit, gport, index, bcmCosqControlDropLimitAlpha, &args);
-debug bcmlt - 
+debug bcmlt -
 
 
 dump sw all
@@ -1121,3 +1121,41 @@ Table DEVICE_CONFIG:
     PP_CLK_FREQ=CLK_1350MHZ
     CORE_CLK_FREQ=CLK_1350MHZ
     VARIANT=DNA_6_5_31_7_0
+
+BCMLT.0> lt TABLE_CONTROL lookup TABLE_ID=EGR_DVP
+Table TABLE_CONTROL:
+  lookup TABLE_ID=EGR_DVP
+    TABLE_OP_PT_INFO=0
+    MAX_ENTRIES=0x4000(16384)
+    TABLE_ID=EGR_DVP
+BCMLT.0> lt TABLE_INFO lookup TABLE_ID=EGR_DVP
+Table TABLE_INFO:
+  lookup TABLE_ID=EGR_DVP
+    TRAVERSE_OPCODE=1
+    UPDATE_OPCODE=1
+    LOOKUP_OPCODE=1
+    DELETE_OPCODE=1
+    INSERT_OPCODE=1
+    NUM_RESOURCE_INFO=0
+    ENTRY_LIMIT=0x4000(16384)
+    ENTRY_MAXIMUM=0x4000(16384)
+    ENTRY_INUSE_CNT=1
+    NUM_FIELDS=0x14(20)
+    NUM_KEYS=1
+    VARIABLE_GRANULARITY_KEY=0
+    PARTIAL_OUTPUT=0
+    READ_ONLY=0
+    MODELED=1
+    MAP=DIRECT
+    TYPE=INDEX
+    TABLE_ID=EGR_DVP
+BCMLT.0> exit
+BCM.0> a
+Attach: Unit 0 (BCM56780_A0): attached (current unit)
+BCM.0> ver
+Broadcom Command Monitor: Copyright (c) 1998-2024 Broadcom
+Release: sdk-6.5.31 built 20240428 (Sun Apr 28 06:36:17 2024)
+From sdkrel@lc-lvn-4576:/projects/ntsw_sw16_scratch/sdkrel/regress/sdk-6.5.31/src/sdk.hsdk.56780
+Platform: SLK_BCM957812
+OS: Unix (Posix)
+BCM.0>

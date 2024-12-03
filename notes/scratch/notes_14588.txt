@@ -1,0 +1,19 @@
+1. bcmsdk_counter_stat_id_deallocator -- No one is doing deallocate.
+2. bcmsdk_fp_entry_stat_id_deallocator
+     * we are not doing index deallocate
+3. bcmsdk_counter_destroy -- should take double pointer and return NULL.
+static ret_code_e
+bcmsdk_fp_counter_destroy (int unit, bcmsdk_counter_t *bcmsdk_counter)
+{
+  ret_code_e rc = RET_CODE_SUCCESS;
+  int group_id = bcmsdk_counter->u.fp_counter->group_id;
+  uint32_t flexctr_id = bcmsdk_counter->flexctr_id;
+
+  if (!bcmsdk_counter->flexctr_supported) {
+    return RET_CODE_SUCCESS;
+  }
+4. bcmsdk_fp_counter_create
+        bcmsdk_counter->num_stat = ceil((double)index_num/fp_counter_info->offset_count) - 1;
+5. bcmsdk_fp_counter_stat_id_attach -- why are we doing indexer_set
+
+6. There is bcmsdk_stats_info_t and bcmsdk_stat_attach_info_t done see a reason to have both.

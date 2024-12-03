@@ -1,0 +1,15 @@
+flexctr stat show statid=0x1000000a 134
+flexctr stat show statid=0x1000000a 160
+flexctr stat show statid=0x1000000a 164
+flexctr stat show statid=0x1000000a 165
+flexctr stat show statid=0x1000000a 191
+
+flexctr stat clear statid=0x1000000a
+
+0x000001c1
+print bcm_field_entry_enable_set(0, 0x000001c2, 0);
+
+flexctr stat show statid=0x1000000a 191-216
+flexctr stat show statid=0x10000009 1-26
+
+#flexctrshow #flexcountershow

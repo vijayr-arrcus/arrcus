@@ -26,7 +26,9 @@ def send_ip_v6_traffic ():
     return pkt
 
 def send_ip_v4_traffic ():
-    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip)
+    dscp_value = 2
+    tos_value = dscp_value << 2
+    pkt = Ether(src=smac, dst=dmac)/IP(src=src_ip, dst=dst_ip, tos=tos_value)
     return pkt
 
 def send_lldp_traffic ():

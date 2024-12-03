@@ -1,0 +1,13 @@
+root@seastone2-core-1-test# show dpal object-type dpal-l3-intf generic-entries entry ifindex:0x3ed
+generic-entries entry ifindex:0x3ed
+ entry
+                                                                      PENDING  PENDING
+                                     ATTR   PARENT                    PARENT   PARENT
+KEY            STATE    ATTR NAME    VALUE  TYPE       PARENT KEY     TYPE     KEY
+----------------------------------------------------------------------------------------
+ifindex:0x3ed  created  iftype       port
+                        portnum      17
+                        l3intf-hwid  1
+                        l3-vlanid    3966   dpal-intf  ifindex:0x3ed
+                                            dpal-intf  ifindex:0x3ed
+                                            dpal-vrf   vrf_id:1
