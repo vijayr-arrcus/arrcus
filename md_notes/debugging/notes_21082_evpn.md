@@ -371,3 +371,74 @@ PING 2.1.1.3 (2.1.1.3) from 1.1.1.1 : 56(84) bytes of data.
 ```
 
 # Overlay Vxlan Configuration.
+
+## Create the overlay (VTEP) interface.
+
+```
+overlay local-tunnel-endpoint 0
+source-interface loopback0
+!
+```
+
+## Overlay Forwarding Interface Verification
+
+```
+leaf1# show overlay local-tunnel-endpoint
+overlay local-tunnel-endpoint
+LTEP
+LTEP RUN SOURCE SOURCE UDP
+ID STATE INTERFACE IP ENCAPSULATION PORT
+------------------------------------------------------
+0 UP loopback0 1.1.1.1 VXLAN 4789
+```
+
+
+The overlay tunnels will be verified once the BGP EVPN peering is ESTABLISHED.
+The flood-list, or IMET replication list, is built using EVPN RT-3 updates.
+
+
+## Validate the EVPN Peering sessions are ESTABLISHED
+
+```
+leaf1# show network-instance default protocol BGP default all-neighbor state peer-group overlayevpn | select state session-state | select state session-elapsed-time | select state peer-as |
+select state established-transitions | select state local-as
+all-neighbor
+ SESSION
+NEIGHBOR PEER LOCAL SESSION ESTABLISHED ELAPSED
+ADDRESS AS AS STATE TRANSITIONS TIME
+------------------------------------------------------------
+2.1.1.3 65100 65001 ESTABLISHED 3 00:49:51
+2.1.1.4 65100 65001 ESTABLISHED 2 00:49:23
+
+```
+
+## BGP detailed information per neighbor.
+
+```
+arcrr1# show network-instance default protocol BGP default neighbor 1.1.1.1
+neighbor 1.1.1.1
+state peer-group leaf-evpn
+state neighbor-address 1.1.1.1
+state enabled true
+state peer-as 65001
+state local-as 65100
+state peer-type EXTERNAL
+state auth-password ""
+state send-community BOTH
+state description 1.1.1.1
+state session-state ESTABLISHED
+state last-established 1592486741
+state established-transitions 5
+state supported-capabilities [MPBGP ASN32 ROUTE_REFRESH GRACEFUL_RESTART ADD_PATHS]
+--- snip ---
+transport state tcp-mss 8922
+transport state mtu-discovery false
+transport state passive-mode false
+transport state local-address 2.1.1.3
+transport state local-port 45875
+transport state remote-address 1.1.1.1
+transport state remote-port 179
+--- snip ---
+ebgp-multihop state multihop-ttl 5
+
+```
