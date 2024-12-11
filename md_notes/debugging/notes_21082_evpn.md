@@ -442,3 +442,184 @@ transport state remote-port 179
 ebgp-multihop state multihop-ttl 5
 
 ```
+
+## Designated forwarder and ESI mapping.
+
+```
+root@leaf1# show evpn esi-info | tab
+evpn esi-info counters esi-pruned-pkts 548221
+evpn esi-info counters esi-pruned-octets 548221000
+evpn esi-info esi
+                                                                                                        ENTRY
+                               LOCAL      OPER    LACP                                         OUR      NETWORK   DESIGNATED
+ENTRY ESI                      INTERFACE  STATUS  STATUS  ORDERED PE LIST                      ORDINAL  INSTANCE  FORWARDER
+-----------------------------------------------------------------------------------------------------------------------------------
+00:01:10:10:10:10:10:10:10:10  bond10     UP      ACTIVE  [ 111.111.111.111 111.111.111.112 ]  0        vlan1001  111.111.111.112 ---> IP address of the Leaf2 loopback.
+                                                                                                        vlan1002  111.111.111.111
+                                                                                                        vlan1003  111.111.111.112
+                                                                                                        vlan1004  111.111.111.111
+                                                                                                        vlan1005  111.111.111.112
+                                                                                                        vlan1006  111.111.111.111
+                                                                                                        vlan1007  111.111.111.112
+                                                                                                        vlan1008  111.111.111.111
+```
+
+```
+
+root@Leaf2# show running-config overlay
+overlay local-tunnel-endpoint 0
+ source-interface loopback1
+!
+
+root@Leaf2# show running-config interface loopback1
+interface loopback1
+ type    softwareLoopback
+ enabled true
+ subinterface 0
+  ipv4 address 111.111.111.112
+   prefix-length 32
+  exit
+ exit
+!
+root@Leaf2#
+
+```
+
+## Anycast gateway on the device.
+
+```
+evpn anycast-gateway-mac aa:aa:aa:aa:aa:aa
+```
+
+
+This anycast gateway MAC configuration is OPTIONAL in ArcOS. If not configured the anycast MAC address is virtual router MAC address 00:00:5e:00:01:01. The reason to configure this again is for inter-op reasons, or when one needs to explicitly define the anycast MAC address.
+
+## Mac mobility
+
+```
+evpn duplicate-mac-detection window 60
+evpn duplicate-mac-detection threshold 4
+evpn duplicate-mac-detection auto-recovery-time 5
+```
+
+### The default values are:
+• Window of 60 seconds
+• Threshold of 5 moves
+• An auto-recovery time of “0”, a MAC that exceeds thresholds will be blocked forever.
+
+
+## Arp ND supression.
+
+* Enabled by default.
+
+
+```
+network-instance vlan10
+vni 1010
+local-tunnel-endpoint-id 0
+arp-nd-suppression false
+```
+
+## Understanding and verifying the BGP EVPN overlay.
+
+```
+leaf1# show network-instance default protocol BGP default all-neighbor * afi-safi *
+state prefixes
+all-neighbor
+NEIGHBOR AFI SAFI TOTAL TOTAL
+ADDRESS NAME RECEIVED SENT RECEIVED SENT WITHDRAWN
+---------------------------------------------------------------------
+2.1.1.3 L2VPN_EVPN 51 65 56 76 10
+2.1.1.4 L2VPN_EVPN 51 65 56 100 10
+192.168.0.1 IPV4_UNICAST 8 10 8 14 0
+192.168.0.7 IPV4_UNICAST 6 10 6 14 0
+```
+
+## Layer2 L2 interface status.
+
+```
+root@leaf1# show interface swp3-6 | select oper-status | select admin-status | select
+counters in-unicast-pkts | select counters out-unicast-pkts | select counters in-bits-rate-
+brief | select counters out-bits-rate-brief
+interface
+IN OUT
+ADMIN OPER UNICAST UNICAST IN BITS RATE OUT BITS
+NAME STATUS STATUS PKTS PKTS BRIEF RATE BRIEF
+----------------------------------------------------------------------
+swp3 UP UP 0 7 17194436608.0 15984336896.0
+swp4 UP UP 1178 75621 0 bps 304 bps
+swp5 UP UP 0 0 15984336896.0 15984336896.0
+swp6 UP UP 0 74967 0 bps 304 bps
+```
+
+## Multihomed interfaces.
+
+```
+leaf2# show interface bond* | select oper-status | select admin-status | select counters in-
+unicast-pkts | select counters out-unicast-pkts | select aggregation lag-type
+interface
+IN OUT
+ADMIN OPER UNICAST UNICAST LAG
+NAME STATUS STATUS PKTS PKTS TYPE
+-----------------------------------------------
+bond0 UP UP 0 69674 LACP
+bond1 UP UP 93137 167578 LACP
+bond2 UP UP 0 0 LACP
+```
+
+##  LACP Interfaces (Bond0 shown below)
+
+```
+leaf2# show lacp interface bond0 | notab
+lacp interface bond0
+state name bond0
+state interval FAST
+state system-id-mac 00:10:10:10:10:10
+member swp3
+state interface swp3
+state timeout SHORT
+state synchronization IN_SYNC
+state aggregatable true
+state collecting true
+state distributing true
+```
+
+## IMET (Inclusive Multicast Ethernet Tag Routes) and VXLAN BUM traffic replication.
+
+The IMET route is used to replicate Broadcast, Multicast and Unknown Unicast (BUM) traffic to interested receivers in the same VLAN. ArcOS uses Ingress Replication (IR) as a replication method, meaning the IP underlay can be unicast only.
+
+Unless ARP/ND suppression has been explicitly disabled; once hosts are learnt through BGP then flooding of ARP is essentially eliminated because the VTEPs install these remote ARP entries locally and respond to any local ARP requests from clients. This is similarly true for IPv6 neighbor discovery (ND) requests.
+
+### Verify the IMET routes have been received the and the BUM replication entries created on Leaf1.
+
+```
+
+leaf1# show network-instance default protocol BGP default rib afi-safi L2VPN_EVPN loc-rib
+route route-type 3 | select state path-types
+loc-rib route
+PREFIX ORIGIN PATH ID PATH TYPES
+-----------------------------------------------------------------------------------------
+1.1.1.1:10:[3][0][32][1.1.1.1] 0.0.0.0 0 [ BEST_PATH EXPORTED_PATH ]
+1.1.1.1:10:[3][0][32][1.1.1.2] 2.1.1.3 4525280622281023 [ BEST_PATH IMPORTED_PATH ]
+1.1.1.1:10:[3][0][32][1.1.1.3] 2.1.1.3 4525332161888603 [ BEST_PATH IMPORTED_PATH ]
+1.1.1.1:10:[3][0][32][1.1.1.4] 2.1.1.3 4525422356201832 [ BEST_PATH IMPORTED_PATH ]
+1.1.1.1:20:[3][0][32][1.1.1.1] 0.0.0.0 0 [ BEST_PATH EXPORTED_PATH ]
+1.1.1.1:20:[3][0][32][1.1.1.2] 2.1.1.3 4525276327313725 [ BEST_PATH IMPORTED_PATH ]
+1.1.1.1:20:[3][0][32][1.1.1.3] 2.1.1.3 4525327866921305 [ BEST_PATH IMPORTED_PATH ]
+1.1.1.1:20:[3][0][32][1.1.1.4] 2.1.1.3 4525426651169129 [ BEST_PATH IMPORTED_PATH ]
+1.1.1.2:10:[3][0][32][1.1.1.2] 2.1.1.3 319 [ BEST_PATH IMPORT_SOURCE_PATH
+1.1.1.2:10:[3][0][32][1.1.1.2] 2.1.1.4 280 [ IMPORT_SOURCE_PATH ]
+1.1.1.2:20:[3][0][32][1.1.1.2] 2.1.1.3 317 [ BEST_PATH IMPORT_SOURCE_PATH
+1.1.1.2:20:[3][0][32][1.1.1.2] 2.1.1.4 278 [ IMPORT_SOURCE_PATH ]
+1.1.1.3:10:[3][0][32][1.1.1.3] 2.1.1.3 347 [ BEST_PATH IMPORT_SOURCE_PATH
+1.1.1.3:10:[3][0][32][1.1.1.3] 2.1.1.4 262 [ IMPORT_SOURCE_PATH ]
+1.1.1.3:20:[3][0][32][1.1.1.3] 2.1.1.3 345 [ BEST_PATH IMPORT_SOURCE_PATH
+1.1.1.3:20:[3][0][32][1.1.1.3] 2.1.1.4 260 [ IMPORT_SOURCE_PATH ]
+1.1.1.4:10:[3][0][32][1.1.1.4] 2.1.1.3 360 [ BEST_PATH IMPORT_SOURCE_PATH
+1.1.1.4:10:[3][0][32][1.1.1.4] 2.1.1.4 296 [ IMPORT_SOURCE_PATH ]
+1.1.1.4:20:[3][0][32][1.1.1.4] 2.1.1.3 361 [ BEST_PATH IMPORT_SOURCE_PATH
+1.1.1.4:20:[3][0][32][1.1.1.4] 2.1.1.4 297 [ IMPORT_SOURCE_PATH ]
+
+```
+
+
